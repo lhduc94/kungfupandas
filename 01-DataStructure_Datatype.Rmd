@@ -1,4 +1,4 @@
-# Giới thiệu
+# Cấu trúc và kiểu dữ liệu 
 ## Series
 ## DataFrame
 ## Data type trong pandas 

@@ -1,4 +1,4 @@
-giới-thiệu
+cấu-trúc-và-kiểu-dữ-liệu
 series
 dataframe
 data-type-trong-pandas
