@@ -1,0 +1,4 @@
+# Giới thiệu
+## Series
+## DataFrame
+## Data type trong pandas 
