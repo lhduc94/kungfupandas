@@ -217,14 +217,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="series" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Series</h2>
 <p>Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau</p>
-<pre><code>&gt;&gt; s = pd.Series(data, index=index)</code></pre>
+<pre><code>s = pd.Series(data, index=None, name=None)</code></pre>
 <p>Trong đó data có thể có dạng:</p>
 <ul>
 <li><p>numpy.ndarray, List</p></li>
 <li><p>Python dict</p></li>
 <li><p>Scalar</p></li>
 </ul>
-<p>index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.</p>
+<p><strong>index</strong> có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
+<strong>name</strong> là tên của <strong>Series</strong>, giá trị này cũng không nhất thiết phải truyền vào</p>
 <div id="các-cách-khởi-tạo" class="section level3 unnumbered">
 <h3>Các cách khởi tạo</h3>
 <p><strong>array</strong></p>
@@ -254,8 +255,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="một-số-thao-tác-cơ-bản" class="section level3 unnumbered">
 <h3>Một số thao tác cơ bản</h3>
-<p>Thao tác trên <em>Series</em> cũng giống với thao tác trên <em>numpy.array</em>
-Ví dụ:</p>
+<p>Thao tác trên <code>Series</code> cũng giống với thao tác trên <code>numpy.array</code>. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index</p>
+<p>Ví dụ:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: s <span class="op">=</span> pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>])</span></code></pre></div>
 <p><strong>Lấy theo indice</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb6-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: s[<span class="dv">2</span>]</span>

@@ -158,7 +158,7 @@
 Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
 
 \begin{verbatim}
->> s = pd.Series(data, index=index)
+s = pd.Series(data, index=None, name=None)
 \end{verbatim}
 
 Trong đó data có thể có dạng:
@@ -172,7 +172,8 @@ Trong đó data có thể có dạng:
   Scalar
 \end{itemize}
 
-index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
+\textbf{index} có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
+\textbf{name} là tên của \textbf{Series}, giá trị này cũng không nhất thiết phải truyền vào
 
 \hypertarget{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o}{%
 \subsection*{Các cách khởi tạo}\label{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o}}
@@ -225,7 +226,8 @@ index có thể truyền hoặc không, tùy vào dạng của data mà index s�
 \subsection*{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}}
 \addcontentsline{toc}{subsection}{Một số thao tác cơ bản}
 
-Thao tác trên \emph{Series} cũng giống với thao tác trên \emph{numpy.array}
+Thao tác trên \texttt{Series} cũng giống với thao tác trên \texttt{numpy.array}. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index
+
 Ví dụ:
 
 \begin{Shaded}

@@ -3,7 +3,7 @@
 ## Series
 Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
 ```
->> s = pd.Series(data, index=index)
+s = pd.Series(data, index=None, name=None)
 ```
 Trong đó data có thể  có dạng:
 
@@ -13,7 +13,8 @@ Trong đó data có thể  có dạng:
 
 - Scalar 
 
-index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
+**index** có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau. 
+**name** là tên của **Series**, giá trị này cũng không nhất thiết phải truyền vào
 
 ### Các cách khởi tạo {-}
 **array**
@@ -49,7 +50,8 @@ c    1
 dtype: int64
 ```
 ### Một số thao tác cơ bản {-}
-Thao tác trên *Series* cũng giống với thao tác trên *numpy.array*
+Thao tác trên `Series` cũng giống với thao tác trên `numpy.array`. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index
+
 Ví dụ:
 
 ```python
