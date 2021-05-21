@@ -41,6 +41,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -84,7 +124,7 @@
 
 \title{Kungfu Pandas}
 \author{Lê Huỳnh Đức}
-\date{2021-05-20}
+\date{2021-05-21}
 
 \begin{document}
 \maketitle
@@ -115,11 +155,126 @@
 \hypertarget{series}{%
 \section{Series}\label{series}}
 
+Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
+
+\begin{verbatim}
+>> s = pd.Series(data, index=index)
+\end{verbatim}
+
+Trong đó data có thể có dạng:
+
+\begin{itemize}
+\item
+  numpy.ndarray, list
+\item
+  Python dict
+\item
+  một giá trị
+\end{itemize}
+
+index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
+
+\textbf{array}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{a   }\DecValTok{1}
+\NormalTok{b   }\DecValTok{2}
+\NormalTok{c   }\DecValTok{3}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Python dict}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{:}\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{\})}
+\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{a    }\DecValTok{0}
+\NormalTok{b    }\DecValTok{1}
+\NormalTok{c    }\DecValTok{2}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{giá trị}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\DecValTok{1}\NormalTok{, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{a    }\DecValTok{1}
+\NormalTok{b    }\DecValTok{1}
+\NormalTok{c    }\DecValTok{1}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}{%
+\subsection{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}}
+
+Thao tác trên \texttt{Series} cũng giống với thao tác trên numpy.array
+Ví dụ:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{])}
+\CommentTok{\# Lấy theo index}
+\NormalTok{In [}\DecValTok{2}\NormalTok{]: s[}\DecValTok{2}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{2}\NormalTok{]: }\DecValTok{2}
+\CommentTok{\# Slice }
+\NormalTok{In [}\DecValTok{3}\NormalTok{]: s[}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{3}\NormalTok{]:}
+\DecValTok{1}    \DecValTok{1}
+\DecValTok{2}    \DecValTok{2}
+\NormalTok{dtype: int64}
+\CommentTok{\# List index}
+\NormalTok{In [}\DecValTok{4}\NormalTok{]: s[[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{4}\NormalTok{]:}
+\DecValTok{1}    \DecValTok{1}
+\DecValTok{2}    \DecValTok{2}
+\DecValTok{4}    \DecValTok{4}
+\NormalTok{dtype: int64}
+\CommentTok{\# Điều kiện}
+\NormalTok{In [}\DecValTok{5}\NormalTok{]: s[s }\OperatorTok{\textgreater{}}\NormalTok{ s.mean()]}
+\NormalTok{Out[}\DecValTok{5}\NormalTok{]:}
+\DecValTok{3}    \DecValTok{3}
+\DecValTok{4}    \DecValTok{4}
+\DecValTok{5}    \DecValTok{5}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{dataframe}{%
 \section{DataFrame}\label{dataframe}}
 
 \hypertarget{data-type-trong-pandas}{%
 \section{Data type trong pandas}\label{data-type-trong-pandas}}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.33}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.25}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.21}}@{}}
+\toprule
+Các kiểu dữ liệu
+phổ biến & Numpy/Pandas
+object & Hiển thị \\
+\midrule
+\endhead
+Boolean & np.bool & \emph{bool} \\
+Integer & np.int & \emph{int} \\
+Float & np.float & \emph{float} \\
+Object & np.object & \emph{O, object} \\
+Datetime & np.datetime64,
+pd.Timestamp & \emph{datetime64} \\
+Timedelta & np.timedelta64,
+pd.Timedelta & \emph{timedelta64} \\
+Category & pd.categorical & \emph{category} \\
+\bottomrule
+\end{longtable}
 
 \hypertarget{nhux1eadp-xuux1ea5t-trong-pandas}{%
 \chapter{Nhập xuất trong pandas}\label{nhux1eadp-xuux1ea5t-trong-pandas}}
@@ -190,8 +345,11 @@
 \hypertarget{xux1eed-luxfd-missing-data}{%
 \section{Xử lý Missing data}\label{xux1eed-luxfd-missing-data}}
 
-\hypertarget{mux1ed9t-sux1ed1-huxe0m-nuxe2ng-cao}{%
-\chapter{Một số hàm nâng cao}\label{mux1ed9t-sux1ed1-huxe0m-nuxe2ng-cao}}
+\hypertarget{mux1ed9t-sux1ed1-kiux1ebfn-thux1ee9c-nuxe2ng-cao}{%
+\chapter{Một số kiến thức nâng cao}\label{mux1ed9t-sux1ed1-kiux1ebfn-thux1ee9c-nuxe2ng-cao}}
+
+\hypertarget{multiindex}{%
+\section{MultiIndex}\label{multiindex}}
 
 \hypertarget{pivot-vuxe0-merge}{%
 \section{Pivot và Merge}\label{pivot-vuxe0-merge}}

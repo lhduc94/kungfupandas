@@ -1,5 +1,6 @@
 cấu-trúc-và-kiểu-dữ-liệu
 series
+một-số-thao-tác-cơ-bản
 dataframe
 data-type-trong-pandas
 nhập-xuất-trong-pandas
@@ -25,7 +26,8 @@ xử-lý-dữ-liệu-dạng-text
 xử-lý-dữ-liệu-dạng-timestamp
 category-trong-pandas
 xử-lý-missing-data
-một-số-hàm-nâng-cao
+một-số-kiến-thức-nâng-cao
+multiindex
 pivot-và-merge
 resample
 window

@@ -1,4 +1,101 @@
 # Cấu trúc và kiểu dữ liệu 
+
 ## Series
+Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
+```
+>> s = pd.Series(data, index=index)
+```
+Trong đó data có thể  có dạng:
+
+- numpy.ndarray, list
+
+- Python dict
+
+- một giá trị 
+
+index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
+
+**array**
+```python
+In [1]: pd.Series(data=[0, 1, 2], index=["a", "b", "c"])
+Out[1]: 
+a   1
+b   2
+c   3
+dtype: int64
+
+```
+
+**Python dict**
+```python
+In [1]: pd.Series({"a":0, "b":1, "c": 2})
+Out[1]: 
+a    0
+b    1
+c    2
+dtype: int64
+
+```
+
+**giá trị**
+```python
+In [1]: pd.Series(data=1, index=["a", "b", "c"])
+Out[1]: 
+a    1
+b    1
+c    1
+dtype: int64
+```
+### Một số thao tác cơ bản 
+Thao tác trên `Series` cũng giống với thao tác trên numpy.array
+Ví dụ:
+```python
+In [1]: s = pd.Series(data=[0, 1, 2, 3, 4, 5])
+# Lấy theo index
+In [2]: s[2]
+Out[2]: 2
+# Slice 
+In [3]: s[1:3]
+Out[3]:
+1    1
+2    2
+dtype: int64
+# List index
+In [4]: s[[1,2,4]]
+Out[4]:
+1    1
+2    2
+4    4
+dtype: int64
+# Điều kiện
+In [5]: s[s > s.mean()]
+Out[5]:
+3    3
+4    4
+5    5
+dtype: int64
+```
 ## DataFrame
 ## Data type trong pandas 
+
+--------------------------------------------------------
+Các kiểu dữ liệu        Numpy/Pandas      Hiển thị        
+phổ  biến               object         
+--------------------    ----------------  --------------
+Boolean                 np.bool           *bool*
+
+Integer                 np.int            *int*
+
+Float                   np.float          *float*
+
+Object                  np.object         *O, object*
+
+Datetime                np.datetime64,    *datetime64*
+                        pd.Timestamp 
+
+Timedelta               np.timedelta64,   *timedelta64*
+                        pd.Timedelta
+                        
+Category                pd.categorical    *category*              
+                     
+--------------------------------------------------------
