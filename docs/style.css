@@ -9,10 +9,11 @@ pre {
 }
 pre code {
   white-space: inherit;
+  color: #ec1089;
+
 }
 
 
 p code {
   white-space: inherit;
-  color: #ec1089;
 }
