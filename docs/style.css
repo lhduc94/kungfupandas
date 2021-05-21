@@ -1,5 +1,5 @@
 h1 {
-  color: aqua;
+  color: #37466d;
 }
 
 p.caption {
@@ -13,10 +13,11 @@ pre {
 }
 pre code {
   white-space: inherit;
-  color: #ec1089;
-
 }
 
 p code {
   white-space: inherit;
+}
+code {
+  color: #ec1089;
 }
