@@ -1,5 +1,5 @@
-h1 {
-  color: #37466d;
+h1, h2, h3, h4 {
+  color: #352780;
 }
 
 p.caption {
@@ -18,6 +18,7 @@ pre code {
 p code {
   white-space: inherit;
 }
-code {
+
+pre.sourceCode {
   color: #ec1089;
 }
