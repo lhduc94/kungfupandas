@@ -2,7 +2,7 @@
 
 ## Series
 Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
-```
+```python
 s = pd.Series(data, index=None, name=None)
 ```
 Trong đó data có thể  có dạng:
@@ -65,7 +65,7 @@ Out[2]: 2
 ``` 
 
 **Lấy theo index**
-``` python
+```python
 In [3]: s["c"]
 Out[3]: 2 
 ```
