@@ -19,6 +19,6 @@ p code {
   white-space: inherit;
 }
 
-pre.sourceCode {
+pre.sourceCode code.sourceCode {
   color: #ec1089;
 }
