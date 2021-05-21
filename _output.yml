@@ -14,7 +14,7 @@ bookdown::gitbook:
     fontsettings:
       theme: white
       family: Merriweather
-      size: 3
+      size: 4
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

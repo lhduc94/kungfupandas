@@ -15,11 +15,7 @@ pre.sourceCode {
   color: black;
 }
 
-p code::before {
-  white-space: inherit;
-  color: #ec1089;
-}
-p code::after {
+p code {
   white-space: inherit;
   color: #ec1089;
 }
