@@ -3,11 +3,18 @@ bookdown::gitbook:
   config:
     toc:
       toc_depth: 2
+      collapse: subsection
+      scroll_highlight: yes
       before: |
         <li><a href="./">Kungfu Pandas</a></li>
       after: |
         <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
-    edit: https://github.com/lhduc94/%s
+    edit: null
+    download: no
+    fontsettings:
+      theme: white
+      family: Merriweather
+      size: 3
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
