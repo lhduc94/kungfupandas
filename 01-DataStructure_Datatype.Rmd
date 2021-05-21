@@ -14,6 +14,7 @@ Trong đó data có thể  có dạng:
 - một giá trị 
 
 index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
+
 ### Các cách khởi tạo {-}
 **array**
 ```python
