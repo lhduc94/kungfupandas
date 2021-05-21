@@ -1,6 +1,5 @@
 cấu-trúc-và-kiểu-dữ-liệu
 series
-một-số-thao-tác-cơ-bản
 dataframe
 data-type-trong-pandas
 nhập-xuất-trong-pandas

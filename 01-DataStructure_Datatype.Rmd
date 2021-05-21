@@ -14,7 +14,7 @@ Trong đó data có thể  có dạng:
 - một giá trị 
 
 index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
-
+### Các cách khởi tạo {-}
 **array**
 ```python
 In [1]: pd.Series(data=[0, 1, 2], index=["a", "b", "c"])
@@ -46,8 +46,8 @@ b    1
 c    1
 dtype: int64
 ```
-### Một số thao tác cơ bản 
-Thao tác trên `Series` cũng giống với thao tác trên numpy.array
+### Một số thao tác cơ bản {-}
+Thao tác trên *Series* cũng giống với thao tác trên *numpy.array*
 Ví dụ:
 ```python
 In [1]: s = pd.Series(data=[0, 1, 2, 3, 4, 5])

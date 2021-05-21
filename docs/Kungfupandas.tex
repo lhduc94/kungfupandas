@@ -6,8 +6,8 @@
 ]{book}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{ifxetex,ifluatex}
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
@@ -116,7 +116,7 @@
   \thm@postskip=\thm@preskip
 }
 \makeatother
-\ifluatex
+\ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
@@ -173,7 +173,7 @@ Trong đó data có thể có dạng:
 \end{itemize}
 
 index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
-
+\#\#\# Các cách khởi tạo \{-\}
 \textbf{array}
 
 \begin{Shaded}
@@ -214,9 +214,10 @@ index có thể truyền hoặc không, tùy vào dạng của data mà index s�
 \end{Shaded}
 
 \hypertarget{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}{%
-\subsection{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}}
+\subsection*{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}}
+\addcontentsline{toc}{subsection}{Một số thao tác cơ bản}
 
-Thao tác trên \texttt{Series} cũng giống với thao tác trên numpy.array
+Thao tác trên \emph{Series} cũng giống với thao tác trên \emph{numpy.array}
 Ví dụ:
 
 \begin{Shaded}
