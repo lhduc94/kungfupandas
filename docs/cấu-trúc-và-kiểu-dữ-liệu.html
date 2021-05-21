@@ -220,20 +220,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>&gt;&gt; s = pd.Series(data, index=index)</code></pre>
 <p>Trong đó data có thể có dạng:</p>
 <ul>
-<li><p>numpy.ndarray, list</p></li>
+<li><p>numpy.ndarray, List</p></li>
 <li><p>Python dict</p></li>
-<li><p>một giá trị</p></li>
+<li><p>Scalar</p></li>
 </ul>
 <p>index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.</p>
 <div id="các-cách-khởi-tạo" class="section level3 unnumbered">
 <h3>Các cách khởi tạo</h3>
 <p><strong>array</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>])</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span>
 <span id="cb2-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
 <span id="cb2-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-3" aria-hidden="true" tabindex="-1"></a>a   <span class="dv">1</span></span>
 <span id="cb2-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-4" aria-hidden="true" tabindex="-1"></a>b   <span class="dv">2</span></span>
 <span id="cb2-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-5" aria-hidden="true" tabindex="-1"></a>c   <span class="dv">3</span></span>
-<span id="cb2-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<span id="cb2-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-6" aria-hidden="true" tabindex="-1"></a>Name: meow,  dtype: int64</span></code></pre></div>
 <p><strong>Python dict</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series({<span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;b&quot;</span>:<span class="dv">1</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span>
 <span id="cb3-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
@@ -241,7 +241,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-4" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
 <span id="cb3-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-5" aria-hidden="true" tabindex="-1"></a>c    <span class="dv">2</span></span>
 <span id="cb3-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
-<p><strong>giá trị</strong></p>
+<blockquote>
+<p><strong><em>Lưu ý</em>: </strong> Trong trường hợp tạo Series với python dict, Series chỉ chứa các giá trị của dict có key nằm trong <em>index</em>, với các index không có trong keys của dict, Series sẽ tạo ra các giá trị bị thiếu <strong>NaN</strong></p>
+</blockquote>
+<p><strong>Scalar</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series(data<span class="op">=</span><span class="dv">1</span>, index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>])</span>
 <span id="cb4-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
 <span id="cb4-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-3" aria-hidden="true" tabindex="-1"></a>a    <span class="dv">1</span></span>
@@ -253,30 +256,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3>Một số thao tác cơ bản</h3>
 <p>Thao tác trên <em>Series</em> cũng giống với thao tác trên <em>numpy.array</em>
 Ví dụ:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: s <span class="op">=</span> pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb5-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Lấy theo index</span></span>
-<span id="cb5-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-3" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: s[<span class="dv">2</span>]</span>
-<span id="cb5-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-4" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]: <span class="dv">2</span></span>
-<span id="cb5-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Slice </span></span>
-<span id="cb5-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-6" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">3</span>]: s[<span class="dv">1</span>:<span class="dv">3</span>]</span>
-<span id="cb5-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-7" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">3</span>]:</span>
-<span id="cb5-8"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">1</span></span>
-<span id="cb5-9"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">2</span></span>
-<span id="cb5-10"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-10" aria-hidden="true" tabindex="-1"></a>dtype: int64</span>
-<span id="cb5-11"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># List index</span></span>
-<span id="cb5-12"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-12" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">4</span>]: s[[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>]]</span>
-<span id="cb5-13"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-13" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">4</span>]:</span>
-<span id="cb5-14"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">1</span></span>
-<span id="cb5-15"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">2</span></span>
-<span id="cb5-16"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">4</span></span>
-<span id="cb5-17"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-17" aria-hidden="true" tabindex="-1"></a>dtype: int64</span>
-<span id="cb5-18"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Điều kiện</span></span>
-<span id="cb5-19"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-19" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">5</span>]: s[s <span class="op">&gt;</span> s.mean()]</span>
-<span id="cb5-20"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-20" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">5</span>]:</span>
-<span id="cb5-21"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>    <span class="dv">3</span></span>
-<span id="cb5-22"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">4</span></span>
-<span id="cb5-23"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>    <span class="dv">5</span></span>
-<span id="cb5-24"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-24" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: s <span class="op">=</span> pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>])</span></code></pre></div>
+<p><strong>Lấy theo indice</strong></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb6-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: s[<span class="dv">2</span>]</span>
+<span id="cb6-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb6-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]: <span class="dv">2</span></span></code></pre></div>
+<p><strong>Lấy theo index</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb7-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">3</span>]: s[<span class="st">&quot;c&quot;</span>]</span>
+<span id="cb7-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb7-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">3</span>]: <span class="dv">2</span> </span></code></pre></div>
+<p><strong>Slice indice</strong></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">4</span>]: s[<span class="dv">1</span>:<span class="dv">3</span>]</span>
+<span id="cb8-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">4</span>]:</span>
+<span id="cb8-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-3" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
+<span id="cb8-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-4" aria-hidden="true" tabindex="-1"></a>d    <span class="dv">2</span></span>
+<span id="cb8-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-5" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<p><strong>Slice index</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">5</span>]: s[<span class="st">&quot;b&quot;</span>:<span class="st">&quot;c&quot;</span>]</span>
+<span id="cb9-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">5</span>]: </span>
+<span id="cb9-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-3" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
+<span id="cb9-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-4" aria-hidden="true" tabindex="-1"></a>c    <span class="dv">2</span></span>
+<span id="cb9-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-5" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<p><strong>List indice</strong></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">6</span>]: s[[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>]]</span>
+<span id="cb10-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">6</span>]:</span>
+<span id="cb10-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">1</span></span>
+<span id="cb10-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">2</span></span>
+<span id="cb10-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb10-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<p><strong>List index</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">7</span>]: s[[<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;e&quot;</span>]]</span>
+<span id="cb11-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">7</span>]:</span>
+<span id="cb11-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-3" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
+<span id="cb11-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-4" aria-hidden="true" tabindex="-1"></a>c    <span class="dv">2</span></span>
+<span id="cb11-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-5" aria-hidden="true" tabindex="-1"></a>e    <span class="dv">4</span></span>
+<span id="cb11-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<p><strong>Điều kiện</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">5</span>]: s[s <span class="op">&gt;</span> s.mean()]</span>
+<span id="cb12-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">5</span>]:</span>
+<span id="cb12-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>    <span class="dv">3</span></span>
+<span id="cb12-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb12-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>    <span class="dv">5</span></span>
+<span id="cb12-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
 </div>
 </div>
 <div id="dataframe" class="section level2" number="1.2">

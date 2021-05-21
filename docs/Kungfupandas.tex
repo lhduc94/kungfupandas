@@ -165,11 +165,11 @@ Trong đó data có thể có dạng:
 
 \begin{itemize}
 \item
-  numpy.ndarray, list
+  numpy.ndarray, List
 \item
   Python dict
 \item
-  một giá trị
+  Scalar
 \end{itemize}
 
 index có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
@@ -182,12 +182,12 @@ index có thể truyền hoặc không, tùy vào dạng của data mà index s�
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{])}
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)}
 \NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
 \NormalTok{a   }\DecValTok{1}
 \NormalTok{b   }\DecValTok{2}
 \NormalTok{c   }\DecValTok{3}
-\NormalTok{dtype: int64}
+\NormalTok{Name: meow,  dtype: int64}
 \end{Highlighting}
 \end{Shaded}
 
@@ -204,7 +204,11 @@ index có thể truyền hoặc không, tùy vào dạng của data mà index s�
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{giá trị}
+\begin{quote}
+\textbf{\emph{Lưu ý}: } Trong trường hợp tạo Series với python dict, Series chỉ chứa các giá trị của dict có key nằm trong \emph{index}, với các index không có trong keys của dict, Series sẽ tạo ra các giá trị bị thiếu \textbf{NaN}
+\end{quote}
+
+\textbf{Scalar}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -226,24 +230,82 @@ Ví dụ:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{])}
-\CommentTok{\# Lấy theo index}
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"f"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Lấy theo indice}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{In [}\DecValTok{2}\NormalTok{]: s[}\DecValTok{2}\NormalTok{]}
 \NormalTok{Out[}\DecValTok{2}\NormalTok{]: }\DecValTok{2}
-\CommentTok{\# Slice }
-\NormalTok{In [}\DecValTok{3}\NormalTok{]: s[}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{]}
-\NormalTok{Out[}\DecValTok{3}\NormalTok{]:}
-\DecValTok{1}    \DecValTok{1}
-\DecValTok{2}    \DecValTok{2}
-\NormalTok{dtype: int64}
-\CommentTok{\# List index}
-\NormalTok{In [}\DecValTok{4}\NormalTok{]: s[[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]]}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Lấy theo index}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{3}\NormalTok{]: s[}\StringTok{"c"}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{3}\NormalTok{]: }\DecValTok{2} 
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Slice indice}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{4}\NormalTok{]: s[}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{]}
 \NormalTok{Out[}\DecValTok{4}\NormalTok{]:}
+\NormalTok{b    }\DecValTok{1}
+\NormalTok{d    }\DecValTok{2}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Slice index}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{5}\NormalTok{]: s[}\StringTok{"b"}\NormalTok{:}\StringTok{"c"}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{5}\NormalTok{]: }
+\NormalTok{b    }\DecValTok{1}
+\NormalTok{c    }\DecValTok{2}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{List indice}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{6}\NormalTok{]: s[[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{6}\NormalTok{]:}
 \DecValTok{1}    \DecValTok{1}
 \DecValTok{2}    \DecValTok{2}
 \DecValTok{4}    \DecValTok{4}
 \NormalTok{dtype: int64}
-\CommentTok{\# Điều kiện}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{List index}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{7}\NormalTok{]: s[[}\StringTok{"b"}\NormalTok{,}\StringTok{"c"}\NormalTok{,}\StringTok{"e"}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{7}\NormalTok{]:}
+\NormalTok{b    }\DecValTok{1}
+\NormalTok{c    }\DecValTok{2}
+\NormalTok{e    }\DecValTok{4}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Điều kiện}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{In [}\DecValTok{5}\NormalTok{]: s[s }\OperatorTok{\textgreater{}}\NormalTok{ s.mean()]}
 \NormalTok{Out[}\DecValTok{5}\NormalTok{]:}
 \DecValTok{3}    \DecValTok{3}
