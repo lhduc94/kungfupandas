@@ -1,11 +1,12 @@
 # Cấu trúc và kiểu dữ liệu 
 
+
 ## Series
-Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
+Trong Pandas, `Series` là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
 ```python
 s = pd.Series(data, index=None, name=None)
 ```
-Trong đó data có thể  có dạng:
+Trong đó `data` có thể  có dạng:
 
 - numpy.ndarray, List
 
@@ -13,19 +14,17 @@ Trong đó data có thể  có dạng:
 
 - Scalar 
 
-**index** có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau. 
-**name** là tên của **Series**, giá trị này cũng không nhất thiết phải truyền vào
+`index` có thể truyền hoặc không, tùy vào dạng của `data` mà `index` sẽ được định nghĩa khác nhau. 
+`name` là tên của `Series`, giá trị này cũng không nhất thiết phải truyền vào.
 
 ### Các cách khởi tạo {-}
 **array**
 ```python
-In [1]: pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
-Out[1]: 
-a   1
-b   2
-c   3
-Name: meow,  dtype: int64
+pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
+```
 
+```{block2, note-text, type='rmdnote', echo = FALSE}
+meo meo 
 ```
 
 **Python dict**
@@ -92,9 +91,9 @@ dtype: int64
 ```python
 In [6]: s[[1,2,4]]
 Out[6]:
-1    1
-2    2
-4    4
+b    1
+c    2
+e    4
 dtype: int64
 ```
 
@@ -111,9 +110,9 @@ dtype: int64
 ```python
 In [5]: s[s > s.mean()]
 Out[5]:
-3    3
-4    4
-5    5
+d    3
+e    4
+f    5
 dtype: int64
 ```
 

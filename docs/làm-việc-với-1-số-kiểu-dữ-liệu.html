@@ -118,7 +118,8 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
 </head>
 
 <body>
@@ -134,12 +135,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Kungfu Pandas</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Lời nói đầu</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#giới-thiệu-cuốn-sách"><i class="fa fa-check"></i>Giới thiệu cuốn sách</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#cài-đặt-jupyter-lab"><i class="fa fa-check"></i>Cài đặt Jupyter Lab</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#cài-đặt-pandas"><i class="fa fa-check"></i>Cài đặt Pandas</a></li>
-</ul></li>
 <li class="chapter" data-level="1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>1</b> Cấu trúc và kiểu dữ liệu</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#series"><i class="fa fa-check"></i><b>1.1</b> Series</a>
@@ -192,6 +187,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="anomaly-detection-project.html"><a href="anomaly-detection-project.html"><i class="fa fa-check"></i><b>10</b> Anomaly Detection Project</a></li>
 <li class="chapter" data-level="11" data-path="visualize-với-matplotlib.html"><a href="visualize-với-matplotlib.html"><i class="fa fa-check"></i><b>11</b> Visualize với Matplotlib</a></li>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html"><i class="fa fa-check"></i>Lời nói đầu</a>
+<ul>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html#giới-thiệu-cuốn-sách"><i class="fa fa-check"></i>Giới thiệu cuốn sách</a></li>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html#cài-đặt-jupyter-lab"><i class="fa fa-check"></i>Cài đặt Jupyter Lab</a></li>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html#cài-đặt-pandas"><i class="fa fa-check"></i>Cài đặt Pandas</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
 
@@ -250,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
+"github": true,
 "facebook": true,
 "twitter": true,
 "linkedin": false,

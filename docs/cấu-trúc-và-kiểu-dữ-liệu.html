@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chương 1 Cấu trúc và kiểu dữ liệu | Kungfu Pandas</title>
+  <title>Kungfu Pandas</title>
   <meta name="description" content="Kungfu Panda" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chương 1 Cấu trúc và kiểu dữ liệu | Kungfu Pandas" />
+  <meta property="og:title" content="Kungfu Pandas" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chương 1 Cấu trúc và kiểu dữ liệu | Kungfu Pandas" />
+  <meta name="twitter:title" content="Kungfu Pandas" />
   
   <meta name="twitter:description" content="Kungfu Panda" />
   
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
+
 <link rel="next" href="nhập-xuất-trong-pandas.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
@@ -118,7 +118,8 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="css/toc.css" type="text/css" />
 </head>
 
 <body>
@@ -134,12 +135,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Kungfu Pandas</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Lời nói đầu</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#giới-thiệu-cuốn-sách"><i class="fa fa-check"></i>Giới thiệu cuốn sách</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#cài-đặt-jupyter-lab"><i class="fa fa-check"></i>Cài đặt Jupyter Lab</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#cài-đặt-pandas"><i class="fa fa-check"></i>Cài đặt Pandas</a></li>
-</ul></li>
 <li class="chapter" data-level="1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>1</b> Cấu trúc và kiểu dữ liệu</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#series"><i class="fa fa-check"></i><b>1.1</b> Series</a>
@@ -192,6 +187,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="anomaly-detection-project.html"><a href="anomaly-detection-project.html"><i class="fa fa-check"></i><b>10</b> Anomaly Detection Project</a></li>
 <li class="chapter" data-level="11" data-path="visualize-với-matplotlib.html"><a href="visualize-với-matplotlib.html"><i class="fa fa-check"></i><b>11</b> Visualize với Matplotlib</a></li>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html"><i class="fa fa-check"></i>Lời nói đầu</a>
+<ul>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html#giới-thiệu-cuốn-sách"><i class="fa fa-check"></i>Giới thiệu cuốn sách</a></li>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html#cài-đặt-jupyter-lab"><i class="fa fa-check"></i>Cài đặt Jupyter Lab</a></li>
+<li class="chapter" data-level="" data-path="lời-nói-đầu.html"><a href="lời-nói-đầu.html#cài-đặt-pandas"><i class="fa fa-check"></i>Cài đặt Pandas</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
 
@@ -212,29 +213,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Kungfu Pandas</h1>
+<p class="author"><em>Lê Huỳnh Đức</em></p>
+<p class="date"><em>2021-05-22</em></p>
+</div>
 <div id="cấu-trúc-và-kiểu-dữ-liệu" class="section level1" number="1">
 <h1><span class="header-section-number">Chương 1</span> Cấu trúc và kiểu dữ liệu</h1>
 <div id="series" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Series</h2>
-<p>Trong Pandas, Series là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau</p>
+<p>Trong Pandas, <code>Series</code> là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb1-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series(data, index<span class="op">=</span><span class="va">None</span>, name<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
-<p>Trong đó data có thể có dạng:</p>
+<p>Trong đó <code>data</code> có thể có dạng:</p>
 <ul>
 <li><p>numpy.ndarray, List</p></li>
 <li><p>Python dict</p></li>
 <li><p>Scalar</p></li>
 </ul>
-<p><strong>index</strong> có thể truyền hoặc không, tùy vào dạng của data mà index sẽ được định nghĩa khác nhau.
-<strong>name</strong> là tên của <strong>Series</strong>, giá trị này cũng không nhất thiết phải truyền vào</p>
+<p><code>index</code> có thể truyền hoặc không, tùy vào dạng của <code>data</code> mà <code>index</code> sẽ được định nghĩa khác nhau.
+<code>name</code> là tên của <code>Series</code>, giá trị này cũng không nhất thiết phải truyền vào.</p>
 <div id="các-cách-khởi-tạo" class="section level3 unnumbered">
 <h3>Các cách khởi tạo</h3>
 <p><strong>array</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span>
-<span id="cb2-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
-<span id="cb2-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-3" aria-hidden="true" tabindex="-1"></a>a   <span class="dv">1</span></span>
-<span id="cb2-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-4" aria-hidden="true" tabindex="-1"></a>b   <span class="dv">2</span></span>
-<span id="cb2-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-5" aria-hidden="true" tabindex="-1"></a>c   <span class="dv">3</span></span>
-<span id="cb2-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-6" aria-hidden="true" tabindex="-1"></a>Name: meow,  dtype: int64</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" aria-hidden="true" tabindex="-1"></a>pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span></code></pre></div>
 <p><strong>Python dict</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series({<span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;b&quot;</span>:<span class="dv">1</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span>
 <span id="cb3-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
@@ -279,9 +280,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>List indice</strong></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">6</span>]: s[[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>]]</span>
 <span id="cb10-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">6</span>]:</span>
-<span id="cb10-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    <span class="dv">1</span></span>
-<span id="cb10-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>    <span class="dv">2</span></span>
-<span id="cb10-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">4</span></span>
+<span id="cb10-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-3" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
+<span id="cb10-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-4" aria-hidden="true" tabindex="-1"></a>c    <span class="dv">2</span></span>
+<span id="cb10-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-5" aria-hidden="true" tabindex="-1"></a>e    <span class="dv">4</span></span>
 <span id="cb10-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
 <p><strong>List index</strong></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">7</span>]: s[[<span class="st">&quot;b&quot;</span>,<span class="st">&quot;c&quot;</span>,<span class="st">&quot;e&quot;</span>]]</span>
@@ -293,9 +294,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Điều kiện</strong></p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">5</span>]: s[s <span class="op">&gt;</span> s.mean()]</span>
 <span id="cb12-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">5</span>]:</span>
-<span id="cb12-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>    <span class="dv">3</span></span>
-<span id="cb12-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">4</span></span>
-<span id="cb12-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span>    <span class="dv">5</span></span>
+<span id="cb12-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-3" aria-hidden="true" tabindex="-1"></a>d    <span class="dv">3</span></span>
+<span id="cb12-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-4" aria-hidden="true" tabindex="-1"></a>e    <span class="dv">4</span></span>
+<span id="cb12-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-5" aria-hidden="true" tabindex="-1"></a>f    <span class="dv">5</span></span>
 <span id="cb12-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
 </div>
 </div>
@@ -367,8 +368,8 @@ pd.Timedelta</td>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="nhập-xuất-trong-pandas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="nhập-xuất-trong-pandas.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -384,7 +385,7 @@ pd.Timedelta</td>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
-"github": false,
+"github": true,
 "facebook": true,
 "twitter": true,
 "linkedin": false,

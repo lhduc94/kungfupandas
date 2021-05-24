@@ -1,5 +1,5 @@
 bookdown::gitbook:
-  css: style.css
+  css: [css/style.css, css/toc.css]
   config:
     toc:
       toc_depth: 2
@@ -15,6 +15,9 @@ bookdown::gitbook:
       theme: white
       family: Merriweather
       size: 4
+    sharing:
+      github: yes
+      facebook: yes
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
