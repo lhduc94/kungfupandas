@@ -2,7 +2,9 @@
 
 
 ## Series
-Trong Pandas, `Series` là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
+Trong Pandas, `Series` là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index 
+của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. 
+Cách đơn giản để tạo 1 series như sau
 ```python
 s = pd.Series(data, index=None, name=None)
 ```
@@ -20,7 +22,12 @@ Trong đó `data` có thể  có dạng:
 ### Các cách khởi tạo {-}
 **Khởi tạo Series bằng array**
 ```python
-pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
+In [1]: pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
+Out[1]:
+a    0
+b    1
+c    2
+Name: meow, dtype: int64
 ```
 
 
@@ -37,24 +44,33 @@ dtype: int64
 
 ```{block2, type='rmdnote'}
 **_Lưu ý_:** 
+Khi bạn sử dụng Python version >= 3.6 và pandas version >= 0.23 và không truyền biến `index` vào, 
+index của `Series` sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào. 
 
-Khi bạn sử dụng Python version >= 3.6 và pandas version >= 0.23 và không truyền biến `index` vào, index của `Series` sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào. 
-
-Khi bạn sử  dụng pandas version <= 0.23 và không truyền biến `index` vào,  `Series` sẽ đánh index là index của dict được sắp xếp theo thứ tự từ vựng.
+Khi bạn sử  dụng pandas version <= 0.23 và không truyền biến `index` vào,  `Series` sẽ đánh index 
+là index của dict được sắp xếp theo thứ tự từ vựng.
 ``` 
-Ví dụ: với bản pandas >= 0.23, index của `Series` sẽ là `["b", "a", "c"]`, còn nếu bạn dùng phiên bản thấp hơn thì index của `Series` sẽ là `["a", "b", "c"]` 
+Với pandas version >= 0.23, index của `Series` sẽ là `["b", "a", "c"]`, còn nếu bạn dùng phiên bản 
+thấp hơn thì index của `Series` sẽ là `["a", "b", "c"]` 
 
 Trong trường hợp bạn truyền biến `index` vào, `Series` sẽ đánh index dựa vào thứ tự trong `index`, và chỉ chứa các giá trị của dict có key nằm trong `index`. 
-Với các giá trị trong biến `index` không có trong keys của dict, `Series` sẽ tạo ra các giá trị bị thiếu **NaN**.
+Với các giá trị trong biến `index` không có trong keys của dict, `Series` sẽ tạo ra các giá trị 
+bị thiếu **NaN**.
 
 ```python
-In [1]: pd.Series({"a":0, "b":1, "c": 2}, index=["b", "c", "d", "a"])
+In [1]: pd.Series({"a":0, "b":1, "c": 2, "e":4}, index=["b", "c", "d", "a"])
 Out[1]: 
-b    1
-c    2
+b    1.0
+c    2.0
 d    NaN
-a    0
-dtype: int64
+a    0.0
+dtype: float64
+```
+
+```{block2, type='rmdnote'}
+**_Lưu ý_:** **NaN** là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu 
+là `float64` nên kiểu dữ liệu của `Series` cũng là `float64` khác với `int64` ở ví dụ trước đó. 
+
 ```
 
 **Khởi tạo Series bằng một giá trị (Scalar)**
@@ -67,7 +83,8 @@ c    1
 dtype: int64
 ```
 ### Một số thao tác cơ bản {-}
-Thao tác trên `Series` cũng giống với thao tác trên `numpy.array`. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index
+Thao tác trên `Series` cũng giống với thao tác trên `numpy.array`. Ngoài ra chúng ta còn có thể 
+tác với Series dựa vào index
 
 Ví dụ:
 

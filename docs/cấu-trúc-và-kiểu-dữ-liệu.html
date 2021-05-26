@@ -170,11 +170,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="select-và-filter.html"><a href="select-và-filter.html#loc-và-iloc"><i class="fa fa-check"></i><b>5.2</b> loc và iloc</a></li>
 <li class="chapter" data-level="5.3" data-path="select-và-filter.html"><a href="select-và-filter.html#lọc-theo-điều-kiện"><i class="fa fa-check"></i><b>5.3</b> Lọc theo điều kiện</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="các-cách-kết-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-kết-hợp-nhiều-bảng-với-nhau.html"><i class="fa fa-check"></i><b>6</b> Các cách kết hợp nhiều bảng với nhau</a>
+<li class="chapter" data-level="6" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><i class="fa fa-check"></i><b>6</b> Các cách phối hợp nhiều bảng với nhau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="các-cách-kết-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-kết-hợp-nhiều-bảng-với-nhau.html#join"><i class="fa fa-check"></i><b>6.1</b> Join</a></li>
-<li class="chapter" data-level="6.2" data-path="các-cách-kết-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-kết-hợp-nhiều-bảng-với-nhau.html#merge"><i class="fa fa-check"></i><b>6.2</b> Merge</a></li>
-<li class="chapter" data-level="6.3" data-path="các-cách-kết-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-kết-hợp-nhiều-bảng-với-nhau.html#concat"><i class="fa fa-check"></i><b>6.3</b> Concat</a></li>
+<li class="chapter" data-level="6.1" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#join"><i class="fa fa-check"></i><b>6.1</b> Join</a></li>
+<li class="chapter" data-level="6.2" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge"><i class="fa fa-check"></i><b>6.2</b> Merge</a></li>
+<li class="chapter" data-level="6.3" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat"><i class="fa fa-check"></i><b>6.3</b> Concat</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="groupby-và-aggregate.html"><a href="groupby-và-aggregate.html"><i class="fa fa-check"></i><b>7</b> Groupby và Aggregate</a></li>
 <li class="chapter" data-level="8" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>8</b> Làm việc với 1 số kiểu dữ liệu</a>
@@ -217,7 +217,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chương 1</span> Cấu trúc và kiểu dữ liệu</h1>
 <div id="series" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Series</h2>
-<p>Trong Pandas, <code>Series</code> là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau</p>
+<p>Trong Pandas, <code>Series</code> là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index
+của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó.
+Cách đơn giản để tạo 1 series như sau</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb1-1" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> pd.Series(data, index<span class="op">=</span><span class="va">None</span>, name<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 <p>Trong đó <code>data</code> có thể có dạng:</p>
 <ul>
@@ -230,7 +232,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="các-cách-khởi-tạo" class="section level3 unnumbered">
 <h3>Các cách khởi tạo</h3>
 <p><strong>Khởi tạo Series bằng array</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" aria-hidden="true" tabindex="-1"></a>pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span>
+<span id="cb2-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]:</span>
+<span id="cb2-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-3" aria-hidden="true" tabindex="-1"></a>a    <span class="dv">0</span></span>
+<span id="cb2-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-4" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
+<span id="cb2-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-5" aria-hidden="true" tabindex="-1"></a>c    <span class="dv">2</span></span>
+<span id="cb2-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-6" aria-hidden="true" tabindex="-1"></a>Name: meow, dtype: int64</span></code></pre></div>
 <p><strong>Khởi tạo Series bằng dict</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series({<span class="st">&quot;b&quot;</span>:<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span>
 <span id="cb3-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
@@ -240,20 +247,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-6" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
 
 <div class="rmdnote">
-<p><strong><em>Lưu ý</em>:</strong></p>
-<p>Khi bạn sử dụng Python version &gt;= 3.6 và pandas version &gt;= 0.23 và không truyền biến <code>index</code> vào, index của <code>Series</code> sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào.</p>
-Khi bạn sử dụng pandas version &lt;= 0.23 và không truyền biến <code>index</code> vào, <code>Series</code> sẽ đánh index là index của dict được sắp xếp theo thứ tự từ vựng.
+<p><strong><em>Lưu ý</em>:</strong>
+Khi bạn sử dụng Python version &gt;= 3.6 và pandas version &gt;= 0.23 và không truyền biến <code>index</code> vào,
+index của <code>Series</code> sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào.</p>
+Khi bạn sử dụng pandas version &lt;= 0.23 và không truyền biến <code>index</code> vào, <code>Series</code> sẽ đánh index
+là index của dict được sắp xếp theo thứ tự từ vựng.
 </div>
-<p>Ví dụ: với bản pandas &gt;= 0.23, index của <code>Series</code> sẽ là <code>["b", "a", "c"]</code>, còn nếu bạn dùng phiên bản thấp hơn thì index của <code>Series</code> sẽ là <code>["a", "b", "c"]</code></p>
+<p>Với pandas version &gt;= 0.23, index của <code>Series</code> sẽ là <code>["b", "a", "c"]</code>, còn nếu bạn dùng phiên bản
+thấp hơn thì index của <code>Series</code> sẽ là <code>["a", "b", "c"]</code></p>
 <p>Trong trường hợp bạn truyền biến <code>index</code> vào, <code>Series</code> sẽ đánh index dựa vào thứ tự trong <code>index</code>, và chỉ chứa các giá trị của dict có key nằm trong <code>index</code>.
-Với các giá trị trong biến <code>index</code> không có trong keys của dict, <code>Series</code> sẽ tạo ra các giá trị bị thiếu <strong>NaN</strong>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series({<span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;b&quot;</span>:<span class="dv">1</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>}, index<span class="op">=</span>[<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;a&quot;</span>])</span>
+Với các giá trị trong biến <code>index</code> không có trong keys của dict, <code>Series</code> sẽ tạo ra các giá trị
+bị thiếu <strong>NaN</strong>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series({<span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;b&quot;</span>:<span class="dv">1</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>, <span class="st">&quot;e&quot;</span>:<span class="dv">4</span>}, index<span class="op">=</span>[<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;a&quot;</span>])</span>
 <span id="cb4-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
-<span id="cb4-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-3" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
-<span id="cb4-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-4" aria-hidden="true" tabindex="-1"></a>c    <span class="dv">2</span></span>
+<span id="cb4-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-3" aria-hidden="true" tabindex="-1"></a>b    <span class="fl">1.0</span></span>
+<span id="cb4-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-4" aria-hidden="true" tabindex="-1"></a>c    <span class="fl">2.0</span></span>
 <span id="cb4-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-5" aria-hidden="true" tabindex="-1"></a>d    NaN</span>
-<span id="cb4-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-6" aria-hidden="true" tabindex="-1"></a>a    <span class="dv">0</span></span>
-<span id="cb4-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-7" aria-hidden="true" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<span id="cb4-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-6" aria-hidden="true" tabindex="-1"></a>a    <span class="fl">0.0</span></span>
+<span id="cb4-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-7" aria-hidden="true" tabindex="-1"></a>dtype: float64</span></code></pre></div>
+
+<div class="rmdnote">
+<p><strong><em>Lưu ý</em>:</strong> <strong>NaN</strong> là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu
+là <code>float64</code> nên kiểu dữ liệu của <code>Series</code> cũng là <code>float64</code> khác với <code>int64</code> ở ví dụ trước đó.</p>
+</div>
 <p><strong>Khởi tạo Series bằng một giá trị (Scalar)</strong></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series(data<span class="op">=</span><span class="dv">1</span>, index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>])</span>
 <span id="cb5-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
@@ -264,7 +280,8 @@ Với các giá trị trong biến <code>index</code> không có trong keys củ
 </div>
 <div id="một-số-thao-tác-cơ-bản" class="section level3 unnumbered">
 <h3>Một số thao tác cơ bản</h3>
-<p>Thao tác trên <code>Series</code> cũng giống với thao tác trên <code>numpy.array</code>. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index</p>
+<p>Thao tác trên <code>Series</code> cũng giống với thao tác trên <code>numpy.array</code>. Ngoài ra chúng ta còn có thể
+tác với Series dựa vào index</p>
 <p>Ví dụ:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb6-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: s <span class="op">=</span> pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>])</span></code></pre></div>
 <p><strong>Lấy theo indice</strong></p>

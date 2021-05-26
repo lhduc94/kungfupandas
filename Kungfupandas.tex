@@ -155,7 +155,9 @@
 \hypertarget{series}{%
 \section{Series}\label{series}}
 
-Trong Pandas, \texttt{Series} là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. Cách đơn giản để tạo 1 series như sau
+Trong Pandas, \texttt{Series} là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index
+của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó.
+Cách đơn giản để tạo 1 series như sau
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -185,7 +187,12 @@ Trong đó \texttt{data} có thể có dạng:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)}
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)}
+\NormalTok{Out[}\DecValTok{1}\NormalTok{]:}
+\NormalTok{a    }\DecValTok{0}
+\NormalTok{b    }\DecValTok{1}
+\NormalTok{c    }\DecValTok{2}
+\NormalTok{Name: meow, dtype: int64}
 \end{Highlighting}
 \end{Shaded}
 
@@ -204,27 +211,35 @@ Trong đó \texttt{data} có thể có dạng:
 
 \begin{rmdnote}
 \textbf{\emph{Lưu ý}:}
+Khi bạn sử dụng Python version \textgreater= 3.6 và pandas version \textgreater= 0.23 và không truyền biến \texttt{index} vào,
+index của \texttt{Series} sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào.
 
-Khi bạn sử dụng Python version \textgreater= 3.6 và pandas version \textgreater= 0.23 và không truyền biến \texttt{index} vào, index của \texttt{Series} sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào.
-
-Khi bạn sử dụng pandas version \textless= 0.23 và không truyền biến \texttt{index} vào, \texttt{Series} sẽ đánh index là index của dict được sắp xếp theo thứ tự từ vựng.
+Khi bạn sử dụng pandas version \textless= 0.23 và không truyền biến \texttt{index} vào, \texttt{Series} sẽ đánh index
+là index của dict được sắp xếp theo thứ tự từ vựng.
 \end{rmdnote}
-Ví dụ: với bản pandas \textgreater= 0.23, index của \texttt{Series} sẽ là \texttt{{[}"b",\ "a",\ "c"{]}}, còn nếu bạn dùng phiên bản thấp hơn thì index của \texttt{Series} sẽ là \texttt{{[}"a",\ "b",\ "c"{]}}
+Với pandas version \textgreater= 0.23, index của \texttt{Series} sẽ là \texttt{{[}"b",\ "a",\ "c"{]}}, còn nếu bạn dùng phiên bản
+thấp hơn thì index của \texttt{Series} sẽ là \texttt{{[}"a",\ "b",\ "c"{]}}
 
 Trong trường hợp bạn truyền biến \texttt{index} vào, \texttt{Series} sẽ đánh index dựa vào thứ tự trong \texttt{index}, và chỉ chứa các giá trị của dict có key nằm trong \texttt{index}.
-Với các giá trị trong biến \texttt{index} không có trong keys của dict, \texttt{Series} sẽ tạo ra các giá trị bị thiếu \textbf{NaN}.
+Với các giá trị trong biến \texttt{index} không có trong keys của dict, \texttt{Series} sẽ tạo ra các giá trị
+bị thiếu \textbf{NaN}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{:}\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{\}, index}\OperatorTok{=}\NormalTok{[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{:}\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{, }\StringTok{"e"}\NormalTok{:}\DecValTok{4}\NormalTok{\}, index}\OperatorTok{=}\NormalTok{[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
 \NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
-\NormalTok{b    }\DecValTok{1}
-\NormalTok{c    }\DecValTok{2}
+\NormalTok{b    }\FloatTok{1.0}
+\NormalTok{c    }\FloatTok{2.0}
 \NormalTok{d    NaN}
-\NormalTok{a    }\DecValTok{0}
-\NormalTok{dtype: int64}
+\NormalTok{a    }\FloatTok{0.0}
+\NormalTok{dtype: float64}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý}:} \textbf{NaN} là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu
+là \texttt{float64} nên kiểu dữ liệu của \texttt{Series} cũng là \texttt{float64} khác với \texttt{int64} ở ví dụ trước đó.
+\end{rmdnote}
 
 \textbf{Khởi tạo Series bằng một giá trị (Scalar)}
 
@@ -243,7 +258,8 @@ Với các giá trị trong biến \texttt{index} không có trong keys của di
 \subsection*{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}}
 \addcontentsline{toc}{subsection}{Một số thao tác cơ bản}
 
-Thao tác trên \texttt{Series} cũng giống với thao tác trên \texttt{numpy.array}. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index
+Thao tác trên \texttt{Series} cũng giống với thao tác trên \texttt{numpy.array}. Ngoài ra chúng ta còn có thể
+tác với Series dựa vào index
 
 Ví dụ:
 
@@ -403,8 +419,8 @@ Category & pd.categorical & \emph{category} \\
 \hypertarget{lux1ecdc-theo-ux111iux1ec1u-kiux1ec7n}{%
 \section{Lọc theo điều kiện}\label{lux1ecdc-theo-ux111iux1ec1u-kiux1ec7n}}
 
-\hypertarget{cuxe1c-cuxe1ch-kux1ebft-hux1ee3p-nhiux1ec1u-bux1ea3ng-vux1edbi-nhau}{%
-\chapter{Các cách kết hợp nhiều bảng với nhau}\label{cuxe1c-cuxe1ch-kux1ebft-hux1ee3p-nhiux1ec1u-bux1ea3ng-vux1edbi-nhau}}
+\hypertarget{cuxe1c-cuxe1ch-phux1ed1i-hux1ee3p-nhiux1ec1u-bux1ea3ng-vux1edbi-nhau}{%
+\chapter{Các cách phối hợp nhiều bảng với nhau}\label{cuxe1c-cuxe1ch-phux1ed1i-hux1ee3p-nhiux1ec1u-bux1ea3ng-vux1edbi-nhau}}
 
 \hypertarget{join}{%
 \section{Join}\label{join}}
