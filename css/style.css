@@ -1,5 +1,5 @@
 h1, h2, h3, h4 {
-  color: #191769;
+  color: #026992;
 }
 
 p.caption {
@@ -21,7 +21,7 @@ p code {
 
 .book .book-body .page-wrapper .page-inner section.normal code {
   color: #bd1481;
-  background-color: #ffffff;
+  background-color: #ffffff00;;
   padding: 0;
   font-size: 1em;
 }

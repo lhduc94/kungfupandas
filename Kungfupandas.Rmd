@@ -1,3 +1,24 @@
+--- 
+title: "Kungfu Pandas"
+author: "Lê Huỳnh Đức"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "Kungfu Panda"
+---
+
+# Lời nói đầu {-}
+## Giới thiệu cuốn sách {-}
+## Cài đặt Jupyter Lab {-}
+## Cài đặt Pandas {-}
+
+<!--chapter:end:index.Rmd-->
+
 # Cấu trúc và kiểu dữ liệu 
 
 
@@ -160,3 +181,66 @@ Timedelta               np.timedelta64,   *timedelta64*
 Category                pd.categorical    *category*              
                      
 --------------------------------------------------------
+
+<!--chapter:end:posts/01-DataStructure_Datatype.Rmd-->
+
+# Nhập xuất trong pandas
+## Đọc và lưu file
+## Cấu hình pandas 
+
+<!--chapter:end:posts/02-IO.Rmd-->
+
+# Một số hàm cơ bản
+
+<!--chapter:end:posts/03-Funda_Function.Rmd-->
+
+# Lặp trong Pandas 
+## Sử dụng vectorizer
+## Sử dụng apply
+## Sử dụng iterator
+## Xử lý song song trong pandas
+
+<!--chapter:end:posts/04-Loop.Rmd-->
+
+# Select và Filter
+## Index
+## loc và iloc
+## Lọc theo điều kiện
+
+<!--chapter:end:posts/05-Select_Filter.Rmd-->
+
+# Các cách kết hợp nhiều bảng với nhau 
+## Join
+## Merge
+## Concat
+
+<!--chapter:end:posts/06-Merge_Join_Concat.Rmd-->
+
+# Groupby và Aggregate 
+
+<!--chapter:end:posts/07-Groupby_Aggregate.Rmd-->
+
+# Làm việc với 1 số kiểu dữ liệu 
+## Xử  lý dữ liệu dạng text 
+## Xử lý dữ liệu dạng timestamp 
+## Category trong pandas
+## Xử lý Missing data
+
+<!--chapter:end:posts/08-Process_data.Rmd-->
+
+# Một số kiến thức nâng cao
+## MultiIndex  
+## Pivot và Merge
+## Resample
+## Window
+
+<!--chapter:end:posts/09-Advance_Function.Rmd-->
+
+# Anomaly Detection Project
+
+<!--chapter:end:posts/10-AD.Rmd-->
+
+# Visualize với Matplotlib
+
+<!--chapter:end:posts/11-Visualize.Rmd-->
+

@@ -193,31 +193,62 @@ Trong đó \texttt{data} có thể có dạng:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{:}\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{\})}
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"b"}\NormalTok{:}\DecValTok{1}\NormalTok{, }\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{\})}
 \NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
-\NormalTok{a    }\DecValTok{0}
 \NormalTok{b    }\DecValTok{1}
+\NormalTok{a    }\DecValTok{0}
 \NormalTok{c    }\DecValTok{2}
 \NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
 
-\OperatorTok{\textbackslash{}}\NormalTok{BeginKnitrBlock\{rmdnote\}}
-\OperatorTok{\textgreater{}} \OperatorTok{**}\NormalTok{\_Lưu ý\_:}\OperatorTok{**}\NormalTok{Trong trường hợp tạo Series với python }\BuiltInTok{dict}\NormalTok{, Series chỉ chứa các giá trị của }\BuiltInTok{dict}\NormalTok{ có key nằm trong }\OperatorTok{*}\NormalTok{index}\OperatorTok{*}\NormalTok{, với  các index không có trong keys của }\BuiltInTok{dict}\NormalTok{, Series sẽ tạo ra các giá trị bị thiếu }\OperatorTok{**}\NormalTok{NaN}\OperatorTok{**}
+\begin{rmdnote}
+\textbf{\emph{Lưu ý}:}
 
-\OperatorTok{**}\NormalTok{Khởi tạo Series bằng một giá trị (Scalar)}\OperatorTok{**}
-\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}python}
+Khi bạn sử dụng Python version \textgreater= 3.6 và pandas version \textgreater= 0.23 và không truyền biến \texttt{index} vào, index của \texttt{Series} sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào.
+
+Khi bạn sử dụng pandas version \textless= 0.23 và không truyền biến \texttt{index} vào, \texttt{Series} sẽ đánh index là index của dict được sắp xếp theo thứ tự từ vựng.
+\end{rmdnote}
+Ví dụ: với bản pandas \textgreater= 0.23, index của \texttt{Series} sẽ là \texttt{{[}"b",\ "a",\ "c"{]}}, còn nếu bạn dùng phiên bản thấp hơn thì index của \texttt{Series} sẽ là \texttt{{[}"a",\ "b",\ "c"{]}}
+
+Trong trường hợp bạn truyền biến \texttt{index} vào, \texttt{Series} sẽ đánh index dựa vào thứ tự trong \texttt{index}, và chỉ chứa các giá trị của dict có key nằm trong \texttt{index}.
+Với các giá trị trong biến \texttt{index} không có trong keys của dict, \texttt{Series} sẽ tạo ra các giá trị bị thiếu \textbf{NaN}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{:}\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{\}, index}\OperatorTok{=}\NormalTok{[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{b    }\DecValTok{1}
+\NormalTok{c    }\DecValTok{2}
+\NormalTok{d    NaN}
+\NormalTok{a    }\DecValTok{0}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Khởi tạo Series bằng một giá trị (Scalar)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\DecValTok{1}\NormalTok{, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{])}
 \NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
 \NormalTok{a    }\DecValTok{1}
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{1}
 \NormalTok{dtype: int64}
-\OperatorTok{\textbackslash{}}\NormalTok{EndKnitrBlock\{rmdnote\}}
-\CommentTok{\#\#\# Một số thao tác cơ bản \{{-}\}}
-\NormalTok{Thao tác trên \textasciigrave{}Series\textasciigrave{} cũng giống với thao tác trên \textasciigrave{}numpy.array\textasciigrave{}. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index}
+\end{Highlighting}
+\end{Shaded}
 
-\NormalTok{Ví dụ:}
+\hypertarget{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}{%
+\subsection*{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}}
+\addcontentsline{toc}{subsection}{Một số thao tác cơ bản}
 
-\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}python}
+Thao tác trên \texttt{Series} cũng giống với thao tác trên \texttt{numpy.array}. Ngoài ra chúng ta còn có thể thao tác với Series dựa vào index
+
+Ví dụ:
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{In [}\DecValTok{1}\NormalTok{]: s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"f"}\NormalTok{])}
 \end{Highlighting}
 \end{Shaded}
@@ -268,7 +299,7 @@ Trong đó \texttt{data} có thể có dạng:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{6}\NormalTok{]: s[[}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{4}\NormalTok{]]}
+\NormalTok{In [}\DecValTok{6}\NormalTok{]: s[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{]]}
 \NormalTok{Out[}\DecValTok{6}\NormalTok{]:}
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{2}
@@ -281,7 +312,7 @@ Trong đó \texttt{data} có thể có dạng:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{7}\NormalTok{]: s[[}\StringTok{"b"}\NormalTok{,}\StringTok{"c"}\NormalTok{,}\StringTok{"e"}\NormalTok{]]}
+\NormalTok{In [}\DecValTok{7}\NormalTok{]: s[[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"e"}\NormalTok{]]}
 \NormalTok{Out[}\DecValTok{7}\NormalTok{]:}
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{2}
@@ -305,6 +336,8 @@ Trong đó \texttt{data} có thể có dạng:
 
 \hypertarget{dataframe}{%
 \section{DataFrame}\label{dataframe}}
+
+DataFrame là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table, DataFrame là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập hợp các Series lại với nhau
 
 \hypertarget{data-type-trong-pandas}{%
 \section{Data type trong pandas}\label{data-type-trong-pandas}}
