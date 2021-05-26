@@ -21,6 +21,8 @@ Trong đó `data` có thể  có dạng:
 
 ### Các cách khởi tạo {-}
 **Khởi tạo Series bằng array**
+Khi không truyền giá trị `index`, `Series` sẽ mặc định index của nó là 1 mảng số nguyên từ `0` đến `len(data) - 1` 
+
 ```python
 In [1]: pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
 Out[1]:
@@ -44,21 +46,13 @@ dtype: int64
 
 ```{block2, type='rmdnote'}
 **_Lưu ý_:** 
-Khi bạn sử dụng Python version >= 3.6 và pandas version >= 0.23 và không truyền biến `index` vào, 
-index của `Series` sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào. 
-
-Khi bạn sử  dụng pandas version <= 0.23 và không truyền biến `index` vào,  `Series` sẽ đánh index 
-là index của dict được sắp xếp theo thứ tự từ vựng.
-``` 
-Với pandas version >= 0.23, index của `Series` sẽ là `["b", "a", "c"]`, còn nếu bạn dùng phiên bản 
-thấp hơn thì index của `Series` sẽ là `["a", "b", "c"]` 
-
 Trong trường hợp bạn truyền biến `index` vào, `Series` sẽ đánh index dựa vào thứ tự trong `index`, và chỉ chứa các giá trị của dict có key nằm trong `index`. 
 Với các giá trị trong biến `index` không có trong keys của dict, `Series` sẽ tạo ra các giá trị 
 bị thiếu **NaN**.
+```
 
 ```python
-In [1]: pd.Series({"a":0, "b":1, "c": 2, "e":4}, index=["b", "c", "d", "a"])
+In [1]: pd.Series({"a": 0, "b": 1, "c": 2, "e": 4}, index=["b", "c", "d", "a"])
 Out[1]: 
 b    1.0
 c    2.0
@@ -152,7 +146,71 @@ dtype: int64
 ```
 
 ## DataFrame
-DataFrame là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table, DataFrame là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập hợp các Series lại với nhau
+`DataFrame` là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table, 
+`DataFrame` là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập 
+hợp các Series lại với nhau.
+Cách khởi tạo DataFrame như sau
+```python
+df = pd.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
+``` 
+Cũng giống như Series, `data` của DataFrame có nhiều cách khởi tạo khác nhau như:
+
+- Dict 
+- Mảng 2 chiều `numpy.ndarray`, List
+- Bản ghi có cấu trúc
+- Từ 1 `Series`
+- Từ `DataFrame` khác
+
+Tùy vào cấu trúc của `data` mà chúng ta có thể bỏ qủua biến `index`. Biến `columns` thể hiện tên
+của các `Series`. `dtype` sẽ định nghĩa các kiểu dữ liêu của dữ liệu, chúng ta sẽ thảo luận về nó 
+ở phần kế tiếp của chương này. `copy` dùng để  tạo bản sao từ dữ liệu `data`, nó chỉ ảnh hưởng khi 
+`data` là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về 
+cùng 1 bộ nhớ.
+
+### Các cách khởi tạo {-}
+**Khởi tạo DataFrame từ dict của Series**
+
+Khi không truyền biến `index` vào, thì index của `DataFrame` sẽ là hợp giữa 2 index của `Series` và
+chúng sẽ được sắp xếp theo thứ tự từ vựng. Nếu ta không truyền `columns` thì các cột của `DataFrame` sẽ
+được sắp xếp theo thứ tự từ vựng các keys của dict. 
+
+Khi truyền biến `index` vào, tương tự như Series, chỉ những index nằm trong `index` mới được chọn, còn 
+những index bị thiếu sẽ được điền giá trị **NaN**
+
+Khi truyền giá trị `columns`, DataFrame sẽ chọn những `Series` thuộc dict có key thuộc `columns`, giá trị
+trong `columns` không có trong key của dict sẽ được gán **NaN**  
+```python
+In [1]: d = {
+            "one": pd.Series([1, 2, 3], index=["c", "b", "a"]),
+            "two": pd.Series([1, 2, 3, 4], index=["c", "a", "b", "d"])
+            }
+In [2]: pd.DataFrame(d)
+Out[2]:
+   one  two
+a  3.0    2
+b  2.0    3
+c  1.0    1
+d  NaN    4
+
+In [3]: pd.DataFrame(d, index=["d", "b", "a"])
+Out[3]: 
+   one	two
+d  NaN	  4
+b  2.0	  3
+a  3.0	  2
+
+In [4]: pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "three"])
+Out[4]:
+   two	three
+d	 4	  NaN
+b	 3	  NaN
+a	 2	  NaN
+```
+**Khởi tạo DataFrame từ Mảng 2 chiều**
+
+**Khởi tạo DataFrame từ danh sách các dict**
+
+**Khởi tạo DataFrame từ bảng có cấu trúc**
 
 ## Data type trong pandas 
 

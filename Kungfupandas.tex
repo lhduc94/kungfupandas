@@ -184,6 +184,7 @@ Trong đó \texttt{data} có thể có dạng:
 \addcontentsline{toc}{subsection}{Các cách khởi tạo}
 
 \textbf{Khởi tạo Series bằng array}
+Khi không truyền giá trị \texttt{index}, \texttt{Series} sẽ mặc định index của nó là 1 mảng số nguyên từ \texttt{0} đến \texttt{len(data)\ -\ 1}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -211,22 +212,14 @@ Trong đó \texttt{data} có thể có dạng:
 
 \begin{rmdnote}
 \textbf{\emph{Lưu ý}:}
-Khi bạn sử dụng Python version \textgreater= 3.6 và pandas version \textgreater= 0.23 và không truyền biến \texttt{index} vào,
-index của \texttt{Series} sẽ vẫn giữ nguyên theo thứ tự index của dict truyền vào.
-
-Khi bạn sử dụng pandas version \textless= 0.23 và không truyền biến \texttt{index} vào, \texttt{Series} sẽ đánh index
-là index của dict được sắp xếp theo thứ tự từ vựng.
-\end{rmdnote}
-Với pandas version \textgreater= 0.23, index của \texttt{Series} sẽ là \texttt{{[}"b",\ "a",\ "c"{]}}, còn nếu bạn dùng phiên bản
-thấp hơn thì index của \texttt{Series} sẽ là \texttt{{[}"a",\ "b",\ "c"{]}}
-
 Trong trường hợp bạn truyền biến \texttt{index} vào, \texttt{Series} sẽ đánh index dựa vào thứ tự trong \texttt{index}, và chỉ chứa các giá trị của dict có key nằm trong \texttt{index}.
 Với các giá trị trong biến \texttt{index} không có trong keys của dict, \texttt{Series} sẽ tạo ra các giá trị
 bị thiếu \textbf{NaN}.
+\end{rmdnote}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{:}\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{, }\StringTok{"e"}\NormalTok{:}\DecValTok{4}\NormalTok{\}, index}\OperatorTok{=}\NormalTok{[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{: }\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{, }\StringTok{"e"}\NormalTok{: }\DecValTok{4}\NormalTok{\}, index}\OperatorTok{=}\NormalTok{[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
 \NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
 \NormalTok{b    }\FloatTok{1.0}
 \NormalTok{c    }\FloatTok{2.0}
@@ -353,7 +346,90 @@ Ví dụ:
 \hypertarget{dataframe}{%
 \section{DataFrame}\label{dataframe}}
 
-DataFrame là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table, DataFrame là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập hợp các Series lại với nhau
+\texttt{DataFrame} là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table,
+\texttt{DataFrame} là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập
+hợp các Series lại với nhau.
+Cách khởi tạo DataFrame như sau
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(data}\OperatorTok{=}\VariableTok{None}\NormalTok{, index}\OperatorTok{=}\VariableTok{None}\NormalTok{, columns}\OperatorTok{=}\VariableTok{None}\NormalTok{, dtype}\OperatorTok{=}\VariableTok{None}\NormalTok{, copy}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Cũng giống như Series, \texttt{data} của DataFrame có nhiều cách khởi tạo khác nhau như:
+
+\begin{itemize}
+\tightlist
+\item
+  Dict
+\item
+  Mảng 2 chiều \texttt{numpy.ndarray}, List
+\item
+  Bản ghi có cấu trúc
+\item
+  Từ 1 \texttt{Series}
+\item
+  Từ \texttt{DataFrame} khác
+\end{itemize}
+
+Tùy vào cấu trúc của \texttt{data} mà chúng ta có thể bỏ qủua biến \texttt{index}. Biến \texttt{columns} thể hiện tên
+của các \texttt{Series}. \texttt{dtype} sẽ định nghĩa các kiểu dữ liêu của dữ liệu, chúng ta sẽ thảo luận về nó
+ở phần kế tiếp của chương này. \texttt{copy} dùng để tạo bản sao từ dữ liệu \texttt{data}, nó chỉ ảnh hưởng khi
+\texttt{data} là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về
+cùng 1 bộ nhớ.
+
+\hypertarget{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o-1}{%
+\subsection*{Các cách khởi tạo}\label{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o-1}}
+\addcontentsline{toc}{subsection}{Các cách khởi tạo}
+
+\textbf{Khởi tạo DataFrame từ dict của Series}
+
+Khi không truyền biến \texttt{index} vào, thì index của \texttt{DataFrame} sẽ là hợp giữa 2 index của \texttt{Series} và
+chúng sẽ được sắp xếp theo thứ tự từ vựng. Nếu ta không truyền \texttt{columns} thì các cột của \texttt{DataFrame} sẽ
+được sắp xếp theo thứ tự từ vựng các keys của dict.
+
+Khi truyền biến \texttt{index} vào, tương tự như Series, chỉ những index nằm trong \texttt{index} mới được chọn, còn
+những index bị thiếu sẽ được điền giá trị \textbf{NaN}
+
+Khi truyền giá trị \texttt{columns}, DataFrame sẽ chọn những \texttt{Series} thuộc dict có key thuộc \texttt{columns}, giá trị
+trong \texttt{columns} không có trong key của dict sẽ được gán \textbf{NaN}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: d }\OperatorTok{=}\NormalTok{ \{}
+            \StringTok{"one"}\NormalTok{: pd.Series([}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"c"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{]),}
+            \StringTok{"two"}\NormalTok{: pd.Series([}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"c"}\NormalTok{, }\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"d"}\NormalTok{])}
+\NormalTok{            \}}
+\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(d)}
+\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{   one  two}
+\NormalTok{a  }\FloatTok{3.0}    \DecValTok{2}
+\NormalTok{b  }\FloatTok{2.0}    \DecValTok{3}
+\NormalTok{c  }\FloatTok{1.0}    \DecValTok{1}
+\NormalTok{d  NaN    }\DecValTok{4}
+
+\NormalTok{In [}\DecValTok{3}\NormalTok{]: pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"d"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{3}\NormalTok{]: }
+\NormalTok{   one  two}
+\NormalTok{d  NaN    }\DecValTok{4}
+\NormalTok{b  }\FloatTok{2.0}    \DecValTok{3}
+\NormalTok{a  }\FloatTok{3.0}    \DecValTok{2}
+
+\NormalTok{In [}\DecValTok{4}\NormalTok{]: pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"d"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{4}\NormalTok{]:}
+\NormalTok{   two  three}
+\NormalTok{d    }\DecValTok{4}\NormalTok{    NaN}
+\NormalTok{b    }\DecValTok{3}\NormalTok{    NaN}
+\NormalTok{a    }\DecValTok{2}\NormalTok{    NaN}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Khởi tạo DataFrame từ Mảng 2 chiều}
+
+\textbf{Khởi tạo DataFrame từ danh sách các dict}
+
+\textbf{Khởi tạo DataFrame từ bảng có cấu trúc}
 
 \hypertarget{data-type-trong-pandas}{%
 \section{Data type trong pandas}\label{data-type-trong-pandas}}
