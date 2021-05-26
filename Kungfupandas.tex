@@ -169,11 +169,11 @@ Trong đó \texttt{data} có thể có dạng:
 
 \begin{itemize}
 \item
-  numpy.ndarray, List
+  \texttt{numpy.ndarray}, \texttt{List}
 \item
-  Python dict
+  Python \texttt{dict}
 \item
-  Scalar
+  \texttt{Scalar}
 \end{itemize}
 
 \texttt{index} có thể truyền hoặc không, tùy vào dạng của \texttt{data} mà \texttt{index} sẽ được định nghĩa khác nhau.
@@ -362,9 +362,9 @@ Cũng giống như Series, \texttt{data} của DataFrame có nhiều cách khở
 \begin{itemize}
 \tightlist
 \item
-  Dict
+  \texttt{dict} của Series, \texttt{dict} của \texttt{numpy.array}/\texttt{List}
 \item
-  Mảng 2 chiều \texttt{numpy.ndarray}, List
+  Mảng 2 chiều \texttt{numpy.ndarray}, \texttt{List} của \texttt{List}
 \item
   Bản ghi có cấu trúc
 \item
@@ -387,7 +387,7 @@ cùng 1 bộ nhớ.
 
 Khi không truyền biến \texttt{index} vào, thì index của \texttt{DataFrame} sẽ là hợp giữa 2 index của \texttt{Series} và
 chúng sẽ được sắp xếp theo thứ tự từ vựng. Nếu ta không truyền \texttt{columns} thì các cột của \texttt{DataFrame} sẽ
-được sắp xếp theo thứ tự từ vựng các keys của dict.
+được sắp xếp theo thứ tự truyền vào các keys của dict.
 
 Khi truyền biến \texttt{index} vào, tương tự như Series, chỉ những index nằm trong \texttt{index} mới được chọn, còn
 những index bị thiếu sẽ được điền giá trị \textbf{NaN}
@@ -400,7 +400,7 @@ trong \texttt{columns} không có trong key của dict sẽ được gán \textb
 \NormalTok{In [}\DecValTok{1}\NormalTok{]: d }\OperatorTok{=}\NormalTok{ \{}
             \StringTok{"one"}\NormalTok{: pd.Series([}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"c"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{]),}
             \StringTok{"two"}\NormalTok{: pd.Series([}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"c"}\NormalTok{, }\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"d"}\NormalTok{])}
-\NormalTok{            \}}
+\NormalTok{        \}}
 \NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(d)}
 \NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
 \NormalTok{   one  two}
@@ -425,11 +425,53 @@ trong \texttt{columns} không có trong key của dict sẽ được gán \textb
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Khởi tạo DataFrame từ Mảng 2 chiều}
+\textbf{Khởi tạo DataFrame từ dict của numpy.ndarray/List}
+
+Đối với việc khởi tạo này, bắt buộc các mảng phải có cùng độ dài. Khi không truyền \texttt{index} vào thì
+index của DataFrame sẽ được tạo từ \texttt{0} đến \texttt{len(n)\ -\ 1} trong đó \texttt{n} là độ dài của mảng.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: d }\OperatorTok{=}\NormalTok{ \{}
+            \StringTok{"one"}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{],}
+            \StringTok{"two"}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]}
+\NormalTok{        \}}
+\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(d)}
+\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{   one  two}
+\DecValTok{0}    \DecValTok{1}    \DecValTok{1}
+\DecValTok{1}    \DecValTok{2}    \DecValTok{2}
+\DecValTok{2}    \DecValTok{3}    \DecValTok{3}
+\DecValTok{3}    \DecValTok{4}    \DecValTok{4}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Khởi tạo DataFrame từ Mảng 2 chiều/ 2-d numpy.ndarray}
+
+Khi không truyền \texttt{index} vào thì index của \texttt{DataFrame} sẽ được tạo từ \texttt{0} đến \texttt{len(n)\ -\ 1} trong đó \texttt{n}
+là số lượng List con hoặc là số dòng hay \texttt{shape{[}0{]}} của \texttt{numpy.ndarray}. Khi không truyền \texttt{columns}
+thì tên columns sẽ được tạo từ \texttt{0} đến \texttt{len(n)\ -\ 1} với \texttt{n} là độ dài lớn nhất của List con hoặc \texttt{shape{[}1{]}}
+của \texttt{numpy.ndarray}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.DataFrame(data}\OperatorTok{=}\NormalTok{[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{]], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}one\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}two\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}three\textquotesingle{}}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{   one  two  three}
+\NormalTok{a    }\DecValTok{1}    \DecValTok{2}\NormalTok{    NaN}
+\NormalTok{b    }\DecValTok{3}    \DecValTok{4}    \FloatTok{5.0}
+
+\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(data}\OperatorTok{=}\NormalTok{np.random.rand(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}one\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}two\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}three\textquotesingle{}}\NormalTok{]))}
+\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{        one       two     three}
+\NormalTok{a  }\FloatTok{0.662008}  \FloatTok{0.085735}  \FloatTok{0.331281}
+\NormalTok{b  }\FloatTok{0.115360}  \FloatTok{0.358092}  \FloatTok{0.862477}
+\end{Highlighting}
+\end{Shaded}
 
 \textbf{Khởi tạo DataFrame từ danh sách các dict}
 
-\textbf{Khởi tạo DataFrame từ bảng có cấu trúc}
+\textbf{Khởi tạo DataFrame từ bản ghi có cấu trúc}
 
 \hypertarget{data-type-trong-pandas}{%
 \section{Data type trong pandas}\label{data-type-trong-pandas}}

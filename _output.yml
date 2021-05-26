@@ -16,7 +16,7 @@ bookdown::gitbook:
       family: Merriweather
       size: 4
     sharing:
-      github: yes
+      github: no
       facebook: yes
 bookdown::pdf_book:
   includes:

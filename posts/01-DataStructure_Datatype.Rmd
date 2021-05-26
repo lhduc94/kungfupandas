@@ -10,11 +10,11 @@ s = pd.Series(data, index=None, name=None)
 ```
 Trong đó `data` có thể  có dạng:
 
-- numpy.ndarray, List
+- `numpy.ndarray`, `List`
 
-- Python dict
+- Python `dict`
 
-- Scalar 
+- `Scalar`
 
 `index` có thể truyền hoặc không, tùy vào dạng của `data` mà `index` sẽ được định nghĩa khác nhau. 
 `name` là tên của `Series`, giá trị này cũng không nhất thiết phải truyền vào.
@@ -155,8 +155,8 @@ df = pd.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
 ``` 
 Cũng giống như Series, `data` của DataFrame có nhiều cách khởi tạo khác nhau như:
 
-- Dict 
-- Mảng 2 chiều `numpy.ndarray`, List
+- `dict` của Series, `dict` của `numpy.array`/`List`
+- Mảng 2 chiều `numpy.ndarray`, `List` của `List`
 - Bản ghi có cấu trúc
 - Từ 1 `Series`
 - Từ `DataFrame` khác
@@ -172,7 +172,7 @@ cùng 1 bộ nhớ.
 
 Khi không truyền biến `index` vào, thì index của `DataFrame` sẽ là hợp giữa 2 index của `Series` và
 chúng sẽ được sắp xếp theo thứ tự từ vựng. Nếu ta không truyền `columns` thì các cột của `DataFrame` sẽ
-được sắp xếp theo thứ tự từ vựng các keys của dict. 
+được sắp xếp theo thứ tự truyền vào các keys của dict. 
 
 Khi truyền biến `index` vào, tương tự như Series, chỉ những index nằm trong `index` mới được chọn, còn 
 những index bị thiếu sẽ được điền giá trị **NaN**
@@ -183,7 +183,7 @@ trong `columns` không có trong key của dict sẽ được gán **NaN**
 In [1]: d = {
             "one": pd.Series([1, 2, 3], index=["c", "b", "a"]),
             "two": pd.Series([1, 2, 3, 4], index=["c", "a", "b", "d"])
-            }
+        }
 In [2]: pd.DataFrame(d)
 Out[2]:
    one  two
@@ -206,11 +206,47 @@ d	 4	  NaN
 b	 3	  NaN
 a	 2	  NaN
 ```
-**Khởi tạo DataFrame từ Mảng 2 chiều**
 
+**Khởi tạo DataFrame từ dict của numpy.ndarray/List**
+
+Đối với việc khởi tạo này, bắt buộc các mảng phải có cùng độ dài. Khi không truyền `index` vào thì 
+index của DataFrame sẽ được tạo từ `0` đến `len(n) - 1` trong đó `n` là độ dài của mảng. 
+```python
+In [1]: d = {
+            "one": [1, 2, 3, 4],
+            "two": [1, 2, 3, 4]
+        }
+In [2]: pd.DataFrame(d)
+Out[2]:
+   one  two
+0    1    1
+1    2    2
+2    3    3
+3    4    4
+```
+**Khởi tạo DataFrame từ Mảng 2 chiều/ 2-d numpy.ndarray**
+
+Khi không truyền `index` vào thì index của `DataFrame` sẽ được tạo từ `0` đến `len(n) - 1` trong đó `n` 
+là số lượng List con hoặc là số dòng hay `shape[0]` của `numpy.ndarray`. Khi không truyền `columns` 
+thì tên columns sẽ được tạo từ `0` đến `len(n) - 1` với `n` là độ dài lớn nhất của List con hoặc `shape[1]`
+của `numpy.ndarray` 
+
+```python
+In [1]: pd.DataFrame(data=[[1, 2], [3, 4, 5]], index=["a", "b"], columns=['one','two','three'])
+Out[1]: 
+   one  two  three
+a    1    2    NaN
+b    3    4    5.0
+
+In [2]: pd.DataFrame(data=np.random.rand(2,3), index=["a", "b"], columns=['one','two','three']))
+Out[2]:
+        one       two     three
+a  0.662008  0.085735  0.331281
+b  0.115360  0.358092  0.862477
+```
 **Khởi tạo DataFrame từ danh sách các dict**
 
-**Khởi tạo DataFrame từ bảng có cấu trúc**
+**Khởi tạo DataFrame từ bản ghi có cấu trúc**
 
 ## Data type trong pandas 
 
