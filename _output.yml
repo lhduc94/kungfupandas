@@ -16,12 +16,6 @@ bookdown::gitbook:
       family: Merriweather
       size: 4
     sharing:
-      github: no
+      github: yes
       facebook: yes
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+  highlight: breezedark

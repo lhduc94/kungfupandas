@@ -42,7 +42,9 @@ p code {
 code.sourceCode > span{
   color: black;
 }
-
+div.sourceCode {
+  background-color: #ffffff;
+}
 
 .rmdcaution, .rmdimportant, .rmdnote, .rmdtip, .rmdwarning {
   padding: 1em 1em 1em 4em;
