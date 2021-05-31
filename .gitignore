@@ -6,4 +6,4 @@ _book
 _bookdown_files
 rsconnect
 *.ipynb
-.ipynb_checkpoints/
+.ipynb_checkpoints

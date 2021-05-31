@@ -21,7 +21,9 @@ Trong đó `data` có thể  có dạng:
 `name` là tên của `Series`, giá trị này cũng không nhất thiết phải truyền vào.
 
 ### Các cách khởi tạo {-}
+
 **Khởi tạo Series bằng array**
+
 Khi không truyền giá trị `index`, `Series` sẽ mặc định index của nó là 1 mảng số nguyên từ `0` đến `len(data) - 1` 
 
 ```{python eval=FALSE}
@@ -36,7 +38,7 @@ Name: meow, dtype: int64
 **Khởi tạo Series bằng dict**
 
 ```{python eval=FALSE}
-In [1]: pd.Series({"b":1, "a":0, "c": 2})
+In [1]: pd.Series({"b": 1, "a":0, "c": 2})
 Out[1]: 
 b    1
 a    0
@@ -62,12 +64,14 @@ dtype: float64
 ```
 
 ```{block2, type='rmdnote'}
-**_Lưu ý_:** `NaN` là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu 
+**_Lưu ý_:** 
+`NaN` là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu 
 là `float64` nên kiểu dữ liệu của `Series` cũng là `float64` khác với `int64` ở ví dụ trước đó. 
 
 ```
 
 **Khởi tạo Series bằng một giá trị (Scalar)**
+
 ```{python eval=FALSE}
 In [1]: pd.Series(data=1, index=["a", "b", "c"])
 Out[1]: 
@@ -76,7 +80,9 @@ b    1
 c    1
 dtype: int64
 ```
+
 ### Một số thao tác cơ bản {-}
+
 Thao tác trên `Series` cũng giống với thao tác trên `numpy.array`. Ngoài ra chúng ta còn có thể 
 tác với Series dựa vào index
 
@@ -87,18 +93,21 @@ In [1]: s = pd.Series(data=[0, 1, 2, 3, 4, 5], index=["a", "b", "c", "d", "e", "
 ```
 
 **Lấy theo indice**
+
 ```{python eval=FALSE}
 In [2]: s[2]
 Out[2]: 2
 ``` 
 
 **Lấy theo index**
+
 ```{python eval=FALSE}
 In [3]: s["c"]
 Out[3]: 2 
 ```
 
 **Slice indice**
+
 ```{python eval=FALSE}
 In [4]: s[1:3]
 Out[4]:
@@ -108,6 +117,7 @@ dtype: int64
 ```
 
 **Slice index**
+
 ```{python eval=FALSE}
 In [5]: s["b":"c"]
 Out[5]: 
@@ -117,6 +127,7 @@ dtype: int64
 ``` 
 
 **List indice**
+
 ```{python eval=FALSE}
 In [6]: s[[1, 2, 4]]
 Out[6]:
@@ -127,6 +138,7 @@ dtype: int64
 ```
 
 **List index**
+
 ```{python eval=FALSE}
 In [7]: s[["b", "c", "e"]]
 Out[7]:
@@ -135,7 +147,9 @@ c    2
 e    4
 dtype: int64
 ```
+
 **Điều kiện**
+
 ```{python eval=FALSE}
 In [5]: s[s > s.mean()]
 Out[5]:
@@ -146,13 +160,16 @@ dtype: int64
 ```
 
 ## DataFrame
+
 `DataFrame` là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table, 
 `DataFrame` là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập 
 hợp các Series lại với nhau.
 Cách khởi tạo DataFrame như sau
+
 ```{python eval=FALSE}
 df = pd.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
 ``` 
+
 Cũng giống như Series, `data` của DataFrame có nhiều cách khởi tạo khác nhau như:
 
 - `dict` của Series, `dict` của `numpy.array`/`List`
@@ -161,13 +178,14 @@ Cũng giống như Series, `data` của DataFrame có nhiều cách khởi tạo
 - Từ 1 `Series`
 - Từ `DataFrame` khác
 
-Tùy vào cấu trúc của `data` mà chúng ta có thể bỏ qủua biến `index`. Biến `columns` thể hiện tên
+Tùy vào cấu trúc của `data` mà chúng ta có thể bỏ qua biến `index`. Biến `columns` thể hiện tên
 của các `Series`. `dtype` sẽ định nghĩa các kiểu dữ liêu của dữ liệu, chúng ta sẽ thảo luận về nó 
 ở phần kế tiếp của chương này. `copy` dùng để  tạo bản sao từ dữ liệu `data`, nó chỉ ảnh hưởng khi 
 `data` là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về 
 cùng 1 bộ nhớ.
 
 ### Các cách khởi tạo {-}
+
 **Khởi tạo DataFrame từ dict của Series**
 
 Khi không truyền biến `index` vào, thì index của `DataFrame` sẽ là hợp giữa 2 index của `Series` và
@@ -179,6 +197,7 @@ những index bị thiếu sẽ được điền giá trị `NaN`
 
 Khi truyền giá trị `columns`, DataFrame sẽ chọn những `Series` thuộc dict có key thuộc `columns`, giá trị
 trong `columns` không có trong key của dict sẽ được gán `NaN`
+
 ```{python eval=FALSE}
 In [1]: d = {
             "one": pd.Series([1, 2, 3], index=["c", "b", "a"]),
@@ -253,6 +272,7 @@ Out[2]:
 a  0.662008  0.085735  0.331281
 b  0.115360  0.358092  0.862477
 ```
+
 **Khởi tạo DataFrame từ danh sách các dict**
 
 Ở cách khởi tạo này, bạn hãy tưởng tượng rằng mỗi dict là một dòng của DataFrame với các key là tên 
@@ -263,8 +283,10 @@ như các trường hợp khởi tạo trên.
 **_Lưu ý:_** Trong trường hợp này, nếu bạn truyền `columns` vào thì `columns` bắt buộc phải chứa tất cả
 các key của dict 
 ``` 
+
 Trong ví dụ dưới đây, `columns` phải chứa toàn bộ keys `["one", "two", "three"]`, nếu thiếu 1 trong 3
 sẽ phát sinh lỗi.
+
 ```{python eval=FALSE}
 In [1]: d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
 In [2]: pd.DataFrame(d, index=["a", "b"], columns=["one", "two", "three", "four"])
@@ -280,13 +302,13 @@ Mảng có cấu trúc là mảng mà các phần tử của nó là một cấu
 Dưới đây là một ví dụ Mảng có cấu trúc trong numpy
 
 ```{python eval=FALSE}
-In [1]: x = np.array([('Rex', 9, 81.0), ('Fido', 3, 27.0)],
-                     dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
-In [2]: pd.DataFrame(x)
+In [1]: data = np.array([('pikachu', 9, 27.0), ('mewtwo', 3, 81.0)],
+                        dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
+In [2]: pd.DataFrame(data)
 Out[2]: 
-   name  age  weight
-0   Rex    9    81.0
-1  Fido    3    27.0
+       name  age  weight
+0   pikachu    9    27.0
+1    mewtwo    3    81.0
 ```
 
 **Khởi tạo DataFrame từ namedtuple**
@@ -371,7 +393,8 @@ Ví dụ tạo DataFrame khi `orient="index"`. Với cách khởi tạo này ind
 
 ```{python eval=FALSE}
 In [1]: data = {"col_1": [3, 2, 1, 0], "col_2": ["a", "b", "c", "d"]}
-In [2]: pd.DataFrame.from_dict(data, orient="index", columns=["one", "two", "three", "four"])
+In [2]: pd.DataFrame.from_dict(data, orient="index", 
+                               columns=["one", "two", "three", "four"])
 Out[2]:
    col_1 col_2
 0      3     a
@@ -380,9 +403,53 @@ Out[2]:
 3      0     d
 ```
 
-
 **DataFrame.from_records**
 
+Cách khởi tạo 
+
+```{python eval=FALSE}
+pd.DataFrame.from_records(data)
+```
+
+`data` truyền vào có thể là một mảng có cấu trúc  
+
+```{python eval=FALSE}
+In [1]: data = np.array([('Rex', 9, 81.0), ('Fido', 3, 27.0)],
+                        dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
+In [2]: pd.DataFrame.from_records(data, index=["a", "b"])
+Out[2]: 
+   name  age  weight
+a   Rex    9    81.0
+b  Fido    3    27.0
+```
+
+Dữ liệu có thể  một danh sách các namedtuple
+
+```{python eval=FALSE}
+from collections import namedtuple
+Point2D = namedtuple("Point2D", "x y")
+Point3D = namedtuple("Point3D", "x y z")
+pd.DataFrame.from_records([Point3D(0, 0, 0), Point2D(0, 1), Point3D(0, 2, 3)],
+                          columns=["x","y","z"], index=["a", "b", "c"])
+```
+
+```{python eval=FALSE}
+   x  y    z
+a  0  0  0.0
+b  0  1  NaN
+c  0  2  3.0
+```
+
+Hoặc 1 danh sách các dict 
+
+```{python eval=FALSE}
+In [1]: d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
+In [2]: pd.DataFrame.from_records(d, index=["a", "b"], columns=["one", "two", "three", "four"])
+Out[2]:
+   one  two  three  four
+a    1    2    NaN   NaN
+b    4    5    6.0   NaN
+```
 ## Data type trong pandas 
 
 --------------------------------------------------------

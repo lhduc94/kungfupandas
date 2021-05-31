@@ -24,7 +24,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2021-05-27" />
+<meta name="date" content="2021-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -238,8 +238,8 @@ Cách đơn giản để tạo 1 series như sau</p>
 <code>name</code> là tên của <code>Series</code>, giá trị này cũng không nhất thiết phải truyền vào.</p>
 <div id="các-cách-khởi-tạo" class="section level3 unnumbered">
 <h3>Các cách khởi tạo</h3>
-<p><strong>Khởi tạo Series bằng array</strong>
-Khi không truyền giá trị <code>index</code>, <code>Series</code> sẽ mặc định index của nó là 1 mảng số nguyên từ <code>0</code> đến <code>len(data) - 1</code></p>
+<p><strong>Khởi tạo Series bằng array</strong></p>
+<p>Khi không truyền giá trị <code>index</code>, <code>Series</code> sẽ mặc định index của nó là 1 mảng số nguyên từ <code>0</code> đến <code>len(data) - 1</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span>
 <span id="cb2-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]:</span>
 <span id="cb2-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-3" aria-hidden="true" tabindex="-1"></a>a    <span class="dv">0</span></span>
@@ -247,7 +247,7 @@ Khi không truyền giá trị <code>index</code>, <code>Series</code> sẽ mặ
 <span id="cb2-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-5" aria-hidden="true" tabindex="-1"></a>c    <span class="dv">2</span></span>
 <span id="cb2-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-6" aria-hidden="true" tabindex="-1"></a>Name: meow, dtype: int64</span></code></pre></div>
 <p><strong>Khởi tạo Series bằng dict</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series({<span class="st">&quot;b&quot;</span>:<span class="dv">1</span>, <span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: pd.Series({<span class="st">&quot;b&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span>
 <span id="cb3-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]: </span>
 <span id="cb3-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-3" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">1</span></span>
 <span id="cb3-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-4" aria-hidden="true" tabindex="-1"></a>a    <span class="dv">0</span></span>
@@ -268,7 +268,8 @@ Với các giá trị trong biến <code>index</code> không có trong keys củ
 <span id="cb4-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-7" aria-hidden="true" tabindex="-1"></a>dtype: float64</span></code></pre></div>
 
 <div class="rmdnote">
-<p><strong><em>Lưu ý</em>:</strong> <code>NaN</code> là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu
+<p><strong><em>Lưu ý</em>:</strong>
+<code>NaN</code> là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu
 là <code>float64</code> nên kiểu dữ liệu của <code>Series</code> cũng là <code>float64</code> khác với <code>int64</code> ở ví dụ trước đó.</p>
 </div>
 <p><strong>Khởi tạo Series bằng một giá trị (Scalar)</strong></p>
@@ -341,7 +342,7 @@ Cách khởi tạo DataFrame như sau</p>
 <li>Từ 1 <code>Series</code></li>
 <li>Từ <code>DataFrame</code> khác</li>
 </ul>
-<p>Tùy vào cấu trúc của <code>data</code> mà chúng ta có thể bỏ qủua biến <code>index</code>. Biến <code>columns</code> thể hiện tên
+<p>Tùy vào cấu trúc của <code>data</code> mà chúng ta có thể bỏ qua biến <code>index</code>. Biến <code>columns</code> thể hiện tên
 của các <code>Series</code>. <code>dtype</code> sẽ định nghĩa các kiểu dữ liêu của dữ liệu, chúng ta sẽ thảo luận về nó
 ở phần kế tiếp của chương này. <code>copy</code> dùng để tạo bản sao từ dữ liệu <code>data</code>, nó chỉ ảnh hưởng khi
 <code>data</code> là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về
@@ -440,13 +441,13 @@ sẽ phát sinh lỗi.</p>
 <p><strong>Khởi tạo DataFrame từ Mảng có cấu trúc</strong></p>
 <p>Mảng có cấu trúc là mảng mà các phần tử của nó là một cấu trúc, bao gồm các thành phần nhỏ hơn, các thành phần này được đặt tên và khai báo kiểu dữ liệu.
 Dưới đây là một ví dụ Mảng có cấu trúc trong numpy</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: x <span class="op">=</span> np.array([(<span class="st">&#39;Rex&#39;</span>, <span class="dv">9</span>, <span class="fl">81.0</span>), (<span class="st">&#39;Fido&#39;</span>, <span class="dv">3</span>, <span class="fl">27.0</span>)],</span>
-<span id="cb19-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                     dtype<span class="op">=</span>[(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;U10&#39;</span>), (<span class="st">&#39;age&#39;</span>, <span class="st">&#39;i4&#39;</span>), (<span class="st">&#39;weight&#39;</span>, <span class="st">&#39;f4&#39;</span>)])</span>
-<span id="cb19-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-3" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: pd.DataFrame(x)</span>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: data <span class="op">=</span> np.array([(<span class="st">&#39;pikachu&#39;</span>, <span class="dv">9</span>, <span class="fl">27.0</span>), (<span class="st">&#39;mewtwo&#39;</span>, <span class="dv">3</span>, <span class="fl">81.0</span>)],</span>
+<span id="cb19-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-2" aria-hidden="true" tabindex="-1"></a>                        dtype<span class="op">=</span>[(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;U10&#39;</span>), (<span class="st">&#39;age&#39;</span>, <span class="st">&#39;i4&#39;</span>), (<span class="st">&#39;weight&#39;</span>, <span class="st">&#39;f4&#39;</span>)])</span>
+<span id="cb19-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-3" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: pd.DataFrame(data)</span>
 <span id="cb19-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-4" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]: </span>
-<span id="cb19-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-5" aria-hidden="true" tabindex="-1"></a>   name  age  weight</span>
-<span id="cb19-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>   Rex    <span class="dv">9</span>    <span class="fl">81.0</span></span>
-<span id="cb19-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  Fido    <span class="dv">3</span>    <span class="fl">27.0</span></span></code></pre></div>
+<span id="cb19-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-5" aria-hidden="true" tabindex="-1"></a>       name  age  weight</span>
+<span id="cb19-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>   pikachu    <span class="dv">9</span>    <span class="fl">27.0</span></span>
+<span id="cb19-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>    mewtwo    <span class="dv">3</span>    <span class="fl">81.0</span></span></code></pre></div>
 <p><strong>Khởi tạo DataFrame từ namedtuple</strong></p>
 <p>Các trường trong <code>nametuple</code> sẽ được gán thành tên các columns trong <code>DataFrame</code>. Những giá trị của <code>namedtuple</code> sẽ được xem là 1 dòng trong <code>DataFrame</code>.
 Số lượng cột của <code>DataFrame</code> sẽ phụ thuộc vào số lượng giá trị của phần từ <code>namedtuple</code> đầu tiên. Nếu các phần tử phía sau có số lượng giá trị ít hơn thì
@@ -501,14 +502,42 @@ sẽ được điền <code>NaN</code> và ngược lại sẽ trả ra lỗi n�
 <span id="cb25-8"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>      <span class="dv">0</span>     d</span></code></pre></div>
 <p>Ví dụ tạo DataFrame khi <code>orient="index"</code>. Với cách khởi tạo này index của DataFrame sẽ là key của dict.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: data <span class="op">=</span> {<span class="st">&quot;col_1&quot;</span>: [<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>], <span class="st">&quot;col_2&quot;</span>: [<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>]}</span>
-<span id="cb26-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-2" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: pd.DataFrame.from_dict(data, orient<span class="op">=</span><span class="st">&quot;index&quot;</span>, columns<span class="op">=</span>[<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>, <span class="st">&quot;four&quot;</span>])</span>
-<span id="cb26-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-3" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]:</span>
-<span id="cb26-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-4" aria-hidden="true" tabindex="-1"></a>   col_1 col_2</span>
-<span id="cb26-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>      <span class="dv">3</span>     a</span>
-<span id="cb26-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>      <span class="dv">2</span>     b</span>
-<span id="cb26-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>      <span class="dv">1</span>     c</span>
-<span id="cb26-8"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>      <span class="dv">0</span>     d</span></code></pre></div>
+<span id="cb26-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-2" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: pd.DataFrame.from_dict(data, orient<span class="op">=</span><span class="st">&quot;index&quot;</span>, </span>
+<span id="cb26-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-3" aria-hidden="true" tabindex="-1"></a>                               columns<span class="op">=</span>[<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>, <span class="st">&quot;four&quot;</span>])</span>
+<span id="cb26-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-4" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]:</span>
+<span id="cb26-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-5" aria-hidden="true" tabindex="-1"></a>   col_1 col_2</span>
+<span id="cb26-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>      <span class="dv">3</span>     a</span>
+<span id="cb26-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>      <span class="dv">2</span>     b</span>
+<span id="cb26-8"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>      <span class="dv">1</span>     c</span>
+<span id="cb26-9"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>      <span class="dv">0</span>     d</span></code></pre></div>
 <p><strong>DataFrame.from_records</strong></p>
+<p>Cách khởi tạo</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb27-1" aria-hidden="true" tabindex="-1"></a>pd.DataFrame.from_records(data)</span></code></pre></div>
+<p><code>data</code> truyền vào có thể là một mảng có cấu trúc</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb28-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: data <span class="op">=</span> np.array([(<span class="st">&#39;Rex&#39;</span>, <span class="dv">9</span>, <span class="fl">81.0</span>), (<span class="st">&#39;Fido&#39;</span>, <span class="dv">3</span>, <span class="fl">27.0</span>)],</span>
+<span id="cb28-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb28-2" aria-hidden="true" tabindex="-1"></a>                        dtype<span class="op">=</span>[(<span class="st">&#39;name&#39;</span>, <span class="st">&#39;U10&#39;</span>), (<span class="st">&#39;age&#39;</span>, <span class="st">&#39;i4&#39;</span>), (<span class="st">&#39;weight&#39;</span>, <span class="st">&#39;f4&#39;</span>)])</span>
+<span id="cb28-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb28-3" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: pd.DataFrame.from_records(data, index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>])</span>
+<span id="cb28-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb28-4" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]: </span>
+<span id="cb28-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb28-5" aria-hidden="true" tabindex="-1"></a>   name  age  weight</span>
+<span id="cb28-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb28-6" aria-hidden="true" tabindex="-1"></a>a   Rex    <span class="dv">9</span>    <span class="fl">81.0</span></span>
+<span id="cb28-7"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb28-7" aria-hidden="true" tabindex="-1"></a>b  Fido    <span class="dv">3</span>    <span class="fl">27.0</span></span></code></pre></div>
+<p>Dữ liệu có thể một danh sách các namedtuple</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> namedtuple</span>
+<span id="cb29-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb29-2" aria-hidden="true" tabindex="-1"></a>Point2D <span class="op">=</span> namedtuple(<span class="st">&quot;Point2D&quot;</span>, <span class="st">&quot;x y&quot;</span>)</span>
+<span id="cb29-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb29-3" aria-hidden="true" tabindex="-1"></a>Point3D <span class="op">=</span> namedtuple(<span class="st">&quot;Point3D&quot;</span>, <span class="st">&quot;x y z&quot;</span>)</span>
+<span id="cb29-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb29-4" aria-hidden="true" tabindex="-1"></a>pd.DataFrame.from_records([Point3D(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>), Point2D(<span class="dv">0</span>, <span class="dv">1</span>), Point3D(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)],</span>
+<span id="cb29-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb29-5" aria-hidden="true" tabindex="-1"></a>                          columns<span class="op">=</span>[<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>,<span class="st">&quot;z&quot;</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb30-1" aria-hidden="true" tabindex="-1"></a>   x  y    z</span>
+<span id="cb30-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb30-2" aria-hidden="true" tabindex="-1"></a>a  <span class="dv">0</span>  <span class="dv">0</span>  <span class="fl">0.0</span></span>
+<span id="cb30-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb30-3" aria-hidden="true" tabindex="-1"></a>b  <span class="dv">0</span>  <span class="dv">1</span>  NaN</span>
+<span id="cb30-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb30-4" aria-hidden="true" tabindex="-1"></a>c  <span class="dv">0</span>  <span class="dv">2</span>  <span class="fl">3.0</span></span></code></pre></div>
+<p>Hoặc 1 danh sách các dict</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb31-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: d <span class="op">=</span> [{<span class="st">&quot;one&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;two&quot;</span>: <span class="dv">2</span>}, {<span class="st">&quot;one&quot;</span>: <span class="dv">4</span>, <span class="st">&quot;two&quot;</span>: <span class="dv">5</span>, <span class="st">&quot;three&quot;</span>: <span class="dv">6</span>}]</span>
+<span id="cb31-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb31-2" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: pd.DataFrame.from_records(d, index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>], columns<span class="op">=</span>[<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>, <span class="st">&quot;four&quot;</span>])</span>
+<span id="cb31-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb31-3" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]:</span>
+<span id="cb31-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb31-4" aria-hidden="true" tabindex="-1"></a>   one  two  three  four</span>
+<span id="cb31-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb31-5" aria-hidden="true" tabindex="-1"></a>a    <span class="dv">1</span>    <span class="dv">2</span>    NaN   NaN</span>
+<span id="cb31-6"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb31-6" aria-hidden="true" tabindex="-1"></a>b    <span class="dv">4</span>    <span class="dv">5</span>    <span class="fl">6.0</span>   NaN</span></code></pre></div>
 </div>
 </div>
 <div id="data-type-trong-pandas" class="section level2" number="1.3">
