@@ -1,11 +1,15 @@
 cấu-trúc-và-kiểu-dữ-liệu
 series
-dataframe
+các-cách-khởi-tạo
+một-số-thao-tác-cơ-bản
+cach-khoi-tao-data-frame
+các-cách-khởi-tạo-1
+các-hàm-khởi-tạo-thay-thế
 data-type-trong-pandas
 nhập-xuất-trong-pandas
 đọc-và-lưu-file
 cấu-hình-pandas
-một-số-hàm-cơ-bản
+Chuong-3
 lặp-trong-pandas
 sử-dụng-vectorizer
 sử-dụng-apply

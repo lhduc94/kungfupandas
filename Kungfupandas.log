@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.5.18)  26 MAY 2021 17:50
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.5.31)  3 JUN 2021 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Kungfupandas.tex
 (./Kungfupandas.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 5 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
@@ -899,7 +899,25 @@ Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 Package: footnotehyper 2018/01/23 v1.1 hyperref aware footnote.sty (JFB)
 \FNH@notes=\box50
 \FNH@width=\dimen173
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen174
+\captionmargin@=\dimen175
+\captionwidth=\dimen176
+\caption@tempdima=\dimen177
+\caption@indent=\dimen178
+\caption@parindent=\dimen179
+\caption@hangindent=\dimen180
+)
+\c@ContinuedFloat=\count292
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
@@ -910,191 +928,1023 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 99.
 )
-\Gin@req@height=\dimen174
-\Gin@req@width=\dimen175
-) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+\Gin@req@height=\dimen181
+\Gin@req@width=\dimen182
+) (/usr/share/texlive/texmf-dist/tex/latex/alegreya/Alegreya.sty
+Package: Alegreya 2016/08/19 (Bob Tennent) Supports Alegreya and AlegreyaSC fon
+ts for all LaTeX engines. 
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texl
+ive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks23
+\XKV@tempa@toks=\toks24
+)
+\XKV@depth=\count293
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+Requested font "[Alegreya-Regular.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+\g__fontspec_family_Alegreya_int=\count294
+Requested font "[AlegreyaSC-Regular.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/AlegreyaSC-Reg
+ular.ttf
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+Requested font "[Alegreya-Bold.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Bold.
+ttf
+Requested font "[AlegreyaSC-Bold.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/AlegreyaSC-Bol
+d.ttf
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+Requested font "[Alegreya-Italic.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Itali
+c.ttf
+Requested font "[AlegreyaSC-Italic.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/AlegreyaSC-Ita
+lic.ttf
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+Requested font "[Alegreya-BoldItalic.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-BoldI
+talic.ttf
+Requested font "[AlegreyaSC-BoldItalic.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/AlegreyaSC-Bol
+dItalic.ttf
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Alegreya(0)' created for font 'Alegreya' with options
+. [Ligatures = TeX,Extension = .ttf,Scale = 1,Ligatures=TeX,Scale=1,Numbers =
+. {Proportional,Lining},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont
+. = *-Bold,BoldItalicFont = *-BoldItalic,UprightFeatures = { SmallCapsFont =
+. AlegreyaSC-Regular },BoldFeatures = { SmallCapsFont=
+. AlegreyaSC-Bold},ItalicFeatures = { SmallCapsFont= AlegreyaSC-Italic
+. },BoldItalicFeatures = { SmallCapsFont= AlegreyaSC-BoldItalic }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mapp
+ing=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Regular.ttf]/OT:script=latn;language=DFLT;mapping=tex-te
+xt;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mapping
+=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Bold.ttf]/OT:script=latn;language=DFLT;mapping=tex-text;
+"
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-Italic.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mappi
+ng=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Italic.ttf]/OT:script=latn;language=DFLT;mapping=tex-tex
+t;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BoldItalic.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;m
+apping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BoldItalic.ttf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+.................................................
+LaTeX Info: Redefining \rmfamily on input line 142.
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Alegreya(1)' created for font 'Alegreya' with options
+. [Ligatures = TeX,Extension = .ttf,Scale = 1,Numbers =
+. {Proportional,Lining},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont
+. = *-Bold,BoldItalicFont = *-BoldItalic,UprightFeatures = { SmallCapsFont =
+. AlegreyaSC-Regular },BoldFeatures = { SmallCapsFont=
+. AlegreyaSC-Bold},ItalicFeatures = { SmallCapsFont= AlegreyaSC-Italic
+. },BoldItalicFeatures = { SmallCapsFont= AlegreyaSC-BoldItalic }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mapp
+ing=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Regular.ttf]/OT:script=latn;language=DFLT;mapping=tex-te
+xt;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mapping
+=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Bold.ttf]/OT:script=latn;language=DFLT;mapping=tex-text;
+"
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-Italic.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mappi
+ng=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Italic.ttf]/OT:script=latn;language=DFLT;mapping=tex-tex
+t;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BoldItalic.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;m
+apping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BoldItalic.ttf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+.................................................
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/lmr/m/n --> TU/Alegreya(1)/m/n on input line 142.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/lmr/m/it --> TU/Alegreya(1)/m/it on input line 142.
+
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/lmr/bx/n --> TU/Alegreya(1)/bx/n on input line 142.
+
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 142.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,OldStyle' (pnum) not available for
+* font 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,OldStyle' (pnum) not available for
+* font 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,OldStyle' (pnum) not available for
+* font 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,OldStyle' (pnum) not available for
+* font 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Alegreya(2)' created for font 'Alegreya' with options
+. [Ligatures = TeX,Extension = .ttf,Scale = 1,Numbers =
+. {Proportional,OldStyle},UprightFont = *-Regular,ItalicFont =
+. *-Italic,BoldFont = *-Bold,BoldItalicFont = *-BoldItalic,UprightFeatures = {
+. SmallCapsFont = AlegreyaSC-Regular },BoldFeatures = { SmallCapsFont=
+. AlegreyaSC-Bold},ItalicFeatures = { SmallCapsFont= AlegreyaSC-Italic
+. },BoldItalicFeatures = { SmallCapsFont= AlegreyaSC-BoldItalic }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;mapp
+ing=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Regular.ttf]/OT:script=latn;language=DFLT;mapping=tex-te
+xt;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;mapping
+=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Bold.ttf]/OT:script=latn;language=DFLT;mapping=tex-text;
+"
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-Italic.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;mappi
+ng=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Italic.ttf]/OT:script=latn;language=DFLT;mapping=tex-tex
+t;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BoldItalic.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;m
+apping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BoldItalic.ttf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+.................................................
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,OldStyle' (tnum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,OldStyle' (tnum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,OldStyle' (tnum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,OldStyle' (tnum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Alegreya(3)' created for font 'Alegreya' with options
+. [Ligatures = TeX,Extension = .ttf,Scale = 1,Numbers =
+. {Monospaced,OldStyle},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont
+. = *-Bold,BoldItalicFont = *-BoldItalic,UprightFeatures = { SmallCapsFont =
+. AlegreyaSC-Regular },BoldFeatures = { SmallCapsFont=
+. AlegreyaSC-Bold},ItalicFeatures = { SmallCapsFont= AlegreyaSC-Italic
+. },BoldItalicFeatures = { SmallCapsFont= AlegreyaSC-BoldItalic }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+tnum;+onum;mapp
+ing=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Regular.ttf]/OT:script=latn;language=DFLT;mapping=tex-te
+xt;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+tnum;+onum;mapping
+=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Bold.ttf]/OT:script=latn;language=DFLT;mapping=tex-text;
+"
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-Italic.ttf]/OT:script=latn;language=DFLT;+tnum;+onum;mappi
+ng=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Italic.ttf]/OT:script=latn;language=DFLT;mapping=tex-tex
+t;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BoldItalic.ttf]/OT:script=latn;language=DFLT;+tnum;+onum;m
+apping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BoldItalic.ttf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+.................................................
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional, OldStyle' (pnum) not available for
+* font 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional, OldStyle' (pnum) not available for
+* font 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional, OldStyle' (pnum) not available for
+* font 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional, OldStyle' (pnum) not available for
+* font 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Lowercase' (onum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Alegreya(4)' created for font 'Alegreya' with options
+. [Ligatures = TeX,Extension = .ttf,Scale = 1,Numbers = {Proportional,
+. OldStyle},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont =
+. *-Bold,BoldItalicFont = *-BoldItalic,UprightFeatures = { SmallCapsFont =
+. AlegreyaSC-Regular },BoldFeatures = { SmallCapsFont=
+. AlegreyaSC-Bold},ItalicFeatures = { SmallCapsFont= AlegreyaSC-Italic
+. },BoldItalicFeatures = { SmallCapsFont= AlegreyaSC-BoldItalic }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;mapp
+ing=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Regular.ttf]/OT:script=latn;language=DFLT;mapping=tex-te
+xt;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;mapping
+=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Bold.ttf]/OT:script=latn;language=DFLT;mapping=tex-text;
+"
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-Italic.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;mappi
+ng=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Italic.ttf]/OT:script=latn;language=DFLT;mapping=tex-tex
+t;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BoldItalic.ttf]/OT:script=latn;language=DFLT;+pnum;+onum;m
+apping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BoldItalic.ttf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+.................................................
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,Lining' (tnum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Regular' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,Lining' (tnum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Bold' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,Lining' (tnum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Italic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Monospaced,Lining' (tnum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-BoldItalic' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Alegreya(5)' created for font 'Alegreya' with options
+. [Ligatures = TeX,Extension = .ttf,Scale = 1,Numbers =
+. {Monospaced,Lining},UprightFont = *-Regular,ItalicFont = *-Italic,BoldFont =
+. *-Bold,BoldItalicFont = *-BoldItalic,UprightFeatures = { SmallCapsFont =
+. AlegreyaSC-Regular },BoldFeatures = { SmallCapsFont=
+. AlegreyaSC-Bold},ItalicFeatures = { SmallCapsFont= AlegreyaSC-Italic
+. },BoldItalicFeatures = { SmallCapsFont= AlegreyaSC-BoldItalic }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+tnum;+lnum;mapp
+ing=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Regular.ttf]/OT:script=latn;language=DFLT;mapping=tex-te
+xt;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+tnum;+lnum;mapping
+=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Bold.ttf]/OT:script=latn;language=DFLT;mapping=tex-text;
+"
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-Italic.ttf]/OT:script=latn;language=DFLT;+tnum;+lnum;mappi
+ng=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Italic.ttf]/OT:script=latn;language=DFLT;mapping=tex-tex
+t;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BoldItalic.ttf]/OT:script=latn;language=DFLT;+tnum;+lnum;m
+apping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BoldItalic.ttf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+.................................................
+Requested font "[Alegreya-Black.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Black
+.ttf
+Requested font "[AlegreyaSC-Black.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/AlegreyaSC-Bla
+ck.ttf
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Black' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Black' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-Black' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-Black' with script 'Latin' and language 'Default'.
+*************************************************
+Requested font "[Alegreya-BlackItalic.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Black
+Italic.ttf
+Requested font "[AlegreyaSC-BlackItalic.ttf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/AlegreyaSC-Bla
+ckItalic.ttf
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-BlackItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-BlackItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Proportional,Lining' (pnum) not available for font
+* 'AlegreyaSC-BlackItalic' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Numbers=Uppercase' (lnum) not available for font
+* 'AlegreyaSC-BlackItalic' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Alegreya(6)' created for font 'Alegreya' with options
+. [Ligatures = TeX,Extension = .ttf,Scale = 1,Numbers =
+. {Proportional,Lining},UprightFont = *-Black,ItalicFont =
+. *-BlackItalic,BoldFont = *-Black,BoldItalicFont =
+. *-BlackItalic,UprightFeatures = { SmallCapsFont = AlegreyaSC-Black
+. },BoldFeatures = { SmallCapsFont= AlegreyaSC-Black },ItalicFeatures = {
+. SmallCapsFont= AlegreyaSC-BlackItalic },BoldItalicFeatures = {
+. SmallCapsFont= AlegreyaSC-BlackItalic }].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Black.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mappin
+g=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Black.ttf]/OT:script=latn;language=DFLT;mapping=tex-text
+;"
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[1]"[Alegreya-Black.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;mappin
+g=tex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-Black.ttf]/OT:script=latn;language=DFLT;mapping=tex-text
+;"
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BlackItalic.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;
+mapping=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BlackItalic.ttf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[1]"[Alegreya-BlackItalic.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;
+mapping=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
+. <->s*[1]"[AlegreyaSC-BlackItalic.ttf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+.................................................
+LaTeX Info: Redefining \textin on input line 283.
+) (/usr/share/texlive/texmf-dist/tex/latex/sourcecodepro/sourcecodepro.sty
+Package: sourcecodepro 2015/10/09 v2.6 Adobe's Source Code Pro typeface
+Requested font "[SourceCodePro-Regular.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Regular.otf
+\g__fontspec_family_SourceCodePro_int=\count295
+Requested font "[SourceCodePro-Bold.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Bold.otf
+Requested font "[SourceCodePro-RegularIt.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-RegularIt.otf
+Requested font "[SourceCodePro-BoldIt.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-BoldIt.otf
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(0)' created for font 'SourceCodePro' with options
+. [Ligatures = TeX,Numbers =,Scale = .7,Extension =
+. .otf,WordSpace={1,0,0},HyphenChar=None,PunctuationSpace=WordSpace,UprightFont
+
+. = *-Regular,ItalicFont = *-RegularIt,BoldFont = *-Bold,BoldItalicFont =
+. *-BoldIt].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Regular.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \tex_hyphenchar:D \font =-1\scan_stop: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Bold.otf]/OT:script=latn;language=DFLT;mapping=tex-t
+ext;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \tex_hyphenchar:D \font =-1\scan_stop: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-RegularIt.otf]/OT:script=latn;language=DFLT;mapping=
+tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \tex_hyphenchar:D \font =-1\scan_stop: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-BoldIt.otf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+. and font adjustment code:
+. \fontdimen 2\font =1\fontdimen 2\font \fontdimen 3\font =0\fontdimen 3\font
+. \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
+. \tex_hyphenchar:D \font =-1\scan_stop: 
+.................................................
+LaTeX Info: Redefining \ttfamily on input line 118.
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(1)' created for font 'SourceCodePro' with options
+. [Ligatures = TeX,Numbers =,Scale = .7,Extension = .otf,UprightFont =
+. *-Regular,ItalicFont = *-RegularIt,BoldFont = *-Bold,BoldItalicFont =
+. *-BoldIt].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Regular.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Bold.otf]/OT:script=latn;language=DFLT;mapping=tex-t
+ext;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-RegularIt.otf]/OT:script=latn;language=DFLT;mapping=
+tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-BoldIt.otf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/lmtt/m/n --> TU/SourceCodePro(1)/m/n on input line 
+118.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/lmtt/m/n --> TU/SourceCodePro(1)/bx/n on input line
+ 118.
+Requested font "[SourceCodePro-Medium.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Medium.otf
+Requested font "[SourceCodePro-MediumIt.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-MediumIt.otf
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(2)' created for font 'SourceCodePro' with options
+. [Ligatures = TeX,Numbers =,Scale = .7,Extension = .otf,UprightFont =
+. *-Medium,ItalicFont = *-MediumIt,BoldFont = *-Bold,BoldItalicFont =
+. *-BoldIt].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Medium.otf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Bold.otf]/OT:script=latn;language=DFLT;mapping=tex-t
+ext;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-MediumIt.otf]/OT:script=latn;language=DFLT;mapping=t
+ex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-BoldIt.otf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+Requested font "[SourceCodePro-Light.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Light.otf
+Requested font "[SourceCodePro-Semibold.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Semibold.otf
+Requested font "[SourceCodePro-LightIt.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-LightIt.otf
+Requested font "[SourceCodePro-SemiboldIt.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-SemiboldIt.otf
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(3)' created for font 'SourceCodePro' with options
+. [Ligatures = TeX,Numbers =,Scale = .7,Extension = .otf,UprightFont =
+. *-Light,ItalicFont = *-LightIt,BoldFont = *-Semibold,BoldItalicFont =
+. *-SemiboldIt].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Light.otf]/OT:script=latn;language=DFLT;mapping=tex-
+text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Semibold.otf]/OT:script=latn;language=DFLT;mapping=t
+ex-text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-LightIt.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-SemiboldIt.otf]/OT:script=latn;language=DFLT;mapping
+=tex-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+Requested font "[SourceCodePro-ExtraLight.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-ExtraLight.otf
+Requested font "[SourceCodePro-Black.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Black.otf
+Requested font "[SourceCodePro-ExtraLightIt.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-ExtraLightIt.otf
+Requested font "[SourceCodePro-BlackIt.otf]/OT" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-BlackIt.otf
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(4)' created for font 'SourceCodePro' with options
+. [Ligatures = TeX,Numbers =,Scale = .7,Extension = .otf,UprightFont =
+. *-ExtraLight,ItalicFont = *-ExtraLightIt,BoldFont = *-Black,BoldItalicFont =
+. *-BlackIt].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-ExtraLight.otf]/OT:script=latn;language=DFLT;mapping
+=tex-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Black.otf]/OT:script=latn;language=DFLT;mapping=tex-
+text;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-ExtraLightIt.otf]/OT:script=latn;language=DFLT;mappi
+ng=tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-BlackIt.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SourceCodePro(5)' created for font 'SourceCodePro' with options
+. [Ligatures = TeX,Numbers =,Scale = .7,Extension = .otf,Numbers =,UprightFont
+. = *-Regular,ItalicFont = *-RegularIt,BoldFont = *-Bold,BoldItalicFont =
+. *-BoldIt].
+.  
+.  This font family consists of the following NFSS series/shapes:
+.  
+. - 'normal' (m/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Regular.otf]/OT:script=latn;language=DFLT;mapping=te
+x-text;"
+. - 'small caps'  (m/sc) with NFSS spec.: 
+. - 'bold' (bx/n) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-Bold.otf]/OT:script=latn;language=DFLT;mapping=tex-t
+ext;"
+. - 'bold small caps'  (bx/sc) with NFSS spec.: 
+. - 'italic' (m/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-RegularIt.otf]/OT:script=latn;language=DFLT;mapping=
+tex-text;"
+. - 'italic small caps'  (m/itsc) with NFSS spec.: 
+. - 'bold italic' (bx/it) with NFSS spec.:
+. <->s*[.7]"[SourceCodePro-BoldIt.otf]/OT:script=latn;language=DFLT;mapping=tex
+-text;"
+. - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+.................................................
+) (/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write4
+\openout4 = `Kungfupandas.idx'.
+
+Writing index file Kungfupandas.idx
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks23
-\thm@bodyfont=\toks24
-\thm@headfont=\toks25
-\thm@notefont=\toks26
-\thm@headpunct=\toks27
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
 \thm@preskip=\skip63
 \thm@postskip=\skip64
 \thm@headsep=\skip65
-\dth@everypar=\toks28
+\dth@everypar=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip66
 \bibsep=\skip67
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count292
+\c@NAT@ctr=\count296
 )
 No file Kungfupandas.aux.
 \openout1 = `Kungfupandas.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 129.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 129.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 212.
+LaTeX Font Info:    ... okay on input line 212.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 129.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 212.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 129.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 129.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 129.
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-\g__fontspec_family_latinmodern-math.otf_int=\count293
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 212.
+Requested font "[latinmodern-math.otf]/OT" at 10.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+\g__fontspec_family_latinmodern-math.otf_int=\count297
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'latinmodern-math.otf(0)' created for font
 . 'latinmodern-math.otf' with options
-. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math,BoldFont={l
-atinmodern-math.otf}].
+. [BoldItalicFont={},ItalicFont={},Script=Math,BoldFont={latinmodern-math.otf}]
+.
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <->s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
+. <->"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
+. <->"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 129.
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;" at 10.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'latinmodern-math.otf(1)' created for font
 . 'latinmodern-math.otf' with options
-. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math,SizeFeature
-s={{Size=8.5-},{Size=6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6
-,Font=latinmodern-math.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.
-otf}].
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=
+6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-mat
+h.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf}].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <8.5->s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<6-8.5>s*[1]
-"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-6>s*[1]"[latinm
-odern-math.otf]/OT:script=math;language=DFLT;+ssty=1;"
+. <8.5->"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<6-8.5>"[latinmod
+ern-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-6>"[latinmodern-math.otf]
+/OT:script=math;language=DFLT;+ssty=1;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 . - 'bold' (bx/n) with NFSS spec.:
-. <->s*[1]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
+. <->"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 129.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 129.
+(Font)              `operators' in the math version `normal' on input line 212.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 129.
+ line 212.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 129.
+(Font)              `operators' in the math version `bold' on input line 212.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/bx/n on inp
-ut line 129.
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
+ut line 212.
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'latinmodern-math.otf(2)' created for font
 . 'latinmodern-math.otf' with options
-. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math,SizeFeature
-s={{Size=8.5-},{Size=6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6
-,Font=latinmodern-math.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.
-otf},Scale=1.00001,FontAdjustment={\fontdimen
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=
+6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-mat
+h.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf},Scale=1.00001,Fo
+ntAdjustment={\fontdimen
 . 8\font =6.77pt\relax \fontdimen 9\font =3.94pt\relax \fontdimen 10\font
 . =4.44pt\relax \fontdimen 11\font =6.86pt\relax \fontdimen 12\font
 . =3.45pt\relax \fontdimen 13\font =3.63pt\relax \fontdimen 14\font
@@ -1131,49 +1981,24 @@ otf},Scale=1.00001,FontAdjustment={\fontdimen
 . \fontdimen 20\font =0pt\relax \fontdimen 21\font =0pt\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 129.
+(Font)              `symbols' in the math version `normal' on input line 212.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 129.
+t line 212.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 129.
+(Font)              `symbols' in the math version `bold' on input line 212.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/bx/n on inp
-ut line 129.
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
-.................................................
-. fontspec info: "set-scale"
-. 
-. latinmodern-math scale = 1.
-.................................................
+ut line 212.
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'latinmodern-math.otf(3)' created for font
 . 'latinmodern-math.otf' with options
-. [Scale=MatchLowercase,BoldItalicFont={},ItalicFont={},Script=Math,SizeFeature
-s={{Size=8.5-},{Size=6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6
-,Font=latinmodern-math.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.
-otf},Scale=0.99999,FontAdjustment={\fontdimen
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=
+6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-mat
+h.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf},Scale=0.99999,Fo
+ntAdjustment={\fontdimen
 . 8\font =0.4pt\relax \fontdimen 9\font =2.0pt\relax \fontdimen 10\font
 . =1.67pt\relax \fontdimen 11\font =1.11pt\relax \fontdimen 12\font
 . =6.0pt\relax \fontdimen 13\font =0pt\relax }].
@@ -1198,110 +2023,1779 @@ otf},Scale=0.99999,FontAdjustment={\fontdimen
 . =6.0pt\relax \fontdimen 13\font =0pt\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 1
-29.
+(Font)              `largesymbols' in the math version `normal' on input line 2
+12.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 129.
+t line 212.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 129
+(Font)              `largesymbols' in the math version `bold' on input line 212
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/bx/n on inp
-ut line 129.
-LaTeX Info: Redefining \microtypecontext on input line 129.
+ut line 212.
+LaTeX Info: Redefining \microtypecontext on input line 212.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
-(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
-File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
-ern Roman (RS)
-)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `Alegreya' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 \AtBeginShipoutBox=\box51
-Package hyperref Info: Link coloring OFF on input line 129.
+Package hyperref Info: Link coloring OFF on input line 212.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count294
+\c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 212.
+LaTeX Info: Redefining \pageref on input line 212.
+LaTeX Info: Redefining \nameref on input line 212.
 
 Package hyperref Warning: Rerun to get /PageLabels entry.
 
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 131.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 131.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 131.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 131.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 17.28pt on input line 214.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 17.28pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 214.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;" at 12.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 8.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 6.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 214.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Requested font "lmmi12" at 12.0pt
+ -> /usr/share/texmf/fonts/tfm/public/lm/lmmi12.tfm
+Requested font "lmmi8" at 8.0pt
+ -> /usr/share/texmf/fonts/tfm/public/lm/lmmi8.tfm
+Requested font "lmmi6" at 6.0pt
+ -> /usr/share/texmf/fonts/tfm/public/lm/lmmi6.tfm
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00018pt on input line 131.
+(Font)              scaled to size 12.00018pt on input line 214.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;" at 12.000
+18pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 131.
+(Font)              scaled to size 8.00012pt on input line 214.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 8.00012pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 131.
+(Font)              scaled to size 6.00009pt on input line 214.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 6.00009pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99982pt on input line 131.
+(Font)              scaled to size 11.99982pt on input line 214.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;" at 11.999
+82pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 131.
+(Font)              scaled to size 7.99988pt on input line 214.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 7.99988pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 131.
-LaTeX Font Info:    Try loading font information for U+msa on input line 131.
+(Font)              scaled to size 5.99991pt on input line 214.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 5.99991pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Try loading font information for U+msa on input line 214.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+)
+Requested font "msam10" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 131.
+Requested font "msam10" at 8.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+Requested font "msam7" at 6.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+LaTeX Font Info:    Try loading font information for U+msb on input line 214.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+)
+Requested font "msbm10" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1
+)
+Requested font "msbm10" at 8.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+Requested font "msbm7" at 6.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+[1
 
 
-] [2
 
 ]
-\tf@toc=\write4
-\openout4 = `Kungfupandas.toc'.
+File: images/dedication.pdf Graphic file (type pdf)
+<use images/dedication.pdf>
 
+Overfull \hbox (269.29347pt too wide) in paragraph at lines 220--221
+ [][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[2]
+Overfull \vbox (244.96803pt too high) has occurred while \output is active []
+
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/sl' in size <10> not available
+
+(Font)              Font shape `TU/Alegreya(0)/m/it' tried instead on input lin
+e 221.
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/it' will be
+(Font)              scaled to size 10.0pt on input line 221.
+Requested font "[Alegreya-Italic.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;
+mapping=tex-text;" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Itali
+c.ttf
 [3] [4
 
-] [5] [6
+]
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 24.88pt on input line 228.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 24.88pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/bx/n' will be
+(Font)              scaled to size 24.88pt on input line 228.
+Requested font "[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;ma
+pping=tex-text;" at 24.88pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Bold.
+ttf
+\tf@toc=\write5
+\openout5 = `Kungfupandas.toc'.
+
+[5] [6
 
 ]
-Chapter 1.
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 164.
-[7]
+Missing character: There is no ờ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 235.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 14.4pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/bx/n' will be
+(Font)              scaled to size 14.4pt on input line 235.
+Requested font "[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;ma
+pping=tex-text;" at 14.4pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Bold.
+ttf
+Missing character: There is no ớ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[7] [8
 
-! LaTeX Error: Environment rmdnote undefined.
+]
+Missing character: There is no ấ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 6.99997pt on input line 252.
+Requested font "[SourceCodePro-Regular.otf]/OT:script=latn;language=DFLT;mappin
+g=tex-text;" at 6.99997pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Regular.otf
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ồ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỗ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/bx/n' will be
+(Font)              scaled to size 6.99997pt on input line 258.
+Requested font "[SourceCodePro-Bold.otf]/OT:script=latn;language=DFLT;mapping=t
+ex-text;" at 6.99997pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Bold.otf
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/bx/n' will be
+(Font)              scaled to size 12.0pt on input line 277.
+Requested font "[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;ma
+pping=tex-text;" at 12.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Bold.
+ttf
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/bx/n' will be
+(Font)              scaled to size 10.0pt on input line 279.
+Requested font "[Alegreya-Bold.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum;ma
+pping=tex-text;" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Bold.
+ttf
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ằ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ằ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[9]
+File: images/note.png Graphic file (type bmp)
+<images/note.png>
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/bx/it' will be
+(Font)              scaled to size 10.0pt on input line 308.
+Requested font "[Alegreya-BoldItalic.ttf]/OT:script=latn;language=DFLT;+pnum;+l
+num;mapping=tex-text;" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-BoldI
+talic.ttf
+Missing character: There is no ư in font [Alegreya-BoldItalic.ttf]/OT:script=la
+tn;language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ờ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ự in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ự in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỉ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ằ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+File: images/note.png Graphic file (type bmp)
+<images/note.png>
+Missing character: There is no ư in font [Alegreya-BoldItalic.ttf]/OT:script=la
+tn;language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ằ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ự in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ấ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ể in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ữ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ệ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[10]
+Missing character: There is no ể in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ọ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[11]
+Missing character: There is no ề in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ồ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ậ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 7.01236pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;" a
+t 4.98074pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "lmmi10" at 10.0pt
+ -> /usr/share/texmf/fonts/tfm/public/lm/lmmi10.tfm
+Requested font "lmmi7" at 7.01236pt
+ -> /usr/share/texmf/fonts/tfm/public/lm/lmmi7.tfm
+Requested font "lmmi5" at 4.98074pt
+ -> /usr/share/texmf/fonts/tfm/public/lm/lmmi5.tfm
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00015pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;" at 10.000
+15pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.01247pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 7.01247pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 4.9808pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;" a
+t 4.9808pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99985pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;" at 9.9998
+5pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.01224pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;" a
+t 7.01224pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.98067pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;" a
+t 4.98067pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "msam10" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+Requested font "msam7" at 7.01236pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+Requested font "msam5" at 4.98074pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+Requested font "msbm10" at 10.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+Requested font "msbm7" at 7.01236pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+Requested font "msbm5" at 4.98074pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 7.01236pt on input line 474.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 7.01236pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 474.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 8.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;" a
+t 5.0pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "lmmi5" at 5.0pt
+ -> /usr/share/texmf/fonts/tfm/public/lm/lmmi5.tfm
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;" a
+t 5.00008pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 474.
+Requested font "[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;" a
+t 4.99992pt
+ -> /usr/share/texmf/fonts/opentype/public/lm-math/latinmodern-math.otf
+Requested font "msam5" at 5.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+Requested font "msbm5" at 5.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 474.
+Requested font "[Alegreya-Regular.ttf]/OT:script=latn;language=DFLT;+pnum;+lnum
+;mapping=tex-text;" at 6.0pt
+ -> /usr/share/texlive/texmf-dist/fonts/truetype/huerta/alegreya/Alegreya-Regul
+ar.ttf
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 5.59998pt on input line 474.
+Requested font "[SourceCodePro-Regular.otf]/OT:script=latn;language=DFLT;mappin
+g=tex-text;" at 5.59998pt
+ -> /usr/share/texlive/texmf-dist/fonts/opentype/adobe/sourcecodepro/SourceCode
+Pro-Regular.otf
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỏ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ậ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỉ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ờ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỏ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ấ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ể in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ữ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ệ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[12]
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ắ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ự in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ự in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ắ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ự in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ự in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỉ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ằ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ọ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ọ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ắ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ọ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+[13]
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ằ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỗ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ờ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.213 \begin{rmdnote}
+Underfull \vbox (badness 1173) has occurred while \output is active []
+
+Missing character: There is no Ấ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ể in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ữ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ệ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[14]
+File: images/note.png Graphic file (type bmp)
+<images/note.png>
+Missing character: There is no ư in font [Alegreya-BoldItalic.ttf]/OT:script=la
+tn;language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ờ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ắ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỗ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ử in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ồ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỏ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ờ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ử in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỗ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ơ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ố in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ử in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+[15]
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ử in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỉ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ử in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ứ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ậ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ầ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ử in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ừ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Bold.ttf]/OT:script=latn;lan
+guage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ấ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ể in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ữ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ệ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[16]
+File: images/note.png Graphic file (type bmp)
+<images/note.png>
+Missing character: There is no ư in font [Alegreya-BoldItalic.ttf]/OT:script=la
+tn;language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỉ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỗ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+
+Underfull \hbox (badness 1072) in paragraph at lines 706--707
+[]\TU/Alegreya(0)/m/n/10 Ví dụ tạo DataFrame khi \TU/SourceCodePro(0)/m/n/10 or
+ient=”columns”\TU/Alegreya(0)/m/n/10 . Với cách khởi tạo này tên các cột của
+ []
+
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+[17]
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ọ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ộ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ờ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ớ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ổ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ấ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ể in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ữ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no Ệ in font [Alegreya-Italic.ttf]/OT:script=latn;l
+anguage=DFLT;+pnum;+lnum;mapping=tex-text;!
+[18]
+File: images/note.png Graphic file (type bmp)
+<images/note.png>
+Missing character: There is no ư in font [Alegreya-BoldItalic.ttf]/OT:script=la
+tn;language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ị in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ẽ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ế in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ỉ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ở in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ụ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ấ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ả in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ữ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ệ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ủ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ạ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ặ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ư in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ợ in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ề in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+Missing character: There is no ể in font [Alegreya-Regular.ttf]/OT:script=latn;
+language=DFLT;+pnum;+lnum;mapping=tex-text;!
+! Extra }, or forgotten \endgroup.
+\endMakeFramed ...eight \z@ \penalty -100 \egroup 
+                                                  \begingroup \fb@put@frame ...
+l.870   \end{rmdnote}
                       
 Here is how much of TeX's memory you used:
- 26311 strings out of 494945
- 475623 string characters out of 6177497
- 685547 words of memory out of 5000000
- 29914 multiletter control sequences out of 15000+600000
- 533772 words of font info for 58 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 58i,6n,117p,10407b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28106 strings out of 493007
+ 517240 string characters out of 6136719
+ 729737 words of memory out of 5000000
+ 31714 multiletter control sequences out of 15000+600000
+ 537824 words of font info for 112 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 58i,8n,97p,10407b,669s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Kungfupandas.pdf (7 pages).
+Output written on Kungfupandas.pdf (18 pages).

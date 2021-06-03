@@ -1,5 +1,9 @@
 # Cấu trúc và kiểu dữ liệu 
 
+Mục tiêu của chương này là giới thiệu về các cấu trúc cơ bản trong Pandas là `Series` và `DataFrame`. 
+Trong chương này, bạn sẽ học cách khởi tạo các cấu trúc này cũng như một số thao tác cơ bản trên `Series`. 
+Bạn cũng sẽ được biết về một số kiểu dữ liệu thường dùng trong pandas và cách để giảm thiểu bộ nhớ sử dụng khi khởi tạo dữ liệu.
+
 ## Series
 Trong Pandas, `Series` là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index 
 của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. 
@@ -20,7 +24,7 @@ Trong đó `data` có thể  có dạng:
 `index` có thể truyền hoặc không, tùy vào dạng của `data` mà `index` sẽ được định nghĩa khác nhau. 
 `name` là tên của `Series`, giá trị này cũng không nhất thiết phải truyền vào.
 
-### Các cách khởi tạo {-}
+### Các cách khởi tạo
 
 **Khởi tạo Series bằng array**
 
@@ -81,7 +85,7 @@ c    1
 dtype: int64
 ```
 
-### Một số thao tác cơ bản {-}
+### Một số thao tác cơ bản
 
 Thao tác trên `Series` cũng giống với thao tác trên `numpy.array`. Ngoài ra chúng ta còn có thể 
 tác với Series dựa vào index
@@ -90,6 +94,14 @@ Ví dụ:
 
 ```{python eval=FALSE}
 In [1]: s = pd.Series(data=[0, 1, 2, 3, 4, 5], index=["a", "b", "c", "d", "e", "f"])
+```
+**Hiển thị toàn bộ giá trị của Series**
+Ta gọi thuộc tính `.values`
+
+```{python eval=FALSE}
+In [1]: s.values
+Out[1]:
+array([0, 1, 2, 3, 4, 5])
 ```
 
 **Lấy theo indice**
@@ -159,11 +171,12 @@ f    5
 dtype: int64
 ```
 
-## DataFrame
+## DataFrame {#cach-khoi-tao-data-frame}
 
 `DataFrame` là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table, 
 `DataFrame` là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập 
 hợp các Series lại với nhau.
+
 Cách khởi tạo DataFrame như sau
 
 ```{python eval=FALSE}
@@ -179,12 +192,12 @@ Cũng giống như Series, `data` của DataFrame có nhiều cách khởi tạo
 - Từ `DataFrame` khác
 
 Tùy vào cấu trúc của `data` mà chúng ta có thể bỏ qua biến `index`. Biến `columns` thể hiện tên
-của các `Series`. `dtype` sẽ định nghĩa các kiểu dữ liêu của dữ liệu, chúng ta sẽ thảo luận về nó 
+của các `Series`. `dtype` sẽ định nghĩa các kiểu dữ liệu của dữ liệu, chúng ta sẽ thảo luận về nó 
 ở phần kế tiếp của chương này. `copy` dùng để  tạo bản sao từ dữ liệu `data`, nó chỉ ảnh hưởng khi 
 `data` là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về 
 cùng 1 bộ nhớ.
 
-### Các cách khởi tạo {-}
+### Các cách khởi tạo
 
 **Khởi tạo DataFrame từ dict của Series**
 
@@ -360,7 +373,7 @@ c     2
 ```
 `name` của Series sẽ là tên cột của DataFrame và `index` của Series sẽ là index của DataFrame nếu ta không truyền các biến `index`, `columns` khi khởi tạo `pd.DataFrame`
 
-### Các hàm khởi tạo thay thế {-}
+### Các hàm khởi tạo thay thế 
 
 **DataFrame.from_dict**
 
@@ -450,7 +463,11 @@ Out[2]:
 a    1    2    NaN   NaN
 b    4    5    6.0   NaN
 ```
+
+
 ## Data type trong pandas 
+
+Để kiểm tra kiểu dữ liệu của `Series` hay `DataFrame` bạn có thể gọi thuộc tính `dtypes`. Các kiểu dữ liệu thường gặp của Pandas được mô tả theo bảng dưới đây:
 
 --------------------------------------------------------
 Các kiểu dữ liệu        Numpy/Pandas      Hiển thị        
@@ -458,7 +475,8 @@ phổ  biến               object
 --------------------    ----------------  --------------
 Boolean                 np.bool           *bool*
 
-Integer                 np.int            *int*
+Integer                 np.int,           *int*
+                        np.uint           *uint*
 
 Float                   np.float          *float*
 
@@ -470,6 +488,112 @@ Datetime                np.datetime64,    *datetime64*
 Timedelta               np.timedelta64,   *timedelta64*
                         pd.Timedelta
                         
-Category                pd.categorical    *category*              
+Category                pd.Categorical    *category*              
                      
+Complex                 np.complex        *complex*
 --------------------------------------------------------
+
+
+Ví dụ:
+
+```{python eval=FALSE}
+In [1]: df = pd.DataFrame({
+                   'col_1': [1, 0, 1, 0], 
+                   'col_2': [1.0, 2.0, 3.0, 4.0], 
+                   'col_3': ['1', '2', '3', '4'],
+                   'col_4': ['1', 2, '3', 4],
+                   'col_5': [True, False, True, False],
+                   'col_6': ['2021-06-01', '2021-06-02', '2021-06-03', '2021-06-04']})
+In [2]: df
+Out[2]:
+   col_1  col_2 col_3 col_4  col_5       col_6
+0      1    1.0     1     1   True  2021-06-01
+1      0    2.0     2     2  False  2021-06-02
+2      1    3.0     3     3   True  2021-06-03
+3      0    4.0     4     4  False  2021-06-04
+
+In [3]: df.dtypes
+Out[3]:
+col_1      int64
+col_2    float64
+col_3     object
+col_4     object
+col_5       bool
+col_6     object
+dtype: object
+```
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+
+- Nếu không khai báo kiểu dữ liệu khi khởi tạo, pandas sẽ mặc định kiểu dữ liệu là `int64`, `float64`, `object` và `bool`.
+Pandas sẽ không biết kiểu dữ liệu `timestamp` nếu không khai báo.
+
+- Chỉ có thể khai báo duy nhất 1 kiểu dữ liệu khi [khởi tạo pandas](#cach-khoi-tao-data-frame). 
+Ví dụ như tất cả dữ liệu của bạn là `int` hoặc có thể được ép kiểu về  `int`thì có thể khai báo  `dtype=np.int`
+``` 
+
+Ở ví dụ phía dưới `col_2`, `col_3`, `col_4`, `col_5`, `col_6` có thể ép về kiểu `int`, còn `col_6` thì không thể ép kiểu được.
+
+```{python eval=FALSE}
+In [1]: df = pd.DataFrame({
+                   'col_1': [1, 0, 1, 0], 
+                   'col_2': [1.0, 2.0, 3.0, 4.0], 
+                   'col_3': ['1', '2', '3', '4'],
+                   'col_4': ['1', 2, '3', 4],
+                   'col_5': [True, False, True, False],
+                   'col_6': ['2021-06-01', '2021-06-02', '2021-06-03', '2021-06-04']},
+                   dtype=np.int)
+In [2]: df
+Out[2]:
+   col_1  col_2  col_3  col_4  col_5       col_6
+0      1      1      1      1      1  2021-06-01
+1      0      2      2      2      0  2021-06-02
+2      1      3      3      3      1  2021-06-03
+3      0      4      4      4      0  2021-06-04
+
+In [3]: df.dtypes
+Out[3]:
+col_1     int64
+col_2     int64
+col_3    object
+col_4     int64
+col_5     int64
+col_6     int64
+dtype: object
+```
+
+```{block2, type='rmdtip'}
+**_Mẹo:_**
+Nếu dữ liệu có khoảng nhỏ thì thay vì khai báo kiểu `np.int`, ta có thể khai báo `np.int8` để giảm bộ nhớ lưu trữ. 
+Để xem bộ nhớ sử dụng của DataFrame, ta có thể dùng `.memory_usage()`.
+``` 
+Theo ví dụ trên, khi `dtype=np.int`
+
+```{python eval=FALSE}
+In [1]:  df.memory_usage()
+Out[1]: 
+Index    128
+col_1     32
+col_2     32
+col_3     32
+col_4     32
+col_5     32
+col_6     32
+dtype: int64
+```
+
+và sau khi thay bằng `dtype=np.int8`
+
+```{python eval=FALSE}
+In [1]:  df.memory_usage()
+Out[1]: 
+Index    128
+col_1      4
+col_2      4
+col_3      4
+col_4      4
+col_5      4
+col_6     32
+dtype: int64
+```
+Phương thức ép kiểu này được áp dụng khi bạn khởi tạo DataFrame, ngoài ra còn có hàm ép kiểu khác đối với DataFrame cho trước, nội dung này sẽ được đề cập ở [Chương 3](#Chuong-3).

@@ -454,7 +454,7 @@ Ta gọi thuộc tính \texttt{.values}
 \texttt{DataFrame} là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập
 hợp các Series lại với nhau.
 
-Cách khởi tạo DataFrame như sau \{\#cach-khoi-tao-data-frame\}
+Cách khởi tạo DataFrame như sau
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -479,7 +479,7 @@ Cũng giống như Series, \texttt{data} của DataFrame có nhiều cách khở
 \end{itemize}
 
 Tùy vào cấu trúc của \texttt{data} mà chúng ta có thể bỏ qua biến \texttt{index}. Biến \texttt{columns} thể hiện tên
-của các \texttt{Series}. \texttt{dtype} sẽ định nghĩa các kiểu dữ liệu của dữ liệu, chúng ta sẽ thảo luận về nó
+của các \texttt{Series}. \texttt{dtype} sẽ định nghĩa các kiểu dữ liêu của dữ liệu, chúng ta sẽ thảo luận về nó
 ở phần kế tiếp của chương này. \texttt{copy} dùng để tạo bản sao từ dữ liệu \texttt{data}, nó chỉ ảnh hưởng khi
 \texttt{data} là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về
 cùng 1 bộ nhớ.
@@ -827,19 +827,18 @@ Ví dụ
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{In [}\DecValTok{1}\NormalTok{]: df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
-                   \StringTok{\textquotesingle{}col\_1\textquotesingle{}}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }
-                   \StringTok{\textquotesingle{}col\_2\textquotesingle{}}\NormalTok{: [}\FloatTok{1.0}\NormalTok{, }\FloatTok{2.0}\NormalTok{, }\FloatTok{3.0}\NormalTok{, }\FloatTok{4.0}\NormalTok{], }
-                   \StringTok{\textquotesingle{}col\_3\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}4\textquotesingle{}}\NormalTok{],}
-                   \StringTok{\textquotesingle{}col\_4\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{, }\DecValTok{2}\NormalTok{, }\StringTok{\textquotesingle{}3\textquotesingle{}}\NormalTok{, }\DecValTok{4}\NormalTok{],}
-                   \StringTok{\textquotesingle{}col\_5\textquotesingle{}}\NormalTok{: [}\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{],}
-                   \StringTok{\textquotesingle{}col\_6\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}2021{-}06{-}01\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}02\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}03\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}04\textquotesingle{}}\NormalTok{]\})}
+                           \StringTok{\textquotesingle{}col\_1\textquotesingle{}}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }
+                           \StringTok{\textquotesingle{}col\_2\textquotesingle{}}\NormalTok{: [}\FloatTok{1.0}\NormalTok{, }\FloatTok{2.0}\NormalTok{, }\FloatTok{3.0}\NormalTok{, }\FloatTok{4.0}\NormalTok{], }
+                           \StringTok{\textquotesingle{}col\_3\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}4\textquotesingle{}}\NormalTok{],}
+                           \StringTok{\textquotesingle{}col\_4\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{, }\DecValTok{2}\NormalTok{, }\StringTok{\textquotesingle{}3\textquotesingle{}}\NormalTok{, }\DecValTok{4}\NormalTok{],}
+                           \StringTok{\textquotesingle{}col\_5\textquotesingle{}}\NormalTok{: [}\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{]\})}
 \NormalTok{In [}\DecValTok{2}\NormalTok{]: df}
 \NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
-\NormalTok{   col\_1  col\_2 col\_3 col\_4  col\_5       col\_6}
-\DecValTok{0}      \DecValTok{1}    \FloatTok{1.0}     \DecValTok{1}     \DecValTok{1}   \VariableTok{True}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{06}\OperatorTok{{-}}\DecValTok{01}
-\DecValTok{1}      \DecValTok{0}    \FloatTok{2.0}     \DecValTok{2}     \DecValTok{2}  \VariableTok{False}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{06}\OperatorTok{{-}}\DecValTok{02}
-\DecValTok{2}      \DecValTok{1}    \FloatTok{3.0}     \DecValTok{3}     \DecValTok{3}   \VariableTok{True}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{06}\OperatorTok{{-}}\DecValTok{03}
-\DecValTok{3}      \DecValTok{0}    \FloatTok{4.0}     \DecValTok{4}     \DecValTok{4}  \VariableTok{False}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{06}\OperatorTok{{-}}\DecValTok{04}
+\NormalTok{   col\_1  col\_2 col\_3 col\_4  col\_5}
+\DecValTok{0}      \DecValTok{1}    \FloatTok{1.0}     \DecValTok{1}     \DecValTok{1}   \VariableTok{True}
+\DecValTok{1}      \DecValTok{0}    \FloatTok{2.0}     \DecValTok{2}     \DecValTok{2}  \VariableTok{False}
+\DecValTok{2}      \DecValTok{1}    \FloatTok{3.0}     \DecValTok{3}     \DecValTok{3}   \VariableTok{True}
+\DecValTok{3}      \DecValTok{0}    \FloatTok{4.0}     \DecValTok{4}     \DecValTok{4}  \VariableTok{False}
 \end{Highlighting}
 \end{Shaded}
 
@@ -852,23 +851,11 @@ Ví dụ
 \NormalTok{col\_3     }\BuiltInTok{object}
 \NormalTok{col\_4     }\BuiltInTok{object}
 \NormalTok{col\_5       }\BuiltInTok{bool}
-\NormalTok{col\_6     }\BuiltInTok{object}
 \NormalTok{dtype: }\BuiltInTok{object}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{rmdnote}
-\textbf{\emph{Lưu ý:}}
-
-\begin{itemize}
-\item
-  Nếu không khai báo kiểu dữ liệu khi khởi tạo, pandas sẽ mặc định kiểu dữ liệu là \texttt{int64}, \texttt{float64}, \texttt{object} và \texttt{bool}.
-  Pandas sẽ không biết kiểu dữ liệu \texttt{timestamp} nếu không khai báo.
-\item
-  Chỉ có thể khai báo duy nhất 1 kiểu dữ liệu khi \protect\hyperlink{cach-khoi-tao-data-frame}{khởi tạo pandas}.
-  Ví dụ như tất cả dữ liệu của bạn là \texttt{int} hoặc có thể được ép kiểu về \texttt{int}thì có thể khai báo \texttt{dtype=np.int}
-  \end{rmdnote}
-\end{itemize}
+Nếu không khai báo kiểu dữ liệu khi khởi tạo, pandas sẽ mặc định kiểu dữ liệu là \texttt{int64}, \texttt{float64} và \texttt{object} và \texttt{bool}.
 
 \hypertarget{nhux1eadp-xuux1ea5t-trong-pandas}{%
 \chapter{Nhập xuất trong pandas}\label{nhux1eadp-xuux1ea5t-trong-pandas}}
