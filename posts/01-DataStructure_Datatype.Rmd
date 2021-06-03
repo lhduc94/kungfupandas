@@ -2,12 +2,12 @@
 
 Mục tiêu của chương này là giới thiệu về các cấu trúc cơ bản trong Pandas là `Series` và `DataFrame`. 
 Trong chương này, bạn sẽ học cách khởi tạo các cấu trúc này cũng như một số thao tác cơ bản trên `Series`. 
-Bạn cũng sẽ được biết về một số kiểu dữ liệu thường dùng trong pandas và cách để giảm thiểu bộ nhớ sử dụng khi khởi tạo dữ liệu.
+Bạn cũng sẽ được biết về một số kiểu dữ liệu thường gặp trong pandas và cách để giảm thiểu bộ nhớ sử dụng khi khởi tạo dữ liệu.
 
 ## Series
 Trong Pandas, `Series` là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index 
 của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. 
-Cách đơn giản để tạo 1 series như sau
+Cách đơn giản để tạo Series như sau
 
 ```{python eval=FALSE}
 s = pd.Series(data, index=None, name=None)
