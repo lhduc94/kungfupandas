@@ -1,5 +1,5 @@
 bookdown::gitbook:
-  css: [css/style.css, css/toc.css]
+  css: [css/style.css, css/toc.css, css/highlight.css]
   config:
     toc:
       toc_depth: 2
@@ -18,7 +18,6 @@ bookdown::gitbook:
     sharing:
       github: yes
       facebook: yes
-  highlight: breezedark
 
 bookdown::pdf_book:
   includes:

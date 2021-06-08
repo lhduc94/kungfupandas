@@ -10,5 +10,4 @@ description: "Kungfu Panda"
 
 # Lời nói đầu {-}
 ## Giới thiệu cuốn sách {-}
-## Cài đặt Jupyter Lab {-}
-## Cài đặt Pandas {-}
+## Giới thiệu tác giả {-}

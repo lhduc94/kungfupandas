@@ -1,6 +1,6 @@
 # Cấu trúc và kiểu dữ liệu 
 
-Mục tiêu của chương này là giới thiệu về các cấu trúc cơ bản trong Pandas là `Series` và `DataFrame`. 
+Mục tiêu của chương này nhằm giới thiệu về các cấu trúc cơ bản trong Pandas là `Series` và `DataFrame`. 
 Trong chương này, bạn sẽ học cách khởi tạo các cấu trúc này cũng như một số thao tác cơ bản trên `Series`. 
 Bạn cũng sẽ được biết về một số kiểu dữ liệu thường gặp trong pandas và cách để giảm thiểu bộ nhớ sử dụng khi khởi tạo dữ liệu.
 
@@ -467,7 +467,8 @@ b    4    5    6.0   NaN
 
 ## Data type trong pandas 
 
-Để kiểm tra kiểu dữ liệu của `Series` hay `DataFrame` bạn có thể gọi thuộc tính `dtypes`. Các kiểu dữ liệu thường gặp của Pandas được mô tả theo bảng dưới đây:
+Để kiểm tra kiểu dữ liệu của `Series` hay `DataFrame` bạn có thể gọi thuộc tính `dtypes` hoặc phương thức `.info()`. 
+Các kiểu dữ liệu thường gặp của Pandas được mô tả theo bảng dưới đây:
 
 --------------------------------------------------------
 Các kiểu dữ liệu        Numpy/Pandas      Hiển thị        
@@ -532,7 +533,7 @@ Pandas sẽ không biết kiểu dữ liệu `timestamp` nếu không khai báo.
 Ví dụ như tất cả dữ liệu của bạn là `int` hoặc có thể được ép kiểu về  `int`thì có thể khai báo  `dtype=np.int`
 ``` 
 
-Ở ví dụ phía dưới `col_2`, `col_3`, `col_4`, `col_5`, `col_6` có thể ép về kiểu `int`, còn `col_6` thì không thể ép kiểu được.
+Ở ví dụ phía dưới `col_1`, `col_2`, `col_3`, `col_4`, `col_5` có thể ép về kiểu `int`, còn `col_6` thì không thể ép kiểu được.
 
 ```{python eval=FALSE}
 In [1]: df = pd.DataFrame({
@@ -564,8 +565,10 @@ dtype: object
 
 ```{block2, type='rmdtip'}
 **_Mẹo:_**
-Nếu dữ liệu có khoảng nhỏ thì thay vì khai báo kiểu `np.int`, ta có thể khai báo `np.int8` để giảm bộ nhớ lưu trữ. 
+Nếu dữ liệu có khoảng nhỏ thì thay vì khai báo kiểu `np.int`, ta có thể khai báo kiểu `integer` với số byte phù hợp để giảm bộ nhớ lưu trữ. 
 Để xem bộ nhớ sử dụng của DataFrame, ta có thể dùng `.memory_usage()`.
+
+Một số kiểu integer trong numpy như `np.int8`, `np.int16`, `np.int32`, `np.int64`, `np.uint8`, `np.uint16`, `np.uint32`, `np.uint64`
 ``` 
 Theo ví dụ trên, khi `dtype=np.int`
 
