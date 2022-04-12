@@ -8,6 +8,8 @@ các-hàm-khởi-tạo-thay-thế
 data-type-trong-pandas
 nhập-xuất-trong-pandas
 đọc-và-lưu-file
+đọc-file-csv-tsv
+xuất-file-csv-tsv
 cấu-hình-pandas
 Chuong-3
 lặp-trong-pandas
