@@ -12,10 +12,12 @@ nhập-xuất-trong-pandas
 xuất-file-csv-tsv
 đọc-file-excel
 xuất-file-excel
+đọc-file-json
+xuất-file-json
 cấu-hình-pandas
 Chuong-3
 lặp-trong-pandas
-sử-dụng-vectorizer
+sử-dụng-column-element-wise
 sử-dụng-apply
 sử-dụng-iterator
 xử-lý-song-song-trong-pandas

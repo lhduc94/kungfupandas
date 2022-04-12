@@ -1,5 +1,5 @@
 # Lặp trong Pandas 
-## Sử dụng vectorizer
+## Sử dụng column element-wise
 ## Sử dụng apply
 ## Sử dụng iterator
 ## Xử lý song song trong pandas

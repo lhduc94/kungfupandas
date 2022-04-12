@@ -162,4 +162,8 @@ with pd.ExcelWriter('mul_sheets.xlsx', mode='a', if_sheet_exists='new', engine='
     for df, sheet_name in zip([df1, df2, df3], sheet_names):
         df.to_excel(writer, sheet_name)
 ```
+
+### Đọc file json
+
+### Xuất file json
 ## Cấu hình pandas 
