@@ -41,6 +41,22 @@ date
 ```
 ### Xuất file csv, tsv
 
+Để lưu `DataFrame` dưới dạng file ta có thể dùng câu lệnh `.to_csv()` theo cú pháp sau
 
+```python
+df.to_csv(filename, sep=',', columns=None, header=True, index=True)
+```
+Trong đó:
+- `filename` là địa chỉ file mà bạn muốn lưu lại
+- `sep` tương tự như lúc đọc file
+- `columns` là tên các cột bạn muốn lưu xuống, nếu muốn lưu tất cả các cột thì bạn có thể bỏ qua tham số này.
+- `header` mặc định là `True` nếu bạn muốn lưu tên cột
+- `index` mặc định là `True` nếu bạn muốn lưu index của bảng.
+
+Ví dụ
+
+```python
+df.to_csv('sales.csv', columns='weekly_sales', index=False)
+```
 
 ## Cấu hình pandas 
