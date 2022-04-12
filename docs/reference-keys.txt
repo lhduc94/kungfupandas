@@ -17,10 +17,6 @@ xuất-file-json
 cấu-hình-pandas
 Chuong-3
 lặp-trong-pandas
-sử-dụng-column-element-wise
-sử-dụng-apply
-sử-dụng-iterator
-xử-lý-song-song-trong-pandas
 select-và-filter
 index
 loc-và-iloc

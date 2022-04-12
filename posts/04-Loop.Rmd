@@ -1,4 +1,5 @@
 # Lặp trong Pandas 
+meo meo
 ## Sử dụng column element-wise
 ## Sử dụng apply
 ## Sử dụng iterator
