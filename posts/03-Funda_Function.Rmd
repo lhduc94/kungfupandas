@@ -4,7 +4,7 @@
 df = pd.read_csv('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv',index_col=['Unnamed: 0'])
 ```
 
-### `.head(n=5)` và `.tail(n=5)`
+## `.head()` và `.tail()`
 
 Phương thức `.head(n=5)` hiển thị `n` dòng đầu tiên của `DataFrame`, ngược lại phương thức `.tail(n=5)` hiển thị `n` dòng cuối cùng của `DataFrame`
 
@@ -43,7 +43,7 @@ Out[2]:
 
 ```
 
-### `.shape` và `.size`
+## `.shape` và `.size`
 
 Phương thức `.shape` cho biết số lượng dòng và cột của bảng
 
@@ -60,7 +60,7 @@ Out[3]: (10774, 9)
  Out[4]: 96966
 ```
 
-### `.info()`
+## `.info()`
 
  Phương thức `.info()` dùng để xem một số thông tin cơ bản như
  
@@ -98,7 +98,7 @@ Phương thức `.info()` có các tham số để tùy chỉnh các thông tin 
 `info(verbose=None, buf=None, max_cols=None, memory_usage=None, show_counts=None, null_counts=None)`
 ``` 
 
-### `.describe()`
+## `.describe()`
 
 Phương thức `.describe()` đưa ra một số thống kê đơn giản như `count`, `mean`, `std`, `min`, `max` và `percentiles = [0.25, 0.5, 0.75]`. Phương thức này chỉ áp dụng cho các cột ở dạng `numerical`.
 
@@ -156,7 +156,7 @@ min                0.664129      3.879000
 max                1.107674      9.765000  
 ``` 
 
-### `.memory_usage()`
+## `.memory_usage()`
 
 Phương thức `.memory_usage(index=True, deep=False)` giúp thông kê dung lượng của từng cột. Trong đó `index` trả về dung lượng của phần đánh index và `deep` nếu đặt giá trị `True` sẽ trả về cách tính toán sâu hơn về bộ nhớ cho kiểu `object`
 
@@ -192,7 +192,7 @@ fuel_price_usd_per_l     86192
 unemployment             86192
 dtype: int64
 ```
-### Lấy Series trong pandas
+## Lấy Series trong pandas
 Sử dụng `[<tên cột>]` để lấy 1 Series của bảng. Ví dụ để lấy cột `department` ta làm như sau
 
 ```python
@@ -213,7 +213,7 @@ Name: department, Length: 10774, dtype: int64
 ```
 những Series này cũng có thế áp dụng các phương thức tương tự của `DataFrame` như `.head()`, `.tail()`....
 
-### Ép kiểu dữ liệu với `.astype()`
+## Ép kiểu dữ liệu với `.astype()`
 
 Với phương thức `.astype()` ta có thể ép kiểu dữ liệu của cột về dạng khác. Việc ép kiểu này giúp thay đổi kiểu dữ liệu để tiện các thao tác như nối 2 cột có 2 kiểu `str` và `int`, ngoài ra việc ép kiểu cũng giúp giảm được dung lượng bộ nhớ dành cho bảng. 
 
