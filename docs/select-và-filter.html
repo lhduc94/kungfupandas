@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chương 5 Select và Filter | Kungfu Pandas</title>
+  <title>Chương 4 Select và Filter | Kungfu Pandas</title>
   <meta name="description" content="Kungfu Panda" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chương 5 Select và Filter | Kungfu Pandas" />
+  <meta property="og:title" content="Chương 4 Select và Filter | Kungfu Pandas" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Kungfu Panda" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chương 5 Select và Filter | Kungfu Pandas" />
+  <meta name="twitter:title" content="Chương 4 Select và Filter | Kungfu Pandas" />
   
   <meta name="twitter:description" content="Kungfu Panda" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="lặp-trong-pandas.html"/>
-<link rel="next" href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"/>
+<link rel="prev" href="Chuong-3.html"/>
+<link rel="next" href="tính-toán-trên-các-phần-tử-trong-pandas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -170,13 +170,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="nhập-xuất-trong-pandas.html#cấu-hình-pandas" id="toc-cấu-hình-pandas"><span class="toc-section-number">2.2</span> Cấu hình pandas<span></span></a></li>
 </ul></li>
-<li><a href="Chuong-3.html#Chuong-3" id="toc-Chuong-3"><span class="toc-section-number">3</span> Một số hàm cơ bản<span></span></a></li>
-<li><a href="lặp-trong-pandas.html#lặp-trong-pandas" id="toc-lặp-trong-pandas"><span class="toc-section-number">4</span> Lặp trong Pandas<span></span></a></li>
-<li><a href="select-và-filter.html#select-và-filter" id="toc-select-và-filter"><span class="toc-section-number">5</span> Select và Filter<span></span></a>
+<li><a href="Chuong-3.html#Chuong-3" id="toc-Chuong-3"><span class="toc-section-number">3</span> Một số hàm cơ bản<span></span></a>
 <ul>
-<li><a href="select-và-filter.html#index" id="toc-index"><span class="toc-section-number">5.1</span> Index<span></span></a></li>
-<li><a href="select-và-filter.html#loc-và-iloc" id="toc-loc-và-iloc"><span class="toc-section-number">5.2</span> loc và iloc<span></span></a></li>
-<li><a href="select-và-filter.html#lọc-theo-điều-kiện" id="toc-lọc-theo-điều-kiện"><span class="toc-section-number">5.3</span> Lọc theo điều kiện<span></span></a></li>
+<li><a href="Chuong-3.html#headn5-và-.tailn5" id="toc-headn5-và-.tailn5"><span class="toc-section-number">3.0.1</span> <code>.head(n=5)</code> và <code>.tail(n=5)</code><span></span></a></li>
+<li><a href="Chuong-3.html#shape-và-.size" id="toc-shape-và-.size"><span class="toc-section-number">3.0.2</span> <code>.shape</code> và <code>.size</code><span></span></a></li>
+<li><a href="Chuong-3.html#info" id="toc-info"><span class="toc-section-number">3.0.3</span> <code>.info()</code><span></span></a></li>
+<li><a href="Chuong-3.html#describe" id="toc-describe"><span class="toc-section-number">3.0.4</span> <code>.describe()</code><span></span></a></li>
+<li><a href="Chuong-3.html#memory_usage" id="toc-memory_usage"><span class="toc-section-number">3.0.5</span> <code>.memory_usage()</code><span></span></a></li>
+<li><a href="Chuong-3.html#lấy-series-trong-pandas" id="toc-lấy-series-trong-pandas"><span class="toc-section-number">3.0.6</span> Lấy Series trong pandas<span></span></a></li>
+<li><a href="Chuong-3.html#ép-kiểu-dữ-liệu-với-.astype" id="toc-ép-kiểu-dữ-liệu-với-.astype"><span class="toc-section-number">3.0.7</span> Ép kiểu dữ liệu với <code>.astype()</code><span></span></a></li>
+</ul></li>
+<li><a href="select-và-filter.html#select-và-filter" id="toc-select-và-filter"><span class="toc-section-number">4</span> Select và Filter<span></span></a>
+<ul>
+<li><a href="select-và-filter.html#index" id="toc-index"><span class="toc-section-number">4.1</span> Index<span></span></a></li>
+<li><a href="select-và-filter.html#loc-và-iloc" id="toc-loc-và-iloc"><span class="toc-section-number">4.2</span> loc và iloc<span></span></a></li>
+<li><a href="select-và-filter.html#lọc-theo-điều-kiện" id="toc-lọc-theo-điều-kiện"><span class="toc-section-number">4.3</span> Lọc theo điều kiện<span></span></a></li>
+</ul></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" id="toc-tính-toán-trên-các-phần-tử-trong-pandas"><span class="toc-section-number">5</span> Tính toán trên các phần tử trong Pandas<span></span></a>
+<ul>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-column-element-wise" id="toc-sử-dụng-column-element-wise"><span class="toc-section-number">5.1</span> Sử dụng column element-wise<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply" id="toc-sử-dụng-apply"><span class="toc-section-number">5.2</span> Sử dụng apply<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator" id="toc-sử-dụng-iterator"><span class="toc-section-number">5.3</span> Sử dụng iterator<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas" id="toc-xử-lý-song-song-trong-pandas"><span class="toc-section-number">5.4</span> Xử lý song song trong pandas<span></span></a></li>
 </ul></li>
 <li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#các-cách-phối-hợp-nhiều-bảng-với-nhau" id="toc-các-cách-phối-hợp-nhiều-bảng-với-nhau"><span class="toc-section-number">6</span> Các cách phối hợp nhiều bảng với nhau<span></span></a>
 <ul>
@@ -221,16 +236,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="select-và-filter" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chương 5</span> Select và Filter<a href="select-và-filter.html#select-và-filter" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="index" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Index<a href="select-và-filter.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="select-và-filter" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chương 4</span> Select và Filter<a href="select-và-filter.html#select-và-filter" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="index" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Index<a href="select-và-filter.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="loc-và-iloc" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> loc và iloc<a href="select-và-filter.html#loc-và-iloc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="loc-và-iloc" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> loc và iloc<a href="select-và-filter.html#loc-và-iloc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="lọc-theo-điều-kiện" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Lọc theo điều kiện<a href="select-và-filter.html#lọc-theo-điều-kiện" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lọc-theo-điều-kiện" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Lọc theo điều kiện<a href="select-và-filter.html#lọc-theo-điều-kiện" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -239,8 +254,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="lặp-trong-pandas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chuong-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tính-toán-trên-các-phần-tử-trong-pandas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

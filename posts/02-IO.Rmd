@@ -150,7 +150,7 @@ writer.save()
 **_Mẹo:_**
 Có thể dùng `with` để mở file để tránh trường hợp quên gọi lệnh `.save()`, lệnh `with` sẽ tự động lưu file sau khi kết thúc các lệnh con trong nó
 ``` 
-
+a
 ```python
 import pandas as pd
 df1 = pd.DataFrame({'col_1': [2, 3, 4, 5]})
@@ -164,6 +164,7 @@ with pd.ExcelWriter('mul_sheets.xlsx', mode='a', if_sheet_exists='new', engine='
 ```
 
 ### Đọc file json
+
 `JSON` là 1 dạng dữ liệu khá phổ biến trong thực tế. `Pandas` hỗ trợ đọc file `JSON` theo phương thức sau
 
 ```python

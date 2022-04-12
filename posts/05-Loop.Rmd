@@ -1,5 +1,4 @@
-# Lặp trong Pandas 
-meo meo
+# Tính toán trên các phần tử trong Pandas 
 ## Sử dụng column element-wise
 ## Sử dụng apply
 ## Sử dụng iterator

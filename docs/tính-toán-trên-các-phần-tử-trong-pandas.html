@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chương 11 Visualize với Matplotlib | Kungfu Pandas</title>
+  <title>Chương 5 Tính toán trên các phần tử trong Pandas | Kungfu Pandas</title>
   <meta name="description" content="Kungfu Panda" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chương 11 Visualize với Matplotlib | Kungfu Pandas" />
+  <meta property="og:title" content="Chương 5 Tính toán trên các phần tử trong Pandas | Kungfu Pandas" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Kungfu Panda" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chương 11 Visualize với Matplotlib | Kungfu Pandas" />
+  <meta name="twitter:title" content="Chương 5 Tính toán trên các phần tử trong Pandas | Kungfu Pandas" />
   
   <meta name="twitter:description" content="Kungfu Panda" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="anomaly-detection-project.html"/>
-
+<link rel="prev" href="select-và-filter.html"/>
+<link rel="next" href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -236,17 +236,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="visualize-với-matplotlib" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Chương 11</span> Visualize với Matplotlib<a href="visualize-với-matplotlib.html#visualize-với-matplotlib" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tính-toán-trên-các-phần-tử-trong-pandas" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chương 5</span> Tính toán trên các phần tử trong Pandas<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sử-dụng-column-element-wise" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Sử dụng column element-wise<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-column-element-wise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="sử-dụng-apply" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Sử dụng apply<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="sử-dụng-iterator" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Sử dụng iterator<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="xử-lý-song-song-trong-pandas" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Xử lý song song trong pandas<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="anomaly-detection-project.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="select-và-filter.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

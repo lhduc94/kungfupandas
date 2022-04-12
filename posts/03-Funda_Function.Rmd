@@ -4,7 +4,7 @@
 df = pd.read_csv('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv',index_col=['Unnamed: 0'])
 ```
 
-**`.head(n=5)` và `.tail(n=5)`**
+### `.head(n=5)` và `.tail(n=5)`
 
 Phương thức `.head(n=5)` hiển thị `n` dòng đầu tiên của `DataFrame`, ngược lại phương thức `.tail(n=5)` hiển thị `n` dòng cuối cùng của `DataFrame`
 
@@ -43,7 +43,7 @@ Out[2]:
 
 ```
 
-**`.shape` và `.size`** 
+### `.shape` và `.size`
 
 Phương thức `.shape` cho biết số lượng dòng và cột của bảng
 
@@ -51,7 +51,7 @@ Phương thức `.shape` cho biết số lượng dòng và cột của bảng
 In [3]: df.shape
 Out[3]: (10774, 9)
 ```
- Trong dó 10774 là số lượng dòng của bảng và 9 là số lượng cột của bảng
+ Trong dó `10774` là số lượng dòng của bảng và `9` là số lượng cột của bảng
 
  Phương thức `.size` cho biết số lượng phần từ của bảng
 
@@ -60,7 +60,7 @@ Out[3]: (10774, 9)
  Out[4]: 96966
 ```
 
- **`.info()`**
+### `.info()`
 
  Phương thức `.info()` dùng để xem một số thông tin cơ bản như
  
@@ -95,10 +95,10 @@ memory usage: 768.1+ KB
 ```{block2, type='rmdtip'}
 **_Mẹo:_**
 Phương thức `.info()` có các tham số để tùy chỉnh các thông tin có thể xem. Bạn có thể giới hạn các thông tin theo các tham số dưới đây
-info(verbose=None, buf=None, max_cols=None, memory_usage=None, show_counts=None, null_counts=None)
+`info(verbose=None, buf=None, max_cols=None, memory_usage=None, show_counts=None, null_counts=None)`
 ``` 
 
-**`.describe()`**
+### `.describe()`
 
 Phương thức `.describe()` đưa ra một số thống kê đơn giản như `count`, `mean`, `std`, `min`, `max` và `percentiles = [0.25, 0.5, 0.75]`. Phương thức này chỉ áp dụng cho các cột ở dạng `numerical`.
 
@@ -128,5 +128,110 @@ max                1.107674      9.765000
 
 ```{block2, type='rmdtip'}
 **_Mẹo:_**
-Bạn có thể thay đổi thông số percentiles bằng cách truyền tham số này vào trong `.describe(percentiles=[0.1,0.99])`
+Bạn có thể thay đổi thông số percentiles bằng cách truyền tham số này vào trong `.describe()`
+```
+
+Ví dụ 
+```python
+In [7]: df.describe(pecentiles=[0.1, 0.25, 0.5, 0.75, 0.99])
+Out[7]: 
+              store    department   weekly_sales  temperature_c  \
+count  10774.000000  10774.000000   10774.000000   10774.000000   
+mean      15.441897     45.218118   23843.950149      15.731978   
+std       11.534511     29.867779   30220.387557       9.922446   
+min        1.000000      1.000000   -1098.000000      -8.366667   
+10%        2.000000      8.000000     607.695000       2.577778   
+50%       13.000000     40.000000   12049.065000      16.966667   
+99%       39.000000     99.000000  142193.400300      32.388889   
+max       39.000000     99.000000  293966.050000      33.827778   
+
+       fuel_price_usd_per_l  unemployment  
+count          10774.000000  10774.000000  
+mean               0.749746      8.082009  
+std                0.059494      0.624355  
+min                0.664129      3.879000  
+10%                0.687640      7.127000  
+50%                0.743381      8.099000  
+99%                0.978565      9.765000  
+max                1.107674      9.765000  
 ``` 
+
+### `.memory_usage()`
+
+Phương thức `.memory_usage(index=True, deep=False)` giúp thông kê dung lượng của từng cột. Trong đó `index` trả về dung lượng của phần đánh index và `deep` nếu đặt giá trị `True` sẽ trả về cách tính toán sâu hơn về bộ nhớ cho kiểu `object`
+
+Ví dụ
+
+```python
+In [8]: df.memory_usage(index=False)
+Out[8]: 
+
+store                   86192
+type                    86192
+department              86192
+date                    86192
+weekly_sales            86192
+is_holiday              10774
+temperature_c           86192
+fuel_price_usd_per_l    86192
+unemployment            86192
+dtype: int64
+
+In [9]: df.memory_usage(deep=True) 
+Out[9]: 
+
+Index                    86192
+store                    86192
+type                    624892
+department               86192
+date                    721858
+weekly_sales             86192
+is_holiday               10774
+temperature_c            86192
+fuel_price_usd_per_l     86192
+unemployment             86192
+dtype: int64
+```
+### Lấy Series trong pandas
+Sử dụng `[<tên cột>]` để lấy 1 Series của bảng. Ví dụ để lấy cột `department` ta làm như sau
+
+```python
+In [10]: df['department']
+Out[10]: 
+0         1
+1         1
+2         1
+3         1
+4         1
+         ..
+10769    99
+10770    99
+10771    99
+10772    99
+10773    99
+Name: department, Length: 10774, dtype: int64
+```
+những Series này cũng có thế áp dụng các phương thức tương tự của `DataFrame` như `.head()`, `.tail()`....
+
+### Ép kiểu dữ liệu với `.astype()`
+
+Với phương thức `.astype()` ta có thể ép kiểu dữ liệu của cột về dạng khác. Việc ép kiểu này giúp thay đổi kiểu dữ liệu để tiện các thao tác như nối 2 cột có 2 kiểu `str` và `int`, ngoài ra việc ép kiểu cũng giúp giảm được dung lượng bộ nhớ dành cho bảng. 
+
+Ở ví dụ trên, ta thấy cột `department` có giá trị max là `99` nhưng được mặc định là `int64` khá lãng phí, do đó ép kiểu về `int8`
+
+Trước khi ép kiểu
+```python
+In [11]: df['department'].dtypes
+Out[11]: dtype('int64')
+
+In [12]: df['department'].memory_usage()
+Out[12]: 
+172384
+```
+Sau khi ép kiểu
+
+```python
+In [13]: df['department'].astype('int8').memory_usage()
+Out[13]: 
+99710
+```
