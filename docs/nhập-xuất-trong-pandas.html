@@ -163,6 +163,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="nhập-xuất-trong-pandas.html#đọc-file-csv-tsv" id="toc-đọc-file-csv-tsv"><span class="toc-section-number">2.1.1</span> Đọc file csv, tsv<span></span></a></li>
 <li><a href="nhập-xuất-trong-pandas.html#xuất-file-csv-tsv" id="toc-xuất-file-csv-tsv"><span class="toc-section-number">2.1.2</span> Xuất file csv, tsv<span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#đọc-file-excel" id="toc-đọc-file-excel"><span class="toc-section-number">2.1.3</span> Đọc file Excel<span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#xuất-file-excel" id="toc-xuất-file-excel"><span class="toc-section-number">2.1.4</span> Xuất file Excel<span></span></a></li>
 </ul></li>
 <li><a href="nhập-xuất-trong-pandas.html#cấu-hình-pandas" id="toc-cấu-hình-pandas"><span class="toc-section-number">2.2</span> Cấu hình pandas<span></span></a></li>
 </ul></li>
@@ -236,16 +238,18 @@ hàm phụ trợ của Pandas.</p>
 <h3><span class="header-section-number">2.1.1</span> Đọc file csv, tsv<a href="nhập-xuất-trong-pandas.html#đọc-file-csv-tsv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Chúng ta có thể đọc file csv với pandas theo lệnh sau</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="nhập-xuất-trong-pandas.html#cb37-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(filepath, sep<span class="op">=</span><span class="st">&#39;,&#39;</span>, names<span class="op">=</span>NoDefault.no_default, index_col<span class="op">=</span><span class="va">None</span>, usecols<span class="op">=</span><span class="va">None</span>, dtype<span class="op">=</span><span class="va">None</span>, skiprows<span class="op">=</span><span class="va">None</span>, skipfooter<span class="op">=</span><span class="dv">0</span>, nrows<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
-<p>Trong đó:
-- <code>filepath</code> là đường dẫn đến file trong máy hoặc đường link URL
-- <code>sep</code> dùng để nhận diện cách chia thành cột, nếu không truyền tham số này thì <code>pandas</code> tự hiểu là chia theo <code>','</code>, ngoài ra có thể chia theo <code>';'</code> đối với macOS và <code>'\t'</code> với file có định dạng <code>.tsv</code>
-- <code>names</code> là tên các cột của bảng. Nếu bảng đã có tên cột thì nên bỏ qua tham số này, <code>pandas</code> sẽ lấy dòng đầu tiên của file làm tên cột.
-- <code>index_col</code> dùng để chỉ định vị trí các cột dùng để làm index cho bảng.
-- <code>usecols</code> dùng để chỉ định vị trí hoặc tên các cột cần đọc.
-- <code>dtype</code> dùng để định dạng kiểu dữ liệu của các cột.
-- <code>skiprows</code> được dùng khi muốn bỏ qua một số dòng đầu của bảng.
-- <code>skipfooter</code> tương tự như <code>skiprows</code> nhưng sẽ bỏ qua các dòng cuối cùng của bảng.
-- <code>nrows</code> dùng để chỉ định số lượng dòng của bạn mà bạn sẽ đọc bằng <code>pandas</code></p>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>filepath</code> là đường dẫn đến file trong máy hoặc đường link URL</p></li>
+<li><p><code>sep</code> dùng để nhận diện cách chia thành cột, nếu không truyền tham số này thì <code>pandas</code> tự hiểu là chia theo <code>','</code>, ngoài ra có thể chia theo <code>';'</code> đối với macOS và <code>'\t'</code> với file có định dạng <code>.tsv</code></p></li>
+<li><p><code>names</code> là tên các cột của bảng. Nếu bảng đã có tên cột thì nên bỏ qua tham số này, <code>pandas</code> sẽ lấy dòng đầu tiên của file làm tên cột.</p></li>
+<li><p><code>index_col</code> dùng để chỉ định vị trí các cột dùng để làm index cho bảng.</p></li>
+<li><p><code>usecols</code> dùng để chỉ định vị trí hoặc tên các cột cần đọc.</p></li>
+<li><p><code>dtype</code> dùng để định dạng kiểu dữ liệu của các cột.</p></li>
+<li><p><code>skiprows</code> được dùng khi muốn bỏ qua một số dòng đầu của bảng.</p></li>
+<li><p><code>skipfooter</code> tương tự như <code>skiprows</code> nhưng sẽ bỏ qua các dòng cuối cùng của bảng.</p></li>
+<li><p><code>nrows</code> dùng để chỉ định số lượng dòng của bạn mà bạn sẽ đọc bằng <code>pandas</code></p></li>
+</ul>
 <p><strong>Ví dụ</strong></p>
 <p>Đọc file dữ liệu sale được cho tại <a href="https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv">đây</a>. Giả sử ta chỉ lấy các cột <code>date</code>, <code>weekly_sales</code> và <code>is_holiday</code> và lấy cột <code>date</code> làm <code>index</code> và chỉ lấy 6 dòng đầu</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="nhập-xuất-trong-pandas.html#cb38-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: df <span class="op">=</span> pd.read_csv(<span class="st">&#39;https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv&#39;</span>, index_col<span class="op">=</span>[<span class="st">&#39;date&#39;</span>], usecols<span class="op">=</span>[<span class="st">&#39;date&#39;</span>,<span class="st">&#39;weekly_sales&#39;</span>,<span class="st">&#39;is_holiday&#39;</span>], nrows<span class="op">=</span><span class="dv">6</span>)</span>
@@ -262,6 +266,79 @@ hàm phụ trợ của Pandas.</p>
 </div>
 <div id="xuất-file-csv-tsv" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Xuất file csv, tsv<a href="nhập-xuất-trong-pandas.html#xuất-file-csv-tsv" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Để lưu <code>DataFrame</code> dưới dạng file ta có thể dùng câu lệnh <code>.to_csv()</code> theo cú pháp sau</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="nhập-xuất-trong-pandas.html#cb39-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(filename, sep<span class="op">=</span><span class="st">&#39;,&#39;</span>, columns<span class="op">=</span><span class="va">None</span>, header<span class="op">=</span><span class="va">True</span>, index<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>filename</code> là địa chỉ file mà bạn muốn lưu lại</p></li>
+<li><p><code>sep</code> tương tự như lúc đọc file</p></li>
+<li><p><code>columns</code> là tên các cột bạn muốn lưu xuống, nếu muốn lưu tất cả các cột thì
+bạn có thể bỏ qua tham số này.</p></li>
+<li><p><code>header</code> mặc định là <code>True</code> nếu bạn muốn lưu tên cột</p></li>
+<li><p><code>index</code> mặc định là <code>True</code> nếu bạn muốn lưu index của bảng.</p></li>
+</ul>
+<p>Ví dụ</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="nhập-xuất-trong-pandas.html#cb40-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">&#39;sales.csv&#39;</span>, columns<span class="op">=</span><span class="st">&#39;weekly_sales&#39;</span>, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+</div>
+<div id="đọc-file-excel" class="section level3 hasAnchor" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Đọc file Excel<a href="nhập-xuất-trong-pandas.html#đọc-file-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Để đọc file Excel ta dùng cú pháp sau</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="nhập-xuất-trong-pandas.html#cb41-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> pd.ExcelFile(filename)</span></code></pre></div>
+<p>Với <code>filename</code> là đường dẫn đến file</p>
+<p>Để xem tên các sheets của <code>x</code> ta có thể dùng <code>x.sheet_names</code>. Sau đó để đọc từng sheet của <code>x</code> ta có thể dùng <code>.parse()</code></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="nhập-xuất-trong-pandas.html#cb42-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> x.parse(sheet_name, header<span class="op">=</span><span class="dv">0</span>, names<span class="op">=</span><span class="va">None</span>, index_col<span class="op">=</span><span class="va">None</span>, usecols<span class="op">=</span><span class="va">None</span>, skiprows<span class="op">=</span><span class="va">None</span>, skipfooter<span class="op">=</span><span class="dv">0</span>, nrows<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<p>Trong đó <code>sheet_name</code> là tên sheet cần đọc, các thông số còn lại tương tự như phần đọc file <code>csv</code> và <code>tsv</code>. Một cách khác để đọc file excel là dùng hàm <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html">pandas.read_excel</a> với tham số <code>io</code> là tên file.</p>
+</div>
+<div id="xuất-file-excel" class="section level3 hasAnchor" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Xuất file Excel<a href="nhập-xuất-trong-pandas.html#xuất-file-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Giả sử ta có các <code>DataFrame</code> df1, df2, df3 cần được lưu vào 1 file Excel duy nhất</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="nhập-xuất-trong-pandas.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb43-2"><a href="nhập-xuất-trong-pandas.html#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="nhập-xuất-trong-pandas.html#cb43-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;col_1&#39;</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]})</span>
+<span id="cb43-4"><a href="nhập-xuất-trong-pandas.html#cb43-4" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;col_1&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]})</span>
+<span id="cb43-5"><a href="nhập-xuất-trong-pandas.html#cb43-5" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;col_1&#39;</span>: [<span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>]})</span></code></pre></div>
+<p>Để ghi các bảng vào file Excel, bước đầu tiên là khởi tạo biến <code>writer</code> theo cú pháp</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="nhập-xuất-trong-pandas.html#cb44-1" aria-hidden="true" tabindex="-1"></a>writer <span class="op">=</span> pd.ExcelWriter(<span class="st">&#39;pandas_multiple.xlsx&#39;</span>, mode<span class="op">=</span><span class="st">&#39;w&#39;</span>,  if_sheet_exists<span class="op">=</span><span class="va">None</span>, engine<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>filename</code> là tên file excel</p></li>
+<li><p><code>mode</code> là phương thức ghi file với <code>w</code> là viết file mới và <code>a</code> là viết thêm vào file. Mặc định là <code>w</code></p></li>
+<li><p><code>if_sheet_exists</code> là phương thức ghi file nếu file hoặc sheet đã tồn tại, bao gồm các phương thức dưới đây (mặc định là error)</p>
+<ul>
+<li><p><code>error</code>: hiện ValueError nếu đã tồn tại sheet</p></li>
+<li><p><code>new</code>: Tạo sheet mới với tên phụ thuộc vào <code>engine</code></p></li>
+<li><p><code>replace</code>: Xóa nội dung của sheet trước khi viết.</p></li>
+<li><p><code>overlay</code>: Viết lên sheet đã tồn tại mà không xóa các sheet cũ</p></li>
+</ul></li>
+<li><p><code>engine</code>: Một số kiểu hỗ trợ ghi file như <code>xlsxwriter</code>, <code>openpyxl</code>, <code>openpyxl</code>, <code>odswriter</code></p></li>
+</ul>
+
+<div class="rmdnote">
+<p><strong><em>Lưu ý</em>:</strong>
+<code>mode='w'</code> không được sử dụng với engine <code>xlsxwriter</code>, khi khai báo engine này sẽ báo lỗi.</p>
+<p><code>if_sheet_exists</code> chỉ sử dụng với <code>mode='a'</code></p>
+<code>overlay</code> chỉ hỗ trợ với phiên bản <code>1.4.0</code> trở lên.
+</div>
+<p>Để ghi từng sheet bạn dùng lệnh <code>.to_excel()</code>. Sau khi ghi tất cả các sheet bạn kết thúc với <code>writer.save()</code> để lưu file</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="nhập-xuất-trong-pandas.html#cb45-1" aria-hidden="true" tabindex="-1"></a>writer <span class="op">=</span> pd.ExcelWriter(<span class="st">&#39;mul_sheets.xlsx&#39;</span>, mode<span class="op">=</span><span class="st">&#39;w&#39;</span>, engine<span class="op">=</span><span class="st">&#39;openpyxl&#39;</span>)</span>
+<span id="cb45-2"><a href="nhập-xuất-trong-pandas.html#cb45-2" aria-hidden="true" tabindex="-1"></a>df1.to_excel(writer, sheet_name<span class="op">=</span><span class="st">&#39;Sheet1&#39;</span>)</span>
+<span id="cb45-3"><a href="nhập-xuất-trong-pandas.html#cb45-3" aria-hidden="true" tabindex="-1"></a>df2.to_excel(writer, sheet_name<span class="op">=</span><span class="st">&#39;Sheet2&#39;</span>)</span>
+<span id="cb45-4"><a href="nhập-xuất-trong-pandas.html#cb45-4" aria-hidden="true" tabindex="-1"></a>df3.to_excel(writer, sheet_name<span class="op">=</span><span class="st">&#39;Sheet3&#39;</span>)</span>
+<span id="cb45-5"><a href="nhập-xuất-trong-pandas.html#cb45-5" aria-hidden="true" tabindex="-1"></a>writer.save()</span></code></pre></div>
+
+<div class="rmdtip">
+<strong><em>Mẹo:</em></strong>
+Có thể dùng <code>with</code> để mở file để tránh trường hợp quên gọi lệnh <code>.save()</code>, lệnh <code>with</code> sẽ tự động lưu file sau khi kết thúc các lệnh con trong nó
+</div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="nhập-xuất-trong-pandas.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb46-2"><a href="nhập-xuất-trong-pandas.html#cb46-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;col_1&#39;</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]})</span>
+<span id="cb46-3"><a href="nhập-xuất-trong-pandas.html#cb46-3" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;col_1&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;b&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;d&#39;</span>]})</span>
+<span id="cb46-4"><a href="nhập-xuất-trong-pandas.html#cb46-4" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;col_1&#39;</span>: [<span class="va">True</span>, <span class="va">True</span>, <span class="va">False</span>, <span class="va">False</span>]})</span>
+<span id="cb46-5"><a href="nhập-xuất-trong-pandas.html#cb46-5" aria-hidden="true" tabindex="-1"></a>sheet_names <span class="op">=</span> [<span class="st">&#39;Sheet1&#39;</span>,<span class="st">&#39;Sheet2&#39;</span>, <span class="st">&#39;Sheet3&#39;</span>]</span>
+<span id="cb46-6"><a href="nhập-xuất-trong-pandas.html#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="nhập-xuất-trong-pandas.html#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pd.ExcelWriter(<span class="st">&#39;mul_sheets.xlsx&#39;</span>, mode<span class="op">=</span><span class="st">&#39;a&#39;</span>, if_sheet_exists<span class="op">=</span><span class="st">&#39;new&#39;</span>, engine<span class="op">=</span><span class="st">&#39;openpyxl&#39;</span>) <span class="im">as</span> writer:</span>
+<span id="cb46-8"><a href="nhập-xuất-trong-pandas.html#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> df, sheet_name <span class="kw">in</span> <span class="bu">zip</span>([df1, df2, df3], sheet_names):</span>
+<span id="cb46-9"><a href="nhập-xuất-trong-pandas.html#cb46-9" aria-hidden="true" tabindex="-1"></a>        df.to_excel(writer, sheet_name)</span></code></pre></div>
 </div>
 </div>
 <div id="cấu-hình-pandas" class="section level2 hasAnchor" number="2.2">
