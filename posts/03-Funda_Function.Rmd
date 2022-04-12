@@ -1,1 +1,132 @@
 # Một số hàm cơ bản {#Chuong-3}
+
+```python
+df = pd.read_csv('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv',index_col=['Unnamed: 0'])
+```
+
+**`.head(n=5)` và `.tail(n=5)`**
+
+Phương thức `.head(n=5)` hiển thị `n` dòng đầu tiên của `DataFrame`, ngược lại phương thức `.tail(n=5)` hiển thị `n` dòng cuối cùng của `DataFrame`
+
+```python
+In [1]: df.head()
+Out[1]:    
+        store type  department        date  weekly_sales  is_holiday  \
+0      1    A           1  2010-02-05      24924.50       False   
+1      1    A           1  2010-03-05      21827.90       False   
+2      1    A           1  2010-04-02      57258.43       False   
+3      1    A           1  2010-05-07      17413.94       False   
+4      1    A           1  2010-06-04      17558.09       False 
+
+   temperature_c  fuel_price_usd_per_l  unemployment  
+0       5.727778              0.679451         8.106  
+1       8.055556              0.693452         8.106  
+2      16.816667              0.718284         7.808  
+3      22.527778              0.748928         7.808  
+4      27.050000              0.714586         7.808  
+
+In [2]: df.tail()
+Out[2]:
+       store type  department        date  weekly_sales  is_holiday  \
+10769     39    A          99  2011-12-09        895.00       False   
+10770     39    A          99  2012-02-03        350.00       False   
+10771     39    A          99  2012-06-08        450.00       False   
+10772     39    A          99  2012-07-13          0.06       False   
+10773     39    A          99  2012-10-05        915.00       False   
+
+       temperature_c  fuel_price_usd_per_l  unemployment  
+10769       9.644444              0.834256         7.716  
+10770      15.938889              0.887619         7.244  
+10771      27.288889              0.911922         6.989  
+10772      25.644444              0.860145         6.623  
+10773      22.250000              0.955511         6.228 
+
+```
+
+**`.shape` và `.size`** 
+
+Phương thức `.shape` cho biết số lượng dòng và cột của bảng
+
+```python
+In [3]: df.shape
+Out[3]: (10774, 9)
+```
+ Trong dó 10774 là số lượng dòng của bảng và 9 là số lượng cột của bảng
+
+ Phương thức `.size` cho biết số lượng phần từ của bảng
+
+```python
+ In [4]: df.size
+ Out[4]: 96966
+```
+
+ **`.info()`**
+
+ Phương thức `.info()` dùng để xem một số thông tin cơ bản như
+ 
+ - Index của bảng
+ - Tên các cột, số lượng các phần tử Null trong cột và kiểu dữ liệu của chúng
+ - Số lượng các kiểu dữ liệu
+ - Dung lượng của bảng
+
+ Ví dụ
+
+```python
+In [5]: df.info()
+Out[5]:
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 10774 entries, 0 to 10773
+Data columns (total 9 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   store                 10774 non-null  int64  
+ 1   type                  10774 non-null  object 
+ 2   department            10774 non-null  int64  
+ 3   date                  10774 non-null  object 
+ 4   weekly_sales          10774 non-null  float64
+ 5   is_holiday            10774 non-null  bool   
+ 6   temperature_c         10774 non-null  float64
+ 7   fuel_price_usd_per_l  10774 non-null  float64
+ 8   unemployment          10774 non-null  float64
+dtypes: bool(1), float64(4), int64(2), object(2)
+memory usage: 768.1+ KB
+```
+
+```{block2, type='rmdtip'}
+**_Mẹo:_**
+Phương thức `.info()` có các tham số để tùy chỉnh các thông tin có thể xem. Bạn có thể giới hạn các thông tin theo các tham số dưới đây
+info(verbose=None, buf=None, max_cols=None, memory_usage=None, show_counts=None, null_counts=None)
+``` 
+
+**`.describe()`**
+
+Phương thức `.describe()` đưa ra một số thống kê đơn giản như `count`, `mean`, `std`, `min`, `max` và `percentiles = [0.25, 0.5, 0.75]`. Phương thức này chỉ áp dụng cho các cột ở dạng `numerical`.
+
+```python
+In [6]: df.describe()
+Out[6]: 
+              store    department   weekly_sales  temperature_c  \
+count  10774.000000  10774.000000   10774.000000   10774.000000   
+mean      15.441897     45.218118   23843.950149      15.731978   
+std       11.534511     29.867779   30220.387557       9.922446   
+min        1.000000      1.000000   -1098.000000      -8.366667   
+25%        4.000000     20.000000    3867.115000       7.583333   
+50%       13.000000     40.000000   12049.065000      16.966667   
+75%       20.000000     72.000000   32349.850000      24.166667   
+max       39.000000     99.000000  293966.050000      33.827778   
+
+       fuel_price_usd_per_l  unemployment  
+count          10774.000000  10774.000000  
+mean               0.749746      8.082009  
+std                0.059494      0.624355  
+min                0.664129      3.879000  
+25%                0.708246      7.795000  
+50%                0.743381      8.099000  
+75%                0.781421      8.360000  
+max                1.107674      9.765000  
+```
+
+```{block2, type='rmdtip'}
+**_Mẹo:_**
+Bạn có thể thay đổi thông số percentiles bằng cách truyền tham số này vào trong `.describe(percentiles=[0.1,0.99])`
+``` 
