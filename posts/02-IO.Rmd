@@ -7,4 +7,5 @@ hàm phụ trợ của Pandas.
 Ở phần thứ hai của chương, bạn sẽ được hướng dẫn một số cách cấu hình cho Pandas như thay đổi số dòng, số cột hiển thị...
 
 ## Đọc và lưu file
+
 ## Cấu hình pandas 
