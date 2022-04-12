@@ -7,8 +7,8 @@ hàm phụ trợ của Pandas.
 Ở phần thứ hai của chương, bạn sẽ được hướng dẫn một số cách cấu hình cho Pandas như thay đổi số dòng, số cột hiển thị...
 
 ## Đọc và lưu file
-### Đọc file csv, tsv
-
+### csv, tsv
+#### Đọc file
 Chúng ta có thể đọc file csv với pandas theo lệnh sau
 
 ```python
@@ -51,8 +51,8 @@ date
 2010-06-04      17558.09       False
 2010-07-02      16333.14       False
 ```
-### Xuất file csv, tsv
 
+#### Xuất file
 Để lưu `DataFrame` dưới dạng file ta có thể dùng câu lệnh `.to_csv()` theo cú pháp sau
 
 ```python
@@ -76,8 +76,8 @@ Ví dụ
 ```python
 df.to_csv('sales.csv', columns='weekly_sales', index=False)
 ```
-### Đọc file Excel
-
+### Excel
+#### Đọc file Excel
 Để đọc file Excel ta dùng cú pháp sau
 
 ```python
@@ -92,8 +92,7 @@ df = x.parse(sheet_name, header=0, names=None, index_col=None, usecols=None, ski
 ```
 Trong đó `sheet_name` là tên sheet cần đọc, các thông số còn lại tương tự như phần đọc file `csv` và `tsv`. Một cách khác để đọc file excel là dùng hàm [pandas.read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html) với tham số `io` là tên file.
 
-### Xuất file Excel
-
+#### Xuất file Excel
 Giả sử ta có các `DataFrame` df1, df2, df3 cần được lưu vào 1 file Excel duy nhất
 
 ```python
@@ -162,18 +161,19 @@ with pd.ExcelWriter('mul_sheets.xlsx', mode='a', if_sheet_exists='new', engine='
     for df, sheet_name in zip([df1, df2, df3], sheet_names):
         df.to_excel(writer, sheet_name)
 ```
-
-### Đọc file json
+### JSON
+#### Đọc file
 
 `JSON` là 1 dạng dữ liệu khá phổ biến trong thực tế. `Pandas` hỗ trợ đọc file `JSON` theo phương thức sau
 
 ```python
 bla
 ```
-### Xuất file json
+#### Xuất file
 
-### Đọc file pickle
+### Pickle
+#### Đọc file
 
-### Xuất file pickle
+#### Xuất file
 
 ## Cấu hình pandas 
