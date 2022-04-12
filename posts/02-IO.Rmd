@@ -170,6 +170,10 @@ with pd.ExcelWriter('mul_sheets.xlsx', mode='a', if_sheet_exists='new', engine='
 ```python
 bla
 ```
-
 ### Xuất file json
+
+### Đọc file pickle
+
+### Xuất file pickle
+
 ## Cấu hình pandas 

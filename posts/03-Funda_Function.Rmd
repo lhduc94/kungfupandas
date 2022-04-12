@@ -155,6 +155,21 @@ min                0.664129      3.879000
 99%                0.978565      9.765000  
 max                1.107674      9.765000  
 ``` 
+## `.index`
+Thuộc tính `.index` để lấy index của `DataFrame` hoặc `Series`.
+
+Ví dụ
+
+```python
+In [8]: df.index
+Out[8]: 
+Int64Index([    0,     1,     2,     3,     4,     5,     6,     7,     8,
+                9,
+            ...
+            10764, 10765, 10766, 10767, 10768, 10769, 10770, 10771, 10772,
+            10773],
+           dtype='int64', length=10774)
+```
 
 ## `.memory_usage()`
 
@@ -163,8 +178,8 @@ Phương thức `.memory_usage(index=True, deep=False)` giúp thông kê dung l�
 Ví dụ
 
 ```python
-In [8]: df.memory_usage(index=False)
-Out[8]: 
+In [9]: df.memory_usage(index=False)
+Out[9]: 
 
 store                   86192
 type                    86192
@@ -177,8 +192,8 @@ fuel_price_usd_per_l    86192
 unemployment            86192
 dtype: int64
 
-In [9]: df.memory_usage(deep=True) 
-Out[9]: 
+In [10]: df.memory_usage(deep=True) 
+Out[10]: 
 
 Index                    86192
 store                    86192
@@ -196,8 +211,8 @@ dtype: int64
 Sử dụng `[<tên cột>]` để lấy 1 Series của bảng. Ví dụ để lấy cột `department` ta làm như sau
 
 ```python
-In [10]: df['department']
-Out[10]: 
+In [11]: df['department']
+Out[11]: 
 0         1
 1         1
 2         1
@@ -219,19 +234,31 @@ Với phương thức `.astype()` ta có thể ép kiểu dữ liệu của cộ
 
 Ở ví dụ trên, ta thấy cột `department` có giá trị max là `99` nhưng được mặc định là `int64` khá lãng phí, do đó ép kiểu về `int8`
 
-Trước khi ép kiểu
+**Trước khi ép kiểu**
 ```python
-In [11]: df['department'].dtypes
-Out[11]: dtype('int64')
+In [12]: df['department'].dtypes
+Out[12]: dtype('int64')
 
-In [12]: df['department'].memory_usage()
-Out[12]: 
-172384
-```
-Sau khi ép kiểu
-
-```python
-In [13]: df['department'].astype('int8').memory_usage()
+In [13]: df['department'].memory_usage() - df['department'].index.memory_usage()
 Out[13]: 
-99710
+86192
 ```
+**Sau khi ép kiểu**
+
+```python
+In [14]: df['department'].astype('int8').memory_usage() - df['department'].index.memory_usage()
+Out[14]: 
+10774
+```
+Ta thấy sau khi ép kiểu thì bộ nhớ lưu trữ của cột `department` giảm đi `8` lần.
+
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+`df['department'].memory_usage()` trả về dung lượng lưu trữ của cột `department` và dung lượng lưu trữ của `index`
+``` 
+## `.drop_duplicates()`
+
+## `.value_counts()`
+
+## `.unique()` và `.nunique()`
+
