@@ -131,9 +131,9 @@ max                1.107674      9.765000
 Bạn có thể thay đổi thông số percentiles bằng cách truyền tham số này vào trong `.describe()`
 ```
 
-Ví dụ 
+**Ví dụ** 
 ```python
-In [7]: df.describe(pecentiles=[0.1, 0.25, 0.5, 0.75, 0.99])
+In [7]: df.describe(percentiles=[0.1, 0.99]))
 Out[7]: 
               store    department   weekly_sales  temperature_c  \
 count  10774.000000  10774.000000   10774.000000   10774.000000   
@@ -153,8 +153,13 @@ min                0.664129      3.879000
 10%                0.687640      7.127000  
 50%                0.743381      8.099000  
 99%                0.978565      9.765000  
-max                1.107674      9.765000  
+max                1.107674      9.765000   
 ``` 
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+`pandas` mặc định tính  thêm percentile tại `0.5` dù không truyền vào 
+``` 
+
 ## `.index`
 Thuộc tính `.index` để lấy index của `DataFrame` hoặc `Series`.
 
@@ -316,8 +321,53 @@ In [19]: df.drop_duplicates(subset=['action','fruit'], keep='last', ignore_index
 
 ```
 
-
 ## `.value_counts()`
+
+Phương thức này trả số lần xuất hiện của các phần tử trong `Series`. Kết quả trả về mặc định sẽ sắp xếp theo số lần xuất hiện giảm dần và mặc định bỏ qua các giá trị null
+
+```python
+Series.value_counts(normalize=False, sort=True, ascending=False, bins=None, dropna=True)
+```
+Trong đó:
+
+- `normalize`: `True` sẽ trả về tỉ lệ xuất hiện của các phần tử
+
+- `sort`: `True` sẽ trả về kết quả sắp xếp theo số lần xuất hiện, `False` sẽ trả về kết quả sắp xếp theo trình tự xuất hiện của phần tử
+
+- `ascending`: `True` sẽ trả về kết quả sắp xếp theo số lần xuất hiện tăng dần.
+
+- `bins`: gom nhóm các phần tử, tương tự `pd.cut`
+
+- `dropna`: `False` sẽ đếm tất cả các phần tử kể cả null
+
+**Ví dụ**
+
+```python
+In [19]: s = pd.Series([3, 1, 2, 3,  np.nan, 4, np.nan])
+In [20]: s.value_counts()
+Out[20]: 
+3.0    2
+1.0    1
+2.0    1
+4.0    1
+dtype: int64
+
+In [21]: s.value_counts(normalize=True, sort=False, dropna=False)
+Out[21]:
+3.0    0.285714
+1.0    0.142857
+2.0    0.142857
+NaN    0.285714
+4.0    0.142857
+dtype: float64
+
+In [22]: s.value_counts(bins=3)
+Out[22]:
+(0.996, 2.0]    2
+(2.0, 3.0]      2
+(3.0, 4.0]      1
+dtype: int64
+```
 
 ## `.unique()` và `.nunique()`
 
