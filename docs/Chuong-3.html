@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2022-04-12" />
+<meta name="date" content="2022-04-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -421,7 +421,7 @@ Bạn có thể thay đổi thông số percentiles bằng cách truyền tham s
 </div>
 <div id="lấy-series-trong-pandas" class="section level2 hasAnchor" number="3.7">
 <h2><span class="header-section-number">3.7</span> Lấy Series trong pandas<a href="Chuong-3.html#lấy-series-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Sử dụng <code>[&lt;tên cột&gt;]</code> để lấy 1 Series của bảng. Ví dụ để lấy cột <code>department</code> ta làm như sau</p>
+<p>Sử dụng <code>[&lt;tên cột&gt;]</code> để lấy 1 Series của bảng. Ví dụ để lấy Series của cột <code>department</code> ta làm như sau</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="Chuong-3.html#cb57-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">11</span>]: df[<span class="st">&#39;department&#39;</span>]</span>
 <span id="cb57-2"><a href="Chuong-3.html#cb57-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">11</span>]: </span>
 <span id="cb57-3"><a href="Chuong-3.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>         <span class="dv">1</span></span>
@@ -462,6 +462,55 @@ Bạn có thể thay đổi thông số percentiles bằng cách truyền tham s
 </div>
 <div id="drop_duplicates" class="section level2 hasAnchor" number="3.9">
 <h2><span class="header-section-number">3.9</span> <code>.drop_duplicates()</code><a href="Chuong-3.html#drop_duplicates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Phương thức này trả về <code>DataFrame</code> đã được loại bỏ các hàng trùng nhau.
+Lệnh thực hiện</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="Chuong-3.html#cb60-1" aria-hidden="true" tabindex="-1"></a>DataFrame.drop_duplicates(subset<span class="op">=</span><span class="va">None</span>, keep<span class="op">=</span><span class="st">&#39;first&#39;</span>, inplace<span class="op">=</span><span class="va">False</span>, ignore_index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>subset</code>: tên cột hoặc danh sách các cột cần lọc giá trị trùng lặp, nếu không truyền vào sẽ mặc định chọn tất cả các cột</p></li>
+<li><p><code>keep</code>: các kiểu lọc <code>duplicate</code> bao gồm các lựa chọn sau:</p>
+<ul>
+<li><code>'first'</code>: loại bỏ các dòng bản sao, chỉ giữ lại dòng đầu tiên</li>
+<li><code>'last'</code>: loại bỏ các dòng bản sao, chỉ giữ lại dòng cuối cùng</li>
+<li><code>False</code>: loại tất cả các dòng trùng lặp</li>
+</ul></li>
+<li><p><code>inplace</code>: thao tác trực tiếp trên bảng nếu để giá trị <code>True</code> hoặc tạo 1 bản sao với giá trị <code>False</code></p></li>
+<li><p><code>ignore_index</code>: Nếu <code>True</code> trả về index đánh số lại từ <code>0</code> đến <code>n-1</code></p></li>
+</ul>
+<p><strong>Ví dụ</strong></p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="Chuong-3.html#cb61-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">15</span>]: df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb61-2"><a href="Chuong-3.html#cb61-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;action&#39;</span>: [<span class="st">&#39;view&#39;</span>, <span class="st">&#39;view&#39;</span>, <span class="st">&#39;add to cart&#39;</span>, <span class="st">&#39;add to cart&#39;</span>, <span class="st">&#39;add to cart&#39;</span>,],</span>
+<span id="cb61-3"><a href="Chuong-3.html#cb61-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;fruit&#39;</span>: [<span class="st">&#39;orange&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;apple&#39;</span>, <span class="st">&#39;apple&#39;</span>],</span>
+<span id="cb61-4"><a href="Chuong-3.html#cb61-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;times&#39;</span>:   [ <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
+<span id="cb61-5"><a href="Chuong-3.html#cb61-5" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb61-6"><a href="Chuong-3.html#cb61-6" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">16</span>]: df</span>
+<span id="cb61-7"><a href="Chuong-3.html#cb61-7" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">16</span>]:</span>
+<span id="cb61-8"><a href="Chuong-3.html#cb61-8" aria-hidden="true" tabindex="-1"></a>        action  fruit   times</span>
+<span id="cb61-9"><a href="Chuong-3.html#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb61-10"><a href="Chuong-3.html#cb61-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb61-11"><a href="Chuong-3.html#cb61-11" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb61-12"><a href="Chuong-3.html#cb61-12" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  add to cart   apple      <span class="dv">2</span></span>
+<span id="cb61-13"><a href="Chuong-3.html#cb61-13" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  add to cart   apple      <span class="dv">4</span></span>
+<span id="cb61-14"><a href="Chuong-3.html#cb61-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-15"><a href="Chuong-3.html#cb61-15" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">17</span>]: df.drop_duplicates()</span>
+<span id="cb61-16"><a href="Chuong-3.html#cb61-16" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">17</span>]:</span>
+<span id="cb61-17"><a href="Chuong-3.html#cb61-17" aria-hidden="true" tabindex="-1"></a>        action  fruit   times</span>
+<span id="cb61-18"><a href="Chuong-3.html#cb61-18" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb61-19"><a href="Chuong-3.html#cb61-19" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb61-20"><a href="Chuong-3.html#cb61-20" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  add to cart   apple      <span class="dv">2</span></span>
+<span id="cb61-21"><a href="Chuong-3.html#cb61-21" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  add to cart   apple      <span class="dv">4</span></span>
+<span id="cb61-22"><a href="Chuong-3.html#cb61-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-23"><a href="Chuong-3.html#cb61-23" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">18</span>]: df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;action&#39;</span>])</span>
+<span id="cb61-24"><a href="Chuong-3.html#cb61-24" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">18</span>]:</span>
+<span id="cb61-25"><a href="Chuong-3.html#cb61-25" aria-hidden="true" tabindex="-1"></a>        action  fruit   times</span>
+<span id="cb61-26"><a href="Chuong-3.html#cb61-26" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb61-27"><a href="Chuong-3.html#cb61-27" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb61-28"><a href="Chuong-3.html#cb61-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-29"><a href="Chuong-3.html#cb61-29" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">19</span>]: df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;action&#39;</span>,<span class="st">&#39;fruit&#39;</span>], keep<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb61-30"><a href="Chuong-3.html#cb61-30" aria-hidden="true" tabindex="-1"></a>        action   fruit  times</span>
+<span id="cb61-31"><a href="Chuong-3.html#cb61-31" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb61-32"><a href="Chuong-3.html#cb61-32" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb61-33"><a href="Chuong-3.html#cb61-33" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  add to cart   apple      <span class="dv">4</span></span></code></pre></div>
 </div>
 <div id="value_counts" class="section level2 hasAnchor" number="3.10">
 <h2><span class="header-section-number">3.10</span> <code>.value_counts()</code><a href="Chuong-3.html#value_counts" class="anchor-section" aria-label="Anchor link to header"></a></h2>

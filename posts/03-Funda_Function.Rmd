@@ -208,7 +208,7 @@ unemployment             86192
 dtype: int64
 ```
 ## Lấy Series trong pandas
-Sử dụng `[<tên cột>]` để lấy 1 Series của bảng. Ví dụ để lấy cột `department` ta làm như sau
+Sử dụng `[<tên cột>]` để lấy 1 Series của bảng. Ví dụ để lấy Series của cột `department` ta làm như sau
 
 ```python
 In [11]: df['department']
@@ -257,6 +257,65 @@ Ta thấy sau khi ép kiểu thì bộ nhớ lưu trữ của cột `department`
 `df['department'].memory_usage()` trả về dung lượng lưu trữ của cột `department` và dung lượng lưu trữ của `index`
 ``` 
 ## `.drop_duplicates()`
+
+Phương thức này trả về `DataFrame` đã được loại bỏ các hàng trùng nhau.
+Lệnh thực hiện
+
+```python
+DataFrame.drop_duplicates(subset=None, keep='first', inplace=False, ignore_index=False)
+```
+Trong đó:
+
+- `subset`: tên cột hoặc danh sách các cột cần lọc giá trị trùng lặp, nếu không truyền vào sẽ mặc định chọn tất cả các cột
+
+- `keep`: các kiểu lọc `duplicate` bao gồm các lựa chọn sau:
+  - `'first'`: loại bỏ các dòng bản sao, chỉ giữ lại dòng đầu tiên
+  - `'last'`: loại bỏ các dòng bản sao, chỉ giữ lại dòng cuối cùng
+  - `False`: loại tất cả các dòng trùng lặp
+
+- `inplace`: thao tác trực tiếp trên bảng nếu để giá trị `True` hoặc tạo 1 bản sao với giá trị `False`
+
+- `ignore_index`: Nếu `True` trả về index đánh số lại từ `0` đến `n-1`
+
+**Ví dụ**
+
+```python
+In [15]: df = pd.DataFrame({
+    'action': ['view', 'view', 'add to cart', 'add to cart', 'add to cart',],
+    'fruit': ['orange', 'orange', 'orange', 'apple', 'apple'],
+    'times':   [ 1, 1, 3, 2, 4]
+})
+In [16]: df
+Out[16]:
+        action  fruit   times
+0         view  orange      1
+1         view  orange      1
+2  add to cart  orange      3
+3  add to cart   apple      2
+4  add to cart   apple      4
+
+In [17]: df.drop_duplicates()
+Out[17]:
+        action  fruit   times
+0         view  orange      1
+2  add to cart  orange      3
+3  add to cart   apple      2
+4  add to cart   apple      4
+
+In [18]: df.drop_duplicates(subset=['action'])
+Out[18]:
+        action  fruit   times
+0         view  orange      1
+2  add to cart  orange      3
+
+In [19]: df.drop_duplicates(subset=['action','fruit'], keep='last', ignore_index=True)
+        action   fruit  times
+0         view  orange      1
+1  add to cart  orange      3
+2  add to cart   apple      4
+
+```
+
 
 ## `.value_counts()`
 
