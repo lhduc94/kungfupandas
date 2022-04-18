@@ -1,4 +1,5 @@
 # Select và Filter
-## Index
-## loc và iloc
+## .loc và .iloc
+### .loc
+Phương thức loc dùng để lấy dữ liệu theo cột hoặc hàng dựa theo nhãn định sẵn (Tên hàng, tên cột)
 ## Lọc theo điều kiện

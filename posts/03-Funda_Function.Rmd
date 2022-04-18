@@ -454,8 +454,8 @@ Out[31]:
 3A  12  13  14  15
 ```
 
-```{block2, type='rmdtip'}
-**_Mẹo:_**
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
 Thực tế hay dùng các params `columns` và `index` để chỉ định các dòng hay cột cần được loại bỏ hơn là dùng `labels` và `axis`
 ``` 
 
@@ -493,9 +493,141 @@ In [32]: df = pd.DataFrame(np.arange(16).reshape(4, 4),
                         columns=['A', 'B', 'C', 'D'],
                         index=['A', '1A', '2A', '3A'])
 In [33]: df.rename(mapper={'A':'aA'})
+Out[33: 
+     A   B   C   D
+aA   0   1   2   3
+1A   4   5   6   7
+2A   8   9  10  11
+3A  12  13  14  15
 
+In [34]: df.rename(mapper={'A':'aA'}, axis=1)
+Out[34]:
+    aA   B   C   D
+A    0   1   2   3
+1A   4   5   6   7
+2A   8   9  10  11
+3A  12  13  14  15
 
+In [35]: df.rename(columns={'A':'aA', 'B':'Bb'}, index={'A': 'OA','3A':'3a'})
+Out[35]:
+    aA  Bb   C   D
+OA   0   1   2   3
+1A   4   5   6   7
+2A   8   9  10  11
+3a  12  13  14  15
 ```
+
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+Tương tự như `.drop()` thì `columns` và `index` thường được sử dụng hơn là `mapper` và `axis`.
+
+Vẫn chưa rõ `copy` dùng để làm gì.
+``` 
 
 ## `.set_index()`
 
+Phương thức `.set_index()` dùng để chuyển đổi một cột của bảng thành index. Index này có thể thay thể index cũ hoặc thêm vào để thành `MultiIndex`. Cách sử dụng như sau:
+
+```python
+DataFrame.set_index(keys, drop=True, append=False, inplace=False, verify_integrity=False)
+```
+
+Trong đó:
+
+- `keys`: Có thể truyền vào một cột duy nhất hoặc danh sách các cột. Ngoài ra còn có thể là 1 danh sách dạng `pd.Index`, `Series`, `np.array`, `iterator`
+
+- `drop`: loại bỏ cột trong bảng nếu đã đưa vào index, mặc định là `True`
+
+- `append`: mặc định là `False` ghi đè lên index đã có. Giá trị `True` sẽ thêm vào index sẵn có.
+
+- `inplace`: Thực hiện trực tiếp trên bảng hoặc tạo ra một bản sao
+
+- `verify_integrity`: Kiểm tra xem cột đánh index có chứa các phần tử trùng lặp hay không.
+
+
+**Ví dụ**
+
+```python
+In [36]: df = pd.DataFrame(np.arange(16).reshape(4, 4),
+                  columns=['A', 'B', 'C', 'D'],
+                  index=['A', '1A', '2A', '3A'])
+In [37]: df.index.name = 'index1'
+In [38]: df
+Out[38]:
+         A   B   C   D
+index1                
+A        0   1   2   3
+1A       4   5   6   7
+2A       8   9  10  11
+3A      12  13  14  15
+
+In [39]: df.set_index('A')
+Out[39]:
+     B   C   D
+A             
+0    1   2   3
+4    5   6   7
+8    9  10  11
+12  13  14  15
+
+In [40]: df.set_index(['A', 'B'], append=True)
+Out[40]: 
+               C   D
+index1 A  B         
+A      0  1    2   3
+1A     4  5    6   7
+2A     8  9   10  11
+3A     12 13  14  15
+
+In [41]: df.set_index([pd.Index([1, 2, 3, 4], name='new_index')])
+Out[41]: 
+            A   B   C   D
+new_index                
+1           0   1   2   3
+2           4   5   6   7
+3           8   9  10  11
+4          12  13  14  15
+```
+
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+`keys` không áp dụng cho kiểu `list`, `tuple` nhưng Iterator của nó thì được.
+``` 
+**Ví dụ** khi đưa list vào sẽ báo lỗi
+
+```python
+In [42]: df.set_index([1, 2, 3, 4])
+Out[42]:
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_1380/3577861036.py in <module>
+----> 1 df.set_index([1, 2, 3, 4])
+
+D:\Vendors\anaconda\lib\site-packages\pandas\util\_decorators.py in wrapper(*args, **kwargs)
+    309                     stacklevel=stacklevel,
+    310                 )
+--> 311             return func(*args, **kwargs)
+    312 
+    313         return wrapper
+
+D:\Vendors\anaconda\lib\site-packages\pandas\core\frame.py in set_index(self, keys, drop, append, inplace, verify_integrity)
+   5492 
+   5493         if missing:
+-> 5494             raise KeyError(f"None of {missing} are in the columns")
+   5495 
+   5496         if inplace:
+
+KeyError: 'None of [1, 2, 3, 4] are in the columns'
+```
+
+Trong khi đưa vào `Iterator` thì hoạt động.
+
+```python
+In [43]: df.set_index(iter([1, 2, 3, 4]))
+Out[43]:
+    A   B   C   D
+1   0   1   2   3
+2   4   5   6   7
+3   8   9  10  11
+4  12  13  14  15
+```

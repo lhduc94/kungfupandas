@@ -187,9 +187,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="select-và-filter.html#select-và-filter" id="toc-select-và-filter"><span class="toc-section-number">4</span> Select và Filter<span></span></a>
 <ul>
-<li><a href="select-và-filter.html#index-1" id="toc-index-1"><span class="toc-section-number">4.1</span> Index<span></span></a></li>
-<li><a href="select-và-filter.html#loc-và-iloc" id="toc-loc-và-iloc"><span class="toc-section-number">4.2</span> loc và iloc<span></span></a></li>
-<li><a href="select-và-filter.html#lọc-theo-điều-kiện" id="toc-lọc-theo-điều-kiện"><span class="toc-section-number">4.3</span> Lọc theo điều kiện<span></span></a></li>
+<li><a href="select-và-filter.html#loc-và-.iloc" id="toc-loc-và-.iloc"><span class="toc-section-number">4.1</span> .loc và .iloc<span></span></a>
+<ul>
+<li><a href="select-và-filter.html#loc" id="toc-loc"><span class="toc-section-number">4.1.1</span> .loc<span></span></a></li>
+</ul></li>
 </ul></li>
 <li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" id="toc-tính-toán-trên-các-phần-tử-trong-pandas"><span class="toc-section-number">5</span> Tính toán trên các phần tử trong Pandas<span></span></a>
 <ul>
@@ -626,8 +627,8 @@ Cú pháp của <code>.drop()</code> như sau</p>
 <span id="cb66-30"><a href="Chuong-3.html#cb66-30" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
 <span id="cb66-31"><a href="Chuong-3.html#cb66-31" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
 
-<div class="rmdtip">
-<strong><em>Mẹo:</em></strong>
+<div class="rmdnote">
+<strong><em>Lưu ý:</em></strong>
 Thực tế hay dùng các params <code>columns</code> và <code>index</code> để chỉ định các dòng hay cột cần được loại bỏ hơn là dùng <code>labels</code> và <code>axis</code>
 </div>
 </div>
@@ -651,10 +652,123 @@ Thực tế hay dùng các params <code>columns</code> và <code>index</code> đ
 <span id="cb68-2"><a href="Chuong-3.html#cb68-2" aria-hidden="true" tabindex="-1"></a>                        columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
 <span id="cb68-3"><a href="Chuong-3.html#cb68-3" aria-hidden="true" tabindex="-1"></a>                        index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
 <span id="cb68-4"><a href="Chuong-3.html#cb68-4" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">33</span>]: df.rename(mapper<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>})</span>
-<span id="cb68-5"><a href="Chuong-3.html#cb68-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+<span id="cb68-5"><a href="Chuong-3.html#cb68-5" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">33</span>: </span>
+<span id="cb68-6"><a href="Chuong-3.html#cb68-6" aria-hidden="true" tabindex="-1"></a>     A   B   C   D</span>
+<span id="cb68-7"><a href="Chuong-3.html#cb68-7" aria-hidden="true" tabindex="-1"></a>aA   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb68-8"><a href="Chuong-3.html#cb68-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb68-9"><a href="Chuong-3.html#cb68-9" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb68-10"><a href="Chuong-3.html#cb68-10" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb68-11"><a href="Chuong-3.html#cb68-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-12"><a href="Chuong-3.html#cb68-12" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">34</span>]: df.rename(mapper<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb68-13"><a href="Chuong-3.html#cb68-13" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">34</span>]:</span>
+<span id="cb68-14"><a href="Chuong-3.html#cb68-14" aria-hidden="true" tabindex="-1"></a>    aA   B   C   D</span>
+<span id="cb68-15"><a href="Chuong-3.html#cb68-15" aria-hidden="true" tabindex="-1"></a>A    <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb68-16"><a href="Chuong-3.html#cb68-16" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb68-17"><a href="Chuong-3.html#cb68-17" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb68-18"><a href="Chuong-3.html#cb68-18" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb68-19"><a href="Chuong-3.html#cb68-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-20"><a href="Chuong-3.html#cb68-20" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">35</span>]: df.rename(columns<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>, <span class="st">&#39;B&#39;</span>:<span class="st">&#39;Bb&#39;</span>}, index<span class="op">=</span>{<span class="st">&#39;A&#39;</span>: <span class="st">&#39;OA&#39;</span>,<span class="st">&#39;3A&#39;</span>:<span class="st">&#39;3a&#39;</span>})</span>
+<span id="cb68-21"><a href="Chuong-3.html#cb68-21" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">35</span>]:</span>
+<span id="cb68-22"><a href="Chuong-3.html#cb68-22" aria-hidden="true" tabindex="-1"></a>    aA  Bb   C   D</span>
+<span id="cb68-23"><a href="Chuong-3.html#cb68-23" aria-hidden="true" tabindex="-1"></a>OA   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb68-24"><a href="Chuong-3.html#cb68-24" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb68-25"><a href="Chuong-3.html#cb68-25" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb68-26"><a href="Chuong-3.html#cb68-26" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="er">a</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
+
+<div class="rmdnote">
+<p><strong><em>Lưu ý:</em></strong>
+Tương tự như <code>.drop()</code> thì <code>columns</code> và <code>index</code> thường được sử dụng hơn là <code>mapper</code> và <code>axis</code>.</p>
+Vẫn chưa rõ <code>copy</code> dùng để làm gì.
+</div>
 </div>
 <div id="set_index" class="section level2 hasAnchor" number="3.14">
 <h2><span class="header-section-number">3.14</span> <code>.set_index()</code><a href="Chuong-3.html#set_index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Phương thức <code>.set_index()</code> dùng để chuyển đổi một cột của bảng thành index. Index này có thể thay thể index cũ hoặc thêm vào để thành <code>MultiIndex</code>. Cách sử dụng như sau:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="Chuong-3.html#cb69-1" aria-hidden="true" tabindex="-1"></a>DataFrame.set_index(keys, drop<span class="op">=</span><span class="va">True</span>, append<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">False</span>, verify_integrity<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>keys</code>: Có thể truyền vào một cột duy nhất hoặc danh sách các cột. Ngoài ra còn có thể là 1 danh sách dạng <code>pd.Index</code>, <code>Series</code>, <code>np.array</code>, <code>iterator</code></p></li>
+<li><p><code>drop</code>: loại bỏ cột trong bảng nếu đã đưa vào index, mặc định là <code>True</code></p></li>
+<li><p><code>append</code>: mặc định là <code>False</code> ghi đè lên index đã có. Giá trị <code>True</code> sẽ thêm vào index sẵn có.</p></li>
+<li><p><code>inplace</code>: Thực hiện trực tiếp trên bảng hoặc tạo ra một bản sao</p></li>
+<li><p><code>verify_integrity</code>: Kiểm tra xem cột đánh index có chứa các phần tử trùng lặp hay không.</p></li>
+</ul>
+<p><strong>Ví dụ</strong></p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="Chuong-3.html#cb70-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">36</span>]: df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb70-2"><a href="Chuong-3.html#cb70-2" aria-hidden="true" tabindex="-1"></a>                  columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
+<span id="cb70-3"><a href="Chuong-3.html#cb70-3" aria-hidden="true" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
+<span id="cb70-4"><a href="Chuong-3.html#cb70-4" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">37</span>]: df.index.name <span class="op">=</span> <span class="st">&#39;index1&#39;</span></span>
+<span id="cb70-5"><a href="Chuong-3.html#cb70-5" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">38</span>]: df</span>
+<span id="cb70-6"><a href="Chuong-3.html#cb70-6" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">38</span>]:</span>
+<span id="cb70-7"><a href="Chuong-3.html#cb70-7" aria-hidden="true" tabindex="-1"></a>         A   B   C   D</span>
+<span id="cb70-8"><a href="Chuong-3.html#cb70-8" aria-hidden="true" tabindex="-1"></a>index1                </span>
+<span id="cb70-9"><a href="Chuong-3.html#cb70-9" aria-hidden="true" tabindex="-1"></a>A        <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb70-10"><a href="Chuong-3.html#cb70-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>       <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb70-11"><a href="Chuong-3.html#cb70-11" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>       <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb70-12"><a href="Chuong-3.html#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>      <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb70-13"><a href="Chuong-3.html#cb70-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-14"><a href="Chuong-3.html#cb70-14" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">39</span>]: df.set_index(<span class="st">&#39;A&#39;</span>)</span>
+<span id="cb70-15"><a href="Chuong-3.html#cb70-15" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">39</span>]:</span>
+<span id="cb70-16"><a href="Chuong-3.html#cb70-16" aria-hidden="true" tabindex="-1"></a>     B   C   D</span>
+<span id="cb70-17"><a href="Chuong-3.html#cb70-17" aria-hidden="true" tabindex="-1"></a>A             </span>
+<span id="cb70-18"><a href="Chuong-3.html#cb70-18" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>    <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb70-19"><a href="Chuong-3.html#cb70-19" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb70-20"><a href="Chuong-3.html#cb70-20" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span>    <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb70-21"><a href="Chuong-3.html#cb70-21" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb70-22"><a href="Chuong-3.html#cb70-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-23"><a href="Chuong-3.html#cb70-23" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">40</span>]: df.set_index([<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>], append<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb70-24"><a href="Chuong-3.html#cb70-24" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">40</span>]: </span>
+<span id="cb70-25"><a href="Chuong-3.html#cb70-25" aria-hidden="true" tabindex="-1"></a>               C   D</span>
+<span id="cb70-26"><a href="Chuong-3.html#cb70-26" aria-hidden="true" tabindex="-1"></a>index1 A  B         </span>
+<span id="cb70-27"><a href="Chuong-3.html#cb70-27" aria-hidden="true" tabindex="-1"></a>A      <span class="dv">0</span>  <span class="dv">1</span>    <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb70-28"><a href="Chuong-3.html#cb70-28" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>     <span class="dv">4</span>  <span class="dv">5</span>    <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb70-29"><a href="Chuong-3.html#cb70-29" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>     <span class="dv">8</span>  <span class="dv">9</span>   <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb70-30"><a href="Chuong-3.html#cb70-30" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>     <span class="dv">12</span> <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb70-31"><a href="Chuong-3.html#cb70-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-32"><a href="Chuong-3.html#cb70-32" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">41</span>]: df.set_index([pd.Index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], name<span class="op">=</span><span class="st">&#39;new_index&#39;</span>)])</span>
+<span id="cb70-33"><a href="Chuong-3.html#cb70-33" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">41</span>]: </span>
+<span id="cb70-34"><a href="Chuong-3.html#cb70-34" aria-hidden="true" tabindex="-1"></a>            A   B   C   D</span>
+<span id="cb70-35"><a href="Chuong-3.html#cb70-35" aria-hidden="true" tabindex="-1"></a>new_index                </span>
+<span id="cb70-36"><a href="Chuong-3.html#cb70-36" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>           <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb70-37"><a href="Chuong-3.html#cb70-37" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>           <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb70-38"><a href="Chuong-3.html#cb70-38" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>           <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb70-39"><a href="Chuong-3.html#cb70-39" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>          <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
+
+<div class="rmdnote">
+<strong><em>Lưu ý:</em></strong>
+<code>keys</code> không áp dụng cho kiểu <code>list</code>, <code>tuple</code> nhưng Iterator của nó thì được.
+</div>
+<p><strong>Ví dụ</strong> khi đưa list vào sẽ báo lỗi</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="Chuong-3.html#cb71-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">42</span>]: df.set_index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb71-2"><a href="Chuong-3.html#cb71-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">42</span>]:</span>
+<span id="cb71-3"><a href="Chuong-3.html#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="op">---------------------------------------------------------------------------</span></span>
+<span id="cb71-4"><a href="Chuong-3.html#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="pp">KeyError</span>                                  Traceback (most recent call last)</span>
+<span id="cb71-5"><a href="Chuong-3.html#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="op">~</span>\AppData\Local\Temp<span class="op">/</span>ipykernel_1380<span class="op">/</span><span class="fl">3577861036.</span><span class="er">py</span> <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb71-6"><a href="Chuong-3.html#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="op">----&gt;</span> <span class="dv">1</span> df.set_index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb71-7"><a href="Chuong-3.html#cb71-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-8"><a href="Chuong-3.html#cb71-8" aria-hidden="true" tabindex="-1"></a>D:\Vendors\anaconda\lib\site<span class="op">-</span>packages\pandas\util\_decorators.py <span class="kw">in</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb71-9"><a href="Chuong-3.html#cb71-9" aria-hidden="true" tabindex="-1"></a>    <span class="dv">309</span>                     stacklevel<span class="op">=</span>stacklevel,</span>
+<span id="cb71-10"><a href="Chuong-3.html#cb71-10" aria-hidden="true" tabindex="-1"></a>    <span class="dv">310</span>                 )</span>
+<span id="cb71-11"><a href="Chuong-3.html#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="op">--&gt;</span> <span class="dv">311</span>             <span class="cf">return</span> func(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb71-12"><a href="Chuong-3.html#cb71-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">312</span> </span>
+<span id="cb71-13"><a href="Chuong-3.html#cb71-13" aria-hidden="true" tabindex="-1"></a>    <span class="dv">313</span>         <span class="cf">return</span> wrapper</span>
+<span id="cb71-14"><a href="Chuong-3.html#cb71-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-15"><a href="Chuong-3.html#cb71-15" aria-hidden="true" tabindex="-1"></a>D:\Vendors\anaconda\lib\site<span class="op">-</span>packages\pandas\core\frame.py <span class="kw">in</span> set_index(<span class="va">self</span>, keys, drop, append, inplace, verify_integrity)</span>
+<span id="cb71-16"><a href="Chuong-3.html#cb71-16" aria-hidden="true" tabindex="-1"></a>   <span class="dv">5492</span> </span>
+<span id="cb71-17"><a href="Chuong-3.html#cb71-17" aria-hidden="true" tabindex="-1"></a>   <span class="dv">5493</span>         <span class="cf">if</span> missing:</span>
+<span id="cb71-18"><a href="Chuong-3.html#cb71-18" aria-hidden="true" tabindex="-1"></a><span class="op">-&gt;</span> <span class="dv">5494</span>             <span class="cf">raise</span> <span class="pp">KeyError</span>(<span class="ss">f&quot;None of </span><span class="sc">{</span>missing<span class="sc">}</span><span class="ss"> are in the columns&quot;</span>)</span>
+<span id="cb71-19"><a href="Chuong-3.html#cb71-19" aria-hidden="true" tabindex="-1"></a>   <span class="dv">5495</span> </span>
+<span id="cb71-20"><a href="Chuong-3.html#cb71-20" aria-hidden="true" tabindex="-1"></a>   <span class="dv">5496</span>         <span class="cf">if</span> inplace:</span>
+<span id="cb71-21"><a href="Chuong-3.html#cb71-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-22"><a href="Chuong-3.html#cb71-22" aria-hidden="true" tabindex="-1"></a><span class="pp">KeyError</span>: <span class="st">&#39;None of [1, 2, 3, 4] are in the columns&#39;</span></span></code></pre></div>
+<p>Trong khi đưa vào <code>Iterator</code> thì hoạt động.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="Chuong-3.html#cb72-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">43</span>]: df.set_index(<span class="bu">iter</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span>
+<span id="cb72-2"><a href="Chuong-3.html#cb72-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">43</span>]:</span>
+<span id="cb72-3"><a href="Chuong-3.html#cb72-3" aria-hidden="true" tabindex="-1"></a>    A   B   C   D</span>
+<span id="cb72-4"><a href="Chuong-3.html#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb72-5"><a href="Chuong-3.html#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb72-6"><a href="Chuong-3.html#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb72-7"><a href="Chuong-3.html#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
 
 </div>
 </div>
