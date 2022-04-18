@@ -233,7 +233,7 @@ Name: department, Length: 10774, dtype: int64
 ```
 những Series này cũng có thế áp dụng các phương thức tương tự của `DataFrame` như `.head()`, `.tail()`....
 
-## Ép kiểu dữ liệu với `.astype()`
+## `.astype()`
 
 Với phương thức `.astype()` ta có thể ép kiểu dữ liệu của cột về dạng khác. Việc ép kiểu này giúp thay đổi kiểu dữ liệu để tiện các thao tác như nối 2 cột có 2 kiểu `str` và `int`, ngoài ra việc ép kiểu cũng giúp giảm được dung lượng bộ nhớ dành cho bảng. 
 
@@ -370,4 +370,89 @@ dtype: int64
 ```
 
 ## `.unique()` và `.nunique()`
+
+Phương thức `.unique()` trả về các giá trị khác nhau của `Series` và `.nunique()` trả về số lượng các giá trị khác nhau của `Series`. Kết quả trả về của `.unique()` là danh sách các phần tử được sắp xếp theo thứ tự đầu vào của bảng. Để loại bỏ giá trị `NA` trong lúc đếm có thể gọi `.nunique(dropna=False)`
+
+Cách sử dụng
+
+```python
+In [23]: s = pd.Series([2, 3, 1 ,2, np.nan], name='col_0')
+In [24]: s
+Out[24]:
+0    2.0
+1    3.0
+2    1.0
+3    2.0
+4    NaN
+Name: col_0, dtype: float64
+
+In [25]: s.unique()
+Out[25]: array([ 2.,  3.,  1., nan])
+
+In [26]: s.nunique(dropna=False)
+Out[26]: 4
+```
+## `.drop()`
+
+Phương thức `.drop()` dùng để loại bỏ các dòng hoặc cột theo chỉ định.
+Cú pháp của `.drop()` như sau
+
+```python
+DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
+```
+
+Trong đó:
+
+- `labels`: Tên cột hoặc dòng cần loại bỏ.
+
+- `axis`: Mặc đinh giá trị `0` loại bỏ theo dòng và `1` loại bỏ theo cột.
+
+- `index`: Chỉ định index của dòng cần loại bỏ, tương đương `labels, axis=0`
+
+- `columns`: Chỉ định cột cần loại bỏ, tương đương `labels, axis=1`
+
+- `level`: Dành cho MultiIndex, khi đó chỉ định cấp độ index cần loại bỏ
+
+- `inplace`: Thực hiện trên chính bảng hay tạo ra một bảng sao
+
+- `errors`: mặc định `raise` sẽ trả ra lỗi và `ignore` nếu muốn bỏ qua lỗi.
+
+
+**Ví dụ**
+
+```python
+In [27]: df = pd.DataFrame(np.arange(16).reshape(4, 4),
+                  columns=['A', 'B', 'C', 'D'],
+                  index=['A', '1A', '2A', '3A'])
+In [28]: df
+Out[28]:
+     A   B   C   D
+A    0   1   2   3
+1A   4   5   6   7
+2A   8   9  10  11
+3A  12  13  14  15
+
+In [29]: df.drop('A')
+Out[29]:
+	A	B	C	D
+1A	4	5	6	7
+2A	8	9	10	11
+3A	12	13	14	15
+
+In [30]: df.drop(columns=['A', 'C'])
+Out[30]: 
+     B   D
+A    1   3
+1A   5   7
+2A   9  11
+3A  13  15
+
+In [31]: df.drop(index=['A', '2A'])
+Out[31]: 
+     A   B   C   D
+1A   4   5   6   7
+3A  12  13  14  15
+```
+
+## `.rename()`
 

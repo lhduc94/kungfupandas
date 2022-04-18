@@ -29,10 +29,12 @@ describe
 index
 memory_usage
 lấy-series-trong-pandas
-ép-kiểu-dữ-liệu-với-.astype
+astype
 drop_duplicates
 value_counts
 unique-và-.nunique
+drop
+rename
 select-và-filter
 index-1
 loc-và-iloc
