@@ -35,6 +35,7 @@ value_counts
 unique-và-.nunique
 drop
 rename
+set_index
 select-và-filter
 index-1
 loc-và-iloc

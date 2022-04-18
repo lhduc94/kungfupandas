@@ -454,5 +454,48 @@ Out[31]:
 3A  12  13  14  15
 ```
 
+```{block2, type='rmdtip'}
+**_Mẹo:_**
+Thực tế hay dùng các params `columns` và `index` để chỉ định các dòng hay cột cần được loại bỏ hơn là dùng `labels` và `axis`
+``` 
+
 ## `.rename()`
+
+Phương thức `.rename()` dùng để đổi tên nhãn của cột hoặc dòng. Cú pháp như sau
+
+```python
+DataFrame.rename(mapper=None, *, index=None, columns=None, axis=None, copy=True, inplace=False, level=None, errors='ignore')[source]
+```
+
+Trong đó:
+
+- `mapper`: là một danh sách dạng dictionary chứa key là tên cần đổi và value là tên mới.
+
+- `axis`: Mặc đinh giá trị `0` thay đổi theo index và `1` thay đổi theo cột.
+
+- `index`: Chỉ định index của dòng cần thay đổi, tương đương `mapper, axis=0`, thay thế bằng `index=mapper`
+
+- `columns`: Chỉ định cột cần thay đổi, tương đương `mapper, axis=1`, thay thế bằng `columns=mapper`
+
+- `copy`: `True`, mặc định sao chép dữ liệu
+
+- `level`: Dành cho MultiIndex, khi đó chỉ định cấp độ index cần đổi tên
+
+- `inplace`: Thực hiện trên chính bảng hay tạo ra một bảng sao
+
+- `errors`: mặc định `raise` sẽ trả ra lỗi và `ignore` nếu muốn bỏ qua lỗi.
+
+
+**Ví dụ**
+
+```python
+In [32]: df = pd.DataFrame(np.arange(16).reshape(4, 4),
+                        columns=['A', 'B', 'C', 'D'],
+                        index=['A', '1A', '2A', '3A'])
+In [33]: df.rename(mapper={'A':'aA'})
+
+
+```
+
+## `.set_index()`
 
