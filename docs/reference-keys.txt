@@ -37,8 +37,10 @@ drop
 rename
 set_index
 select-và-filter
+sử-dụng
 loc-và-.iloc
 loc
+lọc-theo-điều-kiện
 tính-toán-trên-các-phần-tử-trong-pandas
 sử-dụng-column-element-wise
 sử-dụng-apply

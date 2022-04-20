@@ -1,5 +1,64 @@
 # Select và Filter
+
+## Sử dụng `[]`
+Cú pháp `[]` là cú pháp đơn giản nhất để lấy bảng con của 1 bảng cho trước.
+Với 1 `df` là 1 DataFrame có index là `region` và dữ liệu như sau
+```python
+                       state  individuals  family_members  state_pop
+region                                                              
+East South Central   Alabama       2570.0           864.0    4887681
+Pacific               Alaska       1434.0           582.0     735139
+Mountain             Arizona       7259.0          2606.0    7158024
+West South Central  Arkansas       2280.0           432.0    3009733
+Mountain            Colorado       7607.0          3250.0    5691287
+```
+Để chọn 1 bảng con có 2 cột `['state', 'family_members']` ta làm như sau
+
+```python
+In [1]: df[['state', 'family_members']]
+Out[1]:
+                       state  family_members
+region                                      
+East South Central   Alabama           864.0
+Pacific               Alaska           582.0
+Mountain             Arizona          2606.0
+West South Central  Arkansas           432.0
+Mountain            Colorado          3250.0
+```
+Để lấy theo dòng ta dùng tương tự Series
+
+```python
+In [2]: df[:3]
+Out[2]: 
+                      state  individuals  family_members  state_pop
+region                                                             
+East South Central  Alabama       2570.0           864.0    4887681
+Pacific              Alaska       1434.0           582.0     735139
+Mountain            Arizona       7259.0          2606.0    7158024
+
+In [3]: df[2:5]
+Out[3]:
+                       state  individuals  family_members  state_pop
+region                                                              
+Mountain             Arizona       7259.0          2606.0    7158024
+West South Central  Arkansas       2280.0           432.0    3009733
+Mountain            Colorado       7607.0          3250.0    5691287
+```
+
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+
+- `df[['state']]` sẽ trả về `DataFrame` trong khi `df['state']` trả về `Series`.
+
+- Đối với lấy theo dòng, `[]` không lấy được theo dòng riêng biệt.
+
+- `[]` chỉ lấy dữ liệu theo dòng hoặc cột, không thực hiện được cùng lúc cả hai thao tác.
+``` 
+Ví dụ khi gọi `df[3]` hay `df[[1, 2, 3]]` sẽ báo lỗi `KeyError`
+
+
 ## .loc và .iloc
 ### .loc
 Phương thức loc dùng để lấy dữ liệu theo cột hoặc hàng dựa theo nhãn định sẵn (Tên hàng, tên cột)
+
 ## Lọc theo điều kiện

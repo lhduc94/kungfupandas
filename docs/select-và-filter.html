@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2022-04-18" />
+<meta name="date" content="2022-04-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -187,10 +187,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="select-và-filter.html#select-và-filter" id="toc-select-và-filter"><span class="toc-section-number">4</span> Select và Filter<span></span></a>
 <ul>
-<li><a href="select-và-filter.html#loc-và-.iloc" id="toc-loc-và-.iloc"><span class="toc-section-number">4.1</span> .loc và .iloc<span></span></a>
+<li><a href="select-và-filter.html#sử-dụng" id="toc-sử-dụng"><span class="toc-section-number">4.1</span> Sử dụng <code>[]</code><span></span></a></li>
+<li><a href="select-và-filter.html#loc-và-.iloc" id="toc-loc-và-.iloc"><span class="toc-section-number">4.2</span> .loc và .iloc<span></span></a>
 <ul>
-<li><a href="select-và-filter.html#loc" id="toc-loc"><span class="toc-section-number">4.1.1</span> .loc<span></span></a></li>
+<li><a href="select-và-filter.html#loc" id="toc-loc"><span class="toc-section-number">4.2.1</span> .loc<span></span></a></li>
 </ul></li>
+<li><a href="select-và-filter.html#lọc-theo-điều-kiện" id="toc-lọc-theo-điều-kiện"><span class="toc-section-number">4.3</span> Lọc theo điều kiện<span></span></a></li>
 </ul></li>
 <li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" id="toc-tính-toán-trên-các-phần-tử-trong-pandas"><span class="toc-section-number">5</span> Tính toán trên các phần tử trong Pandas<span></span></a>
 <ul>
@@ -244,14 +246,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="select-và-filter" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chương 4</span> Select và Filter<a href="select-và-filter.html#select-và-filter" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="loc-và-.iloc" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> .loc và .iloc<a href="select-và-filter.html#loc-và-.iloc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="loc" class="section level3 hasAnchor" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> .loc<a href="select-và-filter.html#loc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Phương thức loc dùng để lấy dữ liệu theo cột hoặc hàng dựa theo nhãn định sẵn (Tên hàng, tên cột)
-## Lọc theo điều kiện</p>
+<div id="sử-dụng" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Sử dụng <code>[]</code><a href="select-và-filter.html#sử-dụng" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cú pháp <code>[]</code> là cú pháp đơn giản nhất để lấy bảng con của 1 bảng cho trước.
+Với 1 <code>df</code> là 1 DataFrame có index là <code>region</code> và dữ liệu như sau</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="select-và-filter.html#cb73-1" aria-hidden="true" tabindex="-1"></a>                       state  individuals  family_members  state_pop</span>
+<span id="cb73-2"><a href="select-và-filter.html#cb73-2" aria-hidden="true" tabindex="-1"></a>region                                                              </span>
+<span id="cb73-3"><a href="select-và-filter.html#cb73-3" aria-hidden="true" tabindex="-1"></a>East South Central   Alabama       <span class="fl">2570.0</span>           <span class="fl">864.0</span>    <span class="dv">4887681</span></span>
+<span id="cb73-4"><a href="select-và-filter.html#cb73-4" aria-hidden="true" tabindex="-1"></a>Pacific               Alaska       <span class="fl">1434.0</span>           <span class="fl">582.0</span>     <span class="dv">735139</span></span>
+<span id="cb73-5"><a href="select-và-filter.html#cb73-5" aria-hidden="true" tabindex="-1"></a>Mountain             Arizona       <span class="fl">7259.0</span>          <span class="fl">2606.0</span>    <span class="dv">7158024</span></span>
+<span id="cb73-6"><a href="select-và-filter.html#cb73-6" aria-hidden="true" tabindex="-1"></a>West South Central  Arkansas       <span class="fl">2280.0</span>           <span class="fl">432.0</span>    <span class="dv">3009733</span></span>
+<span id="cb73-7"><a href="select-và-filter.html#cb73-7" aria-hidden="true" tabindex="-1"></a>Mountain            Colorado       <span class="fl">7607.0</span>          <span class="fl">3250.0</span>    <span class="dv">5691287</span></span></code></pre></div>
+<p>Để chọn 1 bảng con có 2 cột <code>['state', 'family_members']</code> ta làm như sau</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="select-và-filter.html#cb74-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: df[[<span class="st">&#39;state&#39;</span>, <span class="st">&#39;family_members&#39;</span>]]</span>
+<span id="cb74-2"><a href="select-và-filter.html#cb74-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]:</span>
+<span id="cb74-3"><a href="select-và-filter.html#cb74-3" aria-hidden="true" tabindex="-1"></a>                       state  family_members</span>
+<span id="cb74-4"><a href="select-và-filter.html#cb74-4" aria-hidden="true" tabindex="-1"></a>region                                      </span>
+<span id="cb74-5"><a href="select-và-filter.html#cb74-5" aria-hidden="true" tabindex="-1"></a>East South Central   Alabama           <span class="fl">864.0</span></span>
+<span id="cb74-6"><a href="select-và-filter.html#cb74-6" aria-hidden="true" tabindex="-1"></a>Pacific               Alaska           <span class="fl">582.0</span></span>
+<span id="cb74-7"><a href="select-và-filter.html#cb74-7" aria-hidden="true" tabindex="-1"></a>Mountain             Arizona          <span class="fl">2606.0</span></span>
+<span id="cb74-8"><a href="select-và-filter.html#cb74-8" aria-hidden="true" tabindex="-1"></a>West South Central  Arkansas           <span class="fl">432.0</span></span>
+<span id="cb74-9"><a href="select-và-filter.html#cb74-9" aria-hidden="true" tabindex="-1"></a>Mountain            Colorado          <span class="fl">3250.0</span></span></code></pre></div>
+<p>Để lấy theo dòng ta dùng tương tự Series</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="select-và-filter.html#cb75-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: df[:<span class="dv">3</span>]</span>
+<span id="cb75-2"><a href="select-và-filter.html#cb75-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">2</span>]: </span>
+<span id="cb75-3"><a href="select-và-filter.html#cb75-3" aria-hidden="true" tabindex="-1"></a>                      state  individuals  family_members  state_pop</span>
+<span id="cb75-4"><a href="select-và-filter.html#cb75-4" aria-hidden="true" tabindex="-1"></a>region                                                             </span>
+<span id="cb75-5"><a href="select-và-filter.html#cb75-5" aria-hidden="true" tabindex="-1"></a>East South Central  Alabama       <span class="fl">2570.0</span>           <span class="fl">864.0</span>    <span class="dv">4887681</span></span>
+<span id="cb75-6"><a href="select-và-filter.html#cb75-6" aria-hidden="true" tabindex="-1"></a>Pacific              Alaska       <span class="fl">1434.0</span>           <span class="fl">582.0</span>     <span class="dv">735139</span></span>
+<span id="cb75-7"><a href="select-và-filter.html#cb75-7" aria-hidden="true" tabindex="-1"></a>Mountain            Arizona       <span class="fl">7259.0</span>          <span class="fl">2606.0</span>    <span class="dv">7158024</span></span>
+<span id="cb75-8"><a href="select-và-filter.html#cb75-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-9"><a href="select-và-filter.html#cb75-9" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">3</span>]: df[<span class="dv">2</span>:<span class="dv">5</span>]</span>
+<span id="cb75-10"><a href="select-và-filter.html#cb75-10" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">3</span>]:</span>
+<span id="cb75-11"><a href="select-và-filter.html#cb75-11" aria-hidden="true" tabindex="-1"></a>                       state  individuals  family_members  state_pop</span>
+<span id="cb75-12"><a href="select-và-filter.html#cb75-12" aria-hidden="true" tabindex="-1"></a>region                                                              </span>
+<span id="cb75-13"><a href="select-và-filter.html#cb75-13" aria-hidden="true" tabindex="-1"></a>Mountain             Arizona       <span class="fl">7259.0</span>          <span class="fl">2606.0</span>    <span class="dv">7158024</span></span>
+<span id="cb75-14"><a href="select-và-filter.html#cb75-14" aria-hidden="true" tabindex="-1"></a>West South Central  Arkansas       <span class="fl">2280.0</span>           <span class="fl">432.0</span>    <span class="dv">3009733</span></span>
+<span id="cb75-15"><a href="select-và-filter.html#cb75-15" aria-hidden="true" tabindex="-1"></a>Mountain            Colorado       <span class="fl">7607.0</span>          <span class="fl">3250.0</span>    <span class="dv">5691287</span></span></code></pre></div>
 
+<div class="rmdnote">
+<p><strong><em>Lưu ý:</em></strong></p>
+<ul>
+<li><p>df[[‘state’]] trả về <code>DataFrame</code>, df[‘state’] trả về <code>Series</code></p></li>
+<li><p>Đối với lấy theo dòng, <code>[]</code> không lấy được theo dòng riêng biệt</p></li>
+<li><p><code>[]</code> chỉ lấy dữ liệu theo dòng hoặc cột, không thực hiện được cùng lúc cả hai thao tác.</p>
 </div>
+<p>Ví dụ khi gọi <code>df[3]</code> hay <code>df[[1, 2, 3]]</code> sẽ báo lỗi <code>KeyError</code></p></li>
+</ul>
+</div>
+<div id="loc-và-.iloc" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> .loc và .iloc<a href="select-và-filter.html#loc-và-.iloc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="loc" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> .loc<a href="select-và-filter.html#loc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Phương thức loc dùng để lấy dữ liệu theo cột hoặc hàng dựa theo nhãn định sẵn (Tên hàng, tên cột)</p>
+</div>
+</div>
+<div id="lọc-theo-điều-kiện" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Lọc theo điều kiện<a href="select-và-filter.html#lọc-theo-điều-kiện" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
 </div>
 </div>
             </section>
