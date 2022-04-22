@@ -256,6 +256,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chương 5</span> Tính toán trên các phần tử trong Pandas<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="sử-dụng-vectorization" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Sử dụng Vectorization<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-vectorization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>axis</code>: Nhận diện lọc theo dòng <code>0</code>, <code>index</code>, hay cột <code>1</code>, <code>column</code></p></li>
+<li><p><code>how</code>: Chỉ định cách lọc</p>
+<ul>
+<li><code>any</code>: Nếu có bất kì <code>NA</code>, loại bỏ dòng hoặc cột</li>
+<li><code>all</code>: Nếu tất cả là <code>NA</code>, loại bỏ dòng hoặc cột</li>
+</ul></li>
+<li><p><code>thresh</code>: Số lượng <code>non-NA</code> yêu cầu</p></li>
+<li><p><code>subset</code>: Chỉ định các cột cần lọc</p></li>
+<li><p><code>inplace</code>: Thực hiện trên chính <code>DataFrame</code> hay tạo bản sao.</p></li>
+</ul>
+<p>Lọc bỏ các hàng nếu ít nhất một phần tử <code>NA</code></p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb122-1" aria-hidden="true" tabindex="-1"></a>In []: missing_df.dropna(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb122-2"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb122-2" aria-hidden="true" tabindex="-1"></a>Out[]:</span>
+<span id="cb122-3"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb122-3" aria-hidden="true" tabindex="-1"></a>               state  individuals  family_members   state_pop</span>
+<span id="cb122-4"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb122-4" aria-hidden="true" tabindex="-1"></a>region                                                       </span>
+<span id="cb122-5"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb122-5" aria-hidden="true" tabindex="-1"></a>Mountain       Idaho       <span class="fl">1297.0</span>           <span class="fl">715.0</span>   <span class="fl">1750536.0</span></span>
+<span id="cb122-6"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb122-6" aria-hidden="true" tabindex="-1"></a>Pacific   California     <span class="fl">109008.0</span>         <span class="fl">20964.0</span>  <span class="fl">39461588.0</span></span></code></pre></div>
+<p>Lọc bỏ các cột nếu ít nhất một phần tử <code>NA</code></p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb123-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-1" aria-hidden="true" tabindex="-1"></a>In []: missing_df.dropna(axis<span class="op">=</span><span class="st">&#39;columns&#39;</span>)</span>
+<span id="cb123-2"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-2" aria-hidden="true" tabindex="-1"></a>Out[]:</span>
+<span id="cb123-3"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-3" aria-hidden="true" tabindex="-1"></a>               state</span>
+<span id="cb123-4"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-4" aria-hidden="true" tabindex="-1"></a>region              </span>
+<span id="cb123-5"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-5" aria-hidden="true" tabindex="-1"></a>Mountain     Arizona</span>
+<span id="cb123-6"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-6" aria-hidden="true" tabindex="-1"></a>Mountain    Colorado</span>
+<span id="cb123-7"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-7" aria-hidden="true" tabindex="-1"></a>Mountain       Idaho</span>
+<span id="cb123-8"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-8" aria-hidden="true" tabindex="-1"></a>Pacific       Alaska</span>
+<span id="cb123-9"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-9" aria-hidden="true" tabindex="-1"></a>Pacific   California</span>
+<span id="cb123-10"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb123-10" aria-hidden="true" tabindex="-1"></a>Pacific       Hawaii</span></code></pre></div>
+<p>Lọc bỏ các dòng nếu tất cả phần tử trong các cột <code>['family_members', 'state_pop']</code> là <code>NA</code></p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb124-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-1" aria-hidden="true" tabindex="-1"></a>In []: missing_df.dropna(axis<span class="op">=</span><span class="st">&#39;index&#39;</span>, how<span class="op">=</span><span class="st">&#39;all&#39;</span>, subset<span class="op">=</span>[<span class="st">&#39;family_members&#39;</span>, <span class="st">&#39;state_pop&#39;</span>])</span>
+<span id="cb124-2"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-2" aria-hidden="true" tabindex="-1"></a>Out[]:</span>
+<span id="cb124-3"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-3" aria-hidden="true" tabindex="-1"></a>               state  individuals  family_members   state_pop</span>
+<span id="cb124-4"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-4" aria-hidden="true" tabindex="-1"></a>region                                                       </span>
+<span id="cb124-5"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-5" aria-hidden="true" tabindex="-1"></a>Mountain    Colorado          NaN          <span class="fl">3250.0</span>   <span class="fl">5691287.0</span></span>
+<span id="cb124-6"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-6" aria-hidden="true" tabindex="-1"></a>Mountain       Idaho       <span class="fl">1297.0</span>           <span class="fl">715.0</span>   <span class="fl">1750536.0</span></span>
+<span id="cb124-7"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-7" aria-hidden="true" tabindex="-1"></a>Pacific       Alaska       <span class="fl">1434.0</span>             NaN    <span class="fl">735139.0</span></span>
+<span id="cb124-8"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-8" aria-hidden="true" tabindex="-1"></a>Pacific   California     <span class="fl">109008.0</span>         <span class="fl">20964.0</span>  <span class="fl">39461588.0</span></span>
+<span id="cb124-9"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb124-9" aria-hidden="true" tabindex="-1"></a>Pacific       Hawaii       <span class="fl">4131.0</span>          <span class="fl">2399.0</span>         NaN</span></code></pre></div>
+<p>Giữ lại các dòng có ít nhất <code>3</code> phần tử <code>non-NA</code></p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb125-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-1" aria-hidden="true" tabindex="-1"></a>In []: missing_df.dropna(thresh<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb125-2"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-2" aria-hidden="true" tabindex="-1"></a>Out[]: </span>
+<span id="cb125-3"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-3" aria-hidden="true" tabindex="-1"></a>               state  individuals  family_members   state_pop</span>
+<span id="cb125-4"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-4" aria-hidden="true" tabindex="-1"></a>region                                                       </span>
+<span id="cb125-5"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-5" aria-hidden="true" tabindex="-1"></a>Mountain    Colorado          NaN          <span class="fl">3250.0</span>   <span class="fl">5691287.0</span></span>
+<span id="cb125-6"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-6" aria-hidden="true" tabindex="-1"></a>Mountain       Idaho       <span class="fl">1297.0</span>           <span class="fl">715.0</span>   <span class="fl">1750536.0</span></span>
+<span id="cb125-7"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-7" aria-hidden="true" tabindex="-1"></a>Pacific       Alaska       <span class="fl">1434.0</span>             NaN    <span class="fl">735139.0</span></span>
+<span id="cb125-8"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-8" aria-hidden="true" tabindex="-1"></a>Pacific   California     <span class="fl">109008.0</span>         <span class="fl">20964.0</span>  <span class="fl">39461588.0</span></span>
+<span id="cb125-9"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb125-9" aria-hidden="true" tabindex="-1"></a>Pacific       Hawaii       <span class="fl">4131.0</span>          <span class="fl">2399.0</span>         NaN</span></code></pre></div>
 </div>
 <div id="sử-dụng-apply" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Sử dụng apply<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply" class="anchor-section" aria-label="Anchor link to header"></a></h2>

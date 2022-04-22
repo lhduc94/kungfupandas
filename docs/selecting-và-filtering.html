@@ -550,12 +550,10 @@ Nhãn đơn phía sau phải có cùng level với nhãn đầu tiên trong tupl
 <span id="cb97-7"><a href="selecting-và-filtering.html#cb97-7" aria-hidden="true" tabindex="-1"></a>         Hawaii         <span class="fl">4131.0</span>          <span class="fl">2399.0</span>    <span class="dv">1420593</span></span></code></pre></div>
 
 <div class="rmdtip">
-<p><strong><em>Mẹo:</em></strong></p>
-<ul>
-<li>Dòng lệnh trên cũng tương đương với <code>df.iloc[[1, 3 ,5], :]</code>, trong đó <code>:</code> dùng để lấy toàn bộ
+<strong><em>Mẹo:</em></strong>
+Dòng lệnh trên cũng tương đương với <code>df.iloc[[1, 3 ,5], :]</code>, trong đó <code>:</code> dùng để lấy toàn bộ
 </div>
-Tương tự để lấy theo danh sách index các cột</li>
-</ul>
+<p>Tương tự để lấy theo danh sách index các cột</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="selecting-và-filtering.html#cb98-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">25</span>]: df.iloc[:, [<span class="dv">0</span>, <span class="dv">2</span>]]</span>
 <span id="cb98-2"><a href="selecting-và-filtering.html#cb98-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">25</span>]:</span>
 <span id="cb98-3"><a href="selecting-và-filtering.html#cb98-3" aria-hidden="true" tabindex="-1"></a>                     individuals  state_pop</span>

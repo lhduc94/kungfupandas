@@ -1,5 +1,68 @@
 # Tính toán trên các phần tử trong Pandas 
 ## Sử dụng Vectorization
+Trong đó:
+
+- `axis`: Nhận diện lọc theo dòng `0`, `index`, hay cột `1`, `column`
+
+- `how`: Chỉ định cách lọc
+    - `any`: Nếu có bất kì `NA`, loại bỏ dòng hoặc cột
+    - `all`: Nếu tất cả là `NA`, loại bỏ dòng hoặc cột
+
+- `thresh`: Số lượng `non-NA` yêu cầu
+
+- `subset`: Chỉ định các cột cần lọc
+
+- `inplace`: Thực hiện trên chính `DataFrame` hay tạo bản sao.
+
+
+Lọc bỏ các hàng nếu ít nhất một phần tử `NA`
+```python
+In []: missing_df.dropna(axis=0)
+Out[]:
+               state  individuals  family_members   state_pop
+region                                                       
+Mountain       Idaho       1297.0           715.0   1750536.0
+Pacific   California     109008.0         20964.0  39461588.0
+```
+
+Lọc bỏ các cột nếu ít nhất một phần tử `NA`
+```python
+In []: missing_df.dropna(axis='columns')
+Out[]:
+               state
+region              
+Mountain     Arizona
+Mountain    Colorado
+Mountain       Idaho
+Pacific       Alaska
+Pacific   California
+Pacific       Hawaii
+```
+Lọc bỏ các dòng nếu tất cả phần tử trong các cột `['family_members', 'state_pop']` là `NA`
+```python
+In []: missing_df.dropna(axis='index', how='all', subset=['family_members', 'state_pop'])
+Out[]:
+               state  individuals  family_members   state_pop
+region                                                       
+Mountain    Colorado          NaN          3250.0   5691287.0
+Mountain       Idaho       1297.0           715.0   1750536.0
+Pacific       Alaska       1434.0             NaN    735139.0
+Pacific   California     109008.0         20964.0  39461588.0
+Pacific       Hawaii       4131.0          2399.0         NaN
+```
+
+Giữ lại các dòng có ít nhất `3` phần tử `non-NA`
+```python
+In []: missing_df.dropna(thresh=3)
+Out[]: 
+               state  individuals  family_members   state_pop
+region                                                       
+Mountain    Colorado          NaN          3250.0   5691287.0
+Mountain       Idaho       1297.0           715.0   1750536.0
+Pacific       Alaska       1434.0             NaN    735139.0
+Pacific   California     109008.0         20964.0  39461588.0
+Pacific       Hawaii       4131.0          2399.0         NaN
+```
 ## Sử dụng apply
 ## Sử dụng iterator
 ## Xử lý song song trong pandas
