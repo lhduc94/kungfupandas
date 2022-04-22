@@ -149,7 +149,7 @@ writer.save()
 **_Mẹo:_**
 Có thể dùng `with` để mở file để tránh trường hợp quên gọi lệnh `.save()`, lệnh `with` sẽ tự động lưu file sau khi kết thúc các lệnh con trong nó
 ``` 
-a
+
 ```python
 import pandas as pd
 df1 = pd.DataFrame({'col_1': [2, 3, 4, 5]})

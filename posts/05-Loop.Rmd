@@ -1,5 +1,5 @@
 # Tính toán trên các phần tử trong Pandas 
-## Sử dụng column element-wise
+## Sử dụng Vectorization
 ## Sử dụng apply
 ## Sử dụng iterator
 ## Xử lý song song trong pandas
