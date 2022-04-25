@@ -1,1 +1,15 @@
 # Groupby và Aggregate 
+
+## Groupby
+Phương thức `.groupby` sẽ gom các dòng hoặc các cột thành các nhóm khác nhau. Cú pháp cơ bản của `.groupby` như sau
+```python
+DataFrame.groupby(by=None, axis=0, sdropna=True)
+```
+Trong đó
+
+- `by`: có thể là dạng mapping, nhãn hoặc một hàm trả về danh sách các index
+
+- `axis`: Tùy chọn group theo dòng {`0` hoặc `index`} hoặc cột {`1` hoặc `columns`}, thông thường là dòng
+
+- 
+

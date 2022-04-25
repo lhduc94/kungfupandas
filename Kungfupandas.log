@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.21)  21 APR 2022 10:41
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.3) (preloaded format=xelatex 2022.4.21)  22 APR 2022 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -122,7 +122,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 ) (C:\Program Files\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
-! xelatex: security risk: running with elevated privileges
 
 ! Sorry, but C:\PROGRA~1\MiKTeX\miktex\bin\x64\xelatex.exe did not succeed.
 

@@ -207,7 +207,7 @@
 
 \title{Kungfu Pandas}
 \author{Lê Huỳnh Đức}
-\date{2022-04-21}
+\date{2022-04-22}
 
 \begin{document}
 \maketitle
@@ -1151,7 +1151,6 @@ Trong đó:
 \textbf{\emph{Mẹo:}}
 Có thể dùng \texttt{with} để mở file để tránh trường hợp quên gọi lệnh \texttt{.save()}, lệnh \texttt{with} sẽ tự động lưu file sau khi kết thúc các lệnh con trong nó
 \end{rmdtip}
-a
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1931,8 +1930,14 @@ Trong khi đưa vào \texttt{Iterator} thì hoạt động.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{select-vuxe0-filter}{%
-\chapter{Select và Filter}\label{select-vuxe0-filter}}
+\hypertarget{sort_index}{%
+\section{\texorpdfstring{\texttt{.sort\_index}}{.sort\_index}}\label{sort_index}}
+
+\hypertarget{sort_values}{%
+\section{\texorpdfstring{\texttt{.sort\_values}}{.sort\_values}}\label{sort_values}}
+
+\hypertarget{selecting-vuxe0-filtering}{%
+\chapter{Selecting và Filtering}\label{selecting-vuxe0-filtering}}
 
 \hypertarget{sux1eed-dux1ee5ng}{%
 \section{\texorpdfstring{Sử dụng \texttt{{[}{]}}}{Sử dụng {[}{]}}}\label{sux1eed-dux1ee5ng}}
@@ -2012,7 +2017,7 @@ Với 1 \texttt{df} là 1 \texttt{DataFrame} có index là \texttt{region} và d
 \hypertarget{loc}{%
 \subsection{.loc}\label{loc}}
 
-Phương thức loc dùng để lấy dữ liệu theo cột hoặc hàng dựa theo nhãn định sẵn (Tên hàng, tên cột), ngoài ra \texttt{.loc} còn nhận các giá trị boolean.
+Phương thức \texttt{.loc} dùng để lấy dữ liệu theo cột hoặc hàng dựa theo nhãn định sẵn (Tên hàng, tên cột), ngoài ra \texttt{.loc} còn nhận các giá trị boolean.
 
 Đầu vào của \texttt{.loc} có thể gồm:
 
@@ -2035,10 +2040,8 @@ Sử dụng nhãn đơn, kết quả trả về là các dòng có nhãn giống
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
 \NormalTok{In [}\DecValTok{4}\NormalTok{]: df.loc[}\StringTok{\textquotesingle{}Pacific\textquotesingle{}}\NormalTok{]}
-\NormalTok{Out[}\DecValTok{4}\NormalTok{]:               }
-              
+\NormalTok{Out[}\DecValTok{4}\NormalTok{]:          }
 \NormalTok{              state  individuals  family\_members  state\_pop}
 \NormalTok{region                                                     }
 \NormalTok{Pacific      Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
@@ -2127,14 +2130,862 @@ Khi đưa danh sách các nhãn dùng \texttt{.loc{[}{[}{]}{]}} thì nhãn đưa
   \end{rmdnote}
 \end{itemize}
 
+Danh sách dạng \texttt{boolean}, chỉ sử dụng cho \texttt{index}, không dùng cho \texttt{column}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{10}\NormalTok{]: df.loc[[}\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{False}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{10}\NormalTok{]:}
+\NormalTok{                       state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                              }
+\NormalTok{Pacific               Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{West South Central  Arkansas       }\FloatTok{2280.0}           \FloatTok{432.0}    \DecValTok{3009733}
+\end{Highlighting}
+\end{Shaded}
+
+Series boolean
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{11}\NormalTok{]: s }\OperatorTok{=}\NormalTok{ pd.Series([}\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{False}\NormalTok{],}
+\NormalTok{              index}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}East South Central\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Pacific\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}West South Central\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Pacific\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{])}
+\NormalTok{In [}\DecValTok{12}\NormalTok{]: df.loc[s]}
+\NormalTok{Out[}\DecValTok{12}\NormalTok{]:}
+\NormalTok{                       state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                              }
+\NormalTok{Pacific               Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{West South Central  Arkansas       }\FloatTok{2280.0}           \FloatTok{432.0}    \DecValTok{3009733}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{pd.Index}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{13}\NormalTok{]: df.loc[pd.Index([}\StringTok{"Pacific"}\NormalTok{, }\StringTok{"East South Central"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)]}
+\NormalTok{Out[}\DecValTok{13}\NormalTok{]:}
+\NormalTok{                         state  individuals  family\_members  state\_pop}
+\NormalTok{meow                                                                   }
+\NormalTok{Pacific                 Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{Pacific             California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\NormalTok{East South Central     Alabama       }\FloatTok{2570.0}           \FloatTok{864.0}    \DecValTok{4887681}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Select với \texttt{MultiIndex}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{                     individuals  family\_members  state\_pop}
+\NormalTok{region   state                                             }
+\NormalTok{Mountain Arizona          }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{         Colorado         }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{         Idaho            }\FloatTok{1297.0}           \FloatTok{715.0}    \DecValTok{1750536}
+\NormalTok{Pacific  Alaska           }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{         California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\NormalTok{         Hawaii           }\FloatTok{4131.0}          \FloatTok{2399.0}    \DecValTok{1420593}
+\end{Highlighting}
+\end{Shaded}
+
+Với nhãn đơn
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{14}\NormalTok{]: df.loc[}\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{14}\NormalTok{]: }
+\NormalTok{          individuals  family\_members  state\_pop}
+\NormalTok{state                                           }
+\NormalTok{Arizona        }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{Idaho          }\FloatTok{1297.0}           \FloatTok{715.0}    \DecValTok{1750536}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý:}}
+Với \texttt{MultiIndex},các index sẽ xếp theo thứ tự từ level 0 đến n (\texttt{level\ 0} cao hơn \texttt{level\ 1} \ldots), với nhãn đơn là nhãn của 1 \texttt{index} thì chỉ thực hiện được index level đầu tiên, các index level sau sẽ báo lỗi.
+Theo như ví dụ trên thì \texttt{region} có level cao hơn `state' nên chỉ gọi được \texttt{.loc{[}\textquotesingle{}Mountain\textquotesingle{}{]}} còn \texttt{.loc{[}\textquotesingle{}Arizona\textquotesingle{}{]}} sẽ báo lỗi
+\end{rmdnote}
+
+Để select nhiều index cùng lúc, ta truyền vào \texttt{tuple(label1,\ label2...)} theo thứ tự index có level từ cao đến thấp
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{15}\NormalTok{]: df.loc[(}\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Colorado\textquotesingle{}}\NormalTok{)]}
+\NormalTok{Out[}\DecValTok{15}\NormalTok{]:}
+\NormalTok{individuals          }\FloatTok{7607.0}
+\NormalTok{family\_members       }\FloatTok{3250.0}
+\NormalTok{state\_pop         }\FloatTok{5691287.0}
+\NormalTok{Name: (Mountain, Colorado), dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+Tương tự ta cùng có select theo các column cho trước
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{16}\NormalTok{]: df.loc[(}\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Colorado\textquotesingle{}}\NormalTok{), [}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{16}\NormalTok{]:}
+\NormalTok{individuals       }\FloatTok{7607.0}
+\NormalTok{family\_members    }\FloatTok{3250.0}
+\NormalTok{Name: (Mountain, Colorado), dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdtip}
+\textbf{\emph{Mẹo:}}
+Có thể select \texttt{index} ở các level sau bằng cách dùng \texttt{slice}
+\end{rmdtip}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{17}\NormalTok{]: df.loc[(}\BuiltInTok{slice}\NormalTok{(}\VariableTok{None}\NormalTok{), }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{), :]}
+\NormalTok{Out[}\DecValTok{17}\NormalTok{]:}
+\NormalTok{                  individuals  family\_members  state\_pop}
+\NormalTok{region   state                                          }
+\NormalTok{Mountain Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\end{Highlighting}
+\end{Shaded}
+
+Slice cho MultiIndex
+Slice từ 1 tuple nhãn đến một nhãn đơn
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{18}\NormalTok{]: df.loc[(}\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Colorado\textquotesingle{}}\NormalTok{):}\StringTok{\textquotesingle{}Pacific\textquotesingle{}}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{18}\NormalTok{]:}
+\NormalTok{                     individuals  family\_members  state\_pop}
+\NormalTok{region   state                                             }
+\NormalTok{Mountain Colorado         }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{         Idaho            }\FloatTok{1297.0}           \FloatTok{715.0}    \DecValTok{1750536}
+\NormalTok{Pacific  Alaska           }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{         California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\NormalTok{         Hawaii           }\FloatTok{4131.0}          \FloatTok{2399.0}    \DecValTok{1420593}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý:}}
+Nhãn đơn phía sau phải có cùng level với nhãn đầu tiên trong tuple. Trong ví dụ trên nếu thay \texttt{Pacific} thành \texttt{Hawaii} sẽ trả về rỗng. Nhưng khi truyền nhãn không nằm trong các nhãn của index thì vẫn có kết quả trả về
+\end{rmdnote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{19}\NormalTok{]: df.loc[(}\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Colorado\textquotesingle{}}\NormalTok{): }\StringTok{\textquotesingle{}meow\textquotesingle{}}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{19}\NormalTok{]:}
+\NormalTok{                     individuals  family\_members  state\_pop}
+\NormalTok{region   state                                             }
+\NormalTok{Mountain Colorado         }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{         Idaho            }\FloatTok{1297.0}           \FloatTok{715.0}    \DecValTok{1750536}
+\NormalTok{Pacific  Alaska           }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{         California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\NormalTok{         Hawaii           }\FloatTok{4131.0}          \FloatTok{2399.0}    \DecValTok{1420593}
+\end{Highlighting}
+\end{Shaded}
+
+Slice từ 1 tuple nhãn đến một tuple nhãn
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{20}\NormalTok{]: df.loc[(}\StringTok{\textquotesingle{}Mountain\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Colorado\textquotesingle{}}\NormalTok{):(}\StringTok{\textquotesingle{}Pacific\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}California\textquotesingle{}}\NormalTok{)]}
+\NormalTok{Out[}\DecValTok{20}\NormalTok{]:}
+\NormalTok{                     individuals  family\_members  state\_pop}
+\NormalTok{region   state                                             }
+\NormalTok{Mountain Colorado         }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{         Idaho            }\FloatTok{1297.0}           \FloatTok{715.0}    \DecValTok{1750536}
+\NormalTok{Pacific  Alaska           }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{         California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{iloc}{%
+\subsection{\texorpdfstring{\texttt{.iloc}}{.iloc}}\label{iloc}}
+
+Phương thức \texttt{.iloc} dùng để lấy dữ liệu theo cột hoặc hàng dựa theo index của nó, ngoài ra \texttt{.iloc} còn nhận các giá trị boolean.
+
+Đầu vào của \texttt{.iloc} có thể gồm:
+
+\begin{itemize}
+\item
+  Nhãn đơn: là 1 số \texttt{3}
+\item
+  Danh sách các số : \texttt{{[}1,\ 2,\ 3{]}}
+\item
+  Đối tượng dạng slice ví dụ \texttt{1:5}
+\item
+  Danh sách kiểu \texttt{bool} có độ dài bằng với số lượng dòng
+\end{itemize}
+
+Ví dụ với DataFrame
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{                         state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                                }
+\NormalTok{East South Central     Alabama       }\FloatTok{2570.0}           \FloatTok{864.0}    \DecValTok{4887681}
+\NormalTok{Pacific                 Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{Mountain               Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{West South Central    Arkansas       }\FloatTok{2280.0}           \FloatTok{432.0}    \DecValTok{3009733}
+\NormalTok{Pacific             California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\NormalTok{Mountain              Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\end{Highlighting}
+\end{Shaded}
+
+Khi truyền 1 giá trị nguyên, \texttt{.iloc} trả về giá trị của dòng tại vị trí truyền vào với kiểu \texttt{Series}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{21}\NormalTok{]: df.iloc[}\DecValTok{0}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{21}\NormalTok{]:}
+\NormalTok{state             Alabama}
+\NormalTok{individuals        }\FloatTok{2570.0}
+\NormalTok{family\_members      }\FloatTok{864.0}
+\NormalTok{state\_pop         }\DecValTok{4887681}
+\NormalTok{Name: East South Central, dtype: }\BuiltInTok{object}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý:}}
+\texttt{Series} trả về không chứa nhãn của index, ở đây là nhãn \texttt{East\ South\ Central} của index \texttt{region}
+\end{rmdnote}
+
+Để lấy dữ liệu theo cột, ví dụ muốn lấy cột \texttt{family\_members} thì sẽ truyền index cột là \texttt{2}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{22}\NormalTok{]: df.iloc[:, }\DecValTok{2}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{22}\NormalTok{]:}
+\NormalTok{region}
+\NormalTok{East South Central      }\FloatTok{864.0}
+\NormalTok{Pacific                 }\FloatTok{582.0}
+\NormalTok{Mountain               }\FloatTok{2606.0}
+\NormalTok{West South Central      }\FloatTok{432.0}
+\NormalTok{Pacific               }\FloatTok{20964.0}
+\NormalTok{Mountain               }\FloatTok{3250.0}
+\NormalTok{Name: family\_members, dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdtip}
+\textbf{\emph{Mẹo:}}
+
+\begin{itemize}
+\item
+  \texttt{.iloc} bắt buộc truyền vào vị trí của cột, không cho phép tên cột.
+\item
+  Sử dụng \texttt{.columns.get\_loc(\textless{}tên\ cột\textgreater{})} để lấy vị trí của cột
+  \end{rmdtip}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{23}\NormalTok{]: df.iloc[:, df.columns.get\_loc(}\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{)]}
+\NormalTok{Out[}\DecValTok{23}\NormalTok{]:}
+\NormalTok{region}
+\NormalTok{East South Central      }\FloatTok{864.0}
+\NormalTok{Pacific                 }\FloatTok{582.0}
+\NormalTok{Mountain               }\FloatTok{2606.0}
+\NormalTok{West South Central      }\FloatTok{432.0}
+\NormalTok{Pacific               }\FloatTok{20964.0}
+\NormalTok{Mountain               }\FloatTok{3250.0}
+\NormalTok{Name: family\_members, dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+Select theo danh sách, mặc định đưa vào 1 danh sách \texttt{Pandas} sẽ hiểu là lấy theo các dòng
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{24}\NormalTok{]: df.iloc[[}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{ ,}\DecValTok{5}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{24}\NormalTok{]:}
+\NormalTok{                   individuals  family\_members  state\_pop}
+\NormalTok{region   state                                           }
+\NormalTok{Mountain Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{Pacific  Alaska         }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{         Hawaii         }\FloatTok{4131.0}          \FloatTok{2399.0}    \DecValTok{1420593}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdtip}
+\textbf{\emph{Mẹo:}}
+Dòng lệnh trên cũng tương đương với \texttt{df.iloc{[}{[}1,\ 3\ ,5{]},\ :{]}}, trong đó \texttt{:} dùng để lấy toàn bộ
+\end{rmdtip}
+Tương tự để lấy theo danh sách index các cột
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{25}\NormalTok{]: df.iloc[:, [}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{25}\NormalTok{]:}
+\NormalTok{                     individuals  state\_pop}
+\NormalTok{region   state                             }
+\NormalTok{Mountain Arizona          }\FloatTok{7259.0}    \DecValTok{7158024}
+\NormalTok{         Colorado         }\FloatTok{7607.0}    \DecValTok{5691287}
+\NormalTok{         Idaho            }\FloatTok{1297.0}    \DecValTok{1750536}
+\NormalTok{Pacific  Alaska           }\FloatTok{1434.0}     \DecValTok{735139}
+\NormalTok{         California     }\FloatTok{109008.0}   \DecValTok{39461588}
+\NormalTok{         Hawaii           }\FloatTok{4131.0}    \DecValTok{1420593}
+\end{Highlighting}
+\end{Shaded}
+
+Slice cả 2 chiều
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{26}\NormalTok{]: df.iloc[}\DecValTok{2}\NormalTok{:}\DecValTok{4}\NormalTok{, }\DecValTok{0}\NormalTok{:}\DecValTok{2}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{26}\NormalTok{]:}
+\NormalTok{                 individuals  family\_members}
+\NormalTok{region   state                              }
+\NormalTok{Mountain Idaho        }\FloatTok{1297.0}           \FloatTok{715.0}
+\NormalTok{Pacific  Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}
+\end{Highlighting}
+\end{Shaded}
+
+Sử dụng danh sách các boolean
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Theo dòng}
+\NormalTok{In [}\DecValTok{27}\NormalTok{]: df.iloc[[}\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{], :]}
+\NormalTok{Out[}\DecValTok{27}\NormalTok{]:}
+\NormalTok{                  individuals  family\_members  state\_pop}
+\NormalTok{region   state                                          }
+\NormalTok{Mountain Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{         Idaho         }\FloatTok{1297.0}           \FloatTok{715.0}    \DecValTok{1750536}
+\NormalTok{Pacific  Hawaii        }\FloatTok{4131.0}          \FloatTok{2399.0}    \DecValTok{1420593}
+
+\CommentTok{\#Theo cột}
+\NormalTok{In [}\DecValTok{28}\NormalTok{]: df.iloc[:, [}\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{,}\VariableTok{False}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{28}\NormalTok{]: }
+\NormalTok{                     family\_members}
+\NormalTok{region   state                     }
+\NormalTok{Mountain Arizona             }\FloatTok{2606.0}
+\NormalTok{         Colorado            }\FloatTok{3250.0}
+\NormalTok{         Idaho                }\FloatTok{715.0}
+\NormalTok{Pacific  Alaska               }\FloatTok{582.0}
+\NormalTok{         California         }\FloatTok{20964.0}
+\NormalTok{         Hawaii              }\FloatTok{2399.0}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{lux1ecdc-theo-ux111iux1ec1u-kiux1ec7n}{%
 \section{Lọc theo điều kiện}\label{lux1ecdc-theo-ux111iux1ec1u-kiux1ec7n}}
+
+Các phương thức \texttt{{[}{]}}, \texttt{.loc} hay \texttt{.iloc} ngoài việc lấy dữ liệu theo hàng và cột còn có thể lấy ra những bảng con theo các điều kiện cho trước. Bản chất các câu điều kiện sẽ trả về một danh sách dạng bolean và các hàm trên thực hiện lọc theo danh sách đó.
+
+Trước hết ta cần biết câu điều kiện trong Pandas như thế nào. Ví dụ ta có 1 \texttt{DataFrame} như sau
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{               state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                      }
+\NormalTok{Mountain     Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Mountain    Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}    \DecValTok{1750536}
+\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}    \DecValTok{1420593}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{touxe1n-tux1eed-ux111iux1ec1u-kiux1ec7n}{%
+\subsection{Toán tử điều kiện}\label{touxe1n-tux1eed-ux111iux1ec1u-kiux1ec7n}}
+
+Giả sử ta có một điều kiện rằng \texttt{df{[}\textquotesingle{}individuals\textquotesingle{}{]}\ \textgreater{}\ 5000}. Kết quả trả về là 1 \texttt{Series}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{28}\NormalTok{]: df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5000}
+\NormalTok{Out[}\DecValTok{28}\NormalTok{]:}
+\NormalTok{region}
+\NormalTok{Mountain     }\VariableTok{True}
+\NormalTok{Mountain     }\VariableTok{True}
+\NormalTok{Mountain    }\VariableTok{False}
+\NormalTok{Pacific     }\VariableTok{False}
+\NormalTok{Pacific      }\VariableTok{True}
+\NormalTok{Pacific     }\VariableTok{False}
+\NormalTok{Name: individuals, dtype: }\BuiltInTok{bool}
+\end{Highlighting}
+\end{Shaded}
+
+Để lọc theo điều kiện này ta có các cách như sau
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\# Dùng []}
+\NormalTok{In [}\DecValTok{29}\NormalTok{]: df[df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5000}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{29}\NormalTok{]:}
+\NormalTok{               state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                      }
+\NormalTok{Mountain     Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Mountain    Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+
+\CommentTok{\#\# Dùng .loc}
+\NormalTok{In [}\DecValTok{30}\NormalTok{]: df.loc[df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5000}\NormalTok{]}
+\NormalTok{Out[}\DecValTok{30}\NormalTok{]: }
+\NormalTok{               state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                      }
+\NormalTok{Mountain     Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Mountain    Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý:}}
+\texttt{.iloc} không nhận \texttt{Series} boolean nhưng \texttt{array} thì có thể. Do đó ta có thể dùng \texttt{.values} để lấy kết quả của Câu điều kiện
+\end{rmdnote}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\# Dùng .iloc}
+\NormalTok{In [}\DecValTok{31}\NormalTok{]: df.iloc[(df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5000}\NormalTok{).values]}
+\NormalTok{Out[}\DecValTok{31}\NormalTok{]:}
+\NormalTok{               state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                      }
+\NormalTok{Mountain     Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Mountain    Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\end{Highlighting}
+\end{Shaded}
+
+Ta cũng có thể áp nhiều điều kiện cùng lúc, mỗi điều kiện phải nằm trong dấu ngoặc đơn \texttt{()} và giữa các kiều kiện là toán tử \texttt{\&} hoặc \texttt{\textbar{}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\# Nhiều câu điều kiện trên một cột}
+\NormalTok{In [}\DecValTok{32}\NormalTok{]: df.loc[(df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5000}\NormalTok{) }\OperatorTok{\&}\NormalTok{ (df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textless{}} \DecValTok{10000}\NormalTok{)]}
+\NormalTok{Out[}\DecValTok{32}\NormalTok{]:}
+\NormalTok{             state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                    }
+\NormalTok{Mountain   Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Mountain  Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+
+\CommentTok{\#\# Nhiều câu điều kiện ở nhiều cột}
+\NormalTok{In [}\DecValTok{33}\NormalTok{]: df.loc[(df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5000}\NormalTok{) }\OperatorTok{\&}\NormalTok{ (df[}\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{] }\OperatorTok{\textless{}} \DecValTok{10000}\NormalTok{)}
+\NormalTok{Out[}\DecValTok{33}\NormalTok{]:}
+\NormalTok{             state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                    }
+\NormalTok{Mountain   Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Mountain  Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+
+\CommentTok{\#\# Một câu điều kiện trên nhiều cột}
+\NormalTok{In [}\DecValTok{34}\NormalTok{]: df[df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5} \OperatorTok{*}\NormalTok{ df[}\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{]]}
+\NormalTok{Out[}\DecValTok{34}\NormalTok{]:}
+\NormalTok{              state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                     }
+\NormalTok{Pacific  California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdtip}
+\textbf{\emph{Mẹo:}}
+Bạn cũng có thể dùng \texttt{loc} để vừa lọc các dòng thỏa điều kiện, vừa chọn các cột muốn lấy
+\end{rmdtip}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.loc[df[}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{] }\OperatorTok{\textgreater{}} \DecValTok{5} \OperatorTok{*}\NormalTok{ df[}\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{], [}\StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{]]}
+\NormalTok{Out[]:}
+\NormalTok{         individuals  family\_members}
+\NormalTok{region                              }
+\NormalTok{Pacific     }\FloatTok{109008.0}         \FloatTok{20964.0}
+\end{Highlighting}
+\end{Shaded}
+
+Ngoài ra, \texttt{pandas} còn cho phép bạn lọc với cấu trúc câu truy vấn bằng \texttt{.query} theo cú pháp
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataFrame.query(expr, inplace}\OperatorTok{=}\VariableTok{False}\NormalTok{, }\OperatorTok{**}\NormalTok{kwargs)}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{expr}: là câu truy vấn
+\item
+  \texttt{inplace}: thực hiện trên chính \texttt{DataFrame} đó hay tạo 1 bảng sao
+\item
+  \texttt{**kwargs}: keyword arguments
+\end{itemize}
+
+Theo ví dụ trên, để thực hiện lọc theo điều kiện \texttt{df{[}\textquotesingle{}individuals\textquotesingle{}{]}\ \textgreater{}\ 5000} và \texttt{df{[}\textquotesingle{}family\_members\textquotesingle{}{]}\ \textless{}\ 10000} ta có thể làm như sau
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{34}\NormalTok{]: df.query(}\StringTok{\textquotesingle{}individuals \textgreater{} 500 and family\_members \textless{} 10000\textquotesingle{}}\NormalTok{)}
+\NormalTok{Out[}\DecValTok{34}\NormalTok{]: }
+\NormalTok{             state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                    }
+\NormalTok{Mountain   Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Mountain  Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{isin}{%
+\subsection{\texorpdfstring{\texttt{.isin()}}{.isin()}}\label{isin}}
+
+Phương thức \texttt{.isin(values)} để kiểm tra các phần tử trong \texttt{DataFrame} hoặc \texttt{Series} có nằm trong values hay không.
+
+Ví dụ:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{35}\NormalTok{]: df.isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{, }\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{35}\NormalTok{]:}
+\NormalTok{          state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                 }
+\NormalTok{Mountain   }\VariableTok{True}         \VariableTok{True}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Mountain  }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Mountain  }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Pacific    }\VariableTok{True}        \VariableTok{False}            \VariableTok{True}      \VariableTok{False}
+\NormalTok{Pacific   }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Pacific   }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+
+\NormalTok{In [}\DecValTok{36}\NormalTok{]: df[}\StringTok{\textquotesingle{}state\textquotesingle{}}\NormalTok{].isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{])}
+\NormalTok{Out[}\DecValTok{36}\NormalTok{]:}
+\NormalTok{region}
+\NormalTok{Mountain     }\VariableTok{True}
+\NormalTok{Mountain    }\VariableTok{False}
+\NormalTok{Mountain    }\VariableTok{False}
+\NormalTok{Pacific      }\VariableTok{True}
+\NormalTok{Pacific     }\VariableTok{False}
+\NormalTok{Pacific     }\VariableTok{False}
+\NormalTok{Name: state, dtype: }\BuiltInTok{bool}
+\end{Highlighting}
+\end{Shaded}
+
+Ngoài ra bạn có thể truyền \texttt{values} là một \texttt{dictionary} để kiểm tra cho từng cột theo từng tập giá trị
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{37}\NormalTok{]: df.isin(\{}\StringTok{\textquotesingle{}state\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{], }
+         \StringTok{\textquotesingle{}individuals\textquotesingle{}}\NormalTok{: [}\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{]\})}
+\NormalTok{Out[}\DecValTok{37}\NormalTok{]:}
+\NormalTok{          state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                 }
+\NormalTok{Mountain   }\VariableTok{True}         \VariableTok{True}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Mountain  }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Mountain  }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Pacific    }\VariableTok{True}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Pacific   }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\NormalTok{Pacific   }\VariableTok{False}        \VariableTok{False}           \VariableTok{False}      \VariableTok{False}
+\end{Highlighting}
+\end{Shaded}
+
+Lọc với \texttt{.isin()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{38}\NormalTok{]: df[df[}\StringTok{\textquotesingle{}state\textquotesingle{}}\NormalTok{].isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{])]}
+\NormalTok{Out[}\DecValTok{38}\NormalTok{]:}
+\NormalTok{            state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                   }
+\NormalTok{Mountain  Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Pacific    Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\end{Highlighting}
+\end{Shaded}
+
+trong trường hợp sự dụng \texttt{.isin} với \texttt{DataFrame}, kết quả của lọc sẽ trả về một \texttt{DataFrame} với giá trị các phần tử mà phép \texttt{isin} trả về \texttt{True}, các phần tử còn lại trả giá trị \texttt{NaN}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{39}\NormalTok{]: df[df.isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{, }\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{])]}
+\NormalTok{Out[}\DecValTok{39}\NormalTok{]:}
+\NormalTok{            state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                   }
+\NormalTok{Mountain  Arizona       }\FloatTok{7259.0}\NormalTok{             NaN        NaN}
+\NormalTok{Mountain      NaN          NaN             NaN        NaN}
+\NormalTok{Mountain      NaN          NaN             NaN        NaN}
+\NormalTok{Pacific    Alaska          NaN           }\FloatTok{582.0}\NormalTok{        NaN}
+\NormalTok{Pacific       NaN          NaN             NaN        NaN}
+\NormalTok{Pacific       NaN          NaN             NaN        NaN}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdtip}
+\textbf{\emph{Mẹo:}}
+
+\begin{itemize}
+\item
+  Bạn có dùng \texttt{.any()} để tổng hợp điều kiện của 1 DataFrame với các phần tử \texttt{boolean}
+\item
+  \texttt{.any(axis=1)} : Chỉ cần tồn tại 1 cột giá trị True, trả về giá trị True cho dòng
+\item
+  \texttt{.any(axis=0)}: Chỉ cần tồn tại 1 dòng có giá trị True, trả về giá trị True cho cột.
+\item
+  Phương thức \texttt{.any()} thường dùng để kiểm tra các dòng tồn tại 1 cột giá trị \texttt{NaN}
+  \end{rmdtip}
+\end{itemize}
+
+Lọc với \texttt{.isin()} và \texttt{any(axis=1)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{40}\NormalTok{]: df.isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{, }\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{]).}\BuiltInTok{any}\NormalTok{(axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{Out[}\DecValTok{40}\NormalTok{]:}
+\NormalTok{region}
+\NormalTok{Mountain     }\VariableTok{True}
+\NormalTok{Mountain    }\VariableTok{False}
+\NormalTok{Mountain    }\VariableTok{False}
+\NormalTok{Pacific      }\VariableTok{True}
+\NormalTok{Pacific     }\VariableTok{False}
+\NormalTok{Pacific     }\VariableTok{False}
+\NormalTok{dtype: }\BuiltInTok{bool}
+
+\NormalTok{In [}\DecValTok{41}\NormalTok{]: df[df.isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{, }\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{]).}\BuiltInTok{any}\NormalTok{(axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)]}
+\NormalTok{Out[}\DecValTok{41}\NormalTok{]: }
+\NormalTok{            state  individuals  family\_members  state\_pop}
+\NormalTok{region                                                   }
+\NormalTok{Mountain  Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
+\NormalTok{Pacific    Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
+\end{Highlighting}
+\end{Shaded}
+
+Lọc với \texttt{isin()} và \texttt{any(axis=0)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{42}\NormalTok{]: df.isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{, }\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{]).}\BuiltInTok{any}\NormalTok{(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{Out[}\DecValTok{42}\NormalTok{]:}
+\NormalTok{state              }\VariableTok{True}
+\NormalTok{individuals        }\VariableTok{True}
+\NormalTok{family\_members     }\VariableTok{True}
+\NormalTok{state\_pop         }\VariableTok{False}
+\NormalTok{dtype: }\BuiltInTok{bool}
+
+\NormalTok{In [}\DecValTok{43}\NormalTok{]: df.loc[:,df.isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{, }\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{]).}\BuiltInTok{any}\NormalTok{(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)]}
+\NormalTok{Out[}\DecValTok{43}\NormalTok{]:}
+\NormalTok{               state  individuals  family\_members}
+\NormalTok{region                                           }
+\NormalTok{Mountain     Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}
+\NormalTok{Mountain    Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}
+\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}
+\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}
+\end{Highlighting}
+\end{Shaded}
+
+Lọc với \texttt{isin()} và \texttt{any(axis=0)} và \texttt{any(axis=1)}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: bool\_df }\OperatorTok{=}\NormalTok{ df.isin([}\StringTok{\textquotesingle{}Alaska\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Oklahoma\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Illinois\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Arizona\textquotesingle{}}\NormalTok{, }\DecValTok{7259}\NormalTok{, }\DecValTok{582}\NormalTok{, }\DecValTok{300}\NormalTok{])}
+\NormalTok{In []: df.loc[bool\_df.}\BuiltInTok{any}\NormalTok{(axis}\OperatorTok{=}\DecValTok{1}\NormalTok{), bool\_df.}\BuiltInTok{any}\NormalTok{(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)]}
+\NormalTok{Out[]:}
+\NormalTok{            state  individuals  family\_members}
+\NormalTok{region                                        }
+\NormalTok{Mountain  Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}
+\NormalTok{Pacific    Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{lux1ecdc-missing-value-vux1edbi-.dropna}{%
+\subsection{\texorpdfstring{Lọc missing value với \texttt{.dropna()}}{Lọc missing value với .dropna()}}\label{lux1ecdc-missing-value-vux1edbi-.dropna}}
+
+Trong quá trình xử lý dữ liệu, chúng ta thường gặp những bảng có chứa giá trị missing value. Ví dụ bảng \texttt{missing\_df}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{               state  individuals  family\_members   state\_pop}
+\NormalTok{region                                                       }
+\NormalTok{Mountain     Arizona       }\FloatTok{7259.0}\NormalTok{             NaN         NaN}
+\NormalTok{Mountain    Colorado          NaN          }\FloatTok{3250.0}   \FloatTok{5691287.0}
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
+\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}\NormalTok{             NaN    }\FloatTok{735139.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}\NormalTok{         NaN}
+\end{Highlighting}
+\end{Shaded}
+
+Để lọc dữ liệu chứa \texttt{NaN} ta dùng phương thức \texttt{.dropna()}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataFrame.dropna(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{, how}\OperatorTok{=}\StringTok{\textquotesingle{}any\textquotesingle{}}\NormalTok{, thresh}\OperatorTok{=}\VariableTok{None}\NormalTok{, subset}\OperatorTok{=}\VariableTok{None}\NormalTok{, inplace}\OperatorTok{=}\VariableTok{False}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{axis}: Nhận diện lọc theo dòng \texttt{0}, \texttt{index}, hay cột \texttt{1}, \texttt{column}
+\item
+  \texttt{how}: Chỉ định cách lọc
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{any}: Nếu có bất kì \texttt{NA}, loại bỏ dòng hoặc cột
+  \item
+    \texttt{all}: Nếu tất cả là \texttt{NA}, loại bỏ dòng hoặc cột
+  \end{itemize}
+\item
+  \texttt{thresh}: Số lượng \texttt{non-NA} yêu cầu
+\item
+  \texttt{subset}: Chỉ định các cột cần lọc
+\item
+  \texttt{inplace}: Thực hiện trên chính \texttt{DataFrame} hay tạo bản sao.
+\end{itemize}
+
+Lọc bỏ các hàng nếu ít nhất một phần tử \texttt{NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{               state  individuals  family\_members   state\_pop}
+\NormalTok{region                                                       }
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\end{Highlighting}
+\end{Shaded}
+
+Lọc bỏ các cột nếu ít nhất một phần tử \texttt{NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\StringTok{\textquotesingle{}columns\textquotesingle{}}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{               state}
+\NormalTok{region              }
+\NormalTok{Mountain     Arizona}
+\NormalTok{Mountain    Colorado}
+\NormalTok{Mountain       Idaho}
+\NormalTok{Pacific       Alaska}
+\NormalTok{Pacific   California}
+\NormalTok{Pacific       Hawaii}
+\end{Highlighting}
+\end{Shaded}
+
+Lọc bỏ các dòng nếu tất cả phần tử trong các cột \texttt{{[}\textquotesingle{}family\_members\textquotesingle{},\ \textquotesingle{}state\_pop\textquotesingle{}{]}} là \texttt{NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\StringTok{\textquotesingle{}index\textquotesingle{}}\NormalTok{, how}\OperatorTok{=}\StringTok{\textquotesingle{}all\textquotesingle{}}\NormalTok{, subset}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}state\_pop\textquotesingle{}}\NormalTok{])}
+\NormalTok{Out[]:}
+\NormalTok{               state  individuals  family\_members   state\_pop}
+\NormalTok{region                                                       }
+\NormalTok{Mountain    Colorado          NaN          }\FloatTok{3250.0}   \FloatTok{5691287.0}
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
+\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}\NormalTok{             NaN    }\FloatTok{735139.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}\NormalTok{         NaN}
+\end{Highlighting}
+\end{Shaded}
+
+Giữ lại các dòng có ít nhất \texttt{3} phần tử \texttt{non-NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(thresh}\OperatorTok{=}\DecValTok{3}\NormalTok{)}
+\NormalTok{Out[]: }
+\NormalTok{               state  individuals  family\_members   state\_pop}
+\NormalTok{region                                                       }
+\NormalTok{Mountain    Colorado          NaN          }\FloatTok{3250.0}   \FloatTok{5691287.0}
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
+\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}\NormalTok{             NaN    }\FloatTok{735139.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}\NormalTok{         NaN}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{tuxednh-touxe1n-truxean-cuxe1c-phux1ea7n-tux1eed-trong-pandas}{%
 \chapter{Tính toán trên các phần tử trong Pandas}\label{tuxednh-touxe1n-truxean-cuxe1c-phux1ea7n-tux1eed-trong-pandas}}
 
-\hypertarget{sux1eed-dux1ee5ng-column-element-wise}{%
-\section{Sử dụng column element-wise}\label{sux1eed-dux1ee5ng-column-element-wise}}
+\hypertarget{sux1eed-dux1ee5ng-vectorization}{%
+\section{Sử dụng Vectorization}\label{sux1eed-dux1ee5ng-vectorization}}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{axis}: Nhận diện lọc theo dòng \texttt{0}, \texttt{index}, hay cột \texttt{1}, \texttt{column}
+\item
+  \texttt{how}: Chỉ định cách lọc
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{any}: Nếu có bất kì \texttt{NA}, loại bỏ dòng hoặc cột
+  \item
+    \texttt{all}: Nếu tất cả là \texttt{NA}, loại bỏ dòng hoặc cột
+  \end{itemize}
+\item
+  \texttt{thresh}: Số lượng \texttt{non-NA} yêu cầu
+\item
+  \texttt{subset}: Chỉ định các cột cần lọc
+\item
+  \texttt{inplace}: Thực hiện trên chính \texttt{DataFrame} hay tạo bản sao.
+\end{itemize}
+
+Lọc bỏ các hàng nếu ít nhất một phần tử \texttt{NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{               state  individuals  family\_members   state\_pop}
+\NormalTok{region                                                       }
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\end{Highlighting}
+\end{Shaded}
+
+Lọc bỏ các cột nếu ít nhất một phần tử \texttt{NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\StringTok{\textquotesingle{}columns\textquotesingle{}}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{               state}
+\NormalTok{region              }
+\NormalTok{Mountain     Arizona}
+\NormalTok{Mountain    Colorado}
+\NormalTok{Mountain       Idaho}
+\NormalTok{Pacific       Alaska}
+\NormalTok{Pacific   California}
+\NormalTok{Pacific       Hawaii}
+\end{Highlighting}
+\end{Shaded}
+
+Lọc bỏ các dòng nếu tất cả phần tử trong các cột \texttt{{[}\textquotesingle{}family\_members\textquotesingle{},\ \textquotesingle{}state\_pop\textquotesingle{}{]}} là \texttt{NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\StringTok{\textquotesingle{}index\textquotesingle{}}\NormalTok{, how}\OperatorTok{=}\StringTok{\textquotesingle{}all\textquotesingle{}}\NormalTok{, subset}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}state\_pop\textquotesingle{}}\NormalTok{])}
+\NormalTok{Out[]:}
+\NormalTok{               state  individuals  family\_members   state\_pop}
+\NormalTok{region                                                       }
+\NormalTok{Mountain    Colorado          NaN          }\FloatTok{3250.0}   \FloatTok{5691287.0}
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
+\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}\NormalTok{             NaN    }\FloatTok{735139.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}\NormalTok{         NaN}
+\end{Highlighting}
+\end{Shaded}
+
+Giữ lại các dòng có ít nhất \texttt{3} phần tử \texttt{non-NA}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: missing\_df.dropna(thresh}\OperatorTok{=}\DecValTok{3}\NormalTok{)}
+\NormalTok{Out[]: }
+\NormalTok{               state  individuals  family\_members   state\_pop}
+\NormalTok{region                                                       }
+\NormalTok{Mountain    Colorado          NaN          }\FloatTok{3250.0}   \FloatTok{5691287.0}
+\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
+\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}\NormalTok{             NaN    }\FloatTok{735139.0}
+\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}\NormalTok{         NaN}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{sux1eed-dux1ee5ng-apply}{%
 \section{Sử dụng apply}\label{sux1eed-dux1ee5ng-apply}}
