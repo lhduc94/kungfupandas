@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2022-04-22" />
+<meta name="date" content="2022-04-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -215,7 +215,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge" id="toc-merge"><span class="toc-section-number">6.2</span> Merge<span></span></a></li>
 <li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat" id="toc-concat"><span class="toc-section-number">6.3</span> Concat<span></span></a></li>
 </ul></li>
-<li><a href="groupby-và-aggregate.html#groupby-và-aggregate" id="toc-groupby-và-aggregate"><span class="toc-section-number">7</span> Groupby và Aggregate<span></span></a></li>
+<li><a href="groupby-và-aggregate.html#groupby-và-aggregate" id="toc-groupby-và-aggregate"><span class="toc-section-number">7</span> Groupby và Aggregate<span></span></a>
+<ul>
+<li><a href="groupby-và-aggregate.html#groupby" id="toc-groupby"><span class="toc-section-number">7.1</span> Groupby<span></span></a></li>
+</ul></li>
 <li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#làm-việc-với-1-số-kiểu-dữ-liệu" id="toc-làm-việc-với-1-số-kiểu-dữ-liệu"><span class="toc-section-number">8</span> Làm việc với 1 số kiểu dữ liệu<span></span></a>
 <ul>
 <li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-text" id="toc-xử-lý-dữ-liệu-dạng-text"><span class="toc-section-number">8.1</span> Xử lý dữ liệu dạng text<span></span></a></li>
@@ -254,7 +257,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="groupby-và-aggregate" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chương 7</span> Groupby và Aggregate<a href="groupby-và-aggregate.html#groupby-và-aggregate" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="groupby" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Groupby<a href="groupby-và-aggregate.html#groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Phương thức <code>.groupby</code> sẽ gom các dòng hoặc các cột thành các nhóm khác nhau. Cú pháp cơ bản của <code>.groupby</code> như sau</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a href="groupby-và-aggregate.html#cb122-1" aria-hidden="true" tabindex="-1"></a>DataFrame.groupby(by<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<p>Trong đó</p>
+<ul>
+<li><p><code>by</code>: có thể là dạng mapping, nhãn hoặc một hàm trả về danh sách các index</p></li>
+<li><p><code>axis</code>: Tùy chọn group theo dòng {<code>0</code> hoặc <code>index</code>} hoặc cột {<code>1</code> hoặc <code>columns</code>}, mặc định là dòng.</p></li>
+<li><p><code>dropna</code>: Mặc định là <code>True</code> sẽ bỏ qua những dòng chứa <code>NA</code> và <code>False</code> sẽ thêm <code>NA</code> là một khóa trong nhóm</p></li>
+</ul>
+<p>Ví dụ với dữ liệu <a href="https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data?select=Train.csv">Big Mart Salses</a></p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb123-1"><a href="groupby-và-aggregate.html#cb123-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: df.head()</span>
+<span id="cb123-2"><a href="groupby-và-aggregate.html#cb123-2" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">1</span>]:</span>
+<span id="cb123-3"><a href="groupby-và-aggregate.html#cb123-3" aria-hidden="true" tabindex="-1"></a>  Item_Identifier  Item_Weight Item_Fat_Content  Item_Visibility  <span class="op">\</span></span>
+<span id="cb123-4"><a href="groupby-và-aggregate.html#cb123-4" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>           FDA15         <span class="fl">9.30</span>          Low Fat         <span class="fl">0.016047</span>   </span>
+<span id="cb123-5"><a href="groupby-và-aggregate.html#cb123-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>           DRC01         <span class="fl">5.92</span>          Regular         <span class="fl">0.019278</span>   </span>
+<span id="cb123-6"><a href="groupby-và-aggregate.html#cb123-6" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>           FDN15        <span class="fl">17.50</span>          Low Fat         <span class="fl">0.016760</span>   </span>
+<span id="cb123-7"><a href="groupby-và-aggregate.html#cb123-7" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>           FDX07        <span class="fl">19.20</span>          Regular         <span class="fl">0.000000</span>   </span>
+<span id="cb123-8"><a href="groupby-và-aggregate.html#cb123-8" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>           NCD19         <span class="fl">8.93</span>          Low Fat         <span class="fl">0.000000</span>   </span>
+<span id="cb123-9"><a href="groupby-và-aggregate.html#cb123-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-10"><a href="groupby-và-aggregate.html#cb123-10" aria-hidden="true" tabindex="-1"></a>               Item_Type  Item_MRP Outlet_Identifier  <span class="op">\</span></span>
+<span id="cb123-11"><a href="groupby-và-aggregate.html#cb123-11" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>                  Dairy  <span class="fl">249.8092</span>            OUT049   </span>
+<span id="cb123-12"><a href="groupby-và-aggregate.html#cb123-12" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>            Soft Drinks   <span class="fl">48.2692</span>            OUT018   </span>
+<span id="cb123-13"><a href="groupby-và-aggregate.html#cb123-13" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>                   Meat  <span class="fl">141.6180</span>            OUT049   </span>
+<span id="cb123-14"><a href="groupby-và-aggregate.html#cb123-14" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  Fruits <span class="kw">and</span> Vegetables  <span class="fl">182.0950</span>            OUT010   </span>
+<span id="cb123-15"><a href="groupby-và-aggregate.html#cb123-15" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>              Household   <span class="fl">53.8614</span>            OUT013   </span>
+<span id="cb123-16"><a href="groupby-và-aggregate.html#cb123-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-17"><a href="groupby-và-aggregate.html#cb123-17" aria-hidden="true" tabindex="-1"></a>   Outlet_Establishment_Year Outlet_Size Outlet_Location_Type  <span class="op">\</span></span>
+<span id="cb123-18"><a href="groupby-và-aggregate.html#cb123-18" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>                       <span class="dv">1999</span>      Medium               Tier <span class="dv">1</span>   </span>
+<span id="cb123-19"><a href="groupby-và-aggregate.html#cb123-19" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>                       <span class="dv">2009</span>      Medium               Tier <span class="dv">3</span>   </span>
+<span id="cb123-20"><a href="groupby-và-aggregate.html#cb123-20" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>                       <span class="dv">1999</span>      Medium               Tier <span class="dv">1</span>   </span>
+<span id="cb123-21"><a href="groupby-và-aggregate.html#cb123-21" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>                       <span class="dv">1998</span>         NaN               Tier <span class="dv">3</span>   </span>
+<span id="cb123-22"><a href="groupby-và-aggregate.html#cb123-22" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>                       <span class="dv">1987</span>        High               Tier <span class="dv">3</span>   </span>
+<span id="cb123-23"><a href="groupby-và-aggregate.html#cb123-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb123-24"><a href="groupby-và-aggregate.html#cb123-24" aria-hidden="true" tabindex="-1"></a>         Outlet_Type  Item_Outlet_Sales  </span>
+<span id="cb123-25"><a href="groupby-và-aggregate.html#cb123-25" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>  Supermarket Type1          <span class="fl">3735.1380</span>  </span>
+<span id="cb123-26"><a href="groupby-và-aggregate.html#cb123-26" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  Supermarket Type2           <span class="fl">443.4228</span>  </span>
+<span id="cb123-27"><a href="groupby-và-aggregate.html#cb123-27" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  Supermarket Type1          <span class="fl">2097.2700</span>  </span>
+<span id="cb123-28"><a href="groupby-và-aggregate.html#cb123-28" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>      Grocery Store           <span class="fl">732.3800</span>  </span>
+<span id="cb123-29"><a href="groupby-và-aggregate.html#cb123-29" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  Supermarket Type1           <span class="fl">994.7052</span>  </span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb124-1"><a href="groupby-và-aggregate.html#cb124-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">2</span>]: grouped <span class="op">=</span> df.groupby(<span class="st">&#39;Item_Type&#39;</span>)</span>
+<span id="cb124-2"><a href="groupby-và-aggregate.html#cb124-2" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">3</span>]: <span class="bu">type</span>(grouped)</span>
+<span id="cb124-3"><a href="groupby-và-aggregate.html#cb124-3" aria-hidden="true" tabindex="-1"></a>Out[<span class="dv">3</span>]</span></code></pre></div>
 
+</div>
 </div>
             </section>
 
