@@ -1,6 +1,117 @@
 # Tính toán trên các phần tử trong Pandas 
+
+
+```python
+df = pd.read_csv('data/big_mart_sales.csv')
+```
 ## Sử dụng Vectorization
 
+Giả sử như muốn tạo cột `price`= `Item_Outlet_Sales` * `5%`
+```python
+In []: df['price'] = df['Item_Outlet_Sales'] * 0.05
+In []: df[['Item_Outlet_Sales', 'price']]
+Out[]:
+      Item_Outlet_Sales      price
+0             3735.1380  186.75690
+1              443.4228   22.17114
+2             2097.2700  104.86350
+3              732.3800   36.61900
+4              994.7052   49.73526
+...                 ...        ...
+8518          2778.3834  138.91917
+8519           549.2850   27.46425
+8520          1193.1136   59.65568
+8521          1845.5976   92.27988
+8522           765.6700   38.28350
+```
+Nối hai cột lại với nhau, Ví dụ 
+- nối `Item_type` và `Item_Fat_Content` thành `Item_Type_Fat_Content`
+- nối `Outlet_Identifier` và `Outlet_Establishment_Year` thành `Outlet_Identifier_Establishment_Year`. Trong trường hợp hợp này `Outlet_Establishment_Year` thuộc dạng số nên để nối dạng text và số ta ép kiểu dạng số về text sử dụng `astype()`
+
+```python
+df['Item_Type_Fat_Content'] = df['Item_Type'] + '_' + df['Item_Fat_Content']
+df['Outlet_Identifier_Establishment_Year'] = df['Outlet_Identifier'] + '_' +df['Outlet_Establishment_Year'].astype('str')
+df[['Item_Type_Fat_Content', 'Outlet_Identifier_Establishment_Year']]
+```
+
+```python
+              Item_Type_Fat_Content Outlet_Identifier_Establishment_Year
+0                     Dairy_Low Fat                          OUT049_1999
+1               Soft Drinks_Regular                          OUT018_2009
+2                      Meat_Low Fat                          OUT049_1999
+3     Fruits and Vegetables_Regular                          OUT010_1998
+4                 Household_Low Fat                          OUT013_1987
+...                             ...                                  ...
+8518            Snack Foods_Low Fat                          OUT013_1987
+8519           Baking Goods_Regular                          OUT045_2002
+8520     Health and Hygiene_Low Fat                          OUT035_2004
+8521            Snack Foods_Regular                          OUT018_2009
+8522            Soft Drinks_Low Fat                          OUT046_1997
+```
 ## Sử dụng apply
+
+Phương thức `apply` để thực thi một hàm theo dòng hoặc cột
+Đối với Series
+```python
+Series.apply(func, convert_dtype=True, args=(), **kwargs)
+```
+
+Trong đó:
+
+- `func`: là hàm cần thực thi
+
+- `convert_dtype`: Giá trị kiểu boolean. Nếu nó được đặt thành True (mặc định), xử lý dữ liệu sẽ cố gắng tìm dtype tốt hơn cho các kết quả của hàm ‘func’. Nếu False, thì dtype sẽ là type(object)
+- `args`: Các đối số của hàm 
+
+Ví dụ, tạo cột `price`= `Item_Outlet_Sales` * `5%`
+
+Sử dụng lambda function
+
+```python
+In []: df['Item_Outlet_Sales'].apply(lambda x: x * 0.05)
+Out[]:
+0       186.75690
+1        22.17114
+2       104.86350
+3        36.61900
+4        49.73526
+          ...    
+8518    138.91917
+8519     27.46425
+8520     59.65568
+8521     92.27988
+8522     38.28350
+Name: Item_Outlet_Sales, Length: 8523, dtype: float64
+```
+Sử dụng hàm tự định nghĩa
+
+```python
+def set_price(x, k=0.05):
+    return x * k
+```
+```python
+In []: df['Item_Outlet_Sales'].apply(set_price)
+Out[]: 
+0       186.75690
+1        22.17114
+2       104.86350
+3        36.61900
+4        49.73526
+          ...    
+8518    138.91917
+8519     27.46425
+8520     59.65568
+8521     92.27988
+8522     38.28350
+Name: Item_Outlet_Sales, Length: 8523, dtype: float64
+```
+Có thể truyền tham số `k` vào hàm `set_price` bằng hai cách
+```python
+# Cách 1 - Dùng lambda
+In []: df['Item_Outlet_Sales'].apply(lambda x: set_price(x, 0.1))
+
+# Cách 2 - Dùng `arg`
+In []: df['Item_Outlet_Sales'].apply(set_price, k=0.1)
+```
 ## Sử dụng iterator
 ## Xử lý song song trong pandas
