@@ -36,7 +36,6 @@ unique-và-.nunique
 drop
 rename
 set_index
-sort_index
 sort_values
 selecting-và-filtering
 sử-dụng

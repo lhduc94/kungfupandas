@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2022-04-27" />
+<meta name="date" content="2022-04-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -184,8 +184,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="Chuong-3.html#drop" id="toc-drop"><span class="toc-section-number">3.12</span> <code>.drop()</code><span></span></a></li>
 <li><a href="Chuong-3.html#rename" id="toc-rename"><span class="toc-section-number">3.13</span> <code>.rename()</code><span></span></a></li>
 <li><a href="Chuong-3.html#set_index" id="toc-set_index"><span class="toc-section-number">3.14</span> <code>.set_index()</code><span></span></a></li>
-<li><a href="Chuong-3.html#sort_index" id="toc-sort_index"><span class="toc-section-number">3.15</span> <code>.sort_index</code><span></span></a></li>
-<li><a href="Chuong-3.html#sort_values" id="toc-sort_values"><span class="toc-section-number">3.16</span> <code>.sort_values</code><span></span></a></li>
+<li><a href="Chuong-3.html#sort_values" id="toc-sort_values"><span class="toc-section-number">3.15</span> <code>.sort_values</code><span></span></a></li>
 </ul></li>
 <li><a href="selecting-và-filtering.html#selecting-và-filtering" id="toc-selecting-và-filtering"><span class="toc-section-number">4</span> Selecting và Filtering<span></span></a>
 <ul>
@@ -214,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#so-sánh-các-phương-pháp-lặp" id="toc-so-sánh-các-phương-pháp-lặp"><span class="toc-section-number">5.4</span> So sánh các phương pháp lặp<span></span></a></li>
 <li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas" id="toc-xử-lý-song-song-trong-pandas"><span class="toc-section-number">5.5</span> Xử lý song song trong pandas<span></span></a>
 <ul>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#pandarallel" id="toc-pandarallel"><span class="toc-section-number">5.5.1</span> <span>pandarallel</span><span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#pandarallel" id="toc-pandarallel"><span class="toc-section-number">5.5.1</span> pandarallel<span></span></a></li>
 </ul></li>
 </ul></li>
 <li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#các-cách-phối-hợp-nhiều-bảng-với-nhau" id="toc-các-cách-phối-hợp-nhiều-bảng-với-nhau"><span class="toc-section-number">6</span> Các cách phối hợp nhiều bảng với nhau<span></span></a>
@@ -694,7 +693,7 @@ Pandas sẽ không biết kiểu dữ liệu <code>timestamp</code> nếu không
 Ví dụ như tất cả dữ liệu của bạn là <code>int</code> hoặc có thể được ép kiểu về <code>int</code>thì có thể khai báo <code>dtype=np.int</code></p>
 </div></li>
 </ul>
-<p>Ở ví dụ phía dưới <code>col_1</code>, <code>col_2</code>, <code>col_3</code>, <code>col_4</code>, <code>col_5</code> có thể ép về kiểu <code>int</code>, còn <code>col_6</code> thì không thể ép kiểu được.</p>
+<p>Ở ví dụ phía dưới <code>col_1</code>, <code>col_2</code>, <code>col_4</code>, <code>col_5</code> có thể ép về kiểu <code>int</code>, còn <code>col_3</code>, <code>col_6</code> thì không thể ép kiểu được.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">1</span>]: df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb34-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;col_1&#39;</span>: [<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>], </span>
 <span id="cb34-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;col_2&#39;</span>: [<span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>, <span class="fl">4.0</span>], </span>
@@ -718,7 +717,7 @@ Ví dụ như tất cả dữ liệu của bạn là <code>int</code> hoặc có
 <span id="cb34-21"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-21" aria-hidden="true" tabindex="-1"></a>col_3    <span class="bu">object</span></span>
 <span id="cb34-22"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-22" aria-hidden="true" tabindex="-1"></a>col_4     int64</span>
 <span id="cb34-23"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-23" aria-hidden="true" tabindex="-1"></a>col_5     int64</span>
-<span id="cb34-24"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-24" aria-hidden="true" tabindex="-1"></a>col_6     int64</span>
+<span id="cb34-24"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-24" aria-hidden="true" tabindex="-1"></a>col_6    <span class="bu">object</span></span>
 <span id="cb34-25"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb34-25" aria-hidden="true" tabindex="-1"></a>dtype: <span class="bu">object</span></span></code></pre></div>
 
 <div class="rmdtip">
