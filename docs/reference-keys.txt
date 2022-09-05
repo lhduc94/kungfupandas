@@ -16,6 +16,12 @@ excel
 xuất-file-excel
 json
 đọc-file-1
+pickle
+đọc-file-2
+xuất-file-1
+cấu-hình-pandas
+Chuong-3
+head-và-.tail
 shape-và-.size
 info
 describe

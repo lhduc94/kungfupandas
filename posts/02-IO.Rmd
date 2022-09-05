@@ -279,20 +279,18 @@ Các cấu trúc còn lại
  ["Charmander",["Fire"],"0.61 m","8.5 kg"],
  ["Charmeleon",["Fire"],"1.09 m","19.0 kg"]]
 ```
+ 
 
 ```{block2, type='rmdnote'}
 **_Lưu ý_:** 
 
-- Dữ liệu JSON với cấu trúc `records` và `index` thường gặp nhất. 
+- `pd.read_json()` mặc định `orient='records'`. Các cấu trúc `records` và `index` là các cấu trúc JSON thường gặp.
 
-- Hàm `pd.read_json()` mặc định `orient` là `records`
+- `values` không phải cấu trúc JSON.
 
-- Cấu trúc `values` thực chất không phải dạng JSON. Với cấu trúc values, khi gọi `pd.read_json()`, kết quả trả về là DataFrame với tên các cột có giá trị 0, 1, 2,...., N-1 với N là số phần tử của từng danh sách con
+- có thể truyền link file thay vì file được lưu ở máy.
 
-- Có thể đọc json từ file online như `pd.read_json('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sample_pokemon_records.json')`
-
- ```
-#### Xuất file
+```
 
 ### Pickle
 #### Đọc file
