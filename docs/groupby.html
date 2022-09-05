@@ -376,14 +376,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb169-33"><a href="groupby.html#cb169-33" aria-hidden="true" tabindex="-1"></a><span class="dv">8520</span>           NCJ29     Health <span class="kw">and</span> Hygiene       Small          <span class="fl">1193.1136</span></span>
 <span id="cb169-34"><a href="groupby.html#cb169-34" aria-hidden="true" tabindex="-1"></a><span class="dv">8521</span>           FDN46            Snack Foods      Medium          <span class="fl">1845.5976</span></span>
 <span id="cb169-35"><a href="groupby.html#cb169-35" aria-hidden="true" tabindex="-1"></a><span class="dv">8522</span>           DRG01            Soft Drinks       Small           <span class="fl">765.6700</span></span></code></pre></div>
-</div>
-<div id="aggregate-trong-groupby" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Aggregate trong Groupby<a href="groupby.html#aggregate-trong-groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 <div class="rmdnote">
 <strong><em>Lưu ý:</em></strong>
 <code>.head()</code> và <code>.tail()</code> trả về các dòng theo thứ tự index của chúng, không trả về theo thứ tự sắp xếp theo key
 </div>
+</div>
+<div id="aggregate-trong-groupby" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Aggregate trong Groupby<a href="groupby.html#aggregate-trong-groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong><code>.count()</code></strong></p>
 <p>Đếm số lượng phần tử cho từng cột trong từng nhóm, không đếm các phần tử NA</p>
 <div class="sourceCode" id="cb170"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb170-1"><a href="groupby.html#cb170-1" aria-hidden="true" tabindex="-1"></a>In [<span class="dv">6</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).count() </span>
