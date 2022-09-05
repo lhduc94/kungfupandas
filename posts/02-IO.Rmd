@@ -270,6 +270,23 @@ Các cấu trúc còn lại
            "4":"19.0 kg"}}
 ```
 
+`values`
+
+```json
+[["Bulbasaur",["Grass","Poison"],"0.71 m","6.9 kg"],
+ ["Ivysaur",["Grass","Poison"],"0.99 m","13.0 kg"],
+ ["Venusaur",["Grass","Poison"],"2.01 m","100.0 kg"],
+ ["Charmander",["Fire"],"0.61 m","8.5 kg"],
+ ["Charmeleon",["Fire"],"1.09 m","19.0 kg"]]
+```
+
+```{block2, type='rmdnote'}
+**_Lưu ý_:** 
+
+Dữ liệu JSON với cấu trúc `records` và `index` thường gặp nhất. Cấu trúc `values` thực chất không phải dạng JSON
+
+Với cấu trúc values, khi gọi `pd.read_json()`, kết quả trả về là DataFrame với tên các cột có giá trị 0, 1, 2,...., N-1 với N là số phần tử của từng danh sách con
+ ```
 #### Xuất file
 
 ### Pickle
