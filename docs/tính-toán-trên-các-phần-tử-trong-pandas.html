@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chương 5 Tính toán trên các phần tử trong Pandas | Kungfu Pandas</title>
+  <title>Chương 4 Tính toán trên các phần tử trong Pandas | Kungfu Pandas</title>
   <meta name="description" content="Kungfu Panda" />
   <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chương 5 Tính toán trên các phần tử trong Pandas | Kungfu Pandas" />
+  <meta property="og:title" content="Chương 4 Tính toán trên các phần tử trong Pandas | Kungfu Pandas" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Kungfu Panda" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chương 5 Tính toán trên các phần tử trong Pandas | Kungfu Pandas" />
+  <meta name="twitter:title" content="Chương 4 Tính toán trên các phần tử trong Pandas | Kungfu Pandas" />
   
   <meta name="twitter:description" content="Kungfu Panda" />
   
@@ -164,86 +164,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="nhập-xuất-trong-pandas.html#csv-tsv" id="toc-csv-tsv"><span class="toc-section-number">2.1.1</span> csv, tsv<span></span></a></li>
 <li><a href="nhập-xuất-trong-pandas.html#excel" id="toc-excel"><span class="toc-section-number">2.1.2</span> Excel<span></span></a></li>
 <li><a href="nhập-xuất-trong-pandas.html#json" id="toc-json"><span class="toc-section-number">2.1.3</span> JSON<span></span></a></li>
-<li><a href="nhập-xuất-trong-pandas.html#pickle" id="toc-pickle"><span class="toc-section-number">2.1.4</span> Pickle<span></span></a></li>
 </ul></li>
-<li><a href="nhập-xuất-trong-pandas.html#cấu-hình-pandas" id="toc-cấu-hình-pandas"><span class="toc-section-number">2.2</span> Cấu hình pandas<span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#shape-và-.size" id="toc-shape-và-.size"><span class="toc-section-number">2.2</span> <code>.shape</code> và <code>.size</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#info" id="toc-info"><span class="toc-section-number">2.3</span> <code>.info()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#describe" id="toc-describe"><span class="toc-section-number">2.4</span> <code>.describe()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#index" id="toc-index"><span class="toc-section-number">2.5</span> <code>.index</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#memory_usage" id="toc-memory_usage"><span class="toc-section-number">2.6</span> <code>.memory_usage()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#lấy-series-trong-pandas" id="toc-lấy-series-trong-pandas"><span class="toc-section-number">2.7</span> Lấy Series trong pandas<span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#astype" id="toc-astype"><span class="toc-section-number">2.8</span> <code>.astype()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#drop_duplicates" id="toc-drop_duplicates"><span class="toc-section-number">2.9</span> <code>.drop_duplicates()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#value_counts" id="toc-value_counts"><span class="toc-section-number">2.10</span> <code>.value_counts()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#unique-và-.nunique" id="toc-unique-và-.nunique"><span class="toc-section-number">2.11</span> <code>.unique()</code> và <code>.nunique()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#drop" id="toc-drop"><span class="toc-section-number">2.12</span> <code>.drop()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#rename" id="toc-rename"><span class="toc-section-number">2.13</span> <code>.rename()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#set_index" id="toc-set_index"><span class="toc-section-number">2.14</span> <code>.set_index()</code><span></span></a></li>
+<li><a href="nhập-xuất-trong-pandas.html#sort_values" id="toc-sort_values"><span class="toc-section-number">2.15</span> <code>.sort_values</code><span></span></a></li>
 </ul></li>
-<li><a href="Chuong-3.html#Chuong-3" id="toc-Chuong-3"><span class="toc-section-number">3</span> Một số hàm cơ bản<span></span></a>
+<li><a href="selecting-và-filtering.html#selecting-và-filtering" id="toc-selecting-và-filtering"><span class="toc-section-number">3</span> Selecting và Filtering<span></span></a>
 <ul>
-<li><a href="Chuong-3.html#head-và-.tail" id="toc-head-và-.tail"><span class="toc-section-number">3.1</span> <code>.head()</code> và <code>.tail()</code><span></span></a></li>
-<li><a href="Chuong-3.html#shape-và-.size" id="toc-shape-và-.size"><span class="toc-section-number">3.2</span> <code>.shape</code> và <code>.size</code><span></span></a></li>
-<li><a href="Chuong-3.html#info" id="toc-info"><span class="toc-section-number">3.3</span> <code>.info()</code><span></span></a></li>
-<li><a href="Chuong-3.html#describe" id="toc-describe"><span class="toc-section-number">3.4</span> <code>.describe()</code><span></span></a></li>
-<li><a href="Chuong-3.html#index" id="toc-index"><span class="toc-section-number">3.5</span> <code>.index</code><span></span></a></li>
-<li><a href="Chuong-3.html#memory_usage" id="toc-memory_usage"><span class="toc-section-number">3.6</span> <code>.memory_usage()</code><span></span></a></li>
-<li><a href="Chuong-3.html#lấy-series-trong-pandas" id="toc-lấy-series-trong-pandas"><span class="toc-section-number">3.7</span> Lấy Series trong pandas<span></span></a></li>
-<li><a href="Chuong-3.html#astype" id="toc-astype"><span class="toc-section-number">3.8</span> <code>.astype()</code><span></span></a></li>
-<li><a href="Chuong-3.html#drop_duplicates" id="toc-drop_duplicates"><span class="toc-section-number">3.9</span> <code>.drop_duplicates()</code><span></span></a></li>
-<li><a href="Chuong-3.html#value_counts" id="toc-value_counts"><span class="toc-section-number">3.10</span> <code>.value_counts()</code><span></span></a></li>
-<li><a href="Chuong-3.html#unique-và-.nunique" id="toc-unique-và-.nunique"><span class="toc-section-number">3.11</span> <code>.unique()</code> và <code>.nunique()</code><span></span></a></li>
-<li><a href="Chuong-3.html#drop" id="toc-drop"><span class="toc-section-number">3.12</span> <code>.drop()</code><span></span></a></li>
-<li><a href="Chuong-3.html#rename" id="toc-rename"><span class="toc-section-number">3.13</span> <code>.rename()</code><span></span></a></li>
-<li><a href="Chuong-3.html#set_index" id="toc-set_index"><span class="toc-section-number">3.14</span> <code>.set_index()</code><span></span></a></li>
-<li><a href="Chuong-3.html#sort_values" id="toc-sort_values"><span class="toc-section-number">3.15</span> <code>.sort_values</code><span></span></a></li>
-</ul></li>
-<li><a href="selecting-và-filtering.html#selecting-và-filtering" id="toc-selecting-và-filtering"><span class="toc-section-number">4</span> Selecting và Filtering<span></span></a>
+<li><a href="selecting-và-filtering.html#sử-dụng" id="toc-sử-dụng"><span class="toc-section-number">3.1</span> Sử dụng <code>[]</code><span></span></a></li>
+<li><a href="selecting-và-filtering.html#loc-và-.iloc" id="toc-loc-và-.iloc"><span class="toc-section-number">3.2</span> .loc và .iloc<span></span></a>
 <ul>
-<li><a href="selecting-và-filtering.html#sử-dụng" id="toc-sử-dụng"><span class="toc-section-number">4.1</span> Sử dụng <code>[]</code><span></span></a></li>
-<li><a href="selecting-và-filtering.html#loc-và-.iloc" id="toc-loc-và-.iloc"><span class="toc-section-number">4.2</span> .loc và .iloc<span></span></a>
+<li><a href="selecting-và-filtering.html#loc" id="toc-loc"><span class="toc-section-number">3.2.1</span> .loc<span></span></a></li>
+<li><a href="selecting-và-filtering.html#iloc" id="toc-iloc"><span class="toc-section-number">3.2.2</span> <code>.iloc</code><span></span></a></li>
+</ul></li>
+<li><a href="selecting-và-filtering.html#lọc-theo-điều-kiện" id="toc-lọc-theo-điều-kiện"><span class="toc-section-number">3.3</span> Lọc theo điều kiện<span></span></a>
 <ul>
-<li><a href="selecting-và-filtering.html#loc" id="toc-loc"><span class="toc-section-number">4.2.1</span> .loc<span></span></a></li>
-<li><a href="selecting-và-filtering.html#iloc" id="toc-iloc"><span class="toc-section-number">4.2.2</span> <code>.iloc</code><span></span></a></li>
+<li><a href="selecting-và-filtering.html#toán-tử-điều-kiện" id="toc-toán-tử-điều-kiện"><span class="toc-section-number">3.3.1</span> Toán tử điều kiện<span></span></a></li>
+<li><a href="selecting-và-filtering.html#isin" id="toc-isin"><span class="toc-section-number">3.3.2</span> <code>.isin()</code><span></span></a></li>
+<li><a href="selecting-và-filtering.html#lọc-missing-value-với-.dropna" id="toc-lọc-missing-value-với-.dropna"><span class="toc-section-number">3.3.3</span> Lọc missing value với <code>.dropna()</code><span></span></a></li>
 </ul></li>
-<li><a href="selecting-và-filtering.html#lọc-theo-điều-kiện" id="toc-lọc-theo-điều-kiện"><span class="toc-section-number">4.3</span> Lọc theo điều kiện<span></span></a>
+</ul></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" id="toc-tính-toán-trên-các-phần-tử-trong-pandas"><span class="toc-section-number">4</span> Tính toán trên các phần tử trong Pandas<span></span></a>
 <ul>
-<li><a href="selecting-và-filtering.html#toán-tử-điều-kiện" id="toc-toán-tử-điều-kiện"><span class="toc-section-number">4.3.1</span> Toán tử điều kiện<span></span></a></li>
-<li><a href="selecting-và-filtering.html#isin" id="toc-isin"><span class="toc-section-number">4.3.2</span> <code>.isin()</code><span></span></a></li>
-<li><a href="selecting-và-filtering.html#lọc-missing-value-với-.dropna" id="toc-lọc-missing-value-với-.dropna"><span class="toc-section-number">4.3.3</span> Lọc missing value với <code>.dropna()</code><span></span></a></li>
-</ul></li>
-</ul></li>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" id="toc-tính-toán-trên-các-phần-tử-trong-pandas"><span class="toc-section-number">5</span> Tính toán trên các phần tử trong Pandas<span></span></a>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-vectorization" id="toc-sử-dụng-vectorization"><span class="toc-section-number">4.1</span> Sử dụng Vectorization<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply" id="toc-sử-dụng-apply"><span class="toc-section-number">4.2</span> Sử dụng apply<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator" id="toc-sử-dụng-iterator"><span class="toc-section-number">4.3</span> Sử dụng iterator<span></span></a>
 <ul>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-vectorization" id="toc-sử-dụng-vectorization"><span class="toc-section-number">5.1</span> Sử dụng Vectorization<span></span></a></li>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply" id="toc-sử-dụng-apply"><span class="toc-section-number">5.2</span> Sử dụng apply<span></span></a></li>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator" id="toc-sử-dụng-iterator"><span class="toc-section-number">5.3</span> Sử dụng iterator<span></span></a>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#iterrows" id="toc-iterrows"><span class="toc-section-number">4.3.1</span> Iterrows<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#itertuple" id="toc-itertuple"><span class="toc-section-number">4.3.2</span> Itertuple<span></span></a></li>
+</ul></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#so-sánh-các-phương-pháp-lặp" id="toc-so-sánh-các-phương-pháp-lặp"><span class="toc-section-number">4.4</span> So sánh các phương pháp lặp<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas" id="toc-xử-lý-song-song-trong-pandas"><span class="toc-section-number">4.5</span> Xử lý song song trong pandas<span></span></a>
 <ul>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#iterrows" id="toc-iterrows"><span class="toc-section-number">5.3.1</span> Iterrows<span></span></a></li>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#itertuple" id="toc-itertuple"><span class="toc-section-number">5.3.2</span> Itertuple<span></span></a></li>
+<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#pandarallel" id="toc-pandarallel"><span class="toc-section-number">4.5.1</span> pandarallel<span></span></a></li>
 </ul></li>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#so-sánh-các-phương-pháp-lặp" id="toc-so-sánh-các-phương-pháp-lặp"><span class="toc-section-number">5.4</span> So sánh các phương pháp lặp<span></span></a></li>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas" id="toc-xử-lý-song-song-trong-pandas"><span class="toc-section-number">5.5</span> Xử lý song song trong pandas<span></span></a>
+</ul></li>
+<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#các-cách-phối-hợp-nhiều-bảng-với-nhau" id="toc-các-cách-phối-hợp-nhiều-bảng-với-nhau"><span class="toc-section-number">5</span> Các cách phối hợp nhiều bảng với nhau<span></span></a>
 <ul>
-<li><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#pandarallel" id="toc-pandarallel"><span class="toc-section-number">5.5.1</span> pandarallel<span></span></a></li>
+<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#join" id="toc-join"><span class="toc-section-number">5.1</span> Join<span></span></a></li>
+<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge" id="toc-merge"><span class="toc-section-number">5.2</span> Merge<span></span></a></li>
+<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat" id="toc-concat"><span class="toc-section-number">5.3</span> Concat<span></span></a></li>
 </ul></li>
-</ul></li>
-<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#các-cách-phối-hợp-nhiều-bảng-với-nhau" id="toc-các-cách-phối-hợp-nhiều-bảng-với-nhau"><span class="toc-section-number">6</span> Các cách phối hợp nhiều bảng với nhau<span></span></a>
+<li><a href="groupby.html#groupby" id="toc-groupby"><span class="toc-section-number">6</span> Groupby<span></span></a>
 <ul>
-<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#join" id="toc-join"><span class="toc-section-number">6.1</span> Join<span></span></a></li>
-<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge" id="toc-merge"><span class="toc-section-number">6.2</span> Merge<span></span></a></li>
-<li><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat" id="toc-concat"><span class="toc-section-number">6.3</span> Concat<span></span></a></li>
+<li><a href="groupby.html#groupby-1" id="toc-groupby-1"><span class="toc-section-number">6.1</span> Groupby<span></span></a></li>
+<li><a href="groupby.html#các-hàm-filtering-trong-groupby" id="toc-các-hàm-filtering-trong-groupby"><span class="toc-section-number">6.2</span> Các hàm Filtering trong Groupby<span></span></a></li>
+<li><a href="groupby.html#aggregate-trong-groupby" id="toc-aggregate-trong-groupby"><span class="toc-section-number">6.3</span> Aggregate trong Groupby<span></span></a></li>
 </ul></li>
-<li><a href="groupby.html#groupby" id="toc-groupby"><span class="toc-section-number">7</span> Groupby<span></span></a>
+<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#làm-việc-với-1-số-kiểu-dữ-liệu" id="toc-làm-việc-với-1-số-kiểu-dữ-liệu"><span class="toc-section-number">7</span> Làm việc với 1 số kiểu dữ liệu<span></span></a>
 <ul>
-<li><a href="groupby.html#groupby-1" id="toc-groupby-1"><span class="toc-section-number">7.1</span> Groupby<span></span></a></li>
-<li><a href="groupby.html#các-hàm-filtering-trong-groupby" id="toc-các-hàm-filtering-trong-groupby"><span class="toc-section-number">7.2</span> Các hàm Filtering trong Groupby<span></span></a></li>
-<li><a href="groupby.html#aggregate-trong-groupby" id="toc-aggregate-trong-groupby"><span class="toc-section-number">7.3</span> Aggregate trong Groupby<span></span></a></li>
+<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-text" id="toc-xử-lý-dữ-liệu-dạng-text"><span class="toc-section-number">7.1</span> Xử lý dữ liệu dạng text<span></span></a></li>
+<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-timestamp" id="toc-xử-lý-dữ-liệu-dạng-timestamp"><span class="toc-section-number">7.2</span> Xử lý dữ liệu dạng timestamp<span></span></a></li>
+<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#category-trong-pandas" id="toc-category-trong-pandas"><span class="toc-section-number">7.3</span> Category trong pandas<span></span></a></li>
+<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-missing-data" id="toc-xử-lý-missing-data"><span class="toc-section-number">7.4</span> Xử lý Missing data<span></span></a></li>
 </ul></li>
-<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#làm-việc-với-1-số-kiểu-dữ-liệu" id="toc-làm-việc-với-1-số-kiểu-dữ-liệu"><span class="toc-section-number">8</span> Làm việc với 1 số kiểu dữ liệu<span></span></a>
+<li><a href="một-số-kiến-thức-nâng-cao.html#một-số-kiến-thức-nâng-cao" id="toc-một-số-kiến-thức-nâng-cao"><span class="toc-section-number">8</span> Một số kiến thức nâng cao<span></span></a>
 <ul>
-<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-text" id="toc-xử-lý-dữ-liệu-dạng-text"><span class="toc-section-number">8.1</span> Xử lý dữ liệu dạng text<span></span></a></li>
-<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-timestamp" id="toc-xử-lý-dữ-liệu-dạng-timestamp"><span class="toc-section-number">8.2</span> Xử lý dữ liệu dạng timestamp<span></span></a></li>
-<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#category-trong-pandas" id="toc-category-trong-pandas"><span class="toc-section-number">8.3</span> Category trong pandas<span></span></a></li>
-<li><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-missing-data" id="toc-xử-lý-missing-data"><span class="toc-section-number">8.4</span> Xử lý Missing data<span></span></a></li>
+<li><a href="một-số-kiến-thức-nâng-cao.html#multiindex" id="toc-multiindex"><span class="toc-section-number">8.1</span> MultiIndex<span></span></a></li>
+<li><a href="một-số-kiến-thức-nâng-cao.html#pivot-và-merge" id="toc-pivot-và-merge"><span class="toc-section-number">8.2</span> Pivot và Merge<span></span></a></li>
+<li><a href="một-số-kiến-thức-nâng-cao.html#resample" id="toc-resample"><span class="toc-section-number">8.3</span> Resample<span></span></a></li>
+<li><a href="một-số-kiến-thức-nâng-cao.html#window" id="toc-window"><span class="toc-section-number">8.4</span> Window<span></span></a></li>
 </ul></li>
-<li><a href="một-số-kiến-thức-nâng-cao.html#một-số-kiến-thức-nâng-cao" id="toc-một-số-kiến-thức-nâng-cao"><span class="toc-section-number">9</span> Một số kiến thức nâng cao<span></span></a>
-<ul>
-<li><a href="một-số-kiến-thức-nâng-cao.html#multiindex" id="toc-multiindex"><span class="toc-section-number">9.1</span> MultiIndex<span></span></a></li>
-<li><a href="một-số-kiến-thức-nâng-cao.html#pivot-và-merge" id="toc-pivot-và-merge"><span class="toc-section-number">9.2</span> Pivot và Merge<span></span></a></li>
-<li><a href="một-số-kiến-thức-nâng-cao.html#resample" id="toc-resample"><span class="toc-section-number">9.3</span> Resample<span></span></a></li>
-<li><a href="một-số-kiến-thức-nâng-cao.html#window" id="toc-window"><span class="toc-section-number">9.4</span> Window<span></span></a></li>
-</ul></li>
-<li><a href="anomaly-detection-project.html#anomaly-detection-project" id="toc-anomaly-detection-project"><span class="toc-section-number">10</span> Anomaly Detection Project<span></span></a></li>
-<li><a href="visualize-với-matplotlib.html#visualize-với-matplotlib" id="toc-visualize-với-matplotlib"><span class="toc-section-number">11</span> Visualize với Matplotlib<span></span></a></li>
+<li><a href="anomaly-detection-project.html#anomaly-detection-project" id="toc-anomaly-detection-project"><span class="toc-section-number">9</span> Anomaly Detection Project<span></span></a></li>
+<li><a href="visualize-với-matplotlib.html#visualize-với-matplotlib" id="toc-visualize-với-matplotlib"><span class="toc-section-number">10</span> Visualize với Matplotlib<span></span></a></li>
 <li class="divider"></li>
 <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
 
@@ -264,11 +258,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tính-toán-trên-các-phần-tử-trong-pandas" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chương 5</span> Tính toán trên các phần tử trong Pandas<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="tính-toán-trên-các-phần-tử-trong-pandas" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chương 4</span> Tính toán trên các phần tử trong Pandas<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#tính-toán-trên-các-phần-tử-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="sourceCode" id="cb135"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb135-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb135-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/big_mart_sales.csv&#39;</span>)</span></code></pre></div>
-<div id="sử-dụng-vectorization" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Sử dụng Vectorization<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-vectorization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sử-dụng-vectorization" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Sử dụng Vectorization<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-vectorization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Giả sử như muốn tạo cột <code>price</code>= <code>Item_Outlet_Sales</code> * <code>5%</code></p>
 <div class="sourceCode" id="cb136"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb136-1" aria-hidden="true" tabindex="-1"></a>In []: df[<span class="st">&#39;price&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Item_Outlet_Sales&#39;</span>] <span class="op">*</span> <span class="fl">0.05</span></span>
 <span id="cb136-2"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb136-2" aria-hidden="true" tabindex="-1"></a>In []: df[[<span class="st">&#39;Item_Outlet_Sales&#39;</span>, <span class="st">&#39;price&#39;</span>]]</span>
@@ -306,8 +300,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb138-11"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb138-11" aria-hidden="true" tabindex="-1"></a><span class="dv">8521</span>            Snack Foods_Regular                          OUT018_2009</span>
 <span id="cb138-12"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb138-12" aria-hidden="true" tabindex="-1"></a><span class="dv">8522</span>            Soft Drinks_Low Fat                          OUT046_1997</span></code></pre></div>
 </div>
-<div id="sử-dụng-apply" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Sử dụng apply<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sử-dụng-apply" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Sử dụng apply<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>apply</code> để thực thi một hàm theo dòng hoặc cột</p>
 <p><strong>Đối với Series</strong></p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb139-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb139-1" aria-hidden="true" tabindex="-1"></a>Series.<span class="bu">apply</span>(func, convert_dtype<span class="op">=</span><span class="va">True</span>, args<span class="op">=</span>(), <span class="op">**</span>kwargs)</span></code></pre></div>
@@ -458,11 +452,11 @@ Ví dụ ở trên với x * 2 vẫn áp dụng được cho cột <code>C</code
 <span id="cb155-5"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb155-5" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>   <span class="dv">15</span>  <span class="op">-</span><span class="dv">9</span></span>
 <span id="cb155-6"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb155-6" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>   <span class="dv">25</span>  <span class="op">-</span><span class="dv">15</span></span></code></pre></div>
 </div>
-<div id="sử-dụng-iterator" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Sử dụng iterator<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sử-dụng-iterator" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Sử dụng iterator<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb156"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb156-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb156-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/big_mart_sales.csv&#39;</span>, usecols<span class="op">=</span>[<span class="st">&#39;Item_Identifier&#39;</span>, <span class="st">&#39;Item_Fat_Content&#39;</span>, <span class="st">&#39;Item_Type&#39;</span>, <span class="st">&#39;Outlet_Size&#39;</span>, <span class="st">&#39;Item_Outlet_Sales&#39;</span>, <span class="st">&#39;Outlet_Establishment_Year&#39;</span>])</span></code></pre></div>
-<div id="iterrows" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> Iterrows<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#iterrows" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="iterrows" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Iterrows<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#iterrows" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb157"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb157-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb157-1" aria-hidden="true" tabindex="-1"></a>DataFrame.iterrows()</span></code></pre></div>
 <div class="sourceCode" id="cb158"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb158-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb158-1" aria-hidden="true" tabindex="-1"></a>In []: row <span class="op">=</span> <span class="bu">next</span>(df.iterrows())</span>
 <span id="cb158-2"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb158-2" aria-hidden="true" tabindex="-1"></a>Out[]: row</span>
@@ -483,8 +477,8 @@ Ví dụ ở trên với x * 2 vẫn áp dụng được cho cột <code>C</code
 <span id="cb159-4"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb159-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prices[:<span class="dv">5</span>])</span></code></pre></div>
 <div class="sourceCode" id="cb160"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb160-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb160-1" aria-hidden="true" tabindex="-1"></a>[<span class="fl">1867.569</span>, <span class="fl">221.7114</span>, <span class="fl">1048.635</span>, <span class="fl">366.19</span>, <span class="fl">497.3526</span>]</span></code></pre></div>
 </div>
-<div id="itertuple" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Itertuple<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#itertuple" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="itertuple" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Itertuple<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#itertuple" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb161"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb161-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb161-1" aria-hidden="true" tabindex="-1"></a>DataFrame.itertuples(index<span class="op">=</span><span class="va">True</span>, name<span class="op">=</span><span class="st">&#39;Pandas&#39;</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
@@ -517,8 +511,8 @@ Ví dụ ở trên với x * 2 vẫn áp dụng được cho cột <code>C</code
 <span id="cb165-4"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb165-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prices[:<span class="dv">5</span>])</span></code></pre></div>
 </div>
 </div>
-<div id="so-sánh-các-phương-pháp-lặp" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> So sánh các phương pháp lặp<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#so-sánh-các-phương-pháp-lặp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="so-sánh-các-phương-pháp-lặp" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> So sánh các phương pháp lặp<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#so-sánh-các-phương-pháp-lặp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb166"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb166-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb166-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb166-2"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vectorizer(df):</span>
 <span id="cb166-3"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb166-3" aria-hidden="true" tabindex="-1"></a>    prices <span class="op">=</span> df[<span class="st">&#39;Item_Outlet_Sales&#39;</span>] <span class="op">*</span> <span class="fl">0.5</span></span>
@@ -560,11 +554,11 @@ Ví dụ ở trên với x * 2 vẫn áp dụng được cho cột <code>C</code
 <span id="cb167-18"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb167-18" aria-hidden="true" tabindex="-1"></a>Out[]:</span>
 <span id="cb167-19"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb167-19" aria-hidden="true" tabindex="-1"></a><span class="fl">3.91</span> ms ± <span class="dv">132</span> µs per loop (mean ± std. dev. of <span class="dv">7</span> runs, <span class="dv">10</span> loops each)</span></code></pre></div>
 </div>
-<div id="xử-lý-song-song-trong-pandas" class="section level2 hasAnchor" number="5.5">
-<h2><span class="header-section-number">5.5</span> Xử lý song song trong pandas<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="xử-lý-song-song-trong-pandas" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Xử lý song song trong pandas<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Xử lý song song là phương pháp tận dụng số lượng core của CPU để giải quyết vấn đề trong thời gian ngắn hơn.</p>
-<div id="pandarallel" class="section level3 hasAnchor" number="5.5.1">
-<h3><span class="header-section-number">5.5.1</span> pandarallel<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#pandarallel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="pandarallel" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> pandarallel<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#pandarallel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Để cài đặt pandarallel bằng <code>pip</code></p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb168-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb168-1" aria-hidden="true" tabindex="-1"></a>pip install pandarallel</span></code></pre></div>
 <p>Cách sử dụng</p>

@@ -283,9 +283,14 @@ Các cấu trúc còn lại
 ```{block2, type='rmdnote'}
 **_Lưu ý_:** 
 
-Dữ liệu JSON với cấu trúc `records` và `index` thường gặp nhất. Cấu trúc `values` thực chất không phải dạng JSON
+- Dữ liệu JSON với cấu trúc `records` và `index` thường gặp nhất. 
 
-Với cấu trúc values, khi gọi `pd.read_json()`, kết quả trả về là DataFrame với tên các cột có giá trị 0, 1, 2,...., N-1 với N là số phần tử của từng danh sách con
+- Hàm `pd.read_json()` mặc định `orient` là `records`
+
+- Cấu trúc `values` thực chất không phải dạng JSON. Với cấu trúc values, khi gọi `pd.read_json()`, kết quả trả về là DataFrame với tên các cột có giá trị 0, 1, 2,...., N-1 với N là số phần tử của từng danh sách con
+
+- Có thể đọc json từ file online như `pd.read_json('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sample_pokemon_records.json')`
+
  ```
 #### Xuất file
 
