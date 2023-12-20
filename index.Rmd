@@ -5,11 +5,12 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-description: "Kungfu Pandas"
+description: "Kungfu Panda"
 ---
-
-
 # Lời nói đầu {-}
-## abc
+
+![](../images/index/cover.jpg)
+
 ## Giới thiệu cuốn sách {-}
+
 ## Giới thiệu tác giả {-}
