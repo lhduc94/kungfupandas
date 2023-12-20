@@ -8,8 +8,9 @@ documentclass: book
 description: "Kungfu Panda"
 ---
 
-![](../images/index/cover.jpg)
+
 # Lời nói đầu {-}
+![](../images/index/cover.jpg)
 ## Giới thiệu cuốn sách {-}
 ## Giới thiệu tác giả {-}
 
