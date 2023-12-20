@@ -11,7 +11,6 @@ description: "Kungfu Pandas"
 
 # Lời nói đầu {-}
 ## abc
-![](../images/index/cover.jpg)
 ## Giới thiệu cuốn sách {-}
 ## Giới thiệu tác giả {-}
 
