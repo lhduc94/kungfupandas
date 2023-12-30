@@ -396,7 +396,7 @@ Out[]:
 Xử lý song song là phương pháp tận dụng số lượng core của CPU để giải quyết vấn đề trong thời gian ngắn hơn.
 
 
-### [pandarallel](https://github.com/nalepae/pandarallel)
+### pandarallel
 Để cài đặt pandarallel bằng `pip`
 ```python
 pip install pandarallel
@@ -414,8 +414,7 @@ pandarallel.initialize(progress_bar=True, n_workers=4)
 
 Để áp dụng pandarallel ta chỉ việc thay thế `.apply` bằng `.parallel_apply`
 
-```
+```python
 # df.apply(func)
 df.parallel_apply(func)
 ```
-!(gif1)[https://raw.githubusercontent.com/nalepae/pandarallel/master/docs/progress_apply.gif]

@@ -7,9 +7,12 @@ output: bookdown::gitbook
 documentclass: book
 description: "Kungfu Panda"
 ---
-
 # Lời nói đầu {-}
+
+![](../images/index/cover.jpg)
+
 ## Giới thiệu cuốn sách {-}
+
 ## Giới thiệu tác giả {-}
 
 <!--chapter:end:index.Rmd-->
@@ -628,7 +631,9 @@ hàm phụ trợ của Pandas.
 Ở phần thứ hai của chương, bạn sẽ được hướng dẫn một số cách cấu hình cho Pandas như thay đổi số dòng, số cột hiển thị...
 
 ## Đọc và lưu file
+
 ### csv, tsv
+
 #### Đọc file
 Chúng ta có thể đọc file csv với pandas theo lệnh sau
 
@@ -782,15 +787,134 @@ with pd.ExcelWriter('mul_sheets.xlsx', mode='a', if_sheet_exists='new', engine='
     for df, sheet_name in zip([df1, df2, df3], sheet_names):
         df.to_excel(writer, sheet_name)
 ```
+
 ### JSON
+
 #### Đọc file
 
 `JSON` là 1 dạng dữ liệu khá phổ biến trong thực tế. `Pandas` hỗ trợ đọc file `JSON` theo phương thức sau
 
 ```python
-bla
+pd.read_json(path_or_buf=None, orient=None,...)
 ```
-#### Xuất file
+
+Trong đó:
+
+- `path_or_buf`: là đường dẫn đến file json hoặc Object cho trước
+
+- `orient`:  Kiểu cấu trúc của json
+    - `split`:  Dữ liệu có dạng dictionary theo cấu trúc `{index -> [index], columns - [columns], data -> [values]}`
+    - `records`: Dữ liệu có dạng danh sách các dictionary theo cấu trúc ` [{column -> value}, ... , {column -> value}]`
+    - `index`: Dữ liệu dạng dictionary theo cấu trúc `{"index" -> {"column" -> "value"}}`
+    - `columns`: Dữ liệu dạng dictionary theo cấu trúc `{column -> {index -> value}}`
+    - `values`: danh sách các giá trị
+- Ngoài ra còn các tham số khác nữa như `chunksize`, `nrow`, các bạn có thể tham khảo tại [pd.read_json()](https://pandas.pydata.org/docs/reference/api/pandas.read_json.html)
+
+Dưới đây là file `sample_pokemon.json` với các cấu trúc như sau
+
+Cấu trúc `records`
+
+```json
+[{"name":"Bulbasaur","type":["Grass","Poison"],"height":"0.71 m","weight":"6.9 kg"},
+ {"name":"Ivysaur","type":["Grass","Poison"],"height":"0.99 m","weight":"13.0 kg"},
+ {"name":"Venusaur","type":["Grass","Poison"],"height":"2.01 m","weight":"100.0 kg"},
+ {"name":"Charmander","type":["Fire"],"height":"0.61 m","weight":"8.5 kg"},
+ {"name":"Charmeleon","type":["Fire"],"height":"1.09 m","weight":"19.0 kg"}]
+ ```
+
+ ta có thể gọi
+
+ ```python
+ df = pd.read_json('sample_pokemon.json', orient='records')
+ df.head()
+ ```
+
+ ```
+          name             type  height    weight
+0   Bulbasaur  [Grass, Poison]  0.71 m    6.9 kg
+1     Ivysaur  [Grass, Poison]  0.99 m   13.0 kg
+2    Venusaur  [Grass, Poison]  2.01 m  100.0 kg
+3  Charmander           [Fire]  0.61 m    8.5 kg
+4  Charmeleon           [Fire]  1.09 m   19.0 kg
+ ```
+
+Tương tự với cấu trúc `split`
+
+```json
+{"index":   [0,1,2,3,4],
+ "columns": ["name","type","height","weight"],
+ "data":    [["Bulbasaur",["Grass","Poison"],"0.71 m","6.9 kg"],
+             ["Ivysaur",["Grass","Poison"],"0.99 m","13.0 kg"],
+             ["Venusaur",["Grass","Poison"],"2.01 m","100.0 kg"],
+             ["Charmander",["Fire"],"0.61 m","8.5 kg"],
+             ["Charmeleon",["Fire"],"1.09 m","19.0 kg"]]}
+```
+
+ ta có thể gọi
+
+ ```python
+ df = pd.read_json('sample_pokemon.json', orient='split')
+ df.head()
+ ```
+
+Các cấu trúc còn lại
+
+`index`
+
+ ```json
+ {"0":{"name":"Bulbasaur","type":["Grass","Poison"],"height":"0.71 m","weight":"6.9 kg"},
+ "1":{"name":"Ivysaur","type":["Grass","Poison"],"height":"0.99 m","weight":"13.0 kg"},
+ "2":{"name":"Venusaur","type":["Grass","Poison"],"height":"2.01 m","weight":"100.0 kg"},
+ "3":{"name":"Charmander","type":["Fire"],"height":"0.61 m","weight":"8.5 kg"},
+ "4":{"name":"Charmeleon","type":["Fire"],"height":"1.09 m","weight":"19.0 kg"}}
+ ```
+
+`columns`
+
+```json
+{"name":{"0":"Bulbasaur",
+         "1":"Ivysaur",
+         "2":"Venusaur",
+         "3":"Charmander"
+         "4":"Charmeleon"},
+ "type":{"0":["Grass","Poison"],
+         "1":["Grass","Poison"],
+         "2":["Grass","Poison"],
+         "3":["Fire"],
+         "4":["Fire"]},
+ "height":{"0":"0.71 m",
+           "1":"0.99 m",
+           "2":"2.01 m",
+           "3":"0.61 m",
+           "4":"1.09 m"},
+ "weight":{"0":"6.9 kg",
+           "1":"13.0 kg",
+           "2":"100.0 kg",
+           "3":"8.5 kg",
+           "4":"19.0 kg"}}
+```
+
+`values`
+
+```json
+[["Bulbasaur",["Grass","Poison"],"0.71 m","6.9 kg"],
+ ["Ivysaur",["Grass","Poison"],"0.99 m","13.0 kg"],
+ ["Venusaur",["Grass","Poison"],"2.01 m","100.0 kg"],
+ ["Charmander",["Fire"],"0.61 m","8.5 kg"],
+ ["Charmeleon",["Fire"],"1.09 m","19.0 kg"]]
+```
+ 
+
+```{block2, type='rmdnote'}
+**_Lưu ý_:** 
+
+- `pd.read_json()` mặc định `orient='records'`. Các cấu trúc `records` và `index` là các cấu trúc JSON thường gặp.
+
+- `values` không phải cấu trúc JSON.
+
+- có thể truyền link file thay vì file được lưu ở máy.
+
+```
 
 ### Pickle
 #### Đọc file
@@ -1437,6 +1561,7 @@ Out[43]:
 
 ## `.sort_values`
 
+<<<<<<< HEAD
 Phương thức `.sort_values` dùng để sắp xếp dữ liệu trong DataFrame hoặc Series
 ```python
 DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last', ignore_index=False, key=None)
@@ -1460,25 +1585,62 @@ Trong đó:
 
 - `key`: key function
 
+=======
+```python
+DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last', ignore_index=False, key=None)
+```
+Trong đó:
+
+- `by`: nhãn hoặc danh sách các nhãn
+
+- `axis`: Thực thi theo dòng {`0` hoặc `index`} hoặc cột {`1` hoặc `columns`}
+
+- `ascending`: bool hoặc danh sách các bool thể hiện sắp xếp theo tăng dần hoặc giảm dần. Mặc định `True`
+
+- `inplace`: Thực thi trên chính bảng hoặc tạo một bản sao.
+
+- `kind`: Lựa chọn thuật toán sắp xếp
+
+- `na_position`: Đưa `NaN` lên đầu hoặc cuối
+
+- `ignor_index`: Nếu để giá trị `True` sẽ đánh index lại từ 0 -> n-1
+
+- `key`: áp dụng hàm vào lúc sort
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 
 ```python
 In []: df = pd.DataFrame({
     'col1': ['A', 'A', 'B', np.nan, 'D', 'C'],
+<<<<<<< HEAD
     'col2': [2, 1, 9, 8, 2, 4],
     'col3': [0, 1, 9, 4, 2, 3],
     'col4': ['a', 'B', 'c', 'D', 'e', 'F']
 })
 In []: df
 Out[]:
+=======
+    'col2': [2, 1, 9, 8, 7, 4],
+    'col3': [0, 1, 9, 4, 2, 3],
+    'col4': ['a', 'B', 'c', 'D', 'e', 'F']})
+In []: df
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
   col1  col2  col3 col4
 0    A     2     0    a
 1    A     1     1    B
 2    B     9     9    c
 3  NaN     8     4    D
+<<<<<<< HEAD
 4    D     2     2    e
 5    C     4     3    F
 ```
 Sắp xếp theo `col1`
+=======
+4    D     7     2    e
+5    C     4     3    F
+```
+
+Sắp xếp theo `col1`
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 
 ```python
 In []: df.sort_values(by=['col1'])
@@ -1488,6 +1650,7 @@ Out[]:
 1    A     1     1    B
 2    B     9     9    c
 5    C     4     3    F
+<<<<<<< HEAD
 4    D     2     2    e
 3  NaN     8     4    D
 ```
@@ -1510,6 +1673,19 @@ In []: df.sort_values(by=['col1', 'col2'], ascending=[False, True])
 Out[]:
   col1  col2  col3 col4
 4    D     2     2    e
+=======
+4    D     7     2    e
+3  NaN     8     4    D
+```
+
+Sắp xếp theo nhiều cột và chỉ định hướng sắp xếp
+
+```python
+In []: df.sort_values(by=['col1', 'col2'] , ascending=[False, True])
+Out[]:
+  col1  col2  col3 col4
+4    D     7     2    e
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 5    C     4     3    F
 2    B     9     9    c
 1    A     1     1    B
@@ -1517,6 +1693,7 @@ Out[]:
 3  NaN     8     4    D
 ```
 
+<<<<<<< HEAD
 Thay đổi vị trí của `NaN`
 ```python
 In []: df.sort_values(by='col1', ascending=False, na_position='first')
@@ -1524,24 +1701,46 @@ Out[]:
   col1  col2  col3 col4
 3  NaN     8     4    D
 4    D     2     2    e
+=======
+Đặt `NaN` lên đầu
+```python
+In []: df.sort_values(by=['col1', 'col2'] , ascending=False, na_position='first')
+Out[]:
+  col1  col2  col3 col4
+3  NaN     8     4    D
+4    D     7     2    e
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 5    C     4     3    F
 2    B     9     9    c
 0    A     2     0    a
 1    A     1     1    B
 ```
+<<<<<<< HEAD
 Sắp xếp với key function
 
 ```python
 In []:df.sort_values(by='col4', key=lambda col: col.str.lower())
+=======
+
+Sắp xếp với key function
+```python
+In []: df.sort_values(by='col4', key=lambda col: col.str.lower())
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 Out[]:
   col1  col2  col3 col4
 0    A     2     0    a
 1    A     1     1    B
 2    B     9     9    c
 3  NaN     8     4    D
+<<<<<<< HEAD
 4    D     2     2    e
 5    C     4     3    F
 ```
+=======
+4    D     7     2    e
+5    C     4     3    F
+```
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 
 <!--chapter:end:posts/03-Funda_Function.Rmd-->
 
@@ -2709,7 +2908,7 @@ Out[]:
 Xử lý song song là phương pháp tận dụng số lượng core của CPU để giải quyết vấn đề trong thời gian ngắn hơn.
 
 
-### [pandarallel](https://github.com/nalepae/pandarallel)
+### pandarallel
 Để cài đặt pandarallel bằng `pip`
 ```python
 pip install pandarallel
@@ -2727,11 +2926,10 @@ pandarallel.initialize(progress_bar=True, n_workers=4)
 
 Để áp dụng pandarallel ta chỉ việc thay thế `.apply` bằng `.parallel_apply`
 
-```
+```python
 # df.apply(func)
 df.parallel_apply(func)
 ```
-!(gif1)[https://raw.githubusercontent.com/nalepae/pandarallel/master/docs/progress_apply.gif]
 
 <!--chapter:end:posts/05-Loop.Rmd-->
 
@@ -2882,6 +3080,10 @@ Out[5]:
 **_Lưu ý:_** 
 `.head()` và `.tail()` trả về các dòng theo thứ tự index của chúng, không trả về theo thứ tự sắp xếp theo key
 ``` 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 ## Aggregate trong Groupby
 
 **`.count()`**

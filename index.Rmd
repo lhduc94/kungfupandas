@@ -7,7 +7,10 @@ output: bookdown::gitbook
 documentclass: book
 description: "Kungfu Panda"
 ---
-
 # Lời nói đầu {-}
+
+![](../images/index/cover.jpg)
+
 ## Giới thiệu cuốn sách {-}
+
 ## Giới thiệu tác giả {-}
