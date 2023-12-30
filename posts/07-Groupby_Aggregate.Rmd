@@ -131,12 +131,13 @@ Out[5]:
 8521           FDN46            Snack Foods      Medium          1845.5976
 8522           DRG01            Soft Drinks       Small           765.6700
 ```
-## Aggregate trong Groupby
 
 ```{block2, type='rmdnote'}
 **_Lưu ý:_** 
 `.head()` và `.tail()` trả về các dòng theo thứ tự index của chúng, không trả về theo thứ tự sắp xếp theo key
 ``` 
+## Aggregate trong Groupby
+
 **`.count()`**
 
 Đếm số lượng phần tử cho từng cột trong từng nhóm, không đếm các phần tử NA

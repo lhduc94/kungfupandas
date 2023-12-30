@@ -1,4 +1,6 @@
 # Các cách phối hợp nhiều bảng với nhau 
+## Concat
+Phương thức concat để nôi các DataFrame lại với nhau
+
 ## Join
 ## Merge
-## Concat
