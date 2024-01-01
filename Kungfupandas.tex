@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -44,13 +47,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -58,7 +61,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -67,7 +70,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -83,6 +86,19 @@
 % Allow footnotes in longtable head/foot
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -198,7 +214,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Kungfu Pandas},
   pdfauthor={Lê Huỳnh Đức},
@@ -207,7 +223,7 @@
 
 \title{Kungfu Pandas}
 \author{Lê Huỳnh Đức}
-\date{2022-04-22}
+\date{2023-12-30}
 
 \begin{document}
 \maketitle
@@ -227,27 +243,24 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\hypertarget{lux1eddi-nuxf3i-ux111ux1ea7u}{%
-\chapter*{Lời nói đầu}\label{lux1eddi-nuxf3i-ux111ux1ea7u}}
+\chapter*{Lời nói đầu}\label{lux1eddi-nuxf3i-ux111ux1ea7u}
 
 
-\hypertarget{giux1edbi-thiux1ec7u-cuux1ed1n-suxe1ch}{%
-\section*{Giới thiệu cuốn sách}\label{giux1edbi-thiux1ec7u-cuux1ed1n-suxe1ch}}
+\includegraphics{../images/index/cover.jpg}
+
+\section*{Giới thiệu cuốn sách}\label{giux1edbi-thiux1ec7u-cuux1ed1n-suxe1ch}
 
 
-\hypertarget{giux1edbi-thiux1ec7u-tuxe1c-giux1ea3}{%
-\section*{Giới thiệu tác giả}\label{giux1edbi-thiux1ec7u-tuxe1c-giux1ea3}}
+\section*{Giới thiệu tác giả}\label{giux1edbi-thiux1ec7u-tuxe1c-giux1ea3}
 
 
-\hypertarget{cux1ea5u-truxfac-vuxe0-kiux1ec3u-dux1eef-liux1ec7u}{%
-\chapter{Cấu trúc và kiểu dữ liệu}\label{cux1ea5u-truxfac-vuxe0-kiux1ec3u-dux1eef-liux1ec7u}}
+\chapter{Cấu trúc và kiểu dữ liệu}\label{cux1ea5u-truxfac-vuxe0-kiux1ec3u-dux1eef-liux1ec7u}
 
 Mục tiêu của chương này nhằm giới thiệu về các cấu trúc cơ bản trong Pandas là \texttt{Series} và \texttt{DataFrame}.
 Trong chương này, bạn sẽ học cách khởi tạo các cấu trúc này cũng như một số thao tác cơ bản trên \texttt{Series}.
 Bạn cũng sẽ được biết về một số kiểu dữ liệu thường gặp trong pandas và cách để giảm thiểu bộ nhớ sử dụng khi khởi tạo dữ liệu.
 
-\hypertarget{series}{%
-\section{Series}\label{series}}
+\section{Series}\label{series}
 
 Trong Pandas, \texttt{Series} là mảng 1 chiều bao gồm một danh sách giá trị, và một mảng chứa index
 của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó.
@@ -273,8 +286,7 @@ Trong đó \texttt{data} có thể có dạng:
 \texttt{index} có thể truyền hoặc không, tùy vào dạng của \texttt{data} mà \texttt{index} sẽ được định nghĩa khác nhau.
 \texttt{name} là tên của \texttt{Series}, giá trị này cũng không nhất thiết phải truyền vào.
 
-\hypertarget{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o}{%
-\subsection{Các cách khởi tạo}\label{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o}}
+\subsection{Các cách khởi tạo}\label{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o}
 
 \textbf{Khởi tạo Series bằng array}
 
@@ -341,8 +353,7 @@ là \texttt{float64} nên kiểu dữ liệu của \texttt{Series} cũng là \te
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}{%
-\subsection{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}}
+\subsection{Một số thao tác cơ bản}\label{mux1ed9t-sux1ed1-thao-tuxe1c-cux1a1-bux1ea3n}
 
 Thao tác trên \texttt{Series} cũng giống với thao tác trên \texttt{numpy.array}. Ngoài ra chúng ta còn có thể
 tác với Series dựa vào index
@@ -447,8 +458,7 @@ Ta gọi thuộc tính \texttt{.values}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{cach-khoi-tao-data-frame}{%
-\section{DataFrame}\label{cach-khoi-tao-data-frame}}
+\section{DataFrame}\label{cach-khoi-tao-data-frame}
 
 \texttt{DataFrame} là cấu trúc dữ liệu chính và cũng là đặc trưng của pandas. Cũng giống như SQL Table,
 \texttt{DataFrame} là một bảng gồm một hay nhiều cột dữ liệu. Hoặc có thể nói rõ hơn là DataFrame là tập
@@ -484,8 +494,7 @@ của các \texttt{Series}. \texttt{dtype} sẽ định nghĩa các kiểu dữ 
 \texttt{data} là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về
 cùng 1 bộ nhớ.
 
-\hypertarget{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o-1}{%
-\subsection{Các cách khởi tạo}\label{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o-1}}
+\subsection{Các cách khởi tạo}\label{cuxe1c-cuxe1ch-khux1edfi-tux1ea1o-1}
 
 \textbf{Khởi tạo DataFrame từ dict của Series}
 
@@ -684,8 +693,7 @@ Như ta thấy, tại phần tử thứ 2 chỉ có 2 giá trị, trong khi ph�
 
 \texttt{name} của Series sẽ là tên cột của DataFrame và \texttt{index} của Series sẽ là index của DataFrame nếu ta không truyền các biến \texttt{index}, \texttt{columns} khi khởi tạo \texttt{pd.DataFrame}
 
-\hypertarget{cuxe1c-huxe0m-khux1edfi-tux1ea1o-thay-thux1ebf}{%
-\subsection{Các hàm khởi tạo thay thế}\label{cuxe1c-huxe0m-khux1edfi-tux1ea1o-thay-thux1ebf}}
+\subsection{Các hàm khởi tạo thay thế}\label{cuxe1c-huxe0m-khux1edfi-tux1ea1o-thay-thux1ebf}
 
 \textbf{DataFrame.from\_dict}
 
@@ -792,8 +800,7 @@ Hoặc 1 danh sách các dict
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{data-type-trong-pandas}{%
-\section{Data type trong pandas}\label{data-type-trong-pandas}}
+\section{Data type trong pandas}\label{data-type-trong-pandas}
 
 Để kiểm tra kiểu dữ liệu của \texttt{Series} hay \texttt{DataFrame} bạn có thể gọi thuộc tính \texttt{dtypes} hoặc phương thức \texttt{.info()}.
 Các kiểu dữ liệu thường gặp của Pandas được mô tả theo bảng dưới đây:
@@ -802,7 +809,7 @@ Các kiểu dữ liệu thường gặp của Pandas được mô tả theo bả
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2500}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2083}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Các kiểu dữ liệu
 phổ biến
@@ -812,8 +819,10 @@ object
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Hiển thị
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 Boolean & np.bool & \emph{bool} \\
 Integer & np.int,
 np.uint & \emph{int}
@@ -826,7 +835,6 @@ Timedelta & np.timedelta64,
 pd.Timedelta & \emph{timedelta64} \\
 Category & pd.Categorical & \emph{category} \\
 Complex & np.complex & \emph{complex} \\
-\bottomrule()
 \end{longtable}
 
 Ví dụ:
@@ -868,12 +876,12 @@ Ví dụ:
   Nếu không khai báo kiểu dữ liệu khi khởi tạo, pandas sẽ mặc định kiểu dữ liệu là \texttt{int64}, \texttt{float64}, \texttt{object} và \texttt{bool}.
   Pandas sẽ không biết kiểu dữ liệu \texttt{timestamp} nếu không khai báo.
 \item
-  Chỉ có thể khai báo duy nhất 1 kiểu dữ liệu khi \protect\hyperlink{cach-khoi-tao-data-frame}{khởi tạo pandas}.
+  Chỉ có thể khai báo duy nhất 1 kiểu dữ liệu khi \hyperref[cach-khoi-tao-data-frame]{khởi tạo pandas}.
   Ví dụ như tất cả dữ liệu của bạn là \texttt{int} hoặc có thể được ép kiểu về \texttt{int}thì có thể khai báo \texttt{dtype=np.int}
   \end{rmdnote}
 \end{itemize}
 
-Ở ví dụ phía dưới \texttt{col\_1}, \texttt{col\_2}, \texttt{col\_3}, \texttt{col\_4}, \texttt{col\_5} có thể ép về kiểu \texttt{int}, còn \texttt{col\_6} thì không thể ép kiểu được.
+Ở ví dụ phía dưới \texttt{col\_1}, \texttt{col\_2}, \texttt{col\_4}, \texttt{col\_5} có thể ép về kiểu \texttt{int}, còn \texttt{col\_3}, \texttt{col\_6} thì không thể ép kiểu được.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -900,7 +908,7 @@ Ví dụ:
 \NormalTok{col\_3    }\BuiltInTok{object}
 \NormalTok{col\_4     int64}
 \NormalTok{col\_5     int64}
-\NormalTok{col\_6     int64}
+\NormalTok{col\_6    }\BuiltInTok{object}
 \NormalTok{dtype: }\BuiltInTok{object}
 \end{Highlighting}
 \end{Shaded}
@@ -946,10 +954,9 @@ và sau khi thay bằng \texttt{dtype=np.int8}
 \end{Highlighting}
 \end{Shaded}
 
-Phương thức ép kiểu này được áp dụng khi bạn khởi tạo DataFrame, ngoài ra còn có hàm ép kiểu khác đối với DataFrame cho trước, nội dung này sẽ được đề cập ở \protect\hyperlink{Chuong-3}{Chương 3}.
+Phương thức ép kiểu này được áp dụng khi bạn khởi tạo DataFrame, ngoài ra còn có hàm ép kiểu khác đối với DataFrame cho trước, nội dung này sẽ được đề cập ở \hyperref[Chuong-3]{Chương 3}.
 
-\hypertarget{nhux1eadp-xuux1ea5t-trong-pandas}{%
-\chapter{Nhập xuất trong pandas}\label{nhux1eadp-xuux1ea5t-trong-pandas}}
+\chapter{Nhập xuất trong pandas}\label{nhux1eadp-xuux1ea5t-trong-pandas}
 
 Ở Chương 1 chúng ta đã biết cách khởi tạo DataFrame từ các dữ liệu cho trước.
 Trong chương này sẽ hướng dẫn cách đọc dữ liệu từ file bằng pandas, một số kiểu file thường thấy cho dữ liệu dạng bảng là \texttt{.csv} và \texttt{.xlsx}.
@@ -958,14 +965,11 @@ hàm phụ trợ của Pandas.
 
 Ở phần thứ hai của chương, bạn sẽ được hướng dẫn một số cách cấu hình cho Pandas như thay đổi số dòng, số cột hiển thị\ldots{}
 
-\hypertarget{ux111ux1ecdc-vuxe0-lux1b0u-file}{%
-\section{Đọc và lưu file}\label{ux111ux1ecdc-vuxe0-lux1b0u-file}}
+\section{Đọc và lưu file}\label{ux111ux1ecdc-vuxe0-lux1b0u-file}
 
-\hypertarget{csv-tsv}{%
-\subsection{csv, tsv}\label{csv-tsv}}
+\subsection{csv, tsv}\label{csv-tsv}
 
-\hypertarget{ux111ux1ecdc-file}{%
-\subsubsection{Đọc file}\label{ux111ux1ecdc-file}}
+\subsubsection{Đọc file}\label{ux111ux1ecdc-file}
 
 Chúng ta có thể đọc file csv với pandas theo lệnh sau
 
@@ -1018,8 +1022,7 @@ Trong đó:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{xuux1ea5t-file}{%
-\subsubsection{Xuất file}\label{xuux1ea5t-file}}
+\subsubsection{Xuất file}\label{xuux1ea5t-file}
 
 Để lưu \texttt{DataFrame} dưới dạng file ta có thể dùng câu lệnh \texttt{.to\_csv()} theo cú pháp sau
 
@@ -1053,11 +1056,9 @@ Ví dụ
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{excel}{%
-\subsection{Excel}\label{excel}}
+\subsection{Excel}\label{excel}
 
-\hypertarget{ux111ux1ecdc-file-excel}{%
-\subsubsection{Đọc file Excel}\label{ux111ux1ecdc-file-excel}}
+\subsubsection{Đọc file Excel}\label{ux111ux1ecdc-file-excel}
 
 Để đọc file Excel ta dùng cú pháp sau
 
@@ -1079,8 +1080,7 @@ Với \texttt{filename} là đường dẫn đến file
 
 Trong đó \texttt{sheet\_name} là tên sheet cần đọc, các thông số còn lại tương tự như phần đọc file \texttt{csv} và \texttt{tsv}. Một cách khác để đọc file excel là dùng hàm \href{https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html}{pandas.read\_excel} với tham số \texttt{io} là tên file.
 
-\hypertarget{xuux1ea5t-file-excel}{%
-\subsubsection{Xuất file Excel}\label{xuux1ea5t-file-excel}}
+\subsubsection{Xuất file Excel}\label{xuux1ea5t-file-excel}
 
 Giả sử ta có các \texttt{DataFrame} df1, df2, df3 cần được lưu vào 1 file Excel duy nhất
 
@@ -1166,37 +1166,173 @@ Có thể dùng \texttt{with} để mở file để tránh trường hợp quên
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{json}{%
-\subsection{JSON}\label{json}}
+\subsection{JSON}\label{json}
 
-\hypertarget{ux111ux1ecdc-file-1}{%
-\subsubsection{Đọc file}\label{ux111ux1ecdc-file-1}}
+\subsubsection{Đọc file}\label{ux111ux1ecdc-file-1}
 
 \texttt{JSON} là 1 dạng dữ liệu khá phổ biến trong thực tế. \texttt{Pandas} hỗ trợ đọc file \texttt{JSON} theo phương thức sau
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{bla}
+\NormalTok{pd.read\_json(path\_or\_buf}\OperatorTok{=}\VariableTok{None}\NormalTok{, orient}\OperatorTok{=}\VariableTok{None}\NormalTok{,...)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{xuux1ea5t-file-1}{%
-\subsubsection{Xuất file}\label{xuux1ea5t-file-1}}
+Trong đó:
 
-\hypertarget{pickle}{%
-\subsection{Pickle}\label{pickle}}
+\begin{itemize}
+\item
+  \texttt{path\_or\_buf}: là đường dẫn đến file json hoặc Object cho trước
+\item
+  \texttt{orient}: Kiểu cấu trúc của json
 
-\hypertarget{ux111ux1ecdc-file-2}{%
-\subsubsection{Đọc file}\label{ux111ux1ecdc-file-2}}
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{split}: Dữ liệu có dạng dictionary theo cấu trúc \texttt{\{index\ -\textgreater{}\ {[}index{]},\ columns\ -\ {[}columns{]},\ data\ -\textgreater{}\ {[}values{]}\}}
+  \item
+    \texttt{records}: Dữ liệu có dạng danh sách các dictionary theo cấu trúc \texttt{{[}\{column\ -\textgreater{}\ value\},\ ...\ ,\ \{column\ -\textgreater{}\ value\}{]}}
+  \item
+    \texttt{index}: Dữ liệu dạng dictionary theo cấu trúc \texttt{\{"index"\ -\textgreater{}\ \{"column"\ -\textgreater{}\ "value"\}\}}
+  \item
+    \texttt{columns}: Dữ liệu dạng dictionary theo cấu trúc \texttt{\{column\ -\textgreater{}\ \{index\ -\textgreater{}\ value\}\}}
+  \item
+    \texttt{values}: danh sách các giá trị
+  \end{itemize}
+\item
+  Ngoài ra còn các tham số khác nữa như \texttt{chunksize}, \texttt{nrow}, các bạn có thể tham khảo tại \href{https://pandas.pydata.org/docs/reference/api/pandas.read_json.html}{pd.read\_json()}
+\end{itemize}
 
-\hypertarget{xuux1ea5t-file-2}{%
-\subsubsection{Xuất file}\label{xuux1ea5t-file-2}}
+Dưới đây là file \texttt{sample\_pokemon.json} với các cấu trúc như sau
 
-\hypertarget{cux1ea5u-huxecnh-pandas}{%
-\section{Cấu hình pandas}\label{cux1ea5u-huxecnh-pandas}}
+Cấu trúc \texttt{records}
 
-\hypertarget{Chuong-3}{%
-\chapter{Một số hàm cơ bản}\label{Chuong-3}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{[}\FunctionTok{\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Bulbasaur"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"0.71 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"6.9 kg"}\FunctionTok{\}}\OtherTok{,}
+ \FunctionTok{\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Ivysaur"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"0.99 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"13.0 kg"}\FunctionTok{\}}\OtherTok{,}
+ \FunctionTok{\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Venusaur"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"2.01 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"100.0 kg"}\FunctionTok{\}}\OtherTok{,}
+ \FunctionTok{\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Charmander"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Fire"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"0.61 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"8.5 kg"}\FunctionTok{\}}\OtherTok{,}
+ \FunctionTok{\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Charmeleon"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Fire"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"1.09 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"19.0 kg"}\FunctionTok{\}}\OtherTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+ta có thể gọi
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_json(}\StringTok{\textquotesingle{}sample\_pokemon.json\textquotesingle{}}\NormalTok{, orient}\OperatorTok{=}\StringTok{\textquotesingle{}records\textquotesingle{}}\NormalTok{)}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+         name             type  height    weight
+0   Bulbasaur  [Grass, Poison]  0.71 m    6.9 kg
+1     Ivysaur  [Grass, Poison]  0.99 m   13.0 kg
+2    Venusaur  [Grass, Poison]  2.01 m  100.0 kg
+3  Charmander           [Fire]  0.61 m    8.5 kg
+4  Charmeleon           [Fire]  1.09 m   19.0 kg
+\end{verbatim}
+
+Tương tự với cấu trúc \texttt{split}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}\DataTypeTok{"index"}\FunctionTok{:}   \OtherTok{[}\DecValTok{0}\OtherTok{,}\DecValTok{1}\OtherTok{,}\DecValTok{2}\OtherTok{,}\DecValTok{3}\OtherTok{,}\DecValTok{4}\OtherTok{]}\FunctionTok{,}
+ \DataTypeTok{"columns"}\FunctionTok{:} \OtherTok{[}\StringTok{"name"}\OtherTok{,}\StringTok{"type"}\OtherTok{,}\StringTok{"height"}\OtherTok{,}\StringTok{"weight"}\OtherTok{]}\FunctionTok{,}
+ \DataTypeTok{"data"}\FunctionTok{:}    \OtherTok{[[}\StringTok{"Bulbasaur"}\OtherTok{,[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{],}\StringTok{"0.71 m"}\OtherTok{,}\StringTok{"6.9 kg"}\OtherTok{],}
+             \OtherTok{[}\StringTok{"Ivysaur"}\OtherTok{,[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{],}\StringTok{"0.99 m"}\OtherTok{,}\StringTok{"13.0 kg"}\OtherTok{],}
+             \OtherTok{[}\StringTok{"Venusaur"}\OtherTok{,[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{],}\StringTok{"2.01 m"}\OtherTok{,}\StringTok{"100.0 kg"}\OtherTok{],}
+             \OtherTok{[}\StringTok{"Charmander"}\OtherTok{,[}\StringTok{"Fire"}\OtherTok{],}\StringTok{"0.61 m"}\OtherTok{,}\StringTok{"8.5 kg"}\OtherTok{],}
+             \OtherTok{[}\StringTok{"Charmeleon"}\OtherTok{,[}\StringTok{"Fire"}\OtherTok{],}\StringTok{"1.09 m"}\OtherTok{,}\StringTok{"19.0 kg"}\OtherTok{]]}\FunctionTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+ta có thể gọi
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_json(}\StringTok{\textquotesingle{}sample\_pokemon.json\textquotesingle{}}\NormalTok{, orient}\OperatorTok{=}\StringTok{\textquotesingle{}split\textquotesingle{}}\NormalTok{)}
+\NormalTok{df.head()}
+\end{Highlighting}
+\end{Shaded}
+
+Các cấu trúc còn lại
+
+\texttt{index}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}\DataTypeTok{"0"}\FunctionTok{:\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Bulbasaur"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"0.71 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"6.9 kg"}\FunctionTok{\},}
+\DataTypeTok{"1"}\FunctionTok{:\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Ivysaur"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"0.99 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"13.0 kg"}\FunctionTok{\},}
+\DataTypeTok{"2"}\FunctionTok{:\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Venusaur"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"2.01 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"100.0 kg"}\FunctionTok{\},}
+\DataTypeTok{"3"}\FunctionTok{:\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Charmander"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Fire"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"0.61 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"8.5 kg"}\FunctionTok{\},}
+\DataTypeTok{"4"}\FunctionTok{:\{}\DataTypeTok{"name"}\FunctionTok{:}\StringTok{"Charmeleon"}\FunctionTok{,}\DataTypeTok{"type"}\FunctionTok{:}\OtherTok{[}\StringTok{"Fire"}\OtherTok{]}\FunctionTok{,}\DataTypeTok{"height"}\FunctionTok{:}\StringTok{"1.09 m"}\FunctionTok{,}\DataTypeTok{"weight"}\FunctionTok{:}\StringTok{"19.0 kg"}\FunctionTok{\}\}}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{columns}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\{}\DataTypeTok{"name"}\FunctionTok{:\{}\DataTypeTok{"0"}\FunctionTok{:}\StringTok{"Bulbasaur"}\FunctionTok{,}
+         \DataTypeTok{"1"}\FunctionTok{:}\StringTok{"Ivysaur"}\FunctionTok{,}
+         \DataTypeTok{"2"}\FunctionTok{:}\StringTok{"Venusaur"}\FunctionTok{,}
+         \DataTypeTok{"3"}\FunctionTok{:}\StringTok{"Charmander"}
+         \StringTok{"4"}\ErrorTok{:}\StringTok{"Charmeleon"}\FunctionTok{\},}
+ \DataTypeTok{"type"}\FunctionTok{:\{}\DataTypeTok{"0"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}
+         \DataTypeTok{"1"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}
+         \DataTypeTok{"2"}\FunctionTok{:}\OtherTok{[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{]}\FunctionTok{,}
+         \DataTypeTok{"3"}\FunctionTok{:}\OtherTok{[}\StringTok{"Fire"}\OtherTok{]}\FunctionTok{,}
+         \DataTypeTok{"4"}\FunctionTok{:}\OtherTok{[}\StringTok{"Fire"}\OtherTok{]}\FunctionTok{\},}
+ \DataTypeTok{"height"}\FunctionTok{:\{}\DataTypeTok{"0"}\FunctionTok{:}\StringTok{"0.71 m"}\FunctionTok{,}
+           \DataTypeTok{"1"}\FunctionTok{:}\StringTok{"0.99 m"}\FunctionTok{,}
+           \DataTypeTok{"2"}\FunctionTok{:}\StringTok{"2.01 m"}\FunctionTok{,}
+           \DataTypeTok{"3"}\FunctionTok{:}\StringTok{"0.61 m"}\FunctionTok{,}
+           \DataTypeTok{"4"}\FunctionTok{:}\StringTok{"1.09 m"}\FunctionTok{\},}
+ \DataTypeTok{"weight"}\FunctionTok{:\{}\DataTypeTok{"0"}\FunctionTok{:}\StringTok{"6.9 kg"}\FunctionTok{,}
+           \DataTypeTok{"1"}\FunctionTok{:}\StringTok{"13.0 kg"}\FunctionTok{,}
+           \DataTypeTok{"2"}\FunctionTok{:}\StringTok{"100.0 kg"}\FunctionTok{,}
+           \DataTypeTok{"3"}\FunctionTok{:}\StringTok{"8.5 kg"}\FunctionTok{,}
+           \DataTypeTok{"4"}\FunctionTok{:}\StringTok{"19.0 kg"}\FunctionTok{\}\}}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{values}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{[[}\StringTok{"Bulbasaur"}\OtherTok{,[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{],}\StringTok{"0.71 m"}\OtherTok{,}\StringTok{"6.9 kg"}\OtherTok{],}
+ \OtherTok{[}\StringTok{"Ivysaur"}\OtherTok{,[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{],}\StringTok{"0.99 m"}\OtherTok{,}\StringTok{"13.0 kg"}\OtherTok{],}
+ \OtherTok{[}\StringTok{"Venusaur"}\OtherTok{,[}\StringTok{"Grass"}\OtherTok{,}\StringTok{"Poison"}\OtherTok{],}\StringTok{"2.01 m"}\OtherTok{,}\StringTok{"100.0 kg"}\OtherTok{],}
+ \OtherTok{[}\StringTok{"Charmander"}\OtherTok{,[}\StringTok{"Fire"}\OtherTok{],}\StringTok{"0.61 m"}\OtherTok{,}\StringTok{"8.5 kg"}\OtherTok{],}
+ \OtherTok{[}\StringTok{"Charmeleon"}\OtherTok{,[}\StringTok{"Fire"}\OtherTok{],}\StringTok{"1.09 m"}\OtherTok{,}\StringTok{"19.0 kg"}\OtherTok{]]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý}:}
+
+\begin{itemize}
+\item
+  \texttt{pd.read\_json()} mặc định \texttt{orient=\textquotesingle{}records\textquotesingle{}}. Các cấu trúc \texttt{records} và \texttt{index} là các cấu trúc JSON thường gặp.
+\item
+  \texttt{values} không phải cấu trúc JSON.
+\item
+  có thể truyền link file thay vì file được lưu ở máy.
+\end{itemize}
+\end{rmdnote}
+
+\subsection{Pickle}\label{pickle}
+
+\subsubsection{Đọc file}\label{ux111ux1ecdc-file-2}
+
+\subsubsection{Xuất file}\label{xuux1ea5t-file-1}
+
+\section{Cấu hình pandas}\label{cux1ea5u-huxecnh-pandas}
+
+\chapter{Một số hàm cơ bản}\label{Chuong-3}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1204,8 +1340,7 @@ Có thể dùng \texttt{with} để mở file để tránh trường hợp quên
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{head-vuxe0-.tail}{%
-\section{\texorpdfstring{\texttt{.head()} và \texttt{.tail()}}{.head() và .tail()}}\label{head-vuxe0-.tail}}
+\section{\texorpdfstring{\texttt{.head()} và \texttt{.tail()}}{.head() và .tail()}}\label{head-vuxe0-.tail}
 
 Phương thức \texttt{.head(n=5)} hiển thị \texttt{n} dòng đầu tiên của \texttt{DataFrame}, ngược lại phương thức \texttt{.tail(n=5)} hiển thị \texttt{n} dòng cuối cùng của \texttt{DataFrame}
 
@@ -1245,8 +1380,7 @@ Phương thức \texttt{.head(n=5)} hiển thị \texttt{n} dòng đầu tiên c
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{shape-vuxe0-.size}{%
-\section{\texorpdfstring{\texttt{.shape} và \texttt{.size}}{.shape và .size}}\label{shape-vuxe0-.size}}
+\section{\texorpdfstring{\texttt{.shape} và \texttt{.size}}{.shape và .size}}\label{shape-vuxe0-.size}
 
 Phương thức \texttt{.shape} cho biết số lượng dòng và cột của bảng
 
@@ -1268,8 +1402,7 @@ Phương thức \texttt{.size} cho biết số lượng phần từ của bảng
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{info}{%
-\section{\texorpdfstring{\texttt{.info()}}{.info()}}\label{info}}
+\section{\texorpdfstring{\texttt{.info()}}{.info()}}\label{info}
 
 Phương thức \texttt{.info()} dùng để xem một số thông tin cơ bản như
 
@@ -1316,8 +1449,7 @@ Phương thức \texttt{.info()} có các tham số để tùy chỉnh các thô
 \texttt{info(verbose=None,\ buf=None,\ max\_cols=None,\ memory\_usage=None,\ show\_counts=None,\ null\_counts=None)}
 \end{rmdtip}
 
-\hypertarget{describe}{%
-\section{\texorpdfstring{\texttt{.describe()}}{.describe()}}\label{describe}}
+\section{\texorpdfstring{\texttt{.describe()}}{.describe()}}\label{describe}
 
 Phương thức \texttt{.describe()} đưa ra một số thống kê đơn giản như \texttt{count}, \texttt{mean}, \texttt{std}, \texttt{min}, \texttt{max} và \texttt{percentiles\ =\ {[}0.25,\ 0.5,\ 0.75{]}}. Phương thức này chỉ áp dụng cho các cột ở dạng \texttt{numerical}.
 
@@ -1385,8 +1517,7 @@ Bạn có thể thay đổi thông số percentiles bằng cách truyền tham s
 \texttt{pandas} mặc định tính thêm percentile tại \texttt{0.5} dù không truyền vào
 \end{rmdnote}
 
-\hypertarget{index}{%
-\section{\texorpdfstring{\texttt{.index}}{.index}}\label{index}}
+\section{\texorpdfstring{\texttt{.index}}{.index}}\label{index}
 
 Thuộc tính \texttt{.index} để lấy index của \texttt{DataFrame} hoặc \texttt{Series}.
 
@@ -1405,8 +1536,7 @@ Ví dụ
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{memory_usage}{%
-\section{\texorpdfstring{\texttt{.memory\_usage()}}{.memory\_usage()}}\label{memory_usage}}
+\section{\texorpdfstring{\texttt{.memory\_usage()}}{.memory\_usage()}}\label{memory_usage}
 
 Phương thức \texttt{.memory\_usage(index=True,\ deep=False)} giúp thông kê dung lượng của từng cột. Trong đó \texttt{index} trả về dung lượng của phần đánh index và \texttt{deep} nếu đặt giá trị \texttt{True} sẽ trả về cách tính toán sâu hơn về bộ nhớ cho kiểu \texttt{object}
 
@@ -1445,8 +1575,7 @@ Ví dụ
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{lux1ea5y-series-trong-pandas}{%
-\section{Lấy Series trong pandas}\label{lux1ea5y-series-trong-pandas}}
+\section{Lấy Series trong pandas}\label{lux1ea5y-series-trong-pandas}
 
 Sử dụng \texttt{{[}\textless{}tên\ cột\textgreater{}{]}} để lấy 1 Series của bảng. Ví dụ để lấy Series của cột \texttt{department} ta làm như sau
 
@@ -1471,8 +1600,7 @@ Sử dụng \texttt{{[}\textless{}tên\ cột\textgreater{}{]}} để lấy 1 Se
 
 những Series này cũng có thế áp dụng các phương thức tương tự của \texttt{DataFrame} như \texttt{.head()}, \texttt{.tail()}\ldots.
 
-\hypertarget{astype}{%
-\section{\texorpdfstring{\texttt{.astype()}}{.astype()}}\label{astype}}
+\section{\texorpdfstring{\texttt{.astype()}}{.astype()}}\label{astype}
 
 Với phương thức \texttt{.astype()} ta có thể ép kiểu dữ liệu của cột về dạng khác. Việc ép kiểu này giúp thay đổi kiểu dữ liệu để tiện các thao tác như nối 2 cột có 2 kiểu \texttt{str} và \texttt{int}, ngoài ra việc ép kiểu cũng giúp giảm được dung lượng bộ nhớ dành cho bảng.
 
@@ -1581,8 +1709,7 @@ Trong đó:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{value_counts}{%
-\section{\texorpdfstring{\texttt{.value\_counts()}}{.value\_counts()}}\label{value_counts}}
+\section{\texorpdfstring{\texttt{.value\_counts()}}{.value\_counts()}}\label{value_counts}
 
 Phương thức này trả số lần xuất hiện của các phần tử trong \texttt{Series}. Kết quả trả về mặc định sẽ sắp xếp theo số lần xuất hiện giảm dần và mặc định bỏ qua các giá trị null
 
@@ -1638,8 +1765,7 @@ Trong đó:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{unique-vuxe0-.nunique}{%
-\section{\texorpdfstring{\texttt{.unique()} và \texttt{.nunique()}}{.unique() và .nunique()}}\label{unique-vuxe0-.nunique}}
+\section{\texorpdfstring{\texttt{.unique()} và \texttt{.nunique()}}{.unique() và .nunique()}}\label{unique-vuxe0-.nunique}
 
 Phương thức \texttt{.unique()} trả về các giá trị khác nhau của \texttt{Series} và \texttt{.nunique()} trả về số lượng các giá trị khác nhau của \texttt{Series}. Kết quả trả về của \texttt{.unique()} là danh sách các phần tử được sắp xếp theo thứ tự đầu vào của bảng. Để loại bỏ giá trị \texttt{NA} trong lúc đếm có thể gọi \texttt{.nunique(dropna=False)}
 
@@ -1665,8 +1791,7 @@ Cách sử dụng
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{drop}{%
-\section{\texorpdfstring{\texttt{.drop()}}{.drop()}}\label{drop}}
+\section{\texorpdfstring{\texttt{.drop()}}{.drop()}}\label{drop}
 
 Phương thức \texttt{.drop()} dùng để loại bỏ các dòng hoặc cột theo chỉ định.
 Cú pháp của \texttt{.drop()} như sau
@@ -1739,8 +1864,7 @@ Trong đó:
 Thực tế hay dùng các params \texttt{columns} và \texttt{index} để chỉ định các dòng hay cột cần được loại bỏ hơn là dùng \texttt{labels} và \texttt{axis}
 \end{rmdnote}
 
-\hypertarget{rename}{%
-\section{\texorpdfstring{\texttt{.rename()}}{.rename()}}\label{rename}}
+\section{\texorpdfstring{\texttt{.rename()}}{.rename()}}\label{rename}
 
 Phương thức \texttt{.rename()} dùng để đổi tên nhãn của cột hoặc dòng. Cú pháp như sau
 
@@ -1811,8 +1935,7 @@ Tương tự như \texttt{.drop()} thì \texttt{columns} và \texttt{index} thư
 Vẫn chưa rõ \texttt{copy} dùng để làm gì.
 \end{rmdnote}
 
-\hypertarget{set_index}{%
-\section{\texorpdfstring{\texttt{.set\_index()}}{.set\_index()}}\label{set_index}}
+\section{\texorpdfstring{\texttt{.set\_index()}}{.set\_index()}}\label{set_index}
 
 Phương thức \texttt{.set\_index()} dùng để chuyển đổi một cột của bảng thành index. Index này có thể thay thể index cũ hoặc thêm vào để thành \texttt{MultiIndex}. Cách sử dụng như sau:
 
@@ -1930,33 +2053,240 @@ Trong khi đưa vào \texttt{Iterator} thì hoạt động.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{sort_index}{%
-\section{\texorpdfstring{\texttt{.sort\_index}}{.sort\_index}}\label{sort_index}}
+\section{\texorpdfstring{\texttt{.sort\_values}}{.sort\_values}}\label{sort_values}
 
-\hypertarget{sort_values}{%
-\section{\texorpdfstring{\texttt{.sort\_values}}{.sort\_values}}\label{sort_values}}
-
-\hypertarget{selecting-vuxe0-filtering}{%
-\chapter{Selecting và Filtering}\label{selecting-vuxe0-filtering}}
-
-\hypertarget{sux1eed-dux1ee5ng}{%
-\section{\texorpdfstring{Sử dụng \texttt{{[}{]}}}{Sử dụng {[}{]}}}\label{sux1eed-dux1ee5ng}}
-
-Cú pháp \texttt{{[}{]}} là cú pháp đơn giản nhất để lấy bảng con của 1 bảng cho trước.
-Với 1 \texttt{df} là 1 \texttt{DataFrame} có index là \texttt{region} và dữ liệu như sau
+\textless\textless\textless\textless\textless\textless\textless{} HEAD
+Phương thức \texttt{.sort\_values} dùng để sắp xếp dữ liệu trong DataFrame hoặc Series
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{                         state  individuals  family\_members  state\_pop}
-\NormalTok{region                                                                }
-\NormalTok{East South Central     Alabama       }\FloatTok{2570.0}           \FloatTok{864.0}    \DecValTok{4887681}
-\NormalTok{Pacific                 Alaska       }\FloatTok{1434.0}           \FloatTok{582.0}     \DecValTok{735139}
-\NormalTok{Mountain               Arizona       }\FloatTok{7259.0}          \FloatTok{2606.0}    \DecValTok{7158024}
-\NormalTok{West South Central    Arkansas       }\FloatTok{2280.0}           \FloatTok{432.0}    \DecValTok{3009733}
-\NormalTok{Pacific             California     }\FloatTok{109008.0}         \FloatTok{20964.0}   \DecValTok{39461588}
-\NormalTok{Mountain              Colorado       }\FloatTok{7607.0}          \FloatTok{3250.0}    \DecValTok{5691287}
+\NormalTok{DataFrame.sort\_values(by, axis}\OperatorTok{=}\DecValTok{0}\NormalTok{, ascending}\OperatorTok{=}\VariableTok{True}\NormalTok{, inplace}\OperatorTok{=}\VariableTok{False}\NormalTok{, kind}\OperatorTok{=}\StringTok{\textquotesingle{}quicksort\textquotesingle{}}\NormalTok{, na\_position}\OperatorTok{=}\StringTok{\textquotesingle{}last\textquotesingle{}}\NormalTok{, ignore\_index}\OperatorTok{=}\VariableTok{False}\NormalTok{, key}\OperatorTok{=}\VariableTok{None}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{by} : nhãn hoặc danh sách nhãn cần sắp xếp
+\item
+  \texttt{axis}: chỉ định chiều sắp xếp \{\texttt{0} hoặc \texttt{index}, \texttt{1} hoặc \texttt{columns}\}
+\item
+  \texttt{ascending}: Sắp xếp tăng dần hoặc giảm dần, có thể là một giá trị hoặc danh sách các giá trị boolean
+\item
+  \texttt{inplace}: Thực hiện trên chính bảng đó hoặc tạo ra một bản sao
+\item
+  \texttt{kind}: Thuật toán sắp xếp
+\item
+  \texttt{na\_postion}: chỉ định các giá trị \texttt{NA} được xếp đầu hoặc cuôi
+\item
+  \texttt{ignore\_index}: Nếu để giá trị \texttt{True} sẽ thực hiện đánh index lại từ 0
+\item
+  \texttt{key}: key function
+\end{itemize}
+
+=======
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataFrame.sort\_values(by, axis}\OperatorTok{=}\DecValTok{0}\NormalTok{, ascending}\OperatorTok{=}\VariableTok{True}\NormalTok{, inplace}\OperatorTok{=}\VariableTok{False}\NormalTok{, kind}\OperatorTok{=}\StringTok{\textquotesingle{}quicksort\textquotesingle{}}\NormalTok{, na\_position}\OperatorTok{=}\StringTok{\textquotesingle{}last\textquotesingle{}}\NormalTok{, ignore\_index}\OperatorTok{=}\VariableTok{False}\NormalTok{, key}\OperatorTok{=}\VariableTok{None}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{by}: nhãn hoặc danh sách các nhãn
+\item
+  \texttt{axis}: Thực thi theo dòng \{\texttt{0} hoặc \texttt{index}\} hoặc cột \{\texttt{1} hoặc \texttt{columns}\}
+\item
+  \texttt{ascending}: bool hoặc danh sách các bool thể hiện sắp xếp theo tăng dần hoặc giảm dần. Mặc định \texttt{True}
+\item
+  \texttt{inplace}: Thực thi trên chính bảng hoặc tạo một bản sao.
+\item
+  \texttt{kind}: Lựa chọn thuật toán sắp xếp
+\item
+  \texttt{na\_position}: Đưa \texttt{NaN} lên đầu hoặc cuối
+\item
+  \texttt{ignor\_index}: Nếu để giá trị \texttt{True} sẽ đánh index lại từ 0 -\textgreater{} n-1
+\item
+  \texttt{key}: áp dụng hàm vào lúc sort
+  \textgreater\textgreater\textgreater\textgreater\textgreater\textgreater\textgreater{} 23ad2852c0b15efdedd920a58f31d21da6687942
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+    \StringTok{\textquotesingle{}col1\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{, np.nan, }\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{],}
+\OperatorTok{\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}}\NormalTok{ HEAD}
+    \StringTok{\textquotesingle{}col2\textquotesingle{}}\NormalTok{: [}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{],}
+    \StringTok{\textquotesingle{}col3\textquotesingle{}}\NormalTok{: [}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{],}
+    \StringTok{\textquotesingle{}col4\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}e\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}F\textquotesingle{}}\NormalTok{]}
+\NormalTok{\})}
+\NormalTok{In []: df}
+\NormalTok{Out[]:}
+\OperatorTok{=======}
+    \CommentTok{\textquotesingle{}col2\textquotesingle{}}\NormalTok{: [}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{4}\NormalTok{],}
+    \CommentTok{\textquotesingle{}col3\textquotesingle{}}\NormalTok{: [}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{],}
+    \CommentTok{\textquotesingle{}col4\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}D\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}e\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}F\textquotesingle{}}\NormalTok{]\})}
+\NormalTok{In []: df}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}} \DecValTok{23}\ErrorTok{ad2852c0b15efdedd920a58f31d21da6687942}
+\NormalTok{  col1  col2  col3 col4}
+\DecValTok{0}\NormalTok{    A     }\DecValTok{2}     \DecValTok{0}\NormalTok{    a}
+\DecValTok{1}\NormalTok{    A     }\DecValTok{1}     \DecValTok{1}\NormalTok{    B}
+\DecValTok{2}\NormalTok{    B     }\DecValTok{9}     \DecValTok{9}\NormalTok{    c}
+\DecValTok{3}\NormalTok{  NaN     }\DecValTok{8}     \DecValTok{4}\NormalTok{    D}
+\OperatorTok{\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}}\NormalTok{ HEAD}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{2}     \DecValTok{2}\NormalTok{    e}
+\DecValTok{5}\NormalTok{    C     }\DecValTok{4}     \DecValTok{3}\NormalTok{    F}
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{\texorpdfstring{Sắp xếp theo \texttt{col1}}{Sắp xếp theo col1}}\label{sux103p-xuxeap-theo-col1}
+
+4 D 7 2 e
+5 C 4 3 F
+
+\begin{verbatim}
+
+Sắp xếp theo `col1`
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
+
+```python
+In []: df.sort_values(by=['col1'])
+Out[]:
+  col1  col2  col3 col4
+0    A     2     0    a
+1    A     1     1    B
+2    B     9     9    c
+5    C     4     3    F
+<<<<<<< HEAD
+4    D     2     2    e
+3  NaN     8     4    D
+\end{verbatim}
+
+Sắp xếp theo nhiều cột
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.sort\_values(by}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}col1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}col2\textquotesingle{}}\NormalTok{])}
+\NormalTok{Out[]:}
+\NormalTok{  col1  col2  col3 col4}
+\DecValTok{1}\NormalTok{    A     }\DecValTok{1}     \DecValTok{1}\NormalTok{    B}
+\DecValTok{0}\NormalTok{    A     }\DecValTok{2}     \DecValTok{0}\NormalTok{    a}
+\DecValTok{2}\NormalTok{    B     }\DecValTok{9}     \DecValTok{9}\NormalTok{    c}
+\DecValTok{5}\NormalTok{    C     }\DecValTok{4}     \DecValTok{3}\NormalTok{    F}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{7}     \DecValTok{2}\NormalTok{    e}
+\DecValTok{3}\NormalTok{  NaN     }\DecValTok{8}     \DecValTok{4}\NormalTok{    D}
+\end{Highlighting}
+\end{Shaded}
+
+Sắp xếp theo tăng giảm
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.sort\_values(by}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}col1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}col2\textquotesingle{}}\NormalTok{], ascending}\OperatorTok{=}\NormalTok{[}\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{])}
+\NormalTok{Out[]:}
+\NormalTok{  col1  col2  col3 col4}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{2}     \DecValTok{2}\NormalTok{    e}
+\OperatorTok{=======}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{7}     \DecValTok{2}\NormalTok{    e}
+\DecValTok{3}\NormalTok{  NaN     }\DecValTok{8}     \DecValTok{4}\NormalTok{    D}
+\end{Highlighting}
+\end{Shaded}
+
+Sắp xếp theo nhiều cột và chỉ định hướng sắp xếp
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.sort\_values(by}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}col1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}col2\textquotesingle{}}\NormalTok{] , ascending}\OperatorTok{=}\NormalTok{[}\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{])}
+\NormalTok{Out[]:}
+\NormalTok{  col1  col2  col3 col4}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{7}     \DecValTok{2}\NormalTok{    e}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}} \DecValTok{23}\ErrorTok{ad2852c0b15efdedd920a58f31d21da6687942}
+\DecValTok{5}\NormalTok{    C     }\DecValTok{4}     \DecValTok{3}\NormalTok{    F}
+\DecValTok{2}\NormalTok{    B     }\DecValTok{9}     \DecValTok{9}\NormalTok{    c}
+\DecValTok{1}\NormalTok{    A     }\DecValTok{1}     \DecValTok{1}\NormalTok{    B}
+\DecValTok{0}\NormalTok{    A     }\DecValTok{2}     \DecValTok{0}\NormalTok{    a}
+\DecValTok{3}\NormalTok{  NaN     }\DecValTok{8}     \DecValTok{4}\NormalTok{    D}
+\end{Highlighting}
+\end{Shaded}
+
+\textless\textless\textless\textless\textless\textless\textless{} HEAD
+Thay đổi vị trí của \texttt{NaN}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.sort\_values(by}\OperatorTok{=}\StringTok{\textquotesingle{}col1\textquotesingle{}}\NormalTok{, ascending}\OperatorTok{=}\VariableTok{False}\NormalTok{, na\_position}\OperatorTok{=}\StringTok{\textquotesingle{}first\textquotesingle{}}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{  col1  col2  col3 col4}
+\DecValTok{3}\NormalTok{  NaN     }\DecValTok{8}     \DecValTok{4}\NormalTok{    D}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{2}     \DecValTok{2}\NormalTok{    e}
+\OperatorTok{=======}
+\NormalTok{Đặt \textasciigrave{}NaN\textasciigrave{} lên đầu}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}python}
+\NormalTok{In []: df.sort\_values(by}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}col1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}col2\textquotesingle{}}\NormalTok{] , ascending}\OperatorTok{=}\VariableTok{False}\NormalTok{, na\_position}\OperatorTok{=}\StringTok{\textquotesingle{}first\textquotesingle{}}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{  col1  col2  col3 col4}
+\DecValTok{3}\NormalTok{  NaN     }\DecValTok{8}     \DecValTok{4}\NormalTok{    D}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{7}     \DecValTok{2}\NormalTok{    e}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}} \DecValTok{23}\ErrorTok{ad2852c0b15efdedd920a58f31d21da6687942}
+\DecValTok{5}\NormalTok{    C     }\DecValTok{4}     \DecValTok{3}\NormalTok{    F}
+\DecValTok{2}\NormalTok{    B     }\DecValTok{9}     \DecValTok{9}\NormalTok{    c}
+\DecValTok{0}\NormalTok{    A     }\DecValTok{2}     \DecValTok{0}\NormalTok{    a}
+\DecValTok{1}\NormalTok{    A     }\DecValTok{1}     \DecValTok{1}\NormalTok{    B}
+\end{Highlighting}
+\end{Shaded}
+
+\textless\textless\textless\textless\textless\textless\textless{} HEAD
+Sắp xếp với key function
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []:df.sort\_values(by}\OperatorTok{=}\StringTok{\textquotesingle{}col4\textquotesingle{}}\NormalTok{, key}\OperatorTok{=}\KeywordTok{lambda}\NormalTok{ col: col.}\BuiltInTok{str}\NormalTok{.lower())}
+\OperatorTok{=======}
+
+\NormalTok{Sắp xếp với key function}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}python}
+\NormalTok{In []: df.sort\_values(by}\OperatorTok{=}\StringTok{\textquotesingle{}col4\textquotesingle{}}\NormalTok{, key}\OperatorTok{=}\KeywordTok{lambda}\NormalTok{ col: col.}\BuiltInTok{str}\NormalTok{.lower())}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}\textgreater{}} \DecValTok{23}\ErrorTok{ad2852c0b15efdedd920a58f31d21da6687942}
+\NormalTok{Out[]:}
+\NormalTok{  col1  col2  col3 col4}
+\DecValTok{0}\NormalTok{    A     }\DecValTok{2}     \DecValTok{0}\NormalTok{    a}
+\DecValTok{1}\NormalTok{    A     }\DecValTok{1}     \DecValTok{1}\NormalTok{    B}
+\DecValTok{2}\NormalTok{    B     }\DecValTok{9}     \DecValTok{9}\NormalTok{    c}
+\DecValTok{3}\NormalTok{  NaN     }\DecValTok{8}     \DecValTok{4}\NormalTok{    D}
+\OperatorTok{\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}}\NormalTok{ HEAD}
+\DecValTok{4}\NormalTok{    D     }\DecValTok{2}     \DecValTok{2}\NormalTok{    e}
+\DecValTok{5}\NormalTok{    C     }\DecValTok{4}     \DecValTok{3}\NormalTok{    F}
+\end{Highlighting}
+\end{Shaded}
+
+=======
+4 D 7 2 e
+5 C 4 3 F
+
+\begin{verbatim}
+>>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
+
+<!--chapter:end:posts/03-Funda_Function.Rmd-->
+
+# Selecting và Filtering
+
+## Sử dụng `[]`
+Cú pháp `[]` là cú pháp đơn giản nhất để lấy bảng con của 1 bảng cho trước.
+Với 1 `df` là 1 `DataFrame` có index là `region` và dữ liệu như sau
+```python
+                         state  individuals  family_members  state_pop
+region                                                                
+East South Central     Alabama       2570.0           864.0    4887681
+Pacific                 Alaska       1434.0           582.0     735139
+Mountain               Arizona       7259.0          2606.0    7158024
+West South Central    Arkansas       2280.0           432.0    3009733
+Pacific             California     109008.0         20964.0   39461588
+Mountain              Colorado       7607.0          3250.0    5691287
+\end{verbatim}
 
 Để chọn 1 bảng con có 2 cột \texttt{{[}\textquotesingle{}state\textquotesingle{},\ \textquotesingle{}family\_members\textquotesingle{}{]}} ta làm như sau
 
@@ -2011,11 +2341,9 @@ Với 1 \texttt{df} là 1 \texttt{DataFrame} có index là \texttt{region} và d
   Ví dụ khi gọi \texttt{df{[}3{]}} hay \texttt{df{[}{[}1,\ 2,\ 3{]}{]}} sẽ báo lỗi \texttt{KeyError}
 \end{itemize}
 
-\hypertarget{loc-vuxe0-.iloc}{%
-\section{.loc và .iloc}\label{loc-vuxe0-.iloc}}
+\section{.loc và .iloc}\label{loc-vuxe0-.iloc}
 
-\hypertarget{loc}{%
-\subsection{.loc}\label{loc}}
+\subsection{.loc}\label{loc}
 
 Phương thức \texttt{.loc} dùng để lấy dữ liệu theo cột hoặc hàng dựa theo nhãn định sẵn (Tên hàng, tên cột), ngoài ra \texttt{.loc} còn nhận các giá trị boolean.
 
@@ -2298,8 +2626,7 @@ Slice từ 1 tuple nhãn đến một tuple nhãn
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{iloc}{%
-\subsection{\texorpdfstring{\texttt{.iloc}}{.iloc}}\label{iloc}}
+\subsection{\texorpdfstring{\texttt{.iloc}}{.iloc}}\label{iloc}
 
 Phương thức \texttt{.iloc} dùng để lấy dữ liệu theo cột hoặc hàng dựa theo index của nó, ngoài ra \texttt{.iloc} còn nhận các giá trị boolean.
 
@@ -2468,8 +2795,7 @@ Sử dụng danh sách các boolean
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{lux1ecdc-theo-ux111iux1ec1u-kiux1ec7n}{%
-\section{Lọc theo điều kiện}\label{lux1ecdc-theo-ux111iux1ec1u-kiux1ec7n}}
+\section{Lọc theo điều kiện}\label{lux1ecdc-theo-ux111iux1ec1u-kiux1ec7n}
 
 Các phương thức \texttt{{[}{]}}, \texttt{.loc} hay \texttt{.iloc} ngoài việc lấy dữ liệu theo hàng và cột còn có thể lấy ra những bảng con theo các điều kiện cho trước. Bản chất các câu điều kiện sẽ trả về một danh sách dạng bolean và các hàm trên thực hiện lọc theo danh sách đó.
 
@@ -2488,8 +2814,7 @@ Trước hết ta cần biết câu điều kiện trong Pandas như thế nào.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{touxe1n-tux1eed-ux111iux1ec1u-kiux1ec7n}{%
-\subsection{Toán tử điều kiện}\label{touxe1n-tux1eed-ux111iux1ec1u-kiux1ec7n}}
+\subsection{Toán tử điều kiện}\label{touxe1n-tux1eed-ux111iux1ec1u-kiux1ec7n}
 
 Giả sử ta có một điều kiện rằng \texttt{df{[}\textquotesingle{}individuals\textquotesingle{}{]}\ \textgreater{}\ 5000}. Kết quả trả về là 1 \texttt{Series}
 
@@ -2626,8 +2951,7 @@ Theo ví dụ trên, để thực hiện lọc theo điều kiện \texttt{df{[}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{isin}{%
-\subsection{\texorpdfstring{\texttt{.isin()}}{.isin()}}\label{isin}}
+\subsection{\texorpdfstring{\texttt{.isin()}}{.isin()}}\label{isin}
 
 Phương thức \texttt{.isin(values)} để kiểm tra các phần tử trong \texttt{DataFrame} hoặc \texttt{Series} có nằm trong values hay không.
 
@@ -2785,8 +3109,7 @@ Lọc với \texttt{isin()} và \texttt{any(axis=0)} và \texttt{any(axis=1)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{lux1ecdc-missing-value-vux1edbi-.dropna}{%
-\subsection{\texorpdfstring{Lọc missing value với \texttt{.dropna()}}{Lọc missing value với .dropna()}}\label{lux1ecdc-missing-value-vux1edbi-.dropna}}
+\subsection{\texorpdfstring{Lọc missing value với \texttt{.dropna()}}{Lọc missing value với .dropna()}}\label{lux1ecdc-missing-value-vux1edbi-.dropna}
 
 Trong quá trình xử lý dữ liệu, chúng ta thường gặp những bảng có chứa giá trị missing value. Ví dụ bảng \texttt{missing\_df}
 
@@ -2896,156 +3219,1136 @@ Giữ lại các dòng có ít nhất \texttt{3} phần tử \texttt{non-NA}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{tuxednh-touxe1n-truxean-cuxe1c-phux1ea7n-tux1eed-trong-pandas}{%
-\chapter{Tính toán trên các phần tử trong Pandas}\label{tuxednh-touxe1n-truxean-cuxe1c-phux1ea7n-tux1eed-trong-pandas}}
+\chapter{Tính toán trên các phần tử trong Pandas}\label{tuxednh-touxe1n-truxean-cuxe1c-phux1ea7n-tux1eed-trong-pandas}
 
-\hypertarget{sux1eed-dux1ee5ng-vectorization}{%
-\section{Sử dụng Vectorization}\label{sux1eed-dux1ee5ng-vectorization}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}data/big\_mart\_sales.csv\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Sử dụng Vectorization}\label{sux1eed-dux1ee5ng-vectorization}
+
+Giả sử như muốn tạo cột \texttt{price}= \texttt{Item\_Outlet\_Sales} * \texttt{5\%}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df[}\StringTok{\textquotesingle{}price\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{] }\OperatorTok{*} \FloatTok{0.05}
+\NormalTok{In []: df[[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}price\textquotesingle{}}\NormalTok{]]}
+\NormalTok{Out[]:}
+\NormalTok{      Item\_Outlet\_Sales      price}
+\DecValTok{0}             \FloatTok{3735.1380}  \FloatTok{186.75690}
+\DecValTok{1}              \FloatTok{443.4228}   \FloatTok{22.17114}
+\DecValTok{2}             \FloatTok{2097.2700}  \FloatTok{104.86350}
+\DecValTok{3}              \FloatTok{732.3800}   \FloatTok{36.61900}
+\DecValTok{4}              \FloatTok{994.7052}   \FloatTok{49.73526}
+\NormalTok{...                 ...        ...}
+\DecValTok{8518}          \FloatTok{2778.3834}  \FloatTok{138.91917}
+\DecValTok{8519}           \FloatTok{549.2850}   \FloatTok{27.46425}
+\DecValTok{8520}          \FloatTok{1193.1136}   \FloatTok{59.65568}
+\DecValTok{8521}          \FloatTok{1845.5976}   \FloatTok{92.27988}
+\DecValTok{8522}           \FloatTok{765.6700}   \FloatTok{38.28350}
+\end{Highlighting}
+\end{Shaded}
+
+Nối hai cột lại với nhau, Ví dụ
+
+\begin{itemize}
+\item
+  nối \texttt{Item\_type} và \texttt{Item\_Fat\_Content} thành \texttt{Item\_Type\_Fat\_Content}
+\item
+  nối \texttt{Outlet\_Identifier} và \texttt{Outlet\_Establishment\_Year} thành \texttt{Outlet\_Identifier\_Establishment\_Year}. Trong trường hợp hợp này \texttt{Outlet\_Establishment\_Year} thuộc dạng số nên để nối dạng text và số ta ép kiểu dạng số về text sử dụng \texttt{astype()}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df[}\StringTok{\textquotesingle{}Item\_Type\_Fat\_Content\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{] }\OperatorTok{+} \StringTok{\textquotesingle{}\_\textquotesingle{}} \OperatorTok{+}\NormalTok{ df[}\StringTok{\textquotesingle{}Item\_Fat\_Content\textquotesingle{}}\NormalTok{]}
+\NormalTok{df[}\StringTok{\textquotesingle{}Outlet\_Identifier\_Establishment\_Year\textquotesingle{}}\NormalTok{] }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Outlet\_Identifier\textquotesingle{}}\NormalTok{] }\OperatorTok{+} \StringTok{\textquotesingle{}\_\textquotesingle{}} \OperatorTok{+}\NormalTok{df[}\StringTok{\textquotesingle{}Outlet\_Establishment\_Year\textquotesingle{}}\NormalTok{].astype(}\StringTok{\textquotesingle{}str\textquotesingle{}}\NormalTok{)}
+\NormalTok{df[[}\StringTok{\textquotesingle{}Item\_Type\_Fat\_Content\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Outlet\_Identifier\_Establishment\_Year\textquotesingle{}}\NormalTok{]]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{              Item\_Type\_Fat\_Content Outlet\_Identifier\_Establishment\_Year}
+\DecValTok{0}\NormalTok{                     Dairy\_Low Fat                          OUT049\_1999}
+\DecValTok{1}\NormalTok{               Soft Drinks\_Regular                          OUT018\_2009}
+\DecValTok{2}\NormalTok{                      Meat\_Low Fat                          OUT049\_1999}
+\DecValTok{3}\NormalTok{     Fruits }\KeywordTok{and}\NormalTok{ Vegetables\_Regular                          OUT010\_1998}
+\DecValTok{4}\NormalTok{                 Household\_Low Fat                          OUT013\_1987}
+\NormalTok{...                             ...                                  ...}
+\DecValTok{8518}\NormalTok{            Snack Foods\_Low Fat                          OUT013\_1987}
+\DecValTok{8519}\NormalTok{           Baking Goods\_Regular                          OUT045\_2002}
+\DecValTok{8520}\NormalTok{     Health }\KeywordTok{and}\NormalTok{ Hygiene\_Low Fat                          OUT035\_2004}
+\DecValTok{8521}\NormalTok{            Snack Foods\_Regular                          OUT018\_2009}
+\DecValTok{8522}\NormalTok{            Soft Drinks\_Low Fat                          OUT046\_1997}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Sử dụng apply}\label{sux1eed-dux1ee5ng-apply}
+
+Phương thức \texttt{apply} để thực thi một hàm theo dòng hoặc cột
+
+\textbf{Đối với Series}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Series.}\BuiltInTok{apply}\NormalTok{(func, convert\_dtype}\OperatorTok{=}\VariableTok{True}\NormalTok{, args}\OperatorTok{=}\NormalTok{(), }\OperatorTok{**}\NormalTok{kwargs)}
+\end{Highlighting}
+\end{Shaded}
 
 Trong đó:
 
 \begin{itemize}
 \item
-  \texttt{axis}: Nhận diện lọc theo dòng \texttt{0}, \texttt{index}, hay cột \texttt{1}, \texttt{column}
+  \texttt{func}: là hàm cần thực thi
 \item
-  \texttt{how}: Chỉ định cách lọc
+  \texttt{convert\_dtype}: Giá trị kiểu boolean. Nếu nó được đặt thành True (mặc định), xử lý dữ liệu sẽ cố gắng tìm dtype tốt hơn cho các kết quả của hàm \texttt{func}. Nếu \texttt{False}, thì dtype sẽ là type(object)
+\item
+  \texttt{args}: Các đối số của hàm
+\end{itemize}
+
+Ví dụ, thao tác \texttt{Item\_Outlet\_Sales} * \texttt{5\%}
+
+Sử dụng lambda function
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{].}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: x }\OperatorTok{*} \FloatTok{0.05}\NormalTok{)}
+\NormalTok{Out[]:}
+\DecValTok{0}       \FloatTok{186.75690}
+\DecValTok{1}        \FloatTok{22.17114}
+\DecValTok{2}       \FloatTok{104.86350}
+\DecValTok{3}        \FloatTok{36.61900}
+\DecValTok{4}        \FloatTok{49.73526}
+\NormalTok{          ...    }
+\DecValTok{8518}    \FloatTok{138.91917}
+\DecValTok{8519}     \FloatTok{27.46425}
+\DecValTok{8520}     \FloatTok{59.65568}
+\DecValTok{8521}     \FloatTok{92.27988}
+\DecValTok{8522}     \FloatTok{38.28350}
+\NormalTok{Name: Item\_Outlet\_Sales, Length: }\DecValTok{8523}\NormalTok{, dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+Sử dụng hàm tự định nghĩa
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ set\_price(x, k}\OperatorTok{=}\FloatTok{0.05}\NormalTok{):}
+    \ControlFlowTok{return}\NormalTok{ x }\OperatorTok{*}\NormalTok{ k}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{].}\BuiltInTok{apply}\NormalTok{(set\_price)}
+\NormalTok{Out[]: }
+\DecValTok{0}       \FloatTok{186.75690}
+\DecValTok{1}        \FloatTok{22.17114}
+\DecValTok{2}       \FloatTok{104.86350}
+\DecValTok{3}        \FloatTok{36.61900}
+\DecValTok{4}        \FloatTok{49.73526}
+\NormalTok{          ...    }
+\DecValTok{8518}    \FloatTok{138.91917}
+\DecValTok{8519}     \FloatTok{27.46425}
+\DecValTok{8520}     \FloatTok{59.65568}
+\DecValTok{8521}     \FloatTok{92.27988}
+\DecValTok{8522}     \FloatTok{38.28350}
+\NormalTok{Name: Item\_Outlet\_Sales, Length: }\DecValTok{8523}\NormalTok{, dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+Có thể truyền tham số \texttt{k} vào hàm \texttt{set\_price} bằng hai cách
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Cách 1 {-} Dùng lambda}
+\NormalTok{In []: df[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{].}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: set\_price(x, }\FloatTok{0.1}\NormalTok{))}
+
+\CommentTok{\# Cách 2 {-} Dùng \textasciigrave{}arg\textasciigrave{}}
+\NormalTok{In []: df[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{].}\BuiltInTok{apply}\NormalTok{(set\_price, k}\OperatorTok{=}\FloatTok{0.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Đối với \texttt{DataFrame}}
+
+Ta dùng cú pháp
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataFrame.}\BuiltInTok{apply}\NormalTok{(func, axis}\OperatorTok{=}\DecValTok{0}\NormalTok{, raw}\OperatorTok{=}\VariableTok{False}\NormalTok{, result\_type}\OperatorTok{=}\VariableTok{None}\NormalTok{, args}\OperatorTok{=}\NormalTok{(), }\OperatorTok{**}\NormalTok{kwargs)}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{func}: là hàm cần thực thi
+\item
+  \texttt{axis}: thực thi theo dòng \texttt{0} hoặc cột \texttt{1}
+\item
+  \texttt{raw}: Xác định xem dòng hoặc cột có thể chuyển về \texttt{Series} hoặc \texttt{ndarray}
+\item
+  \texttt{result\_type}: Chỉ áp dụng cho \texttt{axis=1}
+\item
+  \texttt{args}: Các đối số của hàm
+\end{itemize}
+
+Ví dụ:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: sample\_df }\OperatorTok{=}\NormalTok{ sample\_df }\OperatorTok{=}\NormalTok{ pd.DataFrame([[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{6}\NormalTok{, }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{], [}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{]], columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}C\textquotesingle{}}\NormalTok{])}
+\NormalTok{In []: sample\_df}
+\NormalTok{Out[]:}
+\NormalTok{   A   B  C}
+\DecValTok{0}  \DecValTok{1}   \DecValTok{2}\NormalTok{  A}
+\DecValTok{1}  \DecValTok{3}   \DecValTok{6}\NormalTok{  B}
+\DecValTok{2}  \DecValTok{5}  \DecValTok{10}\NormalTok{  C}
+\end{Highlighting}
+\end{Shaded}
+
+Áp dụng trên toàn \texttt{DataFrame}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: sample\_df.}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: x }\OperatorTok{*} \DecValTok{2}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{     A   B   C}
+\DecValTok{0}    \DecValTok{2}   \DecValTok{4}\NormalTok{  AA}
+\DecValTok{1}    \DecValTok{6}  \DecValTok{12}\NormalTok{  BB}
+\DecValTok{2}   \DecValTok{10}  \DecValTok{20}\NormalTok{  CC}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý:}}
+
+Khi áp dụng cho toàn \texttt{DataFrame} hãy cẩn thận hàm \texttt{func} truyền vào, nếu \texttt{func} không áp dụng được cho toàn bộ các phần tử sẽ báo lỗi.
+
+Ví dụ ở trên với x * 2 vẫn áp dụng được cho cột \texttt{C} dạng \texttt{str}, nhưng khi thay bằng x ** 2 sẽ báo lỗi vì toán tử \texttt{**} không áp dụng cho \texttt{str}
+\end{rmdnote}
+
+Áp dụng trên một số cột trong \texttt{DataFrame}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\# Theo cột}
+\NormalTok{In []: sample\_df[[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{]].}\BuiltInTok{apply}\NormalTok{(np.}\BuiltInTok{sum}\NormalTok{, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{Out[]:}
+\DecValTok{0}    \DecValTok{13}
+\DecValTok{1}    \DecValTok{13}
+\DecValTok{2}    \DecValTok{13}
+\NormalTok{dtype: int64}
+
+\CommentTok{\#\# Theo dòng}
+
+\NormalTok{In []: df[[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{]].}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: np.}\BuiltInTok{sum}\NormalTok{(x), axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{A    }\DecValTok{12}
+\NormalTok{B    }\DecValTok{27}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+Một cách khác áp dụng trên một số cột trong \texttt{DataFrame}
+
+Sử dụng lambda
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: sample\_df.}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: x[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{] }\OperatorTok{+} \DecValTok{2} \OperatorTok{*}\NormalTok{ x[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{], axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{Out[]: }
+\DecValTok{0}     \DecValTok{5}
+\DecValTok{1}    \DecValTok{15}
+\DecValTok{2}    \DecValTok{25}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+Dùng hàm định nghĩa
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ dsum(row):}
+    \ControlFlowTok{return}\NormalTok{ row[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{] }\OperatorTok{+} \DecValTok{2} \OperatorTok{*}\NormalTok{ row[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: sample\_df.}\BuiltInTok{apply}\NormalTok{(dsum, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{Out[]: }
+\DecValTok{0}     \DecValTok{5}
+\DecValTok{1}    \DecValTok{15}
+\DecValTok{2}    \DecValTok{25}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdtip}
+\textbf{\emph{Mẹo:}}
+
+\begin{itemize}
+\item
+  Không nhất thiết giá trị trả về của hàm là giá trị đơn, giá trị trả về có thể dưới dạng list, tuple hoặc dict
+\item
+  Dùng \texttt{result\_type} để thay đổi cách trả về
+  \end{rmdtip}
+\end{itemize}
+
+Ví dụ ta có 1 hàm trả về nhiều giá trị cùng lúc như sau
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ dsum\_2(row):}
+    \ControlFlowTok{return}\NormalTok{ [row[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{] }\OperatorTok{+} \DecValTok{2} \OperatorTok{*}\NormalTok{ row[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{],  row[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{] }\OperatorTok{{-}} \DecValTok{2} \OperatorTok{*}\NormalTok{ row[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{]]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#\# Khi không sử dụng \textasciigrave{}result\_type\textasciigrave{}}
+\NormalTok{In []: sample\_df.}\BuiltInTok{apply}\NormalTok{(dsum\_2, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{Out[]: }
+\DecValTok{0}\NormalTok{      [}\DecValTok{5}\NormalTok{, }\OperatorTok{{-}}\DecValTok{3}\NormalTok{]}
+\DecValTok{1}\NormalTok{     [}\DecValTok{15}\NormalTok{, }\OperatorTok{{-}}\DecValTok{9}\NormalTok{]}
+\DecValTok{2}\NormalTok{    [}\DecValTok{25}\NormalTok{, }\OperatorTok{{-}}\DecValTok{15}\NormalTok{]}
+\NormalTok{dtype: }\BuiltInTok{object}
+\end{Highlighting}
+\end{Shaded}
+
+Kết quả trả về của phương pháp trên là \texttt{Series} với các giá trị của nó là dạng list. Để chuyển \texttt{Series} này thành \texttt{DataFrame} với các cột chứa các giá trị của list theo thứ tự, ta dùng \texttt{result\_type=\textquotesingle{}expand\textquotesingle{}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: sample\_df.}\BuiltInTok{apply}\NormalTok{(dsum\_2, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{, result\_type}\OperatorTok{=}\StringTok{\textquotesingle{}expand\textquotesingle{}}\NormalTok{)}
+    \DecValTok{0}   \DecValTok{1}
+\DecValTok{0}   \DecValTok{5}  \OperatorTok{{-}}\DecValTok{3}
+\DecValTok{1}  \DecValTok{15}  \OperatorTok{{-}}\DecValTok{9}
+\DecValTok{2}  \DecValTok{25} \OperatorTok{{-}}\DecValTok{15}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdtip}
+\textbf{\emph{Mẹo:}} Có thể cấu trúc trả về dưới dạng \texttt{DataFrame} cho ví dụ trên mà không cần dùng \texttt{result\_type} bằng cách sử dụng \texttt{pd.Series} của một \texttt{dictionary}. Lúc này các cột của \texttt{DataFrame} sẽ được đánh nhãn theo key của \texttt{dictionary}
+\end{rmdtip}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ dsum\_3(row):}
+    \ControlFlowTok{return}\NormalTok{ pd.Series(\{}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{: row[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{] }\OperatorTok{+} \DecValTok{2} \OperatorTok{*}\NormalTok{ row[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{],  }\StringTok{\textquotesingle{}Y\textquotesingle{}}\NormalTok{:row[}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{] }\OperatorTok{{-}} \DecValTok{2} \OperatorTok{*}\NormalTok{ row[}\StringTok{\textquotesingle{}B\textquotesingle{}}\NormalTok{]\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: sample\_df.}\BuiltInTok{apply}\NormalTok{(dsum\_3, axis}\OperatorTok{=}\DecValTok{1}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{    X   Y}
+\DecValTok{0}   \DecValTok{5}   \OperatorTok{{-}}\DecValTok{3}
+\DecValTok{1}   \DecValTok{15}  \OperatorTok{{-}}\DecValTok{9}
+\DecValTok{2}   \DecValTok{25}  \OperatorTok{{-}}\DecValTok{15}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Sử dụng iterator}\label{sux1eed-dux1ee5ng-iterator}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}data/big\_mart\_sales.csv\textquotesingle{}}\NormalTok{, usecols}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}Item\_Identifier\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Item\_Fat\_Content\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Outlet\_Size\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Outlet\_Establishment\_Year\textquotesingle{}}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Iterrows}\label{iterrows}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataFrame.iterrows()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: row }\OperatorTok{=} \BuiltInTok{next}\NormalTok{(df.iterrows())}
+\NormalTok{Out[]: row}
+\NormalTok{(}\DecValTok{0}\NormalTok{,}
+\NormalTok{ Item\_Identifier                 FDA15}
+\NormalTok{ Item\_Fat\_Content              Low Fat}
+\NormalTok{ Item\_Type                       Dairy}
+\NormalTok{ Outlet\_Establishment\_Year        }\DecValTok{1999}
+\NormalTok{ Outlet\_Size                    Medium}
+\NormalTok{ Item\_Outlet\_Sales            }\FloatTok{3735.138}
+\NormalTok{ Name: }\DecValTok{0}\NormalTok{, dtype: }\BuiltInTok{object}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Kết quả trả về cho row là 1 tuple gồm index và Series chứa các giá trị tại index đó.
+
+\textbf{Cách dùng vòng lặp trong iterrows}
+
+Để duyệt từng dòng ta dùng \texttt{for} như bình thường
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{prices }\OperatorTok{=}\NormalTok{ []}
+\ControlFlowTok{for}\NormalTok{ i, row }\KeywordTok{in}\NormalTok{ df.iterrows():}
+\NormalTok{    prices.append(row[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{] }\OperatorTok{*} \FloatTok{0.5}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(prices[:}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{[}\FloatTok{1867.569}\NormalTok{, }\FloatTok{221.7114}\NormalTok{, }\FloatTok{1048.635}\NormalTok{, }\FloatTok{366.19}\NormalTok{, }\FloatTok{497.3526}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Itertuple}\label{itertuple}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataFrame.itertuples(index}\OperatorTok{=}\VariableTok{True}\NormalTok{, name}\OperatorTok{=}\StringTok{\textquotesingle{}Pandas\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{index}: \texttt{True} trả về kết quả kèm theo index và \texttt{False} lược bỏ index
+\item
+  \texttt{name}: Quy định kiểu trả về
 
   \begin{itemize}
   \tightlist
   \item
-    \texttt{any}: Nếu có bất kì \texttt{NA}, loại bỏ dòng hoặc cột
+    \texttt{Pandas}: trả về namedtuple
   \item
-    \texttt{all}: Nếu tất cả là \texttt{NA}, loại bỏ dòng hoặc cột
+    \texttt{None}: trả về tuple
+  \item
+    \texttt{namedtuple}: trả về namedtuple
   \end{itemize}
-\item
-  \texttt{thresh}: Số lượng \texttt{non-NA} yêu cầu
-\item
-  \texttt{subset}: Chỉ định các cột cần lọc
-\item
-  \texttt{inplace}: Thực hiện trên chính \texttt{DataFrame} hay tạo bản sao.
 \end{itemize}
 
-Lọc bỏ các hàng nếu ít nhất một phần tử \texttt{NA}
+Trả về \texttt{namedtuple}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\DecValTok{0}\NormalTok{)}
+\NormalTok{In []: }\BuiltInTok{next}\NormalTok{(df.itertuples(index}\OperatorTok{=}\VariableTok{True}\NormalTok{))}
 \NormalTok{Out[]:}
-\NormalTok{               state  individuals  family\_members   state\_pop}
-\NormalTok{region                                                       }
-\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
-\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
+\NormalTok{Pandas(Index}\OperatorTok{=}\DecValTok{0}\NormalTok{, Item\_Identifier}\OperatorTok{=}\StringTok{\textquotesingle{}FDA15\textquotesingle{}}\NormalTok{, Item\_Fat\_Content}\OperatorTok{=}\StringTok{\textquotesingle{}Low Fat\textquotesingle{}}\NormalTok{, Item\_Type}\OperatorTok{=}\StringTok{\textquotesingle{}Dairy\textquotesingle{}}\NormalTok{, Outlet\_Establishment\_Year}\OperatorTok{=}\DecValTok{1999}\NormalTok{, Outlet\_Size}\OperatorTok{=}\StringTok{\textquotesingle{}Medium\textquotesingle{}}\NormalTok{, Item\_Outlet\_Sales}\OperatorTok{=}\FloatTok{3735.138}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-Lọc bỏ các cột nếu ít nhất một phần tử \texttt{NA}
+Trả về \texttt{tuple}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\StringTok{\textquotesingle{}columns\textquotesingle{}}\NormalTok{)}
+\NormalTok{In []: }\BuiltInTok{next}\NormalTok{(df.itertuples(index}\OperatorTok{=}\VariableTok{False}\NormalTok{, name}\OperatorTok{=}\VariableTok{None}\NormalTok{))}
 \NormalTok{Out[]:}
-\NormalTok{               state}
-\NormalTok{region              }
-\NormalTok{Mountain     Arizona}
-\NormalTok{Mountain    Colorado}
-\NormalTok{Mountain       Idaho}
-\NormalTok{Pacific       Alaska}
-\NormalTok{Pacific   California}
-\NormalTok{Pacific       Hawaii}
+\NormalTok{(}\StringTok{\textquotesingle{}FDA15\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Low Fat\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}Dairy\textquotesingle{}}\NormalTok{, }\DecValTok{1999}\NormalTok{, }\StringTok{\textquotesingle{}Medium\textquotesingle{}}\NormalTok{, }\FloatTok{3735.138}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-Lọc bỏ các dòng nếu tất cả phần tử trong các cột \texttt{{[}\textquotesingle{}family\_members\textquotesingle{},\ \textquotesingle{}state\_pop\textquotesingle{}{]}} là \texttt{NA}
+\textbf{Cách dùng vòng lặp trong itertuples}
+
+\texttt{name=default}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In []: missing\_df.dropna(axis}\OperatorTok{=}\StringTok{\textquotesingle{}index\textquotesingle{}}\NormalTok{, how}\OperatorTok{=}\StringTok{\textquotesingle{}all\textquotesingle{}}\NormalTok{, subset}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}family\_members\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}state\_pop\textquotesingle{}}\NormalTok{])}
-\NormalTok{Out[]:}
-\NormalTok{               state  individuals  family\_members   state\_pop}
-\NormalTok{region                                                       }
-\NormalTok{Mountain    Colorado          NaN          }\FloatTok{3250.0}   \FloatTok{5691287.0}
-\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
-\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}\NormalTok{             NaN    }\FloatTok{735139.0}
-\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
-\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}\NormalTok{         NaN}
+\NormalTok{prices }\OperatorTok{=}\NormalTok{ []}
+\ControlFlowTok{for}\NormalTok{ row }\KeywordTok{in}\NormalTok{ df.itertuples():}
+\NormalTok{    prices.append(row.Item\_Outlet\_Sales }\OperatorTok{*} \FloatTok{0.5}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(prices[:}\DecValTok{5}\NormalTok{])}
 \end{Highlighting}
 \end{Shaded}
 
-Giữ lại các dòng có ít nhất \texttt{3} phần tử \texttt{non-NA}
+\texttt{name=None}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In []: missing\_df.dropna(thresh}\OperatorTok{=}\DecValTok{3}\NormalTok{)}
+\NormalTok{prices }\OperatorTok{=}\NormalTok{ []}
+\ControlFlowTok{for}\NormalTok{ row }\KeywordTok{in}\NormalTok{ df.itertuples(index}\OperatorTok{=}\VariableTok{False}\NormalTok{, name}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+\NormalTok{    prices.append(row[}\DecValTok{5}\NormalTok{] }\OperatorTok{*} \FloatTok{0.5}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(prices[:}\DecValTok{5}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\section{So sánh các phương pháp lặp}\label{so-suxe1nh-cuxe1c-phux1b0ux1a1ng-phuxe1p-lux1eb7p}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{def}\NormalTok{ vectorizer(df):}
+\NormalTok{    prices }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{] }\OperatorTok{*} \FloatTok{0.5}
+
+\KeywordTok{def}\NormalTok{ applyer(df):}
+\NormalTok{    prices }\OperatorTok{=}\NormalTok{ df[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{].}\BuiltInTok{apply}\NormalTok{(}\KeywordTok{lambda}\NormalTok{ x: x }\OperatorTok{*} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{def}\NormalTok{ iterrows(df):}
+\NormalTok{    prices }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ i, row }\KeywordTok{in}\NormalTok{ df.iterrows():}
+\NormalTok{        prices.append(row[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{] }\OperatorTok{*} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{def}\NormalTok{ itertuples1(df):}
+\NormalTok{    prices }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ row }\KeywordTok{in}\NormalTok{ df.itertuples():}
+\NormalTok{        prices.append(row.Item\_Outlet\_Sales }\OperatorTok{*} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{def}\NormalTok{ itertuples2(df):}
+\NormalTok{    prices }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ row }\KeywordTok{in}\NormalTok{ df.itertuples(index}\OperatorTok{=}\VariableTok{False}\NormalTok{, name}\OperatorTok{=}\VariableTok{None}\NormalTok{):}
+\NormalTok{        prices.append(row[}\DecValTok{5}\NormalTok{] }\OperatorTok{*} \FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: }\OperatorTok{\%}\NormalTok{timeit }\OperatorTok{{-}}\NormalTok{n }\DecValTok{10}\NormalTok{ vectorizer(df)}
+\NormalTok{Out[]:}
+\FloatTok{80.1}\NormalTok{ µs ± }\FloatTok{42.8}\NormalTok{ µs per loop (mean ± std. dev. of }\DecValTok{7}\NormalTok{ runs, }\DecValTok{10}\NormalTok{ loops each)}
+
+\NormalTok{In[ ]: }\OperatorTok{\%}\NormalTok{timeit }\OperatorTok{{-}}\NormalTok{n }\DecValTok{10}\NormalTok{ applyer(df)}
+\NormalTok{Out[]:}
+\FloatTok{1.37}\NormalTok{ ms ± }\DecValTok{112}\NormalTok{ µs per loop (mean ± std. dev. of }\DecValTok{7}\NormalTok{ runs, }\DecValTok{10}\NormalTok{ loops each)}
+
+\NormalTok{In []: }\OperatorTok{\%}\NormalTok{timeit }\OperatorTok{{-}}\NormalTok{n }\DecValTok{10}\NormalTok{ iterrows(df)}
+\NormalTok{Out[]:}
+\DecValTok{256}\NormalTok{ ms ± }\FloatTok{2.48}\NormalTok{ ms per loop (mean ± std. dev. of }\DecValTok{7}\NormalTok{ runs, }\DecValTok{10}\NormalTok{ loops each)}
+
+\NormalTok{In []: }\OperatorTok{\%}\NormalTok{timeit }\OperatorTok{{-}}\NormalTok{n }\DecValTok{10}\NormalTok{ itertuples1(df)}
 \NormalTok{Out[]: }
-\NormalTok{               state  individuals  family\_members   state\_pop}
-\NormalTok{region                                                       }
-\NormalTok{Mountain    Colorado          NaN          }\FloatTok{3250.0}   \FloatTok{5691287.0}
-\NormalTok{Mountain       Idaho       }\FloatTok{1297.0}           \FloatTok{715.0}   \FloatTok{1750536.0}
-\NormalTok{Pacific       Alaska       }\FloatTok{1434.0}\NormalTok{             NaN    }\FloatTok{735139.0}
-\NormalTok{Pacific   California     }\FloatTok{109008.0}         \FloatTok{20964.0}  \FloatTok{39461588.0}
-\NormalTok{Pacific       Hawaii       }\FloatTok{4131.0}          \FloatTok{2399.0}\NormalTok{         NaN}
+\FloatTok{6.61}\NormalTok{ ms ± }\DecValTok{200}\NormalTok{ µs per loop (mean ± std. dev. of }\DecValTok{7}\NormalTok{ runs, }\DecValTok{10}\NormalTok{ loops each)}
+
+\NormalTok{In []: }\OperatorTok{\%}\NormalTok{timeit }\OperatorTok{{-}}\NormalTok{n }\DecValTok{10}\NormalTok{ itertuples2(df)}
+\NormalTok{Out[]:}
+\FloatTok{3.91}\NormalTok{ ms ± }\DecValTok{132}\NormalTok{ µs per loop (mean ± std. dev. of }\DecValTok{7}\NormalTok{ runs, }\DecValTok{10}\NormalTok{ loops each)}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{sux1eed-dux1ee5ng-apply}{%
-\section{Sử dụng apply}\label{sux1eed-dux1ee5ng-apply}}
+\section{Xử lý song song trong pandas}\label{xux1eed-luxfd-song-song-trong-pandas}
 
-\hypertarget{sux1eed-dux1ee5ng-iterator}{%
-\section{Sử dụng iterator}\label{sux1eed-dux1ee5ng-iterator}}
+Xử lý song song là phương pháp tận dụng số lượng core của CPU để giải quyết vấn đề trong thời gian ngắn hơn.
 
-\hypertarget{xux1eed-luxfd-song-song-trong-pandas}{%
-\section{Xử lý song song trong pandas}\label{xux1eed-luxfd-song-song-trong-pandas}}
+\subsection{pandarallel}\label{pandarallel}
 
-\hypertarget{cuxe1c-cuxe1ch-phux1ed1i-hux1ee3p-nhiux1ec1u-bux1ea3ng-vux1edbi-nhau}{%
-\chapter{Các cách phối hợp nhiều bảng với nhau}\label{cuxe1c-cuxe1ch-phux1ed1i-hux1ee3p-nhiux1ec1u-bux1ea3ng-vux1edbi-nhau}}
+Để cài đặt pandarallel bằng \texttt{pip}
 
-\hypertarget{join}{%
-\section{Join}\label{join}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pip install pandarallel}
+\end{Highlighting}
+\end{Shaded}
 
-\hypertarget{merge}{%
-\section{Merge}\label{merge}}
+Cách sử dụng
 
-\hypertarget{concat}{%
-\section{Concat}\label{concat}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{from}\NormalTok{ pandarallel }\ImportTok{import}\NormalTok{ pandarallel}
+\NormalTok{pandarallel.initialize(progress\_bar}\OperatorTok{=}\VariableTok{True}\NormalTok{, n\_workers}\OperatorTok{=}\DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-\hypertarget{groupby-vuxe0-aggregate}{%
-\chapter{Groupby và Aggregate}\label{groupby-vuxe0-aggregate}}
+Để thiết lập cho pandarallel ta dùng \texttt{.initialize}. Trong đó:
 
-\hypertarget{luxe0m-viux1ec7c-vux1edbi-1-sux1ed1-kiux1ec3u-dux1eef-liux1ec7u}{%
-\chapter{Làm việc với 1 số kiểu dữ liệu}\label{luxe0m-viux1ec7c-vux1edbi-1-sux1ed1-kiux1ec3u-dux1eef-liux1ec7u}}
+\begin{itemize}
+\item
+  \texttt{n\_workers}: là số lượng cores của CPU
+\item
+  \texttt{progress\_bar}: show tiến trình
+\end{itemize}
 
-\hypertarget{xux1eed-luxfd-dux1eef-liux1ec7u-dux1ea1ng-text}{%
-\section{Xử lý dữ liệu dạng text}\label{xux1eed-luxfd-dux1eef-liux1ec7u-dux1ea1ng-text}}
+Để áp dụng pandarallel ta chỉ việc thay thế \texttt{.apply} bằng \texttt{.parallel\_apply}
 
-\hypertarget{xux1eed-luxfd-dux1eef-liux1ec7u-dux1ea1ng-timestamp}{%
-\section{Xử lý dữ liệu dạng timestamp}\label{xux1eed-luxfd-dux1eef-liux1ec7u-dux1ea1ng-timestamp}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# df.apply(func)}
+\NormalTok{df.parallel\_apply(func)}
+\end{Highlighting}
+\end{Shaded}
 
-\hypertarget{category-trong-pandas}{%
-\section{Category trong pandas}\label{category-trong-pandas}}
+\chapter{Các cách phối hợp nhiều bảng với nhau}\label{cuxe1c-cuxe1ch-phux1ed1i-hux1ee3p-nhiux1ec1u-bux1ea3ng-vux1edbi-nhau}
 
-\hypertarget{xux1eed-luxfd-missing-data}{%
-\section{Xử lý Missing data}\label{xux1eed-luxfd-missing-data}}
+\section{Concat}\label{concat}
 
-\hypertarget{mux1ed9t-sux1ed1-kiux1ebfn-thux1ee9c-nuxe2ng-cao}{%
-\chapter{Một số kiến thức nâng cao}\label{mux1ed9t-sux1ed1-kiux1ebfn-thux1ee9c-nuxe2ng-cao}}
+Phương thức concat để nôi các DataFrame lại với nhau
 
-\hypertarget{multiindex}{%
-\section{MultiIndex}\label{multiindex}}
+\section{Join}\label{join}
 
-\hypertarget{pivot-vuxe0-merge}{%
-\section{Pivot và Merge}\label{pivot-vuxe0-merge}}
+\section{Merge}\label{merge}
 
-\hypertarget{resample}{%
-\section{Resample}\label{resample}}
+\chapter{Groupby}\label{groupby}
 
-\hypertarget{window}{%
-\section{Window}\label{window}}
+\section{Groupby}\label{groupby-1}
 
-\hypertarget{anomaly-detection-project}{%
-\chapter{Anomaly Detection Project}\label{anomaly-detection-project}}
+Phương thức \texttt{.groupby} sẽ gom các dòng hoặc các cột thành các nhóm khác nhau. Cú pháp cơ bản của \texttt{.groupby} như sau
 
-\hypertarget{visualize-vux1edbi-matplotlib}{%
-\chapter{Visualize với Matplotlib}\label{visualize-vux1edbi-matplotlib}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DataFrame.groupby(by}\OperatorTok{=}\VariableTok{None}\NormalTok{, axis}\OperatorTok{=}\DecValTok{0}\NormalTok{, dropna}\OperatorTok{=}\VariableTok{True}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó
+
+\begin{itemize}
+\item
+  \texttt{by}: có thể là dạng mapping, nhãn, danh sách nhãn hoặc một hàm trả về danh sách các index
+\item
+  \texttt{axis}: Tùy chọn group theo dòng \{\texttt{0} hoặc \texttt{index}\} hoặc cột \{\texttt{1} hoặc \texttt{columns}\}, mặc định là dòng.
+\item
+  \texttt{dropna}: Mặc định là \texttt{True} sẽ bỏ qua những dòng chứa \texttt{NA} và \texttt{False} sẽ thêm \texttt{NA} là một khóa trong nhóm, tương tự như \texttt{.value\_counts()}
+\end{itemize}
+
+Ví dụ với dữ liệu \href{https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data?select=Train.csv}{Big Mart Salses}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{1}\NormalTok{]: df.head()}
+\NormalTok{Out[}\DecValTok{1}\NormalTok{]:}
+\NormalTok{  Item\_Identifier              Item\_Type Outlet\_Size  Item\_Outlet\_Sales}
+\DecValTok{0}\NormalTok{           FDA15                  Dairy      Medium          }\FloatTok{3735.1380}
+\DecValTok{1}\NormalTok{           DRC01            Soft Drinks      Medium           }\FloatTok{443.4228}
+\DecValTok{2}\NormalTok{           FDN15                   Meat      Medium          }\FloatTok{2097.2700}
+\DecValTok{3}\NormalTok{           FDX07  Fruits }\KeywordTok{and}\NormalTok{ Vegetables         NaN           }\FloatTok{732.3800}
+\DecValTok{4}\NormalTok{           NCD19              Household        High           }\FloatTok{994.7052}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{2}\NormalTok{]: grouped }\OperatorTok{=}\NormalTok{ df.groupby(}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{)}
+\NormalTok{In [}\DecValTok{3}\NormalTok{]: }\BuiltInTok{type}\NormalTok{(grouped)}
+\NormalTok{Out[}\DecValTok{3}\NormalTok{]:}
+\NormalTok{pandas.core.groupby.generic.DataFrameGroupBy}
+\end{Highlighting}
+\end{Shaded}
+
+Để xem từng nhóm trong group, ta có thể sử dụng \texttt{.get\_groups()} và truyền key vào đó. Ví dụ với key \texttt{Dairy}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{4}\NormalTok{]: grouped.get\_group(}\StringTok{\textquotesingle{}Dairy\textquotesingle{}}\NormalTok{).head()}
+\NormalTok{Out[}\DecValTok{4}\NormalTok{]:}
+\NormalTok{   Item\_Identifier Item\_Type Outlet\_Size  Item\_Outlet\_Sales}
+\DecValTok{0}\NormalTok{            FDA15     Dairy      Medium          }\FloatTok{3735.1380}
+\DecValTok{11}\NormalTok{           FDA03     Dairy       Small          }\FloatTok{2187.1530}
+\DecValTok{19}\NormalTok{           FDU02     Dairy       Small          }\FloatTok{2748.4224}
+\DecValTok{28}\NormalTok{           FDE51     Dairy         NaN           }\FloatTok{178.4344}
+\DecValTok{30}\NormalTok{           FDV38     Dairy         NaN           }\FloatTok{163.7868}
+\end{Highlighting}
+\end{Shaded}
+
+Khi chọn 1 column sau khi \texttt{.groupby} sẽ trả về kiểu \texttt{pandas.core.groupby.generic.SeriesGroupBy}
+
+\section{Các hàm Filtering trong Groupby}\label{cuxe1c-huxe0m-filtering-trong-groupby}
+
+\textbf{\texttt{.head(n=5)}}
+
+Trả về \texttt{n} dòng đầu của mỗi group.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{4}\NormalTok{]: df.groupby([}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{]).head(n}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{Out[}\DecValTok{4}\NormalTok{]:}
+\NormalTok{    Item\_Identifier              Item\_Type Outlet\_Size  Item\_Outlet\_Sales}
+\DecValTok{0}\NormalTok{             FDA15                  Dairy      Medium          }\FloatTok{3735.1380}
+\DecValTok{1}\NormalTok{             DRC01            Soft Drinks      Medium           }\FloatTok{443.4228}
+\DecValTok{2}\NormalTok{             FDN15                   Meat      Medium          }\FloatTok{2097.2700}
+\DecValTok{3}\NormalTok{             FDX07  Fruits }\KeywordTok{and}\NormalTok{ Vegetables         NaN           }\FloatTok{732.3800}
+\DecValTok{4}\NormalTok{             NCD19              Household        High           }\FloatTok{994.7052}
+\DecValTok{5}\NormalTok{             FDP36           Baking Goods      Medium           }\FloatTok{556.6088}
+\DecValTok{6}\NormalTok{             FDO10            Snack Foods        High           }\FloatTok{343.5528}
+\DecValTok{7}\NormalTok{             FDP10            Snack Foods      Medium          }\FloatTok{4022.7636}
+\DecValTok{8}\NormalTok{             FDH17           Frozen Foods         NaN          }\FloatTok{1076.5986}
+\DecValTok{9}\NormalTok{             FDU28           Frozen Foods         NaN          }\FloatTok{4710.5350}
+\DecValTok{10}\NormalTok{            FDY07  Fruits }\KeywordTok{and}\NormalTok{ Vegetables      Medium          }\FloatTok{1516.0266}
+\DecValTok{11}\NormalTok{            FDA03                  Dairy       Small          }\FloatTok{2187.1530}
+\DecValTok{15}\NormalTok{            FDP49              Breakfast       Small          }\FloatTok{1547.3192}
+\DecValTok{16}\NormalTok{            NCB42     Health }\KeywordTok{and}\NormalTok{ Hygiene      Medium          }\FloatTok{1621.8888}
+\DecValTok{17}\NormalTok{            FDP49              Breakfast      Medium           }\FloatTok{718.3982}
+\DecValTok{18}\NormalTok{            DRI11            Hard Drinks      Medium          }\FloatTok{2303.6680}
+\DecValTok{21}\NormalTok{            FDW12           Baking Goods      Medium          }\FloatTok{4064.0432}
+\DecValTok{22}\NormalTok{            NCB30              Household       Small          }\FloatTok{1587.2672}
+\DecValTok{27}\NormalTok{            DRJ59            Hard Drinks        High           }\FloatTok{308.9312}
+\DecValTok{29}\NormalTok{            FDC14                 Canned       Small           }\FloatTok{125.8362}
+\DecValTok{31}\NormalTok{            NCS17     Health }\KeywordTok{and}\NormalTok{ Hygiene      Medium          }\FloatTok{2741.7644}
+\DecValTok{33}\NormalTok{            FDO23                 Breads         NaN          }\FloatTok{2174.5028}
+\DecValTok{34}\NormalTok{            DRH01            Soft Drinks       Small          }\FloatTok{2085.2856}
+\DecValTok{41}\NormalTok{            FDK43                   Meat        High          }\FloatTok{2150.5340}
+\DecValTok{43}\NormalTok{            FDC02                 Canned      Medium          }\FloatTok{6768.5228}
+\DecValTok{72}\NormalTok{            FDH35          Starchy Foods         NaN          }\FloatTok{4604.6728}
+\DecValTok{114}\NormalTok{           FDV11                 Breads         NaN          }\FloatTok{3151.8972}
+\DecValTok{136}\NormalTok{           FDH35          Starchy Foods      Medium          }\FloatTok{5262.4832}
+\DecValTok{139}\NormalTok{           NCN07                 Others         NaN           }\FloatTok{263.6568}
+\DecValTok{142}\NormalTok{           NCO55                 Others         NaN          }\FloatTok{2143.8760}
+\DecValTok{231}\NormalTok{           FDG33                Seafood      Medium          }\FloatTok{3435.5280}
+\DecValTok{713}\NormalTok{           FDH21                Seafood      Medium          }\FloatTok{1267.6832}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{\texttt{.tail(n=5)}}
+
+Trả về \texttt{n} dòng cuối của mỗi group
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{5}\NormalTok{]: df.groupby([}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{]).tail(n}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{Out[}\DecValTok{5}\NormalTok{]:}
+\NormalTok{     Item\_Identifier              Item\_Type Outlet\_Size  Item\_Outlet\_Sales}
+\DecValTok{8317}\NormalTok{           FDN13              Breakfast         NaN          }\FloatTok{1306.9654}
+\DecValTok{8335}\NormalTok{           FDO49              Breakfast      Medium           }\FloatTok{708.4112}
+\DecValTok{8370}\NormalTok{           FDV23                 Breads       Small           }\FloatTok{871.5322}
+\DecValTok{8413}\NormalTok{           FDW59                 Breads       Small          }\FloatTok{1691.1320}
+\DecValTok{8423}\NormalTok{           FDJ57                Seafood      Medium          }\FloatTok{2600.6148}
+\DecValTok{8426}\NormalTok{           FDA22          Starchy Foods       Small          }\FloatTok{4512.1266}
+\DecValTok{8457}\NormalTok{           FDY50                  Dairy       Small          }\FloatTok{1516.6924}
+\DecValTok{8463}\NormalTok{           FDG59          Starchy Foods      Medium           }\FloatTok{810.9444}
+\DecValTok{8473}\NormalTok{           DRI47            Hard Drinks         NaN           }\FloatTok{431.4384}
+\DecValTok{8483}\NormalTok{           DRI11            Hard Drinks         NaN          }\FloatTok{1612.5676}
+\DecValTok{8488}\NormalTok{           NCN14                 Others      Medium          }\FloatTok{2756.4120}
+\DecValTok{8489}\NormalTok{           FDV13                 Canned      Medium          }\FloatTok{2109.2544}
+\DecValTok{8491}\NormalTok{           FDO03                   Meat      Medium          }\FloatTok{4809.7392}
+\DecValTok{8496}\NormalTok{           FDJ57                Seafood         NaN          }\FloatTok{3715.1640}
+\DecValTok{8499}\NormalTok{           NCK53     Health }\KeywordTok{and}\NormalTok{ Hygiene       Small          }\FloatTok{2976.1260}
+\DecValTok{8502}\NormalTok{           NCH43              Household         NaN          }\FloatTok{3020.0688}
+\DecValTok{8504}\NormalTok{           NCN18              Household      Medium          }\FloatTok{4138.6128}
+\DecValTok{8506}\NormalTok{           DRF37            Soft Drinks      Medium          }\FloatTok{3944.8650}
+\DecValTok{8508}\NormalTok{           FDW31  Fruits }\KeywordTok{and}\NormalTok{ Vegetables         NaN          }\FloatTok{2587.9646}
+\DecValTok{8509}\NormalTok{           FDG45  Fruits }\KeywordTok{and}\NormalTok{ Vegetables         NaN           }\FloatTok{424.7804}
+\DecValTok{8511}\NormalTok{           FDF05           Frozen Foods      Medium          }\FloatTok{4207.8560}
+\DecValTok{8512}\NormalTok{           FDR26                  Dairy        High          }\FloatTok{2479.4392}
+\DecValTok{8513}\NormalTok{           FDH31                   Meat       Small           }\FloatTok{595.2252}
+\DecValTok{8514}\NormalTok{           FDA01                 Canned         NaN           }\FloatTok{468.7232}
+\DecValTok{8515}\NormalTok{           FDH24           Baking Goods      Medium          }\FloatTok{1571.2880}
+\DecValTok{8516}\NormalTok{           NCJ19                 Others      Medium           }\FloatTok{858.8820}
+\DecValTok{8517}\NormalTok{           FDF53           Frozen Foods       Small          }\FloatTok{3608.6360}
+\DecValTok{8518}\NormalTok{           FDF22            Snack Foods        High          }\FloatTok{2778.3834}
+\DecValTok{8519}\NormalTok{           FDS36           Baking Goods         NaN           }\FloatTok{549.2850}
+\DecValTok{8520}\NormalTok{           NCJ29     Health }\KeywordTok{and}\NormalTok{ Hygiene       Small          }\FloatTok{1193.1136}
+\DecValTok{8521}\NormalTok{           FDN46            Snack Foods      Medium          }\FloatTok{1845.5976}
+\DecValTok{8522}\NormalTok{           DRG01            Soft Drinks       Small           }\FloatTok{765.6700}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý:}}
+\texttt{.head()} và \texttt{.tail()} trả về các dòng theo thứ tự index của chúng, không trả về theo thứ tự sắp xếp theo key
+\end{rmdnote}
+\textless\textless\textless\textless\textless\textless\textless{} HEAD
+=======
+
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+\begin{quote}
+23ad2852c0b15efdedd920a58f31d21da6687942
+\#\# Aggregate trong Groupby
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+\end{quote}
+
+\textbf{\texttt{.count()}}
+
+Đếm số lượng phần tử cho từng cột trong từng nhóm, không đếm các phần tử NA
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{6}\NormalTok{]: df.groupby([}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{]).count() }
+\NormalTok{Out[}\DecValTok{6}\NormalTok{]:}
+\NormalTok{                       Item\_Identifier  Outlet\_Size  Item\_Outlet\_Sales}
+\NormalTok{Item\_Type                                                             }
+\NormalTok{Baking Goods                       }\DecValTok{648}          \DecValTok{463}                \DecValTok{648}
+\NormalTok{Breads                             }\DecValTok{251}          \DecValTok{179}                \DecValTok{251}
+\NormalTok{Breakfast                          }\DecValTok{110}           \DecValTok{79}                \DecValTok{110}
+\NormalTok{Canned                             }\DecValTok{649}          \DecValTok{471}                \DecValTok{649}
+\NormalTok{Dairy                              }\DecValTok{682}          \DecValTok{496}                \DecValTok{682}
+\NormalTok{Frozen Foods                       }\DecValTok{856}          \DecValTok{615}                \DecValTok{856}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables             }\DecValTok{1232}          \DecValTok{883}               \DecValTok{1232}
+\NormalTok{Hard Drinks                        }\DecValTok{214}          \DecValTok{148}                \DecValTok{214}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene                 }\DecValTok{520}          \DecValTok{367}                \DecValTok{520}
+\NormalTok{Household                          }\DecValTok{910}          \DecValTok{649}                \DecValTok{910}
+\NormalTok{Meat                               }\DecValTok{425}          \DecValTok{309}                \DecValTok{425}
+\NormalTok{Others                             }\DecValTok{169}          \DecValTok{123}                \DecValTok{169}
+\NormalTok{Seafood                             }\DecValTok{64}           \DecValTok{46}                 \DecValTok{64}
+\NormalTok{Snack Foods                       }\DecValTok{1200}          \DecValTok{868}               \DecValTok{1200}
+\NormalTok{Soft Drinks                        }\DecValTok{445}          \DecValTok{312}                \DecValTok{445}
+\NormalTok{Starchy Foods                      }\DecValTok{148}          \DecValTok{105}                \DecValTok{148}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{\texttt{.size()}}
+
+Đếm số lượng dòng cho từng nhóm
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In [}\DecValTok{7}\NormalTok{]: df.groupby([}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{]).size()}
+\NormalTok{Out[}\DecValTok{7}\NormalTok{]:}
+\NormalTok{Item\_Type}
+\NormalTok{Baking Goods              }\DecValTok{648}
+\NormalTok{Breads                    }\DecValTok{251}
+\NormalTok{Breakfast                 }\DecValTok{110}
+\NormalTok{Canned                    }\DecValTok{649}
+\NormalTok{Dairy                     }\DecValTok{682}
+\NormalTok{Frozen Foods              }\DecValTok{856}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables    }\DecValTok{1232}
+\NormalTok{Hard Drinks               }\DecValTok{214}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene        }\DecValTok{520}
+\NormalTok{Household                 }\DecValTok{910}
+\NormalTok{Meat                      }\DecValTok{425}
+\NormalTok{Others                    }\DecValTok{169}
+\NormalTok{Seafood                    }\DecValTok{64}
+\NormalTok{Snack Foods              }\DecValTok{1200}
+\NormalTok{Soft Drinks               }\DecValTok{445}
+\NormalTok{Starchy Foods             }\DecValTok{148}
+\NormalTok{dtype: int64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{\texttt{SeriesGroupBy.nlargest(n=5)}}
+
+Trả về \texttt{n} dòng lớn nhất của từng nhóm Series
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.groupby([}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{])[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{].nlargest(n}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{Out[]:}
+\NormalTok{Item\_Type                  }
+\NormalTok{Baking Goods           }\DecValTok{2776}     \FloatTok{7931.6754}
+                       \DecValTok{809}      \FloatTok{7759.8990}
+\NormalTok{Breads                 }\DecValTok{3757}     \FloatTok{8958.3390}
+                       \DecValTok{7737}     \FloatTok{7158.6816}
+\NormalTok{Breakfast              }\DecValTok{7343}     \FloatTok{8209.3140}
+                       \DecValTok{7690}     \FloatTok{7943.6598}
+\NormalTok{Canned                 }\DecValTok{6541}    \FloatTok{10306.5840}
+                       \DecValTok{6886}     \FloatTok{8217.3036}
+\NormalTok{Dairy                  }\DecValTok{4888}    \FloatTok{10256.6490}
+                       \DecValTok{1009}    \FloatTok{10236.6750}
+\NormalTok{Frozen Foods           }\DecValTok{7752}     \FloatTok{9678.0688}
+                       \DecValTok{997}      \FloatTok{9275.9256}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables  }\DecValTok{5223}    \FloatTok{12117.5600}
+                       \DecValTok{1450}    \FloatTok{11445.1020}
+\NormalTok{Hard Drinks            }\DecValTok{3087}     \FloatTok{7843.1240}
+                       \DecValTok{1043}     \FloatTok{7152.0236}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene     }\DecValTok{4289}     \FloatTok{9779.9362}
+                       \DecValTok{4991}     \FloatTok{8508.9240}
+\NormalTok{Household              }\DecValTok{7188}    \FloatTok{13086.9648}
+                       \DecValTok{7191}    \FloatTok{10072.8882}
+\NormalTok{Meat                   }\DecValTok{8201}     \FloatTok{9390.4432}
+                       \DecValTok{7930}     \FloatTok{9227.9880}
+\NormalTok{Others                 }\DecValTok{197}      \FloatTok{6008.8450}
+                       \DecValTok{3529}     \FloatTok{5546.1140}
+\NormalTok{Seafood                }\DecValTok{2528}     \FloatTok{6503.5344}
+                       \DecValTok{5042}     \FloatTok{5992.2000}
+\NormalTok{Snack Foods            }\DecValTok{4349}    \FloatTok{10993.6896}
+                       \DecValTok{333}      \FloatTok{9267.9360}
+\NormalTok{Soft Drinks            }\DecValTok{6606}     \FloatTok{9554.2300}
+                       \DecValTok{5619}     \FloatTok{8868.4560}
+\NormalTok{Starchy Foods          }\DecValTok{1254}     \FloatTok{8132.0812}
+                       \DecValTok{661}      \FloatTok{7443.6440}
+\NormalTok{Name: Item\_Outlet\_Sales, dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{\texttt{SeriesGroupBy.nsmallest(n=5)}}
+
+Trả về \texttt{n} dòng nhỏ nhất của từng nhóm Series
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.groupby([}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{])[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{].nsmallest(n}\OperatorTok{=}\DecValTok{2}\NormalTok{)}
+\NormalTok{Out[]: }
+\NormalTok{Item\_Type                  }
+\NormalTok{Baking Goods           }\DecValTok{2055}     \FloatTok{37.2848}
+                       \DecValTok{430}      \FloatTok{38.6164}
+\NormalTok{Breads                 }\DecValTok{7388}     \FloatTok{35.2874}
+                       \DecValTok{417}      \FloatTok{83.8908}
+\NormalTok{Breakfast              }\DecValTok{4350}     \FloatTok{39.9480}
+                       \DecValTok{920}      \FloatTok{50.6008}
+\NormalTok{Canned                 }\DecValTok{5670}     \FloatTok{37.9506}
+                       \DecValTok{4297}     \FloatTok{41.9454}
+\NormalTok{Dairy                  }\DecValTok{3940}     \FloatTok{40.6138}
+                       \DecValTok{5427}     \FloatTok{44.6086}
+\NormalTok{Frozen Foods           }\DecValTok{4265}     \FloatTok{36.6190}
+                       \DecValTok{7612}     \FloatTok{36.6190}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables  }\DecValTok{8486}     \FloatTok{45.2744}
+                       \DecValTok{540}      \FloatTok{56.5930}
+\NormalTok{Hard Drinks            }\DecValTok{574}      \FloatTok{37.9506}
+                       \DecValTok{8116}     \FloatTok{71.9064}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene     }\DecValTok{3053}     \FloatTok{34.6216}
+                       \DecValTok{4280}     \FloatTok{37.9506}
+\NormalTok{Household              }\DecValTok{6950}     \FloatTok{33.2900}
+                       \DecValTok{7861}     \FloatTok{41.2796}
+\NormalTok{Meat                   }\DecValTok{5374}     \FloatTok{47.9376}
+                       \DecValTok{2407}     \FloatTok{71.9064}
+\NormalTok{Others                 }\DecValTok{6139}     \FloatTok{39.9480}
+                       \DecValTok{2394}     \FloatTok{55.2614}
+\NormalTok{Seafood                }\DecValTok{6903}    \FloatTok{149.8050}
+                       \DecValTok{4502}    \FloatTok{158.4604}
+\NormalTok{Snack Foods            }\DecValTok{2571}     \FloatTok{33.9558}
+                       \DecValTok{6871}     \FloatTok{42.6112}
+\NormalTok{Soft Drinks            }\DecValTok{906}      \FloatTok{33.2900}
+                       \DecValTok{1913}     \FloatTok{40.6138}
+\NormalTok{Starchy Foods          }\DecValTok{828}      \FloatTok{58.5904}
+                       \DecValTok{5445}     \FloatTok{97.2068}
+\NormalTok{Name: Item\_Outlet\_Sales, dtype: float64}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{aggregate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{.aggregate(func}\OperatorTok{=}\VariableTok{None}\NormalTok{, }\OperatorTok{*}\NormalTok{args, engine}\OperatorTok{=}\VariableTok{None}\NormalTok{, engine\_kwargs}\OperatorTok{=}\VariableTok{None}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó:
+
+\begin{itemize}
+\item
+  \texttt{func}:
+
+  \begin{itemize}
+  \item
+    một hàm hoặc danh sách hàm
+  \item
+    hàm dạng string
+  \item
+    dictionary chứa nhãn và hàm cho từng nhãn
+  \end{itemize}
+\item
+  \texttt{*args}: Đối số truyền vào hàm \texttt{func}
+\item
+  \texttt{engine}: Engine tính toán có thể là \texttt{cython}, \texttt{numba}
+\end{itemize}
+
+Danh sách hàm
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.groupby(}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{).agg([}\StringTok{\textquotesingle{}min\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}max\textquotesingle{}}\NormalTok{])}
+\NormalTok{Out[]:}
+\NormalTok{                      Item\_Identifier        Item\_Outlet\_Sales            }
+                                  \BuiltInTok{min}    \BuiltInTok{max}               \BuiltInTok{min}         \BuiltInTok{max}
+\NormalTok{Item\_Type                                                                 }
+\NormalTok{Baking Goods                    FDA11  FDZ60           }\FloatTok{37.2848}   \FloatTok{7931.6754}
+\NormalTok{Breads                          FDN23  FDZ35           }\FloatTok{35.2874}   \FloatTok{8958.3390}
+\NormalTok{Breakfast                       FDK25  FDR37           }\FloatTok{39.9480}   \FloatTok{8209.3140}
+\NormalTok{Canned                          FDA01  FDZ49           }\FloatTok{37.9506}  \FloatTok{10306.5840}
+\NormalTok{Dairy                           DRC27  FDZ50           }\FloatTok{40.6138}  \FloatTok{10256.6490}
+\NormalTok{Frozen Foods                    FDA04  FDZ52           }\FloatTok{36.6190}   \FloatTok{9678.0688}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables           FDA07  FDZ56           }\FloatTok{45.2744}  \FloatTok{12117.5600}
+\NormalTok{Hard Drinks                     DRF23  DRQ35           }\FloatTok{37.9506}   \FloatTok{7843.1240}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene              NCA05  NCZ53           }\FloatTok{34.6216}   \FloatTok{9779.9362}
+\NormalTok{Household                       NCA06  NCZ54           }\FloatTok{33.2900}  \FloatTok{13086.9648}
+\NormalTok{Meat                            FDA39  FDZ51           }\FloatTok{47.9376}   \FloatTok{9390.4432}
+\NormalTok{Others                          NCI31  NCQ43           }\FloatTok{39.9480}   \FloatTok{6008.8450}
+\NormalTok{Seafood                         FDF33  FDK45          }\FloatTok{149.8050}   \FloatTok{6503.5344}
+\NormalTok{Snack Foods                     FDA09  FDZ58           }\FloatTok{33.9558}  \FloatTok{10993.6896}
+\NormalTok{Soft Drinks                     DRA12  DRZ24           }\FloatTok{33.2900}   \FloatTok{9554.2300}
+\NormalTok{Starchy Foods                   FDA22  FDZ34           }\FloatTok{58.5904}   \FloatTok{8132.0812}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{rmdnote}
+\textbf{\emph{Lưu ý:}}
+
+\texttt{min}, \texttt{max} không áp dụng được cho các cột có NaN value. Lúc này pandas sẽ báo Warning \texttt{FutureWarning:\ {[}\textquotesingle{}Outlet\_Size\textquotesingle{}{]}\ did\ not\ aggregate\ successfully.}
+\end{rmdnote}
+
+Dictionary chứa nhãn và hàm
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.groupby(}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{).agg(\{}\StringTok{\textquotesingle{}Item\_Identifier\textquotesingle{}}\NormalTok{: np.}\BuiltInTok{max}\NormalTok{, }\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{: [np.std, np.mean]\})}
+\NormalTok{Out[]:}
+\NormalTok{                      Item\_Identifier Item\_Outlet\_Sales             }
+\NormalTok{                                 amax               std         mean}
+\NormalTok{Item\_Type                                                           }
+\NormalTok{Baking Goods                    FDZ60       }\FloatTok{1546.788045}  \FloatTok{1952.971207}
+\NormalTok{Breads                          FDZ35       }\FloatTok{1644.235914}  \FloatTok{2204.132226}
+\NormalTok{Breakfast                       FDR37       }\FloatTok{1911.693586}  \FloatTok{2111.808651}
+\NormalTok{Canned                          FDZ49       }\FloatTok{1645.235638}  \FloatTok{2225.194904}
+\NormalTok{Dairy                           FDZ50       }\FloatTok{1884.404698}  \FloatTok{2232.542597}
+\NormalTok{Frozen Foods                    FDZ52       }\FloatTok{1724.777720}  \FloatTok{2132.867744}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables           FDZ56       }\FloatTok{1799.503459}  \FloatTok{2289.009592}
+\NormalTok{Hard Drinks                     DRQ35       }\FloatTok{1606.191587}  \FloatTok{2139.221622}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene              NCZ53       }\FloatTok{1553.633063}  \FloatTok{2010.000265}
+\NormalTok{Household                       NCZ54       }\FloatTok{1692.245757}  \FloatTok{2258.784300}
+\NormalTok{Meat                            FDZ51       }\FloatTok{1695.231081}  \FloatTok{2158.977911}
+\NormalTok{Others                          NCQ43       }\FloatTok{1431.860471}  \FloatTok{1926.139702}
+\NormalTok{Seafood                         FDK45       }\FloatTok{1842.988719}  \FloatTok{2326.065928}
+\NormalTok{Snack Foods                     FDZ58       }\FloatTok{1705.121755}  \FloatTok{2277.321739}
+\NormalTok{Soft Drinks                     DRZ24       }\FloatTok{1674.249752}  \FloatTok{2006.511735}
+\NormalTok{Starchy Foods                   FDZ34       }\FloatTok{1773.945328}  \FloatTok{2374.332773}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Sử dụng hàm tự định nghĩa trong Aggregate}
+
+Ta có 2 function sau
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ foo(item\_outlet\_sales, alpha}\OperatorTok{=}\DecValTok{1}\NormalTok{):}
+\NormalTok{    mean }\OperatorTok{=}\NormalTok{ np.mean(item\_outlet\_sales)}
+    \ControlFlowTok{return}\NormalTok{ np.}\BuiltInTok{sum}\NormalTok{(item\_outlet\_sales[item\_outlet\_sales }\OperatorTok{\textless{}}\NormalTok{ alpha }\OperatorTok{*}\NormalTok{ mean])}
+
+\KeywordTok{def}\NormalTok{ bar(item\_identifier):}
+    \ControlFlowTok{return} \BuiltInTok{len}\NormalTok{(}\BuiltInTok{set}\NormalTok{(item\_identifier))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.groupby(}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{).agg(\{}\StringTok{\textquotesingle{}Item\_Identifier\textquotesingle{}}\NormalTok{: [np.}\BuiltInTok{max}\NormalTok{, bar], }\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{: [np.mean, foo]\})}
+\NormalTok{Out[]:}
+\NormalTok{                      Item\_Identifier      Item\_Outlet\_Sales             }
+\NormalTok{                                 amax  bar              mean          foo}
+\NormalTok{Item\_Type                                                                }
+\NormalTok{Baking Goods                    FDZ60  }\DecValTok{119}       \FloatTok{1952.971207}  \FloatTok{348230.7108}
+\NormalTok{Breads                          FDZ35   }\DecValTok{45}       \FloatTok{2204.132226}  \FloatTok{152370.9932}
+\NormalTok{Breakfast                       FDR37   }\DecValTok{20}       \FloatTok{2111.808651}   \FloatTok{64478.7352}
+\NormalTok{Canned                          FDZ49  }\DecValTok{120}       \FloatTok{2225.194904}  \FloatTok{414387.2620}
+\NormalTok{Dairy                           FDZ50  }\DecValTok{125}       \FloatTok{2232.542597}  \FloatTok{440485.2904}
+\NormalTok{Frozen Foods                    FDZ52  }\DecValTok{155}       \FloatTok{2132.867744}  \FloatTok{514843.8318}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables           FDZ56  }\DecValTok{220}       \FloatTok{2289.009592}  \FloatTok{783023.4112}
+\NormalTok{Hard Drinks                     DRQ35   }\DecValTok{40}       \FloatTok{2139.221622}  \FloatTok{126412.1170}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene              NCZ53   }\DecValTok{95}       \FloatTok{2010.000265}  \FloatTok{272449.3548}
+\NormalTok{Household                       NCZ54  }\DecValTok{170}       \FloatTok{2258.784300}  \FloatTok{538634.1974}
+\NormalTok{Meat                            FDZ51   }\DecValTok{80}       \FloatTok{2158.977911}  \FloatTok{263468.3786}
+\NormalTok{Others                          NCQ43   }\DecValTok{30}       \FloatTok{1926.139702}   \FloatTok{81071.1370}
+\NormalTok{Seafood                         FDK45   }\DecValTok{10}       \FloatTok{2326.065928}   \FloatTok{31677.4324}
+\NormalTok{Snack Foods                     FDZ58  }\DecValTok{220}       \FloatTok{2277.321739}  \FloatTok{762663.2472}
+\NormalTok{Soft Drinks                     DRZ24   }\DecValTok{80}       \FloatTok{2006.511735}  \FloatTok{257134.6232}
+\NormalTok{Starchy Foods                   FDZ34   }\DecValTok{30}       \FloatTok{2374.332773}   \FloatTok{94087.5270}
+\end{Highlighting}
+\end{Shaded}
+
+bạn có thể truyền vào tham số alpha bằng cách dùng lambda
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.groupby(}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{).agg(\{}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{: [np.mean, }\KeywordTok{lambda}\NormalTok{ x: foo(x, alpha}\OperatorTok{=}\FloatTok{0.1}\NormalTok{)]\})}
+\NormalTok{Out[]: }
+\NormalTok{                      Item\_Outlet\_Sales            }
+\NormalTok{                                   mean  }\OperatorTok{\textless{}}\NormalTok{lambda\_0}\OperatorTok{\textgreater{}}
+\NormalTok{Item\_Type                                          }
+\NormalTok{Baking Goods                }\FloatTok{1952.971207}   \FloatTok{5035.4454}
+\NormalTok{Breads                      }\FloatTok{2204.132226}   \FloatTok{1557.3062}
+\NormalTok{Breakfast                   }\FloatTok{2111.808651}   \FloatTok{1440.7912}
+\NormalTok{Canned                      }\FloatTok{2225.194904}   \FloatTok{5354.3636}
+\NormalTok{Dairy                       }\FloatTok{2232.542597}   \FloatTok{5992.8658}
+\NormalTok{Frozen Foods                }\FloatTok{2132.867744}   \FloatTok{7111.4098}
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables       }\FloatTok{2289.009592}  \FloatTok{12268.0308}
+\NormalTok{Hard Drinks                 }\FloatTok{2139.221622}   \FloatTok{1625.2178}
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene          }\FloatTok{2010.000265}   \FloatTok{3723.8194}
+\NormalTok{Household                   }\FloatTok{2258.784300}   \FloatTok{8425.0332}
+\NormalTok{Meat                        }\FloatTok{2158.977911}   \FloatTok{4526.1084}
+\NormalTok{Others                      }\FloatTok{1926.139702}   \FloatTok{1445.4518}
+\NormalTok{Seafood                     }\FloatTok{2326.065928}   \FloatTok{1404.1722}
+\NormalTok{Snack Foods                 }\FloatTok{2277.321739}   \FloatTok{9573.5382}
+\NormalTok{Soft Drinks                 }\FloatTok{2006.511735}   \FloatTok{3207.1586}
+\NormalTok{Starchy Foods               }\FloatTok{2374.332773}   \FloatTok{1151.1682}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Apply trên nhiều cột và sử dụng function tự định nghĩa}
+
+Giả sử muốn lấy top\_2 item có số lượng Outlet\_Sales cao nhất và cao nhì trong từng nhóm. Ta định nghĩa function sau
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ get\_top\_ex1(g):}
+\NormalTok{    top\_1, top\_2 }\OperatorTok{=} \BuiltInTok{sorted}\NormalTok{(}\BuiltInTok{list}\NormalTok{(}\BuiltInTok{zip}\NormalTok{(g[}\StringTok{\textquotesingle{}Item\_Identifier\textquotesingle{}}\NormalTok{], g[}\StringTok{\textquotesingle{}Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{])), key}\OperatorTok{=}\KeywordTok{lambda}\NormalTok{ x: }\OperatorTok{{-}}\NormalTok{x[}\DecValTok{1}\NormalTok{])[:}\DecValTok{2}\NormalTok{]}
+    \ControlFlowTok{return}\NormalTok{ pd.Series(\{}\StringTok{\textquotesingle{}top\_1\_Item\_Identifier\textquotesingle{}}\NormalTok{: top\_1[}\DecValTok{0}\NormalTok{],}
+                      \StringTok{\textquotesingle{}top\_1\_Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{: top\_1[}\DecValTok{1}\NormalTok{], }
+                      \StringTok{\textquotesingle{}top\_2\_Item\_Identifier\textquotesingle{}}\NormalTok{: top\_2[}\DecValTok{0}\NormalTok{],}
+                      \StringTok{\textquotesingle{}top\_2\_Item\_Outlet\_Sales\textquotesingle{}}\NormalTok{: top\_2[}\DecValTok{1}\NormalTok{]\})}
+\end{Highlighting}
+\end{Shaded}
+
+Trong đó g là DataFrame của từng nhóm chia theo key của \texttt{groupby}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{In []: df.groupby(}\StringTok{\textquotesingle{}Item\_Type\textquotesingle{}}\NormalTok{).}\BuiltInTok{apply}\NormalTok{(get\_top\_ex1)}
+\NormalTok{Out[]:}
+\NormalTok{                      top\_1\_Item\_Identifier  top\_1\_Item\_Outlet\_Sales  }\OperatorTok{\textbackslash{}}
+\NormalTok{Item\_Type                                                              }
+\NormalTok{Baking Goods                          FDB37                }\FloatTok{7931.6754}   
+\NormalTok{Breads                                FDR35                }\FloatTok{8958.3390}   
+\NormalTok{Breakfast                             FDR37                }\FloatTok{8209.3140}   
+\NormalTok{Canned                                FDI50               }\FloatTok{10306.5840}   
+\NormalTok{Dairy                                 FDF39               }\FloatTok{10256.6490}   
+\NormalTok{Frozen Foods                          FDC17                }\FloatTok{9678.0688}   
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables                 FDQ19               }\FloatTok{12117.5600}   
+\NormalTok{Hard Drinks                           DRK23                }\FloatTok{7843.1240}   
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene                    NCM05                }\FloatTok{9779.9362}   
+\NormalTok{Household                             NCE42               }\FloatTok{13086.9648}   
+\NormalTok{Meat                                  FDO03                }\FloatTok{9390.4432}   
+\NormalTok{Others                                NCN55                }\FloatTok{6008.8450}   
+\NormalTok{Seafood                               FDI57                }\FloatTok{6503.5344}   
+\NormalTok{Snack Foods                           FDP33               }\FloatTok{10993.6896}   
+\NormalTok{Soft Drinks                           DRF36                }\FloatTok{9554.2300}   
+\NormalTok{Starchy Foods                         FDG47                }\FloatTok{8132.0812}   
+
+\NormalTok{                      top\_2\_Item\_Identifier  top\_2\_Item\_Outlet\_Sales  }
+\NormalTok{Item\_Type                                                             }
+\NormalTok{Baking Goods                          FDL24                }\FloatTok{7759.8990}  
+\NormalTok{Breads                                FDS11                }\FloatTok{7158.6816}  
+\NormalTok{Breakfast                             FDQ37                }\FloatTok{7943.6598}  
+\NormalTok{Canned                                FDX13                }\FloatTok{8217.3036}  
+\NormalTok{Dairy                                 FDU14               }\FloatTok{10236.6750}  
+\NormalTok{Frozen Foods                          FDK28                }\FloatTok{9275.9256}  
+\NormalTok{Fruits }\KeywordTok{and}\NormalTok{ Vegetables                 FDZ20               }\FloatTok{11445.1020}  
+\NormalTok{Hard Drinks                           DRF23                }\FloatTok{7152.0236}  
+\NormalTok{Health }\KeywordTok{and}\NormalTok{ Hygiene                    NCQ53                }\FloatTok{8508.9240}  
+\NormalTok{Household                             NCH18               }\FloatTok{10072.8882}  
+\NormalTok{Meat                                  FDP15                }\FloatTok{9227.9880}  
+\NormalTok{Others                                NCM43                }\FloatTok{5546.1140}  
+\NormalTok{Seafood                               FDI09                }\FloatTok{5992.2000}  
+\NormalTok{Snack Foods                           FDN58                }\FloatTok{9267.9360}  
+\NormalTok{Soft Drinks                           DRE48                }\FloatTok{8868.4560}  
+\NormalTok{Starchy Foods                         FDA34                }\FloatTok{7443.6440}  
+\end{Highlighting}
+\end{Shaded}
+
+\chapter{Làm việc với 1 số kiểu dữ liệu}\label{luxe0m-viux1ec7c-vux1edbi-1-sux1ed1-kiux1ec3u-dux1eef-liux1ec7u}
+
+\section{Xử lý dữ liệu dạng text}\label{xux1eed-luxfd-dux1eef-liux1ec7u-dux1ea1ng-text}
+
+\section{Xử lý dữ liệu dạng timestamp}\label{xux1eed-luxfd-dux1eef-liux1ec7u-dux1ea1ng-timestamp}
+
+\section{Category trong pandas}\label{category-trong-pandas}
+
+\section{Xử lý Missing data}\label{xux1eed-luxfd-missing-data}
+
+\chapter{Một số kiến thức nâng cao}\label{mux1ed9t-sux1ed1-kiux1ebfn-thux1ee9c-nuxe2ng-cao}
+
+\section{MultiIndex}\label{multiindex}
+
+\section{Pivot và Merge}\label{pivot-vuxe0-merge}
+
+\section{Resample}\label{resample}
+
+\section{Window}\label{window}
+
+\chapter{Anomaly Detection Project}\label{anomaly-detection-project}
+
+\chapter{Visualize với Matplotlib}\label{visualize-vux1edbi-matplotlib}
 
 \printindex
 

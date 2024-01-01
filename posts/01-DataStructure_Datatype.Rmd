@@ -9,7 +9,7 @@ Trong Pandas, `Series` là mảng 1 chiều bao gồm một danh sách giá tr�
 của các giá trị. Trong dữ liệu dảng bảng, mỗi Series được xem như là một cột của bảng đó. 
 Cách đơn giản để tạo Series như sau
 
-```{python eval=FALSE}
+```python
 s = pd.Series(data, index=None, name=None)
 ```
 
@@ -30,7 +30,7 @@ Trong đó `data` có thể  có dạng:
 
 Khi không truyền giá trị `index`, `Series` sẽ mặc định index của nó là 1 mảng số nguyên từ `0` đến `len(data) - 1` 
 
-```{python eval=FALSE}
+```python
 In [1]: pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
 Out[1]:
 a    0
@@ -41,7 +41,7 @@ Name: meow, dtype: int64
 
 **Khởi tạo Series bằng dict**
 
-```{python eval=FALSE}
+```python
 In [1]: pd.Series({"b": 1, "a":0, "c": 2})
 Out[1]: 
 b    1
@@ -57,7 +57,7 @@ Trong trường hợp bạn truyền biến `index` vào, `Series` sẽ đánh i
 Với các giá trị trong biến `index` không có trong keys của dict, `Series` sẽ tạo ra các giá trị bị thiếu `NaN`.
 ```
 
-```{python eval=FALSE}
+```python
 In [1]: pd.Series({"a": 0, "b": 1, "c": 2, "e": 4}, index=["b", "c", "d", "a"])
 Out[1]: 
 b    1.0
@@ -76,7 +76,7 @@ là `float64` nên kiểu dữ liệu của `Series` cũng là `float64` khác v
 
 **Khởi tạo Series bằng một giá trị (Scalar)**
 
-```{python eval=FALSE}
+```python
 In [1]: pd.Series(data=1, index=["a", "b", "c"])
 Out[1]: 
 a    1
@@ -92,13 +92,13 @@ tác với Series dựa vào index
 
 Ví dụ:
 
-```{python eval=FALSE}
+```python
 In [1]: s = pd.Series(data=[0, 1, 2, 3, 4, 5], index=["a", "b", "c", "d", "e", "f"])
 ```
 **Hiển thị toàn bộ giá trị của Series**
 Ta gọi thuộc tính `.values`
 
-```{python eval=FALSE}
+```python
 In [1]: s.values
 Out[1]:
 array([0, 1, 2, 3, 4, 5])
@@ -106,21 +106,21 @@ array([0, 1, 2, 3, 4, 5])
 
 **Lấy theo indice**
 
-```{python eval=FALSE}
+```python
 In [2]: s[2]
 Out[2]: 2
 ``` 
 
 **Lấy theo index**
 
-```{python eval=FALSE}
+```python
 In [3]: s["c"]
 Out[3]: 2 
 ```
 
 **Slice indice**
 
-```{python eval=FALSE}
+```python
 In [4]: s[1:3]
 Out[4]:
 b    1
@@ -130,7 +130,7 @@ dtype: int64
 
 **Slice index**
 
-```{python eval=FALSE}
+```python
 In [5]: s["b":"c"]
 Out[5]: 
 b    1
@@ -140,7 +140,7 @@ dtype: int64
 
 **List indice**
 
-```{python eval=FALSE}
+```python
 In [6]: s[[1, 2, 4]]
 Out[6]:
 b    1
@@ -151,7 +151,7 @@ dtype: int64
 
 **List index**
 
-```{python eval=FALSE}
+```python
 In [7]: s[["b", "c", "e"]]
 Out[7]:
 b    1
@@ -162,7 +162,7 @@ dtype: int64
 
 **Điều kiện**
 
-```{python eval=FALSE}
+```python
 In [5]: s[s > s.mean()]
 Out[5]:
 d    3
@@ -179,7 +179,7 @@ hợp các Series lại với nhau.
 
 Cách khởi tạo DataFrame như sau
 
-```{python eval=FALSE}
+```python
 df = pd.DataFrame(data=None, index=None, columns=None, dtype=None, copy=False)
 ``` 
 
@@ -211,7 +211,7 @@ những index bị thiếu sẽ được điền giá trị `NaN`
 Khi truyền giá trị `columns`, DataFrame sẽ chọn những `Series` thuộc dict có key thuộc `columns`, giá trị
 trong `columns` không có trong key của dict sẽ được gán `NaN`
 
-```{python eval=FALSE}
+```python
 In [1]: d = {
             "one": pd.Series([1, 2, 3], index=["c", "b", "a"]),
             "two": pd.Series([1, 2, 3, 4], index=["c", "a", "b", "d"])
@@ -245,7 +245,7 @@ a	 2	  NaN
 index của DataFrame sẽ được tạo từ `0` đến `len(n) - 1` trong đó `n` là độ dài của mảng. Khi truyền 
 giá trị `columns`, DataFrame sẽ chọn những key thuộc dict và cũng thuộc `columns`, giá trị trong 
 `columns` không có trong key của dict sẽ được gán `NaN`
-```{python eval=FALSE}
+```python
 In [1]: d = {
             "one": [1, 2, 3, 4],
             "two": [1, 2, 3, 4],
@@ -268,7 +268,7 @@ là số lượng List con hoặc là số dòng hay `shape[0]` của `numpy.nda
 thì tên columns sẽ được tạo từ `0` đến `len(n) - 1` với `n` là độ dài lớn nhất của List con hoặc `shape[1]`
 của `numpy.ndarray` 
 
-```{python eval=FALSE}
+```python
 In [1]: pd.DataFrame(data=[[1, 2], [3, 4, 5]], 
                      index=["a", "b"], 
                      columns=['one','two','three'])
@@ -300,7 +300,7 @@ các key của dict
 Trong ví dụ dưới đây, `columns` phải chứa toàn bộ keys `["one", "two", "three"]`, nếu thiếu 1 trong 3
 sẽ phát sinh lỗi.
 
-```{python eval=FALSE}
+```python
 In [1]: d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
 In [2]: pd.DataFrame(d, index=["a", "b"], columns=["one", "two", "three", "four"])
 Out[2]:
@@ -314,7 +314,7 @@ b    4    5    6.0   NaN
 Mảng có cấu trúc là mảng mà các phần tử của nó là một cấu trúc, bao gồm các thành phần nhỏ hơn, các thành phần này được đặt tên và khai báo kiểu dữ liệu.
 Dưới đây là một ví dụ Mảng có cấu trúc trong numpy
 
-```{python eval=FALSE}
+```python
 In [1]: data = np.array([('pikachu', 9, 27.0), ('mewtwo', 3, 81.0)],
                         dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
 In [2]: pd.DataFrame(data)
@@ -332,7 +332,7 @@ sẽ được điền `NaN` và ngược lại sẽ trả ra lỗi nếu số l�
 
 Ví dụ về cách tạo namedtuple
 
-```{python eval=FALSE}
+```python
 from collections import namedtuple
 Point2D = namedtuple("Point2D", "x y")
 Point3D = namedtuple("Point3D", "x y z")
@@ -340,7 +340,7 @@ Point3D = namedtuple("Point3D", "x y z")
 
 Tạo DataFrame từ namedtuple `Point2D`
 
-```{python eval=FALSE}
+```python
 In [1]: pd.DataFrame([Point2D(0, 0), Point2D(0, 1), Point2D(0, 2)])
 Out[1]:
    x  y
@@ -350,7 +350,7 @@ Out[1]:
 ```
 Tạo DataFrame từ namedtuple cả `Point2D` và `Point3D`
 
-```{python eval=FALSE}
+```python
 In [1]: pd.DataFrame([Point3D(0, 0, 0), Point2D(0, 1), Point3D(0, 2, 3)])
 Out[1]:    
    x  y    z
@@ -362,7 +362,7 @@ Như ta thấy, tại phần tử thứ 2 chỉ có 2 giá trị, trong khi ph�
 
 **Khởi tạo DataFrame từ Series**
 
-```{python eval=FALSE}
+```python
 In [1]: s = pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
 In [2]: pd.DataFrame(s)
 Out[2]: 
@@ -379,7 +379,7 @@ c     2
 
 Cách khởi tạo 
 
-```{python eval=FALSE} 
+```python 
 pd.DataFrame.from_dict(data, orient='columns', dtype=None, columns=None)
 ```
 
@@ -391,7 +391,7 @@ pd.DataFrame.from_dict(data, orient='columns', dtype=None, columns=None)
 
 Ví dụ tạo DataFrame khi `orient="columns"`. Với cách khởi tạo này tên các cột của DataFrame sẽ là key của dict
 
-```{python eval=FALSE}
+```python
 In [1]: data = {"col_1": [3, 2, 1, 0], "col_2": ["a", "b", "c", "d"]}
 In [2]: pd.DataFrame.from_dict(data)
 Out[2]:
@@ -404,7 +404,7 @@ Out[2]:
 
 Ví dụ tạo DataFrame khi `orient="index"`. Với cách khởi tạo này index của DataFrame sẽ là key của dict. 
 
-```{python eval=FALSE}
+```python
 In [1]: data = {"col_1": [3, 2, 1, 0], "col_2": ["a", "b", "c", "d"]}
 In [2]: pd.DataFrame.from_dict(data, orient="index", 
                                columns=["one", "two", "three", "four"])
@@ -420,13 +420,13 @@ Out[2]:
 
 Cách khởi tạo 
 
-```{python eval=FALSE}
+```python
 pd.DataFrame.from_records(data)
 ```
 
 `data` truyền vào có thể là một mảng có cấu trúc  
 
-```{python eval=FALSE}
+```python
 In [1]: data = np.array([('Rex', 9, 81.0), ('Fido', 3, 27.0)],
                         dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
 In [2]: pd.DataFrame.from_records(data, index=["a", "b"])
@@ -438,7 +438,7 @@ b  Fido    3    27.0
 
 Dữ liệu có thể  một danh sách các namedtuple
 
-```{python eval=FALSE}
+```python
 from collections import namedtuple
 Point2D = namedtuple("Point2D", "x y")
 Point3D = namedtuple("Point3D", "x y z")
@@ -446,7 +446,7 @@ pd.DataFrame.from_records([Point3D(0, 0, 0), Point2D(0, 1), Point3D(0, 2, 3)],
                           columns=["x","y","z"], index=["a", "b", "c"])
 ```
 
-```{python eval=FALSE}
+```python
    x  y    z
 a  0  0  0.0
 b  0  1  NaN
@@ -455,7 +455,7 @@ c  0  2  3.0
 
 Hoặc 1 danh sách các dict 
 
-```{python eval=FALSE}
+```python
 In [1]: d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
 In [2]: pd.DataFrame.from_records(d, index=["a", "b"], columns=["one", "two", "three", "four"])
 Out[2]:
@@ -497,7 +497,7 @@ Complex                 np.complex        *complex*
 
 Ví dụ:
 
-```{python eval=FALSE}
+```python
 In [1]: df = pd.DataFrame({
                    'col_1': [1, 0, 1, 0], 
                    'col_2': [1.0, 2.0, 3.0, 4.0], 
@@ -535,7 +535,7 @@ Ví dụ như tất cả dữ liệu của bạn là `int` hoặc có thể đư
 
 Ở ví dụ phía dưới `col_1`, `col_2`, `col_4`, `col_5` có thể ép về kiểu `int`, còn  `col_3`, `col_6` thì không thể ép kiểu được.
 
-```{python eval=FALSE}
+```python
 In [1]: df = pd.DataFrame({
                    'col_1': [1, 0, 1, 0], 
                    'col_2': [1.0, 2.0, 3.0, 4.0], 
@@ -572,7 +572,7 @@ Một số kiểu integer trong numpy như `np.int8`, `np.int16`, `np.int32`, `n
 ``` 
 Theo ví dụ trên, khi `dtype=np.int`
 
-```{python eval=FALSE}
+```python
 In [1]:  df.memory_usage()
 Out[1]: 
 Index    128
@@ -587,7 +587,7 @@ dtype: int64
 
 và sau khi thay bằng `dtype=np.int8`
 
-```{python eval=FALSE}
+```python
 In [1]:  df.memory_usage()
 Out[1]: 
 Index    128
