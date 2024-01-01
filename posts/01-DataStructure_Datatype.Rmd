@@ -31,8 +31,10 @@ Trong đó `data` có thể  có dạng:
 Khi không truyền giá trị `index`, `Series` sẽ mặc định index của nó là 1 mảng số nguyên từ `0` đến `len(data) - 1` 
 
 ```python
-In [1]: pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
-Out[1]:
+pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
+```
+
+```python
 a    0
 b    1
 c    2
@@ -43,7 +45,7 @@ Name: meow, dtype: int64
 
 ```python
 In [1]: pd.Series({"b": 1, "a":0, "c": 2})
-Out[1]: 
+```[1]: 
 b    1
 a    0
 c    2
