@@ -34,7 +34,7 @@ Khi không truyền giá trị `index`, `Series` sẽ mặc định index của 
 pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
 ```
 
-```
+```python
 a    0
 b    1
 c    2
@@ -44,8 +44,10 @@ Name: meow, dtype: int64
 **Khởi tạo Series bằng dict**
 
 ```python
-In [1]: pd.Series({"b": 1, "a":0, "c": 2})
-```[1]: 
+pd.Series({"b": 1, "a":0, "c": 2})
+```
+
+```python
 b    1
 a    0
 c    2
@@ -60,8 +62,10 @@ Với các giá trị trong biến `index` không có trong keys của dict, `Se
 ```
 
 ```python
-In [1]: pd.Series({"a": 0, "b": 1, "c": 2, "e": 4}, index=["b", "c", "d", "a"])
-Out[1]: 
+pd.Series({"a": 0, "b": 1, "c": 2, "e": 4}, index=["b", "c", "d", "a"])
+```
+
+```python 
 b    1.0
 c    2.0
 d    NaN
@@ -79,8 +83,10 @@ là `float64` nên kiểu dữ liệu của `Series` cũng là `float64` khác v
 **Khởi tạo Series bằng một giá trị (Scalar)**
 
 ```python
-In [1]: pd.Series(data=1, index=["a", "b", "c"])
-Out[1]: 
+pd.Series(data=1, index=["a", "b", "c"])
+```
+
+```python 
 a    1
 b    1
 c    1
@@ -95,36 +101,44 @@ tác với Series dựa vào index
 Ví dụ:
 
 ```python
-In [1]: s = pd.Series(data=[0, 1, 2, 3, 4, 5], index=["a", "b", "c", "d", "e", "f"])
+s = pd.Series(data=[0, 1, 2, 3, 4, 5], index=["a", "b", "c", "d", "e", "f"])
 ```
 **Hiển thị toàn bộ giá trị của Series**
 Ta gọi thuộc tính `.values`
 
 ```python
-In [1]: s.values
-Out[1]:
+s.values
+```
+
+```python
 array([0, 1, 2, 3, 4, 5])
 ```
 
 **Lấy theo indice**
 
 ```python
-In [2]: s[2]
-Out[2]: 2
+s[2]
+```
+
+```python 2
 ``` 
 
 **Lấy theo index**
 
 ```python
-In [3]: s["c"]
-Out[3]: 2 
+s["c"]
+```
+
+```python 2 
 ```
 
 **Slice indice**
 
 ```python
-In [4]: s[1:3]
-Out[4]:
+s[1:3]
+```
+
+```python
 b    1
 d    2
 dtype: int64
@@ -133,8 +147,10 @@ dtype: int64
 **Slice index**
 
 ```python
-In [5]: s["b":"c"]
-Out[5]: 
+s["b":"c"]
+```
+
+```python 
 b    1
 c    2
 dtype: int64
@@ -144,7 +160,9 @@ dtype: int64
 
 ```python
 In [6]: s[[1, 2, 4]]
-Out[6]:
+```
+
+```python
 b    1
 c    2
 e    4
@@ -155,7 +173,9 @@ dtype: int64
 
 ```python
 In [7]: s[["b", "c", "e"]]
-Out[7]:
+```
+
+```python
 b    1
 c    2
 e    4
@@ -165,8 +185,10 @@ dtype: int64
 **Điều kiện**
 
 ```python
-In [5]: s[s > s.mean()]
-Out[5]:
+s[s > s.mean()]
+```
+
+```python
 d    3
 e    4
 f    5
@@ -214,27 +236,33 @@ Khi truyền giá trị `columns`, DataFrame sẽ chọn những `Series` thuộ
 trong `columns` không có trong key của dict sẽ được gán `NaN`
 
 ```python
-In [1]: d = {
+d = {
             "one": pd.Series([1, 2, 3], index=["c", "b", "a"]),
             "two": pd.Series([1, 2, 3, 4], index=["c", "a", "b", "d"])
         }
-In [2]: pd.DataFrame(d)
-Out[2]:
+pd.DataFrame(d)
+```
+
+```python
    one  two
 a  3.0    2
 b  2.0    3
 c  1.0    1
 d  NaN    4
 
-In [3]: pd.DataFrame(d, index=["d", "b", "a"])
-Out[3]: 
+pd.DataFrame(d, index=["d", "b", "a"])
+```
+
+```python 
    one	two
 d  NaN	  4
 b  2.0	  3
 a  3.0	  2
 
-In [4]: pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "three"])
-Out[4]:
+pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "three"])
+```
+
+```python
    two	three
 d	 4	  NaN
 b	 3	  NaN
@@ -248,15 +276,17 @@ index của DataFrame sẽ được tạo từ `0` đến `len(n) - 1` trong đ�
 giá trị `columns`, DataFrame sẽ chọn những key thuộc dict và cũng thuộc `columns`, giá trị trong 
 `columns` không có trong key của dict sẽ được gán `NaN`
 ```python
-In [1]: d = {
+d = {
             "one": [1, 2, 3, 4],
             "two": [1, 2, 3, 4],
             "three": [1, 2, 3, 4]
         }
-In [2]: pd.DataFrame(data=d,
+pd.DataFrame(data=d,
                      index=["a", "b", "c", "d"],
                      columns=["one", "two", "four"])
-Out[2]:
+```
+
+```python
    one  two four
 a    1    1   NaN
 b    2    2   NaN
@@ -271,18 +301,22 @@ thì tên columns sẽ được tạo từ `0` đến `len(n) - 1` với `n` là
 của `numpy.ndarray` 
 
 ```python
-In [1]: pd.DataFrame(data=[[1, 2], [3, 4, 5]], 
+pd.DataFrame(data=[[1, 2], [3, 4, 5]], 
                      index=["a", "b"], 
                      columns=['one','two','three'])
-Out[1]: 
+```
+
+```python 
    one  two  three
 a    1    2    NaN
 b    3    4    5.0
 
-In [2]: pd.DataFrame(data=np.random.rand(2,3), 
+pd.DataFrame(data=np.random.rand(2,3), 
                      index=["a", "b"], 
                      columns=['one','two','three']))
-Out[2]:
+```
+
+```python
         one       two     three
 a  0.662008  0.085735  0.331281
 b  0.115360  0.358092  0.862477
@@ -303,9 +337,11 @@ Trong ví dụ dưới đây, `columns` phải chứa toàn bộ keys `["one", "
 sẽ phát sinh lỗi.
 
 ```python
-In [1]: d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
-In [2]: pd.DataFrame(d, index=["a", "b"], columns=["one", "two", "three", "four"])
-Out[2]:
+d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
+pd.DataFrame(d, index=["a", "b"], columns=["one", "two", "three", "four"])
+```
+
+```python
    one  two  three  four
 a    1    2    NaN   NaN
 b    4    5    6.0   NaN
@@ -317,10 +353,12 @@ Mảng có cấu trúc là mảng mà các phần tử của nó là một cấu
 Dưới đây là một ví dụ Mảng có cấu trúc trong numpy
 
 ```python
-In [1]: data = np.array([('pikachu', 9, 27.0), ('mewtwo', 3, 81.0)],
+data = np.array([('pikachu', 9, 27.0), ('mewtwo', 3, 81.0)],
                         dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
-In [2]: pd.DataFrame(data)
-Out[2]: 
+pd.DataFrame(data)
+```
+
+```python 
        name  age  weight
 0   pikachu    9    27.0
 1    mewtwo    3    81.0
@@ -343,8 +381,10 @@ Point3D = namedtuple("Point3D", "x y z")
 Tạo DataFrame từ namedtuple `Point2D`
 
 ```python
-In [1]: pd.DataFrame([Point2D(0, 0), Point2D(0, 1), Point2D(0, 2)])
-Out[1]:
+pd.DataFrame([Point2D(0, 0), Point2D(0, 1), Point2D(0, 2)])
+```
+
+```python
    x  y
 0  0  0
 1  0  1
@@ -353,8 +393,10 @@ Out[1]:
 Tạo DataFrame từ namedtuple cả `Point2D` và `Point3D`
 
 ```python
-In [1]: pd.DataFrame([Point3D(0, 0, 0), Point2D(0, 1), Point3D(0, 2, 3)])
-Out[1]:    
+pd.DataFrame([Point3D(0, 0, 0), Point2D(0, 1), Point3D(0, 2, 3)])
+```
+
+```python    
    x  y    z
 0  0  0  0.0
 1  0  1  NaN
@@ -365,9 +407,11 @@ Như ta thấy, tại phần tử thứ 2 chỉ có 2 giá trị, trong khi ph�
 **Khởi tạo DataFrame từ Series**
 
 ```python
-In [1]: s = pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
-In [2]: pd.DataFrame(s)
-Out[2]: 
+s = pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
+pd.DataFrame(s)
+```
+
+```python 
    meow
 a     0
 b     1
@@ -394,9 +438,11 @@ pd.DataFrame.from_dict(data, orient='columns', dtype=None, columns=None)
 Ví dụ tạo DataFrame khi `orient="columns"`. Với cách khởi tạo này tên các cột của DataFrame sẽ là key của dict
 
 ```python
-In [1]: data = {"col_1": [3, 2, 1, 0], "col_2": ["a", "b", "c", "d"]}
-In [2]: pd.DataFrame.from_dict(data)
-Out[2]:
+data = {"col_1": [3, 2, 1, 0], "col_2": ["a", "b", "c", "d"]}
+pd.DataFrame.from_dict(data)
+```
+
+```python
    col_1 col_2
 0      3     a
 1      2     b
@@ -407,10 +453,12 @@ Out[2]:
 Ví dụ tạo DataFrame khi `orient="index"`. Với cách khởi tạo này index của DataFrame sẽ là key của dict. 
 
 ```python
-In [1]: data = {"col_1": [3, 2, 1, 0], "col_2": ["a", "b", "c", "d"]}
-In [2]: pd.DataFrame.from_dict(data, orient="index", 
+data = {"col_1": [3, 2, 1, 0], "col_2": ["a", "b", "c", "d"]}
+pd.DataFrame.from_dict(data, orient="index", 
                                columns=["one", "two", "three", "four"])
-Out[2]:
+```
+
+```python
    col_1 col_2
 0      3     a
 1      2     b
@@ -429,10 +477,12 @@ pd.DataFrame.from_records(data)
 `data` truyền vào có thể là một mảng có cấu trúc  
 
 ```python
-In [1]: data = np.array([('Rex', 9, 81.0), ('Fido', 3, 27.0)],
+data = np.array([('Rex', 9, 81.0), ('Fido', 3, 27.0)],
                         dtype=[('name', 'U10'), ('age', 'i4'), ('weight', 'f4')])
-In [2]: pd.DataFrame.from_records(data, index=["a", "b"])
-Out[2]: 
+pd.DataFrame.from_records(data, index=["a", "b"])
+```
+
+```python 
    name  age  weight
 a   Rex    9    81.0
 b  Fido    3    27.0
@@ -458,9 +508,11 @@ c  0  2  3.0
 Hoặc 1 danh sách các dict 
 
 ```python
-In [1]: d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
-In [2]: pd.DataFrame.from_records(d, index=["a", "b"], columns=["one", "two", "three", "four"])
-Out[2]:
+d = [{"one": 1, "two": 2}, {"one": 4, "two": 5, "three": 6}]
+pd.DataFrame.from_records(d, index=["a", "b"], columns=["one", "two", "three", "four"])
+```
+
+```python
    one  two  three  four
 a    1    2    NaN   NaN
 b    4    5    6.0   NaN
@@ -500,23 +552,27 @@ Complex                 np.complex        *complex*
 Ví dụ:
 
 ```python
-In [1]: df = pd.DataFrame({
+df = pd.DataFrame({
                    'col_1': [1, 0, 1, 0], 
                    'col_2': [1.0, 2.0, 3.0, 4.0], 
                    'col_3': ['1', '2', '3', '4'],
                    'col_4': ['1', 2, '3', 4],
                    'col_5': [True, False, True, False],
                    'col_6': ['2021-06-01', '2021-06-02', '2021-06-03', '2021-06-04']})
-In [2]: df
-Out[2]:
+df
+```
+
+```python
    col_1  col_2 col_3 col_4  col_5       col_6
 0      1    1.0     1     1   True  2021-06-01
 1      0    2.0     2     2  False  2021-06-02
 2      1    3.0     3     3   True  2021-06-03
 3      0    4.0     4     4  False  2021-06-04
 
-In [3]: df.dtypes
-Out[3]:
+df.dtypes
+```
+
+```python
 col_1      int64
 col_2    float64
 col_3     object
@@ -538,7 +594,7 @@ Ví dụ như tất cả dữ liệu của bạn là `int` hoặc có thể đư
 Ở ví dụ phía dưới `col_1`, `col_2`, `col_4`, `col_5` có thể ép về kiểu `int`, còn  `col_3`, `col_6` thì không thể ép kiểu được.
 
 ```python
-In [1]: df = pd.DataFrame({
+df = pd.DataFrame({
                    'col_1': [1, 0, 1, 0], 
                    'col_2': [1.0, 2.0, 3.0, 4.0], 
                    'col_3': ['1', '2', '3', '4'],
@@ -546,16 +602,20 @@ In [1]: df = pd.DataFrame({
                    'col_5': [True, False, True, False],
                    'col_6': ['2021-06-01', '2021-06-02', '2021-06-03', '2021-06-04']},
                    dtype=np.int)
-In [2]: df
-Out[2]:
+df
+```
+
+```python
    col_1  col_2  col_3  col_4  col_5       col_6
 0      1      1      1      1      1  2021-06-01
 1      0      2      2      2      0  2021-06-02
 2      1      3      3      3      1  2021-06-03
 3      0      4      4      4      0  2021-06-04
 
-In [3]: df.dtypes
-Out[3]:
+df.dtypes
+```
+
+```python
 col_1     int64
 col_2     int64
 col_3    object
@@ -575,8 +635,10 @@ Một số kiểu integer trong numpy như `np.int8`, `np.int16`, `np.int32`, `n
 Theo ví dụ trên, khi `dtype=np.int`
 
 ```python
-In [1]:  df.memory_usage()
-Out[1]: 
+ df.memory_usage()
+```
+
+```python 
 Index    128
 col_1     32
 col_2     32
@@ -590,8 +652,10 @@ dtype: int64
 và sau khi thay bằng `dtype=np.int8`
 
 ```python
-In [1]:  df.memory_usage()
-Out[1]: 
+ df.memory_usage()
+```
+
+```python 
 Index    128
 col_1      4
 col_2      4
