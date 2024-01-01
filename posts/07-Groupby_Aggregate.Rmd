@@ -136,10 +136,7 @@ Out[5]:
 **_Lưu ý:_** 
 `.head()` và `.tail()` trả về các dòng theo thứ tự index của chúng, không trả về theo thứ tự sắp xếp theo key
 ``` 
-<<<<<<< HEAD
-=======
 
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 ## Aggregate trong Groupby
 
 **`.count()`**

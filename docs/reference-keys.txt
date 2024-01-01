@@ -60,7 +60,7 @@ merge
 groupby
 groupby-1
 các-hàm-filtering-trong-groupby
-head
+aggregate-trong-groupby
 làm-việc-với-1-số-kiểu-dữ-liệu
 xử-lý-dữ-liệu-dạng-text
 xử-lý-dữ-liệu-dạng-timestamp
