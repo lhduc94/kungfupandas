@@ -76,3 +76,7 @@ pre.sourceCode.python{
   background-image: url("../images/warning.png");
 }
 
+.python_output {
+  background: #a80f0f 5px center/3em no-repeat;
+
+}
