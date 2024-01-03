@@ -299,10 +299,11 @@ c    2
 Name: meow, dtype: int64</code></pre>
 <p><strong>Khởi tạo Series bằng dict</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-1" tabindex="-1"></a>pd.Series({<span class="st">&quot;b&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-1" tabindex="-1"></a>b    <span class="dv">1</span></span>
-<span id="cb5-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-2" tabindex="-1"></a>a    <span class="dv">0</span></span>
-<span id="cb5-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-3" tabindex="-1"></a>c    <span class="dv">2</span></span>
-<span id="cb5-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb5-4" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<pre class="python_output"><code>b    1
+a    0
+c    2
+dtype: int64
+</code></pre>
 
 <div class="rmdnote">
 <strong><em>Lưu ý</em>:</strong>
@@ -310,11 +311,11 @@ Trong trường hợp bạn truyền biến <code>index</code> vào, <code>Serie
 Với các giá trị trong biến <code>index</code> không có trong keys của dict, <code>Series</code> sẽ tạo ra các giá trị bị thiếu <code>NaN</code>.
 </div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb6-1" tabindex="-1"></a>pd.Series({<span class="st">&quot;a&quot;</span>: <span class="dv">0</span>, <span class="st">&quot;b&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>, <span class="st">&quot;e&quot;</span>: <span class="dv">4</span>}, index<span class="op">=</span>[<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;a&quot;</span>])</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb7-1" tabindex="-1"></a>b    <span class="fl">1.0</span></span>
-<span id="cb7-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb7-2" tabindex="-1"></a>c    <span class="fl">2.0</span></span>
-<span id="cb7-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb7-3" tabindex="-1"></a>d    NaN</span>
-<span id="cb7-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb7-4" tabindex="-1"></a>a    <span class="fl">0.0</span></span>
-<span id="cb7-5"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb7-5" tabindex="-1"></a>dtype: float64</span></code></pre></div>
+<pre class="python_output"><code>b    1.0
+c    2.0
+d    NaN
+a    0.0
+dtype: float64</code></pre>
 
 <div class="rmdnote">
 <p><strong><em>Lưu ý</em>:</strong>
@@ -323,10 +324,10 @@ là <code>float64</code> nên kiểu dữ liệu của <code>Series</code> cũng
 </div>
 <p><strong>Khởi tạo Series bằng một giá trị (Scalar)</strong></p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-1" tabindex="-1"></a>pd.Series(data<span class="op">=</span><span class="dv">1</span>, index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>])</span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-1" tabindex="-1"></a>a    <span class="dv">1</span></span>
-<span id="cb9-2"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-2" tabindex="-1"></a>b    <span class="dv">1</span></span>
-<span id="cb9-3"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-3" tabindex="-1"></a>c    <span class="dv">1</span></span>
-<span id="cb9-4"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb9-4" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<pre class="python_output"><code>a    1
+b    1
+c    1
+dtype: int64</code></pre>
 </div>
 <div id="một-số-thao-tác-cơ-bản" class="section level3 hasAnchor" number="1.1.2">
 <h3><span class="header-section-number">1.1.2</span> Một số thao tác cơ bản<a href="cấu-trúc-và-kiểu-dữ-liệu.html#một-số-thao-tác-cơ-bản" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -337,7 +338,7 @@ tác với Series dựa vào index</p>
 <p><strong>Hiển thị toàn bộ giá trị của Series</strong>
 Ta gọi thuộc tính <code>.values</code></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-1" tabindex="-1"></a>s.values</span></code></pre></div>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb12-1" tabindex="-1"></a>array([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span></code></pre></div>
+<pre class="python_output"><code>array([0, 1, 2, 3, 4, 5])</code></pre>
 <p><strong>Lấy theo indice</strong></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb13-1" tabindex="-1"></a>s[<span class="dv">2</span>]</span></code></pre></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb14-1" tabindex="-1"></a><span class="dv">2</span></span></code></pre></div>

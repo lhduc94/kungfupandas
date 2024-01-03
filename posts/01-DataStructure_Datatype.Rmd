@@ -35,7 +35,7 @@ Khi không truyền giá trị `index`, `Series` sẽ mặc định index của 
 pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
 ```
 
-```{python_output}
+```{.python_output}
 a    0
 b    1
 c    2
@@ -48,7 +48,7 @@ Name: meow, dtype: int64
 pd.Series({"b": 1, "a":0, "c": 2})
 ```
 
-```python
+```{.python_output}
 b    1
 a    0
 c    2
@@ -66,7 +66,7 @@ Với các giá trị trong biến `index` không có trong keys của dict, `Se
 pd.Series({"a": 0, "b": 1, "c": 2, "e": 4}, index=["b", "c", "d", "a"])
 ```
 
-```python 
+```{.python_output} 
 b    1.0
 c    2.0
 d    NaN
@@ -87,7 +87,7 @@ là `float64` nên kiểu dữ liệu của `Series` cũng là `float64` khác v
 pd.Series(data=1, index=["a", "b", "c"])
 ```
 
-```python 
+```{.python_output} 
 a    1
 b    1
 c    1
@@ -111,7 +111,7 @@ Ta gọi thuộc tính `.values`
 s.values
 ```
 
-```python
+```{.python_output}
 array([0, 1, 2, 3, 4, 5])
 ```
 
