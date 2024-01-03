@@ -1,4 +1,5 @@
 cấu-trúc-và-kiểu-dữ-liệu
+series
 các-cách-khởi-tạo
 một-số-thao-tác-cơ-bản
 cach-khoi-tao-data-frame
