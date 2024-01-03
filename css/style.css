@@ -29,7 +29,10 @@ p code {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal pre.python_output {
-  box-shadow: 50px 50px 50px #6d0e0e;
+  background: #f1dede;
+}
+.book .book-body .page-wrapper .page-inner section.normal pre.python_output code {
+  color: white
 }
 .book .book-body .page-wrapper .page-inner section.normal code {
   color: #bd1481;
