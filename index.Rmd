@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-description: "Kungfu Panda"
+description: "Kungfu Pandas"
 ---
 # Lời nói đầu {-}
 
