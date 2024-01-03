@@ -72,3 +72,8 @@ div.sourceCode {
 .rmdwarning {
   background-image: url("../images/warning.png");
 }
+
+.python_output {
+  box-shadow: 50px 50px 50px #6d0e0e;
+
+}
