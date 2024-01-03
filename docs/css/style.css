@@ -19,10 +19,10 @@ p code {
   white-space: inherit;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal pre {
+/* .book .book-body .page-wrapper .page-inner section.normal pre {
   border: 1px solid #c9c9c9;
   box-shadow: 1px 1px 1px #d8d8d8;
-}
+} */
 .book .book-body .page-wrapper .page-inner section.normal code {
   color: #bd1481;
   background-color: #ffffff00;;
