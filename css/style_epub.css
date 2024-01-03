@@ -75,13 +75,3 @@ pre.sourceCode.python{
 .rmdwarning {
   background-image: url("../images/warning.png");
 }
-
-.python_output {
-  padding: 1em 1em 1em 4em;
-  margin-bottom: 10px;
-  background: #b63c3c 5px center/3em no-repeat;
-  background-size: 50px 50px;
-  background-position: 10px 10px;
-  box-shadow: 2px 2px 2px #d8d8d8;
-  border-radius: .5em;
-}
