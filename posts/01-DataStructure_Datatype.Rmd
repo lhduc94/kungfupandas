@@ -56,7 +56,7 @@ dtype: int64
 
 ```
 
-```{block3, type='rmdnote'}
+```{block2, type='rmdnote'}
 **_Lưu ý_:** 
 Trong trường hợp bạn truyền biến `index` vào, `Series` sẽ đánh index dựa vào thứ tự trong `index`, và chỉ chứa các giá trị của dict có key nằm trong `index`. 
 Với các giá trị trong biến `index` không có trong keys của dict, `Series` sẽ tạo ra các giá trị bị thiếu `NaN`.
