@@ -272,7 +272,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="groupby-1" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Groupby<a href="groupby.html#groupby-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.groupby</code> sẽ gom các dòng hoặc các cột thành các nhóm khác nhau. Cú pháp cơ bản của <code>.groupby</code> như sau</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb206-1"><a href="groupby.html#cb206-1" tabindex="-1"></a>DataFrame.groupby(by<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb205-1"><a href="groupby.html#cb205-1" tabindex="-1"></a>DataFrame.groupby(by<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <p>Trong đó</p>
 <ul>
 <li><p><code>by</code>: có thể là dạng mapping, nhãn, danh sách nhãn hoặc một hàm trả về danh sách các index</p></li>
@@ -280,105 +280,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>dropna</code>: Mặc định là <code>True</code> sẽ bỏ qua những dòng chứa <code>NA</code> và <code>False</code> sẽ thêm <code>NA</code> là một khóa trong nhóm, tương tự như <code>.value_counts()</code></p></li>
 </ul>
 <p>Ví dụ với dữ liệu <a href="https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data?select=Train.csv">Big Mart Salses</a></p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb207-1"><a href="groupby.html#cb207-1" tabindex="-1"></a>In [<span class="dv">1</span>]: df.head()</span>
-<span id="cb207-2"><a href="groupby.html#cb207-2" tabindex="-1"></a>Out[<span class="dv">1</span>]:</span>
-<span id="cb207-3"><a href="groupby.html#cb207-3" tabindex="-1"></a>  Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales</span>
-<span id="cb207-4"><a href="groupby.html#cb207-4" tabindex="-1"></a><span class="dv">0</span>           FDA15                  Dairy      Medium          <span class="fl">3735.1380</span></span>
-<span id="cb207-5"><a href="groupby.html#cb207-5" tabindex="-1"></a><span class="dv">1</span>           DRC01            Soft Drinks      Medium           <span class="fl">443.4228</span></span>
-<span id="cb207-6"><a href="groupby.html#cb207-6" tabindex="-1"></a><span class="dv">2</span>           FDN15                   Meat      Medium          <span class="fl">2097.2700</span></span>
-<span id="cb207-7"><a href="groupby.html#cb207-7" tabindex="-1"></a><span class="dv">3</span>           FDX07  Fruits <span class="kw">and</span> Vegetables         NaN           <span class="fl">732.3800</span></span>
-<span id="cb207-8"><a href="groupby.html#cb207-8" tabindex="-1"></a><span class="dv">4</span>           NCD19              Household        High           <span class="fl">994.7052</span></span></code></pre></div>
-<div class="sourceCode" id="cb208"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb208-1"><a href="groupby.html#cb208-1" tabindex="-1"></a>In [<span class="dv">2</span>]: grouped <span class="op">=</span> df.groupby(<span class="st">&#39;Item_Type&#39;</span>)</span>
-<span id="cb208-2"><a href="groupby.html#cb208-2" tabindex="-1"></a>In [<span class="dv">3</span>]: <span class="bu">type</span>(grouped)</span>
-<span id="cb208-3"><a href="groupby.html#cb208-3" tabindex="-1"></a>Out[<span class="dv">3</span>]:</span>
-<span id="cb208-4"><a href="groupby.html#cb208-4" tabindex="-1"></a>pandas.core.groupby.generic.DataFrameGroupBy</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb206-1"><a href="groupby.html#cb206-1" tabindex="-1"></a>In [<span class="dv">1</span>]: df.head()</span>
+<span id="cb206-2"><a href="groupby.html#cb206-2" tabindex="-1"></a>Out[<span class="dv">1</span>]:</span>
+<span id="cb206-3"><a href="groupby.html#cb206-3" tabindex="-1"></a>  Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales</span>
+<span id="cb206-4"><a href="groupby.html#cb206-4" tabindex="-1"></a><span class="dv">0</span>           FDA15                  Dairy      Medium          <span class="fl">3735.1380</span></span>
+<span id="cb206-5"><a href="groupby.html#cb206-5" tabindex="-1"></a><span class="dv">1</span>           DRC01            Soft Drinks      Medium           <span class="fl">443.4228</span></span>
+<span id="cb206-6"><a href="groupby.html#cb206-6" tabindex="-1"></a><span class="dv">2</span>           FDN15                   Meat      Medium          <span class="fl">2097.2700</span></span>
+<span id="cb206-7"><a href="groupby.html#cb206-7" tabindex="-1"></a><span class="dv">3</span>           FDX07  Fruits <span class="kw">and</span> Vegetables         NaN           <span class="fl">732.3800</span></span>
+<span id="cb206-8"><a href="groupby.html#cb206-8" tabindex="-1"></a><span class="dv">4</span>           NCD19              Household        High           <span class="fl">994.7052</span></span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb207-1"><a href="groupby.html#cb207-1" tabindex="-1"></a>In [<span class="dv">2</span>]: grouped <span class="op">=</span> df.groupby(<span class="st">&#39;Item_Type&#39;</span>)</span>
+<span id="cb207-2"><a href="groupby.html#cb207-2" tabindex="-1"></a>In [<span class="dv">3</span>]: <span class="bu">type</span>(grouped)</span>
+<span id="cb207-3"><a href="groupby.html#cb207-3" tabindex="-1"></a>Out[<span class="dv">3</span>]:</span>
+<span id="cb207-4"><a href="groupby.html#cb207-4" tabindex="-1"></a>pandas.core.groupby.generic.DataFrameGroupBy</span></code></pre></div>
 <p>Để xem từng nhóm trong group, ta có thể sử dụng <code>.get_groups()</code> và truyền key vào đó. Ví dụ với key <code>Dairy</code></p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb209-1"><a href="groupby.html#cb209-1" tabindex="-1"></a>In [<span class="dv">4</span>]: grouped.get_group(<span class="st">&#39;Dairy&#39;</span>).head()</span>
-<span id="cb209-2"><a href="groupby.html#cb209-2" tabindex="-1"></a>Out[<span class="dv">4</span>]:</span>
-<span id="cb209-3"><a href="groupby.html#cb209-3" tabindex="-1"></a>   Item_Identifier Item_Type Outlet_Size  Item_Outlet_Sales</span>
-<span id="cb209-4"><a href="groupby.html#cb209-4" tabindex="-1"></a><span class="dv">0</span>            FDA15     Dairy      Medium          <span class="fl">3735.1380</span></span>
-<span id="cb209-5"><a href="groupby.html#cb209-5" tabindex="-1"></a><span class="dv">11</span>           FDA03     Dairy       Small          <span class="fl">2187.1530</span></span>
-<span id="cb209-6"><a href="groupby.html#cb209-6" tabindex="-1"></a><span class="dv">19</span>           FDU02     Dairy       Small          <span class="fl">2748.4224</span></span>
-<span id="cb209-7"><a href="groupby.html#cb209-7" tabindex="-1"></a><span class="dv">28</span>           FDE51     Dairy         NaN           <span class="fl">178.4344</span></span>
-<span id="cb209-8"><a href="groupby.html#cb209-8" tabindex="-1"></a><span class="dv">30</span>           FDV38     Dairy         NaN           <span class="fl">163.7868</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb208-1"><a href="groupby.html#cb208-1" tabindex="-1"></a>In [<span class="dv">4</span>]: grouped.get_group(<span class="st">&#39;Dairy&#39;</span>).head()</span>
+<span id="cb208-2"><a href="groupby.html#cb208-2" tabindex="-1"></a>Out[<span class="dv">4</span>]:</span>
+<span id="cb208-3"><a href="groupby.html#cb208-3" tabindex="-1"></a>   Item_Identifier Item_Type Outlet_Size  Item_Outlet_Sales</span>
+<span id="cb208-4"><a href="groupby.html#cb208-4" tabindex="-1"></a><span class="dv">0</span>            FDA15     Dairy      Medium          <span class="fl">3735.1380</span></span>
+<span id="cb208-5"><a href="groupby.html#cb208-5" tabindex="-1"></a><span class="dv">11</span>           FDA03     Dairy       Small          <span class="fl">2187.1530</span></span>
+<span id="cb208-6"><a href="groupby.html#cb208-6" tabindex="-1"></a><span class="dv">19</span>           FDU02     Dairy       Small          <span class="fl">2748.4224</span></span>
+<span id="cb208-7"><a href="groupby.html#cb208-7" tabindex="-1"></a><span class="dv">28</span>           FDE51     Dairy         NaN           <span class="fl">178.4344</span></span>
+<span id="cb208-8"><a href="groupby.html#cb208-8" tabindex="-1"></a><span class="dv">30</span>           FDV38     Dairy         NaN           <span class="fl">163.7868</span></span></code></pre></div>
 <p>Khi chọn 1 column sau khi <code>.groupby</code> sẽ trả về kiểu <code>pandas.core.groupby.generic.SeriesGroupBy</code></p>
 </div>
 <div id="các-hàm-filtering-trong-groupby" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Các hàm Filtering trong Groupby<a href="groupby.html#các-hàm-filtering-trong-groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong><code>.head(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng đầu của mỗi group.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb210-1"><a href="groupby.html#cb210-1" tabindex="-1"></a>In [<span class="dv">4</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).head(n<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb210-2"><a href="groupby.html#cb210-2" tabindex="-1"></a>Out[<span class="dv">4</span>]:</span>
-<span id="cb210-3"><a href="groupby.html#cb210-3" tabindex="-1"></a>    Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales</span>
-<span id="cb210-4"><a href="groupby.html#cb210-4" tabindex="-1"></a><span class="dv">0</span>             FDA15                  Dairy      Medium          <span class="fl">3735.1380</span></span>
-<span id="cb210-5"><a href="groupby.html#cb210-5" tabindex="-1"></a><span class="dv">1</span>             DRC01            Soft Drinks      Medium           <span class="fl">443.4228</span></span>
-<span id="cb210-6"><a href="groupby.html#cb210-6" tabindex="-1"></a><span class="dv">2</span>             FDN15                   Meat      Medium          <span class="fl">2097.2700</span></span>
-<span id="cb210-7"><a href="groupby.html#cb210-7" tabindex="-1"></a><span class="dv">3</span>             FDX07  Fruits <span class="kw">and</span> Vegetables         NaN           <span class="fl">732.3800</span></span>
-<span id="cb210-8"><a href="groupby.html#cb210-8" tabindex="-1"></a><span class="dv">4</span>             NCD19              Household        High           <span class="fl">994.7052</span></span>
-<span id="cb210-9"><a href="groupby.html#cb210-9" tabindex="-1"></a><span class="dv">5</span>             FDP36           Baking Goods      Medium           <span class="fl">556.6088</span></span>
-<span id="cb210-10"><a href="groupby.html#cb210-10" tabindex="-1"></a><span class="dv">6</span>             FDO10            Snack Foods        High           <span class="fl">343.5528</span></span>
-<span id="cb210-11"><a href="groupby.html#cb210-11" tabindex="-1"></a><span class="dv">7</span>             FDP10            Snack Foods      Medium          <span class="fl">4022.7636</span></span>
-<span id="cb210-12"><a href="groupby.html#cb210-12" tabindex="-1"></a><span class="dv">8</span>             FDH17           Frozen Foods         NaN          <span class="fl">1076.5986</span></span>
-<span id="cb210-13"><a href="groupby.html#cb210-13" tabindex="-1"></a><span class="dv">9</span>             FDU28           Frozen Foods         NaN          <span class="fl">4710.5350</span></span>
-<span id="cb210-14"><a href="groupby.html#cb210-14" tabindex="-1"></a><span class="dv">10</span>            FDY07  Fruits <span class="kw">and</span> Vegetables      Medium          <span class="fl">1516.0266</span></span>
-<span id="cb210-15"><a href="groupby.html#cb210-15" tabindex="-1"></a><span class="dv">11</span>            FDA03                  Dairy       Small          <span class="fl">2187.1530</span></span>
-<span id="cb210-16"><a href="groupby.html#cb210-16" tabindex="-1"></a><span class="dv">15</span>            FDP49              Breakfast       Small          <span class="fl">1547.3192</span></span>
-<span id="cb210-17"><a href="groupby.html#cb210-17" tabindex="-1"></a><span class="dv">16</span>            NCB42     Health <span class="kw">and</span> Hygiene      Medium          <span class="fl">1621.8888</span></span>
-<span id="cb210-18"><a href="groupby.html#cb210-18" tabindex="-1"></a><span class="dv">17</span>            FDP49              Breakfast      Medium           <span class="fl">718.3982</span></span>
-<span id="cb210-19"><a href="groupby.html#cb210-19" tabindex="-1"></a><span class="dv">18</span>            DRI11            Hard Drinks      Medium          <span class="fl">2303.6680</span></span>
-<span id="cb210-20"><a href="groupby.html#cb210-20" tabindex="-1"></a><span class="dv">21</span>            FDW12           Baking Goods      Medium          <span class="fl">4064.0432</span></span>
-<span id="cb210-21"><a href="groupby.html#cb210-21" tabindex="-1"></a><span class="dv">22</span>            NCB30              Household       Small          <span class="fl">1587.2672</span></span>
-<span id="cb210-22"><a href="groupby.html#cb210-22" tabindex="-1"></a><span class="dv">27</span>            DRJ59            Hard Drinks        High           <span class="fl">308.9312</span></span>
-<span id="cb210-23"><a href="groupby.html#cb210-23" tabindex="-1"></a><span class="dv">29</span>            FDC14                 Canned       Small           <span class="fl">125.8362</span></span>
-<span id="cb210-24"><a href="groupby.html#cb210-24" tabindex="-1"></a><span class="dv">31</span>            NCS17     Health <span class="kw">and</span> Hygiene      Medium          <span class="fl">2741.7644</span></span>
-<span id="cb210-25"><a href="groupby.html#cb210-25" tabindex="-1"></a><span class="dv">33</span>            FDO23                 Breads         NaN          <span class="fl">2174.5028</span></span>
-<span id="cb210-26"><a href="groupby.html#cb210-26" tabindex="-1"></a><span class="dv">34</span>            DRH01            Soft Drinks       Small          <span class="fl">2085.2856</span></span>
-<span id="cb210-27"><a href="groupby.html#cb210-27" tabindex="-1"></a><span class="dv">41</span>            FDK43                   Meat        High          <span class="fl">2150.5340</span></span>
-<span id="cb210-28"><a href="groupby.html#cb210-28" tabindex="-1"></a><span class="dv">43</span>            FDC02                 Canned      Medium          <span class="fl">6768.5228</span></span>
-<span id="cb210-29"><a href="groupby.html#cb210-29" tabindex="-1"></a><span class="dv">72</span>            FDH35          Starchy Foods         NaN          <span class="fl">4604.6728</span></span>
-<span id="cb210-30"><a href="groupby.html#cb210-30" tabindex="-1"></a><span class="dv">114</span>           FDV11                 Breads         NaN          <span class="fl">3151.8972</span></span>
-<span id="cb210-31"><a href="groupby.html#cb210-31" tabindex="-1"></a><span class="dv">136</span>           FDH35          Starchy Foods      Medium          <span class="fl">5262.4832</span></span>
-<span id="cb210-32"><a href="groupby.html#cb210-32" tabindex="-1"></a><span class="dv">139</span>           NCN07                 Others         NaN           <span class="fl">263.6568</span></span>
-<span id="cb210-33"><a href="groupby.html#cb210-33" tabindex="-1"></a><span class="dv">142</span>           NCO55                 Others         NaN          <span class="fl">2143.8760</span></span>
-<span id="cb210-34"><a href="groupby.html#cb210-34" tabindex="-1"></a><span class="dv">231</span>           FDG33                Seafood      Medium          <span class="fl">3435.5280</span></span>
-<span id="cb210-35"><a href="groupby.html#cb210-35" tabindex="-1"></a><span class="dv">713</span>           FDH21                Seafood      Medium          <span class="fl">1267.6832</span></span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb209-1"><a href="groupby.html#cb209-1" tabindex="-1"></a>In [<span class="dv">4</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).head(n<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb209-2"><a href="groupby.html#cb209-2" tabindex="-1"></a>Out[<span class="dv">4</span>]:</span>
+<span id="cb209-3"><a href="groupby.html#cb209-3" tabindex="-1"></a>    Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales</span>
+<span id="cb209-4"><a href="groupby.html#cb209-4" tabindex="-1"></a><span class="dv">0</span>             FDA15                  Dairy      Medium          <span class="fl">3735.1380</span></span>
+<span id="cb209-5"><a href="groupby.html#cb209-5" tabindex="-1"></a><span class="dv">1</span>             DRC01            Soft Drinks      Medium           <span class="fl">443.4228</span></span>
+<span id="cb209-6"><a href="groupby.html#cb209-6" tabindex="-1"></a><span class="dv">2</span>             FDN15                   Meat      Medium          <span class="fl">2097.2700</span></span>
+<span id="cb209-7"><a href="groupby.html#cb209-7" tabindex="-1"></a><span class="dv">3</span>             FDX07  Fruits <span class="kw">and</span> Vegetables         NaN           <span class="fl">732.3800</span></span>
+<span id="cb209-8"><a href="groupby.html#cb209-8" tabindex="-1"></a><span class="dv">4</span>             NCD19              Household        High           <span class="fl">994.7052</span></span>
+<span id="cb209-9"><a href="groupby.html#cb209-9" tabindex="-1"></a><span class="dv">5</span>             FDP36           Baking Goods      Medium           <span class="fl">556.6088</span></span>
+<span id="cb209-10"><a href="groupby.html#cb209-10" tabindex="-1"></a><span class="dv">6</span>             FDO10            Snack Foods        High           <span class="fl">343.5528</span></span>
+<span id="cb209-11"><a href="groupby.html#cb209-11" tabindex="-1"></a><span class="dv">7</span>             FDP10            Snack Foods      Medium          <span class="fl">4022.7636</span></span>
+<span id="cb209-12"><a href="groupby.html#cb209-12" tabindex="-1"></a><span class="dv">8</span>             FDH17           Frozen Foods         NaN          <span class="fl">1076.5986</span></span>
+<span id="cb209-13"><a href="groupby.html#cb209-13" tabindex="-1"></a><span class="dv">9</span>             FDU28           Frozen Foods         NaN          <span class="fl">4710.5350</span></span>
+<span id="cb209-14"><a href="groupby.html#cb209-14" tabindex="-1"></a><span class="dv">10</span>            FDY07  Fruits <span class="kw">and</span> Vegetables      Medium          <span class="fl">1516.0266</span></span>
+<span id="cb209-15"><a href="groupby.html#cb209-15" tabindex="-1"></a><span class="dv">11</span>            FDA03                  Dairy       Small          <span class="fl">2187.1530</span></span>
+<span id="cb209-16"><a href="groupby.html#cb209-16" tabindex="-1"></a><span class="dv">15</span>            FDP49              Breakfast       Small          <span class="fl">1547.3192</span></span>
+<span id="cb209-17"><a href="groupby.html#cb209-17" tabindex="-1"></a><span class="dv">16</span>            NCB42     Health <span class="kw">and</span> Hygiene      Medium          <span class="fl">1621.8888</span></span>
+<span id="cb209-18"><a href="groupby.html#cb209-18" tabindex="-1"></a><span class="dv">17</span>            FDP49              Breakfast      Medium           <span class="fl">718.3982</span></span>
+<span id="cb209-19"><a href="groupby.html#cb209-19" tabindex="-1"></a><span class="dv">18</span>            DRI11            Hard Drinks      Medium          <span class="fl">2303.6680</span></span>
+<span id="cb209-20"><a href="groupby.html#cb209-20" tabindex="-1"></a><span class="dv">21</span>            FDW12           Baking Goods      Medium          <span class="fl">4064.0432</span></span>
+<span id="cb209-21"><a href="groupby.html#cb209-21" tabindex="-1"></a><span class="dv">22</span>            NCB30              Household       Small          <span class="fl">1587.2672</span></span>
+<span id="cb209-22"><a href="groupby.html#cb209-22" tabindex="-1"></a><span class="dv">27</span>            DRJ59            Hard Drinks        High           <span class="fl">308.9312</span></span>
+<span id="cb209-23"><a href="groupby.html#cb209-23" tabindex="-1"></a><span class="dv">29</span>            FDC14                 Canned       Small           <span class="fl">125.8362</span></span>
+<span id="cb209-24"><a href="groupby.html#cb209-24" tabindex="-1"></a><span class="dv">31</span>            NCS17     Health <span class="kw">and</span> Hygiene      Medium          <span class="fl">2741.7644</span></span>
+<span id="cb209-25"><a href="groupby.html#cb209-25" tabindex="-1"></a><span class="dv">33</span>            FDO23                 Breads         NaN          <span class="fl">2174.5028</span></span>
+<span id="cb209-26"><a href="groupby.html#cb209-26" tabindex="-1"></a><span class="dv">34</span>            DRH01            Soft Drinks       Small          <span class="fl">2085.2856</span></span>
+<span id="cb209-27"><a href="groupby.html#cb209-27" tabindex="-1"></a><span class="dv">41</span>            FDK43                   Meat        High          <span class="fl">2150.5340</span></span>
+<span id="cb209-28"><a href="groupby.html#cb209-28" tabindex="-1"></a><span class="dv">43</span>            FDC02                 Canned      Medium          <span class="fl">6768.5228</span></span>
+<span id="cb209-29"><a href="groupby.html#cb209-29" tabindex="-1"></a><span class="dv">72</span>            FDH35          Starchy Foods         NaN          <span class="fl">4604.6728</span></span>
+<span id="cb209-30"><a href="groupby.html#cb209-30" tabindex="-1"></a><span class="dv">114</span>           FDV11                 Breads         NaN          <span class="fl">3151.8972</span></span>
+<span id="cb209-31"><a href="groupby.html#cb209-31" tabindex="-1"></a><span class="dv">136</span>           FDH35          Starchy Foods      Medium          <span class="fl">5262.4832</span></span>
+<span id="cb209-32"><a href="groupby.html#cb209-32" tabindex="-1"></a><span class="dv">139</span>           NCN07                 Others         NaN           <span class="fl">263.6568</span></span>
+<span id="cb209-33"><a href="groupby.html#cb209-33" tabindex="-1"></a><span class="dv">142</span>           NCO55                 Others         NaN          <span class="fl">2143.8760</span></span>
+<span id="cb209-34"><a href="groupby.html#cb209-34" tabindex="-1"></a><span class="dv">231</span>           FDG33                Seafood      Medium          <span class="fl">3435.5280</span></span>
+<span id="cb209-35"><a href="groupby.html#cb209-35" tabindex="-1"></a><span class="dv">713</span>           FDH21                Seafood      Medium          <span class="fl">1267.6832</span></span></code></pre></div>
 <p><strong><code>.tail(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng cuối của mỗi group</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb211-1"><a href="groupby.html#cb211-1" tabindex="-1"></a>In [<span class="dv">5</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).tail(n<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb211-2"><a href="groupby.html#cb211-2" tabindex="-1"></a>Out[<span class="dv">5</span>]:</span>
-<span id="cb211-3"><a href="groupby.html#cb211-3" tabindex="-1"></a>     Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales</span>
-<span id="cb211-4"><a href="groupby.html#cb211-4" tabindex="-1"></a><span class="dv">8317</span>           FDN13              Breakfast         NaN          <span class="fl">1306.9654</span></span>
-<span id="cb211-5"><a href="groupby.html#cb211-5" tabindex="-1"></a><span class="dv">8335</span>           FDO49              Breakfast      Medium           <span class="fl">708.4112</span></span>
-<span id="cb211-6"><a href="groupby.html#cb211-6" tabindex="-1"></a><span class="dv">8370</span>           FDV23                 Breads       Small           <span class="fl">871.5322</span></span>
-<span id="cb211-7"><a href="groupby.html#cb211-7" tabindex="-1"></a><span class="dv">8413</span>           FDW59                 Breads       Small          <span class="fl">1691.1320</span></span>
-<span id="cb211-8"><a href="groupby.html#cb211-8" tabindex="-1"></a><span class="dv">8423</span>           FDJ57                Seafood      Medium          <span class="fl">2600.6148</span></span>
-<span id="cb211-9"><a href="groupby.html#cb211-9" tabindex="-1"></a><span class="dv">8426</span>           FDA22          Starchy Foods       Small          <span class="fl">4512.1266</span></span>
-<span id="cb211-10"><a href="groupby.html#cb211-10" tabindex="-1"></a><span class="dv">8457</span>           FDY50                  Dairy       Small          <span class="fl">1516.6924</span></span>
-<span id="cb211-11"><a href="groupby.html#cb211-11" tabindex="-1"></a><span class="dv">8463</span>           FDG59          Starchy Foods      Medium           <span class="fl">810.9444</span></span>
-<span id="cb211-12"><a href="groupby.html#cb211-12" tabindex="-1"></a><span class="dv">8473</span>           DRI47            Hard Drinks         NaN           <span class="fl">431.4384</span></span>
-<span id="cb211-13"><a href="groupby.html#cb211-13" tabindex="-1"></a><span class="dv">8483</span>           DRI11            Hard Drinks         NaN          <span class="fl">1612.5676</span></span>
-<span id="cb211-14"><a href="groupby.html#cb211-14" tabindex="-1"></a><span class="dv">8488</span>           NCN14                 Others      Medium          <span class="fl">2756.4120</span></span>
-<span id="cb211-15"><a href="groupby.html#cb211-15" tabindex="-1"></a><span class="dv">8489</span>           FDV13                 Canned      Medium          <span class="fl">2109.2544</span></span>
-<span id="cb211-16"><a href="groupby.html#cb211-16" tabindex="-1"></a><span class="dv">8491</span>           FDO03                   Meat      Medium          <span class="fl">4809.7392</span></span>
-<span id="cb211-17"><a href="groupby.html#cb211-17" tabindex="-1"></a><span class="dv">8496</span>           FDJ57                Seafood         NaN          <span class="fl">3715.1640</span></span>
-<span id="cb211-18"><a href="groupby.html#cb211-18" tabindex="-1"></a><span class="dv">8499</span>           NCK53     Health <span class="kw">and</span> Hygiene       Small          <span class="fl">2976.1260</span></span>
-<span id="cb211-19"><a href="groupby.html#cb211-19" tabindex="-1"></a><span class="dv">8502</span>           NCH43              Household         NaN          <span class="fl">3020.0688</span></span>
-<span id="cb211-20"><a href="groupby.html#cb211-20" tabindex="-1"></a><span class="dv">8504</span>           NCN18              Household      Medium          <span class="fl">4138.6128</span></span>
-<span id="cb211-21"><a href="groupby.html#cb211-21" tabindex="-1"></a><span class="dv">8506</span>           DRF37            Soft Drinks      Medium          <span class="fl">3944.8650</span></span>
-<span id="cb211-22"><a href="groupby.html#cb211-22" tabindex="-1"></a><span class="dv">8508</span>           FDW31  Fruits <span class="kw">and</span> Vegetables         NaN          <span class="fl">2587.9646</span></span>
-<span id="cb211-23"><a href="groupby.html#cb211-23" tabindex="-1"></a><span class="dv">8509</span>           FDG45  Fruits <span class="kw">and</span> Vegetables         NaN           <span class="fl">424.7804</span></span>
-<span id="cb211-24"><a href="groupby.html#cb211-24" tabindex="-1"></a><span class="dv">8511</span>           FDF05           Frozen Foods      Medium          <span class="fl">4207.8560</span></span>
-<span id="cb211-25"><a href="groupby.html#cb211-25" tabindex="-1"></a><span class="dv">8512</span>           FDR26                  Dairy        High          <span class="fl">2479.4392</span></span>
-<span id="cb211-26"><a href="groupby.html#cb211-26" tabindex="-1"></a><span class="dv">8513</span>           FDH31                   Meat       Small           <span class="fl">595.2252</span></span>
-<span id="cb211-27"><a href="groupby.html#cb211-27" tabindex="-1"></a><span class="dv">8514</span>           FDA01                 Canned         NaN           <span class="fl">468.7232</span></span>
-<span id="cb211-28"><a href="groupby.html#cb211-28" tabindex="-1"></a><span class="dv">8515</span>           FDH24           Baking Goods      Medium          <span class="fl">1571.2880</span></span>
-<span id="cb211-29"><a href="groupby.html#cb211-29" tabindex="-1"></a><span class="dv">8516</span>           NCJ19                 Others      Medium           <span class="fl">858.8820</span></span>
-<span id="cb211-30"><a href="groupby.html#cb211-30" tabindex="-1"></a><span class="dv">8517</span>           FDF53           Frozen Foods       Small          <span class="fl">3608.6360</span></span>
-<span id="cb211-31"><a href="groupby.html#cb211-31" tabindex="-1"></a><span class="dv">8518</span>           FDF22            Snack Foods        High          <span class="fl">2778.3834</span></span>
-<span id="cb211-32"><a href="groupby.html#cb211-32" tabindex="-1"></a><span class="dv">8519</span>           FDS36           Baking Goods         NaN           <span class="fl">549.2850</span></span>
-<span id="cb211-33"><a href="groupby.html#cb211-33" tabindex="-1"></a><span class="dv">8520</span>           NCJ29     Health <span class="kw">and</span> Hygiene       Small          <span class="fl">1193.1136</span></span>
-<span id="cb211-34"><a href="groupby.html#cb211-34" tabindex="-1"></a><span class="dv">8521</span>           FDN46            Snack Foods      Medium          <span class="fl">1845.5976</span></span>
-<span id="cb211-35"><a href="groupby.html#cb211-35" tabindex="-1"></a><span class="dv">8522</span>           DRG01            Soft Drinks       Small           <span class="fl">765.6700</span></span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb210-1"><a href="groupby.html#cb210-1" tabindex="-1"></a>In [<span class="dv">5</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).tail(n<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb210-2"><a href="groupby.html#cb210-2" tabindex="-1"></a>Out[<span class="dv">5</span>]:</span>
+<span id="cb210-3"><a href="groupby.html#cb210-3" tabindex="-1"></a>     Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales</span>
+<span id="cb210-4"><a href="groupby.html#cb210-4" tabindex="-1"></a><span class="dv">8317</span>           FDN13              Breakfast         NaN          <span class="fl">1306.9654</span></span>
+<span id="cb210-5"><a href="groupby.html#cb210-5" tabindex="-1"></a><span class="dv">8335</span>           FDO49              Breakfast      Medium           <span class="fl">708.4112</span></span>
+<span id="cb210-6"><a href="groupby.html#cb210-6" tabindex="-1"></a><span class="dv">8370</span>           FDV23                 Breads       Small           <span class="fl">871.5322</span></span>
+<span id="cb210-7"><a href="groupby.html#cb210-7" tabindex="-1"></a><span class="dv">8413</span>           FDW59                 Breads       Small          <span class="fl">1691.1320</span></span>
+<span id="cb210-8"><a href="groupby.html#cb210-8" tabindex="-1"></a><span class="dv">8423</span>           FDJ57                Seafood      Medium          <span class="fl">2600.6148</span></span>
+<span id="cb210-9"><a href="groupby.html#cb210-9" tabindex="-1"></a><span class="dv">8426</span>           FDA22          Starchy Foods       Small          <span class="fl">4512.1266</span></span>
+<span id="cb210-10"><a href="groupby.html#cb210-10" tabindex="-1"></a><span class="dv">8457</span>           FDY50                  Dairy       Small          <span class="fl">1516.6924</span></span>
+<span id="cb210-11"><a href="groupby.html#cb210-11" tabindex="-1"></a><span class="dv">8463</span>           FDG59          Starchy Foods      Medium           <span class="fl">810.9444</span></span>
+<span id="cb210-12"><a href="groupby.html#cb210-12" tabindex="-1"></a><span class="dv">8473</span>           DRI47            Hard Drinks         NaN           <span class="fl">431.4384</span></span>
+<span id="cb210-13"><a href="groupby.html#cb210-13" tabindex="-1"></a><span class="dv">8483</span>           DRI11            Hard Drinks         NaN          <span class="fl">1612.5676</span></span>
+<span id="cb210-14"><a href="groupby.html#cb210-14" tabindex="-1"></a><span class="dv">8488</span>           NCN14                 Others      Medium          <span class="fl">2756.4120</span></span>
+<span id="cb210-15"><a href="groupby.html#cb210-15" tabindex="-1"></a><span class="dv">8489</span>           FDV13                 Canned      Medium          <span class="fl">2109.2544</span></span>
+<span id="cb210-16"><a href="groupby.html#cb210-16" tabindex="-1"></a><span class="dv">8491</span>           FDO03                   Meat      Medium          <span class="fl">4809.7392</span></span>
+<span id="cb210-17"><a href="groupby.html#cb210-17" tabindex="-1"></a><span class="dv">8496</span>           FDJ57                Seafood         NaN          <span class="fl">3715.1640</span></span>
+<span id="cb210-18"><a href="groupby.html#cb210-18" tabindex="-1"></a><span class="dv">8499</span>           NCK53     Health <span class="kw">and</span> Hygiene       Small          <span class="fl">2976.1260</span></span>
+<span id="cb210-19"><a href="groupby.html#cb210-19" tabindex="-1"></a><span class="dv">8502</span>           NCH43              Household         NaN          <span class="fl">3020.0688</span></span>
+<span id="cb210-20"><a href="groupby.html#cb210-20" tabindex="-1"></a><span class="dv">8504</span>           NCN18              Household      Medium          <span class="fl">4138.6128</span></span>
+<span id="cb210-21"><a href="groupby.html#cb210-21" tabindex="-1"></a><span class="dv">8506</span>           DRF37            Soft Drinks      Medium          <span class="fl">3944.8650</span></span>
+<span id="cb210-22"><a href="groupby.html#cb210-22" tabindex="-1"></a><span class="dv">8508</span>           FDW31  Fruits <span class="kw">and</span> Vegetables         NaN          <span class="fl">2587.9646</span></span>
+<span id="cb210-23"><a href="groupby.html#cb210-23" tabindex="-1"></a><span class="dv">8509</span>           FDG45  Fruits <span class="kw">and</span> Vegetables         NaN           <span class="fl">424.7804</span></span>
+<span id="cb210-24"><a href="groupby.html#cb210-24" tabindex="-1"></a><span class="dv">8511</span>           FDF05           Frozen Foods      Medium          <span class="fl">4207.8560</span></span>
+<span id="cb210-25"><a href="groupby.html#cb210-25" tabindex="-1"></a><span class="dv">8512</span>           FDR26                  Dairy        High          <span class="fl">2479.4392</span></span>
+<span id="cb210-26"><a href="groupby.html#cb210-26" tabindex="-1"></a><span class="dv">8513</span>           FDH31                   Meat       Small           <span class="fl">595.2252</span></span>
+<span id="cb210-27"><a href="groupby.html#cb210-27" tabindex="-1"></a><span class="dv">8514</span>           FDA01                 Canned         NaN           <span class="fl">468.7232</span></span>
+<span id="cb210-28"><a href="groupby.html#cb210-28" tabindex="-1"></a><span class="dv">8515</span>           FDH24           Baking Goods      Medium          <span class="fl">1571.2880</span></span>
+<span id="cb210-29"><a href="groupby.html#cb210-29" tabindex="-1"></a><span class="dv">8516</span>           NCJ19                 Others      Medium           <span class="fl">858.8820</span></span>
+<span id="cb210-30"><a href="groupby.html#cb210-30" tabindex="-1"></a><span class="dv">8517</span>           FDF53           Frozen Foods       Small          <span class="fl">3608.6360</span></span>
+<span id="cb210-31"><a href="groupby.html#cb210-31" tabindex="-1"></a><span class="dv">8518</span>           FDF22            Snack Foods        High          <span class="fl">2778.3834</span></span>
+<span id="cb210-32"><a href="groupby.html#cb210-32" tabindex="-1"></a><span class="dv">8519</span>           FDS36           Baking Goods         NaN           <span class="fl">549.2850</span></span>
+<span id="cb210-33"><a href="groupby.html#cb210-33" tabindex="-1"></a><span class="dv">8520</span>           NCJ29     Health <span class="kw">and</span> Hygiene       Small          <span class="fl">1193.1136</span></span>
+<span id="cb210-34"><a href="groupby.html#cb210-34" tabindex="-1"></a><span class="dv">8521</span>           FDN46            Snack Foods      Medium          <span class="fl">1845.5976</span></span>
+<span id="cb210-35"><a href="groupby.html#cb210-35" tabindex="-1"></a><span class="dv">8522</span>           DRG01            Soft Drinks       Small           <span class="fl">765.6700</span></span></code></pre></div>
 </div>
 <div id="aggregate-trong-groupby" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Aggregate trong Groupby<a href="groupby.html#aggregate-trong-groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -395,126 +395,126 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; parent of f179849 (push book)
 <strong><code>.count()</code></strong></p>
 <p>Đếm số lượng phần tử cho từng cột trong từng nhóm, không đếm các phần tử NA</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb212-1"><a href="groupby.html#cb212-1" tabindex="-1"></a>In [<span class="dv">6</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).count() </span>
-<span id="cb212-2"><a href="groupby.html#cb212-2" tabindex="-1"></a>Out[<span class="dv">6</span>]:</span>
-<span id="cb212-3"><a href="groupby.html#cb212-3" tabindex="-1"></a>                       Item_Identifier  Outlet_Size  Item_Outlet_Sales</span>
-<span id="cb212-4"><a href="groupby.html#cb212-4" tabindex="-1"></a>Item_Type                                                             </span>
-<span id="cb212-5"><a href="groupby.html#cb212-5" tabindex="-1"></a>Baking Goods                       <span class="dv">648</span>          <span class="dv">463</span>                <span class="dv">648</span></span>
-<span id="cb212-6"><a href="groupby.html#cb212-6" tabindex="-1"></a>Breads                             <span class="dv">251</span>          <span class="dv">179</span>                <span class="dv">251</span></span>
-<span id="cb212-7"><a href="groupby.html#cb212-7" tabindex="-1"></a>Breakfast                          <span class="dv">110</span>           <span class="dv">79</span>                <span class="dv">110</span></span>
-<span id="cb212-8"><a href="groupby.html#cb212-8" tabindex="-1"></a>Canned                             <span class="dv">649</span>          <span class="dv">471</span>                <span class="dv">649</span></span>
-<span id="cb212-9"><a href="groupby.html#cb212-9" tabindex="-1"></a>Dairy                              <span class="dv">682</span>          <span class="dv">496</span>                <span class="dv">682</span></span>
-<span id="cb212-10"><a href="groupby.html#cb212-10" tabindex="-1"></a>Frozen Foods                       <span class="dv">856</span>          <span class="dv">615</span>                <span class="dv">856</span></span>
-<span id="cb212-11"><a href="groupby.html#cb212-11" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables             <span class="dv">1232</span>          <span class="dv">883</span>               <span class="dv">1232</span></span>
-<span id="cb212-12"><a href="groupby.html#cb212-12" tabindex="-1"></a>Hard Drinks                        <span class="dv">214</span>          <span class="dv">148</span>                <span class="dv">214</span></span>
-<span id="cb212-13"><a href="groupby.html#cb212-13" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene                 <span class="dv">520</span>          <span class="dv">367</span>                <span class="dv">520</span></span>
-<span id="cb212-14"><a href="groupby.html#cb212-14" tabindex="-1"></a>Household                          <span class="dv">910</span>          <span class="dv">649</span>                <span class="dv">910</span></span>
-<span id="cb212-15"><a href="groupby.html#cb212-15" tabindex="-1"></a>Meat                               <span class="dv">425</span>          <span class="dv">309</span>                <span class="dv">425</span></span>
-<span id="cb212-16"><a href="groupby.html#cb212-16" tabindex="-1"></a>Others                             <span class="dv">169</span>          <span class="dv">123</span>                <span class="dv">169</span></span>
-<span id="cb212-17"><a href="groupby.html#cb212-17" tabindex="-1"></a>Seafood                             <span class="dv">64</span>           <span class="dv">46</span>                 <span class="dv">64</span></span>
-<span id="cb212-18"><a href="groupby.html#cb212-18" tabindex="-1"></a>Snack Foods                       <span class="dv">1200</span>          <span class="dv">868</span>               <span class="dv">1200</span></span>
-<span id="cb212-19"><a href="groupby.html#cb212-19" tabindex="-1"></a>Soft Drinks                        <span class="dv">445</span>          <span class="dv">312</span>                <span class="dv">445</span></span>
-<span id="cb212-20"><a href="groupby.html#cb212-20" tabindex="-1"></a>Starchy Foods                      <span class="dv">148</span>          <span class="dv">105</span>                <span class="dv">148</span></span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb211-1"><a href="groupby.html#cb211-1" tabindex="-1"></a>In [<span class="dv">6</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).count() </span>
+<span id="cb211-2"><a href="groupby.html#cb211-2" tabindex="-1"></a>Out[<span class="dv">6</span>]:</span>
+<span id="cb211-3"><a href="groupby.html#cb211-3" tabindex="-1"></a>                       Item_Identifier  Outlet_Size  Item_Outlet_Sales</span>
+<span id="cb211-4"><a href="groupby.html#cb211-4" tabindex="-1"></a>Item_Type                                                             </span>
+<span id="cb211-5"><a href="groupby.html#cb211-5" tabindex="-1"></a>Baking Goods                       <span class="dv">648</span>          <span class="dv">463</span>                <span class="dv">648</span></span>
+<span id="cb211-6"><a href="groupby.html#cb211-6" tabindex="-1"></a>Breads                             <span class="dv">251</span>          <span class="dv">179</span>                <span class="dv">251</span></span>
+<span id="cb211-7"><a href="groupby.html#cb211-7" tabindex="-1"></a>Breakfast                          <span class="dv">110</span>           <span class="dv">79</span>                <span class="dv">110</span></span>
+<span id="cb211-8"><a href="groupby.html#cb211-8" tabindex="-1"></a>Canned                             <span class="dv">649</span>          <span class="dv">471</span>                <span class="dv">649</span></span>
+<span id="cb211-9"><a href="groupby.html#cb211-9" tabindex="-1"></a>Dairy                              <span class="dv">682</span>          <span class="dv">496</span>                <span class="dv">682</span></span>
+<span id="cb211-10"><a href="groupby.html#cb211-10" tabindex="-1"></a>Frozen Foods                       <span class="dv">856</span>          <span class="dv">615</span>                <span class="dv">856</span></span>
+<span id="cb211-11"><a href="groupby.html#cb211-11" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables             <span class="dv">1232</span>          <span class="dv">883</span>               <span class="dv">1232</span></span>
+<span id="cb211-12"><a href="groupby.html#cb211-12" tabindex="-1"></a>Hard Drinks                        <span class="dv">214</span>          <span class="dv">148</span>                <span class="dv">214</span></span>
+<span id="cb211-13"><a href="groupby.html#cb211-13" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene                 <span class="dv">520</span>          <span class="dv">367</span>                <span class="dv">520</span></span>
+<span id="cb211-14"><a href="groupby.html#cb211-14" tabindex="-1"></a>Household                          <span class="dv">910</span>          <span class="dv">649</span>                <span class="dv">910</span></span>
+<span id="cb211-15"><a href="groupby.html#cb211-15" tabindex="-1"></a>Meat                               <span class="dv">425</span>          <span class="dv">309</span>                <span class="dv">425</span></span>
+<span id="cb211-16"><a href="groupby.html#cb211-16" tabindex="-1"></a>Others                             <span class="dv">169</span>          <span class="dv">123</span>                <span class="dv">169</span></span>
+<span id="cb211-17"><a href="groupby.html#cb211-17" tabindex="-1"></a>Seafood                             <span class="dv">64</span>           <span class="dv">46</span>                 <span class="dv">64</span></span>
+<span id="cb211-18"><a href="groupby.html#cb211-18" tabindex="-1"></a>Snack Foods                       <span class="dv">1200</span>          <span class="dv">868</span>               <span class="dv">1200</span></span>
+<span id="cb211-19"><a href="groupby.html#cb211-19" tabindex="-1"></a>Soft Drinks                        <span class="dv">445</span>          <span class="dv">312</span>                <span class="dv">445</span></span>
+<span id="cb211-20"><a href="groupby.html#cb211-20" tabindex="-1"></a>Starchy Foods                      <span class="dv">148</span>          <span class="dv">105</span>                <span class="dv">148</span></span></code></pre></div>
 <p><strong><code>.size()</code></strong></p>
 <p>Đếm số lượng dòng cho từng nhóm</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb213-1"><a href="groupby.html#cb213-1" tabindex="-1"></a>In [<span class="dv">7</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).size()</span>
-<span id="cb213-2"><a href="groupby.html#cb213-2" tabindex="-1"></a>Out[<span class="dv">7</span>]:</span>
-<span id="cb213-3"><a href="groupby.html#cb213-3" tabindex="-1"></a>Item_Type</span>
-<span id="cb213-4"><a href="groupby.html#cb213-4" tabindex="-1"></a>Baking Goods              <span class="dv">648</span></span>
-<span id="cb213-5"><a href="groupby.html#cb213-5" tabindex="-1"></a>Breads                    <span class="dv">251</span></span>
-<span id="cb213-6"><a href="groupby.html#cb213-6" tabindex="-1"></a>Breakfast                 <span class="dv">110</span></span>
-<span id="cb213-7"><a href="groupby.html#cb213-7" tabindex="-1"></a>Canned                    <span class="dv">649</span></span>
-<span id="cb213-8"><a href="groupby.html#cb213-8" tabindex="-1"></a>Dairy                     <span class="dv">682</span></span>
-<span id="cb213-9"><a href="groupby.html#cb213-9" tabindex="-1"></a>Frozen Foods              <span class="dv">856</span></span>
-<span id="cb213-10"><a href="groupby.html#cb213-10" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables    <span class="dv">1232</span></span>
-<span id="cb213-11"><a href="groupby.html#cb213-11" tabindex="-1"></a>Hard Drinks               <span class="dv">214</span></span>
-<span id="cb213-12"><a href="groupby.html#cb213-12" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene        <span class="dv">520</span></span>
-<span id="cb213-13"><a href="groupby.html#cb213-13" tabindex="-1"></a>Household                 <span class="dv">910</span></span>
-<span id="cb213-14"><a href="groupby.html#cb213-14" tabindex="-1"></a>Meat                      <span class="dv">425</span></span>
-<span id="cb213-15"><a href="groupby.html#cb213-15" tabindex="-1"></a>Others                    <span class="dv">169</span></span>
-<span id="cb213-16"><a href="groupby.html#cb213-16" tabindex="-1"></a>Seafood                    <span class="dv">64</span></span>
-<span id="cb213-17"><a href="groupby.html#cb213-17" tabindex="-1"></a>Snack Foods              <span class="dv">1200</span></span>
-<span id="cb213-18"><a href="groupby.html#cb213-18" tabindex="-1"></a>Soft Drinks               <span class="dv">445</span></span>
-<span id="cb213-19"><a href="groupby.html#cb213-19" tabindex="-1"></a>Starchy Foods             <span class="dv">148</span></span>
-<span id="cb213-20"><a href="groupby.html#cb213-20" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb212-1"><a href="groupby.html#cb212-1" tabindex="-1"></a>In [<span class="dv">7</span>]: df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).size()</span>
+<span id="cb212-2"><a href="groupby.html#cb212-2" tabindex="-1"></a>Out[<span class="dv">7</span>]:</span>
+<span id="cb212-3"><a href="groupby.html#cb212-3" tabindex="-1"></a>Item_Type</span>
+<span id="cb212-4"><a href="groupby.html#cb212-4" tabindex="-1"></a>Baking Goods              <span class="dv">648</span></span>
+<span id="cb212-5"><a href="groupby.html#cb212-5" tabindex="-1"></a>Breads                    <span class="dv">251</span></span>
+<span id="cb212-6"><a href="groupby.html#cb212-6" tabindex="-1"></a>Breakfast                 <span class="dv">110</span></span>
+<span id="cb212-7"><a href="groupby.html#cb212-7" tabindex="-1"></a>Canned                    <span class="dv">649</span></span>
+<span id="cb212-8"><a href="groupby.html#cb212-8" tabindex="-1"></a>Dairy                     <span class="dv">682</span></span>
+<span id="cb212-9"><a href="groupby.html#cb212-9" tabindex="-1"></a>Frozen Foods              <span class="dv">856</span></span>
+<span id="cb212-10"><a href="groupby.html#cb212-10" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables    <span class="dv">1232</span></span>
+<span id="cb212-11"><a href="groupby.html#cb212-11" tabindex="-1"></a>Hard Drinks               <span class="dv">214</span></span>
+<span id="cb212-12"><a href="groupby.html#cb212-12" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene        <span class="dv">520</span></span>
+<span id="cb212-13"><a href="groupby.html#cb212-13" tabindex="-1"></a>Household                 <span class="dv">910</span></span>
+<span id="cb212-14"><a href="groupby.html#cb212-14" tabindex="-1"></a>Meat                      <span class="dv">425</span></span>
+<span id="cb212-15"><a href="groupby.html#cb212-15" tabindex="-1"></a>Others                    <span class="dv">169</span></span>
+<span id="cb212-16"><a href="groupby.html#cb212-16" tabindex="-1"></a>Seafood                    <span class="dv">64</span></span>
+<span id="cb212-17"><a href="groupby.html#cb212-17" tabindex="-1"></a>Snack Foods              <span class="dv">1200</span></span>
+<span id="cb212-18"><a href="groupby.html#cb212-18" tabindex="-1"></a>Soft Drinks               <span class="dv">445</span></span>
+<span id="cb212-19"><a href="groupby.html#cb212-19" tabindex="-1"></a>Starchy Foods             <span class="dv">148</span></span>
+<span id="cb212-20"><a href="groupby.html#cb212-20" tabindex="-1"></a>dtype: int64</span></code></pre></div>
 <p><strong><code>SeriesGroupBy.nlargest(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng lớn nhất của từng nhóm Series</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb214-1"><a href="groupby.html#cb214-1" tabindex="-1"></a>In []: df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nlargest(n<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb214-2"><a href="groupby.html#cb214-2" tabindex="-1"></a>Out[]:</span>
-<span id="cb214-3"><a href="groupby.html#cb214-3" tabindex="-1"></a>Item_Type                  </span>
-<span id="cb214-4"><a href="groupby.html#cb214-4" tabindex="-1"></a>Baking Goods           <span class="dv">2776</span>     <span class="fl">7931.6754</span></span>
-<span id="cb214-5"><a href="groupby.html#cb214-5" tabindex="-1"></a>                       <span class="dv">809</span>      <span class="fl">7759.8990</span></span>
-<span id="cb214-6"><a href="groupby.html#cb214-6" tabindex="-1"></a>Breads                 <span class="dv">3757</span>     <span class="fl">8958.3390</span></span>
-<span id="cb214-7"><a href="groupby.html#cb214-7" tabindex="-1"></a>                       <span class="dv">7737</span>     <span class="fl">7158.6816</span></span>
-<span id="cb214-8"><a href="groupby.html#cb214-8" tabindex="-1"></a>Breakfast              <span class="dv">7343</span>     <span class="fl">8209.3140</span></span>
-<span id="cb214-9"><a href="groupby.html#cb214-9" tabindex="-1"></a>                       <span class="dv">7690</span>     <span class="fl">7943.6598</span></span>
-<span id="cb214-10"><a href="groupby.html#cb214-10" tabindex="-1"></a>Canned                 <span class="dv">6541</span>    <span class="fl">10306.5840</span></span>
-<span id="cb214-11"><a href="groupby.html#cb214-11" tabindex="-1"></a>                       <span class="dv">6886</span>     <span class="fl">8217.3036</span></span>
-<span id="cb214-12"><a href="groupby.html#cb214-12" tabindex="-1"></a>Dairy                  <span class="dv">4888</span>    <span class="fl">10256.6490</span></span>
-<span id="cb214-13"><a href="groupby.html#cb214-13" tabindex="-1"></a>                       <span class="dv">1009</span>    <span class="fl">10236.6750</span></span>
-<span id="cb214-14"><a href="groupby.html#cb214-14" tabindex="-1"></a>Frozen Foods           <span class="dv">7752</span>     <span class="fl">9678.0688</span></span>
-<span id="cb214-15"><a href="groupby.html#cb214-15" tabindex="-1"></a>                       <span class="dv">997</span>      <span class="fl">9275.9256</span></span>
-<span id="cb214-16"><a href="groupby.html#cb214-16" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables  <span class="dv">5223</span>    <span class="fl">12117.5600</span></span>
-<span id="cb214-17"><a href="groupby.html#cb214-17" tabindex="-1"></a>                       <span class="dv">1450</span>    <span class="fl">11445.1020</span></span>
-<span id="cb214-18"><a href="groupby.html#cb214-18" tabindex="-1"></a>Hard Drinks            <span class="dv">3087</span>     <span class="fl">7843.1240</span></span>
-<span id="cb214-19"><a href="groupby.html#cb214-19" tabindex="-1"></a>                       <span class="dv">1043</span>     <span class="fl">7152.0236</span></span>
-<span id="cb214-20"><a href="groupby.html#cb214-20" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene     <span class="dv">4289</span>     <span class="fl">9779.9362</span></span>
-<span id="cb214-21"><a href="groupby.html#cb214-21" tabindex="-1"></a>                       <span class="dv">4991</span>     <span class="fl">8508.9240</span></span>
-<span id="cb214-22"><a href="groupby.html#cb214-22" tabindex="-1"></a>Household              <span class="dv">7188</span>    <span class="fl">13086.9648</span></span>
-<span id="cb214-23"><a href="groupby.html#cb214-23" tabindex="-1"></a>                       <span class="dv">7191</span>    <span class="fl">10072.8882</span></span>
-<span id="cb214-24"><a href="groupby.html#cb214-24" tabindex="-1"></a>Meat                   <span class="dv">8201</span>     <span class="fl">9390.4432</span></span>
-<span id="cb214-25"><a href="groupby.html#cb214-25" tabindex="-1"></a>                       <span class="dv">7930</span>     <span class="fl">9227.9880</span></span>
-<span id="cb214-26"><a href="groupby.html#cb214-26" tabindex="-1"></a>Others                 <span class="dv">197</span>      <span class="fl">6008.8450</span></span>
-<span id="cb214-27"><a href="groupby.html#cb214-27" tabindex="-1"></a>                       <span class="dv">3529</span>     <span class="fl">5546.1140</span></span>
-<span id="cb214-28"><a href="groupby.html#cb214-28" tabindex="-1"></a>Seafood                <span class="dv">2528</span>     <span class="fl">6503.5344</span></span>
-<span id="cb214-29"><a href="groupby.html#cb214-29" tabindex="-1"></a>                       <span class="dv">5042</span>     <span class="fl">5992.2000</span></span>
-<span id="cb214-30"><a href="groupby.html#cb214-30" tabindex="-1"></a>Snack Foods            <span class="dv">4349</span>    <span class="fl">10993.6896</span></span>
-<span id="cb214-31"><a href="groupby.html#cb214-31" tabindex="-1"></a>                       <span class="dv">333</span>      <span class="fl">9267.9360</span></span>
-<span id="cb214-32"><a href="groupby.html#cb214-32" tabindex="-1"></a>Soft Drinks            <span class="dv">6606</span>     <span class="fl">9554.2300</span></span>
-<span id="cb214-33"><a href="groupby.html#cb214-33" tabindex="-1"></a>                       <span class="dv">5619</span>     <span class="fl">8868.4560</span></span>
-<span id="cb214-34"><a href="groupby.html#cb214-34" tabindex="-1"></a>Starchy Foods          <span class="dv">1254</span>     <span class="fl">8132.0812</span></span>
-<span id="cb214-35"><a href="groupby.html#cb214-35" tabindex="-1"></a>                       <span class="dv">661</span>      <span class="fl">7443.6440</span></span>
-<span id="cb214-36"><a href="groupby.html#cb214-36" tabindex="-1"></a>Name: Item_Outlet_Sales, dtype: float64</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb213-1"><a href="groupby.html#cb213-1" tabindex="-1"></a>In []: df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nlargest(n<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb213-2"><a href="groupby.html#cb213-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb213-3"><a href="groupby.html#cb213-3" tabindex="-1"></a>Item_Type                  </span>
+<span id="cb213-4"><a href="groupby.html#cb213-4" tabindex="-1"></a>Baking Goods           <span class="dv">2776</span>     <span class="fl">7931.6754</span></span>
+<span id="cb213-5"><a href="groupby.html#cb213-5" tabindex="-1"></a>                       <span class="dv">809</span>      <span class="fl">7759.8990</span></span>
+<span id="cb213-6"><a href="groupby.html#cb213-6" tabindex="-1"></a>Breads                 <span class="dv">3757</span>     <span class="fl">8958.3390</span></span>
+<span id="cb213-7"><a href="groupby.html#cb213-7" tabindex="-1"></a>                       <span class="dv">7737</span>     <span class="fl">7158.6816</span></span>
+<span id="cb213-8"><a href="groupby.html#cb213-8" tabindex="-1"></a>Breakfast              <span class="dv">7343</span>     <span class="fl">8209.3140</span></span>
+<span id="cb213-9"><a href="groupby.html#cb213-9" tabindex="-1"></a>                       <span class="dv">7690</span>     <span class="fl">7943.6598</span></span>
+<span id="cb213-10"><a href="groupby.html#cb213-10" tabindex="-1"></a>Canned                 <span class="dv">6541</span>    <span class="fl">10306.5840</span></span>
+<span id="cb213-11"><a href="groupby.html#cb213-11" tabindex="-1"></a>                       <span class="dv">6886</span>     <span class="fl">8217.3036</span></span>
+<span id="cb213-12"><a href="groupby.html#cb213-12" tabindex="-1"></a>Dairy                  <span class="dv">4888</span>    <span class="fl">10256.6490</span></span>
+<span id="cb213-13"><a href="groupby.html#cb213-13" tabindex="-1"></a>                       <span class="dv">1009</span>    <span class="fl">10236.6750</span></span>
+<span id="cb213-14"><a href="groupby.html#cb213-14" tabindex="-1"></a>Frozen Foods           <span class="dv">7752</span>     <span class="fl">9678.0688</span></span>
+<span id="cb213-15"><a href="groupby.html#cb213-15" tabindex="-1"></a>                       <span class="dv">997</span>      <span class="fl">9275.9256</span></span>
+<span id="cb213-16"><a href="groupby.html#cb213-16" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables  <span class="dv">5223</span>    <span class="fl">12117.5600</span></span>
+<span id="cb213-17"><a href="groupby.html#cb213-17" tabindex="-1"></a>                       <span class="dv">1450</span>    <span class="fl">11445.1020</span></span>
+<span id="cb213-18"><a href="groupby.html#cb213-18" tabindex="-1"></a>Hard Drinks            <span class="dv">3087</span>     <span class="fl">7843.1240</span></span>
+<span id="cb213-19"><a href="groupby.html#cb213-19" tabindex="-1"></a>                       <span class="dv">1043</span>     <span class="fl">7152.0236</span></span>
+<span id="cb213-20"><a href="groupby.html#cb213-20" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene     <span class="dv">4289</span>     <span class="fl">9779.9362</span></span>
+<span id="cb213-21"><a href="groupby.html#cb213-21" tabindex="-1"></a>                       <span class="dv">4991</span>     <span class="fl">8508.9240</span></span>
+<span id="cb213-22"><a href="groupby.html#cb213-22" tabindex="-1"></a>Household              <span class="dv">7188</span>    <span class="fl">13086.9648</span></span>
+<span id="cb213-23"><a href="groupby.html#cb213-23" tabindex="-1"></a>                       <span class="dv">7191</span>    <span class="fl">10072.8882</span></span>
+<span id="cb213-24"><a href="groupby.html#cb213-24" tabindex="-1"></a>Meat                   <span class="dv">8201</span>     <span class="fl">9390.4432</span></span>
+<span id="cb213-25"><a href="groupby.html#cb213-25" tabindex="-1"></a>                       <span class="dv">7930</span>     <span class="fl">9227.9880</span></span>
+<span id="cb213-26"><a href="groupby.html#cb213-26" tabindex="-1"></a>Others                 <span class="dv">197</span>      <span class="fl">6008.8450</span></span>
+<span id="cb213-27"><a href="groupby.html#cb213-27" tabindex="-1"></a>                       <span class="dv">3529</span>     <span class="fl">5546.1140</span></span>
+<span id="cb213-28"><a href="groupby.html#cb213-28" tabindex="-1"></a>Seafood                <span class="dv">2528</span>     <span class="fl">6503.5344</span></span>
+<span id="cb213-29"><a href="groupby.html#cb213-29" tabindex="-1"></a>                       <span class="dv">5042</span>     <span class="fl">5992.2000</span></span>
+<span id="cb213-30"><a href="groupby.html#cb213-30" tabindex="-1"></a>Snack Foods            <span class="dv">4349</span>    <span class="fl">10993.6896</span></span>
+<span id="cb213-31"><a href="groupby.html#cb213-31" tabindex="-1"></a>                       <span class="dv">333</span>      <span class="fl">9267.9360</span></span>
+<span id="cb213-32"><a href="groupby.html#cb213-32" tabindex="-1"></a>Soft Drinks            <span class="dv">6606</span>     <span class="fl">9554.2300</span></span>
+<span id="cb213-33"><a href="groupby.html#cb213-33" tabindex="-1"></a>                       <span class="dv">5619</span>     <span class="fl">8868.4560</span></span>
+<span id="cb213-34"><a href="groupby.html#cb213-34" tabindex="-1"></a>Starchy Foods          <span class="dv">1254</span>     <span class="fl">8132.0812</span></span>
+<span id="cb213-35"><a href="groupby.html#cb213-35" tabindex="-1"></a>                       <span class="dv">661</span>      <span class="fl">7443.6440</span></span>
+<span id="cb213-36"><a href="groupby.html#cb213-36" tabindex="-1"></a>Name: Item_Outlet_Sales, dtype: float64</span></code></pre></div>
 <p><strong><code>SeriesGroupBy.nsmallest(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng nhỏ nhất của từng nhóm Series</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb215-1"><a href="groupby.html#cb215-1" tabindex="-1"></a>In []: df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nsmallest(n<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb215-2"><a href="groupby.html#cb215-2" tabindex="-1"></a>Out[]: </span>
-<span id="cb215-3"><a href="groupby.html#cb215-3" tabindex="-1"></a>Item_Type                  </span>
-<span id="cb215-4"><a href="groupby.html#cb215-4" tabindex="-1"></a>Baking Goods           <span class="dv">2055</span>     <span class="fl">37.2848</span></span>
-<span id="cb215-5"><a href="groupby.html#cb215-5" tabindex="-1"></a>                       <span class="dv">430</span>      <span class="fl">38.6164</span></span>
-<span id="cb215-6"><a href="groupby.html#cb215-6" tabindex="-1"></a>Breads                 <span class="dv">7388</span>     <span class="fl">35.2874</span></span>
-<span id="cb215-7"><a href="groupby.html#cb215-7" tabindex="-1"></a>                       <span class="dv">417</span>      <span class="fl">83.8908</span></span>
-<span id="cb215-8"><a href="groupby.html#cb215-8" tabindex="-1"></a>Breakfast              <span class="dv">4350</span>     <span class="fl">39.9480</span></span>
-<span id="cb215-9"><a href="groupby.html#cb215-9" tabindex="-1"></a>                       <span class="dv">920</span>      <span class="fl">50.6008</span></span>
-<span id="cb215-10"><a href="groupby.html#cb215-10" tabindex="-1"></a>Canned                 <span class="dv">5670</span>     <span class="fl">37.9506</span></span>
-<span id="cb215-11"><a href="groupby.html#cb215-11" tabindex="-1"></a>                       <span class="dv">4297</span>     <span class="fl">41.9454</span></span>
-<span id="cb215-12"><a href="groupby.html#cb215-12" tabindex="-1"></a>Dairy                  <span class="dv">3940</span>     <span class="fl">40.6138</span></span>
-<span id="cb215-13"><a href="groupby.html#cb215-13" tabindex="-1"></a>                       <span class="dv">5427</span>     <span class="fl">44.6086</span></span>
-<span id="cb215-14"><a href="groupby.html#cb215-14" tabindex="-1"></a>Frozen Foods           <span class="dv">4265</span>     <span class="fl">36.6190</span></span>
-<span id="cb215-15"><a href="groupby.html#cb215-15" tabindex="-1"></a>                       <span class="dv">7612</span>     <span class="fl">36.6190</span></span>
-<span id="cb215-16"><a href="groupby.html#cb215-16" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables  <span class="dv">8486</span>     <span class="fl">45.2744</span></span>
-<span id="cb215-17"><a href="groupby.html#cb215-17" tabindex="-1"></a>                       <span class="dv">540</span>      <span class="fl">56.5930</span></span>
-<span id="cb215-18"><a href="groupby.html#cb215-18" tabindex="-1"></a>Hard Drinks            <span class="dv">574</span>      <span class="fl">37.9506</span></span>
-<span id="cb215-19"><a href="groupby.html#cb215-19" tabindex="-1"></a>                       <span class="dv">8116</span>     <span class="fl">71.9064</span></span>
-<span id="cb215-20"><a href="groupby.html#cb215-20" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene     <span class="dv">3053</span>     <span class="fl">34.6216</span></span>
-<span id="cb215-21"><a href="groupby.html#cb215-21" tabindex="-1"></a>                       <span class="dv">4280</span>     <span class="fl">37.9506</span></span>
-<span id="cb215-22"><a href="groupby.html#cb215-22" tabindex="-1"></a>Household              <span class="dv">6950</span>     <span class="fl">33.2900</span></span>
-<span id="cb215-23"><a href="groupby.html#cb215-23" tabindex="-1"></a>                       <span class="dv">7861</span>     <span class="fl">41.2796</span></span>
-<span id="cb215-24"><a href="groupby.html#cb215-24" tabindex="-1"></a>Meat                   <span class="dv">5374</span>     <span class="fl">47.9376</span></span>
-<span id="cb215-25"><a href="groupby.html#cb215-25" tabindex="-1"></a>                       <span class="dv">2407</span>     <span class="fl">71.9064</span></span>
-<span id="cb215-26"><a href="groupby.html#cb215-26" tabindex="-1"></a>Others                 <span class="dv">6139</span>     <span class="fl">39.9480</span></span>
-<span id="cb215-27"><a href="groupby.html#cb215-27" tabindex="-1"></a>                       <span class="dv">2394</span>     <span class="fl">55.2614</span></span>
-<span id="cb215-28"><a href="groupby.html#cb215-28" tabindex="-1"></a>Seafood                <span class="dv">6903</span>    <span class="fl">149.8050</span></span>
-<span id="cb215-29"><a href="groupby.html#cb215-29" tabindex="-1"></a>                       <span class="dv">4502</span>    <span class="fl">158.4604</span></span>
-<span id="cb215-30"><a href="groupby.html#cb215-30" tabindex="-1"></a>Snack Foods            <span class="dv">2571</span>     <span class="fl">33.9558</span></span>
-<span id="cb215-31"><a href="groupby.html#cb215-31" tabindex="-1"></a>                       <span class="dv">6871</span>     <span class="fl">42.6112</span></span>
-<span id="cb215-32"><a href="groupby.html#cb215-32" tabindex="-1"></a>Soft Drinks            <span class="dv">906</span>      <span class="fl">33.2900</span></span>
-<span id="cb215-33"><a href="groupby.html#cb215-33" tabindex="-1"></a>                       <span class="dv">1913</span>     <span class="fl">40.6138</span></span>
-<span id="cb215-34"><a href="groupby.html#cb215-34" tabindex="-1"></a>Starchy Foods          <span class="dv">828</span>      <span class="fl">58.5904</span></span>
-<span id="cb215-35"><a href="groupby.html#cb215-35" tabindex="-1"></a>                       <span class="dv">5445</span>     <span class="fl">97.2068</span></span>
-<span id="cb215-36"><a href="groupby.html#cb215-36" tabindex="-1"></a>Name: Item_Outlet_Sales, dtype: float64</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb214-1"><a href="groupby.html#cb214-1" tabindex="-1"></a>In []: df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nsmallest(n<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb214-2"><a href="groupby.html#cb214-2" tabindex="-1"></a>Out[]: </span>
+<span id="cb214-3"><a href="groupby.html#cb214-3" tabindex="-1"></a>Item_Type                  </span>
+<span id="cb214-4"><a href="groupby.html#cb214-4" tabindex="-1"></a>Baking Goods           <span class="dv">2055</span>     <span class="fl">37.2848</span></span>
+<span id="cb214-5"><a href="groupby.html#cb214-5" tabindex="-1"></a>                       <span class="dv">430</span>      <span class="fl">38.6164</span></span>
+<span id="cb214-6"><a href="groupby.html#cb214-6" tabindex="-1"></a>Breads                 <span class="dv">7388</span>     <span class="fl">35.2874</span></span>
+<span id="cb214-7"><a href="groupby.html#cb214-7" tabindex="-1"></a>                       <span class="dv">417</span>      <span class="fl">83.8908</span></span>
+<span id="cb214-8"><a href="groupby.html#cb214-8" tabindex="-1"></a>Breakfast              <span class="dv">4350</span>     <span class="fl">39.9480</span></span>
+<span id="cb214-9"><a href="groupby.html#cb214-9" tabindex="-1"></a>                       <span class="dv">920</span>      <span class="fl">50.6008</span></span>
+<span id="cb214-10"><a href="groupby.html#cb214-10" tabindex="-1"></a>Canned                 <span class="dv">5670</span>     <span class="fl">37.9506</span></span>
+<span id="cb214-11"><a href="groupby.html#cb214-11" tabindex="-1"></a>                       <span class="dv">4297</span>     <span class="fl">41.9454</span></span>
+<span id="cb214-12"><a href="groupby.html#cb214-12" tabindex="-1"></a>Dairy                  <span class="dv">3940</span>     <span class="fl">40.6138</span></span>
+<span id="cb214-13"><a href="groupby.html#cb214-13" tabindex="-1"></a>                       <span class="dv">5427</span>     <span class="fl">44.6086</span></span>
+<span id="cb214-14"><a href="groupby.html#cb214-14" tabindex="-1"></a>Frozen Foods           <span class="dv">4265</span>     <span class="fl">36.6190</span></span>
+<span id="cb214-15"><a href="groupby.html#cb214-15" tabindex="-1"></a>                       <span class="dv">7612</span>     <span class="fl">36.6190</span></span>
+<span id="cb214-16"><a href="groupby.html#cb214-16" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables  <span class="dv">8486</span>     <span class="fl">45.2744</span></span>
+<span id="cb214-17"><a href="groupby.html#cb214-17" tabindex="-1"></a>                       <span class="dv">540</span>      <span class="fl">56.5930</span></span>
+<span id="cb214-18"><a href="groupby.html#cb214-18" tabindex="-1"></a>Hard Drinks            <span class="dv">574</span>      <span class="fl">37.9506</span></span>
+<span id="cb214-19"><a href="groupby.html#cb214-19" tabindex="-1"></a>                       <span class="dv">8116</span>     <span class="fl">71.9064</span></span>
+<span id="cb214-20"><a href="groupby.html#cb214-20" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene     <span class="dv">3053</span>     <span class="fl">34.6216</span></span>
+<span id="cb214-21"><a href="groupby.html#cb214-21" tabindex="-1"></a>                       <span class="dv">4280</span>     <span class="fl">37.9506</span></span>
+<span id="cb214-22"><a href="groupby.html#cb214-22" tabindex="-1"></a>Household              <span class="dv">6950</span>     <span class="fl">33.2900</span></span>
+<span id="cb214-23"><a href="groupby.html#cb214-23" tabindex="-1"></a>                       <span class="dv">7861</span>     <span class="fl">41.2796</span></span>
+<span id="cb214-24"><a href="groupby.html#cb214-24" tabindex="-1"></a>Meat                   <span class="dv">5374</span>     <span class="fl">47.9376</span></span>
+<span id="cb214-25"><a href="groupby.html#cb214-25" tabindex="-1"></a>                       <span class="dv">2407</span>     <span class="fl">71.9064</span></span>
+<span id="cb214-26"><a href="groupby.html#cb214-26" tabindex="-1"></a>Others                 <span class="dv">6139</span>     <span class="fl">39.9480</span></span>
+<span id="cb214-27"><a href="groupby.html#cb214-27" tabindex="-1"></a>                       <span class="dv">2394</span>     <span class="fl">55.2614</span></span>
+<span id="cb214-28"><a href="groupby.html#cb214-28" tabindex="-1"></a>Seafood                <span class="dv">6903</span>    <span class="fl">149.8050</span></span>
+<span id="cb214-29"><a href="groupby.html#cb214-29" tabindex="-1"></a>                       <span class="dv">4502</span>    <span class="fl">158.4604</span></span>
+<span id="cb214-30"><a href="groupby.html#cb214-30" tabindex="-1"></a>Snack Foods            <span class="dv">2571</span>     <span class="fl">33.9558</span></span>
+<span id="cb214-31"><a href="groupby.html#cb214-31" tabindex="-1"></a>                       <span class="dv">6871</span>     <span class="fl">42.6112</span></span>
+<span id="cb214-32"><a href="groupby.html#cb214-32" tabindex="-1"></a>Soft Drinks            <span class="dv">906</span>      <span class="fl">33.2900</span></span>
+<span id="cb214-33"><a href="groupby.html#cb214-33" tabindex="-1"></a>                       <span class="dv">1913</span>     <span class="fl">40.6138</span></span>
+<span id="cb214-34"><a href="groupby.html#cb214-34" tabindex="-1"></a>Starchy Foods          <span class="dv">828</span>      <span class="fl">58.5904</span></span>
+<span id="cb214-35"><a href="groupby.html#cb214-35" tabindex="-1"></a>                       <span class="dv">5445</span>     <span class="fl">97.2068</span></span>
+<span id="cb214-36"><a href="groupby.html#cb214-36" tabindex="-1"></a>Name: Item_Outlet_Sales, dtype: float64</span></code></pre></div>
 <p><strong>aggregate</strong></p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb216-1"><a href="groupby.html#cb216-1" tabindex="-1"></a>.aggregate(func<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>args, engine<span class="op">=</span><span class="va">None</span>, engine_kwargs<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb215-1"><a href="groupby.html#cb215-1" tabindex="-1"></a>.aggregate(func<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>args, engine<span class="op">=</span><span class="va">None</span>, engine_kwargs<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>func</code>:</p>
@@ -527,153 +527,153 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>engine</code>: Engine tính toán có thể là <code>cython</code>, <code>numba</code></p></li>
 </ul>
 <p>Danh sách hàm</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb217-1"><a href="groupby.html#cb217-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg([<span class="st">&#39;min&#39;</span>,<span class="st">&#39;max&#39;</span>])</span>
-<span id="cb217-2"><a href="groupby.html#cb217-2" tabindex="-1"></a>Out[]:</span>
-<span id="cb217-3"><a href="groupby.html#cb217-3" tabindex="-1"></a>                      Item_Identifier        Item_Outlet_Sales            </span>
-<span id="cb217-4"><a href="groupby.html#cb217-4" tabindex="-1"></a>                                  <span class="bu">min</span>    <span class="bu">max</span>               <span class="bu">min</span>         <span class="bu">max</span></span>
-<span id="cb217-5"><a href="groupby.html#cb217-5" tabindex="-1"></a>Item_Type                                                                 </span>
-<span id="cb217-6"><a href="groupby.html#cb217-6" tabindex="-1"></a>Baking Goods                    FDA11  FDZ60           <span class="fl">37.2848</span>   <span class="fl">7931.6754</span></span>
-<span id="cb217-7"><a href="groupby.html#cb217-7" tabindex="-1"></a>Breads                          FDN23  FDZ35           <span class="fl">35.2874</span>   <span class="fl">8958.3390</span></span>
-<span id="cb217-8"><a href="groupby.html#cb217-8" tabindex="-1"></a>Breakfast                       FDK25  FDR37           <span class="fl">39.9480</span>   <span class="fl">8209.3140</span></span>
-<span id="cb217-9"><a href="groupby.html#cb217-9" tabindex="-1"></a>Canned                          FDA01  FDZ49           <span class="fl">37.9506</span>  <span class="fl">10306.5840</span></span>
-<span id="cb217-10"><a href="groupby.html#cb217-10" tabindex="-1"></a>Dairy                           DRC27  FDZ50           <span class="fl">40.6138</span>  <span class="fl">10256.6490</span></span>
-<span id="cb217-11"><a href="groupby.html#cb217-11" tabindex="-1"></a>Frozen Foods                    FDA04  FDZ52           <span class="fl">36.6190</span>   <span class="fl">9678.0688</span></span>
-<span id="cb217-12"><a href="groupby.html#cb217-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables           FDA07  FDZ56           <span class="fl">45.2744</span>  <span class="fl">12117.5600</span></span>
-<span id="cb217-13"><a href="groupby.html#cb217-13" tabindex="-1"></a>Hard Drinks                     DRF23  DRQ35           <span class="fl">37.9506</span>   <span class="fl">7843.1240</span></span>
-<span id="cb217-14"><a href="groupby.html#cb217-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene              NCA05  NCZ53           <span class="fl">34.6216</span>   <span class="fl">9779.9362</span></span>
-<span id="cb217-15"><a href="groupby.html#cb217-15" tabindex="-1"></a>Household                       NCA06  NCZ54           <span class="fl">33.2900</span>  <span class="fl">13086.9648</span></span>
-<span id="cb217-16"><a href="groupby.html#cb217-16" tabindex="-1"></a>Meat                            FDA39  FDZ51           <span class="fl">47.9376</span>   <span class="fl">9390.4432</span></span>
-<span id="cb217-17"><a href="groupby.html#cb217-17" tabindex="-1"></a>Others                          NCI31  NCQ43           <span class="fl">39.9480</span>   <span class="fl">6008.8450</span></span>
-<span id="cb217-18"><a href="groupby.html#cb217-18" tabindex="-1"></a>Seafood                         FDF33  FDK45          <span class="fl">149.8050</span>   <span class="fl">6503.5344</span></span>
-<span id="cb217-19"><a href="groupby.html#cb217-19" tabindex="-1"></a>Snack Foods                     FDA09  FDZ58           <span class="fl">33.9558</span>  <span class="fl">10993.6896</span></span>
-<span id="cb217-20"><a href="groupby.html#cb217-20" tabindex="-1"></a>Soft Drinks                     DRA12  DRZ24           <span class="fl">33.2900</span>   <span class="fl">9554.2300</span></span>
-<span id="cb217-21"><a href="groupby.html#cb217-21" tabindex="-1"></a>Starchy Foods                   FDA22  FDZ34           <span class="fl">58.5904</span>   <span class="fl">8132.0812</span></span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb216-1"><a href="groupby.html#cb216-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg([<span class="st">&#39;min&#39;</span>,<span class="st">&#39;max&#39;</span>])</span>
+<span id="cb216-2"><a href="groupby.html#cb216-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb216-3"><a href="groupby.html#cb216-3" tabindex="-1"></a>                      Item_Identifier        Item_Outlet_Sales            </span>
+<span id="cb216-4"><a href="groupby.html#cb216-4" tabindex="-1"></a>                                  <span class="bu">min</span>    <span class="bu">max</span>               <span class="bu">min</span>         <span class="bu">max</span></span>
+<span id="cb216-5"><a href="groupby.html#cb216-5" tabindex="-1"></a>Item_Type                                                                 </span>
+<span id="cb216-6"><a href="groupby.html#cb216-6" tabindex="-1"></a>Baking Goods                    FDA11  FDZ60           <span class="fl">37.2848</span>   <span class="fl">7931.6754</span></span>
+<span id="cb216-7"><a href="groupby.html#cb216-7" tabindex="-1"></a>Breads                          FDN23  FDZ35           <span class="fl">35.2874</span>   <span class="fl">8958.3390</span></span>
+<span id="cb216-8"><a href="groupby.html#cb216-8" tabindex="-1"></a>Breakfast                       FDK25  FDR37           <span class="fl">39.9480</span>   <span class="fl">8209.3140</span></span>
+<span id="cb216-9"><a href="groupby.html#cb216-9" tabindex="-1"></a>Canned                          FDA01  FDZ49           <span class="fl">37.9506</span>  <span class="fl">10306.5840</span></span>
+<span id="cb216-10"><a href="groupby.html#cb216-10" tabindex="-1"></a>Dairy                           DRC27  FDZ50           <span class="fl">40.6138</span>  <span class="fl">10256.6490</span></span>
+<span id="cb216-11"><a href="groupby.html#cb216-11" tabindex="-1"></a>Frozen Foods                    FDA04  FDZ52           <span class="fl">36.6190</span>   <span class="fl">9678.0688</span></span>
+<span id="cb216-12"><a href="groupby.html#cb216-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables           FDA07  FDZ56           <span class="fl">45.2744</span>  <span class="fl">12117.5600</span></span>
+<span id="cb216-13"><a href="groupby.html#cb216-13" tabindex="-1"></a>Hard Drinks                     DRF23  DRQ35           <span class="fl">37.9506</span>   <span class="fl">7843.1240</span></span>
+<span id="cb216-14"><a href="groupby.html#cb216-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene              NCA05  NCZ53           <span class="fl">34.6216</span>   <span class="fl">9779.9362</span></span>
+<span id="cb216-15"><a href="groupby.html#cb216-15" tabindex="-1"></a>Household                       NCA06  NCZ54           <span class="fl">33.2900</span>  <span class="fl">13086.9648</span></span>
+<span id="cb216-16"><a href="groupby.html#cb216-16" tabindex="-1"></a>Meat                            FDA39  FDZ51           <span class="fl">47.9376</span>   <span class="fl">9390.4432</span></span>
+<span id="cb216-17"><a href="groupby.html#cb216-17" tabindex="-1"></a>Others                          NCI31  NCQ43           <span class="fl">39.9480</span>   <span class="fl">6008.8450</span></span>
+<span id="cb216-18"><a href="groupby.html#cb216-18" tabindex="-1"></a>Seafood                         FDF33  FDK45          <span class="fl">149.8050</span>   <span class="fl">6503.5344</span></span>
+<span id="cb216-19"><a href="groupby.html#cb216-19" tabindex="-1"></a>Snack Foods                     FDA09  FDZ58           <span class="fl">33.9558</span>  <span class="fl">10993.6896</span></span>
+<span id="cb216-20"><a href="groupby.html#cb216-20" tabindex="-1"></a>Soft Drinks                     DRA12  DRZ24           <span class="fl">33.2900</span>   <span class="fl">9554.2300</span></span>
+<span id="cb216-21"><a href="groupby.html#cb216-21" tabindex="-1"></a>Starchy Foods                   FDA22  FDZ34           <span class="fl">58.5904</span>   <span class="fl">8132.0812</span></span></code></pre></div>
 
 <div class="rmdnote">
 <p><strong><em>Lưu ý:</em></strong></p>
 <code>min</code>, <code>max</code> không áp dụng được cho các cột có NaN value. Lúc này pandas sẽ báo Warning <code>FutureWarning: ['Outlet_Size'] did not aggregate successfully.</code>
 </div>
 <p>Dictionary chứa nhãn và hàm</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb218-1"><a href="groupby.html#cb218-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: np.<span class="bu">max</span>, <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.std, np.mean]})</span>
-<span id="cb218-2"><a href="groupby.html#cb218-2" tabindex="-1"></a>Out[]:</span>
-<span id="cb218-3"><a href="groupby.html#cb218-3" tabindex="-1"></a>                      Item_Identifier Item_Outlet_Sales             </span>
-<span id="cb218-4"><a href="groupby.html#cb218-4" tabindex="-1"></a>                                 amax               std         mean</span>
-<span id="cb218-5"><a href="groupby.html#cb218-5" tabindex="-1"></a>Item_Type                                                           </span>
-<span id="cb218-6"><a href="groupby.html#cb218-6" tabindex="-1"></a>Baking Goods                    FDZ60       <span class="fl">1546.788045</span>  <span class="fl">1952.971207</span></span>
-<span id="cb218-7"><a href="groupby.html#cb218-7" tabindex="-1"></a>Breads                          FDZ35       <span class="fl">1644.235914</span>  <span class="fl">2204.132226</span></span>
-<span id="cb218-8"><a href="groupby.html#cb218-8" tabindex="-1"></a>Breakfast                       FDR37       <span class="fl">1911.693586</span>  <span class="fl">2111.808651</span></span>
-<span id="cb218-9"><a href="groupby.html#cb218-9" tabindex="-1"></a>Canned                          FDZ49       <span class="fl">1645.235638</span>  <span class="fl">2225.194904</span></span>
-<span id="cb218-10"><a href="groupby.html#cb218-10" tabindex="-1"></a>Dairy                           FDZ50       <span class="fl">1884.404698</span>  <span class="fl">2232.542597</span></span>
-<span id="cb218-11"><a href="groupby.html#cb218-11" tabindex="-1"></a>Frozen Foods                    FDZ52       <span class="fl">1724.777720</span>  <span class="fl">2132.867744</span></span>
-<span id="cb218-12"><a href="groupby.html#cb218-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables           FDZ56       <span class="fl">1799.503459</span>  <span class="fl">2289.009592</span></span>
-<span id="cb218-13"><a href="groupby.html#cb218-13" tabindex="-1"></a>Hard Drinks                     DRQ35       <span class="fl">1606.191587</span>  <span class="fl">2139.221622</span></span>
-<span id="cb218-14"><a href="groupby.html#cb218-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene              NCZ53       <span class="fl">1553.633063</span>  <span class="fl">2010.000265</span></span>
-<span id="cb218-15"><a href="groupby.html#cb218-15" tabindex="-1"></a>Household                       NCZ54       <span class="fl">1692.245757</span>  <span class="fl">2258.784300</span></span>
-<span id="cb218-16"><a href="groupby.html#cb218-16" tabindex="-1"></a>Meat                            FDZ51       <span class="fl">1695.231081</span>  <span class="fl">2158.977911</span></span>
-<span id="cb218-17"><a href="groupby.html#cb218-17" tabindex="-1"></a>Others                          NCQ43       <span class="fl">1431.860471</span>  <span class="fl">1926.139702</span></span>
-<span id="cb218-18"><a href="groupby.html#cb218-18" tabindex="-1"></a>Seafood                         FDK45       <span class="fl">1842.988719</span>  <span class="fl">2326.065928</span></span>
-<span id="cb218-19"><a href="groupby.html#cb218-19" tabindex="-1"></a>Snack Foods                     FDZ58       <span class="fl">1705.121755</span>  <span class="fl">2277.321739</span></span>
-<span id="cb218-20"><a href="groupby.html#cb218-20" tabindex="-1"></a>Soft Drinks                     DRZ24       <span class="fl">1674.249752</span>  <span class="fl">2006.511735</span></span>
-<span id="cb218-21"><a href="groupby.html#cb218-21" tabindex="-1"></a>Starchy Foods                   FDZ34       <span class="fl">1773.945328</span>  <span class="fl">2374.332773</span></span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb217-1"><a href="groupby.html#cb217-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: np.<span class="bu">max</span>, <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.std, np.mean]})</span>
+<span id="cb217-2"><a href="groupby.html#cb217-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb217-3"><a href="groupby.html#cb217-3" tabindex="-1"></a>                      Item_Identifier Item_Outlet_Sales             </span>
+<span id="cb217-4"><a href="groupby.html#cb217-4" tabindex="-1"></a>                                 amax               std         mean</span>
+<span id="cb217-5"><a href="groupby.html#cb217-5" tabindex="-1"></a>Item_Type                                                           </span>
+<span id="cb217-6"><a href="groupby.html#cb217-6" tabindex="-1"></a>Baking Goods                    FDZ60       <span class="fl">1546.788045</span>  <span class="fl">1952.971207</span></span>
+<span id="cb217-7"><a href="groupby.html#cb217-7" tabindex="-1"></a>Breads                          FDZ35       <span class="fl">1644.235914</span>  <span class="fl">2204.132226</span></span>
+<span id="cb217-8"><a href="groupby.html#cb217-8" tabindex="-1"></a>Breakfast                       FDR37       <span class="fl">1911.693586</span>  <span class="fl">2111.808651</span></span>
+<span id="cb217-9"><a href="groupby.html#cb217-9" tabindex="-1"></a>Canned                          FDZ49       <span class="fl">1645.235638</span>  <span class="fl">2225.194904</span></span>
+<span id="cb217-10"><a href="groupby.html#cb217-10" tabindex="-1"></a>Dairy                           FDZ50       <span class="fl">1884.404698</span>  <span class="fl">2232.542597</span></span>
+<span id="cb217-11"><a href="groupby.html#cb217-11" tabindex="-1"></a>Frozen Foods                    FDZ52       <span class="fl">1724.777720</span>  <span class="fl">2132.867744</span></span>
+<span id="cb217-12"><a href="groupby.html#cb217-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables           FDZ56       <span class="fl">1799.503459</span>  <span class="fl">2289.009592</span></span>
+<span id="cb217-13"><a href="groupby.html#cb217-13" tabindex="-1"></a>Hard Drinks                     DRQ35       <span class="fl">1606.191587</span>  <span class="fl">2139.221622</span></span>
+<span id="cb217-14"><a href="groupby.html#cb217-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene              NCZ53       <span class="fl">1553.633063</span>  <span class="fl">2010.000265</span></span>
+<span id="cb217-15"><a href="groupby.html#cb217-15" tabindex="-1"></a>Household                       NCZ54       <span class="fl">1692.245757</span>  <span class="fl">2258.784300</span></span>
+<span id="cb217-16"><a href="groupby.html#cb217-16" tabindex="-1"></a>Meat                            FDZ51       <span class="fl">1695.231081</span>  <span class="fl">2158.977911</span></span>
+<span id="cb217-17"><a href="groupby.html#cb217-17" tabindex="-1"></a>Others                          NCQ43       <span class="fl">1431.860471</span>  <span class="fl">1926.139702</span></span>
+<span id="cb217-18"><a href="groupby.html#cb217-18" tabindex="-1"></a>Seafood                         FDK45       <span class="fl">1842.988719</span>  <span class="fl">2326.065928</span></span>
+<span id="cb217-19"><a href="groupby.html#cb217-19" tabindex="-1"></a>Snack Foods                     FDZ58       <span class="fl">1705.121755</span>  <span class="fl">2277.321739</span></span>
+<span id="cb217-20"><a href="groupby.html#cb217-20" tabindex="-1"></a>Soft Drinks                     DRZ24       <span class="fl">1674.249752</span>  <span class="fl">2006.511735</span></span>
+<span id="cb217-21"><a href="groupby.html#cb217-21" tabindex="-1"></a>Starchy Foods                   FDZ34       <span class="fl">1773.945328</span>  <span class="fl">2374.332773</span></span></code></pre></div>
 <p><strong>Sử dụng hàm tự định nghĩa trong Aggregate</strong></p>
 <p>Ta có 2 function sau</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb219-1"><a href="groupby.html#cb219-1" tabindex="-1"></a><span class="kw">def</span> foo(item_outlet_sales, alpha<span class="op">=</span><span class="dv">1</span>):</span>
-<span id="cb219-2"><a href="groupby.html#cb219-2" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(item_outlet_sales)</span>
-<span id="cb219-3"><a href="groupby.html#cb219-3" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">sum</span>(item_outlet_sales[item_outlet_sales <span class="op">&lt;</span> alpha <span class="op">*</span> mean])</span>
-<span id="cb219-4"><a href="groupby.html#cb219-4" tabindex="-1"></a></span>
-<span id="cb219-5"><a href="groupby.html#cb219-5" tabindex="-1"></a><span class="kw">def</span> bar(item_identifier):</span>
-<span id="cb219-6"><a href="groupby.html#cb219-6" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(<span class="bu">set</span>(item_identifier))</span></code></pre></div>
-<div class="sourceCode" id="cb220"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb220-1"><a href="groupby.html#cb220-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: [np.<span class="bu">max</span>, bar], <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, foo]})</span>
-<span id="cb220-2"><a href="groupby.html#cb220-2" tabindex="-1"></a>Out[]:</span>
-<span id="cb220-3"><a href="groupby.html#cb220-3" tabindex="-1"></a>                      Item_Identifier      Item_Outlet_Sales             </span>
-<span id="cb220-4"><a href="groupby.html#cb220-4" tabindex="-1"></a>                                 amax  bar              mean          foo</span>
-<span id="cb220-5"><a href="groupby.html#cb220-5" tabindex="-1"></a>Item_Type                                                                </span>
-<span id="cb220-6"><a href="groupby.html#cb220-6" tabindex="-1"></a>Baking Goods                    FDZ60  <span class="dv">119</span>       <span class="fl">1952.971207</span>  <span class="fl">348230.7108</span></span>
-<span id="cb220-7"><a href="groupby.html#cb220-7" tabindex="-1"></a>Breads                          FDZ35   <span class="dv">45</span>       <span class="fl">2204.132226</span>  <span class="fl">152370.9932</span></span>
-<span id="cb220-8"><a href="groupby.html#cb220-8" tabindex="-1"></a>Breakfast                       FDR37   <span class="dv">20</span>       <span class="fl">2111.808651</span>   <span class="fl">64478.7352</span></span>
-<span id="cb220-9"><a href="groupby.html#cb220-9" tabindex="-1"></a>Canned                          FDZ49  <span class="dv">120</span>       <span class="fl">2225.194904</span>  <span class="fl">414387.2620</span></span>
-<span id="cb220-10"><a href="groupby.html#cb220-10" tabindex="-1"></a>Dairy                           FDZ50  <span class="dv">125</span>       <span class="fl">2232.542597</span>  <span class="fl">440485.2904</span></span>
-<span id="cb220-11"><a href="groupby.html#cb220-11" tabindex="-1"></a>Frozen Foods                    FDZ52  <span class="dv">155</span>       <span class="fl">2132.867744</span>  <span class="fl">514843.8318</span></span>
-<span id="cb220-12"><a href="groupby.html#cb220-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables           FDZ56  <span class="dv">220</span>       <span class="fl">2289.009592</span>  <span class="fl">783023.4112</span></span>
-<span id="cb220-13"><a href="groupby.html#cb220-13" tabindex="-1"></a>Hard Drinks                     DRQ35   <span class="dv">40</span>       <span class="fl">2139.221622</span>  <span class="fl">126412.1170</span></span>
-<span id="cb220-14"><a href="groupby.html#cb220-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene              NCZ53   <span class="dv">95</span>       <span class="fl">2010.000265</span>  <span class="fl">272449.3548</span></span>
-<span id="cb220-15"><a href="groupby.html#cb220-15" tabindex="-1"></a>Household                       NCZ54  <span class="dv">170</span>       <span class="fl">2258.784300</span>  <span class="fl">538634.1974</span></span>
-<span id="cb220-16"><a href="groupby.html#cb220-16" tabindex="-1"></a>Meat                            FDZ51   <span class="dv">80</span>       <span class="fl">2158.977911</span>  <span class="fl">263468.3786</span></span>
-<span id="cb220-17"><a href="groupby.html#cb220-17" tabindex="-1"></a>Others                          NCQ43   <span class="dv">30</span>       <span class="fl">1926.139702</span>   <span class="fl">81071.1370</span></span>
-<span id="cb220-18"><a href="groupby.html#cb220-18" tabindex="-1"></a>Seafood                         FDK45   <span class="dv">10</span>       <span class="fl">2326.065928</span>   <span class="fl">31677.4324</span></span>
-<span id="cb220-19"><a href="groupby.html#cb220-19" tabindex="-1"></a>Snack Foods                     FDZ58  <span class="dv">220</span>       <span class="fl">2277.321739</span>  <span class="fl">762663.2472</span></span>
-<span id="cb220-20"><a href="groupby.html#cb220-20" tabindex="-1"></a>Soft Drinks                     DRZ24   <span class="dv">80</span>       <span class="fl">2006.511735</span>  <span class="fl">257134.6232</span></span>
-<span id="cb220-21"><a href="groupby.html#cb220-21" tabindex="-1"></a>Starchy Foods                   FDZ34   <span class="dv">30</span>       <span class="fl">2374.332773</span>   <span class="fl">94087.5270</span></span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb218-1"><a href="groupby.html#cb218-1" tabindex="-1"></a><span class="kw">def</span> foo(item_outlet_sales, alpha<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb218-2"><a href="groupby.html#cb218-2" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(item_outlet_sales)</span>
+<span id="cb218-3"><a href="groupby.html#cb218-3" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">sum</span>(item_outlet_sales[item_outlet_sales <span class="op">&lt;</span> alpha <span class="op">*</span> mean])</span>
+<span id="cb218-4"><a href="groupby.html#cb218-4" tabindex="-1"></a></span>
+<span id="cb218-5"><a href="groupby.html#cb218-5" tabindex="-1"></a><span class="kw">def</span> bar(item_identifier):</span>
+<span id="cb218-6"><a href="groupby.html#cb218-6" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(<span class="bu">set</span>(item_identifier))</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb219-1"><a href="groupby.html#cb219-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: [np.<span class="bu">max</span>, bar], <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, foo]})</span>
+<span id="cb219-2"><a href="groupby.html#cb219-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb219-3"><a href="groupby.html#cb219-3" tabindex="-1"></a>                      Item_Identifier      Item_Outlet_Sales             </span>
+<span id="cb219-4"><a href="groupby.html#cb219-4" tabindex="-1"></a>                                 amax  bar              mean          foo</span>
+<span id="cb219-5"><a href="groupby.html#cb219-5" tabindex="-1"></a>Item_Type                                                                </span>
+<span id="cb219-6"><a href="groupby.html#cb219-6" tabindex="-1"></a>Baking Goods                    FDZ60  <span class="dv">119</span>       <span class="fl">1952.971207</span>  <span class="fl">348230.7108</span></span>
+<span id="cb219-7"><a href="groupby.html#cb219-7" tabindex="-1"></a>Breads                          FDZ35   <span class="dv">45</span>       <span class="fl">2204.132226</span>  <span class="fl">152370.9932</span></span>
+<span id="cb219-8"><a href="groupby.html#cb219-8" tabindex="-1"></a>Breakfast                       FDR37   <span class="dv">20</span>       <span class="fl">2111.808651</span>   <span class="fl">64478.7352</span></span>
+<span id="cb219-9"><a href="groupby.html#cb219-9" tabindex="-1"></a>Canned                          FDZ49  <span class="dv">120</span>       <span class="fl">2225.194904</span>  <span class="fl">414387.2620</span></span>
+<span id="cb219-10"><a href="groupby.html#cb219-10" tabindex="-1"></a>Dairy                           FDZ50  <span class="dv">125</span>       <span class="fl">2232.542597</span>  <span class="fl">440485.2904</span></span>
+<span id="cb219-11"><a href="groupby.html#cb219-11" tabindex="-1"></a>Frozen Foods                    FDZ52  <span class="dv">155</span>       <span class="fl">2132.867744</span>  <span class="fl">514843.8318</span></span>
+<span id="cb219-12"><a href="groupby.html#cb219-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables           FDZ56  <span class="dv">220</span>       <span class="fl">2289.009592</span>  <span class="fl">783023.4112</span></span>
+<span id="cb219-13"><a href="groupby.html#cb219-13" tabindex="-1"></a>Hard Drinks                     DRQ35   <span class="dv">40</span>       <span class="fl">2139.221622</span>  <span class="fl">126412.1170</span></span>
+<span id="cb219-14"><a href="groupby.html#cb219-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene              NCZ53   <span class="dv">95</span>       <span class="fl">2010.000265</span>  <span class="fl">272449.3548</span></span>
+<span id="cb219-15"><a href="groupby.html#cb219-15" tabindex="-1"></a>Household                       NCZ54  <span class="dv">170</span>       <span class="fl">2258.784300</span>  <span class="fl">538634.1974</span></span>
+<span id="cb219-16"><a href="groupby.html#cb219-16" tabindex="-1"></a>Meat                            FDZ51   <span class="dv">80</span>       <span class="fl">2158.977911</span>  <span class="fl">263468.3786</span></span>
+<span id="cb219-17"><a href="groupby.html#cb219-17" tabindex="-1"></a>Others                          NCQ43   <span class="dv">30</span>       <span class="fl">1926.139702</span>   <span class="fl">81071.1370</span></span>
+<span id="cb219-18"><a href="groupby.html#cb219-18" tabindex="-1"></a>Seafood                         FDK45   <span class="dv">10</span>       <span class="fl">2326.065928</span>   <span class="fl">31677.4324</span></span>
+<span id="cb219-19"><a href="groupby.html#cb219-19" tabindex="-1"></a>Snack Foods                     FDZ58  <span class="dv">220</span>       <span class="fl">2277.321739</span>  <span class="fl">762663.2472</span></span>
+<span id="cb219-20"><a href="groupby.html#cb219-20" tabindex="-1"></a>Soft Drinks                     DRZ24   <span class="dv">80</span>       <span class="fl">2006.511735</span>  <span class="fl">257134.6232</span></span>
+<span id="cb219-21"><a href="groupby.html#cb219-21" tabindex="-1"></a>Starchy Foods                   FDZ34   <span class="dv">30</span>       <span class="fl">2374.332773</span>   <span class="fl">94087.5270</span></span></code></pre></div>
 <p>bạn có thể truyền vào tham số alpha bằng cách dùng lambda</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb221-1"><a href="groupby.html#cb221-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, <span class="kw">lambda</span> x: foo(x, alpha<span class="op">=</span><span class="fl">0.1</span>)]})</span>
-<span id="cb221-2"><a href="groupby.html#cb221-2" tabindex="-1"></a>Out[]: </span>
-<span id="cb221-3"><a href="groupby.html#cb221-3" tabindex="-1"></a>                      Item_Outlet_Sales            </span>
-<span id="cb221-4"><a href="groupby.html#cb221-4" tabindex="-1"></a>                                   mean  <span class="op">&lt;</span>lambda_0<span class="op">&gt;</span></span>
-<span id="cb221-5"><a href="groupby.html#cb221-5" tabindex="-1"></a>Item_Type                                          </span>
-<span id="cb221-6"><a href="groupby.html#cb221-6" tabindex="-1"></a>Baking Goods                <span class="fl">1952.971207</span>   <span class="fl">5035.4454</span></span>
-<span id="cb221-7"><a href="groupby.html#cb221-7" tabindex="-1"></a>Breads                      <span class="fl">2204.132226</span>   <span class="fl">1557.3062</span></span>
-<span id="cb221-8"><a href="groupby.html#cb221-8" tabindex="-1"></a>Breakfast                   <span class="fl">2111.808651</span>   <span class="fl">1440.7912</span></span>
-<span id="cb221-9"><a href="groupby.html#cb221-9" tabindex="-1"></a>Canned                      <span class="fl">2225.194904</span>   <span class="fl">5354.3636</span></span>
-<span id="cb221-10"><a href="groupby.html#cb221-10" tabindex="-1"></a>Dairy                       <span class="fl">2232.542597</span>   <span class="fl">5992.8658</span></span>
-<span id="cb221-11"><a href="groupby.html#cb221-11" tabindex="-1"></a>Frozen Foods                <span class="fl">2132.867744</span>   <span class="fl">7111.4098</span></span>
-<span id="cb221-12"><a href="groupby.html#cb221-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables       <span class="fl">2289.009592</span>  <span class="fl">12268.0308</span></span>
-<span id="cb221-13"><a href="groupby.html#cb221-13" tabindex="-1"></a>Hard Drinks                 <span class="fl">2139.221622</span>   <span class="fl">1625.2178</span></span>
-<span id="cb221-14"><a href="groupby.html#cb221-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene          <span class="fl">2010.000265</span>   <span class="fl">3723.8194</span></span>
-<span id="cb221-15"><a href="groupby.html#cb221-15" tabindex="-1"></a>Household                   <span class="fl">2258.784300</span>   <span class="fl">8425.0332</span></span>
-<span id="cb221-16"><a href="groupby.html#cb221-16" tabindex="-1"></a>Meat                        <span class="fl">2158.977911</span>   <span class="fl">4526.1084</span></span>
-<span id="cb221-17"><a href="groupby.html#cb221-17" tabindex="-1"></a>Others                      <span class="fl">1926.139702</span>   <span class="fl">1445.4518</span></span>
-<span id="cb221-18"><a href="groupby.html#cb221-18" tabindex="-1"></a>Seafood                     <span class="fl">2326.065928</span>   <span class="fl">1404.1722</span></span>
-<span id="cb221-19"><a href="groupby.html#cb221-19" tabindex="-1"></a>Snack Foods                 <span class="fl">2277.321739</span>   <span class="fl">9573.5382</span></span>
-<span id="cb221-20"><a href="groupby.html#cb221-20" tabindex="-1"></a>Soft Drinks                 <span class="fl">2006.511735</span>   <span class="fl">3207.1586</span></span>
-<span id="cb221-21"><a href="groupby.html#cb221-21" tabindex="-1"></a>Starchy Foods               <span class="fl">2374.332773</span>   <span class="fl">1151.1682</span></span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb220-1"><a href="groupby.html#cb220-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, <span class="kw">lambda</span> x: foo(x, alpha<span class="op">=</span><span class="fl">0.1</span>)]})</span>
+<span id="cb220-2"><a href="groupby.html#cb220-2" tabindex="-1"></a>Out[]: </span>
+<span id="cb220-3"><a href="groupby.html#cb220-3" tabindex="-1"></a>                      Item_Outlet_Sales            </span>
+<span id="cb220-4"><a href="groupby.html#cb220-4" tabindex="-1"></a>                                   mean  <span class="op">&lt;</span>lambda_0<span class="op">&gt;</span></span>
+<span id="cb220-5"><a href="groupby.html#cb220-5" tabindex="-1"></a>Item_Type                                          </span>
+<span id="cb220-6"><a href="groupby.html#cb220-6" tabindex="-1"></a>Baking Goods                <span class="fl">1952.971207</span>   <span class="fl">5035.4454</span></span>
+<span id="cb220-7"><a href="groupby.html#cb220-7" tabindex="-1"></a>Breads                      <span class="fl">2204.132226</span>   <span class="fl">1557.3062</span></span>
+<span id="cb220-8"><a href="groupby.html#cb220-8" tabindex="-1"></a>Breakfast                   <span class="fl">2111.808651</span>   <span class="fl">1440.7912</span></span>
+<span id="cb220-9"><a href="groupby.html#cb220-9" tabindex="-1"></a>Canned                      <span class="fl">2225.194904</span>   <span class="fl">5354.3636</span></span>
+<span id="cb220-10"><a href="groupby.html#cb220-10" tabindex="-1"></a>Dairy                       <span class="fl">2232.542597</span>   <span class="fl">5992.8658</span></span>
+<span id="cb220-11"><a href="groupby.html#cb220-11" tabindex="-1"></a>Frozen Foods                <span class="fl">2132.867744</span>   <span class="fl">7111.4098</span></span>
+<span id="cb220-12"><a href="groupby.html#cb220-12" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables       <span class="fl">2289.009592</span>  <span class="fl">12268.0308</span></span>
+<span id="cb220-13"><a href="groupby.html#cb220-13" tabindex="-1"></a>Hard Drinks                 <span class="fl">2139.221622</span>   <span class="fl">1625.2178</span></span>
+<span id="cb220-14"><a href="groupby.html#cb220-14" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene          <span class="fl">2010.000265</span>   <span class="fl">3723.8194</span></span>
+<span id="cb220-15"><a href="groupby.html#cb220-15" tabindex="-1"></a>Household                   <span class="fl">2258.784300</span>   <span class="fl">8425.0332</span></span>
+<span id="cb220-16"><a href="groupby.html#cb220-16" tabindex="-1"></a>Meat                        <span class="fl">2158.977911</span>   <span class="fl">4526.1084</span></span>
+<span id="cb220-17"><a href="groupby.html#cb220-17" tabindex="-1"></a>Others                      <span class="fl">1926.139702</span>   <span class="fl">1445.4518</span></span>
+<span id="cb220-18"><a href="groupby.html#cb220-18" tabindex="-1"></a>Seafood                     <span class="fl">2326.065928</span>   <span class="fl">1404.1722</span></span>
+<span id="cb220-19"><a href="groupby.html#cb220-19" tabindex="-1"></a>Snack Foods                 <span class="fl">2277.321739</span>   <span class="fl">9573.5382</span></span>
+<span id="cb220-20"><a href="groupby.html#cb220-20" tabindex="-1"></a>Soft Drinks                 <span class="fl">2006.511735</span>   <span class="fl">3207.1586</span></span>
+<span id="cb220-21"><a href="groupby.html#cb220-21" tabindex="-1"></a>Starchy Foods               <span class="fl">2374.332773</span>   <span class="fl">1151.1682</span></span></code></pre></div>
 <p><strong>Apply trên nhiều cột và sử dụng function tự định nghĩa</strong></p>
 <p>Giả sử muốn lấy top_2 item có số lượng Outlet_Sales cao nhất và cao nhì trong từng nhóm. Ta định nghĩa function sau</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb222-1"><a href="groupby.html#cb222-1" tabindex="-1"></a><span class="kw">def</span> get_top_ex1(g):</span>
-<span id="cb222-2"><a href="groupby.html#cb222-2" tabindex="-1"></a>    top_1, top_2 <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">list</span>(<span class="bu">zip</span>(g[<span class="st">&#39;Item_Identifier&#39;</span>], g[<span class="st">&#39;Item_Outlet_Sales&#39;</span>])), key<span class="op">=</span><span class="kw">lambda</span> x: <span class="op">-</span>x[<span class="dv">1</span>])[:<span class="dv">2</span>]</span>
-<span id="cb222-3"><a href="groupby.html#cb222-3" tabindex="-1"></a>    <span class="cf">return</span> pd.Series({<span class="st">&#39;top_1_Item_Identifier&#39;</span>: top_1[<span class="dv">0</span>],</span>
-<span id="cb222-4"><a href="groupby.html#cb222-4" tabindex="-1"></a>                      <span class="st">&#39;top_1_Item_Outlet_Sales&#39;</span>: top_1[<span class="dv">1</span>], </span>
-<span id="cb222-5"><a href="groupby.html#cb222-5" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Identifier&#39;</span>: top_2[<span class="dv">0</span>],</span>
-<span id="cb222-6"><a href="groupby.html#cb222-6" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Outlet_Sales&#39;</span>: top_2[<span class="dv">1</span>]})</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb221-1"><a href="groupby.html#cb221-1" tabindex="-1"></a><span class="kw">def</span> get_top_ex1(g):</span>
+<span id="cb221-2"><a href="groupby.html#cb221-2" tabindex="-1"></a>    top_1, top_2 <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">list</span>(<span class="bu">zip</span>(g[<span class="st">&#39;Item_Identifier&#39;</span>], g[<span class="st">&#39;Item_Outlet_Sales&#39;</span>])), key<span class="op">=</span><span class="kw">lambda</span> x: <span class="op">-</span>x[<span class="dv">1</span>])[:<span class="dv">2</span>]</span>
+<span id="cb221-3"><a href="groupby.html#cb221-3" tabindex="-1"></a>    <span class="cf">return</span> pd.Series({<span class="st">&#39;top_1_Item_Identifier&#39;</span>: top_1[<span class="dv">0</span>],</span>
+<span id="cb221-4"><a href="groupby.html#cb221-4" tabindex="-1"></a>                      <span class="st">&#39;top_1_Item_Outlet_Sales&#39;</span>: top_1[<span class="dv">1</span>], </span>
+<span id="cb221-5"><a href="groupby.html#cb221-5" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Identifier&#39;</span>: top_2[<span class="dv">0</span>],</span>
+<span id="cb221-6"><a href="groupby.html#cb221-6" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Outlet_Sales&#39;</span>: top_2[<span class="dv">1</span>]})</span></code></pre></div>
 <p>Trong đó g là DataFrame của từng nhóm chia theo key của <code>groupby</code></p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb223-1"><a href="groupby.html#cb223-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).<span class="bu">apply</span>(get_top_ex1)</span>
-<span id="cb223-2"><a href="groupby.html#cb223-2" tabindex="-1"></a>Out[]:</span>
-<span id="cb223-3"><a href="groupby.html#cb223-3" tabindex="-1"></a>                      top_1_Item_Identifier  top_1_Item_Outlet_Sales  <span class="op">\</span></span>
-<span id="cb223-4"><a href="groupby.html#cb223-4" tabindex="-1"></a>Item_Type                                                              </span>
-<span id="cb223-5"><a href="groupby.html#cb223-5" tabindex="-1"></a>Baking Goods                          FDB37                <span class="fl">7931.6754</span>   </span>
-<span id="cb223-6"><a href="groupby.html#cb223-6" tabindex="-1"></a>Breads                                FDR35                <span class="fl">8958.3390</span>   </span>
-<span id="cb223-7"><a href="groupby.html#cb223-7" tabindex="-1"></a>Breakfast                             FDR37                <span class="fl">8209.3140</span>   </span>
-<span id="cb223-8"><a href="groupby.html#cb223-8" tabindex="-1"></a>Canned                                FDI50               <span class="fl">10306.5840</span>   </span>
-<span id="cb223-9"><a href="groupby.html#cb223-9" tabindex="-1"></a>Dairy                                 FDF39               <span class="fl">10256.6490</span>   </span>
-<span id="cb223-10"><a href="groupby.html#cb223-10" tabindex="-1"></a>Frozen Foods                          FDC17                <span class="fl">9678.0688</span>   </span>
-<span id="cb223-11"><a href="groupby.html#cb223-11" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables                 FDQ19               <span class="fl">12117.5600</span>   </span>
-<span id="cb223-12"><a href="groupby.html#cb223-12" tabindex="-1"></a>Hard Drinks                           DRK23                <span class="fl">7843.1240</span>   </span>
-<span id="cb223-13"><a href="groupby.html#cb223-13" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene                    NCM05                <span class="fl">9779.9362</span>   </span>
-<span id="cb223-14"><a href="groupby.html#cb223-14" tabindex="-1"></a>Household                             NCE42               <span class="fl">13086.9648</span>   </span>
-<span id="cb223-15"><a href="groupby.html#cb223-15" tabindex="-1"></a>Meat                                  FDO03                <span class="fl">9390.4432</span>   </span>
-<span id="cb223-16"><a href="groupby.html#cb223-16" tabindex="-1"></a>Others                                NCN55                <span class="fl">6008.8450</span>   </span>
-<span id="cb223-17"><a href="groupby.html#cb223-17" tabindex="-1"></a>Seafood                               FDI57                <span class="fl">6503.5344</span>   </span>
-<span id="cb223-18"><a href="groupby.html#cb223-18" tabindex="-1"></a>Snack Foods                           FDP33               <span class="fl">10993.6896</span>   </span>
-<span id="cb223-19"><a href="groupby.html#cb223-19" tabindex="-1"></a>Soft Drinks                           DRF36                <span class="fl">9554.2300</span>   </span>
-<span id="cb223-20"><a href="groupby.html#cb223-20" tabindex="-1"></a>Starchy Foods                         FDG47                <span class="fl">8132.0812</span>   </span>
-<span id="cb223-21"><a href="groupby.html#cb223-21" tabindex="-1"></a></span>
-<span id="cb223-22"><a href="groupby.html#cb223-22" tabindex="-1"></a>                      top_2_Item_Identifier  top_2_Item_Outlet_Sales  </span>
-<span id="cb223-23"><a href="groupby.html#cb223-23" tabindex="-1"></a>Item_Type                                                             </span>
-<span id="cb223-24"><a href="groupby.html#cb223-24" tabindex="-1"></a>Baking Goods                          FDL24                <span class="fl">7759.8990</span>  </span>
-<span id="cb223-25"><a href="groupby.html#cb223-25" tabindex="-1"></a>Breads                                FDS11                <span class="fl">7158.6816</span>  </span>
-<span id="cb223-26"><a href="groupby.html#cb223-26" tabindex="-1"></a>Breakfast                             FDQ37                <span class="fl">7943.6598</span>  </span>
-<span id="cb223-27"><a href="groupby.html#cb223-27" tabindex="-1"></a>Canned                                FDX13                <span class="fl">8217.3036</span>  </span>
-<span id="cb223-28"><a href="groupby.html#cb223-28" tabindex="-1"></a>Dairy                                 FDU14               <span class="fl">10236.6750</span>  </span>
-<span id="cb223-29"><a href="groupby.html#cb223-29" tabindex="-1"></a>Frozen Foods                          FDK28                <span class="fl">9275.9256</span>  </span>
-<span id="cb223-30"><a href="groupby.html#cb223-30" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables                 FDZ20               <span class="fl">11445.1020</span>  </span>
-<span id="cb223-31"><a href="groupby.html#cb223-31" tabindex="-1"></a>Hard Drinks                           DRF23                <span class="fl">7152.0236</span>  </span>
-<span id="cb223-32"><a href="groupby.html#cb223-32" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene                    NCQ53                <span class="fl">8508.9240</span>  </span>
-<span id="cb223-33"><a href="groupby.html#cb223-33" tabindex="-1"></a>Household                             NCH18               <span class="fl">10072.8882</span>  </span>
-<span id="cb223-34"><a href="groupby.html#cb223-34" tabindex="-1"></a>Meat                                  FDP15                <span class="fl">9227.9880</span>  </span>
-<span id="cb223-35"><a href="groupby.html#cb223-35" tabindex="-1"></a>Others                                NCM43                <span class="fl">5546.1140</span>  </span>
-<span id="cb223-36"><a href="groupby.html#cb223-36" tabindex="-1"></a>Seafood                               FDI09                <span class="fl">5992.2000</span>  </span>
-<span id="cb223-37"><a href="groupby.html#cb223-37" tabindex="-1"></a>Snack Foods                           FDN58                <span class="fl">9267.9360</span>  </span>
-<span id="cb223-38"><a href="groupby.html#cb223-38" tabindex="-1"></a>Soft Drinks                           DRE48                <span class="fl">8868.4560</span>  </span>
-<span id="cb223-39"><a href="groupby.html#cb223-39" tabindex="-1"></a>Starchy Foods                         FDA34                <span class="fl">7443.6440</span>  </span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb222-1"><a href="groupby.html#cb222-1" tabindex="-1"></a>In []: df.groupby(<span class="st">&#39;Item_Type&#39;</span>).<span class="bu">apply</span>(get_top_ex1)</span>
+<span id="cb222-2"><a href="groupby.html#cb222-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb222-3"><a href="groupby.html#cb222-3" tabindex="-1"></a>                      top_1_Item_Identifier  top_1_Item_Outlet_Sales  <span class="op">\</span></span>
+<span id="cb222-4"><a href="groupby.html#cb222-4" tabindex="-1"></a>Item_Type                                                              </span>
+<span id="cb222-5"><a href="groupby.html#cb222-5" tabindex="-1"></a>Baking Goods                          FDB37                <span class="fl">7931.6754</span>   </span>
+<span id="cb222-6"><a href="groupby.html#cb222-6" tabindex="-1"></a>Breads                                FDR35                <span class="fl">8958.3390</span>   </span>
+<span id="cb222-7"><a href="groupby.html#cb222-7" tabindex="-1"></a>Breakfast                             FDR37                <span class="fl">8209.3140</span>   </span>
+<span id="cb222-8"><a href="groupby.html#cb222-8" tabindex="-1"></a>Canned                                FDI50               <span class="fl">10306.5840</span>   </span>
+<span id="cb222-9"><a href="groupby.html#cb222-9" tabindex="-1"></a>Dairy                                 FDF39               <span class="fl">10256.6490</span>   </span>
+<span id="cb222-10"><a href="groupby.html#cb222-10" tabindex="-1"></a>Frozen Foods                          FDC17                <span class="fl">9678.0688</span>   </span>
+<span id="cb222-11"><a href="groupby.html#cb222-11" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables                 FDQ19               <span class="fl">12117.5600</span>   </span>
+<span id="cb222-12"><a href="groupby.html#cb222-12" tabindex="-1"></a>Hard Drinks                           DRK23                <span class="fl">7843.1240</span>   </span>
+<span id="cb222-13"><a href="groupby.html#cb222-13" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene                    NCM05                <span class="fl">9779.9362</span>   </span>
+<span id="cb222-14"><a href="groupby.html#cb222-14" tabindex="-1"></a>Household                             NCE42               <span class="fl">13086.9648</span>   </span>
+<span id="cb222-15"><a href="groupby.html#cb222-15" tabindex="-1"></a>Meat                                  FDO03                <span class="fl">9390.4432</span>   </span>
+<span id="cb222-16"><a href="groupby.html#cb222-16" tabindex="-1"></a>Others                                NCN55                <span class="fl">6008.8450</span>   </span>
+<span id="cb222-17"><a href="groupby.html#cb222-17" tabindex="-1"></a>Seafood                               FDI57                <span class="fl">6503.5344</span>   </span>
+<span id="cb222-18"><a href="groupby.html#cb222-18" tabindex="-1"></a>Snack Foods                           FDP33               <span class="fl">10993.6896</span>   </span>
+<span id="cb222-19"><a href="groupby.html#cb222-19" tabindex="-1"></a>Soft Drinks                           DRF36                <span class="fl">9554.2300</span>   </span>
+<span id="cb222-20"><a href="groupby.html#cb222-20" tabindex="-1"></a>Starchy Foods                         FDG47                <span class="fl">8132.0812</span>   </span>
+<span id="cb222-21"><a href="groupby.html#cb222-21" tabindex="-1"></a></span>
+<span id="cb222-22"><a href="groupby.html#cb222-22" tabindex="-1"></a>                      top_2_Item_Identifier  top_2_Item_Outlet_Sales  </span>
+<span id="cb222-23"><a href="groupby.html#cb222-23" tabindex="-1"></a>Item_Type                                                             </span>
+<span id="cb222-24"><a href="groupby.html#cb222-24" tabindex="-1"></a>Baking Goods                          FDL24                <span class="fl">7759.8990</span>  </span>
+<span id="cb222-25"><a href="groupby.html#cb222-25" tabindex="-1"></a>Breads                                FDS11                <span class="fl">7158.6816</span>  </span>
+<span id="cb222-26"><a href="groupby.html#cb222-26" tabindex="-1"></a>Breakfast                             FDQ37                <span class="fl">7943.6598</span>  </span>
+<span id="cb222-27"><a href="groupby.html#cb222-27" tabindex="-1"></a>Canned                                FDX13                <span class="fl">8217.3036</span>  </span>
+<span id="cb222-28"><a href="groupby.html#cb222-28" tabindex="-1"></a>Dairy                                 FDU14               <span class="fl">10236.6750</span>  </span>
+<span id="cb222-29"><a href="groupby.html#cb222-29" tabindex="-1"></a>Frozen Foods                          FDK28                <span class="fl">9275.9256</span>  </span>
+<span id="cb222-30"><a href="groupby.html#cb222-30" tabindex="-1"></a>Fruits <span class="kw">and</span> Vegetables                 FDZ20               <span class="fl">11445.1020</span>  </span>
+<span id="cb222-31"><a href="groupby.html#cb222-31" tabindex="-1"></a>Hard Drinks                           DRF23                <span class="fl">7152.0236</span>  </span>
+<span id="cb222-32"><a href="groupby.html#cb222-32" tabindex="-1"></a>Health <span class="kw">and</span> Hygiene                    NCQ53                <span class="fl">8508.9240</span>  </span>
+<span id="cb222-33"><a href="groupby.html#cb222-33" tabindex="-1"></a>Household                             NCH18               <span class="fl">10072.8882</span>  </span>
+<span id="cb222-34"><a href="groupby.html#cb222-34" tabindex="-1"></a>Meat                                  FDP15                <span class="fl">9227.9880</span>  </span>
+<span id="cb222-35"><a href="groupby.html#cb222-35" tabindex="-1"></a>Others                                NCM43                <span class="fl">5546.1140</span>  </span>
+<span id="cb222-36"><a href="groupby.html#cb222-36" tabindex="-1"></a>Seafood                               FDI09                <span class="fl">5992.2000</span>  </span>
+<span id="cb222-37"><a href="groupby.html#cb222-37" tabindex="-1"></a>Snack Foods                           FDN58                <span class="fl">9267.9360</span>  </span>
+<span id="cb222-38"><a href="groupby.html#cb222-38" tabindex="-1"></a>Soft Drinks                           DRE48                <span class="fl">8868.4560</span>  </span>
+<span id="cb222-39"><a href="groupby.html#cb222-39" tabindex="-1"></a>Starchy Foods                         FDA34                <span class="fl">7443.6440</span>  </span></code></pre></div>
 
 </div>
 </div>

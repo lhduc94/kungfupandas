@@ -269,51 +269,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="Chuong-3" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">Chương 3</span> Một số hàm cơ bản<a href="Chuong-3.html#Chuong-3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="Chuong-3.html#cb89-1" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv&#39;</span>,index_col<span class="op">=</span>[<span class="st">&#39;Unnamed: 0&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="Chuong-3.html#cb88-1" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv&#39;</span>,index_col<span class="op">=</span>[<span class="st">&#39;Unnamed: 0&#39;</span>])</span></code></pre></div>
 <div id="head-và-.tail" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> <code>.head()</code> và <code>.tail()</code><a href="Chuong-3.html#head-và-.tail" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.head(n=5)</code> hiển thị <code>n</code> dòng đầu tiên của <code>DataFrame</code>, ngược lại phương thức <code>.tail(n=5)</code> hiển thị <code>n</code> dòng cuối cùng của <code>DataFrame</code></p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="Chuong-3.html#cb90-1" tabindex="-1"></a>df.head()</span>
-<span id="cb90-2"><a href="Chuong-3.html#cb90-2" tabindex="-1"></a>Out[<span class="dv">1</span>]:    </span>
-<span id="cb90-3"><a href="Chuong-3.html#cb90-3" tabindex="-1"></a>        store <span class="bu">type</span>  department        date  weekly_sales  is_holiday  <span class="op">\</span></span>
-<span id="cb90-4"><a href="Chuong-3.html#cb90-4" tabindex="-1"></a><span class="dv">0</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span>      <span class="fl">24924.50</span>       <span class="va">False</span>   </span>
-<span id="cb90-5"><a href="Chuong-3.html#cb90-5" tabindex="-1"></a><span class="dv">1</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">3</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span>      <span class="fl">21827.90</span>       <span class="va">False</span>   </span>
-<span id="cb90-6"><a href="Chuong-3.html#cb90-6" tabindex="-1"></a><span class="dv">2</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">4</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span>      <span class="fl">57258.43</span>       <span class="va">False</span>   </span>
-<span id="cb90-7"><a href="Chuong-3.html#cb90-7" tabindex="-1"></a><span class="dv">3</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span><span class="op">-</span><span class="dv">0</span><span class="er">7</span>      <span class="fl">17413.94</span>       <span class="va">False</span>   </span>
-<span id="cb90-8"><a href="Chuong-3.html#cb90-8" tabindex="-1"></a><span class="dv">4</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">6</span><span class="op">-</span><span class="dv">0</span><span class="er">4</span>      <span class="fl">17558.09</span>       <span class="va">False</span> </span>
-<span id="cb90-9"><a href="Chuong-3.html#cb90-9" tabindex="-1"></a></span>
-<span id="cb90-10"><a href="Chuong-3.html#cb90-10" tabindex="-1"></a>   temperature_c  fuel_price_usd_per_l  unemployment  </span>
-<span id="cb90-11"><a href="Chuong-3.html#cb90-11" tabindex="-1"></a><span class="dv">0</span>       <span class="fl">5.727778</span>              <span class="fl">0.679451</span>         <span class="fl">8.106</span>  </span>
-<span id="cb90-12"><a href="Chuong-3.html#cb90-12" tabindex="-1"></a><span class="dv">1</span>       <span class="fl">8.055556</span>              <span class="fl">0.693452</span>         <span class="fl">8.106</span>  </span>
-<span id="cb90-13"><a href="Chuong-3.html#cb90-13" tabindex="-1"></a><span class="dv">2</span>      <span class="fl">16.816667</span>              <span class="fl">0.718284</span>         <span class="fl">7.808</span>  </span>
-<span id="cb90-14"><a href="Chuong-3.html#cb90-14" tabindex="-1"></a><span class="dv">3</span>      <span class="fl">22.527778</span>              <span class="fl">0.748928</span>         <span class="fl">7.808</span>  </span>
-<span id="cb90-15"><a href="Chuong-3.html#cb90-15" tabindex="-1"></a><span class="dv">4</span>      <span class="fl">27.050000</span>              <span class="fl">0.714586</span>         <span class="fl">7.808</span>  </span>
-<span id="cb90-16"><a href="Chuong-3.html#cb90-16" tabindex="-1"></a></span>
-<span id="cb90-17"><a href="Chuong-3.html#cb90-17" tabindex="-1"></a>df.tail()</span>
-<span id="cb90-18"><a href="Chuong-3.html#cb90-18" tabindex="-1"></a>Out[<span class="dv">2</span>]:</span>
-<span id="cb90-19"><a href="Chuong-3.html#cb90-19" tabindex="-1"></a>       store <span class="bu">type</span>  department        date  weekly_sales  is_holiday  <span class="op">\</span></span>
-<span id="cb90-20"><a href="Chuong-3.html#cb90-20" tabindex="-1"></a><span class="dv">10769</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2011</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">0</span><span class="er">9</span>        <span class="fl">895.00</span>       <span class="va">False</span>   </span>
-<span id="cb90-21"><a href="Chuong-3.html#cb90-21" tabindex="-1"></a><span class="dv">10770</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span><span class="op">-</span><span class="dv">0</span><span class="er">3</span>        <span class="fl">350.00</span>       <span class="va">False</span>   </span>
-<span id="cb90-22"><a href="Chuong-3.html#cb90-22" tabindex="-1"></a><span class="dv">10771</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">0</span><span class="er">6</span><span class="op">-</span><span class="dv">0</span><span class="er">8</span>        <span class="fl">450.00</span>       <span class="va">False</span>   </span>
-<span id="cb90-23"><a href="Chuong-3.html#cb90-23" tabindex="-1"></a><span class="dv">10772</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">0</span><span class="er">7</span><span class="op">-</span><span class="dv">13</span>          <span class="fl">0.06</span>       <span class="va">False</span>   </span>
-<span id="cb90-24"><a href="Chuong-3.html#cb90-24" tabindex="-1"></a><span class="dv">10773</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span>        <span class="fl">915.00</span>       <span class="va">False</span>   </span>
-<span id="cb90-25"><a href="Chuong-3.html#cb90-25" tabindex="-1"></a></span>
-<span id="cb90-26"><a href="Chuong-3.html#cb90-26" tabindex="-1"></a>       temperature_c  fuel_price_usd_per_l  unemployment  </span>
-<span id="cb90-27"><a href="Chuong-3.html#cb90-27" tabindex="-1"></a><span class="dv">10769</span>       <span class="fl">9.644444</span>              <span class="fl">0.834256</span>         <span class="fl">7.716</span>  </span>
-<span id="cb90-28"><a href="Chuong-3.html#cb90-28" tabindex="-1"></a><span class="dv">10770</span>      <span class="fl">15.938889</span>              <span class="fl">0.887619</span>         <span class="fl">7.244</span>  </span>
-<span id="cb90-29"><a href="Chuong-3.html#cb90-29" tabindex="-1"></a><span class="dv">10771</span>      <span class="fl">27.288889</span>              <span class="fl">0.911922</span>         <span class="fl">6.989</span>  </span>
-<span id="cb90-30"><a href="Chuong-3.html#cb90-30" tabindex="-1"></a><span class="dv">10772</span>      <span class="fl">25.644444</span>              <span class="fl">0.860145</span>         <span class="fl">6.623</span>  </span>
-<span id="cb90-31"><a href="Chuong-3.html#cb90-31" tabindex="-1"></a><span class="dv">10773</span>      <span class="fl">22.250000</span>              <span class="fl">0.955511</span>         <span class="fl">6.228</span> </span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="Chuong-3.html#cb89-1" tabindex="-1"></a>df.head()</span>
+<span id="cb89-2"><a href="Chuong-3.html#cb89-2" tabindex="-1"></a>Out[<span class="dv">1</span>]:    </span>
+<span id="cb89-3"><a href="Chuong-3.html#cb89-3" tabindex="-1"></a>        store <span class="bu">type</span>  department        date  weekly_sales  is_holiday  <span class="op">\</span></span>
+<span id="cb89-4"><a href="Chuong-3.html#cb89-4" tabindex="-1"></a><span class="dv">0</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span>      <span class="fl">24924.50</span>       <span class="va">False</span>   </span>
+<span id="cb89-5"><a href="Chuong-3.html#cb89-5" tabindex="-1"></a><span class="dv">1</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">3</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span>      <span class="fl">21827.90</span>       <span class="va">False</span>   </span>
+<span id="cb89-6"><a href="Chuong-3.html#cb89-6" tabindex="-1"></a><span class="dv">2</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">4</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span>      <span class="fl">57258.43</span>       <span class="va">False</span>   </span>
+<span id="cb89-7"><a href="Chuong-3.html#cb89-7" tabindex="-1"></a><span class="dv">3</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span><span class="op">-</span><span class="dv">0</span><span class="er">7</span>      <span class="fl">17413.94</span>       <span class="va">False</span>   </span>
+<span id="cb89-8"><a href="Chuong-3.html#cb89-8" tabindex="-1"></a><span class="dv">4</span>      <span class="dv">1</span>    A           <span class="dv">1</span>  <span class="dv">2010</span><span class="op">-</span><span class="dv">0</span><span class="er">6</span><span class="op">-</span><span class="dv">0</span><span class="er">4</span>      <span class="fl">17558.09</span>       <span class="va">False</span> </span>
+<span id="cb89-9"><a href="Chuong-3.html#cb89-9" tabindex="-1"></a></span>
+<span id="cb89-10"><a href="Chuong-3.html#cb89-10" tabindex="-1"></a>   temperature_c  fuel_price_usd_per_l  unemployment  </span>
+<span id="cb89-11"><a href="Chuong-3.html#cb89-11" tabindex="-1"></a><span class="dv">0</span>       <span class="fl">5.727778</span>              <span class="fl">0.679451</span>         <span class="fl">8.106</span>  </span>
+<span id="cb89-12"><a href="Chuong-3.html#cb89-12" tabindex="-1"></a><span class="dv">1</span>       <span class="fl">8.055556</span>              <span class="fl">0.693452</span>         <span class="fl">8.106</span>  </span>
+<span id="cb89-13"><a href="Chuong-3.html#cb89-13" tabindex="-1"></a><span class="dv">2</span>      <span class="fl">16.816667</span>              <span class="fl">0.718284</span>         <span class="fl">7.808</span>  </span>
+<span id="cb89-14"><a href="Chuong-3.html#cb89-14" tabindex="-1"></a><span class="dv">3</span>      <span class="fl">22.527778</span>              <span class="fl">0.748928</span>         <span class="fl">7.808</span>  </span>
+<span id="cb89-15"><a href="Chuong-3.html#cb89-15" tabindex="-1"></a><span class="dv">4</span>      <span class="fl">27.050000</span>              <span class="fl">0.714586</span>         <span class="fl">7.808</span>  </span>
+<span id="cb89-16"><a href="Chuong-3.html#cb89-16" tabindex="-1"></a></span>
+<span id="cb89-17"><a href="Chuong-3.html#cb89-17" tabindex="-1"></a>df.tail()</span>
+<span id="cb89-18"><a href="Chuong-3.html#cb89-18" tabindex="-1"></a>Out[<span class="dv">2</span>]:</span>
+<span id="cb89-19"><a href="Chuong-3.html#cb89-19" tabindex="-1"></a>       store <span class="bu">type</span>  department        date  weekly_sales  is_holiday  <span class="op">\</span></span>
+<span id="cb89-20"><a href="Chuong-3.html#cb89-20" tabindex="-1"></a><span class="dv">10769</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2011</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">0</span><span class="er">9</span>        <span class="fl">895.00</span>       <span class="va">False</span>   </span>
+<span id="cb89-21"><a href="Chuong-3.html#cb89-21" tabindex="-1"></a><span class="dv">10770</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">0</span><span class="er">2</span><span class="op">-</span><span class="dv">0</span><span class="er">3</span>        <span class="fl">350.00</span>       <span class="va">False</span>   </span>
+<span id="cb89-22"><a href="Chuong-3.html#cb89-22" tabindex="-1"></a><span class="dv">10771</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">0</span><span class="er">6</span><span class="op">-</span><span class="dv">0</span><span class="er">8</span>        <span class="fl">450.00</span>       <span class="va">False</span>   </span>
+<span id="cb89-23"><a href="Chuong-3.html#cb89-23" tabindex="-1"></a><span class="dv">10772</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">0</span><span class="er">7</span><span class="op">-</span><span class="dv">13</span>          <span class="fl">0.06</span>       <span class="va">False</span>   </span>
+<span id="cb89-24"><a href="Chuong-3.html#cb89-24" tabindex="-1"></a><span class="dv">10773</span>     <span class="dv">39</span>    A          <span class="dv">99</span>  <span class="dv">2012</span><span class="op">-</span><span class="dv">10</span><span class="op">-</span><span class="dv">0</span><span class="er">5</span>        <span class="fl">915.00</span>       <span class="va">False</span>   </span>
+<span id="cb89-25"><a href="Chuong-3.html#cb89-25" tabindex="-1"></a></span>
+<span id="cb89-26"><a href="Chuong-3.html#cb89-26" tabindex="-1"></a>       temperature_c  fuel_price_usd_per_l  unemployment  </span>
+<span id="cb89-27"><a href="Chuong-3.html#cb89-27" tabindex="-1"></a><span class="dv">10769</span>       <span class="fl">9.644444</span>              <span class="fl">0.834256</span>         <span class="fl">7.716</span>  </span>
+<span id="cb89-28"><a href="Chuong-3.html#cb89-28" tabindex="-1"></a><span class="dv">10770</span>      <span class="fl">15.938889</span>              <span class="fl">0.887619</span>         <span class="fl">7.244</span>  </span>
+<span id="cb89-29"><a href="Chuong-3.html#cb89-29" tabindex="-1"></a><span class="dv">10771</span>      <span class="fl">27.288889</span>              <span class="fl">0.911922</span>         <span class="fl">6.989</span>  </span>
+<span id="cb89-30"><a href="Chuong-3.html#cb89-30" tabindex="-1"></a><span class="dv">10772</span>      <span class="fl">25.644444</span>              <span class="fl">0.860145</span>         <span class="fl">6.623</span>  </span>
+<span id="cb89-31"><a href="Chuong-3.html#cb89-31" tabindex="-1"></a><span class="dv">10773</span>      <span class="fl">22.250000</span>              <span class="fl">0.955511</span>         <span class="fl">6.228</span> </span></code></pre></div>
 </div>
 <div id="shape-và-.size" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> <code>.shape</code> và <code>.size</code><a href="Chuong-3.html#shape-và-.size" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.shape</code> cho biết số lượng dòng và cột của bảng</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="Chuong-3.html#cb91-1" tabindex="-1"></a>df.shape</span>
-<span id="cb91-2"><a href="Chuong-3.html#cb91-2" tabindex="-1"></a>Out[<span class="dv">3</span>]: (<span class="dv">10774</span>, <span class="dv">9</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="Chuong-3.html#cb90-1" tabindex="-1"></a>df.shape</span>
+<span id="cb90-2"><a href="Chuong-3.html#cb90-2" tabindex="-1"></a>Out[<span class="dv">3</span>]: (<span class="dv">10774</span>, <span class="dv">9</span>)</span></code></pre></div>
 <p>Trong dó <code>10774</code> là số lượng dòng của bảng và <code>9</code> là số lượng cột của bảng</p>
 <p>Phương thức <code>.size</code> cho biết số lượng phần từ của bảng</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="Chuong-3.html#cb92-1" tabindex="-1"></a>df.size</span>
-<span id="cb92-2"><a href="Chuong-3.html#cb92-2" tabindex="-1"></a> Out[<span class="dv">4</span>]: <span class="dv">96966</span></span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="Chuong-3.html#cb91-1" tabindex="-1"></a>df.size</span>
+<span id="cb91-2"><a href="Chuong-3.html#cb91-2" tabindex="-1"></a> Out[<span class="dv">4</span>]: <span class="dv">96966</span></span></code></pre></div>
 </div>
 <div id="info" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> <code>.info()</code><a href="Chuong-3.html#info" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -325,24 +325,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Dung lượng của bảng</li>
 </ul>
 <p>Ví dụ</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="Chuong-3.html#cb93-1" tabindex="-1"></a>df.info()</span>
-<span id="cb93-2"><a href="Chuong-3.html#cb93-2" tabindex="-1"></a>Out[<span class="dv">5</span>]:</span>
-<span id="cb93-3"><a href="Chuong-3.html#cb93-3" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;pandas.core.frame.DataFrame&#39;</span><span class="op">&gt;</span></span>
-<span id="cb93-4"><a href="Chuong-3.html#cb93-4" tabindex="-1"></a>Int64Index: <span class="dv">10774</span> entries, <span class="dv">0</span> to <span class="dv">10773</span></span>
-<span id="cb93-5"><a href="Chuong-3.html#cb93-5" tabindex="-1"></a>Data columns (total <span class="dv">9</span> columns):</span>
-<span id="cb93-6"><a href="Chuong-3.html#cb93-6" tabindex="-1"></a> <span class="co">#   Column                Non-Null Count  Dtype  </span></span>
-<span id="cb93-7"><a href="Chuong-3.html#cb93-7" tabindex="-1"></a><span class="op">---</span>  <span class="op">------</span>                <span class="op">--------------</span>  <span class="op">-----</span>  </span>
-<span id="cb93-8"><a href="Chuong-3.html#cb93-8" tabindex="-1"></a> <span class="dv">0</span>   store                 <span class="dv">10774</span> non<span class="op">-</span>null  int64  </span>
-<span id="cb93-9"><a href="Chuong-3.html#cb93-9" tabindex="-1"></a> <span class="dv">1</span>   <span class="bu">type</span>                  <span class="dv">10774</span> non<span class="op">-</span>null  <span class="bu">object</span> </span>
-<span id="cb93-10"><a href="Chuong-3.html#cb93-10" tabindex="-1"></a> <span class="dv">2</span>   department            <span class="dv">10774</span> non<span class="op">-</span>null  int64  </span>
-<span id="cb93-11"><a href="Chuong-3.html#cb93-11" tabindex="-1"></a> <span class="dv">3</span>   date                  <span class="dv">10774</span> non<span class="op">-</span>null  <span class="bu">object</span> </span>
-<span id="cb93-12"><a href="Chuong-3.html#cb93-12" tabindex="-1"></a> <span class="dv">4</span>   weekly_sales          <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
-<span id="cb93-13"><a href="Chuong-3.html#cb93-13" tabindex="-1"></a> <span class="dv">5</span>   is_holiday            <span class="dv">10774</span> non<span class="op">-</span>null  <span class="bu">bool</span>   </span>
-<span id="cb93-14"><a href="Chuong-3.html#cb93-14" tabindex="-1"></a> <span class="dv">6</span>   temperature_c         <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
-<span id="cb93-15"><a href="Chuong-3.html#cb93-15" tabindex="-1"></a> <span class="dv">7</span>   fuel_price_usd_per_l  <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
-<span id="cb93-16"><a href="Chuong-3.html#cb93-16" tabindex="-1"></a> <span class="dv">8</span>   unemployment          <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
-<span id="cb93-17"><a href="Chuong-3.html#cb93-17" tabindex="-1"></a>dtypes: <span class="bu">bool</span>(<span class="dv">1</span>), float64(<span class="dv">4</span>), int64(<span class="dv">2</span>), <span class="bu">object</span>(<span class="dv">2</span>)</span>
-<span id="cb93-18"><a href="Chuong-3.html#cb93-18" tabindex="-1"></a>memory usage: <span class="fl">768.1</span><span class="op">+</span> KB</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="Chuong-3.html#cb92-1" tabindex="-1"></a>df.info()</span>
+<span id="cb92-2"><a href="Chuong-3.html#cb92-2" tabindex="-1"></a>Out[<span class="dv">5</span>]:</span>
+<span id="cb92-3"><a href="Chuong-3.html#cb92-3" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">&#39;pandas.core.frame.DataFrame&#39;</span><span class="op">&gt;</span></span>
+<span id="cb92-4"><a href="Chuong-3.html#cb92-4" tabindex="-1"></a>Int64Index: <span class="dv">10774</span> entries, <span class="dv">0</span> to <span class="dv">10773</span></span>
+<span id="cb92-5"><a href="Chuong-3.html#cb92-5" tabindex="-1"></a>Data columns (total <span class="dv">9</span> columns):</span>
+<span id="cb92-6"><a href="Chuong-3.html#cb92-6" tabindex="-1"></a> <span class="co">#   Column                Non-Null Count  Dtype  </span></span>
+<span id="cb92-7"><a href="Chuong-3.html#cb92-7" tabindex="-1"></a><span class="op">---</span>  <span class="op">------</span>                <span class="op">--------------</span>  <span class="op">-----</span>  </span>
+<span id="cb92-8"><a href="Chuong-3.html#cb92-8" tabindex="-1"></a> <span class="dv">0</span>   store                 <span class="dv">10774</span> non<span class="op">-</span>null  int64  </span>
+<span id="cb92-9"><a href="Chuong-3.html#cb92-9" tabindex="-1"></a> <span class="dv">1</span>   <span class="bu">type</span>                  <span class="dv">10774</span> non<span class="op">-</span>null  <span class="bu">object</span> </span>
+<span id="cb92-10"><a href="Chuong-3.html#cb92-10" tabindex="-1"></a> <span class="dv">2</span>   department            <span class="dv">10774</span> non<span class="op">-</span>null  int64  </span>
+<span id="cb92-11"><a href="Chuong-3.html#cb92-11" tabindex="-1"></a> <span class="dv">3</span>   date                  <span class="dv">10774</span> non<span class="op">-</span>null  <span class="bu">object</span> </span>
+<span id="cb92-12"><a href="Chuong-3.html#cb92-12" tabindex="-1"></a> <span class="dv">4</span>   weekly_sales          <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
+<span id="cb92-13"><a href="Chuong-3.html#cb92-13" tabindex="-1"></a> <span class="dv">5</span>   is_holiday            <span class="dv">10774</span> non<span class="op">-</span>null  <span class="bu">bool</span>   </span>
+<span id="cb92-14"><a href="Chuong-3.html#cb92-14" tabindex="-1"></a> <span class="dv">6</span>   temperature_c         <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
+<span id="cb92-15"><a href="Chuong-3.html#cb92-15" tabindex="-1"></a> <span class="dv">7</span>   fuel_price_usd_per_l  <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
+<span id="cb92-16"><a href="Chuong-3.html#cb92-16" tabindex="-1"></a> <span class="dv">8</span>   unemployment          <span class="dv">10774</span> non<span class="op">-</span>null  float64</span>
+<span id="cb92-17"><a href="Chuong-3.html#cb92-17" tabindex="-1"></a>dtypes: <span class="bu">bool</span>(<span class="dv">1</span>), float64(<span class="dv">4</span>), int64(<span class="dv">2</span>), <span class="bu">object</span>(<span class="dv">2</span>)</span>
+<span id="cb92-18"><a href="Chuong-3.html#cb92-18" tabindex="-1"></a>memory usage: <span class="fl">768.1</span><span class="op">+</span> KB</span></code></pre></div>
 
 <div class="rmdtip">
 <strong><em>Mẹo:</em></strong>
@@ -353,16 +353,43 @@ Phương thức <code>.info()</code> có các tham số để tùy chỉnh các 
 <div id="describe" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> <code>.describe()</code><a href="Chuong-3.html#describe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.describe()</code> đưa ra một số thống kê đơn giản như <code>count</code>, <code>mean</code>, <code>std</code>, <code>min</code>, <code>max</code> và <code>percentiles = [0.25, 0.5, 0.75]</code>. Phương thức này chỉ áp dụng cho các cột ở dạng <code>numerical</code>.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="Chuong-3.html#cb94-1" tabindex="-1"></a>df.describe()</span>
-<span id="cb94-2"><a href="Chuong-3.html#cb94-2" tabindex="-1"></a>Out[<span class="dv">6</span>]: </span>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="Chuong-3.html#cb93-1" tabindex="-1"></a>df.describe()</span>
+<span id="cb93-2"><a href="Chuong-3.html#cb93-2" tabindex="-1"></a>Out[<span class="dv">6</span>]: </span>
+<span id="cb93-3"><a href="Chuong-3.html#cb93-3" tabindex="-1"></a>              store    department   weekly_sales  temperature_c  <span class="op">\</span></span>
+<span id="cb93-4"><a href="Chuong-3.html#cb93-4" tabindex="-1"></a>count  <span class="fl">10774.000000</span>  <span class="fl">10774.000000</span>   <span class="fl">10774.000000</span>   <span class="fl">10774.000000</span>   </span>
+<span id="cb93-5"><a href="Chuong-3.html#cb93-5" tabindex="-1"></a>mean      <span class="fl">15.441897</span>     <span class="fl">45.218118</span>   <span class="fl">23843.950149</span>      <span class="fl">15.731978</span>   </span>
+<span id="cb93-6"><a href="Chuong-3.html#cb93-6" tabindex="-1"></a>std       <span class="fl">11.534511</span>     <span class="fl">29.867779</span>   <span class="fl">30220.387557</span>       <span class="fl">9.922446</span>   </span>
+<span id="cb93-7"><a href="Chuong-3.html#cb93-7" tabindex="-1"></a><span class="bu">min</span>        <span class="fl">1.000000</span>      <span class="fl">1.000000</span>   <span class="op">-</span><span class="fl">1098.000000</span>      <span class="op">-</span><span class="fl">8.366667</span>   </span>
+<span id="cb93-8"><a href="Chuong-3.html#cb93-8" tabindex="-1"></a><span class="dv">25</span><span class="op">%</span>        <span class="fl">4.000000</span>     <span class="fl">20.000000</span>    <span class="fl">3867.115000</span>       <span class="fl">7.583333</span>   </span>
+<span id="cb93-9"><a href="Chuong-3.html#cb93-9" tabindex="-1"></a><span class="dv">50</span><span class="op">%</span>       <span class="fl">13.000000</span>     <span class="fl">40.000000</span>   <span class="fl">12049.065000</span>      <span class="fl">16.966667</span>   </span>
+<span id="cb93-10"><a href="Chuong-3.html#cb93-10" tabindex="-1"></a><span class="dv">75</span><span class="op">%</span>       <span class="fl">20.000000</span>     <span class="fl">72.000000</span>   <span class="fl">32349.850000</span>      <span class="fl">24.166667</span>   </span>
+<span id="cb93-11"><a href="Chuong-3.html#cb93-11" tabindex="-1"></a><span class="bu">max</span>       <span class="fl">39.000000</span>     <span class="fl">99.000000</span>  <span class="fl">293966.050000</span>      <span class="fl">33.827778</span>   </span>
+<span id="cb93-12"><a href="Chuong-3.html#cb93-12" tabindex="-1"></a></span>
+<span id="cb93-13"><a href="Chuong-3.html#cb93-13" tabindex="-1"></a>       fuel_price_usd_per_l  unemployment  </span>
+<span id="cb93-14"><a href="Chuong-3.html#cb93-14" tabindex="-1"></a>count          <span class="fl">10774.000000</span>  <span class="fl">10774.000000</span>  </span>
+<span id="cb93-15"><a href="Chuong-3.html#cb93-15" tabindex="-1"></a>mean               <span class="fl">0.749746</span>      <span class="fl">8.082009</span>  </span>
+<span id="cb93-16"><a href="Chuong-3.html#cb93-16" tabindex="-1"></a>std                <span class="fl">0.059494</span>      <span class="fl">0.624355</span>  </span>
+<span id="cb93-17"><a href="Chuong-3.html#cb93-17" tabindex="-1"></a><span class="bu">min</span>                <span class="fl">0.664129</span>      <span class="fl">3.879000</span>  </span>
+<span id="cb93-18"><a href="Chuong-3.html#cb93-18" tabindex="-1"></a><span class="dv">25</span><span class="op">%</span>                <span class="fl">0.708246</span>      <span class="fl">7.795000</span>  </span>
+<span id="cb93-19"><a href="Chuong-3.html#cb93-19" tabindex="-1"></a><span class="dv">50</span><span class="op">%</span>                <span class="fl">0.743381</span>      <span class="fl">8.099000</span>  </span>
+<span id="cb93-20"><a href="Chuong-3.html#cb93-20" tabindex="-1"></a><span class="dv">75</span><span class="op">%</span>                <span class="fl">0.781421</span>      <span class="fl">8.360000</span>  </span>
+<span id="cb93-21"><a href="Chuong-3.html#cb93-21" tabindex="-1"></a><span class="bu">max</span>                <span class="fl">1.107674</span>      <span class="fl">9.765000</span>  </span></code></pre></div>
+
+<div class="rmdtip">
+<strong><em>Mẹo:</em></strong>
+Bạn có thể thay đổi thông số percentiles bằng cách truyền tham số này vào trong <code>.describe()</code>
+</div>
+<p><strong>Ví dụ</strong></p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="Chuong-3.html#cb94-1" tabindex="-1"></a>df.describe(percentiles<span class="op">=</span>[<span class="fl">0.1</span>, <span class="fl">0.99</span>]))</span>
+<span id="cb94-2"><a href="Chuong-3.html#cb94-2" tabindex="-1"></a>Out[<span class="dv">7</span>]: </span>
 <span id="cb94-3"><a href="Chuong-3.html#cb94-3" tabindex="-1"></a>              store    department   weekly_sales  temperature_c  <span class="op">\</span></span>
 <span id="cb94-4"><a href="Chuong-3.html#cb94-4" tabindex="-1"></a>count  <span class="fl">10774.000000</span>  <span class="fl">10774.000000</span>   <span class="fl">10774.000000</span>   <span class="fl">10774.000000</span>   </span>
 <span id="cb94-5"><a href="Chuong-3.html#cb94-5" tabindex="-1"></a>mean      <span class="fl">15.441897</span>     <span class="fl">45.218118</span>   <span class="fl">23843.950149</span>      <span class="fl">15.731978</span>   </span>
 <span id="cb94-6"><a href="Chuong-3.html#cb94-6" tabindex="-1"></a>std       <span class="fl">11.534511</span>     <span class="fl">29.867779</span>   <span class="fl">30220.387557</span>       <span class="fl">9.922446</span>   </span>
 <span id="cb94-7"><a href="Chuong-3.html#cb94-7" tabindex="-1"></a><span class="bu">min</span>        <span class="fl">1.000000</span>      <span class="fl">1.000000</span>   <span class="op">-</span><span class="fl">1098.000000</span>      <span class="op">-</span><span class="fl">8.366667</span>   </span>
-<span id="cb94-8"><a href="Chuong-3.html#cb94-8" tabindex="-1"></a><span class="dv">25</span><span class="op">%</span>        <span class="fl">4.000000</span>     <span class="fl">20.000000</span>    <span class="fl">3867.115000</span>       <span class="fl">7.583333</span>   </span>
+<span id="cb94-8"><a href="Chuong-3.html#cb94-8" tabindex="-1"></a><span class="dv">10</span><span class="op">%</span>        <span class="fl">2.000000</span>      <span class="fl">8.000000</span>     <span class="fl">607.695000</span>       <span class="fl">2.577778</span>   </span>
 <span id="cb94-9"><a href="Chuong-3.html#cb94-9" tabindex="-1"></a><span class="dv">50</span><span class="op">%</span>       <span class="fl">13.000000</span>     <span class="fl">40.000000</span>   <span class="fl">12049.065000</span>      <span class="fl">16.966667</span>   </span>
-<span id="cb94-10"><a href="Chuong-3.html#cb94-10" tabindex="-1"></a><span class="dv">75</span><span class="op">%</span>       <span class="fl">20.000000</span>     <span class="fl">72.000000</span>   <span class="fl">32349.850000</span>      <span class="fl">24.166667</span>   </span>
+<span id="cb94-10"><a href="Chuong-3.html#cb94-10" tabindex="-1"></a><span class="dv">99</span><span class="op">%</span>       <span class="fl">39.000000</span>     <span class="fl">99.000000</span>  <span class="fl">142193.400300</span>      <span class="fl">32.388889</span>   </span>
 <span id="cb94-11"><a href="Chuong-3.html#cb94-11" tabindex="-1"></a><span class="bu">max</span>       <span class="fl">39.000000</span>     <span class="fl">99.000000</span>  <span class="fl">293966.050000</span>      <span class="fl">33.827778</span>   </span>
 <span id="cb94-12"><a href="Chuong-3.html#cb94-12" tabindex="-1"></a></span>
 <span id="cb94-13"><a href="Chuong-3.html#cb94-13" tabindex="-1"></a>       fuel_price_usd_per_l  unemployment  </span>
@@ -370,37 +397,10 @@ Phương thức <code>.info()</code> có các tham số để tùy chỉnh các 
 <span id="cb94-15"><a href="Chuong-3.html#cb94-15" tabindex="-1"></a>mean               <span class="fl">0.749746</span>      <span class="fl">8.082009</span>  </span>
 <span id="cb94-16"><a href="Chuong-3.html#cb94-16" tabindex="-1"></a>std                <span class="fl">0.059494</span>      <span class="fl">0.624355</span>  </span>
 <span id="cb94-17"><a href="Chuong-3.html#cb94-17" tabindex="-1"></a><span class="bu">min</span>                <span class="fl">0.664129</span>      <span class="fl">3.879000</span>  </span>
-<span id="cb94-18"><a href="Chuong-3.html#cb94-18" tabindex="-1"></a><span class="dv">25</span><span class="op">%</span>                <span class="fl">0.708246</span>      <span class="fl">7.795000</span>  </span>
+<span id="cb94-18"><a href="Chuong-3.html#cb94-18" tabindex="-1"></a><span class="dv">10</span><span class="op">%</span>                <span class="fl">0.687640</span>      <span class="fl">7.127000</span>  </span>
 <span id="cb94-19"><a href="Chuong-3.html#cb94-19" tabindex="-1"></a><span class="dv">50</span><span class="op">%</span>                <span class="fl">0.743381</span>      <span class="fl">8.099000</span>  </span>
-<span id="cb94-20"><a href="Chuong-3.html#cb94-20" tabindex="-1"></a><span class="dv">75</span><span class="op">%</span>                <span class="fl">0.781421</span>      <span class="fl">8.360000</span>  </span>
-<span id="cb94-21"><a href="Chuong-3.html#cb94-21" tabindex="-1"></a><span class="bu">max</span>                <span class="fl">1.107674</span>      <span class="fl">9.765000</span>  </span></code></pre></div>
-
-<div class="rmdtip">
-<strong><em>Mẹo:</em></strong>
-Bạn có thể thay đổi thông số percentiles bằng cách truyền tham số này vào trong <code>.describe()</code>
-</div>
-<p><strong>Ví dụ</strong></p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="Chuong-3.html#cb95-1" tabindex="-1"></a>df.describe(percentiles<span class="op">=</span>[<span class="fl">0.1</span>, <span class="fl">0.99</span>]))</span>
-<span id="cb95-2"><a href="Chuong-3.html#cb95-2" tabindex="-1"></a>Out[<span class="dv">7</span>]: </span>
-<span id="cb95-3"><a href="Chuong-3.html#cb95-3" tabindex="-1"></a>              store    department   weekly_sales  temperature_c  <span class="op">\</span></span>
-<span id="cb95-4"><a href="Chuong-3.html#cb95-4" tabindex="-1"></a>count  <span class="fl">10774.000000</span>  <span class="fl">10774.000000</span>   <span class="fl">10774.000000</span>   <span class="fl">10774.000000</span>   </span>
-<span id="cb95-5"><a href="Chuong-3.html#cb95-5" tabindex="-1"></a>mean      <span class="fl">15.441897</span>     <span class="fl">45.218118</span>   <span class="fl">23843.950149</span>      <span class="fl">15.731978</span>   </span>
-<span id="cb95-6"><a href="Chuong-3.html#cb95-6" tabindex="-1"></a>std       <span class="fl">11.534511</span>     <span class="fl">29.867779</span>   <span class="fl">30220.387557</span>       <span class="fl">9.922446</span>   </span>
-<span id="cb95-7"><a href="Chuong-3.html#cb95-7" tabindex="-1"></a><span class="bu">min</span>        <span class="fl">1.000000</span>      <span class="fl">1.000000</span>   <span class="op">-</span><span class="fl">1098.000000</span>      <span class="op">-</span><span class="fl">8.366667</span>   </span>
-<span id="cb95-8"><a href="Chuong-3.html#cb95-8" tabindex="-1"></a><span class="dv">10</span><span class="op">%</span>        <span class="fl">2.000000</span>      <span class="fl">8.000000</span>     <span class="fl">607.695000</span>       <span class="fl">2.577778</span>   </span>
-<span id="cb95-9"><a href="Chuong-3.html#cb95-9" tabindex="-1"></a><span class="dv">50</span><span class="op">%</span>       <span class="fl">13.000000</span>     <span class="fl">40.000000</span>   <span class="fl">12049.065000</span>      <span class="fl">16.966667</span>   </span>
-<span id="cb95-10"><a href="Chuong-3.html#cb95-10" tabindex="-1"></a><span class="dv">99</span><span class="op">%</span>       <span class="fl">39.000000</span>     <span class="fl">99.000000</span>  <span class="fl">142193.400300</span>      <span class="fl">32.388889</span>   </span>
-<span id="cb95-11"><a href="Chuong-3.html#cb95-11" tabindex="-1"></a><span class="bu">max</span>       <span class="fl">39.000000</span>     <span class="fl">99.000000</span>  <span class="fl">293966.050000</span>      <span class="fl">33.827778</span>   </span>
-<span id="cb95-12"><a href="Chuong-3.html#cb95-12" tabindex="-1"></a></span>
-<span id="cb95-13"><a href="Chuong-3.html#cb95-13" tabindex="-1"></a>       fuel_price_usd_per_l  unemployment  </span>
-<span id="cb95-14"><a href="Chuong-3.html#cb95-14" tabindex="-1"></a>count          <span class="fl">10774.000000</span>  <span class="fl">10774.000000</span>  </span>
-<span id="cb95-15"><a href="Chuong-3.html#cb95-15" tabindex="-1"></a>mean               <span class="fl">0.749746</span>      <span class="fl">8.082009</span>  </span>
-<span id="cb95-16"><a href="Chuong-3.html#cb95-16" tabindex="-1"></a>std                <span class="fl">0.059494</span>      <span class="fl">0.624355</span>  </span>
-<span id="cb95-17"><a href="Chuong-3.html#cb95-17" tabindex="-1"></a><span class="bu">min</span>                <span class="fl">0.664129</span>      <span class="fl">3.879000</span>  </span>
-<span id="cb95-18"><a href="Chuong-3.html#cb95-18" tabindex="-1"></a><span class="dv">10</span><span class="op">%</span>                <span class="fl">0.687640</span>      <span class="fl">7.127000</span>  </span>
-<span id="cb95-19"><a href="Chuong-3.html#cb95-19" tabindex="-1"></a><span class="dv">50</span><span class="op">%</span>                <span class="fl">0.743381</span>      <span class="fl">8.099000</span>  </span>
-<span id="cb95-20"><a href="Chuong-3.html#cb95-20" tabindex="-1"></a><span class="dv">99</span><span class="op">%</span>                <span class="fl">0.978565</span>      <span class="fl">9.765000</span>  </span>
-<span id="cb95-21"><a href="Chuong-3.html#cb95-21" tabindex="-1"></a><span class="bu">max</span>                <span class="fl">1.107674</span>      <span class="fl">9.765000</span>   </span></code></pre></div>
+<span id="cb94-20"><a href="Chuong-3.html#cb94-20" tabindex="-1"></a><span class="dv">99</span><span class="op">%</span>                <span class="fl">0.978565</span>      <span class="fl">9.765000</span>  </span>
+<span id="cb94-21"><a href="Chuong-3.html#cb94-21" tabindex="-1"></a><span class="bu">max</span>                <span class="fl">1.107674</span>      <span class="fl">9.765000</span>   </span></code></pre></div>
 
 <div class="rmdnote">
 <strong><em>Lưu ý:</em></strong>
@@ -411,65 +411,65 @@ Bạn có thể thay đổi thông số percentiles bằng cách truyền tham s
 <h2><span class="header-section-number">3.5</span> <code>.index</code><a href="Chuong-3.html#index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Thuộc tính <code>.index</code> để lấy index của <code>DataFrame</code> hoặc <code>Series</code>.</p>
 <p>Ví dụ</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="Chuong-3.html#cb96-1" tabindex="-1"></a>df.index</span>
-<span id="cb96-2"><a href="Chuong-3.html#cb96-2" tabindex="-1"></a>Out[<span class="dv">8</span>]: </span>
-<span id="cb96-3"><a href="Chuong-3.html#cb96-3" tabindex="-1"></a>Int64Index([    <span class="dv">0</span>,     <span class="dv">1</span>,     <span class="dv">2</span>,     <span class="dv">3</span>,     <span class="dv">4</span>,     <span class="dv">5</span>,     <span class="dv">6</span>,     <span class="dv">7</span>,     <span class="dv">8</span>,</span>
-<span id="cb96-4"><a href="Chuong-3.html#cb96-4" tabindex="-1"></a>                <span class="dv">9</span>,</span>
-<span id="cb96-5"><a href="Chuong-3.html#cb96-5" tabindex="-1"></a>            ...</span>
-<span id="cb96-6"><a href="Chuong-3.html#cb96-6" tabindex="-1"></a>            <span class="dv">10764</span>, <span class="dv">10765</span>, <span class="dv">10766</span>, <span class="dv">10767</span>, <span class="dv">10768</span>, <span class="dv">10769</span>, <span class="dv">10770</span>, <span class="dv">10771</span>, <span class="dv">10772</span>,</span>
-<span id="cb96-7"><a href="Chuong-3.html#cb96-7" tabindex="-1"></a>            <span class="dv">10773</span>],</span>
-<span id="cb96-8"><a href="Chuong-3.html#cb96-8" tabindex="-1"></a>           dtype<span class="op">=</span><span class="st">&#39;int64&#39;</span>, length<span class="op">=</span><span class="dv">10774</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="Chuong-3.html#cb95-1" tabindex="-1"></a>df.index</span>
+<span id="cb95-2"><a href="Chuong-3.html#cb95-2" tabindex="-1"></a>Out[<span class="dv">8</span>]: </span>
+<span id="cb95-3"><a href="Chuong-3.html#cb95-3" tabindex="-1"></a>Int64Index([    <span class="dv">0</span>,     <span class="dv">1</span>,     <span class="dv">2</span>,     <span class="dv">3</span>,     <span class="dv">4</span>,     <span class="dv">5</span>,     <span class="dv">6</span>,     <span class="dv">7</span>,     <span class="dv">8</span>,</span>
+<span id="cb95-4"><a href="Chuong-3.html#cb95-4" tabindex="-1"></a>                <span class="dv">9</span>,</span>
+<span id="cb95-5"><a href="Chuong-3.html#cb95-5" tabindex="-1"></a>            ...</span>
+<span id="cb95-6"><a href="Chuong-3.html#cb95-6" tabindex="-1"></a>            <span class="dv">10764</span>, <span class="dv">10765</span>, <span class="dv">10766</span>, <span class="dv">10767</span>, <span class="dv">10768</span>, <span class="dv">10769</span>, <span class="dv">10770</span>, <span class="dv">10771</span>, <span class="dv">10772</span>,</span>
+<span id="cb95-7"><a href="Chuong-3.html#cb95-7" tabindex="-1"></a>            <span class="dv">10773</span>],</span>
+<span id="cb95-8"><a href="Chuong-3.html#cb95-8" tabindex="-1"></a>           dtype<span class="op">=</span><span class="st">&#39;int64&#39;</span>, length<span class="op">=</span><span class="dv">10774</span>)</span></code></pre></div>
 </div>
 <div id="memory_usage" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> <code>.memory_usage()</code><a href="Chuong-3.html#memory_usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.memory_usage(index=True, deep=False)</code> giúp thông kê dung lượng của từng cột. Trong đó <code>index</code> trả về dung lượng của phần đánh index và <code>deep</code> nếu đặt giá trị <code>True</code> sẽ trả về cách tính toán sâu hơn về bộ nhớ cho kiểu <code>object</code></p>
 <p>Ví dụ</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="Chuong-3.html#cb97-1" tabindex="-1"></a>df.memory_usage(index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb97-2"><a href="Chuong-3.html#cb97-2" tabindex="-1"></a>Out[<span class="dv">9</span>]: </span>
-<span id="cb97-3"><a href="Chuong-3.html#cb97-3" tabindex="-1"></a></span>
-<span id="cb97-4"><a href="Chuong-3.html#cb97-4" tabindex="-1"></a>store                   <span class="dv">86192</span></span>
-<span id="cb97-5"><a href="Chuong-3.html#cb97-5" tabindex="-1"></a><span class="bu">type</span>                    <span class="dv">86192</span></span>
-<span id="cb97-6"><a href="Chuong-3.html#cb97-6" tabindex="-1"></a>department              <span class="dv">86192</span></span>
-<span id="cb97-7"><a href="Chuong-3.html#cb97-7" tabindex="-1"></a>date                    <span class="dv">86192</span></span>
-<span id="cb97-8"><a href="Chuong-3.html#cb97-8" tabindex="-1"></a>weekly_sales            <span class="dv">86192</span></span>
-<span id="cb97-9"><a href="Chuong-3.html#cb97-9" tabindex="-1"></a>is_holiday              <span class="dv">10774</span></span>
-<span id="cb97-10"><a href="Chuong-3.html#cb97-10" tabindex="-1"></a>temperature_c           <span class="dv">86192</span></span>
-<span id="cb97-11"><a href="Chuong-3.html#cb97-11" tabindex="-1"></a>fuel_price_usd_per_l    <span class="dv">86192</span></span>
-<span id="cb97-12"><a href="Chuong-3.html#cb97-12" tabindex="-1"></a>unemployment            <span class="dv">86192</span></span>
-<span id="cb97-13"><a href="Chuong-3.html#cb97-13" tabindex="-1"></a>dtype: int64</span>
-<span id="cb97-14"><a href="Chuong-3.html#cb97-14" tabindex="-1"></a></span>
-<span id="cb97-15"><a href="Chuong-3.html#cb97-15" tabindex="-1"></a>df.memory_usage(deep<span class="op">=</span><span class="va">True</span>) </span>
-<span id="cb97-16"><a href="Chuong-3.html#cb97-16" tabindex="-1"></a>Out[<span class="dv">10</span>]: </span>
-<span id="cb97-17"><a href="Chuong-3.html#cb97-17" tabindex="-1"></a></span>
-<span id="cb97-18"><a href="Chuong-3.html#cb97-18" tabindex="-1"></a>Index                    <span class="dv">86192</span></span>
-<span id="cb97-19"><a href="Chuong-3.html#cb97-19" tabindex="-1"></a>store                    <span class="dv">86192</span></span>
-<span id="cb97-20"><a href="Chuong-3.html#cb97-20" tabindex="-1"></a><span class="bu">type</span>                    <span class="dv">624892</span></span>
-<span id="cb97-21"><a href="Chuong-3.html#cb97-21" tabindex="-1"></a>department               <span class="dv">86192</span></span>
-<span id="cb97-22"><a href="Chuong-3.html#cb97-22" tabindex="-1"></a>date                    <span class="dv">721858</span></span>
-<span id="cb97-23"><a href="Chuong-3.html#cb97-23" tabindex="-1"></a>weekly_sales             <span class="dv">86192</span></span>
-<span id="cb97-24"><a href="Chuong-3.html#cb97-24" tabindex="-1"></a>is_holiday               <span class="dv">10774</span></span>
-<span id="cb97-25"><a href="Chuong-3.html#cb97-25" tabindex="-1"></a>temperature_c            <span class="dv">86192</span></span>
-<span id="cb97-26"><a href="Chuong-3.html#cb97-26" tabindex="-1"></a>fuel_price_usd_per_l     <span class="dv">86192</span></span>
-<span id="cb97-27"><a href="Chuong-3.html#cb97-27" tabindex="-1"></a>unemployment             <span class="dv">86192</span></span>
-<span id="cb97-28"><a href="Chuong-3.html#cb97-28" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="Chuong-3.html#cb96-1" tabindex="-1"></a>df.memory_usage(index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb96-2"><a href="Chuong-3.html#cb96-2" tabindex="-1"></a>Out[<span class="dv">9</span>]: </span>
+<span id="cb96-3"><a href="Chuong-3.html#cb96-3" tabindex="-1"></a></span>
+<span id="cb96-4"><a href="Chuong-3.html#cb96-4" tabindex="-1"></a>store                   <span class="dv">86192</span></span>
+<span id="cb96-5"><a href="Chuong-3.html#cb96-5" tabindex="-1"></a><span class="bu">type</span>                    <span class="dv">86192</span></span>
+<span id="cb96-6"><a href="Chuong-3.html#cb96-6" tabindex="-1"></a>department              <span class="dv">86192</span></span>
+<span id="cb96-7"><a href="Chuong-3.html#cb96-7" tabindex="-1"></a>date                    <span class="dv">86192</span></span>
+<span id="cb96-8"><a href="Chuong-3.html#cb96-8" tabindex="-1"></a>weekly_sales            <span class="dv">86192</span></span>
+<span id="cb96-9"><a href="Chuong-3.html#cb96-9" tabindex="-1"></a>is_holiday              <span class="dv">10774</span></span>
+<span id="cb96-10"><a href="Chuong-3.html#cb96-10" tabindex="-1"></a>temperature_c           <span class="dv">86192</span></span>
+<span id="cb96-11"><a href="Chuong-3.html#cb96-11" tabindex="-1"></a>fuel_price_usd_per_l    <span class="dv">86192</span></span>
+<span id="cb96-12"><a href="Chuong-3.html#cb96-12" tabindex="-1"></a>unemployment            <span class="dv">86192</span></span>
+<span id="cb96-13"><a href="Chuong-3.html#cb96-13" tabindex="-1"></a>dtype: int64</span>
+<span id="cb96-14"><a href="Chuong-3.html#cb96-14" tabindex="-1"></a></span>
+<span id="cb96-15"><a href="Chuong-3.html#cb96-15" tabindex="-1"></a>df.memory_usage(deep<span class="op">=</span><span class="va">True</span>) </span>
+<span id="cb96-16"><a href="Chuong-3.html#cb96-16" tabindex="-1"></a>Out[<span class="dv">10</span>]: </span>
+<span id="cb96-17"><a href="Chuong-3.html#cb96-17" tabindex="-1"></a></span>
+<span id="cb96-18"><a href="Chuong-3.html#cb96-18" tabindex="-1"></a>Index                    <span class="dv">86192</span></span>
+<span id="cb96-19"><a href="Chuong-3.html#cb96-19" tabindex="-1"></a>store                    <span class="dv">86192</span></span>
+<span id="cb96-20"><a href="Chuong-3.html#cb96-20" tabindex="-1"></a><span class="bu">type</span>                    <span class="dv">624892</span></span>
+<span id="cb96-21"><a href="Chuong-3.html#cb96-21" tabindex="-1"></a>department               <span class="dv">86192</span></span>
+<span id="cb96-22"><a href="Chuong-3.html#cb96-22" tabindex="-1"></a>date                    <span class="dv">721858</span></span>
+<span id="cb96-23"><a href="Chuong-3.html#cb96-23" tabindex="-1"></a>weekly_sales             <span class="dv">86192</span></span>
+<span id="cb96-24"><a href="Chuong-3.html#cb96-24" tabindex="-1"></a>is_holiday               <span class="dv">10774</span></span>
+<span id="cb96-25"><a href="Chuong-3.html#cb96-25" tabindex="-1"></a>temperature_c            <span class="dv">86192</span></span>
+<span id="cb96-26"><a href="Chuong-3.html#cb96-26" tabindex="-1"></a>fuel_price_usd_per_l     <span class="dv">86192</span></span>
+<span id="cb96-27"><a href="Chuong-3.html#cb96-27" tabindex="-1"></a>unemployment             <span class="dv">86192</span></span>
+<span id="cb96-28"><a href="Chuong-3.html#cb96-28" tabindex="-1"></a>dtype: int64</span></code></pre></div>
 </div>
 <div id="lấy-series-trong-pandas" class="section level2 hasAnchor" number="3.7">
 <h2><span class="header-section-number">3.7</span> Lấy Series trong pandas<a href="Chuong-3.html#lấy-series-trong-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sử dụng <code>[&lt;tên cột&gt;]</code> để lấy 1 Series của bảng. Ví dụ để lấy Series của cột <code>department</code> ta làm như sau</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="Chuong-3.html#cb98-1" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>]</span>
-<span id="cb98-2"><a href="Chuong-3.html#cb98-2" tabindex="-1"></a>Out[<span class="dv">11</span>]: </span>
-<span id="cb98-3"><a href="Chuong-3.html#cb98-3" tabindex="-1"></a><span class="dv">0</span>         <span class="dv">1</span></span>
-<span id="cb98-4"><a href="Chuong-3.html#cb98-4" tabindex="-1"></a><span class="dv">1</span>         <span class="dv">1</span></span>
-<span id="cb98-5"><a href="Chuong-3.html#cb98-5" tabindex="-1"></a><span class="dv">2</span>         <span class="dv">1</span></span>
-<span id="cb98-6"><a href="Chuong-3.html#cb98-6" tabindex="-1"></a><span class="dv">3</span>         <span class="dv">1</span></span>
-<span id="cb98-7"><a href="Chuong-3.html#cb98-7" tabindex="-1"></a><span class="dv">4</span>         <span class="dv">1</span></span>
-<span id="cb98-8"><a href="Chuong-3.html#cb98-8" tabindex="-1"></a>         ..</span>
-<span id="cb98-9"><a href="Chuong-3.html#cb98-9" tabindex="-1"></a><span class="dv">10769</span>    <span class="dv">99</span></span>
-<span id="cb98-10"><a href="Chuong-3.html#cb98-10" tabindex="-1"></a><span class="dv">10770</span>    <span class="dv">99</span></span>
-<span id="cb98-11"><a href="Chuong-3.html#cb98-11" tabindex="-1"></a><span class="dv">10771</span>    <span class="dv">99</span></span>
-<span id="cb98-12"><a href="Chuong-3.html#cb98-12" tabindex="-1"></a><span class="dv">10772</span>    <span class="dv">99</span></span>
-<span id="cb98-13"><a href="Chuong-3.html#cb98-13" tabindex="-1"></a><span class="dv">10773</span>    <span class="dv">99</span></span>
-<span id="cb98-14"><a href="Chuong-3.html#cb98-14" tabindex="-1"></a>Name: department, Length: <span class="dv">10774</span>, dtype: int64</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="Chuong-3.html#cb97-1" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>]</span>
+<span id="cb97-2"><a href="Chuong-3.html#cb97-2" tabindex="-1"></a>Out[<span class="dv">11</span>]: </span>
+<span id="cb97-3"><a href="Chuong-3.html#cb97-3" tabindex="-1"></a><span class="dv">0</span>         <span class="dv">1</span></span>
+<span id="cb97-4"><a href="Chuong-3.html#cb97-4" tabindex="-1"></a><span class="dv">1</span>         <span class="dv">1</span></span>
+<span id="cb97-5"><a href="Chuong-3.html#cb97-5" tabindex="-1"></a><span class="dv">2</span>         <span class="dv">1</span></span>
+<span id="cb97-6"><a href="Chuong-3.html#cb97-6" tabindex="-1"></a><span class="dv">3</span>         <span class="dv">1</span></span>
+<span id="cb97-7"><a href="Chuong-3.html#cb97-7" tabindex="-1"></a><span class="dv">4</span>         <span class="dv">1</span></span>
+<span id="cb97-8"><a href="Chuong-3.html#cb97-8" tabindex="-1"></a>         ..</span>
+<span id="cb97-9"><a href="Chuong-3.html#cb97-9" tabindex="-1"></a><span class="dv">10769</span>    <span class="dv">99</span></span>
+<span id="cb97-10"><a href="Chuong-3.html#cb97-10" tabindex="-1"></a><span class="dv">10770</span>    <span class="dv">99</span></span>
+<span id="cb97-11"><a href="Chuong-3.html#cb97-11" tabindex="-1"></a><span class="dv">10771</span>    <span class="dv">99</span></span>
+<span id="cb97-12"><a href="Chuong-3.html#cb97-12" tabindex="-1"></a><span class="dv">10772</span>    <span class="dv">99</span></span>
+<span id="cb97-13"><a href="Chuong-3.html#cb97-13" tabindex="-1"></a><span class="dv">10773</span>    <span class="dv">99</span></span>
+<span id="cb97-14"><a href="Chuong-3.html#cb97-14" tabindex="-1"></a>Name: department, Length: <span class="dv">10774</span>, dtype: int64</span></code></pre></div>
 <p>những Series này cũng có thế áp dụng các phương thức tương tự của <code>DataFrame</code> như <code>.head()</code>, <code>.tail()</code>….</p>
 </div>
 <div id="astype" class="section level2 hasAnchor" number="3.8">
@@ -477,16 +477,16 @@ Bạn có thể thay đổi thông số percentiles bằng cách truyền tham s
 <p>Với phương thức <code>.astype()</code> ta có thể ép kiểu dữ liệu của cột về dạng khác. Việc ép kiểu này giúp thay đổi kiểu dữ liệu để tiện các thao tác như nối 2 cột có 2 kiểu <code>str</code> và <code>int</code>, ngoài ra việc ép kiểu cũng giúp giảm được dung lượng bộ nhớ dành cho bảng.</p>
 <p>Ở ví dụ trên, ta thấy cột <code>department</code> có giá trị max là <code>99</code> nhưng được mặc định là <code>int64</code> khá lãng phí, do đó ép kiểu về <code>int8</code></p>
 <p><strong>Trước khi ép kiểu</strong></p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="Chuong-3.html#cb99-1" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>].dtypes</span>
-<span id="cb99-2"><a href="Chuong-3.html#cb99-2" tabindex="-1"></a>Out[<span class="dv">12</span>]: dtype(<span class="st">&#39;int64&#39;</span>)</span>
-<span id="cb99-3"><a href="Chuong-3.html#cb99-3" tabindex="-1"></a></span>
-<span id="cb99-4"><a href="Chuong-3.html#cb99-4" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>].memory_usage() <span class="op">-</span> df[<span class="st">&#39;department&#39;</span>].index.memory_usage()</span>
-<span id="cb99-5"><a href="Chuong-3.html#cb99-5" tabindex="-1"></a>Out[<span class="dv">13</span>]: </span>
-<span id="cb99-6"><a href="Chuong-3.html#cb99-6" tabindex="-1"></a><span class="dv">86192</span></span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="Chuong-3.html#cb98-1" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>].dtypes</span>
+<span id="cb98-2"><a href="Chuong-3.html#cb98-2" tabindex="-1"></a>Out[<span class="dv">12</span>]: dtype(<span class="st">&#39;int64&#39;</span>)</span>
+<span id="cb98-3"><a href="Chuong-3.html#cb98-3" tabindex="-1"></a></span>
+<span id="cb98-4"><a href="Chuong-3.html#cb98-4" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>].memory_usage() <span class="op">-</span> df[<span class="st">&#39;department&#39;</span>].index.memory_usage()</span>
+<span id="cb98-5"><a href="Chuong-3.html#cb98-5" tabindex="-1"></a>Out[<span class="dv">13</span>]: </span>
+<span id="cb98-6"><a href="Chuong-3.html#cb98-6" tabindex="-1"></a><span class="dv">86192</span></span></code></pre></div>
 <p><strong>Sau khi ép kiểu</strong></p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="Chuong-3.html#cb100-1" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>].astype(<span class="st">&#39;int8&#39;</span>).memory_usage() <span class="op">-</span> df[<span class="st">&#39;department&#39;</span>].index.memory_usage()</span>
-<span id="cb100-2"><a href="Chuong-3.html#cb100-2" tabindex="-1"></a>Out[<span class="dv">14</span>]: </span>
-<span id="cb100-3"><a href="Chuong-3.html#cb100-3" tabindex="-1"></a><span class="dv">10774</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="Chuong-3.html#cb99-1" tabindex="-1"></a>df[<span class="st">&#39;department&#39;</span>].astype(<span class="st">&#39;int8&#39;</span>).memory_usage() <span class="op">-</span> df[<span class="st">&#39;department&#39;</span>].index.memory_usage()</span>
+<span id="cb99-2"><a href="Chuong-3.html#cb99-2" tabindex="-1"></a>Out[<span class="dv">14</span>]: </span>
+<span id="cb99-3"><a href="Chuong-3.html#cb99-3" tabindex="-1"></a><span class="dv">10774</span></span></code></pre></div>
 <p>Ta thấy sau khi ép kiểu thì bộ nhớ lưu trữ của cột <code>department</code> giảm đi <code>8</code> lần.</p>
 
 <div class="rmdnote">
@@ -498,7 +498,7 @@ Bạn có thể thay đổi thông số percentiles bằng cách truyền tham s
 <h2><span class="header-section-number">3.9</span> <code>.drop_duplicates()</code><a href="Chuong-3.html#drop_duplicates" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức này trả về <code>DataFrame</code> đã được loại bỏ các hàng trùng nhau.
 Lệnh thực hiện</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="Chuong-3.html#cb101-1" tabindex="-1"></a>DataFrame.drop_duplicates(subset<span class="op">=</span><span class="va">None</span>, keep<span class="op">=</span><span class="st">&#39;first&#39;</span>, inplace<span class="op">=</span><span class="va">False</span>, ignore_index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="Chuong-3.html#cb100-1" tabindex="-1"></a>DataFrame.drop_duplicates(subset<span class="op">=</span><span class="va">None</span>, keep<span class="op">=</span><span class="st">&#39;first&#39;</span>, inplace<span class="op">=</span><span class="va">False</span>, ignore_index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>subset</code>: tên cột hoặc danh sách các cột cần lọc giá trị trùng lặp, nếu không truyền vào sẽ mặc định chọn tất cả các cột</p></li>
@@ -512,44 +512,44 @@ Lệnh thực hiện</p>
 <li><p><code>ignore_index</code>: Nếu <code>True</code> trả về index đánh số lại từ <code>0</code> đến <code>n-1</code></p></li>
 </ul>
 <p><strong>Ví dụ</strong></p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="Chuong-3.html#cb102-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb102-2"><a href="Chuong-3.html#cb102-2" tabindex="-1"></a>    <span class="st">&#39;action&#39;</span>: [<span class="st">&#39;view&#39;</span>, <span class="st">&#39;view&#39;</span>, <span class="st">&#39;add to cart&#39;</span>, <span class="st">&#39;add to cart&#39;</span>, <span class="st">&#39;add to cart&#39;</span>,],</span>
-<span id="cb102-3"><a href="Chuong-3.html#cb102-3" tabindex="-1"></a>    <span class="st">&#39;fruit&#39;</span>: [<span class="st">&#39;orange&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;apple&#39;</span>, <span class="st">&#39;apple&#39;</span>],</span>
-<span id="cb102-4"><a href="Chuong-3.html#cb102-4" tabindex="-1"></a>    <span class="st">&#39;times&#39;</span>:   [ <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
-<span id="cb102-5"><a href="Chuong-3.html#cb102-5" tabindex="-1"></a>})</span>
-<span id="cb102-6"><a href="Chuong-3.html#cb102-6" tabindex="-1"></a>df</span>
-<span id="cb102-7"><a href="Chuong-3.html#cb102-7" tabindex="-1"></a>Out[<span class="dv">16</span>]:</span>
-<span id="cb102-8"><a href="Chuong-3.html#cb102-8" tabindex="-1"></a>        action  fruit   times</span>
-<span id="cb102-9"><a href="Chuong-3.html#cb102-9" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
-<span id="cb102-10"><a href="Chuong-3.html#cb102-10" tabindex="-1"></a><span class="dv">1</span>         view  orange      <span class="dv">1</span></span>
-<span id="cb102-11"><a href="Chuong-3.html#cb102-11" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
-<span id="cb102-12"><a href="Chuong-3.html#cb102-12" tabindex="-1"></a><span class="dv">3</span>  add to cart   apple      <span class="dv">2</span></span>
-<span id="cb102-13"><a href="Chuong-3.html#cb102-13" tabindex="-1"></a><span class="dv">4</span>  add to cart   apple      <span class="dv">4</span></span>
-<span id="cb102-14"><a href="Chuong-3.html#cb102-14" tabindex="-1"></a></span>
-<span id="cb102-15"><a href="Chuong-3.html#cb102-15" tabindex="-1"></a>df.drop_duplicates()</span>
-<span id="cb102-16"><a href="Chuong-3.html#cb102-16" tabindex="-1"></a>Out[<span class="dv">17</span>]:</span>
-<span id="cb102-17"><a href="Chuong-3.html#cb102-17" tabindex="-1"></a>        action  fruit   times</span>
-<span id="cb102-18"><a href="Chuong-3.html#cb102-18" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
-<span id="cb102-19"><a href="Chuong-3.html#cb102-19" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
-<span id="cb102-20"><a href="Chuong-3.html#cb102-20" tabindex="-1"></a><span class="dv">3</span>  add to cart   apple      <span class="dv">2</span></span>
-<span id="cb102-21"><a href="Chuong-3.html#cb102-21" tabindex="-1"></a><span class="dv">4</span>  add to cart   apple      <span class="dv">4</span></span>
-<span id="cb102-22"><a href="Chuong-3.html#cb102-22" tabindex="-1"></a></span>
-<span id="cb102-23"><a href="Chuong-3.html#cb102-23" tabindex="-1"></a>df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;action&#39;</span>])</span>
-<span id="cb102-24"><a href="Chuong-3.html#cb102-24" tabindex="-1"></a>Out[<span class="dv">18</span>]:</span>
-<span id="cb102-25"><a href="Chuong-3.html#cb102-25" tabindex="-1"></a>        action  fruit   times</span>
-<span id="cb102-26"><a href="Chuong-3.html#cb102-26" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
-<span id="cb102-27"><a href="Chuong-3.html#cb102-27" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
-<span id="cb102-28"><a href="Chuong-3.html#cb102-28" tabindex="-1"></a></span>
-<span id="cb102-29"><a href="Chuong-3.html#cb102-29" tabindex="-1"></a>df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;action&#39;</span>,<span class="st">&#39;fruit&#39;</span>], keep<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb102-30"><a href="Chuong-3.html#cb102-30" tabindex="-1"></a>        action   fruit  times</span>
-<span id="cb102-31"><a href="Chuong-3.html#cb102-31" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
-<span id="cb102-32"><a href="Chuong-3.html#cb102-32" tabindex="-1"></a><span class="dv">1</span>  add to cart  orange      <span class="dv">3</span></span>
-<span id="cb102-33"><a href="Chuong-3.html#cb102-33" tabindex="-1"></a><span class="dv">2</span>  add to cart   apple      <span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="Chuong-3.html#cb101-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb101-2"><a href="Chuong-3.html#cb101-2" tabindex="-1"></a>    <span class="st">&#39;action&#39;</span>: [<span class="st">&#39;view&#39;</span>, <span class="st">&#39;view&#39;</span>, <span class="st">&#39;add to cart&#39;</span>, <span class="st">&#39;add to cart&#39;</span>, <span class="st">&#39;add to cart&#39;</span>,],</span>
+<span id="cb101-3"><a href="Chuong-3.html#cb101-3" tabindex="-1"></a>    <span class="st">&#39;fruit&#39;</span>: [<span class="st">&#39;orange&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;orange&#39;</span>, <span class="st">&#39;apple&#39;</span>, <span class="st">&#39;apple&#39;</span>],</span>
+<span id="cb101-4"><a href="Chuong-3.html#cb101-4" tabindex="-1"></a>    <span class="st">&#39;times&#39;</span>:   [ <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
+<span id="cb101-5"><a href="Chuong-3.html#cb101-5" tabindex="-1"></a>})</span>
+<span id="cb101-6"><a href="Chuong-3.html#cb101-6" tabindex="-1"></a>df</span>
+<span id="cb101-7"><a href="Chuong-3.html#cb101-7" tabindex="-1"></a>Out[<span class="dv">16</span>]:</span>
+<span id="cb101-8"><a href="Chuong-3.html#cb101-8" tabindex="-1"></a>        action  fruit   times</span>
+<span id="cb101-9"><a href="Chuong-3.html#cb101-9" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb101-10"><a href="Chuong-3.html#cb101-10" tabindex="-1"></a><span class="dv">1</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb101-11"><a href="Chuong-3.html#cb101-11" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb101-12"><a href="Chuong-3.html#cb101-12" tabindex="-1"></a><span class="dv">3</span>  add to cart   apple      <span class="dv">2</span></span>
+<span id="cb101-13"><a href="Chuong-3.html#cb101-13" tabindex="-1"></a><span class="dv">4</span>  add to cart   apple      <span class="dv">4</span></span>
+<span id="cb101-14"><a href="Chuong-3.html#cb101-14" tabindex="-1"></a></span>
+<span id="cb101-15"><a href="Chuong-3.html#cb101-15" tabindex="-1"></a>df.drop_duplicates()</span>
+<span id="cb101-16"><a href="Chuong-3.html#cb101-16" tabindex="-1"></a>Out[<span class="dv">17</span>]:</span>
+<span id="cb101-17"><a href="Chuong-3.html#cb101-17" tabindex="-1"></a>        action  fruit   times</span>
+<span id="cb101-18"><a href="Chuong-3.html#cb101-18" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb101-19"><a href="Chuong-3.html#cb101-19" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb101-20"><a href="Chuong-3.html#cb101-20" tabindex="-1"></a><span class="dv">3</span>  add to cart   apple      <span class="dv">2</span></span>
+<span id="cb101-21"><a href="Chuong-3.html#cb101-21" tabindex="-1"></a><span class="dv">4</span>  add to cart   apple      <span class="dv">4</span></span>
+<span id="cb101-22"><a href="Chuong-3.html#cb101-22" tabindex="-1"></a></span>
+<span id="cb101-23"><a href="Chuong-3.html#cb101-23" tabindex="-1"></a>df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;action&#39;</span>])</span>
+<span id="cb101-24"><a href="Chuong-3.html#cb101-24" tabindex="-1"></a>Out[<span class="dv">18</span>]:</span>
+<span id="cb101-25"><a href="Chuong-3.html#cb101-25" tabindex="-1"></a>        action  fruit   times</span>
+<span id="cb101-26"><a href="Chuong-3.html#cb101-26" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb101-27"><a href="Chuong-3.html#cb101-27" tabindex="-1"></a><span class="dv">2</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb101-28"><a href="Chuong-3.html#cb101-28" tabindex="-1"></a></span>
+<span id="cb101-29"><a href="Chuong-3.html#cb101-29" tabindex="-1"></a>df.drop_duplicates(subset<span class="op">=</span>[<span class="st">&#39;action&#39;</span>,<span class="st">&#39;fruit&#39;</span>], keep<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb101-30"><a href="Chuong-3.html#cb101-30" tabindex="-1"></a>        action   fruit  times</span>
+<span id="cb101-31"><a href="Chuong-3.html#cb101-31" tabindex="-1"></a><span class="dv">0</span>         view  orange      <span class="dv">1</span></span>
+<span id="cb101-32"><a href="Chuong-3.html#cb101-32" tabindex="-1"></a><span class="dv">1</span>  add to cart  orange      <span class="dv">3</span></span>
+<span id="cb101-33"><a href="Chuong-3.html#cb101-33" tabindex="-1"></a><span class="dv">2</span>  add to cart   apple      <span class="dv">4</span></span></code></pre></div>
 </div>
 <div id="value_counts" class="section level2 hasAnchor" number="3.10">
 <h2><span class="header-section-number">3.10</span> <code>.value_counts()</code><a href="Chuong-3.html#value_counts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức này trả số lần xuất hiện của các phần tử trong <code>Series</code>. Kết quả trả về mặc định sẽ sắp xếp theo số lần xuất hiện giảm dần và mặc định bỏ qua các giá trị null</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="Chuong-3.html#cb103-1" tabindex="-1"></a>Series.value_counts(normalize<span class="op">=</span><span class="va">False</span>, sort<span class="op">=</span><span class="va">True</span>, ascending<span class="op">=</span><span class="va">False</span>, bins<span class="op">=</span><span class="va">None</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="Chuong-3.html#cb102-1" tabindex="-1"></a>Series.value_counts(normalize<span class="op">=</span><span class="va">False</span>, sort<span class="op">=</span><span class="va">True</span>, ascending<span class="op">=</span><span class="va">False</span>, bins<span class="op">=</span><span class="va">None</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>normalize</code>: <code>True</code> sẽ trả về tỉ lệ xuất hiện của các phần tử</p></li>
@@ -559,56 +559,56 @@ Lệnh thực hiện</p>
 <li><p><code>dropna</code>: <code>False</code> sẽ đếm tất cả các phần tử kể cả null</p></li>
 </ul>
 <p><strong>Ví dụ</strong></p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="Chuong-3.html#cb104-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,  np.nan, <span class="dv">4</span>, np.nan])</span>
-<span id="cb104-2"><a href="Chuong-3.html#cb104-2" tabindex="-1"></a>s.value_counts()</span>
-<span id="cb104-3"><a href="Chuong-3.html#cb104-3" tabindex="-1"></a>Out[<span class="dv">20</span>]: </span>
-<span id="cb104-4"><a href="Chuong-3.html#cb104-4" tabindex="-1"></a><span class="fl">3.0</span>    <span class="dv">2</span></span>
-<span id="cb104-5"><a href="Chuong-3.html#cb104-5" tabindex="-1"></a><span class="fl">1.0</span>    <span class="dv">1</span></span>
-<span id="cb104-6"><a href="Chuong-3.html#cb104-6" tabindex="-1"></a><span class="fl">2.0</span>    <span class="dv">1</span></span>
-<span id="cb104-7"><a href="Chuong-3.html#cb104-7" tabindex="-1"></a><span class="fl">4.0</span>    <span class="dv">1</span></span>
-<span id="cb104-8"><a href="Chuong-3.html#cb104-8" tabindex="-1"></a>dtype: int64</span>
-<span id="cb104-9"><a href="Chuong-3.html#cb104-9" tabindex="-1"></a></span>
-<span id="cb104-10"><a href="Chuong-3.html#cb104-10" tabindex="-1"></a>s.value_counts(normalize<span class="op">=</span><span class="va">True</span>, sort<span class="op">=</span><span class="va">False</span>, dropna<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb104-11"><a href="Chuong-3.html#cb104-11" tabindex="-1"></a>Out[<span class="dv">21</span>]:</span>
-<span id="cb104-12"><a href="Chuong-3.html#cb104-12" tabindex="-1"></a><span class="fl">3.0</span>    <span class="fl">0.285714</span></span>
-<span id="cb104-13"><a href="Chuong-3.html#cb104-13" tabindex="-1"></a><span class="fl">1.0</span>    <span class="fl">0.142857</span></span>
-<span id="cb104-14"><a href="Chuong-3.html#cb104-14" tabindex="-1"></a><span class="fl">2.0</span>    <span class="fl">0.142857</span></span>
-<span id="cb104-15"><a href="Chuong-3.html#cb104-15" tabindex="-1"></a>NaN    <span class="fl">0.285714</span></span>
-<span id="cb104-16"><a href="Chuong-3.html#cb104-16" tabindex="-1"></a><span class="fl">4.0</span>    <span class="fl">0.142857</span></span>
-<span id="cb104-17"><a href="Chuong-3.html#cb104-17" tabindex="-1"></a>dtype: float64</span>
-<span id="cb104-18"><a href="Chuong-3.html#cb104-18" tabindex="-1"></a></span>
-<span id="cb104-19"><a href="Chuong-3.html#cb104-19" tabindex="-1"></a>s.value_counts(bins<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb104-20"><a href="Chuong-3.html#cb104-20" tabindex="-1"></a>Out[<span class="dv">22</span>]:</span>
-<span id="cb104-21"><a href="Chuong-3.html#cb104-21" tabindex="-1"></a>(<span class="fl">0.996</span>, <span class="fl">2.0</span>]    <span class="dv">2</span></span>
-<span id="cb104-22"><a href="Chuong-3.html#cb104-22" tabindex="-1"></a>(<span class="fl">2.0</span>, <span class="fl">3.0</span>]      <span class="dv">2</span></span>
-<span id="cb104-23"><a href="Chuong-3.html#cb104-23" tabindex="-1"></a>(<span class="fl">3.0</span>, <span class="fl">4.0</span>]      <span class="dv">1</span></span>
-<span id="cb104-24"><a href="Chuong-3.html#cb104-24" tabindex="-1"></a>dtype: int64</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="Chuong-3.html#cb103-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,  np.nan, <span class="dv">4</span>, np.nan])</span>
+<span id="cb103-2"><a href="Chuong-3.html#cb103-2" tabindex="-1"></a>s.value_counts()</span>
+<span id="cb103-3"><a href="Chuong-3.html#cb103-3" tabindex="-1"></a>Out[<span class="dv">20</span>]: </span>
+<span id="cb103-4"><a href="Chuong-3.html#cb103-4" tabindex="-1"></a><span class="fl">3.0</span>    <span class="dv">2</span></span>
+<span id="cb103-5"><a href="Chuong-3.html#cb103-5" tabindex="-1"></a><span class="fl">1.0</span>    <span class="dv">1</span></span>
+<span id="cb103-6"><a href="Chuong-3.html#cb103-6" tabindex="-1"></a><span class="fl">2.0</span>    <span class="dv">1</span></span>
+<span id="cb103-7"><a href="Chuong-3.html#cb103-7" tabindex="-1"></a><span class="fl">4.0</span>    <span class="dv">1</span></span>
+<span id="cb103-8"><a href="Chuong-3.html#cb103-8" tabindex="-1"></a>dtype: int64</span>
+<span id="cb103-9"><a href="Chuong-3.html#cb103-9" tabindex="-1"></a></span>
+<span id="cb103-10"><a href="Chuong-3.html#cb103-10" tabindex="-1"></a>s.value_counts(normalize<span class="op">=</span><span class="va">True</span>, sort<span class="op">=</span><span class="va">False</span>, dropna<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb103-11"><a href="Chuong-3.html#cb103-11" tabindex="-1"></a>Out[<span class="dv">21</span>]:</span>
+<span id="cb103-12"><a href="Chuong-3.html#cb103-12" tabindex="-1"></a><span class="fl">3.0</span>    <span class="fl">0.285714</span></span>
+<span id="cb103-13"><a href="Chuong-3.html#cb103-13" tabindex="-1"></a><span class="fl">1.0</span>    <span class="fl">0.142857</span></span>
+<span id="cb103-14"><a href="Chuong-3.html#cb103-14" tabindex="-1"></a><span class="fl">2.0</span>    <span class="fl">0.142857</span></span>
+<span id="cb103-15"><a href="Chuong-3.html#cb103-15" tabindex="-1"></a>NaN    <span class="fl">0.285714</span></span>
+<span id="cb103-16"><a href="Chuong-3.html#cb103-16" tabindex="-1"></a><span class="fl">4.0</span>    <span class="fl">0.142857</span></span>
+<span id="cb103-17"><a href="Chuong-3.html#cb103-17" tabindex="-1"></a>dtype: float64</span>
+<span id="cb103-18"><a href="Chuong-3.html#cb103-18" tabindex="-1"></a></span>
+<span id="cb103-19"><a href="Chuong-3.html#cb103-19" tabindex="-1"></a>s.value_counts(bins<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb103-20"><a href="Chuong-3.html#cb103-20" tabindex="-1"></a>Out[<span class="dv">22</span>]:</span>
+<span id="cb103-21"><a href="Chuong-3.html#cb103-21" tabindex="-1"></a>(<span class="fl">0.996</span>, <span class="fl">2.0</span>]    <span class="dv">2</span></span>
+<span id="cb103-22"><a href="Chuong-3.html#cb103-22" tabindex="-1"></a>(<span class="fl">2.0</span>, <span class="fl">3.0</span>]      <span class="dv">2</span></span>
+<span id="cb103-23"><a href="Chuong-3.html#cb103-23" tabindex="-1"></a>(<span class="fl">3.0</span>, <span class="fl">4.0</span>]      <span class="dv">1</span></span>
+<span id="cb103-24"><a href="Chuong-3.html#cb103-24" tabindex="-1"></a>dtype: int64</span></code></pre></div>
 </div>
 <div id="unique-và-.nunique" class="section level2 hasAnchor" number="3.11">
 <h2><span class="header-section-number">3.11</span> <code>.unique()</code> và <code>.nunique()</code><a href="Chuong-3.html#unique-và-.nunique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.unique()</code> trả về các giá trị khác nhau của <code>Series</code> và <code>.nunique()</code> trả về số lượng các giá trị khác nhau của <code>Series</code>. Kết quả trả về của <code>.unique()</code> là danh sách các phần tử được sắp xếp theo thứ tự đầu vào của bảng. Để loại bỏ giá trị <code>NA</code> trong lúc đếm có thể gọi <code>.nunique(dropna=False)</code></p>
 <p>Cách sử dụng</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="Chuong-3.html#cb105-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span> ,<span class="dv">2</span>, np.nan], name<span class="op">=</span><span class="st">&#39;col_0&#39;</span>)</span>
-<span id="cb105-2"><a href="Chuong-3.html#cb105-2" tabindex="-1"></a>s</span>
-<span id="cb105-3"><a href="Chuong-3.html#cb105-3" tabindex="-1"></a>Out[<span class="dv">24</span>]:</span>
-<span id="cb105-4"><a href="Chuong-3.html#cb105-4" tabindex="-1"></a><span class="dv">0</span>    <span class="fl">2.0</span></span>
-<span id="cb105-5"><a href="Chuong-3.html#cb105-5" tabindex="-1"></a><span class="dv">1</span>    <span class="fl">3.0</span></span>
-<span id="cb105-6"><a href="Chuong-3.html#cb105-6" tabindex="-1"></a><span class="dv">2</span>    <span class="fl">1.0</span></span>
-<span id="cb105-7"><a href="Chuong-3.html#cb105-7" tabindex="-1"></a><span class="dv">3</span>    <span class="fl">2.0</span></span>
-<span id="cb105-8"><a href="Chuong-3.html#cb105-8" tabindex="-1"></a><span class="dv">4</span>    NaN</span>
-<span id="cb105-9"><a href="Chuong-3.html#cb105-9" tabindex="-1"></a>Name: col_0, dtype: float64</span>
-<span id="cb105-10"><a href="Chuong-3.html#cb105-10" tabindex="-1"></a></span>
-<span id="cb105-11"><a href="Chuong-3.html#cb105-11" tabindex="-1"></a>s.unique()</span>
-<span id="cb105-12"><a href="Chuong-3.html#cb105-12" tabindex="-1"></a>Out[<span class="dv">25</span>]: array([ <span class="fl">2.</span>,  <span class="fl">3.</span>,  <span class="fl">1.</span>, nan])</span>
-<span id="cb105-13"><a href="Chuong-3.html#cb105-13" tabindex="-1"></a></span>
-<span id="cb105-14"><a href="Chuong-3.html#cb105-14" tabindex="-1"></a>s.nunique(dropna<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb105-15"><a href="Chuong-3.html#cb105-15" tabindex="-1"></a>Out[<span class="dv">26</span>]: <span class="dv">4</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="Chuong-3.html#cb104-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span> ,<span class="dv">2</span>, np.nan], name<span class="op">=</span><span class="st">&#39;col_0&#39;</span>)</span>
+<span id="cb104-2"><a href="Chuong-3.html#cb104-2" tabindex="-1"></a>s</span>
+<span id="cb104-3"><a href="Chuong-3.html#cb104-3" tabindex="-1"></a>Out[<span class="dv">24</span>]:</span>
+<span id="cb104-4"><a href="Chuong-3.html#cb104-4" tabindex="-1"></a><span class="dv">0</span>    <span class="fl">2.0</span></span>
+<span id="cb104-5"><a href="Chuong-3.html#cb104-5" tabindex="-1"></a><span class="dv">1</span>    <span class="fl">3.0</span></span>
+<span id="cb104-6"><a href="Chuong-3.html#cb104-6" tabindex="-1"></a><span class="dv">2</span>    <span class="fl">1.0</span></span>
+<span id="cb104-7"><a href="Chuong-3.html#cb104-7" tabindex="-1"></a><span class="dv">3</span>    <span class="fl">2.0</span></span>
+<span id="cb104-8"><a href="Chuong-3.html#cb104-8" tabindex="-1"></a><span class="dv">4</span>    NaN</span>
+<span id="cb104-9"><a href="Chuong-3.html#cb104-9" tabindex="-1"></a>Name: col_0, dtype: float64</span>
+<span id="cb104-10"><a href="Chuong-3.html#cb104-10" tabindex="-1"></a></span>
+<span id="cb104-11"><a href="Chuong-3.html#cb104-11" tabindex="-1"></a>s.unique()</span>
+<span id="cb104-12"><a href="Chuong-3.html#cb104-12" tabindex="-1"></a>Out[<span class="dv">25</span>]: array([ <span class="fl">2.</span>,  <span class="fl">3.</span>,  <span class="fl">1.</span>, nan])</span>
+<span id="cb104-13"><a href="Chuong-3.html#cb104-13" tabindex="-1"></a></span>
+<span id="cb104-14"><a href="Chuong-3.html#cb104-14" tabindex="-1"></a>s.nunique(dropna<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb104-15"><a href="Chuong-3.html#cb104-15" tabindex="-1"></a>Out[<span class="dv">26</span>]: <span class="dv">4</span></span></code></pre></div>
 </div>
 <div id="drop" class="section level2 hasAnchor" number="3.12">
 <h2><span class="header-section-number">3.12</span> <code>.drop()</code><a href="Chuong-3.html#drop" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.drop()</code> dùng để loại bỏ các dòng hoặc cột theo chỉ định.
 Cú pháp của <code>.drop()</code> như sau</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a href="Chuong-3.html#cb106-1" tabindex="-1"></a>DataFrame.drop(labels<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, index<span class="op">=</span><span class="va">None</span>, columns<span class="op">=</span><span class="va">None</span>, level<span class="op">=</span><span class="va">None</span>, inplace<span class="op">=</span><span class="va">False</span>, errors<span class="op">=</span><span class="st">&#39;raise&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="Chuong-3.html#cb105-1" tabindex="-1"></a>DataFrame.drop(labels<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, index<span class="op">=</span><span class="va">None</span>, columns<span class="op">=</span><span class="va">None</span>, level<span class="op">=</span><span class="va">None</span>, inplace<span class="op">=</span><span class="va">False</span>, errors<span class="op">=</span><span class="st">&#39;raise&#39;</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>labels</code>: Tên cột hoặc dòng cần loại bỏ.</p></li>
@@ -620,37 +620,37 @@ Cú pháp của <code>.drop()</code> như sau</p>
 <li><p><code>errors</code>: mặc định <code>raise</code> sẽ trả ra lỗi và <code>ignore</code> nếu muốn bỏ qua lỗi.</p></li>
 </ul>
 <p><strong>Ví dụ</strong></p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="Chuong-3.html#cb107-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
-<span id="cb107-2"><a href="Chuong-3.html#cb107-2" tabindex="-1"></a>                  columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
-<span id="cb107-3"><a href="Chuong-3.html#cb107-3" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
-<span id="cb107-4"><a href="Chuong-3.html#cb107-4" tabindex="-1"></a>df</span>
-<span id="cb107-5"><a href="Chuong-3.html#cb107-5" tabindex="-1"></a>Out[<span class="dv">28</span>]:</span>
-<span id="cb107-6"><a href="Chuong-3.html#cb107-6" tabindex="-1"></a>     A   B   C   D</span>
-<span id="cb107-7"><a href="Chuong-3.html#cb107-7" tabindex="-1"></a>A    <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb107-8"><a href="Chuong-3.html#cb107-8" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb107-9"><a href="Chuong-3.html#cb107-9" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb107-10"><a href="Chuong-3.html#cb107-10" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
-<span id="cb107-11"><a href="Chuong-3.html#cb107-11" tabindex="-1"></a></span>
-<span id="cb107-12"><a href="Chuong-3.html#cb107-12" tabindex="-1"></a>df.drop(<span class="st">&#39;A&#39;</span>)</span>
-<span id="cb107-13"><a href="Chuong-3.html#cb107-13" tabindex="-1"></a>Out[<span class="dv">29</span>]:</span>
-<span id="cb107-14"><a href="Chuong-3.html#cb107-14" tabindex="-1"></a>    A   B   C   D</span>
-<span id="cb107-15"><a href="Chuong-3.html#cb107-15" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>  <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb107-16"><a href="Chuong-3.html#cb107-16" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>  <span class="dv">8</span>   <span class="dv">9</span>   <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb107-17"><a href="Chuong-3.html#cb107-17" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
-<span id="cb107-18"><a href="Chuong-3.html#cb107-18" tabindex="-1"></a></span>
-<span id="cb107-19"><a href="Chuong-3.html#cb107-19" tabindex="-1"></a>df.drop(columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;C&#39;</span>])</span>
-<span id="cb107-20"><a href="Chuong-3.html#cb107-20" tabindex="-1"></a>Out[<span class="dv">30</span>]: </span>
-<span id="cb107-21"><a href="Chuong-3.html#cb107-21" tabindex="-1"></a>     B   D</span>
-<span id="cb107-22"><a href="Chuong-3.html#cb107-22" tabindex="-1"></a>A    <span class="dv">1</span>   <span class="dv">3</span></span>
-<span id="cb107-23"><a href="Chuong-3.html#cb107-23" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">5</span>   <span class="dv">7</span></span>
-<span id="cb107-24"><a href="Chuong-3.html#cb107-24" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">9</span>  <span class="dv">11</span></span>
-<span id="cb107-25"><a href="Chuong-3.html#cb107-25" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">13</span>  <span class="dv">15</span></span>
-<span id="cb107-26"><a href="Chuong-3.html#cb107-26" tabindex="-1"></a></span>
-<span id="cb107-27"><a href="Chuong-3.html#cb107-27" tabindex="-1"></a>df.drop(index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;2A&#39;</span>])</span>
-<span id="cb107-28"><a href="Chuong-3.html#cb107-28" tabindex="-1"></a>Out[<span class="dv">31</span>]: </span>
-<span id="cb107-29"><a href="Chuong-3.html#cb107-29" tabindex="-1"></a>     A   B   C   D</span>
-<span id="cb107-30"><a href="Chuong-3.html#cb107-30" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb107-31"><a href="Chuong-3.html#cb107-31" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb106-1"><a href="Chuong-3.html#cb106-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb106-2"><a href="Chuong-3.html#cb106-2" tabindex="-1"></a>                  columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
+<span id="cb106-3"><a href="Chuong-3.html#cb106-3" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
+<span id="cb106-4"><a href="Chuong-3.html#cb106-4" tabindex="-1"></a>df</span>
+<span id="cb106-5"><a href="Chuong-3.html#cb106-5" tabindex="-1"></a>Out[<span class="dv">28</span>]:</span>
+<span id="cb106-6"><a href="Chuong-3.html#cb106-6" tabindex="-1"></a>     A   B   C   D</span>
+<span id="cb106-7"><a href="Chuong-3.html#cb106-7" tabindex="-1"></a>A    <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb106-8"><a href="Chuong-3.html#cb106-8" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb106-9"><a href="Chuong-3.html#cb106-9" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb106-10"><a href="Chuong-3.html#cb106-10" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb106-11"><a href="Chuong-3.html#cb106-11" tabindex="-1"></a></span>
+<span id="cb106-12"><a href="Chuong-3.html#cb106-12" tabindex="-1"></a>df.drop(<span class="st">&#39;A&#39;</span>)</span>
+<span id="cb106-13"><a href="Chuong-3.html#cb106-13" tabindex="-1"></a>Out[<span class="dv">29</span>]:</span>
+<span id="cb106-14"><a href="Chuong-3.html#cb106-14" tabindex="-1"></a>    A   B   C   D</span>
+<span id="cb106-15"><a href="Chuong-3.html#cb106-15" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>  <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb106-16"><a href="Chuong-3.html#cb106-16" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>  <span class="dv">8</span>   <span class="dv">9</span>   <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb106-17"><a href="Chuong-3.html#cb106-17" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb106-18"><a href="Chuong-3.html#cb106-18" tabindex="-1"></a></span>
+<span id="cb106-19"><a href="Chuong-3.html#cb106-19" tabindex="-1"></a>df.drop(columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;C&#39;</span>])</span>
+<span id="cb106-20"><a href="Chuong-3.html#cb106-20" tabindex="-1"></a>Out[<span class="dv">30</span>]: </span>
+<span id="cb106-21"><a href="Chuong-3.html#cb106-21" tabindex="-1"></a>     B   D</span>
+<span id="cb106-22"><a href="Chuong-3.html#cb106-22" tabindex="-1"></a>A    <span class="dv">1</span>   <span class="dv">3</span></span>
+<span id="cb106-23"><a href="Chuong-3.html#cb106-23" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">5</span>   <span class="dv">7</span></span>
+<span id="cb106-24"><a href="Chuong-3.html#cb106-24" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">9</span>  <span class="dv">11</span></span>
+<span id="cb106-25"><a href="Chuong-3.html#cb106-25" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">13</span>  <span class="dv">15</span></span>
+<span id="cb106-26"><a href="Chuong-3.html#cb106-26" tabindex="-1"></a></span>
+<span id="cb106-27"><a href="Chuong-3.html#cb106-27" tabindex="-1"></a>df.drop(index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;2A&#39;</span>])</span>
+<span id="cb106-28"><a href="Chuong-3.html#cb106-28" tabindex="-1"></a>Out[<span class="dv">31</span>]: </span>
+<span id="cb106-29"><a href="Chuong-3.html#cb106-29" tabindex="-1"></a>     A   B   C   D</span>
+<span id="cb106-30"><a href="Chuong-3.html#cb106-30" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb106-31"><a href="Chuong-3.html#cb106-31" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
 
 <div class="rmdnote">
 <strong><em>Lưu ý:</em></strong>
@@ -660,7 +660,7 @@ Thực tế hay dùng các params <code>columns</code> và <code>index</code> đ
 <div id="rename" class="section level2 hasAnchor" number="3.13">
 <h2><span class="header-section-number">3.13</span> <code>.rename()</code><a href="Chuong-3.html#rename" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.rename()</code> dùng để đổi tên nhãn của cột hoặc dòng. Cú pháp như sau</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="Chuong-3.html#cb108-1" tabindex="-1"></a>DataFrame.rename(mapper<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>, index<span class="op">=</span><span class="va">None</span>, columns<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="va">None</span>, copy<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">False</span>, level<span class="op">=</span><span class="va">None</span>, errors<span class="op">=</span><span class="st">&#39;ignore&#39;</span>)[source]</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="Chuong-3.html#cb107-1" tabindex="-1"></a>DataFrame.rename(mapper<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>, index<span class="op">=</span><span class="va">None</span>, columns<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="va">None</span>, copy<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">False</span>, level<span class="op">=</span><span class="va">None</span>, errors<span class="op">=</span><span class="st">&#39;ignore&#39;</span>)[source]</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>mapper</code>: là một danh sách dạng dictionary chứa key là tên cần đổi và value là tên mới.</p></li>
@@ -673,32 +673,32 @@ Thực tế hay dùng các params <code>columns</code> và <code>index</code> đ
 <li><p><code>errors</code>: mặc định <code>raise</code> sẽ trả ra lỗi và <code>ignore</code> nếu muốn bỏ qua lỗi.</p></li>
 </ul>
 <p><strong>Ví dụ</strong></p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="Chuong-3.html#cb109-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
-<span id="cb109-2"><a href="Chuong-3.html#cb109-2" tabindex="-1"></a>                        columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
-<span id="cb109-3"><a href="Chuong-3.html#cb109-3" tabindex="-1"></a>                        index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
-<span id="cb109-4"><a href="Chuong-3.html#cb109-4" tabindex="-1"></a>df.rename(mapper<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>})</span>
-<span id="cb109-5"><a href="Chuong-3.html#cb109-5" tabindex="-1"></a>Out[<span class="dv">33</span>: </span>
-<span id="cb109-6"><a href="Chuong-3.html#cb109-6" tabindex="-1"></a>     A   B   C   D</span>
-<span id="cb109-7"><a href="Chuong-3.html#cb109-7" tabindex="-1"></a>aA   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb109-8"><a href="Chuong-3.html#cb109-8" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb109-9"><a href="Chuong-3.html#cb109-9" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb109-10"><a href="Chuong-3.html#cb109-10" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
-<span id="cb109-11"><a href="Chuong-3.html#cb109-11" tabindex="-1"></a></span>
-<span id="cb109-12"><a href="Chuong-3.html#cb109-12" tabindex="-1"></a>df.rename(mapper<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb109-13"><a href="Chuong-3.html#cb109-13" tabindex="-1"></a>Out[<span class="dv">34</span>]:</span>
-<span id="cb109-14"><a href="Chuong-3.html#cb109-14" tabindex="-1"></a>    aA   B   C   D</span>
-<span id="cb109-15"><a href="Chuong-3.html#cb109-15" tabindex="-1"></a>A    <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb109-16"><a href="Chuong-3.html#cb109-16" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb109-17"><a href="Chuong-3.html#cb109-17" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb109-18"><a href="Chuong-3.html#cb109-18" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
-<span id="cb109-19"><a href="Chuong-3.html#cb109-19" tabindex="-1"></a></span>
-<span id="cb109-20"><a href="Chuong-3.html#cb109-20" tabindex="-1"></a>df.rename(columns<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>, <span class="st">&#39;B&#39;</span>:<span class="st">&#39;Bb&#39;</span>}, index<span class="op">=</span>{<span class="st">&#39;A&#39;</span>: <span class="st">&#39;OA&#39;</span>,<span class="st">&#39;3A&#39;</span>:<span class="st">&#39;3a&#39;</span>})</span>
-<span id="cb109-21"><a href="Chuong-3.html#cb109-21" tabindex="-1"></a>Out[<span class="dv">35</span>]:</span>
-<span id="cb109-22"><a href="Chuong-3.html#cb109-22" tabindex="-1"></a>    aA  Bb   C   D</span>
-<span id="cb109-23"><a href="Chuong-3.html#cb109-23" tabindex="-1"></a>OA   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb109-24"><a href="Chuong-3.html#cb109-24" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb109-25"><a href="Chuong-3.html#cb109-25" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb109-26"><a href="Chuong-3.html#cb109-26" tabindex="-1"></a><span class="dv">3</span><span class="er">a</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb108-1"><a href="Chuong-3.html#cb108-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb108-2"><a href="Chuong-3.html#cb108-2" tabindex="-1"></a>                        columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
+<span id="cb108-3"><a href="Chuong-3.html#cb108-3" tabindex="-1"></a>                        index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
+<span id="cb108-4"><a href="Chuong-3.html#cb108-4" tabindex="-1"></a>df.rename(mapper<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>})</span>
+<span id="cb108-5"><a href="Chuong-3.html#cb108-5" tabindex="-1"></a>Out[<span class="dv">33</span>: </span>
+<span id="cb108-6"><a href="Chuong-3.html#cb108-6" tabindex="-1"></a>     A   B   C   D</span>
+<span id="cb108-7"><a href="Chuong-3.html#cb108-7" tabindex="-1"></a>aA   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb108-8"><a href="Chuong-3.html#cb108-8" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb108-9"><a href="Chuong-3.html#cb108-9" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb108-10"><a href="Chuong-3.html#cb108-10" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb108-11"><a href="Chuong-3.html#cb108-11" tabindex="-1"></a></span>
+<span id="cb108-12"><a href="Chuong-3.html#cb108-12" tabindex="-1"></a>df.rename(mapper<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>}, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb108-13"><a href="Chuong-3.html#cb108-13" tabindex="-1"></a>Out[<span class="dv">34</span>]:</span>
+<span id="cb108-14"><a href="Chuong-3.html#cb108-14" tabindex="-1"></a>    aA   B   C   D</span>
+<span id="cb108-15"><a href="Chuong-3.html#cb108-15" tabindex="-1"></a>A    <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb108-16"><a href="Chuong-3.html#cb108-16" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb108-17"><a href="Chuong-3.html#cb108-17" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb108-18"><a href="Chuong-3.html#cb108-18" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb108-19"><a href="Chuong-3.html#cb108-19" tabindex="-1"></a></span>
+<span id="cb108-20"><a href="Chuong-3.html#cb108-20" tabindex="-1"></a>df.rename(columns<span class="op">=</span>{<span class="st">&#39;A&#39;</span>:<span class="st">&#39;aA&#39;</span>, <span class="st">&#39;B&#39;</span>:<span class="st">&#39;Bb&#39;</span>}, index<span class="op">=</span>{<span class="st">&#39;A&#39;</span>: <span class="st">&#39;OA&#39;</span>,<span class="st">&#39;3A&#39;</span>:<span class="st">&#39;3a&#39;</span>})</span>
+<span id="cb108-21"><a href="Chuong-3.html#cb108-21" tabindex="-1"></a>Out[<span class="dv">35</span>]:</span>
+<span id="cb108-22"><a href="Chuong-3.html#cb108-22" tabindex="-1"></a>    aA  Bb   C   D</span>
+<span id="cb108-23"><a href="Chuong-3.html#cb108-23" tabindex="-1"></a>OA   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb108-24"><a href="Chuong-3.html#cb108-24" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb108-25"><a href="Chuong-3.html#cb108-25" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb108-26"><a href="Chuong-3.html#cb108-26" tabindex="-1"></a><span class="dv">3</span><span class="er">a</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
 
 <div class="rmdnote">
 <p><strong><em>Lưu ý:</em></strong>
@@ -709,7 +709,7 @@ Vẫn chưa rõ <code>copy</code> dùng để làm gì.
 <div id="set_index" class="section level2 hasAnchor" number="3.14">
 <h2><span class="header-section-number">3.14</span> <code>.set_index()</code><a href="Chuong-3.html#set_index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.set_index()</code> dùng để chuyển đổi một cột của bảng thành index. Index này có thể thay thể index cũ hoặc thêm vào để thành <code>MultiIndex</code>. Cách sử dụng như sau:</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="Chuong-3.html#cb110-1" tabindex="-1"></a>DataFrame.set_index(keys, drop<span class="op">=</span><span class="va">True</span>, append<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">False</span>, verify_integrity<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="Chuong-3.html#cb109-1" tabindex="-1"></a>DataFrame.set_index(keys, drop<span class="op">=</span><span class="va">True</span>, append<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">False</span>, verify_integrity<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>keys</code>: Có thể truyền vào một cột duy nhất hoặc danh sách các cột. Ngoài ra còn có thể là 1 danh sách dạng <code>pd.Index</code>, <code>Series</code>, <code>np.array</code>, <code>iterator</code></p></li>
@@ -719,81 +719,81 @@ Vẫn chưa rõ <code>copy</code> dùng để làm gì.
 <li><p><code>verify_integrity</code>: Kiểm tra xem cột đánh index có chứa các phần tử trùng lặp hay không.</p></li>
 </ul>
 <p><strong>Ví dụ</strong></p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="Chuong-3.html#cb111-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
-<span id="cb111-2"><a href="Chuong-3.html#cb111-2" tabindex="-1"></a>                  columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
-<span id="cb111-3"><a href="Chuong-3.html#cb111-3" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
-<span id="cb111-4"><a href="Chuong-3.html#cb111-4" tabindex="-1"></a>df.index.name <span class="op">=</span> <span class="st">&#39;index1&#39;</span></span>
-<span id="cb111-5"><a href="Chuong-3.html#cb111-5" tabindex="-1"></a>df</span>
-<span id="cb111-6"><a href="Chuong-3.html#cb111-6" tabindex="-1"></a>Out[<span class="dv">38</span>]:</span>
-<span id="cb111-7"><a href="Chuong-3.html#cb111-7" tabindex="-1"></a>         A   B   C   D</span>
-<span id="cb111-8"><a href="Chuong-3.html#cb111-8" tabindex="-1"></a>index1                </span>
-<span id="cb111-9"><a href="Chuong-3.html#cb111-9" tabindex="-1"></a>A        <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb111-10"><a href="Chuong-3.html#cb111-10" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>       <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb111-11"><a href="Chuong-3.html#cb111-11" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>       <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb111-12"><a href="Chuong-3.html#cb111-12" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>      <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
-<span id="cb111-13"><a href="Chuong-3.html#cb111-13" tabindex="-1"></a></span>
-<span id="cb111-14"><a href="Chuong-3.html#cb111-14" tabindex="-1"></a>df.set_index(<span class="st">&#39;A&#39;</span>)</span>
-<span id="cb111-15"><a href="Chuong-3.html#cb111-15" tabindex="-1"></a>Out[<span class="dv">39</span>]:</span>
-<span id="cb111-16"><a href="Chuong-3.html#cb111-16" tabindex="-1"></a>     B   C   D</span>
-<span id="cb111-17"><a href="Chuong-3.html#cb111-17" tabindex="-1"></a>A             </span>
-<span id="cb111-18"><a href="Chuong-3.html#cb111-18" tabindex="-1"></a><span class="dv">0</span>    <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb111-19"><a href="Chuong-3.html#cb111-19" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb111-20"><a href="Chuong-3.html#cb111-20" tabindex="-1"></a><span class="dv">8</span>    <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb111-21"><a href="Chuong-3.html#cb111-21" tabindex="-1"></a><span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
-<span id="cb111-22"><a href="Chuong-3.html#cb111-22" tabindex="-1"></a></span>
-<span id="cb111-23"><a href="Chuong-3.html#cb111-23" tabindex="-1"></a>df.set_index([<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>], append<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb111-24"><a href="Chuong-3.html#cb111-24" tabindex="-1"></a>Out[<span class="dv">40</span>]: </span>
-<span id="cb111-25"><a href="Chuong-3.html#cb111-25" tabindex="-1"></a>               C   D</span>
-<span id="cb111-26"><a href="Chuong-3.html#cb111-26" tabindex="-1"></a>index1 A  B         </span>
-<span id="cb111-27"><a href="Chuong-3.html#cb111-27" tabindex="-1"></a>A      <span class="dv">0</span>  <span class="dv">1</span>    <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb111-28"><a href="Chuong-3.html#cb111-28" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>     <span class="dv">4</span>  <span class="dv">5</span>    <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb111-29"><a href="Chuong-3.html#cb111-29" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>     <span class="dv">8</span>  <span class="dv">9</span>   <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb111-30"><a href="Chuong-3.html#cb111-30" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>     <span class="dv">12</span> <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
-<span id="cb111-31"><a href="Chuong-3.html#cb111-31" tabindex="-1"></a></span>
-<span id="cb111-32"><a href="Chuong-3.html#cb111-32" tabindex="-1"></a>df.set_index([pd.Index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], name<span class="op">=</span><span class="st">&#39;new_index&#39;</span>)])</span>
-<span id="cb111-33"><a href="Chuong-3.html#cb111-33" tabindex="-1"></a>Out[<span class="dv">41</span>]: </span>
-<span id="cb111-34"><a href="Chuong-3.html#cb111-34" tabindex="-1"></a>            A   B   C   D</span>
-<span id="cb111-35"><a href="Chuong-3.html#cb111-35" tabindex="-1"></a>new_index                </span>
-<span id="cb111-36"><a href="Chuong-3.html#cb111-36" tabindex="-1"></a><span class="dv">1</span>           <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb111-37"><a href="Chuong-3.html#cb111-37" tabindex="-1"></a><span class="dv">2</span>           <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb111-38"><a href="Chuong-3.html#cb111-38" tabindex="-1"></a><span class="dv">3</span>           <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb111-39"><a href="Chuong-3.html#cb111-39" tabindex="-1"></a><span class="dv">4</span>          <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb110-1"><a href="Chuong-3.html#cb110-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb110-2"><a href="Chuong-3.html#cb110-2" tabindex="-1"></a>                  columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
+<span id="cb110-3"><a href="Chuong-3.html#cb110-3" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
+<span id="cb110-4"><a href="Chuong-3.html#cb110-4" tabindex="-1"></a>df.index.name <span class="op">=</span> <span class="st">&#39;index1&#39;</span></span>
+<span id="cb110-5"><a href="Chuong-3.html#cb110-5" tabindex="-1"></a>df</span>
+<span id="cb110-6"><a href="Chuong-3.html#cb110-6" tabindex="-1"></a>Out[<span class="dv">38</span>]:</span>
+<span id="cb110-7"><a href="Chuong-3.html#cb110-7" tabindex="-1"></a>         A   B   C   D</span>
+<span id="cb110-8"><a href="Chuong-3.html#cb110-8" tabindex="-1"></a>index1                </span>
+<span id="cb110-9"><a href="Chuong-3.html#cb110-9" tabindex="-1"></a>A        <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb110-10"><a href="Chuong-3.html#cb110-10" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>       <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb110-11"><a href="Chuong-3.html#cb110-11" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>       <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb110-12"><a href="Chuong-3.html#cb110-12" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>      <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb110-13"><a href="Chuong-3.html#cb110-13" tabindex="-1"></a></span>
+<span id="cb110-14"><a href="Chuong-3.html#cb110-14" tabindex="-1"></a>df.set_index(<span class="st">&#39;A&#39;</span>)</span>
+<span id="cb110-15"><a href="Chuong-3.html#cb110-15" tabindex="-1"></a>Out[<span class="dv">39</span>]:</span>
+<span id="cb110-16"><a href="Chuong-3.html#cb110-16" tabindex="-1"></a>     B   C   D</span>
+<span id="cb110-17"><a href="Chuong-3.html#cb110-17" tabindex="-1"></a>A             </span>
+<span id="cb110-18"><a href="Chuong-3.html#cb110-18" tabindex="-1"></a><span class="dv">0</span>    <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb110-19"><a href="Chuong-3.html#cb110-19" tabindex="-1"></a><span class="dv">4</span>    <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb110-20"><a href="Chuong-3.html#cb110-20" tabindex="-1"></a><span class="dv">8</span>    <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb110-21"><a href="Chuong-3.html#cb110-21" tabindex="-1"></a><span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb110-22"><a href="Chuong-3.html#cb110-22" tabindex="-1"></a></span>
+<span id="cb110-23"><a href="Chuong-3.html#cb110-23" tabindex="-1"></a>df.set_index([<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>], append<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb110-24"><a href="Chuong-3.html#cb110-24" tabindex="-1"></a>Out[<span class="dv">40</span>]: </span>
+<span id="cb110-25"><a href="Chuong-3.html#cb110-25" tabindex="-1"></a>               C   D</span>
+<span id="cb110-26"><a href="Chuong-3.html#cb110-26" tabindex="-1"></a>index1 A  B         </span>
+<span id="cb110-27"><a href="Chuong-3.html#cb110-27" tabindex="-1"></a>A      <span class="dv">0</span>  <span class="dv">1</span>    <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb110-28"><a href="Chuong-3.html#cb110-28" tabindex="-1"></a><span class="dv">1</span><span class="er">A</span>     <span class="dv">4</span>  <span class="dv">5</span>    <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb110-29"><a href="Chuong-3.html#cb110-29" tabindex="-1"></a><span class="dv">2</span><span class="er">A</span>     <span class="dv">8</span>  <span class="dv">9</span>   <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb110-30"><a href="Chuong-3.html#cb110-30" tabindex="-1"></a><span class="dv">3</span><span class="er">A</span>     <span class="dv">12</span> <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span>
+<span id="cb110-31"><a href="Chuong-3.html#cb110-31" tabindex="-1"></a></span>
+<span id="cb110-32"><a href="Chuong-3.html#cb110-32" tabindex="-1"></a>df.set_index([pd.Index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], name<span class="op">=</span><span class="st">&#39;new_index&#39;</span>)])</span>
+<span id="cb110-33"><a href="Chuong-3.html#cb110-33" tabindex="-1"></a>Out[<span class="dv">41</span>]: </span>
+<span id="cb110-34"><a href="Chuong-3.html#cb110-34" tabindex="-1"></a>            A   B   C   D</span>
+<span id="cb110-35"><a href="Chuong-3.html#cb110-35" tabindex="-1"></a>new_index                </span>
+<span id="cb110-36"><a href="Chuong-3.html#cb110-36" tabindex="-1"></a><span class="dv">1</span>           <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb110-37"><a href="Chuong-3.html#cb110-37" tabindex="-1"></a><span class="dv">2</span>           <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb110-38"><a href="Chuong-3.html#cb110-38" tabindex="-1"></a><span class="dv">3</span>           <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb110-39"><a href="Chuong-3.html#cb110-39" tabindex="-1"></a><span class="dv">4</span>          <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
 
 <div class="rmdnote">
 <strong><em>Lưu ý:</em></strong>
 <code>keys</code> không áp dụng cho kiểu <code>list</code>, <code>tuple</code> nhưng Iterator của nó thì được.
 </div>
 <p><strong>Ví dụ</strong> khi đưa list vào sẽ báo lỗi</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="Chuong-3.html#cb112-1" tabindex="-1"></a>df.set_index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb112-2"><a href="Chuong-3.html#cb112-2" tabindex="-1"></a>Out[<span class="dv">42</span>]:</span>
-<span id="cb112-3"><a href="Chuong-3.html#cb112-3" tabindex="-1"></a><span class="op">---------------------------------------------------------------------------</span></span>
-<span id="cb112-4"><a href="Chuong-3.html#cb112-4" tabindex="-1"></a><span class="pp">KeyError</span>                                  Traceback (most recent call last)</span>
-<span id="cb112-5"><a href="Chuong-3.html#cb112-5" tabindex="-1"></a><span class="op">~</span>\AppData\Local\Temp<span class="op">/</span>ipykernel_1380<span class="op">/</span><span class="fl">3577861036.</span><span class="er">py</span> <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
-<span id="cb112-6"><a href="Chuong-3.html#cb112-6" tabindex="-1"></a><span class="op">----&gt;</span> <span class="dv">1</span> df.set_index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
-<span id="cb112-7"><a href="Chuong-3.html#cb112-7" tabindex="-1"></a></span>
-<span id="cb112-8"><a href="Chuong-3.html#cb112-8" tabindex="-1"></a>D:\Vendors\anaconda\lib\site<span class="op">-</span>packages\pandas\util\_decorators.py <span class="kw">in</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
-<span id="cb112-9"><a href="Chuong-3.html#cb112-9" tabindex="-1"></a>    <span class="dv">309</span>                     stacklevel<span class="op">=</span>stacklevel,</span>
-<span id="cb112-10"><a href="Chuong-3.html#cb112-10" tabindex="-1"></a>    <span class="dv">310</span>                 )</span>
-<span id="cb112-11"><a href="Chuong-3.html#cb112-11" tabindex="-1"></a><span class="op">--&gt;</span> <span class="dv">311</span>             <span class="cf">return</span> func(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
-<span id="cb112-12"><a href="Chuong-3.html#cb112-12" tabindex="-1"></a>    <span class="dv">312</span> </span>
-<span id="cb112-13"><a href="Chuong-3.html#cb112-13" tabindex="-1"></a>    <span class="dv">313</span>         <span class="cf">return</span> wrapper</span>
-<span id="cb112-14"><a href="Chuong-3.html#cb112-14" tabindex="-1"></a></span>
-<span id="cb112-15"><a href="Chuong-3.html#cb112-15" tabindex="-1"></a>D:\Vendors\anaconda\lib\site<span class="op">-</span>packages\pandas\core\frame.py <span class="kw">in</span> set_index(<span class="va">self</span>, keys, drop, append, inplace, verify_integrity)</span>
-<span id="cb112-16"><a href="Chuong-3.html#cb112-16" tabindex="-1"></a>   <span class="dv">5492</span> </span>
-<span id="cb112-17"><a href="Chuong-3.html#cb112-17" tabindex="-1"></a>   <span class="dv">5493</span>         <span class="cf">if</span> missing:</span>
-<span id="cb112-18"><a href="Chuong-3.html#cb112-18" tabindex="-1"></a><span class="op">-&gt;</span> <span class="dv">5494</span>             <span class="cf">raise</span> <span class="pp">KeyError</span>(<span class="ss">f&quot;None of </span><span class="sc">{</span>missing<span class="sc">}</span><span class="ss"> are in the columns&quot;</span>)</span>
-<span id="cb112-19"><a href="Chuong-3.html#cb112-19" tabindex="-1"></a>   <span class="dv">5495</span> </span>
-<span id="cb112-20"><a href="Chuong-3.html#cb112-20" tabindex="-1"></a>   <span class="dv">5496</span>         <span class="cf">if</span> inplace:</span>
-<span id="cb112-21"><a href="Chuong-3.html#cb112-21" tabindex="-1"></a></span>
-<span id="cb112-22"><a href="Chuong-3.html#cb112-22" tabindex="-1"></a><span class="pp">KeyError</span>: <span class="st">&#39;None of [1, 2, 3, 4] are in the columns&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="Chuong-3.html#cb111-1" tabindex="-1"></a>df.set_index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb111-2"><a href="Chuong-3.html#cb111-2" tabindex="-1"></a>Out[<span class="dv">42</span>]:</span>
+<span id="cb111-3"><a href="Chuong-3.html#cb111-3" tabindex="-1"></a><span class="op">---------------------------------------------------------------------------</span></span>
+<span id="cb111-4"><a href="Chuong-3.html#cb111-4" tabindex="-1"></a><span class="pp">KeyError</span>                                  Traceback (most recent call last)</span>
+<span id="cb111-5"><a href="Chuong-3.html#cb111-5" tabindex="-1"></a><span class="op">~</span>\AppData\Local\Temp<span class="op">/</span>ipykernel_1380<span class="op">/</span><span class="fl">3577861036.</span><span class="er">py</span> <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
+<span id="cb111-6"><a href="Chuong-3.html#cb111-6" tabindex="-1"></a><span class="op">----&gt;</span> <span class="dv">1</span> df.set_index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
+<span id="cb111-7"><a href="Chuong-3.html#cb111-7" tabindex="-1"></a></span>
+<span id="cb111-8"><a href="Chuong-3.html#cb111-8" tabindex="-1"></a>D:\Vendors\anaconda\lib\site<span class="op">-</span>packages\pandas\util\_decorators.py <span class="kw">in</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb111-9"><a href="Chuong-3.html#cb111-9" tabindex="-1"></a>    <span class="dv">309</span>                     stacklevel<span class="op">=</span>stacklevel,</span>
+<span id="cb111-10"><a href="Chuong-3.html#cb111-10" tabindex="-1"></a>    <span class="dv">310</span>                 )</span>
+<span id="cb111-11"><a href="Chuong-3.html#cb111-11" tabindex="-1"></a><span class="op">--&gt;</span> <span class="dv">311</span>             <span class="cf">return</span> func(<span class="op">*</span>args, <span class="op">**</span>kwargs)</span>
+<span id="cb111-12"><a href="Chuong-3.html#cb111-12" tabindex="-1"></a>    <span class="dv">312</span> </span>
+<span id="cb111-13"><a href="Chuong-3.html#cb111-13" tabindex="-1"></a>    <span class="dv">313</span>         <span class="cf">return</span> wrapper</span>
+<span id="cb111-14"><a href="Chuong-3.html#cb111-14" tabindex="-1"></a></span>
+<span id="cb111-15"><a href="Chuong-3.html#cb111-15" tabindex="-1"></a>D:\Vendors\anaconda\lib\site<span class="op">-</span>packages\pandas\core\frame.py <span class="kw">in</span> set_index(<span class="va">self</span>, keys, drop, append, inplace, verify_integrity)</span>
+<span id="cb111-16"><a href="Chuong-3.html#cb111-16" tabindex="-1"></a>   <span class="dv">5492</span> </span>
+<span id="cb111-17"><a href="Chuong-3.html#cb111-17" tabindex="-1"></a>   <span class="dv">5493</span>         <span class="cf">if</span> missing:</span>
+<span id="cb111-18"><a href="Chuong-3.html#cb111-18" tabindex="-1"></a><span class="op">-&gt;</span> <span class="dv">5494</span>             <span class="cf">raise</span> <span class="pp">KeyError</span>(<span class="ss">f&quot;None of </span><span class="sc">{</span>missing<span class="sc">}</span><span class="ss"> are in the columns&quot;</span>)</span>
+<span id="cb111-19"><a href="Chuong-3.html#cb111-19" tabindex="-1"></a>   <span class="dv">5495</span> </span>
+<span id="cb111-20"><a href="Chuong-3.html#cb111-20" tabindex="-1"></a>   <span class="dv">5496</span>         <span class="cf">if</span> inplace:</span>
+<span id="cb111-21"><a href="Chuong-3.html#cb111-21" tabindex="-1"></a></span>
+<span id="cb111-22"><a href="Chuong-3.html#cb111-22" tabindex="-1"></a><span class="pp">KeyError</span>: <span class="st">&#39;None of [1, 2, 3, 4] are in the columns&#39;</span></span></code></pre></div>
 <p>Trong khi đưa vào <code>Iterator</code> thì hoạt động.</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="Chuong-3.html#cb113-1" tabindex="-1"></a>df.set_index(<span class="bu">iter</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span>
-<span id="cb113-2"><a href="Chuong-3.html#cb113-2" tabindex="-1"></a>Out[<span class="dv">43</span>]:</span>
-<span id="cb113-3"><a href="Chuong-3.html#cb113-3" tabindex="-1"></a>    A   B   C   D</span>
-<span id="cb113-4"><a href="Chuong-3.html#cb113-4" tabindex="-1"></a><span class="dv">1</span>   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
-<span id="cb113-5"><a href="Chuong-3.html#cb113-5" tabindex="-1"></a><span class="dv">2</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
-<span id="cb113-6"><a href="Chuong-3.html#cb113-6" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
-<span id="cb113-7"><a href="Chuong-3.html#cb113-7" tabindex="-1"></a><span class="dv">4</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="Chuong-3.html#cb112-1" tabindex="-1"></a>df.set_index(<span class="bu">iter</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span>
+<span id="cb112-2"><a href="Chuong-3.html#cb112-2" tabindex="-1"></a>Out[<span class="dv">43</span>]:</span>
+<span id="cb112-3"><a href="Chuong-3.html#cb112-3" tabindex="-1"></a>    A   B   C   D</span>
+<span id="cb112-4"><a href="Chuong-3.html#cb112-4" tabindex="-1"></a><span class="dv">1</span>   <span class="dv">0</span>   <span class="dv">1</span>   <span class="dv">2</span>   <span class="dv">3</span></span>
+<span id="cb112-5"><a href="Chuong-3.html#cb112-5" tabindex="-1"></a><span class="dv">2</span>   <span class="dv">4</span>   <span class="dv">5</span>   <span class="dv">6</span>   <span class="dv">7</span></span>
+<span id="cb112-6"><a href="Chuong-3.html#cb112-6" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
+<span id="cb112-7"><a href="Chuong-3.html#cb112-7" tabindex="-1"></a><span class="dv">4</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
 </div>
 <div id="sort_index" class="section level2 hasAnchor" number="3.15">
 <h2><span class="header-section-number">3.15</span> <code>.sort_index</code><a href="Chuong-3.html#sort_index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -801,7 +801,7 @@ Vẫn chưa rõ <code>copy</code> dùng để làm gì.
 <div id="sort_values" class="section level2 hasAnchor" number="3.16">
 <h2><span class="header-section-number">3.16</span> <code>.sort_values</code><a href="Chuong-3.html#sort_values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.sort_values</code> dùng để sắp xếp dữ liệu trong DataFrame hoặc Series</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="Chuong-3.html#cb114-1" tabindex="-1"></a>DataFrame.sort_values(by, axis<span class="op">=</span><span class="dv">0</span>, ascending<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">False</span>, kind<span class="op">=</span><span class="st">&#39;quicksort&#39;</span>, na_position<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">False</span>, key<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="Chuong-3.html#cb113-1" tabindex="-1"></a>DataFrame.sort_values(by, axis<span class="op">=</span><span class="dv">0</span>, ascending<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">False</span>, kind<span class="op">=</span><span class="st">&#39;quicksort&#39;</span>, na_position<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">False</span>, key<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>by</code> : nhãn hoặc danh sách nhãn cần sắp xếp</p></li>
@@ -813,71 +813,71 @@ Vẫn chưa rõ <code>copy</code> dùng để làm gì.
 <li><p><code>ignore_index</code>: Nếu để giá trị <code>True</code> sẽ thực hiện đánh index lại từ 0</p></li>
 <li><p><code>key</code>: key function</p></li>
 </ul>
-<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="Chuong-3.html#cb115-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb115-2"><a href="Chuong-3.html#cb115-2" tabindex="-1"></a>    <span class="st">&#39;col1&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, np.nan, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;C&#39;</span>],</span>
-<span id="cb115-3"><a href="Chuong-3.html#cb115-3" tabindex="-1"></a>    <span class="st">&#39;col2&#39;</span>: [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb115-4"><a href="Chuong-3.html#cb115-4" tabindex="-1"></a>    <span class="st">&#39;col3&#39;</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb115-5"><a href="Chuong-3.html#cb115-5" tabindex="-1"></a>    <span class="st">&#39;col4&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;F&#39;</span>]</span>
-<span id="cb115-6"><a href="Chuong-3.html#cb115-6" tabindex="-1"></a>})</span>
-<span id="cb115-7"><a href="Chuong-3.html#cb115-7" tabindex="-1"></a>df</span>
-<span id="cb115-8"><a href="Chuong-3.html#cb115-8" tabindex="-1"></a>Out[]:</span>
-<span id="cb115-9"><a href="Chuong-3.html#cb115-9" tabindex="-1"></a>  col1  col2  col3 col4</span>
-<span id="cb115-10"><a href="Chuong-3.html#cb115-10" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
-<span id="cb115-11"><a href="Chuong-3.html#cb115-11" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
-<span id="cb115-12"><a href="Chuong-3.html#cb115-12" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
-<span id="cb115-13"><a href="Chuong-3.html#cb115-13" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
-<span id="cb115-14"><a href="Chuong-3.html#cb115-14" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
-<span id="cb115-15"><a href="Chuong-3.html#cb115-15" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="Chuong-3.html#cb114-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb114-2"><a href="Chuong-3.html#cb114-2" tabindex="-1"></a>    <span class="st">&#39;col1&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, np.nan, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;C&#39;</span>],</span>
+<span id="cb114-3"><a href="Chuong-3.html#cb114-3" tabindex="-1"></a>    <span class="st">&#39;col2&#39;</span>: [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb114-4"><a href="Chuong-3.html#cb114-4" tabindex="-1"></a>    <span class="st">&#39;col3&#39;</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb114-5"><a href="Chuong-3.html#cb114-5" tabindex="-1"></a>    <span class="st">&#39;col4&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;F&#39;</span>]</span>
+<span id="cb114-6"><a href="Chuong-3.html#cb114-6" tabindex="-1"></a>})</span>
+<span id="cb114-7"><a href="Chuong-3.html#cb114-7" tabindex="-1"></a>df</span>
+<span id="cb114-8"><a href="Chuong-3.html#cb114-8" tabindex="-1"></a>Out[]:</span>
+<span id="cb114-9"><a href="Chuong-3.html#cb114-9" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb114-10"><a href="Chuong-3.html#cb114-10" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb114-11"><a href="Chuong-3.html#cb114-11" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb114-12"><a href="Chuong-3.html#cb114-12" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb114-13"><a href="Chuong-3.html#cb114-13" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
+<span id="cb114-14"><a href="Chuong-3.html#cb114-14" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb114-15"><a href="Chuong-3.html#cb114-15" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span></code></pre></div>
 <p>Sắp xếp theo <code>col1</code></p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="Chuong-3.html#cb116-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>])</span>
+<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="Chuong-3.html#cb115-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>])</span>
+<span id="cb115-2"><a href="Chuong-3.html#cb115-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb115-3"><a href="Chuong-3.html#cb115-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb115-4"><a href="Chuong-3.html#cb115-4" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb115-5"><a href="Chuong-3.html#cb115-5" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb115-6"><a href="Chuong-3.html#cb115-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb115-7"><a href="Chuong-3.html#cb115-7" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
+<span id="cb115-8"><a href="Chuong-3.html#cb115-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb115-9"><a href="Chuong-3.html#cb115-9" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span></code></pre></div>
+<p>Sắp xếp theo nhiều cột</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="Chuong-3.html#cb116-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>])</span>
 <span id="cb116-2"><a href="Chuong-3.html#cb116-2" tabindex="-1"></a>Out[]:</span>
 <span id="cb116-3"><a href="Chuong-3.html#cb116-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
-<span id="cb116-4"><a href="Chuong-3.html#cb116-4" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
-<span id="cb116-5"><a href="Chuong-3.html#cb116-5" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb116-4"><a href="Chuong-3.html#cb116-4" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb116-5"><a href="Chuong-3.html#cb116-5" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
 <span id="cb116-6"><a href="Chuong-3.html#cb116-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
 <span id="cb116-7"><a href="Chuong-3.html#cb116-7" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
-<span id="cb116-8"><a href="Chuong-3.html#cb116-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb116-8"><a href="Chuong-3.html#cb116-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">7</span>     <span class="dv">2</span>    e</span>
 <span id="cb116-9"><a href="Chuong-3.html#cb116-9" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span></code></pre></div>
-<p>Sắp xếp theo nhiều cột</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="Chuong-3.html#cb117-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>])</span>
+<p>Sắp xếp theo tăng giảm</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="Chuong-3.html#cb117-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span>
 <span id="cb117-2"><a href="Chuong-3.html#cb117-2" tabindex="-1"></a>Out[]:</span>
 <span id="cb117-3"><a href="Chuong-3.html#cb117-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
-<span id="cb117-4"><a href="Chuong-3.html#cb117-4" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
-<span id="cb117-5"><a href="Chuong-3.html#cb117-5" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb117-4"><a href="Chuong-3.html#cb117-4" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb117-5"><a href="Chuong-3.html#cb117-5" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
 <span id="cb117-6"><a href="Chuong-3.html#cb117-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
-<span id="cb117-7"><a href="Chuong-3.html#cb117-7" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
-<span id="cb117-8"><a href="Chuong-3.html#cb117-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">7</span>     <span class="dv">2</span>    e</span>
+<span id="cb117-7"><a href="Chuong-3.html#cb117-7" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb117-8"><a href="Chuong-3.html#cb117-8" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
 <span id="cb117-9"><a href="Chuong-3.html#cb117-9" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span></code></pre></div>
-<p>Sắp xếp theo tăng giảm</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb118-1"><a href="Chuong-3.html#cb118-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span>
+<p>Thay đổi vị trí của <code>NaN</code></p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb118-1"><a href="Chuong-3.html#cb118-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span><span class="st">&#39;col1&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>, na_position<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span>
 <span id="cb118-2"><a href="Chuong-3.html#cb118-2" tabindex="-1"></a>Out[]:</span>
 <span id="cb118-3"><a href="Chuong-3.html#cb118-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
-<span id="cb118-4"><a href="Chuong-3.html#cb118-4" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
-<span id="cb118-5"><a href="Chuong-3.html#cb118-5" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
-<span id="cb118-6"><a href="Chuong-3.html#cb118-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
-<span id="cb118-7"><a href="Chuong-3.html#cb118-7" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb118-4"><a href="Chuong-3.html#cb118-4" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
+<span id="cb118-5"><a href="Chuong-3.html#cb118-5" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb118-6"><a href="Chuong-3.html#cb118-6" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
+<span id="cb118-7"><a href="Chuong-3.html#cb118-7" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
 <span id="cb118-8"><a href="Chuong-3.html#cb118-8" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
-<span id="cb118-9"><a href="Chuong-3.html#cb118-9" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span></code></pre></div>
-<p>Thay đổi vị trí của <code>NaN</code></p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb119-1"><a href="Chuong-3.html#cb119-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span><span class="st">&#39;col1&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>, na_position<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span>
+<span id="cb118-9"><a href="Chuong-3.html#cb118-9" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span></code></pre></div>
+<p>Sắp xếp với key function</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb119-1"><a href="Chuong-3.html#cb119-1" tabindex="-1"></a>In []:df.sort_values(by<span class="op">=</span><span class="st">&#39;col4&#39;</span>, key<span class="op">=</span><span class="kw">lambda</span> col: col.<span class="bu">str</span>.lower())</span>
 <span id="cb119-2"><a href="Chuong-3.html#cb119-2" tabindex="-1"></a>Out[]:</span>
 <span id="cb119-3"><a href="Chuong-3.html#cb119-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
-<span id="cb119-4"><a href="Chuong-3.html#cb119-4" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
-<span id="cb119-5"><a href="Chuong-3.html#cb119-5" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
-<span id="cb119-6"><a href="Chuong-3.html#cb119-6" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
-<span id="cb119-7"><a href="Chuong-3.html#cb119-7" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
-<span id="cb119-8"><a href="Chuong-3.html#cb119-8" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
-<span id="cb119-9"><a href="Chuong-3.html#cb119-9" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span></code></pre></div>
-<p>Sắp xếp với key function</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb120-1"><a href="Chuong-3.html#cb120-1" tabindex="-1"></a>In []:df.sort_values(by<span class="op">=</span><span class="st">&#39;col4&#39;</span>, key<span class="op">=</span><span class="kw">lambda</span> col: col.<span class="bu">str</span>.lower())</span>
-<span id="cb120-2"><a href="Chuong-3.html#cb120-2" tabindex="-1"></a>Out[]:</span>
-<span id="cb120-3"><a href="Chuong-3.html#cb120-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
-<span id="cb120-4"><a href="Chuong-3.html#cb120-4" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
-<span id="cb120-5"><a href="Chuong-3.html#cb120-5" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
-<span id="cb120-6"><a href="Chuong-3.html#cb120-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
-<span id="cb120-7"><a href="Chuong-3.html#cb120-7" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
-<span id="cb120-8"><a href="Chuong-3.html#cb120-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
-<span id="cb120-9"><a href="Chuong-3.html#cb120-9" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span></code></pre></div>
+<span id="cb119-4"><a href="Chuong-3.html#cb119-4" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb119-5"><a href="Chuong-3.html#cb119-5" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb119-6"><a href="Chuong-3.html#cb119-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb119-7"><a href="Chuong-3.html#cb119-7" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
+<span id="cb119-8"><a href="Chuong-3.html#cb119-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb119-9"><a href="Chuong-3.html#cb119-9" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span></code></pre></div>
 
 </div>
 </div>
