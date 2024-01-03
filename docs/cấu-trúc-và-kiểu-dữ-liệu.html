@@ -294,10 +294,13 @@ Cách đơn giản để tạo Series như sau</p>
 <p><strong>Khởi tạo Series bằng array</strong></p>
 <p>Khi không truyền giá trị <code>index</code>, <code>Series</code> sẽ mặc định index của nó là 1 mảng số nguyên từ <code>0</code> đến <code>len(data) - 1</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" tabindex="-1"></a>pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span></code></pre></div>
-<p>a 0
+
+<div class="python_output">
+a 0
 b 1
 c 2
-Name: meow, dtype: int64</p>
+Name: meow, dtype: int64
+</div>
 <p><strong>Khởi tạo Series bằng dict</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb3-1" tabindex="-1"></a>pd.Series({<span class="st">&quot;b&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-1" tabindex="-1"></a>b    <span class="dv">1</span></span>
