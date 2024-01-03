@@ -9,7 +9,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/
 Phương thức `.head(n=5)` hiển thị `n` dòng đầu tiên của `DataFrame`, ngược lại phương thức `.tail(n=5)` hiển thị `n` dòng cuối cùng của `DataFrame`
 
 ```python
-In [1]: df.head()
+df.head()
 Out[1]:    
         store type  department        date  weekly_sales  is_holiday  \
 0      1    A           1  2010-02-05      24924.50       False   
@@ -25,7 +25,7 @@ Out[1]:
 3      22.527778              0.748928         7.808  
 4      27.050000              0.714586         7.808  
 
-In [2]: df.tail()
+df.tail()
 Out[2]:
        store type  department        date  weekly_sales  is_holiday  \
 10769     39    A          99  2011-12-09        895.00       False   
@@ -48,7 +48,7 @@ Out[2]:
 Phương thức `.shape` cho biết số lượng dòng và cột của bảng
 
 ```python
-In [3]: df.shape
+df.shape
 Out[3]: (10774, 9)
 ```
  Trong dó `10774` là số lượng dòng của bảng và `9` là số lượng cột của bảng
@@ -56,7 +56,7 @@ Out[3]: (10774, 9)
  Phương thức `.size` cho biết số lượng phần từ của bảng
 
 ```python
- In [4]: df.size
+df.size
  Out[4]: 96966
 ```
 
@@ -72,7 +72,7 @@ Out[3]: (10774, 9)
  Ví dụ
 
 ```python
-In [5]: df.info()
+df.info()
 Out[5]:
 <class 'pandas.core.frame.DataFrame'>
 Int64Index: 10774 entries, 0 to 10773
@@ -103,7 +103,7 @@ Phương thức `.info()` có các tham số để tùy chỉnh các thông tin 
 Phương thức `.describe()` đưa ra một số thống kê đơn giản như `count`, `mean`, `std`, `min`, `max` và `percentiles = [0.25, 0.5, 0.75]`. Phương thức này chỉ áp dụng cho các cột ở dạng `numerical`.
 
 ```python
-In [6]: df.describe()
+df.describe()
 Out[6]: 
               store    department   weekly_sales  temperature_c  \
 count  10774.000000  10774.000000   10774.000000   10774.000000   
@@ -133,7 +133,7 @@ Bạn có thể thay đổi thông số percentiles bằng cách truyền tham s
 
 **Ví dụ** 
 ```python
-In [7]: df.describe(percentiles=[0.1, 0.99]))
+df.describe(percentiles=[0.1, 0.99]))
 Out[7]: 
               store    department   weekly_sales  temperature_c  \
 count  10774.000000  10774.000000   10774.000000   10774.000000   
@@ -166,7 +166,7 @@ Thuộc tính `.index` để lấy index của `DataFrame` hoặc `Series`.
 Ví dụ
 
 ```python
-In [8]: df.index
+df.index
 Out[8]: 
 Int64Index([    0,     1,     2,     3,     4,     5,     6,     7,     8,
                 9,
@@ -183,7 +183,7 @@ Phương thức `.memory_usage(index=True, deep=False)` giúp thông kê dung l�
 Ví dụ
 
 ```python
-In [9]: df.memory_usage(index=False)
+df.memory_usage(index=False)
 Out[9]: 
 
 store                   86192
@@ -197,7 +197,7 @@ fuel_price_usd_per_l    86192
 unemployment            86192
 dtype: int64
 
-In [10]: df.memory_usage(deep=True) 
+df.memory_usage(deep=True) 
 Out[10]: 
 
 Index                    86192
@@ -216,7 +216,7 @@ dtype: int64
 Sử dụng `[<tên cột>]` để lấy 1 Series của bảng. Ví dụ để lấy Series của cột `department` ta làm như sau
 
 ```python
-In [11]: df['department']
+df['department']
 Out[11]: 
 0         1
 1         1
@@ -241,17 +241,17 @@ Với phương thức `.astype()` ta có thể ép kiểu dữ liệu của cộ
 
 **Trước khi ép kiểu**
 ```python
-In [12]: df['department'].dtypes
+df['department'].dtypes
 Out[12]: dtype('int64')
 
-In [13]: df['department'].memory_usage() - df['department'].index.memory_usage()
+df['department'].memory_usage() - df['department'].index.memory_usage()
 Out[13]: 
 86192
 ```
 **Sau khi ép kiểu**
 
 ```python
-In [14]: df['department'].astype('int8').memory_usage() - df['department'].index.memory_usage()
+df['department'].astype('int8').memory_usage() - df['department'].index.memory_usage()
 Out[14]: 
 10774
 ```
@@ -285,12 +285,12 @@ Trong đó:
 **Ví dụ**
 
 ```python
-In [15]: df = pd.DataFrame({
+df = pd.DataFrame({
     'action': ['view', 'view', 'add to cart', 'add to cart', 'add to cart',],
     'fruit': ['orange', 'orange', 'orange', 'apple', 'apple'],
     'times':   [ 1, 1, 3, 2, 4]
 })
-In [16]: df
+df
 Out[16]:
         action  fruit   times
 0         view  orange      1
@@ -299,7 +299,7 @@ Out[16]:
 3  add to cart   apple      2
 4  add to cart   apple      4
 
-In [17]: df.drop_duplicates()
+df.drop_duplicates()
 Out[17]:
         action  fruit   times
 0         view  orange      1
@@ -307,13 +307,13 @@ Out[17]:
 3  add to cart   apple      2
 4  add to cart   apple      4
 
-In [18]: df.drop_duplicates(subset=['action'])
+df.drop_duplicates(subset=['action'])
 Out[18]:
         action  fruit   times
 0         view  orange      1
 2  add to cart  orange      3
 
-In [19]: df.drop_duplicates(subset=['action','fruit'], keep='last', ignore_index=True)
+df.drop_duplicates(subset=['action','fruit'], keep='last', ignore_index=True)
         action   fruit  times
 0         view  orange      1
 1  add to cart  orange      3
@@ -343,8 +343,8 @@ Trong đó:
 **Ví dụ**
 
 ```python
-In [19]: s = pd.Series([3, 1, 2, 3,  np.nan, 4, np.nan])
-In [20]: s.value_counts()
+s = pd.Series([3, 1, 2, 3,  np.nan, 4, np.nan])
+s.value_counts()
 Out[20]: 
 3.0    2
 1.0    1
@@ -352,7 +352,7 @@ Out[20]:
 4.0    1
 dtype: int64
 
-In [21]: s.value_counts(normalize=True, sort=False, dropna=False)
+s.value_counts(normalize=True, sort=False, dropna=False)
 Out[21]:
 3.0    0.285714
 1.0    0.142857
@@ -361,7 +361,7 @@ NaN    0.285714
 4.0    0.142857
 dtype: float64
 
-In [22]: s.value_counts(bins=3)
+s.value_counts(bins=3)
 Out[22]:
 (0.996, 2.0]    2
 (2.0, 3.0]      2
@@ -376,8 +376,8 @@ Phương thức `.unique()` trả về các giá trị khác nhau của `Series`
 Cách sử dụng
 
 ```python
-In [23]: s = pd.Series([2, 3, 1 ,2, np.nan], name='col_0')
-In [24]: s
+s = pd.Series([2, 3, 1 ,2, np.nan], name='col_0')
+s
 Out[24]:
 0    2.0
 1    3.0
@@ -386,10 +386,10 @@ Out[24]:
 4    NaN
 Name: col_0, dtype: float64
 
-In [25]: s.unique()
+s.unique()
 Out[25]: array([ 2.,  3.,  1., nan])
 
-In [26]: s.nunique(dropna=False)
+s.nunique(dropna=False)
 Out[26]: 4
 ```
 ## `.drop()`
@@ -421,10 +421,10 @@ Trong đó:
 **Ví dụ**
 
 ```python
-In [27]: df = pd.DataFrame(np.arange(16).reshape(4, 4),
+df = pd.DataFrame(np.arange(16).reshape(4, 4),
                   columns=['A', 'B', 'C', 'D'],
                   index=['A', '1A', '2A', '3A'])
-In [28]: df
+df
 Out[28]:
      A   B   C   D
 A    0   1   2   3
@@ -432,14 +432,14 @@ A    0   1   2   3
 2A   8   9  10  11
 3A  12  13  14  15
 
-In [29]: df.drop('A')
+df.drop('A')
 Out[29]:
 	A	B	C	D
 1A	4	5	6	7
 2A	8	9	10	11
 3A	12	13	14	15
 
-In [30]: df.drop(columns=['A', 'C'])
+df.drop(columns=['A', 'C'])
 Out[30]: 
      B   D
 A    1   3
@@ -447,7 +447,7 @@ A    1   3
 2A   9  11
 3A  13  15
 
-In [31]: df.drop(index=['A', '2A'])
+df.drop(index=['A', '2A'])
 Out[31]: 
      A   B   C   D
 1A   4   5   6   7
@@ -489,10 +489,10 @@ Trong đó:
 **Ví dụ**
 
 ```python
-In [32]: df = pd.DataFrame(np.arange(16).reshape(4, 4),
+df = pd.DataFrame(np.arange(16).reshape(4, 4),
                         columns=['A', 'B', 'C', 'D'],
                         index=['A', '1A', '2A', '3A'])
-In [33]: df.rename(mapper={'A':'aA'})
+df.rename(mapper={'A':'aA'})
 Out[33: 
      A   B   C   D
 aA   0   1   2   3
@@ -500,7 +500,7 @@ aA   0   1   2   3
 2A   8   9  10  11
 3A  12  13  14  15
 
-In [34]: df.rename(mapper={'A':'aA'}, axis=1)
+df.rename(mapper={'A':'aA'}, axis=1)
 Out[34]:
     aA   B   C   D
 A    0   1   2   3
@@ -508,7 +508,7 @@ A    0   1   2   3
 2A   8   9  10  11
 3A  12  13  14  15
 
-In [35]: df.rename(columns={'A':'aA', 'B':'Bb'}, index={'A': 'OA','3A':'3a'})
+df.rename(columns={'A':'aA', 'B':'Bb'}, index={'A': 'OA','3A':'3a'})
 Out[35]:
     aA  Bb   C   D
 OA   0   1   2   3
@@ -548,11 +548,11 @@ Trong đó:
 **Ví dụ**
 
 ```python
-In [36]: df = pd.DataFrame(np.arange(16).reshape(4, 4),
+df = pd.DataFrame(np.arange(16).reshape(4, 4),
                   columns=['A', 'B', 'C', 'D'],
                   index=['A', '1A', '2A', '3A'])
-In [37]: df.index.name = 'index1'
-In [38]: df
+df.index.name = 'index1'
+df
 Out[38]:
          A   B   C   D
 index1                
@@ -561,7 +561,7 @@ A        0   1   2   3
 2A       8   9  10  11
 3A      12  13  14  15
 
-In [39]: df.set_index('A')
+df.set_index('A')
 Out[39]:
      B   C   D
 A             
@@ -570,7 +570,7 @@ A
 8    9  10  11
 12  13  14  15
 
-In [40]: df.set_index(['A', 'B'], append=True)
+df.set_index(['A', 'B'], append=True)
 Out[40]: 
                C   D
 index1 A  B         
@@ -579,7 +579,7 @@ A      0  1    2   3
 2A     8  9   10  11
 3A     12 13  14  15
 
-In [41]: df.set_index([pd.Index([1, 2, 3, 4], name='new_index')])
+df.set_index([pd.Index([1, 2, 3, 4], name='new_index')])
 Out[41]: 
             A   B   C   D
 new_index                
@@ -596,7 +596,7 @@ new_index
 **Ví dụ** khi đưa list vào sẽ báo lỗi
 
 ```python
-In [42]: df.set_index([1, 2, 3, 4])
+df.set_index([1, 2, 3, 4])
 Out[42]:
 ---------------------------------------------------------------------------
 KeyError                                  Traceback (most recent call last)
@@ -623,7 +623,7 @@ KeyError: 'None of [1, 2, 3, 4] are in the columns'
 Trong khi đưa vào `Iterator` thì hoạt động.
 
 ```python
-In [43]: df.set_index(iter([1, 2, 3, 4]))
+df.set_index(iter([1, 2, 3, 4]))
 Out[43]:
     A   B   C   D
 1   0   1   2   3
@@ -661,13 +661,13 @@ Trong đó:
 
 
 ```python
-In []: df = pd.DataFrame({
+df = pd.DataFrame({
     'col1': ['A', 'A', 'B', np.nan, 'D', 'C'],
     'col2': [2, 1, 9, 8, 2, 4],
     'col3': [0, 1, 9, 4, 2, 3],
     'col4': ['a', 'B', 'c', 'D', 'e', 'F']
 })
-In []: df
+df
 Out[]:
   col1  col2  col3 col4
 0    A     2     0    a
@@ -680,7 +680,7 @@ Out[]:
 Sắp xếp theo `col1`
 
 ```python
-In []: df.sort_values(by=['col1'])
+df.sort_values(by=['col1'])
 Out[]:
   col1  col2  col3 col4
 0    A     2     0    a
@@ -693,7 +693,7 @@ Out[]:
 Sắp xếp theo nhiều cột
 
 ```python
-In []: df.sort_values(by=['col1', 'col2'])
+df.sort_values(by=['col1', 'col2'])
 Out[]:
   col1  col2  col3 col4
 1    A     1     1    B
@@ -705,7 +705,7 @@ Out[]:
 ```
 Sắp xếp theo tăng giảm
 ```python
-In []: df.sort_values(by=['col1', 'col2'], ascending=[False, True])
+df.sort_values(by=['col1', 'col2'], ascending=[False, True])
 Out[]:
   col1  col2  col3 col4
 4    D     2     2    e
@@ -718,7 +718,7 @@ Out[]:
 
 Thay đổi vị trí của `NaN`
 ```python
-In []: df.sort_values(by='col1', ascending=False, na_position='first')
+df.sort_values(by='col1', ascending=False, na_position='first')
 Out[]:
   col1  col2  col3 col4
 3  NaN     8     4    D
