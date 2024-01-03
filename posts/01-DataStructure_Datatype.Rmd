@@ -35,7 +35,7 @@ Khi không truyền giá trị `index`, `Series` sẽ mặc định index của 
 pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
 ```
 
-```block2
+```{block3, type='python_output'}
 a    0
 b    1
 c    2
