@@ -29,12 +29,11 @@ p code {
 }
 
 .book .book-body .page-wrapper .page-inner section.normal pre.python_output {
-  background: #ffffff00;
-  color: white;
+  box-shadow: 50px 50px 50px #6d0e0e;
 }
 .book .book-body .page-wrapper .page-inner section.normal code {
   color: #bd1481;
-  background-color: #ffffff00;
+  background-color: #ffffff00;;
   padding: 0;
   font-size: 1em;
 }
