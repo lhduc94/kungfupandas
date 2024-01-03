@@ -73,6 +73,6 @@ div.sourceCode {
   background-image: url("../images/warning.png");
 }
 
-pre.python_out_put {
-  color:#008000;
+p.book .book-body .page-wrapper .page-inner section.normal pre.python_out_put {
+  background-image: url("../images/warning.png");
 }
