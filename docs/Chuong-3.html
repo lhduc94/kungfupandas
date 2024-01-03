@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chương 3 Một số hàm cơ bản | Kungfu Pandas</title>
   <meta name="description" content="Kungfu Panda" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chương 3 Một số hàm cơ bản | Kungfu Pandas" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2024-01-01" />
+<meta name="date" content="2024-01-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="nhập-xuất-trong-pandas.html"/>
-<link rel="next" href="săp-xêp-theo-col1.html"/>
+<link rel="next" href="selecting-và-filtering.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -188,20 +188,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.12" data-path="Chuong-3.html"><a href="Chuong-3.html#drop"><i class="fa fa-check"></i><b>3.12</b> <code>.drop()</code></a></li>
 <li class="chapter" data-level="3.13" data-path="Chuong-3.html"><a href="Chuong-3.html#rename"><i class="fa fa-check"></i><b>3.13</b> <code>.rename()</code></a></li>
 <li class="chapter" data-level="3.14" data-path="Chuong-3.html"><a href="Chuong-3.html#set_index"><i class="fa fa-check"></i><b>3.14</b> <code>.set_index()</code></a></li>
-<li class="chapter" data-level="3.15" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_values"><i class="fa fa-check"></i><b>3.15</b> <code>.sort_values</code></a></li>
+<li class="chapter" data-level="3.15" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_index"><i class="fa fa-check"></i><b>3.15</b> <code>.sort_index</code></a></li>
+<li class="chapter" data-level="3.16" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_values"><i class="fa fa-check"></i><b>3.16</b> <code>.sort_values</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html"><i class="fa fa-check"></i><b>4</b> Sắp xếp theo <code>col1</code></a>
+<li class="chapter" data-level="4" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html"><i class="fa fa-check"></i><b>4</b> Selecting và Filtering</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#loc-và-.iloc"><i class="fa fa-check"></i><b>4.1</b> .loc và .iloc</a>
+<li class="chapter" data-level="4.1" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#sử-dụng"><i class="fa fa-check"></i><b>4.1</b> Sử dụng <code>[]</code></a></li>
+<li class="chapter" data-level="4.2" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#loc-và-.iloc"><i class="fa fa-check"></i><b>4.2</b> .loc và .iloc</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#loc"><i class="fa fa-check"></i><b>4.1.1</b> .loc</a></li>
-<li class="chapter" data-level="4.1.2" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#iloc"><i class="fa fa-check"></i><b>4.1.2</b> <code>.iloc</code></a></li>
+<li class="chapter" data-level="4.2.1" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#loc"><i class="fa fa-check"></i><b>4.2.1</b> .loc</a></li>
+<li class="chapter" data-level="4.2.2" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#iloc"><i class="fa fa-check"></i><b>4.2.2</b> <code>.iloc</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#lọc-theo-điều-kiện"><i class="fa fa-check"></i><b>4.2</b> Lọc theo điều kiện</a>
+<li class="chapter" data-level="4.3" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#lọc-theo-điều-kiện"><i class="fa fa-check"></i><b>4.3</b> Lọc theo điều kiện</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#toán-tử-điều-kiện"><i class="fa fa-check"></i><b>4.2.1</b> Toán tử điều kiện</a></li>
-<li class="chapter" data-level="4.2.2" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#isin"><i class="fa fa-check"></i><b>4.2.2</b> <code>.isin()</code></a></li>
-<li class="chapter" data-level="4.2.3" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#lọc-missing-value-với-.dropna"><i class="fa fa-check"></i><b>4.2.3</b> Lọc missing value với <code>.dropna()</code></a></li>
+<li class="chapter" data-level="4.3.1" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#toán-tử-điều-kiện"><i class="fa fa-check"></i><b>4.3.1</b> Toán tử điều kiện</a></li>
+<li class="chapter" data-level="4.3.2" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#isin"><i class="fa fa-check"></i><b>4.3.2</b> <code>.isin()</code></a></li>
+<li class="chapter" data-level="4.3.3" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#lọc-missing-value-với-.dropna"><i class="fa fa-check"></i><b>4.3.3</b> Lọc missing value với <code>.dropna()</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html"><i class="fa fa-check"></i><b>5</b> Tính toán trên các phần tử trong Pandas</a>
@@ -221,15 +223,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><i class="fa fa-check"></i><b>6</b> Các cách phối hợp nhiều bảng với nhau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat"><i class="fa fa-check"></i><b>6.1</b> Concat</a></li>
-<li class="chapter" data-level="6.2" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#join"><i class="fa fa-check"></i><b>6.2</b> Join</a></li>
-<li class="chapter" data-level="6.3" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge"><i class="fa fa-check"></i><b>6.3</b> Merge</a></li>
+<li class="chapter" data-level="6.1" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#join"><i class="fa fa-check"></i><b>6.1</b> Join</a></li>
+<li class="chapter" data-level="6.2" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge"><i class="fa fa-check"></i><b>6.2</b> Merge</a></li>
+<li class="chapter" data-level="6.3" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat"><i class="fa fa-check"></i><b>6.3</b> Concat</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="groupby.html"><a href="groupby.html"><i class="fa fa-check"></i><b>7</b> Groupby</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="groupby.html"><a href="groupby.html#groupby-1"><i class="fa fa-check"></i><b>7.1</b> Groupby</a></li>
 <li class="chapter" data-level="7.2" data-path="groupby.html"><a href="groupby.html#các-hàm-filtering-trong-groupby"><i class="fa fa-check"></i><b>7.2</b> Các hàm Filtering trong Groupby</a></li>
 <li class="chapter" data-level="7.3" data-path="groupby.html"><a href="groupby.html#aggregate-trong-groupby"><i class="fa fa-check"></i><b>7.3</b> Aggregate trong Groupby</a></li>
+<li class="chapter" data-level="7.4" data-path="groupby.html"><a href="groupby.html#aggregate-trong-groupby-1"><i class="fa fa-check"></i><b>7.4</b> Aggregate trong Groupby</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>8</b> Làm việc với 1 số kiểu dữ liệu</a>
 <ul>
@@ -795,10 +798,12 @@ Vẫn chưa rõ <code>copy</code> dùng để làm gì.
 <span id="cb111-6"><a href="Chuong-3.html#cb111-6" tabindex="-1"></a><span class="dv">3</span>   <span class="dv">8</span>   <span class="dv">9</span>  <span class="dv">10</span>  <span class="dv">11</span></span>
 <span id="cb111-7"><a href="Chuong-3.html#cb111-7" tabindex="-1"></a><span class="dv">4</span>  <span class="dv">12</span>  <span class="dv">13</span>  <span class="dv">14</span>  <span class="dv">15</span></span></code></pre></div>
 </div>
-<div id="sort_values" class="section level2 hasAnchor" number="3.15">
-<h2><span class="header-section-number">3.15</span> <code>.sort_values</code><a href="Chuong-3.html#sort_values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-Phương thức <code>.sort_values</code> dùng để sắp xếp dữ liệu trong DataFrame hoặc Series</p>
+<div id="sort_index" class="section level2 hasAnchor" number="3.15">
+<h2><span class="header-section-number">3.15</span> <code>.sort_index</code><a href="Chuong-3.html#sort_index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="sort_values" class="section level2 hasAnchor" number="3.16">
+<h2><span class="header-section-number">3.16</span> <code>.sort_values</code><a href="Chuong-3.html#sort_values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Phương thức <code>.sort_values</code> dùng để sắp xếp dữ liệu trong DataFrame hoặc Series</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb112-1"><a href="Chuong-3.html#cb112-1" tabindex="-1"></a>DataFrame.sort_values(by, axis<span class="op">=</span><span class="dv">0</span>, ascending<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">False</span>, kind<span class="op">=</span><span class="st">&#39;quicksort&#39;</span>, na_position<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">False</span>, key<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
@@ -811,43 +816,72 @@ Phương thức <code>.sort_values</code> dùng để sắp xếp dữ li�
 <li><p><code>ignore_index</code>: Nếu để giá trị <code>True</code> sẽ thực hiện đánh index lại từ 0</p></li>
 <li><p><code>key</code>: key function</p></li>
 </ul>
-<p>=======</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="Chuong-3.html#cb113-1" tabindex="-1"></a>DataFrame.sort_values(by, axis<span class="op">=</span><span class="dv">0</span>, ascending<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">False</span>, kind<span class="op">=</span><span class="st">&#39;quicksort&#39;</span>, na_position<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">False</span>, key<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
-<p>Trong đó:</p>
-<ul>
-<li><p><code>by</code>: nhãn hoặc danh sách các nhãn</p></li>
-<li><p><code>axis</code>: Thực thi theo dòng {<code>0</code> hoặc <code>index</code>} hoặc cột {<code>1</code> hoặc <code>columns</code>}</p></li>
-<li><p><code>ascending</code>: bool hoặc danh sách các bool thể hiện sắp xếp theo tăng dần hoặc giảm dần. Mặc định <code>True</code></p></li>
-<li><p><code>inplace</code>: Thực thi trên chính bảng hoặc tạo một bản sao.</p></li>
-<li><p><code>kind</code>: Lựa chọn thuật toán sắp xếp</p></li>
-<li><p><code>na_position</code>: Đưa <code>NaN</code> lên đầu hoặc cuối</p></li>
-<li><p><code>ignor_index</code>: Nếu để giá trị <code>True</code> sẽ đánh index lại từ 0 -&gt; n-1</p></li>
-<li><p><code>key</code>: áp dụng hàm vào lúc sort
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 23ad2852c0b15efdedd920a58f31d21da6687942</p></li>
-</ul>
-<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="Chuong-3.html#cb114-1" tabindex="-1"></a>In []: df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb114-2"><a href="Chuong-3.html#cb114-2" tabindex="-1"></a>    <span class="st">&#39;col1&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, np.nan, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;C&#39;</span>],</span>
-<span id="cb114-3"><a href="Chuong-3.html#cb114-3" tabindex="-1"></a><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
-<span id="cb114-4"><a href="Chuong-3.html#cb114-4" tabindex="-1"></a>    <span class="st">&#39;col2&#39;</span>: [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
-<span id="cb114-5"><a href="Chuong-3.html#cb114-5" tabindex="-1"></a>    <span class="st">&#39;col3&#39;</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb114-6"><a href="Chuong-3.html#cb114-6" tabindex="-1"></a>    <span class="st">&#39;col4&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;F&#39;</span>]</span>
-<span id="cb114-7"><a href="Chuong-3.html#cb114-7" tabindex="-1"></a>})</span>
-<span id="cb114-8"><a href="Chuong-3.html#cb114-8" tabindex="-1"></a>In []: df</span>
-<span id="cb114-9"><a href="Chuong-3.html#cb114-9" tabindex="-1"></a>Out[]:</span>
-<span id="cb114-10"><a href="Chuong-3.html#cb114-10" tabindex="-1"></a><span class="op">=======</span></span>
-<span id="cb114-11"><a href="Chuong-3.html#cb114-11" tabindex="-1"></a>    <span class="co">&#39;col2&#39;</span>: [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">4</span>],</span>
-<span id="cb114-12"><a href="Chuong-3.html#cb114-12" tabindex="-1"></a>    <span class="co">&#39;col3&#39;</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb114-13"><a href="Chuong-3.html#cb114-13" tabindex="-1"></a>    <span class="co">&#39;col4&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;F&#39;</span>]})</span>
-<span id="cb114-14"><a href="Chuong-3.html#cb114-14" tabindex="-1"></a>In []: df</span>
-<span id="cb114-15"><a href="Chuong-3.html#cb114-15" tabindex="-1"></a><span class="op">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="dv">23</span><span class="er">ad2852c0b15efdedd920a58f31d21da6687942</span></span>
-<span id="cb114-16"><a href="Chuong-3.html#cb114-16" tabindex="-1"></a>  col1  col2  col3 col4</span>
-<span id="cb114-17"><a href="Chuong-3.html#cb114-17" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
-<span id="cb114-18"><a href="Chuong-3.html#cb114-18" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
-<span id="cb114-19"><a href="Chuong-3.html#cb114-19" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
-<span id="cb114-20"><a href="Chuong-3.html#cb114-20" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
-<span id="cb114-21"><a href="Chuong-3.html#cb114-21" tabindex="-1"></a><span class="op">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
-<span id="cb114-22"><a href="Chuong-3.html#cb114-22" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
-<span id="cb114-23"><a href="Chuong-3.html#cb114-23" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb113-1"><a href="Chuong-3.html#cb113-1" tabindex="-1"></a>In []: df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb113-2"><a href="Chuong-3.html#cb113-2" tabindex="-1"></a>    <span class="st">&#39;col1&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, np.nan, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;C&#39;</span>],</span>
+<span id="cb113-3"><a href="Chuong-3.html#cb113-3" tabindex="-1"></a>    <span class="st">&#39;col2&#39;</span>: [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb113-4"><a href="Chuong-3.html#cb113-4" tabindex="-1"></a>    <span class="st">&#39;col3&#39;</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb113-5"><a href="Chuong-3.html#cb113-5" tabindex="-1"></a>    <span class="st">&#39;col4&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;F&#39;</span>]</span>
+<span id="cb113-6"><a href="Chuong-3.html#cb113-6" tabindex="-1"></a>})</span>
+<span id="cb113-7"><a href="Chuong-3.html#cb113-7" tabindex="-1"></a>In []: df</span>
+<span id="cb113-8"><a href="Chuong-3.html#cb113-8" tabindex="-1"></a>Out[]:</span>
+<span id="cb113-9"><a href="Chuong-3.html#cb113-9" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb113-10"><a href="Chuong-3.html#cb113-10" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb113-11"><a href="Chuong-3.html#cb113-11" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb113-12"><a href="Chuong-3.html#cb113-12" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb113-13"><a href="Chuong-3.html#cb113-13" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
+<span id="cb113-14"><a href="Chuong-3.html#cb113-14" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb113-15"><a href="Chuong-3.html#cb113-15" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span></code></pre></div>
+<p>Sắp xếp theo <code>col1</code></p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="Chuong-3.html#cb114-1" tabindex="-1"></a>In []: df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>])</span>
+<span id="cb114-2"><a href="Chuong-3.html#cb114-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb114-3"><a href="Chuong-3.html#cb114-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb114-4"><a href="Chuong-3.html#cb114-4" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb114-5"><a href="Chuong-3.html#cb114-5" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb114-6"><a href="Chuong-3.html#cb114-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb114-7"><a href="Chuong-3.html#cb114-7" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
+<span id="cb114-8"><a href="Chuong-3.html#cb114-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb114-9"><a href="Chuong-3.html#cb114-9" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span></code></pre></div>
+<p>Sắp xếp theo nhiều cột</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="Chuong-3.html#cb115-1" tabindex="-1"></a>In []: df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>])</span>
+<span id="cb115-2"><a href="Chuong-3.html#cb115-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb115-3"><a href="Chuong-3.html#cb115-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb115-4"><a href="Chuong-3.html#cb115-4" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb115-5"><a href="Chuong-3.html#cb115-5" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb115-6"><a href="Chuong-3.html#cb115-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb115-7"><a href="Chuong-3.html#cb115-7" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
+<span id="cb115-8"><a href="Chuong-3.html#cb115-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">7</span>     <span class="dv">2</span>    e</span>
+<span id="cb115-9"><a href="Chuong-3.html#cb115-9" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span></code></pre></div>
+<p>Sắp xếp theo tăng giảm</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="Chuong-3.html#cb116-1" tabindex="-1"></a>In []: df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span>
+<span id="cb116-2"><a href="Chuong-3.html#cb116-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb116-3"><a href="Chuong-3.html#cb116-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb116-4"><a href="Chuong-3.html#cb116-4" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb116-5"><a href="Chuong-3.html#cb116-5" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
+<span id="cb116-6"><a href="Chuong-3.html#cb116-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb116-7"><a href="Chuong-3.html#cb116-7" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb116-8"><a href="Chuong-3.html#cb116-8" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb116-9"><a href="Chuong-3.html#cb116-9" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span></code></pre></div>
+<p>Thay đổi vị trí của <code>NaN</code></p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="Chuong-3.html#cb117-1" tabindex="-1"></a>In []: df.sort_values(by<span class="op">=</span><span class="st">&#39;col1&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>, na_position<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span>
+<span id="cb117-2"><a href="Chuong-3.html#cb117-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb117-3"><a href="Chuong-3.html#cb117-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb117-4"><a href="Chuong-3.html#cb117-4" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
+<span id="cb117-5"><a href="Chuong-3.html#cb117-5" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb117-6"><a href="Chuong-3.html#cb117-6" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span>
+<span id="cb117-7"><a href="Chuong-3.html#cb117-7" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb117-8"><a href="Chuong-3.html#cb117-8" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb117-9"><a href="Chuong-3.html#cb117-9" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span></code></pre></div>
+<p>Sắp xếp với key function</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb118-1"><a href="Chuong-3.html#cb118-1" tabindex="-1"></a>In []:df.sort_values(by<span class="op">=</span><span class="st">&#39;col4&#39;</span>, key<span class="op">=</span><span class="kw">lambda</span> col: col.<span class="bu">str</span>.lower())</span>
+<span id="cb118-2"><a href="Chuong-3.html#cb118-2" tabindex="-1"></a>Out[]:</span>
+<span id="cb118-3"><a href="Chuong-3.html#cb118-3" tabindex="-1"></a>  col1  col2  col3 col4</span>
+<span id="cb118-4"><a href="Chuong-3.html#cb118-4" tabindex="-1"></a><span class="dv">0</span>    A     <span class="dv">2</span>     <span class="dv">0</span>    a</span>
+<span id="cb118-5"><a href="Chuong-3.html#cb118-5" tabindex="-1"></a><span class="dv">1</span>    A     <span class="dv">1</span>     <span class="dv">1</span>    B</span>
+<span id="cb118-6"><a href="Chuong-3.html#cb118-6" tabindex="-1"></a><span class="dv">2</span>    B     <span class="dv">9</span>     <span class="dv">9</span>    c</span>
+<span id="cb118-7"><a href="Chuong-3.html#cb118-7" tabindex="-1"></a><span class="dv">3</span>  NaN     <span class="dv">8</span>     <span class="dv">4</span>    D</span>
+<span id="cb118-8"><a href="Chuong-3.html#cb118-8" tabindex="-1"></a><span class="dv">4</span>    D     <span class="dv">2</span>     <span class="dv">2</span>    e</span>
+<span id="cb118-9"><a href="Chuong-3.html#cb118-9" tabindex="-1"></a><span class="dv">5</span>    C     <span class="dv">4</span>     <span class="dv">3</span>    F</span></code></pre></div>
+
 </div>
 </div>
             </section>
@@ -856,7 +890,7 @@ Phương thức <code>.sort_values</code> dùng để sắp xếp dữ li�
         </div>
       </div>
 <a href="nhập-xuất-trong-pandas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="săp-xêp-theo-col1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="selecting-và-filtering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

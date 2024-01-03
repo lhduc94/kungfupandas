@@ -632,9 +632,10 @@ Out[43]:
 4  12  13  14  15
 ```
 
+## `.sort_index`
+
 ## `.sort_values`
 
-<<<<<<< HEAD
 Phương thức `.sort_values` dùng để sắp xếp dữ liệu trong DataFrame hoặc Series
 ```python
 DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last', ignore_index=False, key=None)
@@ -658,62 +659,25 @@ Trong đó:
 
 - `key`: key function
 
-=======
-```python
-DataFrame.sort_values(by, axis=0, ascending=True, inplace=False, kind='quicksort', na_position='last', ignore_index=False, key=None)
-```
-Trong đó:
-
-- `by`: nhãn hoặc danh sách các nhãn
-
-- `axis`: Thực thi theo dòng {`0` hoặc `index`} hoặc cột {`1` hoặc `columns`}
-
-- `ascending`: bool hoặc danh sách các bool thể hiện sắp xếp theo tăng dần hoặc giảm dần. Mặc định `True`
-
-- `inplace`: Thực thi trên chính bảng hoặc tạo một bản sao.
-
-- `kind`: Lựa chọn thuật toán sắp xếp
-
-- `na_position`: Đưa `NaN` lên đầu hoặc cuối
-
-- `ignor_index`: Nếu để giá trị `True` sẽ đánh index lại từ 0 -> n-1
-
-- `key`: áp dụng hàm vào lúc sort
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 
 ```python
 In []: df = pd.DataFrame({
     'col1': ['A', 'A', 'B', np.nan, 'D', 'C'],
-<<<<<<< HEAD
     'col2': [2, 1, 9, 8, 2, 4],
     'col3': [0, 1, 9, 4, 2, 3],
     'col4': ['a', 'B', 'c', 'D', 'e', 'F']
 })
 In []: df
 Out[]:
-=======
-    'col2': [2, 1, 9, 8, 7, 4],
-    'col3': [0, 1, 9, 4, 2, 3],
-    'col4': ['a', 'B', 'c', 'D', 'e', 'F']})
-In []: df
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
   col1  col2  col3 col4
 0    A     2     0    a
 1    A     1     1    B
 2    B     9     9    c
 3  NaN     8     4    D
-<<<<<<< HEAD
 4    D     2     2    e
 5    C     4     3    F
 ```
 Sắp xếp theo `col1`
-=======
-4    D     7     2    e
-5    C     4     3    F
-```
-
-Sắp xếp theo `col1`
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 
 ```python
 In []: df.sort_values(by=['col1'])
@@ -723,7 +687,6 @@ Out[]:
 1    A     1     1    B
 2    B     9     9    c
 5    C     4     3    F
-<<<<<<< HEAD
 4    D     2     2    e
 3  NaN     8     4    D
 ```
@@ -746,19 +709,6 @@ In []: df.sort_values(by=['col1', 'col2'], ascending=[False, True])
 Out[]:
   col1  col2  col3 col4
 4    D     2     2    e
-=======
-4    D     7     2    e
-3  NaN     8     4    D
-```
-
-Sắp xếp theo nhiều cột và chỉ định hướng sắp xếp
-
-```python
-In []: df.sort_values(by=['col1', 'col2'] , ascending=[False, True])
-Out[]:
-  col1  col2  col3 col4
-4    D     7     2    e
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 5    C     4     3    F
 2    B     9     9    c
 1    A     1     1    B
@@ -766,7 +716,6 @@ Out[]:
 3  NaN     8     4    D
 ```
 
-<<<<<<< HEAD
 Thay đổi vị trí của `NaN`
 ```python
 In []: df.sort_values(by='col1', ascending=False, na_position='first')
@@ -774,43 +723,21 @@ Out[]:
   col1  col2  col3 col4
 3  NaN     8     4    D
 4    D     2     2    e
-=======
-Đặt `NaN` lên đầu
-```python
-In []: df.sort_values(by=['col1', 'col2'] , ascending=False, na_position='first')
-Out[]:
-  col1  col2  col3 col4
-3  NaN     8     4    D
-4    D     7     2    e
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 5    C     4     3    F
 2    B     9     9    c
 0    A     2     0    a
 1    A     1     1    B
 ```
-<<<<<<< HEAD
 Sắp xếp với key function
 
 ```python
 In []:df.sort_values(by='col4', key=lambda col: col.str.lower())
-=======
-
-Sắp xếp với key function
-```python
-In []: df.sort_values(by='col4', key=lambda col: col.str.lower())
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942
 Out[]:
   col1  col2  col3 col4
 0    A     2     0    a
 1    A     1     1    B
 2    B     9     9    c
 3  NaN     8     4    D
-<<<<<<< HEAD
 4    D     2     2    e
 5    C     4     3    F
 ```
-=======
-4    D     7     2    e
-5    C     4     3    F
-```
->>>>>>> 23ad2852c0b15efdedd920a58f31d21da6687942

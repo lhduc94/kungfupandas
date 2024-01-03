@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chương 8 Làm việc với 1 số kiểu dữ liệu | Kungfu Pandas</title>
   <meta name="description" content="Kungfu Panda" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chương 8 Làm việc với 1 số kiểu dữ liệu | Kungfu Pandas" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2024-01-01" />
+<meta name="date" content="2024-01-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -188,20 +188,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.12" data-path="Chuong-3.html"><a href="Chuong-3.html#drop"><i class="fa fa-check"></i><b>3.12</b> <code>.drop()</code></a></li>
 <li class="chapter" data-level="3.13" data-path="Chuong-3.html"><a href="Chuong-3.html#rename"><i class="fa fa-check"></i><b>3.13</b> <code>.rename()</code></a></li>
 <li class="chapter" data-level="3.14" data-path="Chuong-3.html"><a href="Chuong-3.html#set_index"><i class="fa fa-check"></i><b>3.14</b> <code>.set_index()</code></a></li>
-<li class="chapter" data-level="3.15" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_values"><i class="fa fa-check"></i><b>3.15</b> <code>.sort_values</code></a></li>
+<li class="chapter" data-level="3.15" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_index"><i class="fa fa-check"></i><b>3.15</b> <code>.sort_index</code></a></li>
+<li class="chapter" data-level="3.16" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_values"><i class="fa fa-check"></i><b>3.16</b> <code>.sort_values</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html"><i class="fa fa-check"></i><b>4</b> Sắp xếp theo <code>col1</code></a>
+<li class="chapter" data-level="4" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html"><i class="fa fa-check"></i><b>4</b> Selecting và Filtering</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#loc-và-.iloc"><i class="fa fa-check"></i><b>4.1</b> .loc và .iloc</a>
+<li class="chapter" data-level="4.1" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#sử-dụng"><i class="fa fa-check"></i><b>4.1</b> Sử dụng <code>[]</code></a></li>
+<li class="chapter" data-level="4.2" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#loc-và-.iloc"><i class="fa fa-check"></i><b>4.2</b> .loc và .iloc</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#loc"><i class="fa fa-check"></i><b>4.1.1</b> .loc</a></li>
-<li class="chapter" data-level="4.1.2" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#iloc"><i class="fa fa-check"></i><b>4.1.2</b> <code>.iloc</code></a></li>
+<li class="chapter" data-level="4.2.1" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#loc"><i class="fa fa-check"></i><b>4.2.1</b> .loc</a></li>
+<li class="chapter" data-level="4.2.2" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#iloc"><i class="fa fa-check"></i><b>4.2.2</b> <code>.iloc</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#lọc-theo-điều-kiện"><i class="fa fa-check"></i><b>4.2</b> Lọc theo điều kiện</a>
+<li class="chapter" data-level="4.3" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#lọc-theo-điều-kiện"><i class="fa fa-check"></i><b>4.3</b> Lọc theo điều kiện</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#toán-tử-điều-kiện"><i class="fa fa-check"></i><b>4.2.1</b> Toán tử điều kiện</a></li>
-<li class="chapter" data-level="4.2.2" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#isin"><i class="fa fa-check"></i><b>4.2.2</b> <code>.isin()</code></a></li>
-<li class="chapter" data-level="4.2.3" data-path="săp-xêp-theo-col1.html"><a href="săp-xêp-theo-col1.html#lọc-missing-value-với-.dropna"><i class="fa fa-check"></i><b>4.2.3</b> Lọc missing value với <code>.dropna()</code></a></li>
+<li class="chapter" data-level="4.3.1" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#toán-tử-điều-kiện"><i class="fa fa-check"></i><b>4.3.1</b> Toán tử điều kiện</a></li>
+<li class="chapter" data-level="4.3.2" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#isin"><i class="fa fa-check"></i><b>4.3.2</b> <code>.isin()</code></a></li>
+<li class="chapter" data-level="4.3.3" data-path="selecting-và-filtering.html"><a href="selecting-và-filtering.html#lọc-missing-value-với-.dropna"><i class="fa fa-check"></i><b>4.3.3</b> Lọc missing value với <code>.dropna()</code></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html"><i class="fa fa-check"></i><b>5</b> Tính toán trên các phần tử trong Pandas</a>
@@ -221,15 +223,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><i class="fa fa-check"></i><b>6</b> Các cách phối hợp nhiều bảng với nhau</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat"><i class="fa fa-check"></i><b>6.1</b> Concat</a></li>
-<li class="chapter" data-level="6.2" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#join"><i class="fa fa-check"></i><b>6.2</b> Join</a></li>
-<li class="chapter" data-level="6.3" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge"><i class="fa fa-check"></i><b>6.3</b> Merge</a></li>
+<li class="chapter" data-level="6.1" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#join"><i class="fa fa-check"></i><b>6.1</b> Join</a></li>
+<li class="chapter" data-level="6.2" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#merge"><i class="fa fa-check"></i><b>6.2</b> Merge</a></li>
+<li class="chapter" data-level="6.3" data-path="các-cách-phối-hợp-nhiều-bảng-với-nhau.html"><a href="các-cách-phối-hợp-nhiều-bảng-với-nhau.html#concat"><i class="fa fa-check"></i><b>6.3</b> Concat</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="groupby.html"><a href="groupby.html"><i class="fa fa-check"></i><b>7</b> Groupby</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="groupby.html"><a href="groupby.html#groupby-1"><i class="fa fa-check"></i><b>7.1</b> Groupby</a></li>
 <li class="chapter" data-level="7.2" data-path="groupby.html"><a href="groupby.html#các-hàm-filtering-trong-groupby"><i class="fa fa-check"></i><b>7.2</b> Các hàm Filtering trong Groupby</a></li>
 <li class="chapter" data-level="7.3" data-path="groupby.html"><a href="groupby.html#aggregate-trong-groupby"><i class="fa fa-check"></i><b>7.3</b> Aggregate trong Groupby</a></li>
+<li class="chapter" data-level="7.4" data-path="groupby.html"><a href="groupby.html#aggregate-trong-groupby-1"><i class="fa fa-check"></i><b>7.4</b> Aggregate trong Groupby</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>8</b> Làm việc với 1 số kiểu dữ liệu</a>
 <ul>

@@ -591,7 +591,7 @@ Pandas sẽ không biết kiểu dữ liệu `timestamp` nếu không khai báo.
 Ví dụ như tất cả dữ liệu của bạn là `int` hoặc có thể được ép kiểu về  `int`thì có thể khai báo  `dtype=np.int`
 ``` 
 
-Ở ví dụ phía dưới `col_1`, `col_2`, `col_4`, `col_5` có thể ép về kiểu `int`, còn  `col_3`, `col_6` thì không thể ép kiểu được.
+Ở ví dụ phía dưới `col_1`, `col_2`, `col_3`, `col_4`, `col_5` có thể ép về kiểu `int`, còn `col_6` thì không thể ép kiểu được.
 
 ```python
 df = pd.DataFrame({
@@ -621,7 +621,7 @@ col_2     int64
 col_3    object
 col_4     int64
 col_5     int64
-col_6    object
+col_6     int64
 dtype: object
 ```
 

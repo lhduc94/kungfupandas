@@ -35,8 +35,10 @@ unique-và-.nunique
 drop
 rename
 set_index
+sort_index
 sort_values
-săp-xêp-theo-col1
+selecting-và-filtering
+sử-dụng
 loc-và-.iloc
 loc
 iloc
@@ -54,13 +56,14 @@ so-sánh-các-phương-pháp-lặp
 xử-lý-song-song-trong-pandas
 pandarallel
 các-cách-phối-hợp-nhiều-bảng-với-nhau
-concat
 join
 merge
+concat
 groupby
 groupby-1
 các-hàm-filtering-trong-groupby
 aggregate-trong-groupby
+aggregate-trong-groupby-1
 làm-việc-với-1-số-kiểu-dữ-liệu
 xử-lý-dữ-liệu-dạng-text
 xử-lý-dữ-liệu-dạng-timestamp
