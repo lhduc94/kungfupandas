@@ -34,7 +34,7 @@ Khi không truyền giá trị `index`, `Series` sẽ mặc định index của 
 pd.Series(data=[0, 1, 2], index=["a", "b", "c"], name="meow")
 ```
 
-```python
+```{python eval=FALSE}
 a    0
 b    1
 c    2
@@ -159,7 +159,7 @@ dtype: int64
 **List indice**
 
 ```python
-In [6]: s[[1, 2, 4]]
+s[[1, 2, 4]]
 ```
 
 ```python
@@ -172,7 +172,7 @@ dtype: int64
 **List index**
 
 ```python
-In [7]: s[["b", "c", "e"]]
+s[["b", "c", "e"]]
 ```
 
 ```python
