@@ -41,9 +41,11 @@ Trong đó:
 
 Đọc file dữ liệu sale được cho tại [đây](https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv). Giả sử ta chỉ lấy các cột `date`, `weekly_sales` và `is_holiday` và lấy cột `date` làm `index` và chỉ lấy 6 dòng đầu
 ```python
-In [1]: df = pd.read_csv('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv', index_col=['date'], usecols=['date','weekly_sales','is_holiday'], nrows=6)
-In [2]: df
-Out[2]:
+df = pd.read_csv('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv', index_col=['date'], usecols=['date','weekly_sales','is_holiday'], nrows=6)
+df
+```
+
+```{.python_output}
             weekly_sales  is_holiday
 date                                
 2010-02-05      24924.50       False
@@ -205,7 +207,7 @@ Cấu trúc `records`
  df.head()
  ```
 
- ```
+ ```{.python_output}
           name             type  height    weight
 0   Bulbasaur  [Grass, Poison]  0.71 m    6.9 kg
 1     Ivysaur  [Grass, Poison]  0.99 m   13.0 kg

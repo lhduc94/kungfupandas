@@ -266,7 +266,7 @@ b  2.0	  3
 a  3.0	  2
 ```
 
-```
+```python
 pd.DataFrame(d, index=["d", "b", "a"], columns=["two", "three"])
 ```
 
