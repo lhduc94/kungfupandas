@@ -11,6 +11,6 @@ description: "Kungfu Pandas"
 
 ![](../images/index/cover.jpg)
 
-## Giới thiệu cuốn sách {-}
+<!-- ## Giới thiệu cuốn sách {-} -->
 
 <!-- ## Giới thiệu tác giả {-} -->
