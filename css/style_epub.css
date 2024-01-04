@@ -77,8 +77,10 @@ pre.python_output code {
 }
 .rmdnote {
   background-image: url("../images/note.png");
-  background-color: #8cd2f3;
-  border: 3px solid #8cd2f3;
+  background-color: #ffffff; /* Màu trắng hoặc màu bạn muốn sử dụng */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .rmdtip {
   background-image: url("../images/idea.png");
