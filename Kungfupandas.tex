@@ -109,6 +109,7 @@
 \usepackage{graphicx}
 \usepackage{Alegreya}
 \usepackage[scale=.7]{sourcecodepro}
+\usepackage{hyperref}
 
 \usepackage{framed,color}
 \definecolor{shadecolor}{RGB}{248,248,248}
@@ -233,7 +234,7 @@
 %\cleardoublepage\newpage
 \thispagestyle{empty}
 \begin{center}
-\includegraphics{images/dedication.pdf}
+% \includegraphics{images/dedication.pdf}
 \end{center}
 
 \setlength{\abovedisplayskip}{-5pt}
@@ -294,8 +295,12 @@ Khi không truyền giá trị \texttt{index}, \texttt{Series} sẽ mặc địn
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]:}
+\NormalTok{pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{a    }\DecValTok{0}
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{2}
@@ -307,8 +312,12 @@ Khi không truyền giá trị \texttt{index}, \texttt{Series} sẽ mặc địn
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"b"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{\})}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{pd.Series(\{}\StringTok{"b"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"a"}\NormalTok{:}\DecValTok{0}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{a    }\DecValTok{0}
 \NormalTok{c    }\DecValTok{2}
@@ -324,8 +333,12 @@ Với các giá trị trong biến \texttt{index} không có trong keys của di
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(\{}\StringTok{"a"}\NormalTok{: }\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{, }\StringTok{"e"}\NormalTok{: }\DecValTok{4}\NormalTok{\}, index}\OperatorTok{=}\NormalTok{[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{pd.Series(\{}\StringTok{"a"}\NormalTok{: }\DecValTok{0}\NormalTok{, }\StringTok{"b"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"c"}\NormalTok{: }\DecValTok{2}\NormalTok{, }\StringTok{"e"}\NormalTok{: }\DecValTok{4}\NormalTok{\}, index}\OperatorTok{=}\NormalTok{[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{b    }\FloatTok{1.0}
 \NormalTok{c    }\FloatTok{2.0}
 \NormalTok{d    NaN}
@@ -344,8 +357,12 @@ là \texttt{float64} nên kiểu dữ liệu của \texttt{Series} cũng là \te
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.Series(data}\OperatorTok{=}\DecValTok{1}\NormalTok{, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{pd.Series(data}\OperatorTok{=}\DecValTok{1}\NormalTok{, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{a    }\DecValTok{1}
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{1}
@@ -362,7 +379,7 @@ Ví dụ:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"f"}\NormalTok{])}
+\NormalTok{s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"e"}\NormalTok{, }\StringTok{"f"}\NormalTok{])}
 \end{Highlighting}
 \end{Shaded}
 
@@ -371,8 +388,12 @@ Ta gọi thuộc tính \texttt{.values}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: s.values}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]:}
+\NormalTok{s.values}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{array([}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{])}
 \end{Highlighting}
 \end{Shaded}
@@ -381,26 +402,32 @@ Ta gọi thuộc tính \texttt{.values}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: s[}\DecValTok{2}\NormalTok{]}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]: }\DecValTok{2}
+\NormalTok{s[}\DecValTok{2}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
+
+\texttt{python\ 2}
 
 \textbf{Lấy theo index}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{3}\NormalTok{]: s[}\StringTok{"c"}\NormalTok{]}
-\NormalTok{Out[}\DecValTok{3}\NormalTok{]: }\DecValTok{2} 
+\NormalTok{s[}\StringTok{"c"}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
+
+\texttt{python\ 2}
 
 \textbf{Slice indice}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{4}\NormalTok{]: s[}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{]}
-\NormalTok{Out[}\DecValTok{4}\NormalTok{]:}
+\NormalTok{s[}\DecValTok{1}\NormalTok{:}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{d    }\DecValTok{2}
 \NormalTok{dtype: int64}
@@ -411,8 +438,12 @@ Ta gọi thuộc tính \texttt{.values}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{5}\NormalTok{]: s[}\StringTok{"b"}\NormalTok{:}\StringTok{"c"}\NormalTok{]}
-\NormalTok{Out[}\DecValTok{5}\NormalTok{]: }
+\NormalTok{s[}\StringTok{"b"}\NormalTok{:}\StringTok{"c"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{2}
 \NormalTok{dtype: int64}
@@ -424,7 +455,11 @@ Ta gọi thuộc tính \texttt{.values}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{In [}\DecValTok{6}\NormalTok{]: s[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{]]}
-\NormalTok{Out[}\DecValTok{6}\NormalTok{]:}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{2}
 \NormalTok{e    }\DecValTok{4}
@@ -437,7 +472,11 @@ Ta gọi thuộc tính \texttt{.values}
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{In [}\DecValTok{7}\NormalTok{]: s[[}\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"e"}\NormalTok{]]}
-\NormalTok{Out[}\DecValTok{7}\NormalTok{]:}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{b    }\DecValTok{1}
 \NormalTok{c    }\DecValTok{2}
 \NormalTok{e    }\DecValTok{4}
@@ -449,8 +488,12 @@ Ta gọi thuộc tính \texttt{.values}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{5}\NormalTok{]: s[s }\OperatorTok{\textgreater{}}\NormalTok{ s.mean()]}
-\NormalTok{Out[}\DecValTok{5}\NormalTok{]:}
+\NormalTok{s[s }\OperatorTok{\textgreater{}}\NormalTok{ s.mean()]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{d    }\DecValTok{3}
 \NormalTok{e    }\DecValTok{4}
 \NormalTok{f    }\DecValTok{5}
@@ -510,27 +553,39 @@ trong \texttt{columns} không có trong key của dict sẽ được gán \textt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: d }\OperatorTok{=}\NormalTok{ \{}
+\NormalTok{d }\OperatorTok{=}\NormalTok{ \{}
             \StringTok{"one"}\NormalTok{: pd.Series([}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"c"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{]),}
             \StringTok{"two"}\NormalTok{: pd.Series([}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"c"}\NormalTok{, }\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"d"}\NormalTok{])}
 \NormalTok{        \}}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(d)}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{pd.DataFrame(d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   one  two}
 \NormalTok{a  }\FloatTok{3.0}    \DecValTok{2}
 \NormalTok{b  }\FloatTok{2.0}    \DecValTok{3}
 \NormalTok{c  }\FloatTok{1.0}    \DecValTok{1}
 \NormalTok{d  NaN    }\DecValTok{4}
 
-\NormalTok{In [}\DecValTok{3}\NormalTok{]: pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"d"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{3}\NormalTok{]: }
+\NormalTok{pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"d"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   one  two}
 \NormalTok{d  NaN    }\DecValTok{4}
 \NormalTok{b  }\FloatTok{2.0}    \DecValTok{3}
 \NormalTok{a  }\FloatTok{3.0}    \DecValTok{2}
 
-\NormalTok{In [}\DecValTok{4}\NormalTok{]: pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"d"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{4}\NormalTok{]:}
+\NormalTok{pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"d"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"a"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   two  three}
 \NormalTok{d    }\DecValTok{4}\NormalTok{    NaN}
 \NormalTok{b    }\DecValTok{3}\NormalTok{    NaN}
@@ -547,15 +602,19 @@ giá trị \texttt{columns}, DataFrame sẽ chọn những key thuộc dict và 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: d }\OperatorTok{=}\NormalTok{ \{}
+\NormalTok{d }\OperatorTok{=}\NormalTok{ \{}
             \StringTok{"one"}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{],}
             \StringTok{"two"}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{],}
             \StringTok{"three"}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{]}
 \NormalTok{        \}}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(data}\OperatorTok{=}\NormalTok{d,}
+\NormalTok{pd.DataFrame(data}\OperatorTok{=}\NormalTok{d,}
 \NormalTok{                     index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{],}
 \NormalTok{                     columns}\OperatorTok{=}\NormalTok{[}\StringTok{"one"}\NormalTok{, }\StringTok{"two"}\NormalTok{, }\StringTok{"four"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   one  two four}
 \NormalTok{a    }\DecValTok{1}    \DecValTok{1}\NormalTok{   NaN}
 \NormalTok{b    }\DecValTok{2}    \DecValTok{2}\NormalTok{   NaN}
@@ -573,18 +632,26 @@ của \texttt{numpy.ndarray}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.DataFrame(data}\OperatorTok{=}\NormalTok{[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{]], }
+\NormalTok{pd.DataFrame(data}\OperatorTok{=}\NormalTok{[[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], [}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{]], }
 \NormalTok{                     index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], }
 \NormalTok{                     columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}one\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}two\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}three\textquotesingle{}}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   one  two  three}
 \NormalTok{a    }\DecValTok{1}    \DecValTok{2}\NormalTok{    NaN}
 \NormalTok{b    }\DecValTok{3}    \DecValTok{4}    \FloatTok{5.0}
 
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(data}\OperatorTok{=}\NormalTok{np.random.rand(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), }
+\NormalTok{pd.DataFrame(data}\OperatorTok{=}\NormalTok{np.random.rand(}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{), }
 \NormalTok{                     index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], }
 \NormalTok{                     columns}\OperatorTok{=}\NormalTok{[}\StringTok{\textquotesingle{}one\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}two\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}three\textquotesingle{}}\NormalTok{]))}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{        one       two     three}
 \NormalTok{a  }\FloatTok{0.662008}  \FloatTok{0.085735}  \FloatTok{0.331281}
 \NormalTok{b  }\FloatTok{0.115360}  \FloatTok{0.358092}  \FloatTok{0.862477}
@@ -607,9 +674,13 @@ sẽ phát sinh lỗi.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: d }\OperatorTok{=}\NormalTok{ [\{}\StringTok{"one"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{2}\NormalTok{\}, \{}\StringTok{"one"}\NormalTok{: }\DecValTok{4}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{5}\NormalTok{, }\StringTok{"three"}\NormalTok{: }\DecValTok{6}\NormalTok{\}]}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{"one"}\NormalTok{, }\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{, }\StringTok{"four"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{d }\OperatorTok{=}\NormalTok{ [\{}\StringTok{"one"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{2}\NormalTok{\}, \{}\StringTok{"one"}\NormalTok{: }\DecValTok{4}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{5}\NormalTok{, }\StringTok{"three"}\NormalTok{: }\DecValTok{6}\NormalTok{\}]}
+\NormalTok{pd.DataFrame(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{"one"}\NormalTok{, }\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{, }\StringTok{"four"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   one  two  three  four}
 \NormalTok{a    }\DecValTok{1}    \DecValTok{2}\NormalTok{    NaN   NaN}
 \NormalTok{b    }\DecValTok{4}    \DecValTok{5}    \FloatTok{6.0}\NormalTok{   NaN}
@@ -623,10 +694,14 @@ Dưới đây là một ví dụ Mảng có cấu trúc trong numpy
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: data }\OperatorTok{=}\NormalTok{ np.array([(}\StringTok{\textquotesingle{}pikachu\textquotesingle{}}\NormalTok{, }\DecValTok{9}\NormalTok{, }\FloatTok{27.0}\NormalTok{), (}\StringTok{\textquotesingle{}mewtwo\textquotesingle{}}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{81.0}\NormalTok{)],}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ np.array([(}\StringTok{\textquotesingle{}pikachu\textquotesingle{}}\NormalTok{, }\DecValTok{9}\NormalTok{, }\FloatTok{27.0}\NormalTok{), (}\StringTok{\textquotesingle{}mewtwo\textquotesingle{}}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{81.0}\NormalTok{)],}
 \NormalTok{                        dtype}\OperatorTok{=}\NormalTok{[(}\StringTok{\textquotesingle{}name\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}U10\textquotesingle{}}\NormalTok{), (}\StringTok{\textquotesingle{}age\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}i4\textquotesingle{}}\NormalTok{), (}\StringTok{\textquotesingle{}weight\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}f4\textquotesingle{}}\NormalTok{)])}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(data)}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]: }
+\NormalTok{pd.DataFrame(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{       name  age  weight}
 \DecValTok{0}\NormalTok{   pikachu    }\DecValTok{9}    \FloatTok{27.0}
 \DecValTok{1}\NormalTok{    mewtwo    }\DecValTok{3}    \FloatTok{81.0}
@@ -653,8 +728,12 @@ Tạo DataFrame từ namedtuple \texttt{Point2D}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.DataFrame([Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{)])}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]:}
+\NormalTok{pd.DataFrame([Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   x  y}
 \DecValTok{0}  \DecValTok{0}  \DecValTok{0}
 \DecValTok{1}  \DecValTok{0}  \DecValTok{1}
@@ -666,8 +745,12 @@ Tạo DataFrame từ namedtuple cả \texttt{Point2D} và \texttt{Point3D}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: pd.DataFrame([Point3D(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), Point3D(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)])}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]:    }
+\NormalTok{pd.DataFrame([Point3D(}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), Point2D(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), Point3D(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   x  y    z}
 \DecValTok{0}  \DecValTok{0}  \DecValTok{0}  \FloatTok{0.0}
 \DecValTok{1}  \DecValTok{0}  \DecValTok{1}\NormalTok{  NaN}
@@ -681,9 +764,13 @@ Như ta thấy, tại phần tử thứ 2 chỉ có 2 giá trị, trong khi ph�
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame(s)}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]: }
+\NormalTok{s }\OperatorTok{=}\NormalTok{ pd.Series(data}\OperatorTok{=}\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{], name}\OperatorTok{=}\StringTok{"meow"}\NormalTok{)}
+\NormalTok{pd.DataFrame(s)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   meow}
 \NormalTok{a     }\DecValTok{0}
 \NormalTok{b     }\DecValTok{1}
@@ -715,9 +802,13 @@ Ví dụ tạo DataFrame khi \texttt{orient="columns"}. Với cách khởi tạo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: data }\OperatorTok{=}\NormalTok{ \{}\StringTok{"col\_1"}\NormalTok{: [}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }\StringTok{"col\_2"}\NormalTok{: [}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{]\}}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame.from\_dict(data)}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ \{}\StringTok{"col\_1"}\NormalTok{: [}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }\StringTok{"col\_2"}\NormalTok{: [}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{]\}}
+\NormalTok{pd.DataFrame.from\_dict(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   col\_1 col\_2}
 \DecValTok{0}      \DecValTok{3}\NormalTok{     a}
 \DecValTok{1}      \DecValTok{2}\NormalTok{     b}
@@ -730,10 +821,14 @@ Ví dụ tạo DataFrame khi \texttt{orient="index"}. Với cách khởi tạo n
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: data }\OperatorTok{=}\NormalTok{ \{}\StringTok{"col\_1"}\NormalTok{: [}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }\StringTok{"col\_2"}\NormalTok{: [}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{]\}}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame.from\_dict(data, orient}\OperatorTok{=}\StringTok{"index"}\NormalTok{, }
+\NormalTok{data }\OperatorTok{=}\NormalTok{ \{}\StringTok{"col\_1"}\NormalTok{: [}\DecValTok{3}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }\StringTok{"col\_2"}\NormalTok{: [}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{, }\StringTok{"c"}\NormalTok{, }\StringTok{"d"}\NormalTok{]\}}
+\NormalTok{pd.DataFrame.from\_dict(data, orient}\OperatorTok{=}\StringTok{"index"}\NormalTok{, }
 \NormalTok{                               columns}\OperatorTok{=}\NormalTok{[}\StringTok{"one"}\NormalTok{, }\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{, }\StringTok{"four"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   col\_1 col\_2}
 \DecValTok{0}      \DecValTok{3}\NormalTok{     a}
 \DecValTok{1}      \DecValTok{2}\NormalTok{     b}
@@ -756,10 +851,14 @@ Cách khởi tạo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: data }\OperatorTok{=}\NormalTok{ np.array([(}\StringTok{\textquotesingle{}Rex\textquotesingle{}}\NormalTok{, }\DecValTok{9}\NormalTok{, }\FloatTok{81.0}\NormalTok{), (}\StringTok{\textquotesingle{}Fido\textquotesingle{}}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{27.0}\NormalTok{)],}
+\NormalTok{data }\OperatorTok{=}\NormalTok{ np.array([(}\StringTok{\textquotesingle{}Rex\textquotesingle{}}\NormalTok{, }\DecValTok{9}\NormalTok{, }\FloatTok{81.0}\NormalTok{), (}\StringTok{\textquotesingle{}Fido\textquotesingle{}}\NormalTok{, }\DecValTok{3}\NormalTok{, }\FloatTok{27.0}\NormalTok{)],}
 \NormalTok{                        dtype}\OperatorTok{=}\NormalTok{[(}\StringTok{\textquotesingle{}name\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}U10\textquotesingle{}}\NormalTok{), (}\StringTok{\textquotesingle{}age\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}i4\textquotesingle{}}\NormalTok{), (}\StringTok{\textquotesingle{}weight\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}f4\textquotesingle{}}\NormalTok{)])}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame.from\_records(data, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]: }
+\NormalTok{pd.DataFrame.from\_records(data, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   name  age  weight}
 \NormalTok{a   Rex    }\DecValTok{9}    \FloatTok{81.0}
 \NormalTok{b  Fido    }\DecValTok{3}    \FloatTok{27.0}
@@ -791,9 +890,13 @@ Hoặc 1 danh sách các dict
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: d }\OperatorTok{=}\NormalTok{ [\{}\StringTok{"one"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{2}\NormalTok{\}, \{}\StringTok{"one"}\NormalTok{: }\DecValTok{4}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{5}\NormalTok{, }\StringTok{"three"}\NormalTok{: }\DecValTok{6}\NormalTok{\}]}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: pd.DataFrame.from\_records(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{"one"}\NormalTok{, }\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{, }\StringTok{"four"}\NormalTok{])}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{d }\OperatorTok{=}\NormalTok{ [\{}\StringTok{"one"}\NormalTok{: }\DecValTok{1}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{2}\NormalTok{\}, \{}\StringTok{"one"}\NormalTok{: }\DecValTok{4}\NormalTok{, }\StringTok{"two"}\NormalTok{: }\DecValTok{5}\NormalTok{, }\StringTok{"three"}\NormalTok{: }\DecValTok{6}\NormalTok{\}]}
+\NormalTok{pd.DataFrame.from\_records(d, index}\OperatorTok{=}\NormalTok{[}\StringTok{"a"}\NormalTok{, }\StringTok{"b"}\NormalTok{], columns}\OperatorTok{=}\NormalTok{[}\StringTok{"one"}\NormalTok{, }\StringTok{"two"}\NormalTok{, }\StringTok{"three"}\NormalTok{, }\StringTok{"four"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   one  two  three  four}
 \NormalTok{a    }\DecValTok{1}    \DecValTok{2}\NormalTok{    NaN   NaN}
 \NormalTok{b    }\DecValTok{4}    \DecValTok{5}    \FloatTok{6.0}\NormalTok{   NaN}
@@ -841,23 +944,31 @@ Ví dụ:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
                    \StringTok{\textquotesingle{}col\_1\textquotesingle{}}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }
                    \StringTok{\textquotesingle{}col\_2\textquotesingle{}}\NormalTok{: [}\FloatTok{1.0}\NormalTok{, }\FloatTok{2.0}\NormalTok{, }\FloatTok{3.0}\NormalTok{, }\FloatTok{4.0}\NormalTok{], }
                    \StringTok{\textquotesingle{}col\_3\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}4\textquotesingle{}}\NormalTok{],}
                    \StringTok{\textquotesingle{}col\_4\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{, }\DecValTok{2}\NormalTok{, }\StringTok{\textquotesingle{}3\textquotesingle{}}\NormalTok{, }\DecValTok{4}\NormalTok{],}
                    \StringTok{\textquotesingle{}col\_5\textquotesingle{}}\NormalTok{: [}\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{],}
                    \StringTok{\textquotesingle{}col\_6\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}2021{-}06{-}01\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}02\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}03\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}04\textquotesingle{}}\NormalTok{]\})}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: df}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   col\_1  col\_2 col\_3 col\_4  col\_5       col\_6}
 \DecValTok{0}      \DecValTok{1}    \FloatTok{1.0}     \DecValTok{1}     \DecValTok{1}   \VariableTok{True}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}
 \DecValTok{1}      \DecValTok{0}    \FloatTok{2.0}     \DecValTok{2}     \DecValTok{2}  \VariableTok{False}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{2}
 \DecValTok{2}      \DecValTok{1}    \FloatTok{3.0}     \DecValTok{3}     \DecValTok{3}   \VariableTok{True}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{3}
 \DecValTok{3}      \DecValTok{0}    \FloatTok{4.0}     \DecValTok{4}     \DecValTok{4}  \VariableTok{False}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{4}
 
-\NormalTok{In [}\DecValTok{3}\NormalTok{]: df.dtypes}
-\NormalTok{Out[}\DecValTok{3}\NormalTok{]:}
+\NormalTok{df.dtypes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{col\_1      int64}
 \NormalTok{col\_2    float64}
 \NormalTok{col\_3     }\BuiltInTok{object}
@@ -885,7 +996,7 @@ Ví dụ:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]: df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
+\NormalTok{df }\OperatorTok{=}\NormalTok{ pd.DataFrame(\{}
                    \StringTok{\textquotesingle{}col\_1\textquotesingle{}}\NormalTok{: [}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{], }
                    \StringTok{\textquotesingle{}col\_2\textquotesingle{}}\NormalTok{: [}\FloatTok{1.0}\NormalTok{, }\FloatTok{2.0}\NormalTok{, }\FloatTok{3.0}\NormalTok{, }\FloatTok{4.0}\NormalTok{], }
                    \StringTok{\textquotesingle{}col\_3\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}1\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}3\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}4\textquotesingle{}}\NormalTok{],}
@@ -893,16 +1004,24 @@ Ví dụ:
                    \StringTok{\textquotesingle{}col\_5\textquotesingle{}}\NormalTok{: [}\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{, }\VariableTok{True}\NormalTok{, }\VariableTok{False}\NormalTok{],}
                    \StringTok{\textquotesingle{}col\_6\textquotesingle{}}\NormalTok{: [}\StringTok{\textquotesingle{}2021{-}06{-}01\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}02\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}03\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}2021{-}06{-}04\textquotesingle{}}\NormalTok{]\},}
 \NormalTok{                   dtype}\OperatorTok{=}\NormalTok{np.}\BuiltInTok{int}\NormalTok{)}
-\NormalTok{In [}\DecValTok{2}\NormalTok{]: df}
-\NormalTok{Out[}\DecValTok{2}\NormalTok{]:}
+\NormalTok{df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{   col\_1  col\_2  col\_3  col\_4  col\_5       col\_6}
 \DecValTok{0}      \DecValTok{1}      \DecValTok{1}      \DecValTok{1}      \DecValTok{1}      \DecValTok{1}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{1}
 \DecValTok{1}      \DecValTok{0}      \DecValTok{2}      \DecValTok{2}      \DecValTok{2}      \DecValTok{0}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{2}
 \DecValTok{2}      \DecValTok{1}      \DecValTok{3}      \DecValTok{3}      \DecValTok{3}      \DecValTok{1}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{3}
 \DecValTok{3}      \DecValTok{0}      \DecValTok{4}      \DecValTok{4}      \DecValTok{4}      \DecValTok{0}  \DecValTok{2021}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{6}\OperatorTok{{-}}\DecValTok{0}\ErrorTok{4}
 
-\NormalTok{In [}\DecValTok{3}\NormalTok{]: df.dtypes}
-\NormalTok{Out[}\DecValTok{3}\NormalTok{]:}
+\NormalTok{df.dtypes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{col\_1     int64}
 \NormalTok{col\_2     int64}
 \NormalTok{col\_3    }\BuiltInTok{object}
@@ -924,8 +1043,12 @@ Theo ví dụ trên, khi \texttt{dtype=np.int}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]:  df.memory\_usage()}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{ df.memory\_usage()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{Index    }\DecValTok{128}
 \NormalTok{col\_1     }\DecValTok{32}
 \NormalTok{col\_2     }\DecValTok{32}
@@ -941,8 +1064,12 @@ và sau khi thay bằng \texttt{dtype=np.int8}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{In [}\DecValTok{1}\NormalTok{]:  df.memory\_usage()}
-\NormalTok{Out[}\DecValTok{1}\NormalTok{]: }
+\NormalTok{ df.memory\_usage()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{Index    }\DecValTok{128}
 \NormalTok{col\_1      }\DecValTok{4}
 \NormalTok{col\_2      }\DecValTok{4}
@@ -3938,25 +4065,8 @@ Trả về \texttt{n} dòng cuối của mỗi group
 \textbf{\emph{Lưu ý:}}
 \texttt{.head()} và \texttt{.tail()} trả về các dòng theo thứ tự index của chúng, không trả về theo thứ tự sắp xếp theo key
 \end{rmdnote}
-\textless\textless\textless\textless\textless\textless\textless{} HEAD
-=======
 
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-23ad2852c0b15efdedd920a58f31d21da6687942
-\#\# Aggregate trong Groupby
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
+\section{Aggregate trong Groupby}\label{aggregate-trong-groupby}
 
 \textbf{\texttt{.count()}}
 
