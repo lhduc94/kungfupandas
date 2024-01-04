@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       toc_depth: 2
-      collapse: section
+      collapse: subsection
       scroll_highlight: yes
       before: |
         <li><a href="./">Kungfu Pandas</a></li>
