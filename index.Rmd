@@ -13,4 +13,4 @@ description: "Kungfu Pandas"
 
 ## Giới thiệu cuốn sách {-}
 
-## Giới thiệu tác giả {-}
+<!-- ## Giới thiệu tác giả {-} -->
