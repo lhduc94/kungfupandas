@@ -36,6 +36,8 @@ pre.sourceCode.python{
 
 pre.python_output {
   background: #080808;
+  padding: 1em 1em 1em 1em;
+
 }
 pre.python_output code {
   color: white
