@@ -34,7 +34,7 @@ pre.sourceCode.python{
   box-shadow: 1px 1px 1px #d8d8d8;
 }
 
-.book .book-body .page-wrapper .page-inner section.normal pre.python_output {
+pre.python_output {
   background: #080808;
 }
 .book .book-body .page-wrapper .page-inner section.normal pre.python_output code {
