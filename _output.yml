@@ -8,9 +8,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Kungfu Pandas</a></li>
       after: |
-        <li><a href="" target="blank">Lê Huỳnh Đức</a></li>
-  split_by: section
-  
+        <li><a href="" target="blank">Lê Huỳnh Đức</a></li>  
   fig_caption: yes
   fig_height: 5.3
   fig_width: 8.5
