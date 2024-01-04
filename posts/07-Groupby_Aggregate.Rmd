@@ -137,12 +137,10 @@ Out[5]:
 **_Lưu ý:_** 
 `.head()` và `.tail()` trả về các dòng theo thứ tự index của chúng, không trả về theo thứ tự sắp xếp theo key
 ``` 
-<<<<<<< HEAD
 
 ## Aggregate trong Groupby
 
 =======
->>>>>>> parent of f179849 (push book)
 **`.count()`**
 
 Đếm số lượng phần tử cho từng cột trong từng nhóm, không đếm các phần tử NA
