@@ -131,7 +131,6 @@ Out[5]:
 8521           FDN46            Snack Foods      Medium          1845.5976
 8522           DRG01            Soft Drinks       Small           765.6700
 ```
-## Aggregate trong Groupby
 
 ```{block2, type='rmdnote'}
 **_Lưu ý:_** 

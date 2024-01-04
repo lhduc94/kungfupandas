@@ -63,7 +63,6 @@ groupby
 groupby-1
 các-hàm-filtering-trong-groupby
 aggregate-trong-groupby
-aggregate-trong-groupby-1
 làm-việc-với-1-số-kiểu-dữ-liệu
 xử-lý-dữ-liệu-dạng-text
 xử-lý-dữ-liệu-dạng-timestamp
