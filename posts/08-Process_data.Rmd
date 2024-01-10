@@ -1,5 +1,27 @@
 # Làm việc với 1 số kiểu dữ liệu 
 ## Xử  lý dữ liệu dạng text 
+Chúng ta có thể lưu dữ liệu text trong Pandas dưới hai dạng dữ liệu : object hoặc string​
+
+```python
+s = pd.Series( ["A", "B", "C", "Aaba", "Baca", np.nan, "CABA", "dog", "cat"], dtype="string")​
+```
+
+```python
+s.str.lower()
+```
+
+```{.python_output}
+0       a
+1       b
+2       c
+3    aaba
+4    baca
+5    <NA>
+6    caba
+7     dog
+8     cat
+```
+
 ## Xử lý dữ liệu dạng timestamp 
 ## Category trong pandas
 ## Xử lý Missing data

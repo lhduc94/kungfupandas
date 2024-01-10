@@ -2,6 +2,7 @@ book_filename: "Kungfupandas"
 language:
   ui:
     chapter_name: "Chương "
+    
   label:
     fig: "FIGURE "
     tab: "TABLE"
