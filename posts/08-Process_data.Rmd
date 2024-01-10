@@ -11,6 +11,7 @@ s = pd.Series( ["A", "B", "C", "Aaba", "Baca", np.nan, "CABA", "dog", "cat"], dt
 **lower()**
 
 Chúng ta có thể chuyển text về các kí tự viết thường bằng phương thức `lower()`
+
 ```python
 s.str.lower()
 ```
@@ -25,6 +26,27 @@ s.str.lower()
 6    caba
 7     dog
 8     cat
+```
+
+
+**upper()**
+
+Chúng ta có thể chuyển text về các kí tự viết hoa bằng phương thức `upper()`
+
+```python
+s.str.upper()
+```
+
+```{.python_output}
+0       A
+1       B
+2       C
+3    AABA
+4    BACA
+5    <NA>
+6    CABA
+7     DOG
+8     CAT
 ```
 
 ## Xử lý dữ liệu dạng timestamp 
