@@ -296,7 +296,7 @@ region   state
 Mountain Arizona       7259.0          2606.0    7158024
 ```
 
-Slice cho MultiIndex
+**Slice cho MultiIndex**
 
 Slice từ 1 tuple nhãn đến một nhãn đơn
 
@@ -434,22 +434,29 @@ Name: family_members, dtype: float64
 
 Select theo danh sách, mặc định đưa vào 1 danh sách `Pandas` sẽ hiểu là lấy theo các dòng
 ```python
-In [24]: df.iloc[[1, 3 ,5]]
-Out[24]:
+df.iloc[[1, 3 ,5]]
+```
+
+```{.python_output}
                    individuals  family_members  state_pop
 region   state                                           
 Mountain Colorado       7607.0          3250.0    5691287
 Pacific  Alaska         1434.0           582.0     735139
          Hawaii         4131.0          2399.0    1420593
 ```
+
 ```{block2, type='rmdtip'}
 **_Mẹo:_**
 Dòng lệnh trên cũng tương đương với `df.iloc[[1, 3 ,5], :]`, trong đó `:` dùng để lấy toàn bộ
 ```
+
 Tương tự để lấy theo danh sách index các cột
+
 ```python
-In [25]: df.iloc[:, [0, 2]]
-Out[25]:
+df.iloc[:, [0, 2]]
+```
+
+```{.python_output}
                      individuals  state_pop
 region   state                             
 Mountain Arizona          7259.0    7158024
@@ -459,30 +466,40 @@ Pacific  Alaska           1434.0     735139
          California     109008.0   39461588
          Hawaii           4131.0    1420593
 ```
+
 Slice cả 2 chiều
+
 ```python
-In [26]: df.iloc[2:4, 0:2]
-Out[26]:
+df.iloc[2:4, 0:2]
+```
+
+```{.python_output}
                  individuals  family_members
 region   state                              
 Mountain Idaho        1297.0           715.0
 Pacific  Alaska       1434.0           582.0
 ```
+
 Sử dụng danh sách các boolean
 
 ```python
 # Theo dòng
-In [27]: df.iloc[[True, False, True, False, False, True], :]
-Out[27]:
+df.iloc[[True, False, True, False, False, True], :]
+```
+
+```{.python_output}
                   individuals  family_members  state_pop
 region   state                                          
 Mountain Arizona       7259.0          2606.0    7158024
          Idaho         1297.0           715.0    1750536
 Pacific  Hawaii        4131.0          2399.0    1420593
+```
 
-#Theo cột
-In [28]: df.iloc[:, [False, True,False]]
-Out[28]: 
+```python
+df.iloc[:, [False, True,False]]
+```
+
+```{.python_output}
                      family_members
 region   state                     
 Mountain Arizona             2606.0
@@ -507,12 +524,16 @@ Pacific       Alaska       1434.0           582.0     735139
 Pacific   California     109008.0         20964.0   39461588
 Pacific       Hawaii       4131.0          2399.0    1420593
 ```
+
 ### Toán tử điều kiện
+
 Giả sử ta có một điều kiện rằng `df['individuals'] > 5000`. Kết quả trả về là 1 `Series`
 
 ```python
-In [28]: df['individuals'] > 5000
-Out[28]:
+df['individuals'] > 5000
+```
+
+```{.python_output}
 region
 Mountain     True
 Mountain     True
@@ -522,20 +543,28 @@ Pacific      True
 Pacific     False
 Name: individuals, dtype: bool
 ```
+
 Để lọc theo điều kiện này ta có các cách như sau
+
 ```python
 ## Dùng []
-In [29]: df[df['individuals'] > 5000]
-Out[29]:
+df[df['individuals'] > 5000]
+```
+
+```{.python_output}
                state  individuals  family_members  state_pop
 region                                                      
 Mountain     Arizona       7259.0          2606.0    7158024
 Mountain    Colorado       7607.0          3250.0    5691287
 Pacific   California     109008.0         20964.0   39461588
+```
 
+```python
 ## Dùng .loc
-In [30]: df.loc[df['individuals'] > 5000]
-Out[30]: 
+df.loc[df['individuals'] > 5000]
+```
+
+```{.python_output}
                state  individuals  family_members  state_pop
 region                                                      
 Mountain     Arizona       7259.0          2606.0    7158024
@@ -548,56 +577,78 @@ Pacific   California     109008.0         20964.0   39461588
 `.iloc` không nhận `Series` boolean nhưng `array` thì có thể. Do đó ta có thể dùng `.values` để lấy kết quả của Câu điều kiện
 
 ``` 
+
 ```python
 ## Dùng .iloc
-In [31]: df.iloc[(df['individuals'] > 5000).values]
-Out[31]:
+df.iloc[(df['individuals'] > 5000).values]
+```
+
+```{.python_output}
                state  individuals  family_members  state_pop
 region                                                      
 Mountain     Arizona       7259.0          2606.0    7158024
 Mountain    Colorado       7607.0          3250.0    5691287
 Pacific   California     109008.0         20964.0   39461588
 ```
+
 Ta cũng có thể áp nhiều điều kiện cùng lúc, mỗi điều kiện phải nằm trong dấu ngoặc đơn `()` và giữa các kiều kiện là toán tử `&` hoặc `|`
+
 ```python
 ## Nhiều câu điều kiện trên một cột
-In [32]: df.loc[(df['individuals'] > 5000) & (df['individuals'] < 10000)]
-Out[32]:
+df.loc[(df['individuals'] > 5000) & (df['individuals'] < 10000)]
+```
+
+```{.python_output}
              state  individuals  family_members  state_pop
 region                                                    
 Mountain   Arizona       7259.0          2606.0    7158024
 Mountain  Colorado       7607.0          3250.0    5691287
+```
 
+```python
 ## Nhiều câu điều kiện ở nhiều cột
-In [33]: df.loc[(df['individuals'] > 5000) & (df['family_members'] < 10000)
-Out[33]:
+df.loc[(df['individuals'] > 5000) & (df['family_members'] < 10000)]
+```
+
+```{.python_output}
              state  individuals  family_members  state_pop
 region                                                    
 Mountain   Arizona       7259.0          2606.0    7158024
 Mountain  Colorado       7607.0          3250.0    5691287
+```
 
+```python
 ## Một câu điều kiện trên nhiều cột
-In [34]: df[df['individuals'] > 5 * df['family_members']]
-Out[34]:
+df[df['individuals'] > 5 * df['family_members']]
+```
+
+```{.python_output}
               state  individuals  family_members  state_pop
 region                                                     
 Pacific  California     109008.0         20964.0   39461588
 ```
+
 ```{block2, type='rmdtip'}
 **_Mẹo:_** 
 Bạn cũng có thể dùng `loc` để vừa lọc các dòng thỏa điều kiện, vừa chọn các cột muốn lấy 
 ``` 
+
 ```python
-In []: df.loc[df['individuals'] > 5 * df['family_members'], ['individuals', 'family_members']]
-Out[]:
+df.loc[df['individuals'] > 5 * df['family_members'], ['individuals', 'family_members']]
+```
+
+```{.python_output}
          individuals  family_members
 region                              
 Pacific     109008.0         20964.0
 ```
+
 Ngoài ra, `pandas` còn cho phép bạn lọc với cấu trúc câu truy vấn bằng `.query` theo cú pháp
+
 ```python
 DataFrame.query(expr, inplace=False, **kwargs)
 ```
+
 Trong đó:
 
 - `expr`: là câu truy vấn
@@ -607,9 +658,12 @@ Trong đó:
 - `**kwargs`: keyword arguments
 
 Theo ví dụ trên, để thực hiện lọc theo điều kiện `df['individuals'] > 5000` và `df['family_members'] < 10000` ta có thể làm như sau
+
 ```python
-In [34]: df.query('individuals > 500 and family_members < 10000')
-Out[34]: 
+df.query('individuals > 500 and family_members < 10000')
+```
+
+```{.python_output}
              state  individuals  family_members  state_pop
 region                                                    
 Mountain   Arizona       7259.0          2606.0    7158024
@@ -621,8 +675,10 @@ Phương thức `.isin(values)` để kiểm tra các phần tử trong `DataFra
 
 Ví dụ:
 ```python
-In [35]: df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300])
-Out[35]:
+df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300])
+```
+
+```{.python_output}
           state  individuals  family_members  state_pop
 region                                                 
 Mountain   True         True           False      False
@@ -631,9 +687,13 @@ Mountain  False        False           False      False
 Pacific    True        False            True      False
 Pacific   False        False           False      False
 Pacific   False        False           False      False
+```
 
-In [36]: df['state'].isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona'])
-Out[36]:
+```python
+df['state'].isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona'])
+```
+
+```{.python_output}
 region
 Mountain     True
 Mountain    False
@@ -643,11 +703,15 @@ Pacific     False
 Pacific     False
 Name: state, dtype: bool
 ```
+
 Ngoài ra bạn có thể truyền `values` là một `dictionary` để kiểm tra cho từng cột theo từng tập giá trị
+
 ```python
-In [37]: df.isin({'state': ['Alaska', 'Oklahoma', 'Illinois', 'Arizona'], 
+df.isin({'state': ['Alaska', 'Oklahoma', 'Illinois', 'Arizona'], 
          'individuals': [7259, 582, 300]})
-Out[37]:
+```
+
+```{.python_output}
           state  individuals  family_members  state_pop
 region                                                 
 Mountain   True         True           False      False
@@ -657,19 +721,27 @@ Pacific    True        False           False      False
 Pacific   False        False           False      False
 Pacific   False        False           False      False
 ```
+
 Lọc với `.isin()`
+
 ```python
-In [38]: df[df['state'].isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona'])]
-Out[38]:
+df[df['state'].isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona'])]
+```
+
+```{.python_output}
             state  individuals  family_members  state_pop
 region                                                   
 Mountain  Arizona       7259.0          2606.0    7158024
 Pacific    Alaska       1434.0           582.0     735139
 ```
+
 trong trường hợp sự dụng `.isin` với `DataFrame`, kết quả của lọc sẽ trả về một `DataFrame` với  giá trị các phần tử mà phép `isin` trả về `True`, các phần tử còn lại trả giá trị `NaN`
+
 ```python
-In [39]: df[df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300])]
-Out[39]:
+df[df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300])]
+```
+
+```{.python_outputs}
             state  individuals  family_members  state_pop
 region                                                   
 Mountain  Arizona       7259.0             NaN        NaN
@@ -679,6 +751,7 @@ Pacific    Alaska          NaN           582.0        NaN
 Pacific       NaN          NaN             NaN        NaN
 Pacific       NaN          NaN             NaN        NaN
 ```
+
 ```{block2, type='rmdtip'}
 **_Mẹo:_**
 
@@ -692,9 +765,12 @@ Pacific       NaN          NaN             NaN        NaN
 ```
 
 Lọc với `.isin()` và `any(axis=1)`
+
 ```python
-In [40]: df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=1)
-Out[40]:
+df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=1)
+```
+
+```{.python_output}
 region
 Mountain     True
 Mountain    False
@@ -703,9 +779,13 @@ Pacific      True
 Pacific     False
 Pacific     False
 dtype: bool
+```
 
-In [41]: df[df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=1)]
-Out[41]: 
+```python
+df[df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=1)]
+```
+
+```{.python_output}
             state  individuals  family_members  state_pop
 region                                                   
 Mountain  Arizona       7259.0          2606.0    7158024
@@ -713,17 +793,24 @@ Pacific    Alaska       1434.0           582.0     735139
 ```
 
 Lọc với `isin()` và `any(axis=0)`
+
 ```python
-In [42]: df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=0)
-Out[42]:
+df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=0)
+```
+
+```{.python_output}
 state              True
 individuals        True
 family_members     True
 state_pop         False
 dtype: bool
+```
 
-In [43]: df.loc[:,df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=0)]
-Out[43]:
+```python
+df.loc[:,df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300]).any(axis=0)]
+```
+
+```{.python_output}
                state  individuals  family_members
 region                                           
 Mountain     Arizona       7259.0          2606.0
@@ -733,11 +820,15 @@ Pacific       Alaska       1434.0           582.0
 Pacific   California     109008.0         20964.0
 Pacific       Hawaii       4131.0          2399.0
 ```
+
 Lọc với `isin()` và `any(axis=0)` và `any(axis=1)`
+
 ```python
-In []: bool_df = df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300])
-In []: df.loc[bool_df.any(axis=1), bool_df.any(axis=0)]
-Out[]:
+bool_df = df.isin(['Alaska', 'Oklahoma', 'Illinois', 'Arizona', 7259, 582, 300])
+df.loc[bool_df.any(axis=1), bool_df.any(axis=0)]
+```
+
+```{.python_output}
             state  individuals  family_members
 region                                        
 Mountain  Arizona       7259.0          2606.0
@@ -758,10 +849,13 @@ Pacific       Alaska       1434.0             NaN    735139.0
 Pacific   California     109008.0         20964.0  39461588.0
 Pacific       Hawaii       4131.0          2399.0         NaN
 ```
+
 Để lọc dữ liệu chứa `NaN` ta dùng phương thức `.dropna()`
+
 ```python
 DataFrame.dropna(axis=0, how='any', thresh=None, subset=None, inplace=False)
 ```
+
 Trong đó:
 
 - `axis`: Nhận diện lọc theo dòng `0`, `index`, hay cột `1`, `column`
@@ -779,8 +873,10 @@ Trong đó:
 
 Lọc bỏ các hàng nếu ít nhất một phần tử `NA`
 ```python
-In []: missing_df.dropna(axis=0)
-Out[]:
+missing_df.dropna(axis=0)
+```
+
+```{.python_output}
                state  individuals  family_members   state_pop
 region                                                       
 Mountain       Idaho       1297.0           715.0   1750536.0
@@ -788,9 +884,12 @@ Pacific   California     109008.0         20964.0  39461588.0
 ```
 
 Lọc bỏ các cột nếu ít nhất một phần tử `NA`
+
 ```python
-In []: missing_df.dropna(axis='columns')
-Out[]:
+missing_df.dropna(axis='columns')
+```
+
+```{.python_output}
                state
 region              
 Mountain     Arizona
@@ -800,10 +899,14 @@ Pacific       Alaska
 Pacific   California
 Pacific       Hawaii
 ```
+
 Lọc bỏ các dòng nếu tất cả phần tử trong các cột `['family_members', 'state_pop']` là `NA`
+
 ```python
-In []: missing_df.dropna(axis='index', how='all', subset=['family_members', 'state_pop'])
-Out[]:
+missing_df.dropna(axis='index', how='all', subset=['family_members', 'state_pop'])
+```
+
+```{.python_output}
                state  individuals  family_members   state_pop
 region                                                       
 Mountain    Colorado          NaN          3250.0   5691287.0
@@ -814,9 +917,12 @@ Pacific       Hawaii       4131.0          2399.0         NaN
 ```
 
 Giữ lại các dòng có ít nhất `3` phần tử `non-NA`
+
 ```python
-In []: missing_df.dropna(thresh=3)
-Out[]: 
+missing_df.dropna(thresh=3)
+```
+
+```{.python_output} 
                state  individuals  family_members   state_pop
 region                                                       
 Mountain    Colorado          NaN          3250.0   5691287.0
