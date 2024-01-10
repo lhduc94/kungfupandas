@@ -16,8 +16,10 @@ Trong đó
 Ví dụ với dữ liệu [Big Mart Salses](https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data?select=Train.csv)
 
 ```python
-In [1]: df.head()
-Out[1]:
+df.head()
+```
+
+```{.python_output}
   Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 0           FDA15                  Dairy      Medium          3735.1380
 1           DRC01            Soft Drinks      Medium           443.4228
@@ -27,16 +29,21 @@ Out[1]:
 ```
 
 ```python
-In [2]: grouped = df.groupby('Item_Type')
-In [3]: type(grouped)
-Out[3]:
+grouped = df.groupby('Item_Type')
+type(grouped)
+```
+
+```{.python_output}
 pandas.core.groupby.generic.DataFrameGroupBy
 ```
+
 Để xem từng nhóm trong group, ta có thể sử dụng `.get_groups()` và truyền key vào đó. Ví dụ với key `Dairy`
 
 ```python
-In [4]: grouped.get_group('Dairy').head()
-Out[4]:
+grouped.get_group('Dairy').head()
+```
+
+```{.python_output}
    Item_Identifier Item_Type Outlet_Size  Item_Outlet_Sales
 0            FDA15     Dairy      Medium          3735.1380
 11           FDA03     Dairy       Small          2187.1530
@@ -54,8 +61,10 @@ Khi chọn 1 column sau khi `.groupby` sẽ trả về kiểu `pandas.core.group
 Trả về `n` dòng đầu của mỗi group. 
 
 ```python
-In [4]: df.groupby(['Item_Type']).head(n=2)
-Out[4]:
+df.groupby(['Item_Type']).head(n=2)
+```
+
+```{.python_output}
     Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 0             FDA15                  Dairy      Medium          3735.1380
 1             DRC01            Soft Drinks      Medium           443.4228
@@ -95,8 +104,10 @@ Out[4]:
 Trả về `n` dòng cuối của mỗi group
 
 ```python
-In [5]: df.groupby(['Item_Type']).tail(n=2)
-Out[5]:
+df.groupby(['Item_Type']).tail(n=2)
+```
+
+```{.python_output}
      Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 8317           FDN13              Breakfast         NaN          1306.9654
 8335           FDO49              Breakfast      Medium           708.4112
@@ -139,13 +150,14 @@ Out[5]:
 
 ## Aggregate trong Groupby
 
-=======
 **`.count()`**
 
 Đếm số lượng phần tử cho từng cột trong từng nhóm, không đếm các phần tử NA
 ```python
-In [6]: df.groupby(['Item_Type']).count() 
-Out[6]:
+df.groupby(['Item_Type']).count() 
+```
+
+```{.python_output}
                        Item_Identifier  Outlet_Size  Item_Outlet_Sales
 Item_Type                                                             
 Baking Goods                       648          463                648
@@ -171,8 +183,10 @@ Starchy Foods                      148          105                148
 Đếm số lượng dòng cho từng nhóm
 
 ```python
-In [7]: df.groupby(['Item_Type']).size()
-Out[7]:
+df.groupby(['Item_Type']).size()
+```
+
+```{.python_output}
 Item_Type
 Baking Goods              648
 Breads                    251
@@ -196,8 +210,10 @@ dtype: int64
 
 Trả về `n` dòng lớn nhất của từng nhóm Series
 ```python
-In []: df.groupby(['Item_Type'])['Item_Outlet_Sales'].nlargest(n=2)
-Out[]:
+df.groupby(['Item_Type'])['Item_Outlet_Sales'].nlargest(n=2)
+```
+
+```{.python_output}
 Item_Type                  
 Baking Goods           2776     7931.6754
                        809      7759.8990
@@ -239,8 +255,10 @@ Name: Item_Outlet_Sales, dtype: float64
 Trả về `n` dòng nhỏ nhất của từng nhóm Series
 
 ```python
-In []: df.groupby(['Item_Type'])['Item_Outlet_Sales'].nsmallest(n=2)
-Out[]: 
+df.groupby(['Item_Type'])['Item_Outlet_Sales'].nsmallest(n=2)
+```
+
+```{.python_output}
 Item_Type                  
 Baking Goods           2055     37.2848
                        430      38.6164
@@ -298,8 +316,10 @@ Trong đó:
 Danh sách hàm
 
 ```python
-In []: df.groupby('Item_Type').agg(['min','max'])
-Out[]:
+df.groupby('Item_Type').agg(['min','max'])
+```
+
+```{.python_output}
                       Item_Identifier        Item_Outlet_Sales            
                                   min    max               min         max
 Item_Type                                                                 
@@ -320,6 +340,7 @@ Snack Foods                     FDA09  FDZ58           33.9558  10993.6896
 Soft Drinks                     DRA12  DRZ24           33.2900   9554.2300
 Starchy Foods                   FDA22  FDZ34           58.5904   8132.0812
 ```
+
 ```{block2, type='rmdnote'}
 **_Lưu ý:_** 
 
@@ -329,8 +350,10 @@ Starchy Foods                   FDA22  FDZ34           58.5904   8132.0812
 Dictionary chứa nhãn và hàm
 
 ```python
-In []: df.groupby('Item_Type').agg({'Item_Identifier': np.max, 'Item_Outlet_Sales': [np.std, np.mean]})
-Out[]:
+df.groupby('Item_Type').agg({'Item_Identifier': np.max, 'Item_Outlet_Sales': [np.std, np.mean]})
+```
+
+```{.python_output}
                       Item_Identifier Item_Outlet_Sales             
                                  amax               std         mean
 Item_Type                                                           
@@ -366,8 +389,10 @@ def bar(item_identifier):
 ```
 
 ```python
-In []: df.groupby('Item_Type').agg({'Item_Identifier': [np.max, bar], 'Item_Outlet_Sales': [np.mean, foo]})
-Out[]:
+df.groupby('Item_Type').agg({'Item_Identifier': [np.max, bar], 'Item_Outlet_Sales': [np.mean, foo]})
+```
+
+```{.python_output}
                       Item_Identifier      Item_Outlet_Sales             
                                  amax  bar              mean          foo
 Item_Type                                                                
@@ -391,8 +416,10 @@ Starchy Foods                   FDZ34   30       2374.332773   94087.5270
 bạn có thể truyền vào tham số alpha bằng cách dùng lambda
 
 ```python
-In []: df.groupby('Item_Type').agg({'Item_Outlet_Sales': [np.mean, lambda x: foo(x, alpha=0.1)]})
-Out[]: 
+df.groupby('Item_Type').agg({'Item_Outlet_Sales': [np.mean, lambda x: foo(x, alpha=0.1)]})
+```
+
+```{.python_output}
                       Item_Outlet_Sales            
                                    mean  <lambda_0>
 Item_Type                                          
@@ -428,8 +455,10 @@ def get_top_ex1(g):
 Trong đó g là DataFrame của từng nhóm chia theo key của `groupby`
 
 ```python
-In []: df.groupby('Item_Type').apply(get_top_ex1)
-Out[]:
+df.groupby('Item_Type').apply(get_top_ex1)
+```
+
+```{.python_output}
                       top_1_Item_Identifier  top_1_Item_Outlet_Sales  \
 Item_Type                                                              
 Baking Goods                          FDB37                7931.6754   
