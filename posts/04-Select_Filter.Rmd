@@ -16,8 +16,10 @@ Mountain              Colorado       7607.0          3250.0    5691287
 Để chọn 1 bảng con có 2 cột `['state', 'family_members']` ta làm như sau
 
 ```python
-In [1]: df[['state', 'family_members']]
-Out[1]:
+df[['state', 'family_members']]
+```
+
+```{.python_output}
                          state  family_members
 region                                        
 East South Central     Alabama           864.0
