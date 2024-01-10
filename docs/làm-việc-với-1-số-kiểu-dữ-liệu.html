@@ -271,6 +271,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.1</span> Xử lý dữ liệu dạng text<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-text" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Chúng ta có thể lưu dữ liệu text trong Pandas dưới hai dạng dữ liệu : object hoặc string​</p>
 <div class="sourceCode" id="cb291"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb291-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb291-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series( [<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;Aaba&quot;</span>, <span class="st">&quot;Baca&quot;</span>, np.nan, <span class="st">&quot;CABA&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>], dtype<span class="op">=</span><span class="st">&quot;string&quot;</span>)​</span></code></pre></div>
+<p>Để thực hiện các thao tác cho dữ liệu dạng text ta hay dùng <code>s.str.&lt;phương thức&gt;</code>.</p>
+<p><strong>lower()</strong></p>
+<p>Chúng ta có thể chuyển text về các kí tự viết thường bằng phương thức <code>lower()</code></p>
 <div class="sourceCode" id="cb292"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb292-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb292-1" tabindex="-1"></a>s.<span class="bu">str</span>.lower()</span></code></pre></div>
 <pre class="python_output"><code>0       a
 1       b

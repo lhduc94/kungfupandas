@@ -6,6 +6,11 @@ Chúng ta có thể lưu dữ liệu text trong Pandas dưới hai dạng dữ l
 s = pd.Series( ["A", "B", "C", "Aaba", "Baca", np.nan, "CABA", "dog", "cat"], dtype="string")​
 ```
 
+Để thực hiện các thao tác cho dữ liệu dạng text ta hay dùng `s.str.<phương thức>`.
+
+**lower()**
+
+Chúng ta có thể chuyển text về các kí tự viết thường bằng phương thức `lower()`
 ```python
 s.str.lower()
 ```
