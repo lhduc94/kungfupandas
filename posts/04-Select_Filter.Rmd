@@ -32,16 +32,23 @@ Mountain              Colorado          3250.0
 Để lấy theo dòng ta dùng tương tự `Series`
 
 ```python
-In [2]: df[:3]
-Out[2]: 
+df[:3]
+```
+
+```{.python_output}
                       state  individuals  family_members  state_pop
 region                                                             
 East South Central  Alabama       2570.0           864.0    4887681
 Pacific              Alaska       1434.0           582.0     735139
 Mountain            Arizona       7259.0          2606.0    7158024
 
-In [3]: df[2:5]
-Out[3]:
+```
+
+```python
+df[2:5]
+```
+
+```{.python_output}
                          state  individuals  family_members  state_pop
 region                                                                
 Mountain               Arizona       7259.0          2606.0    7158024
@@ -84,8 +91,10 @@ Phương thức `.loc` dùng để lấy dữ liệu theo cột hoặc hàng d�
 Sử dụng nhãn đơn, kết quả trả về là các dòng có nhãn giống như nhãn trong `.loc`
 
 ```python
-In [4]: df.loc['Pacific']
-Out[4]:          
+df.loc['Pacific']
+```
+
+```{.python_output}          
               state  individuals  family_members  state_pop
 region                                                     
 Pacific      Alaska       1434.0           582.0     735139
@@ -98,20 +107,28 @@ Khi kết quả là nhiều dòng thì dữ liệu trả về có kiểu `DataFr
 ``` 
 
 ```python
-In [5]: type(df.loc['Pacific'])
-Out[5]: 
-<class 'pandas.core.frame.DataFrame'>
+type(df.loc['Pacific'])
+```
 
-In [6]: type(df.loc['West South Central'])
-Out[6]: 
+```{.python_output}
+<class 'pandas.core.frame.DataFrame'>
+```
+
+```python
+type(df.loc['West South Central'])
+```
+
+```{.python_output} 
 <class 'pandas.core.series.Series'>
 ```
 
 Khi đưa danh sách các nhãn dùng `.loc[[]]` thì nhãn đưa vào là nhãn của `index`. Nếu đưa tên các cột sẽ bị báo lỗi `KeyError`
 
 ```python
-In [7]: df.loc[['Pacific', 'Mountain']]
-Out[7]:
+df.loc[['Pacific', 'Mountain']]
+```
+
+```{.python_output}
                state  individuals  family_members  state_pop
 region                                                      
 Pacific       Alaska       1434.0           582.0     735139
@@ -123,8 +140,10 @@ Mountain    Colorado       7607.0          3250.0    5691287
 Để lấy nhãn đơn theo nhãn của `index` và tên `column` ta truyền vào phần nhãn của `index` trước và nhãn của `column` sau và phân biệt bởi dấu phẩy
 
 ```python
-In [7]: df.loc['Pacific', 'state']
-Out[7]:
+df.loc['Pacific', 'state']
+```
+
+```{.python_output}
 region
 Pacific        Alaska
 Pacific    California
@@ -134,8 +153,10 @@ Name: state, dtype: object
 Để lấy nhiều hơn 1 nhãn của `index` hoặc nhiều hơn 1 nhãn của `column` ta chỉ cần thay thế nhãn đơn của `index` thành danh sách hoặc slice, tương tự ta có thế thay thế nhãn đơn thành danh sách hoặc slice của `column`
 
 ```python
-In [8]: df.loc['Pacific', ['individuals', 'family_members']])
-Out[8]:
+df.loc['Pacific', ['individuals', 'family_members']])
+```
+
+```{.python_output}
          individuals  family_members
 region                              
 Pacific       1434.0           582.0
@@ -143,8 +164,10 @@ Pacific     109008.0         20964.0
 ```
 
 ```python
-In [9]: df.loc['Pacific', 'individuals':'state_pop']
-Out[9]:
+df.loc['Pacific', 'individuals':'state_pop']
+```
+
+```{.python_output}
          individuals  family_members  state_pop
 region                                         
 Pacific       1434.0           582.0     735139
@@ -162,8 +185,10 @@ Pacific     109008.0         20964.0   39461588
 Danh sách dạng `boolean`, chỉ sử dụng cho `index`, không dùng cho `column`
 
 ```python
-In [10]: df.loc[[False, True, False, True, False, False]]
-Out[10]:
+df.loc[[False, True, False, True, False, False]]
+```
+
+```{.python_output}
                        state  individuals  family_members  state_pop
 region                                                              
 Pacific               Alaska       1434.0           582.0     735139
@@ -172,10 +197,12 @@ West South Central  Arkansas       2280.0           432.0    3009733
 
 Series boolean
 ```python
-In [11]: s = pd.Series([False, True, False, True, False, False],
+s = pd.Series([False, True, False, True, False, False],
               index=['East South Central', 'Pacific', 'Mountain', 'West South Central', 'Pacific', 'Mountain'])
-In [12]: df.loc[s]
-Out[12]:
+df.loc[s]
+```
+
+```{.python_output}
                        state  individuals  family_members  state_pop
 region                                                              
 Pacific               Alaska       1434.0           582.0     735139
@@ -185,8 +212,10 @@ West South Central  Arkansas       2280.0           432.0    3009733
 `pd.Index`
 
 ```python
-In [13]: df.loc[pd.Index(["Pacific", "East South Central"], name="meow")]
-Out[13]:
+df.loc[pd.Index(["Pacific", "East South Central"], name="meow")]
+```
+
+```{.python_output}
                          state  individuals  family_members  state_pop
 meow                                                                   
 Pacific                 Alaska       1434.0           582.0     735139
@@ -205,16 +234,21 @@ Pacific  Alaska           1434.0           582.0     735139
          California     109008.0         20964.0   39461588
          Hawaii           4131.0          2399.0    1420593
 ```
+
 Với nhãn đơn
+
 ```python
-In [14]: df.loc['Mountain']
-Out[14]: 
+df.loc['Mountain']
+```
+
+```{.python_output} 
           individuals  family_members  state_pop
 state                                           
 Arizona        7259.0          2606.0    7158024
 Colorado       7607.0          3250.0    5691287
 Idaho          1297.0           715.0    1750536
 ```
+
 ```{block2, type='rmdnote'}
 **_Lưu ý:_** 
 Với `MultiIndex`,các index sẽ xếp theo thứ tự từ level 0 đến n (`level 0` cao hơn `level 1` ...),  với nhãn đơn là nhãn của 1 `index` thì chỉ thực hiện được index level đầu tiên, các index level sau sẽ báo lỗi.
@@ -224,8 +258,10 @@ Theo như ví dụ trên thì `region` có level cao hơn 'state' nên chỉ g�
 Để select nhiều index cùng lúc, ta truyền vào `tuple(label1, label2...)` theo thứ tự index có level từ cao đến thấp
 
 ```python
-In [15]: df.loc[('Mountain', 'Colorado')]
-Out[15]:
+df.loc[('Mountain', 'Colorado')]
+```
+
+```{.python_output}
 individuals          7607.0
 family_members       3250.0
 state_pop         5691287.0
@@ -235,8 +271,10 @@ Name: (Mountain, Colorado), dtype: float64
 Tương tự ta cùng có select theo các column cho trước
 
 ```python
-In [16]: df.loc[('Mountain', 'Colorado'), ['individuals', 'family_members']]
-Out[16]:
+df.loc[('Mountain', 'Colorado'), ['individuals', 'family_members']]
+```
+
+```{.python_output}
 individuals       7607.0
 family_members    3250.0
 Name: (Mountain, Colorado), dtype: float64
@@ -249,17 +287,24 @@ Có thể select `index` ở các level sau bằng cách dùng `slice`
 ```
 
 ```python
-In [17]: df.loc[(slice(None), 'Arizona'), :]
-Out[17]:
+df.loc[(slice(None), 'Arizona'), :]
+```
+
+```{.python_output}
                   individuals  family_members  state_pop
 region   state                                          
 Mountain Arizona       7259.0          2606.0    7158024
 ```
+
 Slice cho MultiIndex
+
 Slice từ 1 tuple nhãn đến một nhãn đơn
+
 ```python
-In [18]: df.loc[('Mountain', 'Colorado'):'Pacific']
-Out[18]:
+df.loc[('Mountain', 'Colorado'):'Pacific']
+```
+
+```{.python_output}
                      individuals  family_members  state_pop
 region   state                                             
 Mountain Colorado         7607.0          3250.0    5691287
@@ -268,13 +313,17 @@ Pacific  Alaska           1434.0           582.0     735139
          California     109008.0         20964.0   39461588
          Hawaii           4131.0          2399.0    1420593
 ```
+
 ```{block2, type='rmdnote'}
 **_Lưu ý:_** 
 Nhãn đơn phía sau phải có cùng level với nhãn đầu tiên trong tuple. Trong ví dụ trên nếu thay `Pacific` thành `Hawaii` sẽ trả về rỗng. Nhưng khi truyền nhãn không nằm trong các nhãn của index thì vẫn có kết quả trả về
 ``` 
+
 ```python
-In [19]: df.loc[('Mountain', 'Colorado'): 'meow']
-Out[19]:
+df.loc[('Mountain', 'Colorado'): 'meow']
+```
+
+```{.python_output}
                      individuals  family_members  state_pop
 region   state                                             
 Mountain Colorado         7607.0          3250.0    5691287
@@ -283,10 +332,14 @@ Pacific  Alaska           1434.0           582.0     735139
          California     109008.0         20964.0   39461588
          Hawaii           4131.0          2399.0    1420593
 ```
+
 Slice từ 1 tuple nhãn đến một tuple nhãn
+
 ```python
-In [20]: df.loc[('Mountain', 'Colorado'):('Pacific', 'California')]
-Out[20]:
+df.loc[('Mountain', 'Colorado'):('Pacific', 'California')]
+```
+
+```{.python_output}
                      individuals  family_members  state_pop
 region   state                                             
 Mountain Colorado         7607.0          3250.0    5691287
@@ -323,23 +376,29 @@ Mountain              Colorado       7607.0          3250.0    5691287
 Khi truyền 1 giá trị nguyên, `.iloc` trả về giá trị của dòng tại vị trí truyền vào với kiểu `Series`
 
 ```python
-In [21]: df.iloc[0]
-Out[21]:
+df.iloc[0]
+```
+
+```{.python_output}
 state             Alabama
 individuals        2570.0
 family_members      864.0
 state_pop         4887681
 Name: East South Central, dtype: object
 ```
+
 ```{block2, type='rmdnote'}
 **_Lưu ý:_** 
 `Series` trả về không chứa nhãn của index, ở đây là nhãn `East South Central` của index `region`
-
 ``` 
+
 Để lấy dữ liệu theo cột, ví dụ muốn lấy cột `family_members` thì sẽ truyền index cột là `2`
+
 ```python
-In [22]: df.iloc[:, 2]
-Out[22]:
+df.iloc[:, 2]
+```
+
+```{.python_output}
 region
 East South Central      864.0
 Pacific                 582.0
@@ -357,9 +416,12 @@ Name: family_members, dtype: float64
 
 - Sử dụng `.columns.get_loc(<tên cột>)` để lấy vị trí của cột
 ```
+
 ```python
-In [23]: df.iloc[:, df.columns.get_loc('family_members')]
-Out[23]:
+df.iloc[:, df.columns.get_loc('family_members')]
+```
+
+```{.python_output}
 region
 East South Central      864.0
 Pacific                 582.0
