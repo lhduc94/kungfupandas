@@ -49,6 +49,50 @@ s.str.upper()
 8     CAT
 ```
 
+**split()**
+
+split giúp cắt chuỗi theo một pattern cho trước, mặc định pattern là khoảng trắng
+
+```python
+s2 = pd.Series(["a_b_c ", "c_d_e", np.nan, "f_g_h"], dtype="string")
+s2.str.split("_")​​
+```
+
+```{.python_output}
+0    [a, b, c]​
+1    [c, d, e]​
+2         <NA>​
+3    [f, g, h]​
+```
+
+Chúng ta có thể chỉ lấy phần tử thứ `i` sau khi split bằng hai cách
+
+Cách thứ nhất, dùng `get(i)`
+
+```python
+s2.str.split("_").str.get(1)​
+```
+
+```{.python_output}
+0       b​
+1       d​
+2    <NA>​
+3       g
+```
+
+Cách thứ hai, dùng `[i]`
+
+```python
+s2.str.split("_").str[1]
+```
+
+```{.python_output}
+0       b​
+1       d​
+2    <NA>​
+3       g
+```
+
 ## Xử lý dữ liệu dạng timestamp 
 ## Category trong pandas
 ## Xử lý Missing data
