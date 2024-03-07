@@ -40,11 +40,10 @@ rename
 set_index
 sort_values
 sort_index
-selecting-và-filtering
+giới-thiệu-chương
 sử-dụng
-loc-và-.iloc
-loc
-iloc
+sử-dụng-.loc
+sử-dụng-.iloc
 lọc-theo-điều-kiện
 toán-tử-điều-kiện
 isin

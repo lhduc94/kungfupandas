@@ -1,4 +1,4 @@
-# `.set_index()`
+## `.set_index()`
 
 Phương thức `.set_index()` dùng để chuyển đổi một cột của bảng thành index. Index này có thể thay thể index cũ hoặc thêm vào để thành `MultiIndex`. Cách sử dụng như sau:
 
