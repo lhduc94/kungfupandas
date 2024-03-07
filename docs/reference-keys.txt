@@ -6,6 +6,8 @@ một-số-thao-tác-cơ-bản
 cach-khoi-tao-data-frame
 các-cách-khởi-tạo-1
 các-hàm-khởi-tạo-thay-thế
+các-cách-khởi-tạo-2
+các-hàm-khởi-tạo-thay-thế-1
 data-type-trong-pandas
 đọc-và-lưu-file-trong-pandas
 csv-tsv
