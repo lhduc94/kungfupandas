@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.1)  1 JAN 2024 22:42
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2024.1.1)  8 MAR 2024 02:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1125,71 +1125,71 @@ LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/it' will be
 ]
 File: ../images/index/cover.jpg Graphic file (type bmp)
 <../images/index/cover.jpg>
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 14.4pt on input line 252.
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 14.4pt on input line 252.
+[5] [6
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[5] [6]
-LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
-(Font)              scaled to size 6.99997pt on input line 260.
-LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/n' will be
-(Font)              scaled to size 6.99997pt on input line 272.
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 290.
-LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 292.
-[7
+] [7] [8
 
 ]
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/m/n' will be
+(Font)              scaled to size 6.99997pt on input line 256.
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
+(Font)              scaled to size 14.4pt on input line 260.
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
+(Font)              scaled to size 14.4pt on input line 260.
+LaTeX Font Info:    Font shape `TU/SourceCodePro(0)/b/n' will be
+(Font)              scaled to size 6.99997pt on input line 268.
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 286.
+LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/n' will be
+(Font)              scaled to size 10.0pt on input line 288.
+[9]
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/b/it' will be
-(Font)              scaled to size 10.0pt on input line 329.
+(Font)              scaled to size 10.0pt on input line 327.
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
-[8] [9] [10]
+[10] [11] [12] [13]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00107pt on input line 527.
+(Font)              scaled to size 10.00107pt on input line 538.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00075pt on input line 527.
+(Font)              scaled to size 7.00075pt on input line 538.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00053pt on input line 527.
+(Font)              scaled to size 5.00053pt on input line 538.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 527.
+(Font)              scaled to size 9.99893pt on input line 538.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 527.
+(Font)              scaled to size 6.99925pt on input line 538.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 527.
+(Font)              scaled to size 4.99947pt on input line 538.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 527.
+(Font)              scaled to size 7.0pt on input line 538.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 527.
+(Font)              scaled to size 8.0pt on input line 538.
 LaTeX Font Info:    Font shape `TU/Alegreya(0)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 527.
-[11] [12] [13]
-File: images/note.png Graphic file (type bmp)
-<images/note.png>
+(Font)              scaled to size 6.0pt on input line 538.
 [14] [15]
-Underfull \hbox (badness 1057) in paragraph at lines 781--782
+File: images/note.png Graphic file (type bmp)
+<images/note.png>
+[16] [17]
+Underfull \hbox (badness 1057) in paragraph at lines 804--805
 []\TU/SourceCodePro(0)/m/n/10 name \TU/Alegreya(0)/m/n/10 của Series sẽ là tên cột của DataFrame và \TU/SourceCodePro(0)/m/n/10 index \TU/Alegreya(0)/m/n/10 của Series sẽ là index của
  []
 
+[18]
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
-[16] [17] [18] [19]
+[19] [20] [21]
 File: images/note.png Graphic file (type bmp)
 <images/note.png>
 
-LaTeX Warning: Hyper reference `cach-khoi-tao-data-frame' on page xx undefined on input line 990.
+LaTeX Warning: Hyper reference `cach-khoi-tao-data-frame' on page xxii undefined on input line 1017.
 
 ! Extra }, or forgotten \endgroup.
 \endMakeFramed ...eight \z@ \penalty -100 \egroup 
                                                   \begingroup \fb@put@frame ...
-l.992   \end{rmdnote}
-                      
+l.1019   \end{rmdnote}
+                       
 Here is how much of TeX's memory you used:
  19692 strings out of 476830
  371439 string characters out of 5802460
@@ -1199,4 +1199,4 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  90i,8n,115p,549b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Kungfupandas.pdf (19 pages).
+Output written on Kungfupandas.pdf (21 pages).

@@ -1,5 +1,5 @@
-# Sample và Resample
+## Sample và Resample
 
-## Sample
+### Sample
 
-## Resample
+### Resample
