@@ -66,7 +66,7 @@ concat
 groupby
 groupby-1
 các-hàm-filtering-trong-groupby
-làm-việc-với-1-số-kiểu-dữ-liệu
+xử-lý-một-số-kiểu-dữ-liệu-trong-pandas
 xử-lý-dữ-liệu-dạng-text
 lower
 upper
