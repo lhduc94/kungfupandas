@@ -2,7 +2,7 @@ giới-thiệu-pandas
 cấu-trúc-và-kiểu-dữ-liệu
 series
 các-cách-khởi-tạo
-một-số-thao-tác-cơ-bản
+một-số-thao-tác-cơ-bản-với-series
 cach-khoi-tao-data-frame
 các-cách-khởi-tạo-1
 các-hàm-khởi-tạo-thay-thế

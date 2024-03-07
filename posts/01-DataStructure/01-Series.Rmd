@@ -9,18 +9,18 @@ s = pd.Series(data, index=None, name=None)
 
 Trong đó `data` có thể  có dạng:
 
-- `numpy.ndarray`, `List`
+- dạng List của Python hoặc dạng `numpy.array`
 
-- Python `dict`
+- dictionary của Python
 
-- `Scalar`
+- là một hằng số duy nhất
 
 `index` có thể truyền hoặc không, tùy vào dạng của `data` mà `index` sẽ được định nghĩa khác nhau. 
 `name` là tên của `Series`, giá trị này cũng không nhất thiết phải truyền vào.
 
 ### Các cách khởi tạo
 
-#### Khởi tạo Series bằng array {-}
+#### Khởi tạo Series bằng List hoặc dạng numpy.array {-}
 
 Khi không truyền giá trị `index`, `Series` sẽ mặc định index của nó là 1 mảng số nguyên từ `0` đến `len(data) - 1` 
 
@@ -35,7 +35,7 @@ c    2
 Name: meow, dtype: int64
 ```
 
-#### Khởi tạo Series bằng dict {-}
+#### Khởi tạo Series bằng dictionary {-}
 
 ```python
 pd.Series({"b": 1, "a":0, "c": 2})
@@ -74,7 +74,7 @@ là `float64` nên kiểu dữ liệu của `Series` cũng là `float64` khác v
 
 ```
 
-**Khởi tạo Series bằng một giá trị (Scalar)**
+#### Khởi tạo Series bằng một giá trị duy nhất {-}
 
 ```python
 pd.Series(data=1, index=["a", "b", "c"])
@@ -87,7 +87,7 @@ c    1
 dtype: int64
 ```
 
-### Một số thao tác cơ bản
+### Một số thao tác cơ bản với Series
 
 Thao tác trên `Series` cũng giống với thao tác trên `numpy.array`. Ngoài ra chúng ta còn có thể 
 tác với Series dựa vào index
@@ -97,8 +97,10 @@ Ví dụ:
 ```python
 s = pd.Series(data=[0, 1, 2, 3, 4, 5], index=["a", "b", "c", "d", "e", "f"])
 ```
-**Hiển thị toàn bộ giá trị của Series**
-Ta gọi thuộc tính `.values`
+#### Hiển thị toàn bộ giá trị của Series {-}
+
+Để xem toàn bộ các giá trị của một Series, ta có thể gọi thuộc tính `.values`, kết quả sẽ trả về dạng `numpy.ndarray`
+
 
 ```python
 s.values
@@ -108,7 +110,7 @@ s.values
 array([0, 1, 2, 3, 4, 5])
 ```
 
-**Lấy theo indice**
+#### Truy cập một phần tử trong Series theo indice {-}
 
 ```python
 s[2]
@@ -118,7 +120,7 @@ s[2]
 2
 ``` 
 
-**Lấy theo index**
+#### Truy cập một phần tử trong Series theo theo index {-}
 
 ```python
 s["c"]

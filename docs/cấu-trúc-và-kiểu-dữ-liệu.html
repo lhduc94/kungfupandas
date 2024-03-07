@@ -149,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#series"><i class="fa fa-check"></i><b>2.1</b> Series</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo"><i class="fa fa-check"></i><b>2.1.1</b> Các cách khởi tạo</a></li>
-<li class="chapter" data-level="2.1.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#một-số-thao-tác-cơ-bản"><i class="fa fa-check"></i><b>2.1.2</b> Một số thao tác cơ bản</a></li>
+<li class="chapter" data-level="2.1.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#một-số-thao-tác-cơ-bản-với-series"><i class="fa fa-check"></i><b>2.1.2</b> Một số thao tác cơ bản với Series</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cach-khoi-tao-data-frame"><i class="fa fa-check"></i><b>2.2</b> DataFrame</a>
 <ul>
@@ -293,16 +293,16 @@ Cách đơn giản để tạo Series như sau</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb1-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series(data, index<span class="op">=</span><span class="va">None</span>, name<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 <p>Trong đó <code>data</code> có thể có dạng:</p>
 <ul>
-<li><p><code>numpy.ndarray</code>, <code>List</code></p></li>
-<li><p>Python <code>dict</code></p></li>
-<li><p><code>Scalar</code></p></li>
+<li><p>dạng List của Python hoặc dạng <code>numpy.array</code></p></li>
+<li><p>dictionary của Python</p></li>
+<li><p>là một hằng số duy nhất</p></li>
 </ul>
 <p><code>index</code> có thể truyền hoặc không, tùy vào dạng của <code>data</code> mà <code>index</code> sẽ được định nghĩa khác nhau.
 <code>name</code> là tên của <code>Series</code>, giá trị này cũng không nhất thiết phải truyền vào.</p>
 <div id="các-cách-khởi-tạo" class="section level3 hasAnchor" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Các cách khởi tạo<a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="khởi-tạo-series-bằng-array" class="section level4 unnumbered hasAnchor">
-<h4>Khởi tạo Series bằng array<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-array" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="khởi-tạo-series-bằng-list-hoặc-dạng-numpy.array" class="section level4 unnumbered hasAnchor">
+<h4>Khởi tạo Series bằng List hoặc dạng numpy.array<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-list-hoặc-dạng-numpy.array" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Khi không truyền giá trị <code>index</code>, <code>Series</code> sẽ mặc định index của nó là 1 mảng số nguyên từ <code>0</code> đến <code>len(data) - 1</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" tabindex="-1"></a>pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span></code></pre></div>
 <pre class="python_output"><code>a    0
@@ -310,8 +310,8 @@ b    1
 c    2
 Name: meow, dtype: int64</code></pre>
 </div>
-<div id="khởi-tạo-series-bằng-dict" class="section level4 unnumbered hasAnchor">
-<h4>Khởi tạo Series bằng dict<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-dict" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="khởi-tạo-series-bằng-dictionary" class="section level4 unnumbered hasAnchor">
+<h4>Khởi tạo Series bằng dictionary<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-dictionary" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-1" tabindex="-1"></a>pd.Series({<span class="st">&quot;b&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span></code></pre></div>
 <pre class="python_output"><code>b    1
 a    0
@@ -336,7 +336,9 @@ dtype: float64</code></pre>
 <code>NaN</code> là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu
 là <code>float64</code> nên kiểu dữ liệu của <code>Series</code> cũng là <code>float64</code> khác với <code>int64</code> ở ví dụ trước đó.</p>
 </div>
-<p><strong>Khởi tạo Series bằng một giá trị (Scalar)</strong></p>
+</div>
+<div id="khởi-tạo-series-bằng-một-giá-trị-duy-nhất" class="section level4 unnumbered hasAnchor">
+<h4>Khởi tạo Series bằng một giá trị duy nhất<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-một-giá-trị-duy-nhất" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-1" tabindex="-1"></a>pd.Series(data<span class="op">=</span><span class="dv">1</span>, index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>])</span></code></pre></div>
 <pre class="python_output"><code>a    1
 b    1
@@ -344,20 +346,25 @@ c    1
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="một-số-thao-tác-cơ-bản" class="section level3 hasAnchor" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Một số thao tác cơ bản<a href="cấu-trúc-và-kiểu-dữ-liệu.html#một-số-thao-tác-cơ-bản" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="một-số-thao-tác-cơ-bản-với-series" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Một số thao tác cơ bản với Series<a href="cấu-trúc-và-kiểu-dữ-liệu.html#một-số-thao-tác-cơ-bản-với-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Thao tác trên <code>Series</code> cũng giống với thao tác trên <code>numpy.array</code>. Ngoài ra chúng ta còn có thể
 tác với Series dựa vào index</p>
 <p>Ví dụ:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>])</span></code></pre></div>
-<p><strong>Hiển thị toàn bộ giá trị của Series</strong>
-Ta gọi thuộc tính <code>.values</code></p>
+<div id="hiển-thị-toàn-bộ-giá-trị-của-series" class="section level4 unnumbered hasAnchor">
+<h4>Hiển thị toàn bộ giá trị của Series<a href="cấu-trúc-và-kiểu-dữ-liệu.html#hiển-thị-toàn-bộ-giá-trị-của-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Để xem toàn bộ các giá trị của một Series, ta có thể gọi thuộc tính <code>.values</code>, kết quả sẽ trả về dạng <code>numpy.ndarray</code></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-1" tabindex="-1"></a>s.values</span></code></pre></div>
 <pre class="python_output"><code>array([0, 1, 2, 3, 4, 5])</code></pre>
-<p><strong>Lấy theo indice</strong></p>
+</div>
+<div id="truy-cập-một-phần-tử-trong-series-theo-indice" class="section level4 unnumbered hasAnchor">
+<h4>Truy cập một phần tử trong Series theo indice<a href="cấu-trúc-và-kiểu-dữ-liệu.html#truy-cập-một-phần-tử-trong-series-theo-indice" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb13-1" tabindex="-1"></a>s[<span class="dv">2</span>]</span></code></pre></div>
 <pre class="python_output"><code>2</code></pre>
-<p><strong>Lấy theo index</strong></p>
+</div>
+<div id="truy-cập-một-phần-tử-trong-series-theo-theo-index" class="section level4 unnumbered hasAnchor">
+<h4>Truy cập một phần tử trong Series theo theo index<a href="cấu-trúc-và-kiểu-dữ-liệu.html#truy-cập-một-phần-tử-trong-series-theo-theo-index" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb15-1" tabindex="-1"></a>s[<span class="st">&quot;c&quot;</span>]</span></code></pre></div>
 <pre class="python_output"><code>2 </code></pre>
 <p><strong>Slice indice</strong></p>
@@ -389,6 +396,7 @@ e    4
 f    5
 dtype: int64</code></pre>
 
+</div>
 </div>
 </div>
 <div id="cach-khoi-tao-data-frame" class="section level2 hasAnchor" number="2.2">
