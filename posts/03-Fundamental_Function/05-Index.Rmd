@@ -1,0 +1,17 @@
+## `.index`
+Thuộc tính `.index` để lấy index của `DataFrame` hoặc `Series`.
+
+Ví dụ
+
+```python
+df.index
+```
+
+```{.python_output}
+Int64Index([    0,     1,     2,     3,     4,     5,     6,     7,     8,
+                9,
+            ...
+            10764, 10765, 10766, 10767, 10768, 10769, 10770, 10771, 10772,
+            10773],
+           dtype='int64', length=10774)
+```

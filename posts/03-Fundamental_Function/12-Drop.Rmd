@@ -1,0 +1,80 @@
+## `.drop()`
+
+Phương thức `.drop()` dùng để loại bỏ các dòng hoặc cột theo chỉ định.
+Cú pháp của `.drop()` như sau
+
+```python
+DataFrame.drop(labels=None, axis=0, index=None, columns=None, level=None, inplace=False, errors='raise')
+```
+
+Trong đó:
+
+- `labels`: Tên cột hoặc dòng cần loại bỏ.
+
+- `axis`: Mặc đinh giá trị `0` loại bỏ theo dòng và `1` loại bỏ theo cột.
+
+- `index`: Chỉ định index của dòng cần loại bỏ, tương đương `labels, axis=0`
+
+- `columns`: Chỉ định cột cần loại bỏ, tương đương `labels, axis=1`
+
+- `level`: Dành cho MultiIndex, khi đó chỉ định cấp độ index cần loại bỏ
+
+- `inplace`: Thực hiện trên chính bảng hay tạo ra một bảng sao
+
+- `errors`: mặc định `raise` sẽ trả ra lỗi và `ignore` nếu muốn bỏ qua lỗi.
+
+
+**Ví dụ**
+
+```python
+df = pd.DataFrame(np.arange(16).reshape(4, 4),
+                  columns=['A', 'B', 'C', 'D'],
+                  index=['A', '1A', '2A', '3A'])
+df
+```
+
+```{.python_output}
+     A   B   C   D
+A    0   1   2   3
+1A   4   5   6   7
+2A   8   9  10  11
+3A  12  13  14  15
+```
+
+```python
+df.drop('A')
+```
+
+```{.python_output}
+	A	B	C	D
+1A	4	5	6	7
+2A	8	9	10	11
+3A	12	13	14	15
+```
+
+```python
+df.drop(columns=['A', 'C'])
+```
+
+```{.python_output}
+     B   D
+A    1   3
+1A   5   7
+2A   9  11
+3A  13  15
+```
+
+```python
+df.drop(index=['A', '2A'])
+```
+
+```{.python_output}
+     A   B   C   D
+1A   4   5   6   7
+3A  12  13  14  15
+```
+
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+Thực tế hay dùng các params `columns` và `index` để chỉ định các dòng hay cột cần được loại bỏ hơn là dùng `labels` và `axis`
+``` 

@@ -1,0 +1,35 @@
+## `.unique()` và `.nunique()`
+
+Phương thức `.unique()` trả về các giá trị khác nhau của `Series` và `.nunique()` trả về số lượng các giá trị khác nhau của `Series`. Kết quả trả về của `.unique()` là danh sách các phần tử được sắp xếp theo thứ tự đầu vào của bảng. Để loại bỏ giá trị `NA` trong lúc đếm có thể gọi `.nunique(dropna=False)`
+
+Cách sử dụng
+
+```python
+s = pd.Series([2, 3, 1 ,2, np.nan], name='col_0')
+s
+```
+
+```{.python_output}
+0    2.0
+1    3.0
+2    1.0
+3    2.0
+4    NaN
+Name: col_0, dtype: float64
+```
+
+```python
+s.unique()
+```
+
+```{.python_output}
+array([ 2.,  3.,  1., nan])
+```
+
+```python
+s.nunique(dropna=False)
+```
+
+```{.python_output}
+4
+```

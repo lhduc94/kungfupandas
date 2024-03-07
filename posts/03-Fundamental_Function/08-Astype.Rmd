@@ -1,0 +1,37 @@
+## `.astype()`
+
+Với phương thức `.astype()` ta có thể ép kiểu dữ liệu của cột về dạng khác. Việc ép kiểu này giúp thay đổi kiểu dữ liệu để tiện các thao tác như nối 2 cột có 2 kiểu `str` và `int`, ngoài ra việc ép kiểu cũng giúp giảm được dung lượng bộ nhớ dành cho bảng. 
+
+Ở ví dụ trên, ta thấy cột `department` có giá trị max là `99` nhưng được mặc định là `int64` khá lãng phí, do đó ép kiểu về `int8`
+
+**Trước khi ép kiểu**
+```python
+df['department'].dtypes
+```
+
+```{.python_output}
+dtype('int64')
+```
+
+```python
+df['department'].memory_usage() - df['department'].index.memory_usage()
+```
+
+```{.python_output}
+86192
+```
+**Sau khi ép kiểu**
+
+```python
+df['department'].astype('int8').memory_usage() - df['department'].index.memory_usage()
+```
+
+```{.python_output}
+10774
+```
+Ta thấy sau khi ép kiểu thì bộ nhớ lưu trữ của cột `department` giảm đi `8` lần.
+
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+`df['department'].memory_usage()` trả về dung lượng lưu trữ của cột `department` và dung lượng lưu trữ của `index`
+``` 

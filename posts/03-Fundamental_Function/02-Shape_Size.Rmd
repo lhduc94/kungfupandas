@@ -1,0 +1,23 @@
+## `.shape` và `.size`
+
+Phương thức `.shape` cho biết số lượng dòng và cột của bảng
+
+```python
+df.shape
+```
+
+```{.python_output}
+(10774, 9)
+```
+
+Trong dó `10774` là số lượng dòng của bảng và `9` là số lượng cột của bảng
+
+Phương thức `.size` cho biết số lượng phần từ của bảng
+
+```python
+df.size
+```
+
+```{.python_output}
+96966
+```

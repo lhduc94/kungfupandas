@@ -1,0 +1,5 @@
+# Một số hàm cơ bản {#Chuong-3}
+
+```python
+df = pd.read_csv('https://raw.githubusercontent.com/lhduc94/kungfupandas/master/data/sales_subset.csv',index_col=['Unnamed: 0'])
+```

@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chương 1 Giới thiệu Pandas | Kungfu Pandas</title>
-  <meta name="description" content="Chương 1 Giới thiệu Pandas | Kungfu Pandas" />
+  <title>Chương 5 .set_index() | Kungfu Pandas</title>
+  <meta name="description" content="Chương 5 .set_index() | Kungfu Pandas" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chương 1 Giới thiệu Pandas | Kungfu Pandas" />
+  <meta property="og:title" content="Chương 5 .set_index() | Kungfu Pandas" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Chương 1 Giới thiệu Pandas | Kungfu Pandas" />
+  <meta property="og:description" content="Chương 5 .set_index() | Kungfu Pandas" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chương 1 Giới thiệu Pandas | Kungfu Pandas" />
+  <meta name="twitter:title" content="Chương 5 .set_index() | Kungfu Pandas" />
   
-  <meta name="twitter:description" content="Chương 1 Giới thiệu Pandas | Kungfu Pandas" />
+  <meta name="twitter:description" content="Chương 5 .set_index() | Kungfu Pandas" />
   
 
 <meta name="author" content="Lê Huỳnh Đức" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="cấu-trúc-và-kiểu-dữ-liệu.html"/>
+<link rel="prev" href="Chuong-3.html"/>
+<link rel="next" href="selecting-và-filtering.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -286,17 +286,174 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="giới-thiệu-pandas" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chương 1</span> Giới thiệu Pandas<a href="giới-thiệu-pandas.html#giới-thiệu-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="set_index" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chương 5</span> <code>.set_index()</code><a href="set_index.html#set_index" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Phương thức <code>.set_index()</code> dùng để chuyển đổi một cột của bảng thành index. Index này có thể thay thể index cũ hoặc thêm vào để thành <code>MultiIndex</code>. Cách sử dụng như sau:</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb162-1"><a href="set_index.html#cb162-1" tabindex="-1"></a>DataFrame.set_index(keys, drop<span class="op">=</span><span class="va">True</span>, append<span class="op">=</span><span class="va">False</span>, inplace<span class="op">=</span><span class="va">False</span>, verify_integrity<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>keys</code>: Có thể truyền vào một cột duy nhất hoặc danh sách các cột. Ngoài ra còn có thể là 1 danh sách dạng <code>pd.Index</code>, <code>Series</code>, <code>np.array</code>, <code>iterator</code></p></li>
+<li><p><code>drop</code>: loại bỏ cột trong bảng nếu đã đưa vào index, mặc định là <code>True</code></p></li>
+<li><p><code>append</code>: mặc định là <code>False</code> ghi đè lên index đã có. Giá trị <code>True</code> sẽ thêm vào index sẵn có.</p></li>
+<li><p><code>inplace</code>: Thực hiện trực tiếp trên bảng hoặc tạo ra một bản sao</p></li>
+<li><p><code>verify_integrity</code>: Kiểm tra xem cột đánh index có chứa các phần tử trùng lặp hay không.</p></li>
+</ul>
+<p><strong>Ví dụ</strong></p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb163-1"><a href="set_index.html#cb163-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(np.arange(<span class="dv">16</span>).reshape(<span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb163-2"><a href="set_index.html#cb163-2" tabindex="-1"></a>                  columns<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;C&#39;</span>, <span class="st">&#39;D&#39;</span>],</span>
+<span id="cb163-3"><a href="set_index.html#cb163-3" tabindex="-1"></a>                  index<span class="op">=</span>[<span class="st">&#39;A&#39;</span>, <span class="st">&#39;1A&#39;</span>, <span class="st">&#39;2A&#39;</span>, <span class="st">&#39;3A&#39;</span>])</span>
+<span id="cb163-4"><a href="set_index.html#cb163-4" tabindex="-1"></a>df.index.name <span class="op">=</span> <span class="st">&#39;index1&#39;</span></span>
+<span id="cb163-5"><a href="set_index.html#cb163-5" tabindex="-1"></a>df</span></code></pre></div>
+<pre class="python_output"><code>         A   B   C   D
+index1                
+A        0   1   2   3
+1A       4   5   6   7
+2A       8   9  10  11
+3A      12  13  14  15</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb165-1"><a href="set_index.html#cb165-1" tabindex="-1"></a>df.set_index(<span class="st">&#39;A&#39;</span>)</span></code></pre></div>
+<pre class="python_output"><code>     B   C   D
+A             
+0    1   2   3
+4    5   6   7
+8    9  10  11
+12  13  14  15</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb167-1"><a href="set_index.html#cb167-1" tabindex="-1"></a>df.set_index([<span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>], append<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<pre class="python_output"><code>               C   D
+index1 A  B         
+A      0  1    2   3
+1A     4  5    6   7
+2A     8  9   10  11
+3A     12 13  14  15</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb169-1"><a href="set_index.html#cb169-1" tabindex="-1"></a>df.set_index([pd.Index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], name<span class="op">=</span><span class="st">&#39;new_index&#39;</span>)])</span></code></pre></div>
+<pre class="python_output"><code>            A   B   C   D
+new_index                
+1           0   1   2   3
+2           4   5   6   7
+3           8   9  10  11
+4          12  13  14  15</code></pre>
 
+<div class="rmdnote">
+<strong><em>Lưu ý:</em></strong>
+<code>keys</code> không áp dụng cho kiểu <code>list</code>, <code>tuple</code> nhưng Iterator của nó thì được.
+</div>
+<p><strong>Ví dụ</strong> khi đưa list vào sẽ báo lỗi</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb171-1"><a href="set_index.html#cb171-1" tabindex="-1"></a>df.set_index([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code></pre></div>
+<pre class="python_output"><code>---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_1380/3577861036.py in &lt;module&gt;
+----&gt; 1 df.set_index([1, 2, 3, 4])
+
+D:\Vendors\anaconda\lib\site-packages\pandas\util\_decorators.py in wrapper(*args, **kwargs)
+    309                     stacklevel=stacklevel,
+    310                 )
+--&gt; 311             return func(*args, **kwargs)
+    312 
+    313         return wrapper
+
+D:\Vendors\anaconda\lib\site-packages\pandas\core\frame.py in set_index(self, keys, drop, append, inplace, verify_integrity)
+   5492 
+   5493         if missing:
+-&gt; 5494             raise KeyError(f&quot;None of {missing} are in the columns&quot;)
+   5495 
+   5496         if inplace:
+
+KeyError: &#39;None of [1, 2, 3, 4] are in the columns&#39;</code></pre>
+<p>Trong khi đưa vào <code>Iterator</code> thì hoạt động.</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb173-1"><a href="set_index.html#cb173-1" tabindex="-1"></a>df.set_index(<span class="bu">iter</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span></code></pre></div>
+<pre class="python_output"><code>    A   B   C   D
+1   0   1   2   3
+2   4   5   6   7
+3   8   9  10  11
+4  12  13  14  15</code></pre>
+
+<div id="sort_values" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> <code>.sort_values</code><a href="set_index.html#sort_values" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Phương thức <code>.sort_values</code> dùng để sắp xếp dữ liệu trong DataFrame hoặc Series</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb175-1"><a href="set_index.html#cb175-1" tabindex="-1"></a>DataFrame.sort_values(by, axis<span class="op">=</span><span class="dv">0</span>, ascending<span class="op">=</span><span class="va">True</span>, inplace<span class="op">=</span><span class="va">False</span>, kind<span class="op">=</span><span class="st">&#39;quicksort&#39;</span>, na_position<span class="op">=</span><span class="st">&#39;last&#39;</span>, ignore_index<span class="op">=</span><span class="va">False</span>, key<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<p>Trong đó:</p>
+<ul>
+<li><p><code>by</code> : nhãn hoặc danh sách nhãn cần sắp xếp</p></li>
+<li><p><code>axis</code>: chỉ định chiều sắp xếp {<code>0</code> hoặc <code>index</code>, <code>1</code> hoặc <code>columns</code>}</p></li>
+<li><p><code>ascending</code>: Sắp xếp tăng dần hoặc giảm dần, có thể là một giá trị hoặc danh sách các giá trị boolean</p></li>
+<li><p><code>inplace</code>: Thực hiện trên chính bảng đó hoặc tạo ra một bản sao</p></li>
+<li><p><code>kind</code>: Thuật toán sắp xếp</p></li>
+<li><p><code>na_postion</code>: chỉ định các giá trị <code>NA</code> được xếp đầu hoặc cuôi</p></li>
+<li><p><code>ignore_index</code>: Nếu để giá trị <code>True</code> sẽ thực hiện đánh index lại từ 0</p></li>
+<li><p><code>key</code>: key function</p></li>
+</ul>
+<div class="sourceCode" id="cb176"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb176-1"><a href="set_index.html#cb176-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb176-2"><a href="set_index.html#cb176-2" tabindex="-1"></a>    <span class="st">&#39;col1&#39;</span>: [<span class="st">&#39;A&#39;</span>, <span class="st">&#39;A&#39;</span>, <span class="st">&#39;B&#39;</span>, np.nan, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;C&#39;</span>],</span>
+<span id="cb176-3"><a href="set_index.html#cb176-3" tabindex="-1"></a>    <span class="st">&#39;col2&#39;</span>: [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">8</span>, <span class="dv">2</span>, <span class="dv">4</span>],</span>
+<span id="cb176-4"><a href="set_index.html#cb176-4" tabindex="-1"></a>    <span class="st">&#39;col3&#39;</span>: [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">9</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb176-5"><a href="set_index.html#cb176-5" tabindex="-1"></a>    <span class="st">&#39;col4&#39;</span>: [<span class="st">&#39;a&#39;</span>, <span class="st">&#39;B&#39;</span>, <span class="st">&#39;c&#39;</span>, <span class="st">&#39;D&#39;</span>, <span class="st">&#39;e&#39;</span>, <span class="st">&#39;F&#39;</span>]</span>
+<span id="cb176-6"><a href="set_index.html#cb176-6" tabindex="-1"></a>})</span>
+<span id="cb176-7"><a href="set_index.html#cb176-7" tabindex="-1"></a>df</span></code></pre></div>
+<pre class="python_output"><code>  col1  col2  col3 col4
+0    A     2     0    a
+1    A     1     1    B
+2    B     9     9    c
+3  NaN     8     4    D
+4    D     2     2    e
+5    C     4     3    F</code></pre>
+<p>Sắp xếp theo <code>col1</code></p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb178-1"><a href="set_index.html#cb178-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>])</span></code></pre></div>
+<pre class="python_output"><code>  col1  col2  col3 col4
+0    A     2     0    a
+1    A     1     1    B
+2    B     9     9    c
+5    C     4     3    F
+4    D     2     2    e
+3  NaN     8     4    D</code></pre>
+<p>Sắp xếp theo nhiều cột</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb180-1"><a href="set_index.html#cb180-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>])</span></code></pre></div>
+<pre class="python_output"><code>  col1  col2  col3 col4
+1    A     1     1    B
+0    A     2     0    a
+2    B     9     9    c
+5    C     4     3    F
+4    D     7     2    e
+3  NaN     8     4    D</code></pre>
+<p>Sắp xếp theo tăng giảm</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb182-1"><a href="set_index.html#cb182-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span>[<span class="st">&#39;col1&#39;</span>, <span class="st">&#39;col2&#39;</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span></code></pre></div>
+<pre class="python_output"><code>  col1  col2  col3 col4
+4    D     2     2    e
+5    C     4     3    F
+2    B     9     9    c
+1    A     1     1    B
+0    A     2     0    a
+3  NaN     8     4    D</code></pre>
+<p>Thay đổi vị trí của <code>NaN</code></p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb184-1"><a href="set_index.html#cb184-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span><span class="st">&#39;col1&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>, na_position<span class="op">=</span><span class="st">&#39;first&#39;</span>)</span></code></pre></div>
+<pre class="python_output"><code>  col1  col2  col3 col4
+3  NaN     8     4    D
+4    D     2     2    e
+5    C     4     3    F
+2    B     9     9    c
+0    A     2     0    a
+1    A     1     1    B</code></pre>
+<p>Sắp xếp với key function</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb186-1"><a href="set_index.html#cb186-1" tabindex="-1"></a>df.sort_values(by<span class="op">=</span><span class="st">&#39;col4&#39;</span>, key<span class="op">=</span><span class="kw">lambda</span> col: col.<span class="bu">str</span>.lower())</span></code></pre></div>
+<pre class="python_output"><code>  col1  col2  col3 col4
+0    A     2     0    a
+1    A     1     1    B
+2    B     9     9    c
+3  NaN     8     4    D
+4    D     2     2    e
+5    C     4     3    F</code></pre>
+
+</div>
+<div id="sort_index" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> <code>.sort_index</code><a href="set_index.html#sort_index" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="cấu-trúc-và-kiểu-dữ-liệu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Chuong-3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="selecting-và-filtering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

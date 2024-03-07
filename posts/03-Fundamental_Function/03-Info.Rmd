@@ -1,0 +1,39 @@
+## `.info()`
+
+ Phương thức `.info()` dùng để xem một số thông tin cơ bản như
+ 
+ - Index của bảng
+ - Tên các cột, số lượng các phần tử Null trong cột và kiểu dữ liệu của chúng
+ - Số lượng các kiểu dữ liệu
+ - Dung lượng của bảng
+
+ Ví dụ
+
+```python
+df.info()
+```
+
+```{.python_output}
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 10774 entries, 0 to 10773
+Data columns (total 9 columns):
+ #   Column                Non-Null Count  Dtype  
+---  ------                --------------  -----  
+ 0   store                 10774 non-null  int64  
+ 1   type                  10774 non-null  object 
+ 2   department            10774 non-null  int64  
+ 3   date                  10774 non-null  object 
+ 4   weekly_sales          10774 non-null  float64
+ 5   is_holiday            10774 non-null  bool   
+ 6   temperature_c         10774 non-null  float64
+ 7   fuel_price_usd_per_l  10774 non-null  float64
+ 8   unemployment          10774 non-null  float64
+dtypes: bool(1), float64(4), int64(2), object(2)
+memory usage: 768.1+ KB
+```
+
+```{block2, type='rmdtip'}
+**_Mẹo:_**
+Phương thức `.info()` có các tham số để tùy chỉnh các thông tin có thể xem. Bạn có thể giới hạn các thông tin theo các tham số dưới đây
+`info(verbose=None, buf=None, max_cols=None, memory_usage=None, show_counts=None, null_counts=None)`
+``` 

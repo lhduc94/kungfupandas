@@ -17,10 +17,12 @@ xuất-file-excel
 json
 đọc-file-json
 xuất-file-json
+parquet
+đọc-file-parquet
+xuất-file-parquet
 pickle
 đọc-file-pickle
 xuất-file-pickle
-cấu-hình-pandas
 Chuong-3
 head-và-.tail
 shape-và-.size
@@ -28,7 +30,7 @@ info
 describe
 index
 memory_usage
-lấy-series-trong-pandas
+truy-cập-series-trong-pandas
 astype
 drop_duplicates
 value_counts
@@ -36,8 +38,8 @@ unique-và-.nunique
 drop
 rename
 set_index
-sort_index
 sort_values
+sort_index
 selecting-và-filtering
 sử-dụng
 loc-và-.iloc
@@ -76,4 +78,4 @@ resample
 window
 anomaly-detection-project
 visualize-với-matplotlib
-cấu-hình-pandas-1
+cấu-hình-pandas

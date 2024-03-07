@@ -1,0 +1,125 @@
+# `.set_index()`
+
+Phương thức `.set_index()` dùng để chuyển đổi một cột của bảng thành index. Index này có thể thay thể index cũ hoặc thêm vào để thành `MultiIndex`. Cách sử dụng như sau:
+
+```python
+DataFrame.set_index(keys, drop=True, append=False, inplace=False, verify_integrity=False)
+```
+
+Trong đó:
+
+- `keys`: Có thể truyền vào một cột duy nhất hoặc danh sách các cột. Ngoài ra còn có thể là 1 danh sách dạng `pd.Index`, `Series`, `np.array`, `iterator`
+
+- `drop`: loại bỏ cột trong bảng nếu đã đưa vào index, mặc định là `True`
+
+- `append`: mặc định là `False` ghi đè lên index đã có. Giá trị `True` sẽ thêm vào index sẵn có.
+
+- `inplace`: Thực hiện trực tiếp trên bảng hoặc tạo ra một bản sao
+
+- `verify_integrity`: Kiểm tra xem cột đánh index có chứa các phần tử trùng lặp hay không.
+
+
+**Ví dụ**
+
+```python
+df = pd.DataFrame(np.arange(16).reshape(4, 4),
+                  columns=['A', 'B', 'C', 'D'],
+                  index=['A', '1A', '2A', '3A'])
+df.index.name = 'index1'
+df
+```
+
+```{.python_output}
+         A   B   C   D
+index1                
+A        0   1   2   3
+1A       4   5   6   7
+2A       8   9  10  11
+3A      12  13  14  15
+```
+
+```python
+df.set_index('A')
+```
+
+```{.python_output}
+     B   C   D
+A             
+0    1   2   3
+4    5   6   7
+8    9  10  11
+12  13  14  15
+```
+
+```python
+df.set_index(['A', 'B'], append=True)
+```
+
+```{.python_output}
+               C   D
+index1 A  B         
+A      0  1    2   3
+1A     4  5    6   7
+2A     8  9   10  11
+3A     12 13  14  15
+```
+
+```python
+df.set_index([pd.Index([1, 2, 3, 4], name='new_index')])
+```
+
+```{.python_output}
+            A   B   C   D
+new_index                
+1           0   1   2   3
+2           4   5   6   7
+3           8   9  10  11
+4          12  13  14  15
+```
+
+```{block2, type='rmdnote'}
+**_Lưu ý:_** 
+`keys` không áp dụng cho kiểu `list`, `tuple` nhưng Iterator của nó thì được.
+``` 
+**Ví dụ** khi đưa list vào sẽ báo lỗi
+
+```python
+df.set_index([1, 2, 3, 4])
+```
+
+```{.python_output}
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+~\AppData\Local\Temp/ipykernel_1380/3577861036.py in <module>
+----> 1 df.set_index([1, 2, 3, 4])
+
+D:\Vendors\anaconda\lib\site-packages\pandas\util\_decorators.py in wrapper(*args, **kwargs)
+    309                     stacklevel=stacklevel,
+    310                 )
+--> 311             return func(*args, **kwargs)
+    312 
+    313         return wrapper
+
+D:\Vendors\anaconda\lib\site-packages\pandas\core\frame.py in set_index(self, keys, drop, append, inplace, verify_integrity)
+   5492 
+   5493         if missing:
+-> 5494             raise KeyError(f"None of {missing} are in the columns")
+   5495 
+   5496         if inplace:
+
+KeyError: 'None of [1, 2, 3, 4] are in the columns'
+```
+
+Trong khi đưa vào `Iterator` thì hoạt động.
+
+```python
+df.set_index(iter([1, 2, 3, 4]))
+```
+
+```{.python_output}
+    A   B   C   D
+1   0   1   2   3
+2   4   5   6   7
+3   8   9  10  11
+4  12  13  14  15
+```

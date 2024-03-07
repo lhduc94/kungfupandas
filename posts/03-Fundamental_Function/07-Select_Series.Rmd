@@ -1,0 +1,22 @@
+## Truy cập Series trong pandas
+Sử dụng `[<tên cột>]` để lấy 1 Series của bảng. Ví dụ để lấy Series của cột `department` ta làm như sau
+
+```python
+df['department']
+```
+
+```{.python_output}
+0         1
+1         1
+2         1
+3         1
+4         1
+         ..
+10769    99
+10770    99
+10771    99
+10772    99
+10773    99
+Name: department, Length: 10774, dtype: int64
+```
+những Series này cũng có thế áp dụng các phương thức tương tự của `DataFrame` như `.head()`, `.tail()`....

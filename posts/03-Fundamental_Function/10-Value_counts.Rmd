@@ -1,0 +1,57 @@
+## `.value_counts()`
+
+Phương thức này trả số lần xuất hiện của các phần tử trong `Series`. Kết quả trả về mặc định sẽ sắp xếp theo số lần xuất hiện giảm dần và mặc định bỏ qua các giá trị null
+
+```python
+Series.value_counts(normalize=False, sort=True, ascending=False, bins=None, dropna=True)
+```
+Trong đó:
+
+- `normalize`: `True` sẽ trả về tỉ lệ xuất hiện của các phần tử
+
+- `sort`: `True` sẽ trả về kết quả sắp xếp theo số lần xuất hiện, `False` sẽ trả về kết quả sắp xếp theo trình tự xuất hiện của phần tử
+
+- `ascending`: `True` sẽ trả về kết quả sắp xếp theo số lần xuất hiện tăng dần.
+
+- `bins`: gom nhóm các phần tử, tương tự `pd.cut`
+
+- `dropna`: `False` sẽ đếm tất cả các phần tử kể cả null
+
+**Ví dụ**
+
+```python
+s = pd.Series([3, 1, 2, 3,  np.nan, 4, np.nan])
+s.value_counts()
+```
+
+```{.python_output}
+3.0    2
+1.0    1
+2.0    1
+4.0    1
+dtype: int64
+```
+
+```python
+s.value_counts(normalize=True, sort=False, dropna=False)
+```
+
+```{.python_output}
+3.0    0.285714
+1.0    0.142857
+2.0    0.142857
+NaN    0.285714
+4.0    0.142857
+dtype: float64
+```
+
+```python
+s.value_counts(bins=3)
+```
+
+```{.python_output}
+(0.996, 2.0]    2
+(2.0, 3.0]      2
+(3.0, 4.0]      1
+dtype: int64
+```

@@ -1,0 +1,40 @@
+## `.memory_usage()`
+
+Phương thức `.memory_usage(index=True, deep=False)` giúp thông kê dung lượng của từng cột. Trong đó `index` trả về dung lượng của phần đánh index và `deep` nếu đặt giá trị `True` sẽ trả về cách tính toán sâu hơn về bộ nhớ cho kiểu `object`
+
+Ví dụ
+
+```python
+df.memory_usage(index=False)
+```
+
+```{.python_output}
+store                   86192
+type                    86192
+department              86192
+date                    86192
+weekly_sales            86192
+is_holiday              10774
+temperature_c           86192
+fuel_price_usd_per_l    86192
+unemployment            86192
+dtype: int64
+```
+
+```python
+df.memory_usage(deep=True) 
+```
+
+```{.python_output} 
+Index                    86192
+store                    86192
+type                    624892
+department               86192
+date                    721858
+weekly_sales             86192
+is_holiday               10774
+temperature_c            86192
+fuel_price_usd_per_l     86192
+unemployment             86192
+dtype: int64
+```

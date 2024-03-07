@@ -1,0 +1,42 @@
+## `.head()` và `.tail()`
+
+Phương thức `.head(n=5)` hiển thị `n` dòng đầu tiên của `DataFrame`, ngược lại phương thức `.tail(n=5)` hiển thị `n` dòng cuối cùng của `DataFrame`
+
+```python
+df.head()
+```
+```{.python_output}
+        store type  department        date  weekly_sales  is_holiday  \
+0      1    A           1  2010-02-05      24924.50       False   
+1      1    A           1  2010-03-05      21827.90       False   
+2      1    A           1  2010-04-02      57258.43       False   
+3      1    A           1  2010-05-07      17413.94       False   
+4      1    A           1  2010-06-04      17558.09       False 
+
+   temperature_c  fuel_price_usd_per_l  unemployment  
+0       5.727778              0.679451         8.106  
+1       8.055556              0.693452         8.106  
+2      16.816667              0.718284         7.808  
+3      22.527778              0.748928         7.808  
+4      27.050000              0.714586         7.808  
+```
+```python
+df.tail()
+```
+
+```{.python_output}
+       store type  department        date  weekly_sales  is_holiday  \
+10769     39    A          99  2011-12-09        895.00       False   
+10770     39    A          99  2012-02-03        350.00       False   
+10771     39    A          99  2012-06-08        450.00       False   
+10772     39    A          99  2012-07-13          0.06       False   
+10773     39    A          99  2012-10-05        915.00       False   
+
+       temperature_c  fuel_price_usd_per_l  unemployment  
+10769       9.644444              0.834256         7.716  
+10770      15.938889              0.887619         7.244  
+10771      27.288889              0.911922         6.989  
+10772      25.644444              0.860145         6.623  
+10773      22.250000              0.955511         6.228 
+
+```
