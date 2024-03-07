@@ -249,8 +249,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>9</b> Làm việc với 1 số kiểu dữ liệu</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-text"><i class="fa fa-check"></i><b>9.1</b> Xử lý dữ liệu dạng text</a></li>
-<li class="chapter" data-level="9.2" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-timestamp"><i class="fa fa-check"></i><b>9.2</b> Xử lý dữ liệu dạng timestamp</a></li>
+<li class="chapter" data-level="9.1" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-text"><i class="fa fa-check"></i><b>9.1</b> Xử lý dữ liệu dạng text</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#lower"><i class="fa fa-check"></i><b>9.1.1</b> lower()</a></li>
+<li class="chapter" data-level="9.1.2" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#upper"><i class="fa fa-check"></i><b>9.1.2</b> upper()</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#split"><i class="fa fa-check"></i><b>9.2</b> split()</a></li>
+<li class="chapter" data-level="9.3" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-timestamp"><i class="fa fa-check"></i><b>9.3</b> Xử lý dữ liệu dạng timestamp</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html"><i class="fa fa-check"></i><b>10</b> Một số kiến thức nâng cao</a>
 <ul>
@@ -305,7 +310,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Chúng ta có thể lưu dữ liệu text trong Pandas dưới hai dạng dữ liệu : object hoặc string​</p>
 <div class="sourceCode" id="cb369"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb369-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb369-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series( [<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>, <span class="st">&quot;Aaba&quot;</span>, <span class="st">&quot;Baca&quot;</span>, np.nan, <span class="st">&quot;CABA&quot;</span>, <span class="st">&quot;dog&quot;</span>, <span class="st">&quot;cat&quot;</span>], dtype<span class="op">=</span><span class="st">&quot;string&quot;</span>)​</span></code></pre></div>
 <p>Để thực hiện các thao tác cho dữ liệu dạng text ta hay dùng <code>s.str.&lt;phương thức&gt;</code>.</p>
-<p><strong>lower()</strong></p>
+<div id="lower" class="section level3 hasAnchor" number="9.1.1">
+<h3><span class="header-section-number">9.1.1</span> lower()<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#lower" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Chúng ta có thể chuyển text về các kí tự viết thường bằng phương thức <code>lower()</code></p>
 <div class="sourceCode" id="cb370"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb370-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb370-1" tabindex="-1"></a>s.<span class="bu">str</span>.lower()</span></code></pre></div>
 <pre class="python_output"><code>0       a
@@ -317,7 +323,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6    caba
 7     dog
 8     cat</code></pre>
-<p><strong>upper()</strong></p>
+</div>
+<div id="upper" class="section level3 hasAnchor" number="9.1.2">
+<h3><span class="header-section-number">9.1.2</span> upper()<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#upper" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Chúng ta có thể chuyển text về các kí tự viết hoa bằng phương thức <code>upper()</code></p>
 <div class="sourceCode" id="cb372"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb372-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb372-1" tabindex="-1"></a>s.<span class="bu">str</span>.upper()</span></code></pre></div>
 <pre class="python_output"><code>0       A
@@ -329,7 +337,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6    CABA
 7     DOG
 8     CAT</code></pre>
-<p><strong>split()</strong></p>
+</div>
+</div>
+<div id="split" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> split()<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#split" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>split giúp cắt chuỗi theo một pattern cho trước, mặc định pattern là khoảng trắng</p>
 <div class="sourceCode" id="cb374"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb374-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb374-1" tabindex="-1"></a>s2 <span class="op">=</span> pd.Series([<span class="st">&quot;a_b_c &quot;</span>, <span class="st">&quot;c_d_e&quot;</span>, np.nan, <span class="st">&quot;f_g_h&quot;</span>], dtype<span class="op">=</span><span class="st">&quot;string&quot;</span>)</span>
 <span id="cb374-2"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb374-2" tabindex="-1"></a>s2.<span class="bu">str</span>.split(<span class="st">&quot;_&quot;</span>)​​</span></code></pre></div>
@@ -350,10 +361,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 1       d​
 2    &lt;NA&gt;​
 3       g</code></pre>
+<p>Tách các phần tử thành nhiều phần</p>
+<p>Như cách split mặc định ở phần đầu, chúng ta có kết quả là một Series với mỗi phần tử là một danh sách</p>
+<div class="sourceCode" id="cb380"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb380-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb380-1" tabindex="-1"></a>s2.<span class="bu">str</span>.split(<span class="st">&quot;_&quot;</span>)</span></code></pre></div>
+<pre class="python_output"><code>0    [a, b, c]​
+1    [c, d, e]​
+2         &lt;NA&gt;​
+3    [f, g, h]​</code></pre>
+<p>Chúng ta có thể chia tách các danh sách thành các cột khác nhau bằng tham số <code>expand</code>, lúc này sẽ sinh ra một DataFrame mới với số cột bằng với số phần tử tối đa của các danh sách</p>
+<div class="sourceCode" id="cb382"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb382-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb382-1" tabindex="-1"></a>s2.<span class="bu">str</span>.split(<span class="st">&quot;_&quot;</span>, expand<span class="op">=</span><span class="va">True</span>)​</span></code></pre></div>
+<pre class="python_output"><code>      0     1     2​
+0     a     b     c​
+1     c     d     e​
+2  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;​
+3     f     g     h</code></pre>
 
 </div>
-<div id="xử-lý-dữ-liệu-dạng-timestamp" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> Xử lý dữ liệu dạng timestamp<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-timestamp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="xử-lý-dữ-liệu-dạng-timestamp" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Xử lý dữ liệu dạng timestamp<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-timestamp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 
 

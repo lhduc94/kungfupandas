@@ -7,7 +7,7 @@ s = pd.Series( ["A", "B", "C", "Aaba", "Baca", np.nan, "CABA", "dog", "cat"], dt
 
 Để thực hiện các thao tác cho dữ liệu dạng text ta hay dùng `s.str.<phương thức>`.
 
-**lower()**
+### lower()
 
 Chúng ta có thể chuyển text về các kí tự viết thường bằng phương thức `lower()`
 
@@ -28,7 +28,7 @@ s.str.lower()
 ```
 
 
-**upper()**
+### upper()
 
 Chúng ta có thể chuyển text về các kí tự viết hoa bằng phương thức `upper()`
 
@@ -48,7 +48,7 @@ s.str.upper()
 8     CAT
 ```
 
-**split()**
+## split()
 
 split giúp cắt chuỗi theo một pattern cho trước, mặc định pattern là khoảng trắng
 
@@ -90,4 +90,33 @@ s2.str.split("_").str[1]
 1       d​
 2    <NA>​
 3       g
+```
+
+Tách các phần tử thành nhiều phần
+
+Như cách split mặc định ở phần đầu, chúng ta có kết quả là một Series với mỗi phần tử là một danh sách
+
+```python
+s2.str.split("_")
+```
+
+```{.python_output}
+0    [a, b, c]​
+1    [c, d, e]​
+2         <NA>​
+3    [f, g, h]​
+```
+
+Chúng ta có thể chia tách các danh sách thành các cột khác nhau bằng tham số `expand`, lúc này sẽ sinh ra một DataFrame mới với số cột bằng với số phần tử tối đa của các danh sách
+
+```python
+s2.str.split("_", expand=True)​
+```
+
+```{.python_output}
+      0     1     2​
+0     a     b     c​
+1     c     d     e​
+2  <NA>  <NA>  <NA>​
+3     f     g     h
 ```

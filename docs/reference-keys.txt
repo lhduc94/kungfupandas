@@ -68,6 +68,9 @@ groupby-1
 các-hàm-filtering-trong-groupby
 làm-việc-với-1-số-kiểu-dữ-liệu
 xử-lý-dữ-liệu-dạng-text
+lower
+upper
+split
 xử-lý-dữ-liệu-dạng-timestamp
 một-số-kiến-thức-nâng-cao
 multiindex
