@@ -71,6 +71,9 @@ xử-lý-dữ-liệu-dạng-text
 lower
 upper
 split
+replace
+remove
+concatenate
 xử-lý-dữ-liệu-dạng-timestamp
 một-số-kiến-thức-nâng-cao
 multiindex

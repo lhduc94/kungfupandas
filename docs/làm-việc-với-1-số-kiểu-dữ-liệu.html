@@ -254,6 +254,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1.1" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#lower"><i class="fa fa-check"></i><b>9.1.1</b> lower()</a></li>
 <li class="chapter" data-level="9.1.2" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#upper"><i class="fa fa-check"></i><b>9.1.2</b> upper()</a></li>
 <li class="chapter" data-level="9.1.3" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#split"><i class="fa fa-check"></i><b>9.1.3</b> split()</a></li>
+<li class="chapter" data-level="9.1.4" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#replace"><i class="fa fa-check"></i><b>9.1.4</b> replace</a></li>
+<li class="chapter" data-level="9.1.5" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#remove"><i class="fa fa-check"></i><b>9.1.5</b> remove</a></li>
+<li class="chapter" data-level="9.1.6" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#concatenate"><i class="fa fa-check"></i><b>9.1.6</b> concatenate</a></li>
 </ul></li>
 <li class="chapter" data-level="9.2" data-path="làm-việc-với-1-số-kiểu-dữ-liệu.html"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#xử-lý-dữ-liệu-dạng-timestamp"><i class="fa fa-check"></i><b>9.2</b> Xử lý dữ liệu dạng timestamp</a></li>
 </ul></li>
@@ -350,13 +353,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 2         &lt;NA&gt;​
 3    [f, g, h]​</code></pre>
 <p>Chúng ta có thể chỉ lấy phần tử thứ <code>i</code> sau khi split bằng hai cách</p>
-<p>Cách thứ nhất, dùng <code>get(i)</code></p>
+<ul>
+<li>Cách thứ nhất, dùng <code>get(i)</code></li>
+</ul>
 <div class="sourceCode" id="cb376"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb376-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb376-1" tabindex="-1"></a>s2.<span class="bu">str</span>.split(<span class="st">&quot;_&quot;</span>).<span class="bu">str</span>.get(<span class="dv">1</span>)​</span></code></pre></div>
 <pre class="python_output"><code>0       b​
 1       d​
 2    &lt;NA&gt;​
 3       g</code></pre>
-<p>Cách thứ hai, dùng <code>[i]</code></p>
+<ul>
+<li>Cách thứ hai, dùng <code>[i]</code></li>
+</ul>
 <div class="sourceCode" id="cb378"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb378-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb378-1" tabindex="-1"></a>s2.<span class="bu">str</span>.split(<span class="st">&quot;_&quot;</span>).<span class="bu">str</span>[<span class="dv">1</span>]</span></code></pre></div>
 <pre class="python_output"><code>0       b​
 1       d​
@@ -378,8 +385,117 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 1     c     d     e​
 2  &lt;NA&gt;  &lt;NA&gt;  &lt;NA&gt;​
 3     f     g     h</code></pre>
-
+<p>Ngoài ra, chúng ta cũng có thể chỉ định cắt theo vị trí bằng tham số <code>n</code>. Ví dụ chúng ta chỉ cắt chuỗi theo ký tự phân tách <code>_</code> đầu tiên</p>
+<div class="sourceCode" id="cb384"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb384-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb384-1" tabindex="-1"></a>s2.<span class="bu">str</span>.split(<span class="st">&quot;_&quot;</span>, expand<span class="op">=</span><span class="va">True</span>, n<span class="op">=</span><span class="dv">1</span>)​</span></code></pre></div>
+<pre class="python_output"><code>      0     1
+0     a   b_c
+1     c   d_e
+2  &lt;NA&gt;  &lt;NA&gt;
+3     f   g_h</code></pre>
 </div>
+</div>
+<div id="replace" class="section level3 hasAnchor" number="9.1.4">
+<h3><span class="header-section-number">9.1.4</span> replace<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#replace" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb386"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb386-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-1" tabindex="-1"></a>s3 <span class="op">=</span> pd.Series(​</span>
+<span id="cb386-2"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-2" tabindex="-1"></a></span>
+<span id="cb386-3"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-3" tabindex="-1"></a>    [<span class="st">&quot;A &quot;</span>, <span class="st">&quot;B &quot;</span>, <span class="st">&quot;C &quot;</span>, <span class="st">&quot;Aaba &quot;</span>, <span class="st">&quot;Baca &quot;</span>, <span class="st">&quot;&quot;</span>, np.nan, <span class="st">&quot;CABA &quot;</span>, <span class="st">&quot;dog &quot;</span>, <span class="st">&quot;cat&quot;</span>],​</span>
+<span id="cb386-4"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-4" tabindex="-1"></a></span>
+<span id="cb386-5"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-5" tabindex="-1"></a>    dtype<span class="op">=</span><span class="st">&quot;string&quot;</span>,​</span>
+<span id="cb386-6"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-6" tabindex="-1"></a></span>
+<span id="cb386-7"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-7" tabindex="-1"></a>)​</span>
+<span id="cb386-8"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb386-8" tabindex="-1"></a>s3</span></code></pre></div>
+<pre class="python_output"><code>0       A
+1       B
+2       C
+3    Aaba
+4    Baca
+5        
+6    &lt;NA&gt;
+7    CABA
+8     dog
+9     cat</code></pre>
+<div class="sourceCode" id="cb388"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb388-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb388-1" tabindex="-1"></a>s3.<span class="bu">str</span>.replace(<span class="st">&quot;^.a|dog &quot;</span>, <span class="st">&quot;XX-XX &quot;</span>, case<span class="op">=</span><span class="va">False</span>, regex<span class="op">=</span><span class="va">True</span>)​</span></code></pre></div>
+<pre class="python_output"><code>0           A
+1           B
+2           C
+3    XX-XX ba
+4    XX-XX ca
+5            
+6        &lt;NA&gt;
+7    XX-XX BA
+8      XX-XX 
+9     XX-XX t</code></pre>
+</div>
+<div id="remove" class="section level3 hasAnchor" number="9.1.5">
+<h3><span class="header-section-number">9.1.5</span> remove<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#remove" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb390"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb390-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb390-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="st">&quot;str_foo &quot;</span>, <span class="st">&quot;str_bar &quot;</span>, <span class="st">&quot;no_prefix&quot;</span>])</span>
+<span id="cb390-2"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb390-2" tabindex="-1"></a>s​</span></code></pre></div>
+<pre class="python_output"><code>0             str_foo
+1             bar_str
+2    no_prefix_suffix</code></pre>
+<div class="sourceCode" id="cb392"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb392-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb392-1" tabindex="-1"></a>s.<span class="bu">str</span>.removeprefix(<span class="st">&quot;str_&quot;</span>)​</span></code></pre></div>
+<pre class="python_output"><code>0                 foo
+1             bar_str
+2    no_prefix_suffix</code></pre>
+<div class="sourceCode" id="cb394"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb394-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb394-1" tabindex="-1"></a>s.<span class="bu">str</span>.removesuffix(<span class="st">&quot;_str&quot;</span>)​</span></code></pre></div>
+<pre class="python_output"><code>0             str_foo
+1                 bar
+2    no_prefix_suffix</code></pre>
+</div>
+<div id="concatenate" class="section level3 hasAnchor" number="9.1.6">
+<h3><span class="header-section-number">9.1.6</span> concatenate<a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#concatenate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Để nối các text với nhau, chúng ta có thể sử dụng phương thức .str.cat()​</p>
+<div class="sourceCode" id="cb396"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb396-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb396-1" tabindex="-1"></a>Series.<span class="bu">str</span>.cat(others<span class="op">=</span><span class="va">None</span>, sep<span class="op">=</span><span class="va">None</span>, na_rep<span class="op">=</span><span class="va">None</span>, join<span class="op">=</span><span class="st">&quot;left&quot;</span>)</span></code></pre></div>
+<p>Trong đó​</p>
+<ul>
+<li><p>others: có thể là Series, DataFrame, np.ndarray hoặc có thể là None​</p></li>
+<li><p>sep: dùng để thể hiện phân cách giữa các thành phần sau khi nối​</p></li>
+<li><p>na_rep: thay thế các giá trị bị thiếu bằng một giá trị nào đó​</p></li>
+<li><p>join: Nếu others là một series thì sẽ join 2 kết quả theo index và theo phương thức { “left”, “right”, “outer”, “inner”}​</p></li>
+</ul>
+<p>Khi không truyền gì cả vào others, toàn bộ giá trị của series sẽ nối về thành một string​</p>
+<div class="sourceCode" id="cb397"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb397-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb397-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series([<span class="st">&quot;a &quot;</span>, <span class="st">&quot;b &quot;</span>, <span class="st">&quot;c &quot;</span>, <span class="st">&quot;d&quot;</span>, np.nan], dtype<span class="op">=</span><span class="st">&quot;string&quot;</span>)​</span>
+<span id="cb397-2"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb397-2" tabindex="-1"></a>s.<span class="bu">str</span>.cat()​</span></code></pre></div>
+<pre class="python_output"><code>&#39;abcd&#39;</code></pre>
+<div class="sourceCode" id="cb399"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb399-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb399-1" tabindex="-1"></a>s.<span class="bu">str</span>.cat(sep<span class="op">=</span><span class="st">&quot;,&quot;</span>)</span></code></pre></div>
+<pre class="python_output"><code>&#39;a,b,c,d&#39;</code></pre>
+<div class="sourceCode" id="cb401"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb401-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb401-1" tabindex="-1"></a>s.<span class="bu">str</span>.cat(sep<span class="op">=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>) </span></code></pre></div>
+<pre class="python_output"><code>&#39;a\tb\tc\td&#39;</code></pre>
+<div class="sourceCode" id="cb403"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb403-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb403-1" tabindex="-1"></a>s.<span class="bu">str</span>.cat(sep<span class="op">=</span><span class="st">&quot;,&quot;</span>, na_rep<span class="op">=</span><span class="st">&quot;?&quot;</span>)</span></code></pre></div>
+<pre class="python_output"><code>&#39;a,b,c,d,?&#39;</code></pre>
+<p>Khi truyền vào <code>cat</code> một List hoặc Array, bắt buộc độ dài của chúng phải bằng với độ dài của Series ​</p>
+<div class="sourceCode" id="cb405"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb405-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb405-1" tabindex="-1"></a>s.<span class="bu">str</span>.cat([<span class="st">&quot;A &quot;</span>, <span class="st">&quot;B &quot;</span>, <span class="st">&quot;C&quot;</span>, np.nan, <span class="st">&quot;E&quot;</span>], na_rep<span class="op">=</span><span class="st">&quot;?&quot;</span>) ​</span></code></pre></div>
+<pre class="python_output"><code>0    aA
+1    bB
+2    cC
+3    d?
+4    ?E</code></pre>
+<p>Concat 2 Series</p>
+<p>ví dụ ta muốn kết hợp series <code>s</code> với series <code>t</code>, có các cách kết hợp như sau</p>
+<div class="sourceCode" id="cb407"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb407-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb407-1" tabindex="-1"></a>t <span class="op">=</span> pd.Series([<span class="st">&quot;A &quot;</span>, <span class="st">&quot;B &quot;</span>, <span class="st">&quot;C &quot;</span>, <span class="st">&quot;D&quot;</span>], index<span class="op">=</span>[<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">2</span>])</span>
+<span id="cb407-2"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb407-2" tabindex="-1"></a>t​</span></code></pre></div>
+<pre class="python_output"><code>3    A
+0    B
+4    C
+2    D
+dtype: object</code></pre>
+<ul>
+<li>Sử dụng <code>join="outer"</code>, lúc này sẽ kết hợp cả hai index của hai Series với nhau, nếu Series nào không có index của Series kia thì giá trị phần tử tại đó sẽ là NaN</li>
+</ul>
+<div class="sourceCode" id="cb409"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb409-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb409-1" tabindex="-1"></a> s.<span class="bu">str</span>.cat(t, join<span class="op">=</span><span class="st">&quot;outer&quot;</span>)</span></code></pre></div>
+<pre class="python_output"><code>0    aB
+1    NaN
+2     cD
+3    dA
+4    NaN</code></pre>
+<p>Để thay thế NaN bằng một giá trị khác, chúng ta có thể thêm tham số <code>na_rep</code></p>
+<div class="sourceCode" id="cb411"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb411-1"><a href="làm-việc-với-1-số-kiểu-dữ-liệu.html#cb411-1" tabindex="-1"></a>s.<span class="bu">str</span>.cat(t, join<span class="op">=</span><span class="st">&quot;outer&quot;</span>, na_rep<span class="op">=</span><span class="st">&quot;?&quot;</span>)</span></code></pre></div>
+<pre class="python_output"><code>0    aB
+1    b?
+2    cD
+3    dA
+4    ?C</code></pre>
+
 </div>
 </div>
 <div id="xử-lý-dữ-liệu-dạng-timestamp" class="section level2 hasAnchor" number="9.2">
