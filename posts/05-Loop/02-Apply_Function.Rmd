@@ -76,7 +76,7 @@ df['Item_Outlet_Sales'].apply(lambda x: set_price(x, 0.1))
 df['Item_Outlet_Sales'].apply(set_price, k=0.1)
 ```
 
-### Sử dụng apply lên `DataFrame`**
+### Sử dụng apply lên `DataFrame`
 
 Ta dùng cú pháp
 

@@ -223,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply"><i class="fa fa-check"></i><b>6.2</b> Sử dụng apply</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply-lên-series"><i class="fa fa-check"></i><b>6.2.1</b> Sử dụng apply lên Series</a></li>
-<li class="chapter" data-level="6.2.2" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply-lên-dataframe"><i class="fa fa-check"></i><b>6.2.2</b> Sử dụng apply lên <code>DataFrame</code>**</a></li>
+<li class="chapter" data-level="6.2.2" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply-lên-dataframe"><i class="fa fa-check"></i><b>6.2.2</b> Sử dụng apply lên <code>DataFrame</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator"><i class="fa fa-check"></i><b>6.3</b> Sử dụng iterator</a>
 <ul>
@@ -399,7 +399,7 @@ Name: Item_Outlet_Sales, Length: 8523, dtype: float64</code></pre>
 <span id="cb308-5"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb308-5" tabindex="-1"></a>df[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].<span class="bu">apply</span>(set_price, k<span class="op">=</span><span class="fl">0.1</span>)</span></code></pre></div>
 </div>
 <div id="sử-dụng-apply-lên-dataframe" class="section level3 hasAnchor" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Sử dụng apply lên <code>DataFrame</code>**<a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply-lên-dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">6.2.2</span> Sử dụng apply lên <code>DataFrame</code><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply-lên-dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Ta dùng cú pháp</p>
 <div class="sourceCode" id="cb309"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb309-1"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#cb309-1" tabindex="-1"></a>DataFrame.<span class="bu">apply</span>(func, axis<span class="op">=</span><span class="dv">0</span>, raw<span class="op">=</span><span class="va">False</span>, result_type<span class="op">=</span><span class="va">None</span>, args<span class="op">=</span>(), <span class="op">**</span>kwargs)</span></code></pre></div>
 <p>Trong đó:</p>
