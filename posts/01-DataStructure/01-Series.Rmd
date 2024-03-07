@@ -20,7 +20,7 @@ Trong đó `data` có thể  có dạng:
 
 ### Các cách khởi tạo
 
-**Khởi tạo Series bằng array**
+#### Khởi tạo Series bằng array {-}
 
 Khi không truyền giá trị `index`, `Series` sẽ mặc định index của nó là 1 mảng số nguyên từ `0` đến `len(data) - 1` 
 
@@ -35,7 +35,7 @@ c    2
 Name: meow, dtype: int64
 ```
 
-**Khởi tạo Series bằng dict**
+#### Khởi tạo Series bằng dict {-}
 
 ```python
 pd.Series({"b": 1, "a":0, "c": 2})

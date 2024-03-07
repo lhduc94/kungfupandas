@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2024-03-07" />
+<meta name="date" content="2024-03-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -156,12 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo-1"><i class="fa fa-check"></i><b>2.2.1</b> Các cách khởi tạo</a></li>
 <li class="chapter" data-level="2.2.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-hàm-khởi-tạo-thay-thế"><i class="fa fa-check"></i><b>2.2.2</b> Các hàm khởi tạo thay thế</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cach-khoi-tao-data-frame"><i class="fa fa-check"></i><b>2.3</b> DataFrame</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo-2"><i class="fa fa-check"></i><b>2.3.1</b> Các cách khởi tạo</a></li>
-<li class="chapter" data-level="2.3.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-hàm-khởi-tạo-thay-thế-1"><i class="fa fa-check"></i><b>2.3.2</b> Các hàm khởi tạo thay thế</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#data-type-trong-pandas"><i class="fa fa-check"></i><b>2.4</b> Data type trong pandas</a></li>
+<li class="chapter" data-level="2.3" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#data-type-trong-pandas"><i class="fa fa-check"></i><b>2.3</b> Data type trong pandas</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html"><i class="fa fa-check"></i><b>3</b> Đọc và lưu file trong Pandas</a>
 <ul>
@@ -289,7 +284,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="groupby-1" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Groupby<a href="groupby.html#groupby-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.groupby</code> sẽ gom các dòng hoặc các cột thành các nhóm khác nhau. Cú pháp cơ bản của <code>.groupby</code> như sau</p>
-<div class="sourceCode" id="cb394"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb394-1"><a href="groupby.html#cb394-1" tabindex="-1"></a>DataFrame.groupby(by<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb358-1"><a href="groupby.html#cb358-1" tabindex="-1"></a>DataFrame.groupby(by<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <p>Trong đó</p>
 <ul>
 <li><p><code>by</code>: có thể là dạng mapping, nhãn, danh sách nhãn hoặc một hàm trả về danh sách các index</p></li>
@@ -297,18 +292,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>dropna</code>: Mặc định là <code>True</code> sẽ bỏ qua những dòng chứa <code>NA</code> và <code>False</code> sẽ thêm <code>NA</code> là một khóa trong nhóm, tương tự như <code>.value_counts()</code></p></li>
 </ul>
 <p>Ví dụ với dữ liệu <a href="https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data?select=Train.csv">Big Mart Salses</a></p>
-<div class="sourceCode" id="cb395"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb395-1"><a href="groupby.html#cb395-1" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb359-1"><a href="groupby.html#cb359-1" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre class="python_output"><code>  Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 0           FDA15                  Dairy      Medium          3735.1380
 1           DRC01            Soft Drinks      Medium           443.4228
 2           FDN15                   Meat      Medium          2097.2700
 3           FDX07  Fruits and Vegetables         NaN           732.3800
 4           NCD19              Household        High           994.7052</code></pre>
-<div class="sourceCode" id="cb397"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb397-1"><a href="groupby.html#cb397-1" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">&#39;Item_Type&#39;</span>)</span>
-<span id="cb397-2"><a href="groupby.html#cb397-2" tabindex="-1"></a><span class="bu">type</span>(grouped)</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb361-1"><a href="groupby.html#cb361-1" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">&#39;Item_Type&#39;</span>)</span>
+<span id="cb361-2"><a href="groupby.html#cb361-2" tabindex="-1"></a><span class="bu">type</span>(grouped)</span></code></pre></div>
 <pre class="python_output"><code>pandas.core.groupby.generic.DataFrameGroupBy</code></pre>
 <p>Để xem từng nhóm trong group, ta có thể sử dụng <code>.get_groups()</code> và truyền key vào đó. Ví dụ với key <code>Dairy</code></p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb399-1"><a href="groupby.html#cb399-1" tabindex="-1"></a>grouped.get_group(<span class="st">&#39;Dairy&#39;</span>).head()</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb363-1"><a href="groupby.html#cb363-1" tabindex="-1"></a>grouped.get_group(<span class="st">&#39;Dairy&#39;</span>).head()</span></code></pre></div>
 <pre class="python_output"><code>   Item_Identifier Item_Type Outlet_Size  Item_Outlet_Sales
 0            FDA15     Dairy      Medium          3735.1380
 11           FDA03     Dairy       Small          2187.1530
@@ -321,7 +316,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.2</span> Các hàm Filtering trong Groupby<a href="groupby.html#các-hàm-filtering-trong-groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong><code>.head(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng đầu của mỗi group.</p>
-<div class="sourceCode" id="cb401"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb401-1"><a href="groupby.html#cb401-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).head(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb365-1"><a href="groupby.html#cb365-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).head(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre class="python_output"><code>    Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 0             FDA15                  Dairy      Medium          3735.1380
 1             DRC01            Soft Drinks      Medium           443.4228
@@ -357,7 +352,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 713           FDH21                Seafood      Medium          1267.6832</code></pre>
 <p><strong><code>.tail(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng cuối của mỗi group</p>
-<div class="sourceCode" id="cb403"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb403-1"><a href="groupby.html#cb403-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).tail(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb367-1"><a href="groupby.html#cb367-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).tail(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre class="python_output"><code>     Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 8317           FDN13              Breakfast         NaN          1306.9654
 8335           FDO49              Breakfast      Medium           708.4112
@@ -401,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.3</span> Aggregate trong Groupby<a href="groupby.html#aggregate-trong-groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong><code>.count()</code></strong></p>
 <p>Đếm số lượng phần tử cho từng cột trong từng nhóm, không đếm các phần tử NA</p>
-<div class="sourceCode" id="cb405"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb405-1"><a href="groupby.html#cb405-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).count() </span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb369-1"><a href="groupby.html#cb369-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).count() </span></code></pre></div>
 <pre class="python_output"><code>                       Item_Identifier  Outlet_Size  Item_Outlet_Sales
 Item_Type                                                             
 Baking Goods                       648          463                648
@@ -422,7 +417,7 @@ Soft Drinks                        445          312                445
 Starchy Foods                      148          105                148</code></pre>
 <p><strong><code>.size()</code></strong></p>
 <p>Đếm số lượng dòng cho từng nhóm</p>
-<div class="sourceCode" id="cb407"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb407-1"><a href="groupby.html#cb407-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).size()</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb371-1"><a href="groupby.html#cb371-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).size()</span></code></pre></div>
 <pre class="python_output"><code>Item_Type
 Baking Goods              648
 Breads                    251
@@ -443,7 +438,7 @@ Starchy Foods             148
 dtype: int64</code></pre>
 <p><strong><code>SeriesGroupBy.nlargest(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng lớn nhất của từng nhóm Series</p>
-<div class="sourceCode" id="cb409"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb409-1"><a href="groupby.html#cb409-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nlargest(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb373-1"><a href="groupby.html#cb373-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nlargest(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre class="python_output"><code>Item_Type                  
 Baking Goods           2776     7931.6754
                        809      7759.8990
@@ -480,7 +475,7 @@ Starchy Foods          1254     8132.0812
 Name: Item_Outlet_Sales, dtype: float64</code></pre>
 <p><strong><code>SeriesGroupBy.nsmallest(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng nhỏ nhất của từng nhóm Series</p>
-<div class="sourceCode" id="cb411"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb411-1"><a href="groupby.html#cb411-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nsmallest(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb375-1"><a href="groupby.html#cb375-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>])[<span class="st">&#39;Item_Outlet_Sales&#39;</span>].nsmallest(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre class="python_output"><code>Item_Type                  
 Baking Goods           2055     37.2848
                        430      38.6164
@@ -516,7 +511,7 @@ Starchy Foods          828      58.5904
                        5445     97.2068
 Name: Item_Outlet_Sales, dtype: float64</code></pre>
 <p><strong>aggregate</strong></p>
-<div class="sourceCode" id="cb413"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb413-1"><a href="groupby.html#cb413-1" tabindex="-1"></a>.aggregate(func<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>args, engine<span class="op">=</span><span class="va">None</span>, engine_kwargs<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb377-1"><a href="groupby.html#cb377-1" tabindex="-1"></a>.aggregate(func<span class="op">=</span><span class="va">None</span>, <span class="op">*</span>args, engine<span class="op">=</span><span class="va">None</span>, engine_kwargs<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
 <p>Trong đó:</p>
 <ul>
 <li><p><code>func</code>:</p>
@@ -529,7 +524,7 @@ Name: Item_Outlet_Sales, dtype: float64</code></pre>
 <li><p><code>engine</code>: Engine tính toán có thể là <code>cython</code>, <code>numba</code></p></li>
 </ul>
 <p>Danh sách hàm</p>
-<div class="sourceCode" id="cb414"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb414-1"><a href="groupby.html#cb414-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg([<span class="st">&#39;min&#39;</span>,<span class="st">&#39;max&#39;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb378-1"><a href="groupby.html#cb378-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg([<span class="st">&#39;min&#39;</span>,<span class="st">&#39;max&#39;</span>])</span></code></pre></div>
 <pre class="python_output"><code>                      Item_Identifier        Item_Outlet_Sales            
                                   min    max               min         max
 Item_Type                                                                 
@@ -555,7 +550,7 @@ Starchy Foods                   FDA22  FDZ34           58.5904   8132.0812</code
 <code>min</code>, <code>max</code> không áp dụng được cho các cột có NaN value. Lúc này pandas sẽ báo Warning <code>FutureWarning: ['Outlet_Size'] did not aggregate successfully.</code>
 </div>
 <p>Dictionary chứa nhãn và hàm</p>
-<div class="sourceCode" id="cb416"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb416-1"><a href="groupby.html#cb416-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: np.<span class="bu">max</span>, <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.std, np.mean]})</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb380-1"><a href="groupby.html#cb380-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: np.<span class="bu">max</span>, <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.std, np.mean]})</span></code></pre></div>
 <pre class="python_output"><code>                      Item_Identifier Item_Outlet_Sales             
                                  amax               std         mean
 Item_Type                                                           
@@ -577,13 +572,13 @@ Soft Drinks                     DRZ24       1674.249752  2006.511735
 Starchy Foods                   FDZ34       1773.945328  2374.332773</code></pre>
 <p><strong>Sử dụng hàm tự định nghĩa trong Aggregate</strong></p>
 <p>Ta có 2 function sau</p>
-<div class="sourceCode" id="cb418"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb418-1"><a href="groupby.html#cb418-1" tabindex="-1"></a><span class="kw">def</span> foo(item_outlet_sales, alpha<span class="op">=</span><span class="dv">1</span>):</span>
-<span id="cb418-2"><a href="groupby.html#cb418-2" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(item_outlet_sales)</span>
-<span id="cb418-3"><a href="groupby.html#cb418-3" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">sum</span>(item_outlet_sales[item_outlet_sales <span class="op">&lt;</span> alpha <span class="op">*</span> mean])</span>
-<span id="cb418-4"><a href="groupby.html#cb418-4" tabindex="-1"></a></span>
-<span id="cb418-5"><a href="groupby.html#cb418-5" tabindex="-1"></a><span class="kw">def</span> bar(item_identifier):</span>
-<span id="cb418-6"><a href="groupby.html#cb418-6" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(<span class="bu">set</span>(item_identifier))</span></code></pre></div>
-<div class="sourceCode" id="cb419"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb419-1"><a href="groupby.html#cb419-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: [np.<span class="bu">max</span>, bar], <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, foo]})</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb382-1"><a href="groupby.html#cb382-1" tabindex="-1"></a><span class="kw">def</span> foo(item_outlet_sales, alpha<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb382-2"><a href="groupby.html#cb382-2" tabindex="-1"></a>    mean <span class="op">=</span> np.mean(item_outlet_sales)</span>
+<span id="cb382-3"><a href="groupby.html#cb382-3" tabindex="-1"></a>    <span class="cf">return</span> np.<span class="bu">sum</span>(item_outlet_sales[item_outlet_sales <span class="op">&lt;</span> alpha <span class="op">*</span> mean])</span>
+<span id="cb382-4"><a href="groupby.html#cb382-4" tabindex="-1"></a></span>
+<span id="cb382-5"><a href="groupby.html#cb382-5" tabindex="-1"></a><span class="kw">def</span> bar(item_identifier):</span>
+<span id="cb382-6"><a href="groupby.html#cb382-6" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(<span class="bu">set</span>(item_identifier))</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb383-1"><a href="groupby.html#cb383-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Identifier&#39;</span>: [np.<span class="bu">max</span>, bar], <span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, foo]})</span></code></pre></div>
 <pre class="python_output"><code>                      Item_Identifier      Item_Outlet_Sales             
                                  amax  bar              mean          foo
 Item_Type                                                                
@@ -604,7 +599,7 @@ Snack Foods                     FDZ58  220       2277.321739  762663.2472
 Soft Drinks                     DRZ24   80       2006.511735  257134.6232
 Starchy Foods                   FDZ34   30       2374.332773   94087.5270</code></pre>
 <p>bạn có thể truyền vào tham số alpha bằng cách dùng lambda</p>
-<div class="sourceCode" id="cb421"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb421-1"><a href="groupby.html#cb421-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, <span class="kw">lambda</span> x: foo(x, alpha<span class="op">=</span><span class="fl">0.1</span>)]})</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb385-1"><a href="groupby.html#cb385-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).agg({<span class="st">&#39;Item_Outlet_Sales&#39;</span>: [np.mean, <span class="kw">lambda</span> x: foo(x, alpha<span class="op">=</span><span class="fl">0.1</span>)]})</span></code></pre></div>
 <pre class="python_output"><code>                      Item_Outlet_Sales            
                                    mean  &lt;lambda_0&gt;
 Item_Type                                          
@@ -626,14 +621,14 @@ Soft Drinks                 2006.511735   3207.1586
 Starchy Foods               2374.332773   1151.1682</code></pre>
 <p><strong>Apply trên nhiều cột và sử dụng function tự định nghĩa</strong></p>
 <p>Giả sử muốn lấy top_2 item có số lượng Outlet_Sales cao nhất và cao nhì trong từng nhóm. Ta định nghĩa function sau</p>
-<div class="sourceCode" id="cb423"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb423-1"><a href="groupby.html#cb423-1" tabindex="-1"></a><span class="kw">def</span> get_top_ex1(g):</span>
-<span id="cb423-2"><a href="groupby.html#cb423-2" tabindex="-1"></a>    top_1, top_2 <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">list</span>(<span class="bu">zip</span>(g[<span class="st">&#39;Item_Identifier&#39;</span>], g[<span class="st">&#39;Item_Outlet_Sales&#39;</span>])), key<span class="op">=</span><span class="kw">lambda</span> x: <span class="op">-</span>x[<span class="dv">1</span>])[:<span class="dv">2</span>]</span>
-<span id="cb423-3"><a href="groupby.html#cb423-3" tabindex="-1"></a>    <span class="cf">return</span> pd.Series({<span class="st">&#39;top_1_Item_Identifier&#39;</span>: top_1[<span class="dv">0</span>],</span>
-<span id="cb423-4"><a href="groupby.html#cb423-4" tabindex="-1"></a>                      <span class="st">&#39;top_1_Item_Outlet_Sales&#39;</span>: top_1[<span class="dv">1</span>], </span>
-<span id="cb423-5"><a href="groupby.html#cb423-5" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Identifier&#39;</span>: top_2[<span class="dv">0</span>],</span>
-<span id="cb423-6"><a href="groupby.html#cb423-6" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Outlet_Sales&#39;</span>: top_2[<span class="dv">1</span>]})</span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb387-1"><a href="groupby.html#cb387-1" tabindex="-1"></a><span class="kw">def</span> get_top_ex1(g):</span>
+<span id="cb387-2"><a href="groupby.html#cb387-2" tabindex="-1"></a>    top_1, top_2 <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">list</span>(<span class="bu">zip</span>(g[<span class="st">&#39;Item_Identifier&#39;</span>], g[<span class="st">&#39;Item_Outlet_Sales&#39;</span>])), key<span class="op">=</span><span class="kw">lambda</span> x: <span class="op">-</span>x[<span class="dv">1</span>])[:<span class="dv">2</span>]</span>
+<span id="cb387-3"><a href="groupby.html#cb387-3" tabindex="-1"></a>    <span class="cf">return</span> pd.Series({<span class="st">&#39;top_1_Item_Identifier&#39;</span>: top_1[<span class="dv">0</span>],</span>
+<span id="cb387-4"><a href="groupby.html#cb387-4" tabindex="-1"></a>                      <span class="st">&#39;top_1_Item_Outlet_Sales&#39;</span>: top_1[<span class="dv">1</span>], </span>
+<span id="cb387-5"><a href="groupby.html#cb387-5" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Identifier&#39;</span>: top_2[<span class="dv">0</span>],</span>
+<span id="cb387-6"><a href="groupby.html#cb387-6" tabindex="-1"></a>                      <span class="st">&#39;top_2_Item_Outlet_Sales&#39;</span>: top_2[<span class="dv">1</span>]})</span></code></pre></div>
 <p>Trong đó g là DataFrame của từng nhóm chia theo key của <code>groupby</code></p>
-<div class="sourceCode" id="cb424"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb424-1"><a href="groupby.html#cb424-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).<span class="bu">apply</span>(get_top_ex1)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb388-1"><a href="groupby.html#cb388-1" tabindex="-1"></a>df.groupby(<span class="st">&#39;Item_Type&#39;</span>).<span class="bu">apply</span>(get_top_ex1)</span></code></pre></div>
 <pre class="python_output"><code>                      top_1_Item_Identifier  top_1_Item_Outlet_Sales  \
 Item_Type                                                              
 Baking Goods                          FDB37                7931.6754   
@@ -722,7 +717,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Kungfupandas.epub"],
+"download": null,
 "search": {
 "engine": "fuse",
 "options": null
