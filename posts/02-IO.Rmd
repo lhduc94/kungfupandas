@@ -1,4 +1,4 @@
-# Nhập xuất trong pandas
+# Đọc và lưu file trong Pandas
 Ở Chương 1 chúng ta đã biết cách khởi tạo DataFrame từ các dữ liệu cho trước. 
 Trong chương này sẽ hướng dẫn cách đọc dữ liệu từ file bằng pandas, một số kiểu file thường thấy cho dữ liệu dạng bảng là `.csv` và `.xlsx`.
 Bạn cũng có thể đọc dữ liệu bán cấu trúc như `JSON` bằng cách load file bằng Python sau đó dùng các cách khởi tạo như ở Chương 1 hoặc có thể dùng
@@ -6,11 +6,10 @@ hàm phụ trợ của Pandas.
 
 Ở phần thứ hai của chương, bạn sẽ được hướng dẫn một số cách cấu hình cho Pandas như thay đổi số dòng, số cột hiển thị...
 
-## Đọc và lưu file
 
-### csv, tsv
+## csv, tsv
 
-#### Đọc file
+### Đọc file csv, tsv
 Chúng ta có thể đọc file csv với pandas theo lệnh sau
 
 ```python
@@ -56,7 +55,7 @@ date
 2010-07-02      16333.14       False
 ```
 
-#### Xuất file
+### Xuất file csv, tsv
 Để lưu `DataFrame` dưới dạng file ta có thể dùng câu lệnh `.to_csv()` theo cú pháp sau
 
 ```python
@@ -80,8 +79,8 @@ Ví dụ
 ```python
 df.to_csv('sales.csv', columns='weekly_sales', index=False)
 ```
-### Excel
-#### Đọc file Excel
+## Excel
+### Đọc file Excel
 Để đọc file Excel ta dùng cú pháp sau
 
 ```python
@@ -166,9 +165,9 @@ with pd.ExcelWriter('mul_sheets.xlsx', mode='a', if_sheet_exists='new', engine='
         df.to_excel(writer, sheet_name)
 ```
 
-### JSON
+## JSON
 
-#### Đọc file
+### Đọc file JSON
 
 `JSON` là 1 dạng dữ liệu khá phổ biến trong thực tế. `Pandas` hỗ trợ đọc file `JSON` theo phương thức sau
 
@@ -293,10 +292,11 @@ Các cấu trúc còn lại
 - có thể truyền link file thay vì file được lưu ở máy.
 
 ```
+### Xuất file JSON
 
-### Pickle
-#### Đọc file
+## Pickle
+### Đọc file Pickle
 
-#### Xuất file
+### Xuất file Pickle
 
 ## Cấu hình pandas 
