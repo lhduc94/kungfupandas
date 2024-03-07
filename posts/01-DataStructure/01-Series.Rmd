@@ -110,7 +110,9 @@ s.values
 array([0, 1, 2, 3, 4, 5])
 ```
 
-#### Truy cập một phần tử trong Series theo indice {-}
+#### Truy cập một phần tử trong Series {-}
+
+- **Theo indice**
 
 ```python
 s[2]
@@ -120,7 +122,7 @@ s[2]
 2
 ``` 
 
-#### Truy cập một phần tử trong Series theo theo index {-}
+- **Theo index**
 
 ```python
 s["c"]
@@ -129,8 +131,9 @@ s["c"]
 ```{.python_output} 
 2 
 ```
+#### Lấy Series con của một Series {-}
 
-**Slice indice**
+- **Theo Slice indice**
 
 ```python
 s[1:3]
@@ -142,7 +145,7 @@ d    2
 dtype: int64
 ```
 
-**Slice index**
+- **Theo Slice index**
 
 ```python
 s["b":"c"]
@@ -154,7 +157,7 @@ c    2
 dtype: int64
 ``` 
 
-**List indice**
+- **Theo List indice**
 
 ```python
 s[[1, 2, 4]]
@@ -167,7 +170,7 @@ e    4
 dtype: int64
 ```
 
-**List index**
+- **Theo List index**
 
 ```python
 s[["b", "c", "e"]]
@@ -180,7 +183,7 @@ e    4
 dtype: int64
 ```
 
-**Điều kiện**
+- **Theo Điều kiện**
 
 ```python
 s[s > s.mean()]
