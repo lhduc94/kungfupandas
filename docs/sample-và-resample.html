@@ -4,20 +4,20 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chương 14 Cấu hình pandas | Kungfu Pandas</title>
-  <meta name="description" content="Chương 14 Cấu hình pandas | Kungfu Pandas" />
+  <title>Chương 11 Sample và Resample | Kungfu Pandas</title>
+  <meta name="description" content="Chương 11 Sample và Resample | Kungfu Pandas" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chương 14 Cấu hình pandas | Kungfu Pandas" />
+  <meta property="og:title" content="Chương 11 Sample và Resample | Kungfu Pandas" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Chương 14 Cấu hình pandas | Kungfu Pandas" />
+  <meta property="og:description" content="Chương 11 Sample và Resample | Kungfu Pandas" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chương 14 Cấu hình pandas | Kungfu Pandas" />
+  <meta name="twitter:title" content="Chương 11 Sample và Resample | Kungfu Pandas" />
   
-  <meta name="twitter:description" content="Chương 14 Cấu hình pandas | Kungfu Pandas" />
+  <meta name="twitter:description" content="Chương 11 Sample và Resample | Kungfu Pandas" />
   
 
 <meta name="author" content="Lê Huỳnh Đức" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="visualize-với-matplotlib.html"/>
-
+<link rel="prev" href="một-số-kiến-thức-nâng-cao.html"/>
+<link rel="next" href="anomaly-detection-project.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -297,17 +297,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="cấu-hình-pandas" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">Chương 14</span> Cấu hình pandas<a href="cấu-hình-pandas.html#cấu-hình-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sample-và-resample" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chương 11</span> Sample và Resample<a href="sample-và-resample.html#sample-và-resample" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sample" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Sample<a href="sample-và-resample.html#sample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="resample" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Resample<a href="sample-và-resample.html#resample" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
+</div>
+<div id="window" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Window<a href="sample-và-resample.html#window" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="shift" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Shift<a href="sample-và-resample.html#shift" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="rolling" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> Rolling<a href="sample-và-resample.html#rolling" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="expand" class="section level3 hasAnchor" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> Expand<a href="sample-và-resample.html#expand" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+</div>
+</div>
+<div id="reshape" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Reshape<a href="sample-và-resample.html#reshape" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="transpose" class="section level3 hasAnchor" number="11.4.1">
+<h3><span class="header-section-number">11.4.1</span> transpose<a href="sample-và-resample.html#transpose" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="pivot" class="section level3 hasAnchor" number="11.4.2">
+<h3><span class="header-section-number">11.4.2</span> pivot<a href="sample-và-resample.html#pivot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="pivot_table" class="section level3 hasAnchor" number="11.4.3">
+<h3><span class="header-section-number">11.4.3</span> pivot_table<a href="sample-và-resample.html#pivot_table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="melt" class="section level3 hasAnchor" number="11.4.4">
+<h3><span class="header-section-number">11.4.4</span> melt<a href="sample-và-resample.html#melt" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="visualize-với-matplotlib.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="một-số-kiến-thức-nâng-cao.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="anomaly-detection-project.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

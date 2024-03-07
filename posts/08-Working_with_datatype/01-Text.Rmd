@@ -1,4 +1,3 @@
-# Làm việc với 1 số kiểu dữ liệu 
 ## Xử  lý dữ liệu dạng text 
 Chúng ta có thể lưu dữ liệu text trong Pandas dưới hai dạng dữ liệu : object hoặc string​
 
@@ -92,7 +91,3 @@ s2.str.split("_").str[1]
 2    <NA>​
 3       g
 ```
-
-## Xử lý dữ liệu dạng timestamp 
-## Category trong pandas
-## Xử lý Missing data
