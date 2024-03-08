@@ -389,7 +389,7 @@ tác với Series dựa vào index</p>
 <p>Vì kết quả trả về của <code>.values</code> là <code>numpy.ndarray</code> nên ta có thao tác một số phép tính trên numpy như cộng thêm giá trị</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb15-1" tabindex="-1"></a>s.values <span class="op">+</span> <span class="dv">1</span> </span></code></pre></div>
 <pre class="python_output"><code>array([1, 2, 3, 4, 5, 6], dtype=int64)</code></pre>
-<p>Trong khi đó, muốn nối thêm giá trị với một list cho trước, thay vì chuyển về <code>.values</code>, ta có thể chuyển về dạng list rồi áp dụng</p>
+<p>Trong khi đó, muốn nối thêm giá trị với một list cho trước, thay vì chuyển về <code>.values</code>, ta có thể chuyển về dạng list bằng phương thức <code>.to_list()</code> rồi áp dụng các phương thức cho kiểu list.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb17-1" tabindex="-1"></a>s.to_list() <span class="op">+</span> [<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span></code></pre></div>
 <pre class="python_output"><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></pre>
 </div>

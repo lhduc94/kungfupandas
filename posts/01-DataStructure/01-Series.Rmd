@@ -128,7 +128,7 @@ s.values + 1
 array([1, 2, 3, 4, 5, 6], dtype=int64)
 ```
 
-Trong khi đó, muốn nối thêm giá trị với một list cho trước, thay vì chuyển về `.values`, ta có thể chuyển về dạng list rồi áp dụng 
+Trong khi đó, muốn nối thêm giá trị với một list cho trước, thay vì chuyển về `.values`, ta có thể chuyển về dạng list bằng phương thức `.to_list()` rồi áp dụng các phương thức cho kiểu list. 
 
 ```python
 s.to_list() + [6, 7, 8, 9, 10]
