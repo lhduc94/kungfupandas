@@ -75,6 +75,7 @@ replace
 remove
 concatenate
 xử-lý-dữ-liệu-dạng-timestamp
+missing-value
 một-số-kiến-thức-nâng-cao
 multiindex
 sample-và-resample
