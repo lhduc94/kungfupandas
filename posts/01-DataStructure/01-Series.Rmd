@@ -197,7 +197,7 @@ s2[3]
 
 ```{block2, type='rmdnote'}
 **_Lưu ý_:** 
-Vậy nếu chúng ta có index là dạng số thì việc truyền một số vào [] sẽ ưu tiên index của chúng. Trong ví dụ trên sẽ ưu tiên index là 3 có giá trị 2
+Vậy nếu chúng ta có index là dạng số thì việc truyền một số vào `[]` sẽ ưu tiên index của chúng. Trong ví dụ trên sẽ ưu tiên index là 3 có giá trị 2
 ```
 
 #### Lấy Series con của một Series {-}
