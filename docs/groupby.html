@@ -312,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="groupby-1" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Groupby<a href="groupby.html#groupby-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Phương thức <code>.groupby</code> sẽ gom các dòng hoặc các cột thành các nhóm khác nhau. Cú pháp cơ bản của <code>.groupby</code> như sau</p>
-<div class="sourceCode" id="cb358"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb358-1"><a href="groupby.html#cb358-1" tabindex="-1"></a>DataFrame.groupby(by<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb368-1"><a href="groupby.html#cb368-1" tabindex="-1"></a>DataFrame.groupby(by<span class="op">=</span><span class="va">None</span>, axis<span class="op">=</span><span class="dv">0</span>, dropna<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <p>Trong đó</p>
 <ul>
 <li><p><code>by</code>: có thể là dạng mapping, nhãn, danh sách nhãn hoặc một hàm trả về danh sách các index</p></li>
@@ -320,18 +320,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>dropna</code>: Mặc định là <code>True</code> sẽ bỏ qua những dòng chứa <code>NA</code> và <code>False</code> sẽ thêm <code>NA</code> là một khóa trong nhóm, tương tự như <code>.value_counts()</code></p></li>
 </ul>
 <p>Ví dụ với dữ liệu <a href="https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data?select=Train.csv">Big Mart Salses</a></p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb359-1"><a href="groupby.html#cb359-1" tabindex="-1"></a>df.head()</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb369-1"><a href="groupby.html#cb369-1" tabindex="-1"></a>df.head()</span></code></pre></div>
 <pre class="python_output"><code>  Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 0           FDA15                  Dairy      Medium          3735.1380
 1           DRC01            Soft Drinks      Medium           443.4228
 2           FDN15                   Meat      Medium          2097.2700
 3           FDX07  Fruits and Vegetables         NaN           732.3800
 4           NCD19              Household        High           994.7052</code></pre>
-<div class="sourceCode" id="cb361"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb361-1"><a href="groupby.html#cb361-1" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">&#39;Item_Type&#39;</span>)</span>
-<span id="cb361-2"><a href="groupby.html#cb361-2" tabindex="-1"></a><span class="bu">type</span>(grouped)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb371-1"><a href="groupby.html#cb371-1" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">&#39;Item_Type&#39;</span>)</span>
+<span id="cb371-2"><a href="groupby.html#cb371-2" tabindex="-1"></a><span class="bu">type</span>(grouped)</span></code></pre></div>
 <pre class="python_output"><code>pandas.core.groupby.generic.DataFrameGroupBy</code></pre>
 <p>Để xem từng nhóm trong group, ta có thể sử dụng <code>.get_groups()</code> và truyền key vào đó. Ví dụ với key <code>Dairy</code></p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb363-1"><a href="groupby.html#cb363-1" tabindex="-1"></a>grouped.get_group(<span class="st">&#39;Dairy&#39;</span>).head()</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb373-1"><a href="groupby.html#cb373-1" tabindex="-1"></a>grouped.get_group(<span class="st">&#39;Dairy&#39;</span>).head()</span></code></pre></div>
 <pre class="python_output"><code>   Item_Identifier Item_Type Outlet_Size  Item_Outlet_Sales
 0            FDA15     Dairy      Medium          3735.1380
 11           FDA03     Dairy       Small          2187.1530
@@ -345,7 +345,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">8.2</span> Các hàm Filtering trong Groupby<a href="groupby.html#các-hàm-filtering-trong-groupby" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong><code>.head(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng đầu của mỗi group.</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb365-1"><a href="groupby.html#cb365-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).head(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb375-1"><a href="groupby.html#cb375-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).head(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre class="python_output"><code>    Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 0             FDA15                  Dairy      Medium          3735.1380
 1             DRC01            Soft Drinks      Medium           443.4228
@@ -381,7 +381,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 713           FDH21                Seafood      Medium          1267.6832</code></pre>
 <p><strong><code>.tail(n=5)</code></strong></p>
 <p>Trả về <code>n</code> dòng cuối của mỗi group</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb367-1"><a href="groupby.html#cb367-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).tail(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb377-1"><a href="groupby.html#cb377-1" tabindex="-1"></a>df.groupby([<span class="st">&#39;Item_Type&#39;</span>]).tail(n<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre class="python_output"><code>     Item_Identifier              Item_Type Outlet_Size  Item_Outlet_Sales
 8317           FDN13              Breakfast         NaN          1306.9654
 8335           FDO49              Breakfast      Medium           708.4112

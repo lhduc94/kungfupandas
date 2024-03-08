@@ -110,6 +110,34 @@ s.values
 array([0, 1, 2, 3, 4, 5])
 ```
 
+```python
+type(s.values)
+```
+
+```{.python_output}
+numpy.ndarray
+```
+
+Vì kết quả trả về của `.values` là `numpy.ndarray` nên ta có thao tác một số phép tính trên numpy như cộng thêm giá trị
+
+```python
+s.values + 1 
+```
+
+```{.python_output}
+array([1, 2, 3, 4, 5, 6], dtype=int64)
+```
+
+Trong khi đó, muốn nối thêm giá trị với một list cho trước, thay vì chuyển về `.values`, ta có thể chuyển về dạng list rồi áp dụng 
+
+```python
+s.to_list() + [6, 7, 8, 9, 10]
+```
+
+```{.python_output}
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
 #### Truy cập một phần tử trong Series {-}
 
 - **Theo indice**
@@ -131,6 +159,43 @@ s["c"]
 ```{.python_output} 
 2 
 ```
+
+```{block2, type='rmdnote'}
+**_Lưu ý_:** 
+Như ví dụ trên, Series s của chúng ta đã được đánh index là dạng chữ, `["a", "b", "c", "d", "e", "f"]`. Vậy nếu chúng ta có index là dạng số thì sẽ như thế nào?
+```
+Ví dụ ta có một Series có index khác so với indice
+
+```python
+s2 = pd.Series(data=[0, 1, 2, 3, 4, 5], index=[0, 2, 3, 5, 8, 9])
+s2
+```
+
+```{.python_output}
+0    0
+2    1
+3    2
+5    3
+8    4
+9    5
+dtype: int64
+```
+
+Lúc này khi truyền `s2[3]` thì kết quả sẽ là
+
+```python
+s2[3]
+```
+
+```{.python_output}
+2
+```
+
+```{block2, type='rmdnote'}
+**_Lưu ý_:** 
+Vậy nếu chúng ta có index là dạng số thì việc truyền một số vào [] sẽ ưu tiên index của chúng. Trong ví dụ trên sẽ ưu tiên index là 3 có giá trị 2
+```
+
 #### Lấy Series con của một Series {-}
 
 - **Theo Slice indice**
