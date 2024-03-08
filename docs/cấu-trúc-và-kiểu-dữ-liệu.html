@@ -359,9 +359,9 @@ a    0.0
 dtype: float64</code></pre>
 
 <div class="rmdnote">
-<p><strong><em>Lưu ý</em>:</strong>
+<strong><em>Lưu ý</em>:</strong>
 <code>NaN</code> là giá trị mặc định cho dữ liệu bị thiếu trong pandas và giá trị này có kiểu
-là <code>float64</code> nên kiểu dữ liệu của <code>Series</code> cũng là <code>float64</code> khác với <code>int64</code> ở ví dụ trước đó.</p>
+là <code>float64</code> nên kiểu dữ liệu của <code>Series</code> cũng là <code>float64</code> khác với <code>int64</code> ở ví dụ trước đó.
 </div>
 </div>
 <div id="khởi-tạo-series-bằng-một-giá-trị-duy-nhất" class="section level4 unnumbered hasAnchor">
@@ -398,17 +398,19 @@ tác với Series dựa vào index</p>
 <ul>
 <li><strong>Theo indice</strong></li>
 </ul>
+<p>indice trong Series thể hiện vị trí của phần tử Series đó, hiểu nôm na là nó ở vị trí thứ mấy, dòng thứ mấy của Series</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb19-1" tabindex="-1"></a>s[<span class="dv">2</span>]</span></code></pre></div>
 <pre class="python_output"><code>2</code></pre>
 <ul>
 <li><strong>Theo index</strong></li>
 </ul>
+<p>index trong Series thể hiện chỉ mục của phần tử Series đó, không giống như indice, index có thể là kiểu số hoặc kiểu chữ hoặc có thể là kiểu <code>datetime</code></p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb21-1" tabindex="-1"></a>s[<span class="st">&quot;c&quot;</span>]</span></code></pre></div>
 <pre class="python_output"><code>2 </code></pre>
 
 <div class="rmdnote">
 <strong><em>Lưu ý</em>:</strong>
-Như ví dụ trên, Series s của chúng ta đã được đánh index là dạng chữ, <code>["a", "b", "c", "d", "e", "f"]</code>. Vậy nếu chúng ta có index là dạng số thì sẽ như thế nào?
+Như ví dụ trên, Series <code>s</code> của chúng ta đã được đánh index là dạng chữ, <code>["a", "b", "c", "d", "e", "f"]</code>. Vậy nếu chúng ta có index là dạng số thì sẽ như thế nào?
 </div>
 <p>Ví dụ ta có một Series có index khác so với indice</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb23-1" tabindex="-1"></a>s2 <span class="op">=</span> pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], index<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">9</span>])</span>
