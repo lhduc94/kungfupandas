@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chương 2 Cấu trúc và kiểu dữ liệu | Kungfu Pandas</title>
   <meta name="description" content="Chương 2 Cấu trúc và kiểu dữ liệu | Kungfu Pandas" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chương 2 Cấu trúc và kiểu dữ liệu | Kungfu Pandas" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Lê Huỳnh Đức" />
 
 
-<meta name="date" content="2024-03-08" />
+<meta name="date" content="2025-01-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,6 +55,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -142,150 +143,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Kungfu Pandas</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Lời nói đầu</a></li>
-<li class="chapter" data-level="1" data-path="giới-thiệu-pandas.html"><a href="giới-thiệu-pandas.html"><i class="fa fa-check"></i><b>1</b> Giới thiệu Pandas</a></li>
-<li class="chapter" data-level="2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>2</b> Cấu trúc và kiểu dữ liệu</a>
+<li class="chapter" data-level="" data-path=""><a href="#l%E1%BB%9Di-n%C3%B3i-%C4%91%E1%BA%A7u"><i class="fa fa-check"></i>Lời nói đầu</a></li>
+<li class="chapter" data-level="1" data-path="posts/01-DataStructure/00-Introduction.html"><a href="#gi%E1%BB%9Bi-thi%E1%BB%87u-pandas"><i class="fa fa-check"></i><b>1</b> Giới thiệu Pandas</a></li>
+<li class="chapter" data-level="2" data-path="posts/01-DataStructure/00-Introduction.html"><a href="#c%E1%BA%A5u-tr%C3%BAc-v%C3%A0-ki%E1%BB%83u-d%E1%BB%AF-li%E1%BB%87u"><i class="fa fa-check"></i><b>2</b> Cấu trúc và kiểu dữ liệu</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#series"><i class="fa fa-check"></i><b>2.1</b> Series</a>
+<li class="chapter" data-level="2.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html"><i class="fa fa-check"></i><b>2.1</b> Series</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo"><i class="fa fa-check"></i><b>2.1.1</b> Các cách khởi tạo</a></li>
-<li class="chapter" data-level="2.1.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#một-số-thao-tác-cơ-bản-với-series"><i class="fa fa-check"></i><b>2.1.2</b> Một số thao tác cơ bản với Series</a></li>
+<li class="chapter" data-level="2.1.1" data-path="posts/01-DataStructure/00-Introduction.html"><a href="#c%C3%A1c-c%C3%A1ch-kh%E1%BB%9Fi-t%E1%BA%A1o"><i class="fa fa-check"></i><b>2.1.1</b> Các cách khởi tạo</a></li>
+<li class="chapter" data-level="2.1.2" data-path="posts/01-DataStructure/00-Introduction.html"><a href="#m%E1%BB%99t-s%E1%BB%91-thao-t%C3%A1c-c%C6%A1-b%E1%BA%A3n-v%E1%BB%9Bi-series"><i class="fa fa-check"></i><b>2.1.2</b> Một số thao tác cơ bản với Series</a></li>
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cach-khoi-tao-data-frame"><i class="fa fa-check"></i><b>2.2</b> DataFrame</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo-1"><i class="fa fa-check"></i><b>2.2.1</b> Các cách khởi tạo</a></li>
-<li class="chapter" data-level="2.2.2" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-hàm-khởi-tạo-thay-thế"><i class="fa fa-check"></i><b>2.2.2</b> Các hàm khởi tạo thay thế</a></li>
+<li class="chapter" data-level="2.2.1" data-path="posts/01-DataStructure/00-Introduction.html"><a href="#c%C3%A1c-c%C3%A1ch-kh%E1%BB%9Fi-t%E1%BA%A1o-1"><i class="fa fa-check"></i><b>2.2.1</b> Các cách khởi tạo</a></li>
+<li class="chapter" data-level="2.2.2" data-path="posts/01-DataStructure/00-Introduction.html"><a href="#c%C3%A1c-h%C3%A0m-kh%E1%BB%9Fi-t%E1%BA%A1o-thay-th%E1%BA%BF"><i class="fa fa-check"></i><b>2.2.2</b> Các hàm khởi tạo thay thế</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="cấu-trúc-và-kiểu-dữ-liệu.html"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#data-type-trong-pandas"><i class="fa fa-check"></i><b>2.3</b> Data type trong pandas</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html"><i class="fa fa-check"></i><b>3</b> Đọc và lưu file trong Pandas</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#csv-tsv"><i class="fa fa-check"></i><b>3.1</b> csv, tsv</a>
-<ul>
-<li class="chapter" data-level="3.1.1" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#đọc-file-csv-tsv"><i class="fa fa-check"></i><b>3.1.1</b> Đọc file csv, tsv</a></li>
-<li class="chapter" data-level="3.1.2" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#xuất-file-csv-tsv"><i class="fa fa-check"></i><b>3.1.2</b> Xuất file csv, tsv</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#excel"><i class="fa fa-check"></i><b>3.2</b> Excel</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#đọc-file-excel"><i class="fa fa-check"></i><b>3.2.1</b> Đọc file Excel</a></li>
-<li class="chapter" data-level="3.2.2" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#xuất-file-excel"><i class="fa fa-check"></i><b>3.2.2</b> Xuất file Excel</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#json"><i class="fa fa-check"></i><b>3.3</b> JSON</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#đọc-file-json"><i class="fa fa-check"></i><b>3.3.1</b> Đọc file JSON</a></li>
-<li class="chapter" data-level="3.3.2" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#xuất-file-json"><i class="fa fa-check"></i><b>3.3.2</b> Xuất file JSON</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#parquet"><i class="fa fa-check"></i><b>3.4</b> Parquet</a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#đọc-file-parquet"><i class="fa fa-check"></i><b>3.4.1</b> Đọc file Parquet</a></li>
-<li class="chapter" data-level="3.4.2" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#xuất-file-parquet"><i class="fa fa-check"></i><b>3.4.2</b> Xuất file Parquet</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#pickle"><i class="fa fa-check"></i><b>3.5</b> Pickle</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#đọc-file-pickle"><i class="fa fa-check"></i><b>3.5.1</b> Đọc file Pickle</a></li>
-<li class="chapter" data-level="3.5.2" data-path="đọc-và-lưu-file-trong-pandas.html"><a href="đọc-và-lưu-file-trong-pandas.html#xuất-file-pickle"><i class="fa fa-check"></i><b>3.5.2</b> Xuất file Pickle</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="Chuong-3.html"><a href="Chuong-3.html"><i class="fa fa-check"></i><b>4</b> Một số hàm cơ bản</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="Chuong-3.html"><a href="Chuong-3.html#head-và-.tail"><i class="fa fa-check"></i><b>4.1</b> <code>.head()</code> và <code>.tail()</code></a></li>
-<li class="chapter" data-level="4.2" data-path="Chuong-3.html"><a href="Chuong-3.html#shape-và-.size"><i class="fa fa-check"></i><b>4.2</b> <code>.shape</code> và <code>.size</code></a></li>
-<li class="chapter" data-level="4.3" data-path="Chuong-3.html"><a href="Chuong-3.html#info"><i class="fa fa-check"></i><b>4.3</b> <code>.info()</code></a></li>
-<li class="chapter" data-level="4.4" data-path="Chuong-3.html"><a href="Chuong-3.html#describe"><i class="fa fa-check"></i><b>4.4</b> <code>.describe()</code></a></li>
-<li class="chapter" data-level="4.5" data-path="Chuong-3.html"><a href="Chuong-3.html#index"><i class="fa fa-check"></i><b>4.5</b> <code>.index</code></a></li>
-<li class="chapter" data-level="4.6" data-path="Chuong-3.html"><a href="Chuong-3.html#memory_usage"><i class="fa fa-check"></i><b>4.6</b> <code>.memory_usage()</code></a></li>
-<li class="chapter" data-level="4.7" data-path="Chuong-3.html"><a href="Chuong-3.html#truy-cập-series-trong-pandas"><i class="fa fa-check"></i><b>4.7</b> Truy cập Series trong pandas</a></li>
-<li class="chapter" data-level="4.8" data-path="Chuong-3.html"><a href="Chuong-3.html#astype"><i class="fa fa-check"></i><b>4.8</b> <code>.astype()</code></a></li>
-<li class="chapter" data-level="4.9" data-path="Chuong-3.html"><a href="Chuong-3.html#drop_duplicates"><i class="fa fa-check"></i><b>4.9</b> <code>.drop_duplicates()</code></a></li>
-<li class="chapter" data-level="4.10" data-path="Chuong-3.html"><a href="Chuong-3.html#value_counts"><i class="fa fa-check"></i><b>4.10</b> <code>.value_counts()</code></a></li>
-<li class="chapter" data-level="4.11" data-path="Chuong-3.html"><a href="Chuong-3.html#unique-và-.nunique"><i class="fa fa-check"></i><b>4.11</b> <code>.unique()</code> và <code>.nunique()</code></a></li>
-<li class="chapter" data-level="4.12" data-path="Chuong-3.html"><a href="Chuong-3.html#drop"><i class="fa fa-check"></i><b>4.12</b> <code>.drop()</code></a></li>
-<li class="chapter" data-level="4.13" data-path="Chuong-3.html"><a href="Chuong-3.html#rename"><i class="fa fa-check"></i><b>4.13</b> <code>.rename()</code></a></li>
-<li class="chapter" data-level="4.14" data-path="Chuong-3.html"><a href="Chuong-3.html#set_index"><i class="fa fa-check"></i><b>4.14</b> <code>.set_index()</code></a></li>
-<li class="chapter" data-level="4.15" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_values"><i class="fa fa-check"></i><b>4.15</b> <code>.sort_values</code></a></li>
-<li class="chapter" data-level="4.16" data-path="Chuong-3.html"><a href="Chuong-3.html#sort_index"><i class="fa fa-check"></i><b>4.16</b> <code>.sort_index</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html"><i class="fa fa-check"></i><b>5</b> Chọn và lọc dữ liệu trong DataFame</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html#sử-dụng"><i class="fa fa-check"></i><b>5.1</b> Sử dụng <code>[]</code></a></li>
-<li class="chapter" data-level="5.2" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html#sử-dụng-.loc"><i class="fa fa-check"></i><b>5.2</b> Sử dụng .loc</a></li>
-<li class="chapter" data-level="5.3" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html#sử-dụng-.iloc"><i class="fa fa-check"></i><b>5.3</b> Sử dụng .iloc</a></li>
-<li class="chapter" data-level="5.4" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html#lọc-theo-điều-kiện"><i class="fa fa-check"></i><b>5.4</b> Lọc theo điều kiện</a>
-<ul>
-<li class="chapter" data-level="5.4.1" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html#toán-tử-điều-kiện"><i class="fa fa-check"></i><b>5.4.1</b> Toán tử điều kiện</a></li>
-<li class="chapter" data-level="5.4.2" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html#isin"><i class="fa fa-check"></i><b>5.4.2</b> <code>.isin()</code></a></li>
-<li class="chapter" data-level="5.4.3" data-path="chọn-và-lọc-dữ-liệu-trong-datafame.html"><a href="chọn-và-lọc-dữ-liệu-trong-datafame.html#lọc-missing-value-với-.dropna"><i class="fa fa-check"></i><b>5.4.3</b> Lọc missing value với <code>.dropna()</code></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html"><i class="fa fa-check"></i><b>6</b> Tính toán trên các phần tử trong Pandas</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-vectorization"><i class="fa fa-check"></i><b>6.1</b> Sử dụng Vectorization</a></li>
-<li class="chapter" data-level="6.2" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply"><i class="fa fa-check"></i><b>6.2</b> Sử dụng apply</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply-lên-series"><i class="fa fa-check"></i><b>6.2.1</b> Sử dụng apply lên Series</a></li>
-<li class="chapter" data-level="6.2.2" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-apply-lên-dataframe"><i class="fa fa-check"></i><b>6.2.2</b> Sử dụng apply lên <code>DataFrame</code></a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#sử-dụng-iterator"><i class="fa fa-check"></i><b>6.3</b> Sử dụng iterator</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#iterrows"><i class="fa fa-check"></i><b>6.3.1</b> Iterrows</a></li>
-<li class="chapter" data-level="6.3.2" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#itertuple"><i class="fa fa-check"></i><b>6.3.2</b> Itertuple</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#so-sánh-các-phương-pháp-lặp"><i class="fa fa-check"></i><b>6.4</b> So sánh các phương pháp lặp</a></li>
-<li class="chapter" data-level="6.5" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#xử-lý-song-song-trong-pandas"><i class="fa fa-check"></i><b>6.5</b> Xử lý song song trong pandas</a>
-<ul>
-<li class="chapter" data-level="6.5.1" data-path="tính-toán-trên-các-phần-tử-trong-pandas.html"><a href="tính-toán-trên-các-phần-tử-trong-pandas.html#pandarallel"><i class="fa fa-check"></i><b>6.5.1</b> pandarallel</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="các-cách-phối-hợp-nhiều-bảng.html"><a href="các-cách-phối-hợp-nhiều-bảng.html"><i class="fa fa-check"></i><b>7</b> Các cách phối hợp nhiều bảng</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="các-cách-phối-hợp-nhiều-bảng.html"><a href="các-cách-phối-hợp-nhiều-bảng.html#join"><i class="fa fa-check"></i><b>7.1</b> Join</a></li>
-<li class="chapter" data-level="7.2" data-path="các-cách-phối-hợp-nhiều-bảng.html"><a href="các-cách-phối-hợp-nhiều-bảng.html#merge"><i class="fa fa-check"></i><b>7.2</b> Merge</a></li>
-<li class="chapter" data-level="7.3" data-path="các-cách-phối-hợp-nhiều-bảng.html"><a href="các-cách-phối-hợp-nhiều-bảng.html#concat"><i class="fa fa-check"></i><b>7.3</b> Concat</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="groupby.html"><a href="groupby.html"><i class="fa fa-check"></i><b>8</b> Groupby</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="groupby.html"><a href="groupby.html#groupby-1"><i class="fa fa-check"></i><b>8.1</b> Groupby</a></li>
-<li class="chapter" data-level="8.2" data-path="groupby.html"><a href="groupby.html#các-hàm-filtering-trong-groupby"><i class="fa fa-check"></i><b>8.2</b> Các hàm Filtering trong Groupby</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><i class="fa fa-check"></i><b>9</b> Xử lý một số kiểu dữ liệu trong Pandas</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#xử-lý-dữ-liệu-dạng-text"><i class="fa fa-check"></i><b>9.1</b> Xử lý dữ liệu dạng text</a>
-<ul>
-<li class="chapter" data-level="9.1.1" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#lower"><i class="fa fa-check"></i><b>9.1.1</b> lower()</a></li>
-<li class="chapter" data-level="9.1.2" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#upper"><i class="fa fa-check"></i><b>9.1.2</b> upper()</a></li>
-<li class="chapter" data-level="9.1.3" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#split"><i class="fa fa-check"></i><b>9.1.3</b> split()</a></li>
-<li class="chapter" data-level="9.1.4" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#replace"><i class="fa fa-check"></i><b>9.1.4</b> replace</a></li>
-<li class="chapter" data-level="9.1.5" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#remove"><i class="fa fa-check"></i><b>9.1.5</b> remove</a></li>
-<li class="chapter" data-level="9.1.6" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#concatenate"><i class="fa fa-check"></i><b>9.1.6</b> concatenate</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#xử-lý-dữ-liệu-dạng-timestamp"><i class="fa fa-check"></i><b>9.2</b> Xử lý dữ liệu dạng timestamp</a></li>
-<li class="chapter" data-level="9.3" data-path="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html"><a href="xử-lý-một-số-kiểu-dữ-liệu-trong-pandas.html#missing-value"><i class="fa fa-check"></i><b>9.3</b> Missing value</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html"><i class="fa fa-check"></i><b>10</b> Một số kiến thức nâng cao</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#multiindex"><i class="fa fa-check"></i><b>10.1</b> MultiIndex</a></li>
-<li class="chapter" data-level="10.2" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#sample-và-resample"><i class="fa fa-check"></i><b>10.2</b> Sample và Resample</a>
-<ul>
-<li class="chapter" data-level="10.2.1" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#sample"><i class="fa fa-check"></i><b>10.2.1</b> Sample</a></li>
-<li class="chapter" data-level="10.2.2" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#resample"><i class="fa fa-check"></i><b>10.2.2</b> Resample</a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#window"><i class="fa fa-check"></i><b>10.3</b> Window</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#shift"><i class="fa fa-check"></i><b>10.3.1</b> Shift</a></li>
-<li class="chapter" data-level="10.3.2" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#rolling"><i class="fa fa-check"></i><b>10.3.2</b> Rolling</a></li>
-<li class="chapter" data-level="10.3.3" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#expand"><i class="fa fa-check"></i><b>10.3.3</b> Expand</a></li>
-</ul></li>
-<li class="chapter" data-level="10.4" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#reshape"><i class="fa fa-check"></i><b>10.4</b> Reshape</a>
-<ul>
-<li class="chapter" data-level="10.4.1" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#transpose"><i class="fa fa-check"></i><b>10.4.1</b> transpose</a></li>
-<li class="chapter" data-level="10.4.2" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#pivot"><i class="fa fa-check"></i><b>10.4.2</b> pivot</a></li>
-<li class="chapter" data-level="10.4.3" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#pivot_table"><i class="fa fa-check"></i><b>10.4.3</b> pivot_table</a></li>
-<li class="chapter" data-level="10.4.4" data-path="một-số-kiến-thức-nâng-cao.html"><a href="một-số-kiến-thức-nâng-cao.html#melt"><i class="fa fa-check"></i><b>10.4.4</b> melt</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="anomaly-detection-project.html"><a href="anomaly-detection-project.html"><i class="fa fa-check"></i><b>11</b> Anomaly Detection Project</a></li>
-<li class="chapter" data-level="12" data-path="visualize-với-matplotlib.html"><a href="visualize-với-matplotlib.html"><i class="fa fa-check"></i><b>12</b> Visualize với Matplotlib</a></li>
-<li class="chapter" data-level="13" data-path="cấu-hình-pandas.html"><a href="cấu-hình-pandas.html"><i class="fa fa-check"></i><b>13</b> Cấu hình pandas</a></li>
 <li class="divider"></li>
 <li><a href="" target="blank">Lê Huỳnh Đức</a></li>  
 
@@ -307,7 +180,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="cấu-trúc-và-kiểu-dữ-liệu" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chương 2</span> Cấu trúc và kiểu dữ liệu<a href="cấu-trúc-và-kiểu-dữ-liệu.html#cấu-trúc-và-kiểu-dữ-liệu" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chương 2</span> Cấu trúc và kiểu dữ liệu<a href="#c%E1%BA%A5u-tr%C3%BAc-v%C3%A0-ki%E1%BB%83u-d%E1%BB%AF-li%E1%BB%87u" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Mục tiêu của chương này nhằm giới thiệu về các cấu trúc cơ bản trong Pandas là <code>Series</code> và <code>DataFrame</code>.
 Trong chương này, bạn sẽ học cách khởi tạo các cấu trúc này cũng như một số thao tác cơ bản trên <code>Series</code>.
 Bạn cũng sẽ được biết về một số kiểu dữ liệu thường gặp trong pandas và cách để giảm thiểu bộ nhớ sử dụng khi khởi tạo dữ liệu.</p>
@@ -327,9 +200,9 @@ Cách đơn giản để tạo Series như sau</p>
 <p><code>index</code> có thể truyền hoặc không, tùy vào dạng của <code>data</code> mà <code>index</code> sẽ được định nghĩa khác nhau.
 <code>name</code> là tên của <code>Series</code>, giá trị này cũng không nhất thiết phải truyền vào.</p>
 <div id="các-cách-khởi-tạo" class="section level3 hasAnchor" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Các cách khởi tạo<a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">2.1.1</span> Các cách khởi tạo<a href="#c%C3%A1c-c%C3%A1ch-kh%E1%BB%9Fi-t%E1%BA%A1o" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="khởi-tạo-series-bằng-list-hoặc-dạng-numpy.array" class="section level4 unnumbered hasAnchor">
-<h4>Khởi tạo Series bằng List hoặc dạng numpy.array<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-list-hoặc-dạng-numpy.array" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Khởi tạo Series bằng List hoặc dạng numpy.array<a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-series-b%E1%BA%B1ng-list-ho%E1%BA%B7c-d%E1%BA%A1ng-numpy.array" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Khi không truyền giá trị <code>index</code>, <code>Series</code> sẽ mặc định index của nó là 1 mảng số nguyên từ <code>0</code> đến <code>len(data) - 1</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb2-1" tabindex="-1"></a>pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], name<span class="op">=</span><span class="st">&quot;meow&quot;</span>)</span></code></pre></div>
 <pre class="python_output"><code>a    0
@@ -338,7 +211,7 @@ c    2
 Name: meow, dtype: int64</code></pre>
 </div>
 <div id="khởi-tạo-series-bằng-dictionary" class="section level4 unnumbered hasAnchor">
-<h4>Khởi tạo Series bằng dictionary<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-dictionary" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Khởi tạo Series bằng dictionary<a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-series-b%E1%BA%B1ng-dictionary" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb4-1" tabindex="-1"></a>pd.Series({<span class="st">&quot;b&quot;</span>: <span class="dv">1</span>, <span class="st">&quot;a&quot;</span>:<span class="dv">0</span>, <span class="st">&quot;c&quot;</span>: <span class="dv">2</span>})</span></code></pre></div>
 <pre class="python_output"><code>b    1
 a    0
@@ -365,7 +238,7 @@ là <code>float64</code> nên kiểu dữ liệu của <code>Series</code> cũng
 </div>
 </div>
 <div id="khởi-tạo-series-bằng-một-giá-trị-duy-nhất" class="section level4 unnumbered hasAnchor">
-<h4>Khởi tạo Series bằng một giá trị duy nhất<a href="cấu-trúc-và-kiểu-dữ-liệu.html#khởi-tạo-series-bằng-một-giá-trị-duy-nhất" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Khởi tạo Series bằng một giá trị duy nhất<a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-series-b%E1%BA%B1ng-m%E1%BB%99t-gi%C3%A1-tr%E1%BB%8B-duy-nh%E1%BA%A5t" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb8-1" tabindex="-1"></a>pd.Series(data<span class="op">=</span><span class="dv">1</span>, index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>])</span></code></pre></div>
 <pre class="python_output"><code>a    1
 b    1
@@ -374,13 +247,13 @@ dtype: int64</code></pre>
 </div>
 </div>
 <div id="một-số-thao-tác-cơ-bản-với-series" class="section level3 hasAnchor" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Một số thao tác cơ bản với Series<a href="cấu-trúc-và-kiểu-dữ-liệu.html#một-số-thao-tác-cơ-bản-với-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">2.1.2</span> Một số thao tác cơ bản với Series<a href="#m%E1%BB%99t-s%E1%BB%91-thao-t%C3%A1c-c%C6%A1-b%E1%BA%A3n-v%E1%BB%9Bi-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Thao tác trên <code>Series</code> cũng giống với thao tác trên <code>numpy.array</code>. Ngoài ra chúng ta còn có thể
 tác với Series dựa vào index</p>
 <p>Ví dụ:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb10-1" tabindex="-1"></a>s <span class="op">=</span> pd.Series(data<span class="op">=</span>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], index<span class="op">=</span>[<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>])</span></code></pre></div>
 <div id="hiển-thị-toàn-bộ-giá-trị-của-series" class="section level4 unnumbered hasAnchor">
-<h4>Hiển thị toàn bộ giá trị của Series<a href="cấu-trúc-và-kiểu-dữ-liệu.html#hiển-thị-toàn-bộ-giá-trị-của-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Hiển thị toàn bộ giá trị của Series<a href="#hi%E1%BB%83n-th%E1%BB%8B-to%C3%A0n-b%E1%BB%99-gi%C3%A1-tr%E1%BB%8B-c%E1%BB%A7a-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Để xem toàn bộ các giá trị của một Series, ta có thể gọi thuộc tính <code>.values</code>, kết quả sẽ trả về dạng <code>numpy.ndarray</code></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb11-1" tabindex="-1"></a>s.values</span></code></pre></div>
 <pre class="python_output"><code>array([0, 1, 2, 3, 4, 5])</code></pre>
@@ -394,7 +267,7 @@ tác với Series dựa vào index</p>
 <pre class="python_output"><code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></pre>
 </div>
 <div id="truy-cập-một-phần-tử-trong-series" class="section level4 unnumbered hasAnchor">
-<h4>Truy cập một phần tử trong Series<a href="cấu-trúc-và-kiểu-dữ-liệu.html#truy-cập-một-phần-tử-trong-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Truy cập một phần tử trong Series<a href="#truy-c%E1%BA%ADp-m%E1%BB%99t-ph%E1%BA%A7n-t%E1%BB%AD-trong-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><strong>Theo indice</strong></li>
 </ul>
@@ -432,7 +305,7 @@ Vậy nếu chúng ta có index là dạng số thì việc truyền m�
 </div>
 </div>
 <div id="lấy-series-con-của-một-series" class="section level4 unnumbered hasAnchor">
-<h4>Lấy Series con của một Series<a href="cấu-trúc-và-kiểu-dữ-liệu.html#lấy-series-con-của-một-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<h4>Lấy Series con của một Series<a href="#l%E1%BA%A5y-series-con-c%E1%BB%A7a-m%E1%BB%99t-series" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li><strong>Theo Slice indice</strong></li>
 </ul>
@@ -496,7 +369,7 @@ của các <code>Series</code>. <code>dtype</code> sẽ định nghĩa các ki�
 <code>data</code> là DataFrame khác hoặc numpy.ndarray, việc copy này sẽ tránh trường hợp 2 biến cùng trỏ về
 cùng 1 bộ nhớ.</p>
 <div id="các-cách-khởi-tạo-1" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Các cách khởi tạo<a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-cách-khởi-tạo-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">2.2.1</span> Các cách khởi tạo<a href="#c%C3%A1c-c%C3%A1ch-kh%E1%BB%9Fi-t%E1%BA%A1o-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Khởi tạo DataFrame từ dict của Series</strong></p>
 <p>Khi không truyền biến <code>index</code> vào, thì index của <code>DataFrame</code> sẽ là hợp giữa 2 index của <code>Series</code> và
 chúng sẽ được sắp xếp theo thứ tự từ vựng. Nếu ta không truyền <code>columns</code> thì các cột của <code>DataFrame</code> sẽ
@@ -616,7 +489,7 @@ c     2</code></pre>
 <p><code>name</code> của Series sẽ là tên cột của DataFrame và <code>index</code> của Series sẽ là index của DataFrame nếu ta không truyền các biến <code>index</code>, <code>columns</code> khi khởi tạo <code>pd.DataFrame</code></p>
 </div>
 <div id="các-hàm-khởi-tạo-thay-thế" class="section level3 hasAnchor" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Các hàm khởi tạo thay thế<a href="cấu-trúc-và-kiểu-dữ-liệu.html#các-hàm-khởi-tạo-thay-thế" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">2.2.2</span> Các hàm khởi tạo thay thế<a href="#c%C3%A1c-h%C3%A0m-kh%E1%BB%9Fi-t%E1%BA%A1o-thay-th%E1%BA%BF" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>DataFrame.from_dict</strong></p>
 <p>Cách khởi tạo</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="cấu-trúc-và-kiểu-dữ-liệu.html#cb61-1" tabindex="-1"></a>pd.DataFrame.from_dict(data, orient<span class="op">=</span><span class="st">&#39;columns&#39;</span>, dtype<span class="op">=</span><span class="va">None</span>, columns<span class="op">=</span><span class="va">None</span>)</span></code></pre></div>
@@ -682,7 +555,7 @@ Các kiểu dữ liệu thường gặp của Pandas được mô tả theo bả
 <col width="20%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Các kiểu dữ liệu
 phổ biến</th>
 <th align="left">Numpy/Pandas
@@ -691,46 +564,46 @@ object</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">Boolean</td>
 <td align="left">np.bool</td>
 <td align="left"><em>bool</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Integer</td>
 <td align="left">np.int,
 np.uint</td>
 <td align="left"><em>int</em>
 <em>uint</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Float</td>
 <td align="left">np.float</td>
 <td align="left"><em>float</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Object</td>
 <td align="left">np.object</td>
 <td align="left"><em>O, object</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Datetime</td>
 <td align="left">np.datetime64,
 pd.Timestamp</td>
 <td align="left"><em>datetime64</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Timedelta</td>
 <td align="left">np.timedelta64,
 pd.Timedelta</td>
 <td align="left"><em>timedelta64</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Category</td>
 <td align="left">pd.Categorical</td>
 <td align="left"><em>category</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Complex</td>
 <td align="left">np.complex</td>
 <td align="left"><em>complex</em></td>
@@ -821,8 +694,6 @@ col_6     32
 dtype: int64</code></pre>
 <p>Phương thức ép kiểu này được áp dụng khi bạn khởi tạo DataFrame, ngoài ra còn có hàm ép kiểu khác đối với DataFrame cho trước, nội dung này sẽ được đề cập ở <a href="Chuong-3.html#Chuong-3">Chương 3</a>.</p>
 
-</div>
-</div>
             </section>
 
           </div>
